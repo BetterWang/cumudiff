@@ -1,2 +1,2 @@
 
-./runGetE3.sh 3
+./runGetE3.sh 2
