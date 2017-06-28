@@ -24,7 +24,7 @@ void genPlot(int s1 = 1)
 				for ( int c = 0; c < 20; c++ ) {
 					dVp[n][np][i][c] = h->GetBinContent(c+1);
 					eVp[n][np][i][c] = h->GetBinError(c+1);
-					cout << " -> dVp[" << n << "][" << np<< "][" << i << "][" << c << "] = " << dVp[n][np][i][c] << endl;
+					//cout << " -> dVp[" << n << "][" << np<< "][" << i << "][" << c << "] = " << dVp[n][np][i][c] << endl;
 				}
 			}
 		}
@@ -66,7 +66,7 @@ void genPlot(int s1 = 1)
 		}
 	}
 
-	TFile * fwrite = new TFile(Form("%s/ougGraph.root", ftxt[s1]), "recreate");
+	TFile * fwrite = new TFile(Form("%s/outGraph.root", ftxt[s1]), "recreate");
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int np = 0; np < 4; np++ ) {
 			for ( int c = 0; c < NCent; c++ ) {
