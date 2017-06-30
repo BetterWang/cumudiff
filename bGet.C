@@ -180,8 +180,8 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 				double sum = 0;
 				double weight = 0;
 				for ( int m = pCent[c]; m < pCent[c+1]; m++ ) {
-					sum += dCpGapRaw[n][i][m] * yV0QGap[7][i][m];
-					weight += yV0QGap[7][i][m];
+					sum += dCpGapRaw[n][i][m] * yV0QGap[n][i][m];
+					weight += yV0QGap[n][i][m];
 				}
 				if ( weight > 0. ) sum /= weight;
 				dCpGap[n][i][c] = sum;
@@ -235,8 +235,8 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			hCGappraw[n][i] = new TH1D(Form("hCGappraw%i_%i", n, i), "", 600, 0, 600);
 			hCGapwpraw[n][i] = new TH1D(Form("hCGapwpraw%i_%i", n, i), "", 600, 0, 600);
 
-			hCGapp[n][i] = new TH1D(Form("hCGapp%i_%i", n, i), "", 600, 0, 600);
-			hCGapwp[n][i] = new TH1D(Form("hCGapwp%i_%i", n, i), "", 600, 0, 600);
+			hCGapp[n][i] = new TH1D(Form("hCGapp%i_%i", n, i), "", 20, 0, 20);
+			hCGapwp[n][i] = new TH1D(Form("hCGapwp%i_%i", n, i), "", 20, 0, 20);
 		}
 	}
 

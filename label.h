@@ -61,6 +61,42 @@ char const * ftxt[] = {
 	"txt/PAHM7_Omega_merge/",		// 27
 };
 
+const int Pid_Non	= 0;
+const int Pid_Ks	= 1;
+const int Pid_Lambda	= 2;
+const int Pid_Omega	= 3;
+
+auto PID = std::vector<int>{
+	Pid_Non,	// 0
+	Pid_Ks,		// 1
+	Pid_Ks,		// 2
+	Pid_Ks,		// 3
+	Pid_Ks,		// 4
+	Pid_Ks,		// 5
+	Pid_Ks,		// 6
+	Pid_Ks,		// 7
+	Pid_Ks,		// 8
+	Pid_Ks,		// 9
+	Pid_Lambda,	// 10
+	Pid_Lambda,	// 11
+	Pid_Lambda,	// 12
+	Pid_Lambda,	// 13
+	Pid_Lambda,	// 14
+	Pid_Lambda,	// 15
+	Pid_Lambda,	// 16
+	Pid_Lambda,	// 17
+	Pid_Lambda,	// 18
+	Pid_Omega,	// 19
+	Pid_Omega,	// 20
+	Pid_Omega,	// 21
+	Pid_Omega,	// 22
+	Pid_Omega,	// 23
+	Pid_Omega,	// 24
+	Pid_Omega,	// 25
+	Pid_Omega,	// 26
+	Pid_Omega,	// 27
+};
+
 #include <TChain.h>
 #include <iostream>
 
