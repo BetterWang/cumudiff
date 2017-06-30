@@ -19,6 +19,15 @@ char const * fname[] = {
 	"NA",			// 16 Lambda HM0 pPb merge
 	"NA",			// 17 Lambda HM1 pPb merge
 	"NA",			// 18 Lambda HM7 pPb merge
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_Omega_cumu_eff_v7/170629_190143/0000/",				// 19 Omega HM0 pPb
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_Omega_cumu_eff_v7/170629_190215/0000/",				// 20 Omega HM1 pPb
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_Omega_cumu_eff_v7/170629_190247/0000/",				// 21 Omega HM7 pPb
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_Omega_cumu_eff_reverse_v7/170629_190411/0000/",			// 22 Omega HM0 pPb reverse
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_Omega_cumu_eff_reverse_v7/170629_190451/0000/",			// 23 Omega HM1 pPb reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_Omega_cumu_eff_reverse_v7/170629_190524/0000/",			// 24 Omega HM7 pPb reverse
+	"NA",			// 25 Omega HM0 pPb merge
+	"NA",			// 26 Omega HM1 pPb merge
+	"NA",			// 27 Omega HM7 pPb merge
 };
 
 char const * ftxt[] = {
@@ -41,6 +50,15 @@ char const * ftxt[] = {
 	"txt/PAHM0_Lambda_merge/",		// 16
 	"txt/PAHM1_Lambda_merge/",		// 17
 	"txt/PAHM7_Lambda_merge/",		// 18
+	"txt/PAHM0_Omega/",			// 19
+	"txt/PAHM1_Omega/",			// 20
+	"txt/PAHM7_Omega/",			// 21
+	"txt/PAHM0_Omega_reverse/",		// 22
+	"txt/PAHM1_Omega_reverse/",		// 23
+	"txt/PAHM7_Omega_reverse/",		// 24
+	"txt/PAHM0_Omega_merge/",		// 25
+	"txt/PAHM1_Omega_merge/",		// 26
+	"txt/PAHM7_Omega_merge/",		// 27
 };
 
 #include <TChain.h>
