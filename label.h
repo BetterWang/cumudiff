@@ -28,6 +28,26 @@ char const * fname[] = {
 	"NA",			// 25 Omega HM0 pPb merge
 	"NA",			// 26 Omega HM1 pPb merge
 	"NA",			// 27 Omega HM7 pPb merge
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_Kscumu_eff_v7/170630_162415/0000/",			// 28 Ks HM2 pPb
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_Kscumu_eff_v7/170630_162432/0000/",			// 29 Ks HM3 pPb
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_eff_v7/170630_162447/0000/",			// 30 Ks HM4 pPb
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_Kscumu_eff_v7/170630_162504/0000/",			// 31 Ks HM5 pPb
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Kscumu_eff_v7/170630_162522/0000/",			// 32 Ks HM6 pPb
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_Kscumu_eff_reverse_v7/170630_162554/0000/",		// 33 Ks HM2 pPb reverse
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_Kscumu_eff_reverse_v7/170630_162611/0000/",		// 34 Ks HM3 pPb reverse
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_eff_reverse_v7/170630_162627/0000/",		// 35 Ks HM4 pPb reverse
+	"",			// 36 Ks HM5 pPb reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Kscumu_eff_reverse_v7/170630_162700/0000/",		// 37 Ks HM6 pPb reverse
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_Lambda_cumu_eff_v7/170630_210527/0000/",		// 38 Lambda HM2 pPb
+	"",			// 39 Lambda HM3 pPb
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_Lambda_cumu_eff_v7/170630_210559/0000/",		// 40 Lambda HM4 pPb
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_Lambda_cumu_eff_v7/170630_210613/0000/",		// 41 Lambda HM5 pPb
+	"",			// 42 Lambda HM6 pPb
+	"",			// 43 Lambda HM2 pPb reverse
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_Lambda_cumu_eff_reverse_v7/170630_210726/0000/",	// 44 Lambda HM3 pPb reverse
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_Lambda_cumu_eff_reverse_v7/170630_210746/0000/",	// 45 Lambda HM4 pPb reverse
+	"",			// 46 Lambda HM5 pPb reverse
+	"",			// 47 Lambda HM6 pPb reverse
 };
 
 char const * ftxt[] = {
@@ -59,6 +79,26 @@ char const * ftxt[] = {
 	"txt/PAHM0_Omega_merge/",		// 25
 	"txt/PAHM1_Omega_merge/",		// 26
 	"txt/PAHM7_Omega_merge/",		// 27
+	"txt/PAHM2_Ks/",			// 28
+	"txt/PAHM3_Ks/",			// 29
+	"txt/PAHM4_Ks/",			// 30
+	"txt/PAHM5_Ks/",			// 31
+	"txt/PAHM6_Ks/",			// 32
+	"txt/PAHM2_Ks_reverse/",		// 33
+	"txt/PAHM3_Ks_reverse/",		// 34
+	"txt/PAHM4_Ks_reverse/",		// 35
+	"txt/PAHM5_Ks_reverse/",		// 36
+	"txt/PAHM6_Ks_reverse/",		// 37
+	"txt/PAHM2_Lambda/",			// 38
+	"txt/PAHM3_Lambda/",			// 39
+	"txt/PAHM4_Lambda/",			// 40
+	"txt/PAHM5_Lambda/",			// 41
+	"txt/PAHM6_Lambda/",			// 42
+	"txt/PAHM2_Lambda_reverse/",		// 43
+	"txt/PAHM3_Lambda_reverse/",		// 44
+	"txt/PAHM4_Lambda_reverse/",		// 45
+	"txt/PAHM5_Lambda_reverse/",		// 46
+	"txt/PAHM6_Lambda_reverse/",		// 47
 };
 
 const int Pid_Non	= 0;
@@ -95,6 +135,26 @@ auto PID = std::vector<int>{
 	Pid_Omega,	// 25
 	Pid_Omega,	// 26
 	Pid_Omega,	// 27
+	Pid_Ks,		// 28
+	Pid_Ks,		// 29
+	Pid_Ks,		// 30
+	Pid_Ks,		// 31
+	Pid_Ks,		// 32
+	Pid_Ks,		// 33
+	Pid_Ks,		// 34
+	Pid_Ks,		// 35
+	Pid_Ks,		// 36
+	Pid_Ks,		// 37
+	Pid_Lambda,	// 38
+	Pid_Lambda,	// 39
+	Pid_Lambda,	// 40
+	Pid_Lambda,	// 41
+	Pid_Lambda,	// 42
+	Pid_Lambda,	// 43
+	Pid_Lambda,	// 44
+	Pid_Lambda,	// 45
+	Pid_Lambda,	// 46
+	Pid_Lambda,	// 47
 };
 
 #include <TChain.h>
