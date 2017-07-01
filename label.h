@@ -36,18 +36,18 @@ char const * fname[] = {
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_Kscumu_eff_reverse_v7/170630_162554/0000/",		// 33 Ks HM2 pPb reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_Kscumu_eff_reverse_v7/170630_162611/0000/",		// 34 Ks HM3 pPb reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_eff_reverse_v7/170630_162627/0000/",		// 35 Ks HM4 pPb reverse
-	"",			// 36 Ks HM5 pPb reverse
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_Kscumu_eff_reverse_v7/170630_162643/0000/",		// 36 Ks HM5 pPb reverse
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_Kscumu_eff_reverse_v7/170630_162700/0000/",		// 37 Ks HM6 pPb reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_Lambda_cumu_eff_v7/170630_210527/0000/",		// 38 Lambda HM2 pPb
-	"",			// 39 Lambda HM3 pPb
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_Lambda_cumu_eff_v7/170630_210544/0000/",		// 39 Lambda HM3 pPb
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_Lambda_cumu_eff_v7/170630_210559/0000/",		// 40 Lambda HM4 pPb
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_Lambda_cumu_eff_v7/170630_210613/0000/",		// 41 Lambda HM5 pPb
-	"",			// 42 Lambda HM6 pPb
-	"",			// 43 Lambda HM2 pPb reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Lambda_cumu_eff_v7/170630_210627/0000/",		// 42 Lambda HM6 pPb
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_Lambda_cumu_eff_reverse_v7/170630_210708/0000/",	// 43 Lambda HM2 pPb reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_Lambda_cumu_eff_reverse_v7/170630_210726/0000/",	// 44 Lambda HM3 pPb reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_Lambda_cumu_eff_reverse_v7/170630_210746/0000/",	// 45 Lambda HM4 pPb reverse
-	"",			// 46 Lambda HM5 pPb reverse
-	"",			// 47 Lambda HM6 pPb reverse
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_Lambda_cumu_eff_reverse_v7/170630_210800/0000/",	// 46 Lambda HM5 pPb reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Lambda_cumu_eff_reverse_v7/170630_210815/0000/",	// 47 Lambda HM6 pPb reverse
 };
 
 char const * ftxt[] = {
