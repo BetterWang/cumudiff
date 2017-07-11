@@ -27,6 +27,9 @@ void bGetError(int s1 = 1, int s3 = 10)
 	double dCpGap[50][7][24][20];
 	double wCpGap[50][7][24][20];
 
+	double dpCpGap[50][7][24][20];
+	double wpCpGap[50][7][24][20];
+
 	// Get
 	for ( int fn = 0; fn <= s3; fn++ ) {
 		TFile * f = fr[fn];
@@ -63,10 +66,16 @@ void bGetError(int s1 = 1, int s3 = 10)
 			for ( int i = 0; i < 24; i++ ) {
 				TH1D * h1 = (TH1D*) f->Get(Form("hCGapp%i_%i", n, i));
 				TH1D * h2 = (TH1D*) f->Get(Form("hCGapwp%i_%i", n, i));
-
 				for ( int c = 0; c < 20; c++ ) {
 					dCpGap[fn][n][i][c] = h1->GetBinContent( c+1 );
 					wCpGap[fn][n][i][c] = h2->GetBinContent( c+1 );
+				}
+
+				h1 = (TH1D*) f->Get(Form("hpCGapp%i_%i", n, i));
+				h2 = (TH1D*) f->Get(Form("hpCGapwp%i_%i", n, i));
+				for ( int c = 0; c < 20; c++ ) {
+					dpCpGap[fn][n][i][c] = h1->GetBinContent( c+1 );
+					wpCpGap[fn][n][i][c] = h2->GetBinContent( c+1 );
 				}
 			}
 		}
@@ -78,6 +87,8 @@ void bGetError(int s1 = 1, int s3 = 10)
 
 	double dVGap[50][7][20];
 	double dVpGap[50][7][24][20];
+
+	double dpVpGap[50][7][24][20];
 
 	for ( int fn = 0; fn <= s3; fn++ ) {
 		for ( int n = 2; n < 7; n++ ) {
@@ -128,6 +139,11 @@ void bGetError(int s1 = 1, int s3 = 10)
 					if ( C2pGap >= 0 ) V2 =       C2pGap/pow(C2Gap, 1./2) ; else V2 = -fabs(C2pGap/pow(-C2Gap, 1./2));
 					if ( C2Gap == 0. ) V2 = 0;
 					dVpGap[fn][n][j][i] = V2;
+
+					C2pGap = dpCpGap[fn][n][j][i];
+					if ( C2pGap >= 0 ) V2 =       C2pGap/pow(C2Gap, 1./2) ; else V2 = -fabs(C2pGap/pow(-C2Gap, 1./2));
+					if ( C2Gap == 0. ) V2 = 0;
+					dpVpGap[fn][n][j][i] = V2;
 				}
 			}
 		}
@@ -143,6 +159,9 @@ void bGetError(int s1 = 1, int s3 = 10)
 	double eCpGap[7][24][20];
 	double eVGap[7][20];
 	double eVpGap[7][24][20];
+
+	double epCpGap[7][24][20];
+	double epVpGap[7][24][20];
 
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int i = 0; i < 20; i++ ) {
@@ -167,6 +186,18 @@ void bGetError(int s1 = 1, int s3 = 10)
 						+ 0.25*errC*errC/dCGap[s3][n][i]/dCGap[s3][n][i])*fabs(dVpGap[s3][n][j][i]);
 				if ( te != te ) te = 9999;
 				eVpGap[n][j][i] = te;
+
+
+				sumCp = 0;
+				for ( int fn = 0; fn < s3; fn++ ) {
+					sumCp += (dpCpGap[fn][n][j][i] - dpCpGap[s3][n][j][i]) * (dpCpGap[fn][n][j][i] - dpCpGap[s3][n][j][i]);
+				}
+				errCp = sqrt( sumCp ) /s3;
+				epCpGap[n][j][i] = errCp;
+				te = sqrt( errCp*errCp/dCpGap[s3][n][j][i]/dpCpGap[s3][n][j][i]
+						+ 0.25*errC*errC/dCGap[s3][n][i]/dCGap[s3][n][i])*fabs(dpVpGap[s3][n][j][i]);
+				if ( te != te ) te = 9999;
+				epVpGap[n][j][i] = te;
 			}
 
 			//
@@ -214,6 +245,9 @@ void bGetError(int s1 = 1, int s3 = 10)
 	TH1D * fCpGap[7][24];
 	TH1D * fVpGap[7][24];
 
+	TH1D * fpCpGap[7][24];
+	TH1D * fpVpGap[7][24];
+
 	for ( int n = 2; n < 7; n++ ) {
 		fCGap[n] = (TH1D*) fr[s3]->Get(Form("hCGap%i", n));
 		fVGap[n] = new TH1D(Form("hVGap%i", n), "", 20, 0, 20);
@@ -227,12 +261,17 @@ void bGetError(int s1 = 1, int s3 = 10)
 		for ( int j = 0; j < 24; j++ ) {
 			fCpGap[n][j] = (TH1D*) fr[s3]->Get(Form("hCGapp%i_%i", n, j));
 			fVpGap[n][j] = new TH1D(Form("hVpGap%i_%i", n, j), "", 20, 0, 20);
+
+			fpCpGap[n][j] = (TH1D*) fr[s3]->Get(Form("hpCGapp%i_%i", n, j));
+			fpVpGap[n][j] = new TH1D(Form("hpVpGap%i_%i", n, j), "", 20, 0, 20);
 			for ( int i = 0; i < 20; i++ ) {
 				fCpGap[n][j]->SetBinError(i+1, eCpGap[n][j][i]);
-				//cout << "eCpGap[" << n << "][" << j << "][" << i << "] = " << eCpGap[n][j][i] << endl;
-
 				fVpGap[n][j]->SetBinContent(i+1, dVpGap[s3][n][j][i]);
 				fVpGap[n][j]->SetBinError(i+1, eVpGap[n][j][i]);
+
+				fpCpGap[n][j]->SetBinError(i+1, epCpGap[n][j][i]);
+				fpVpGap[n][j]->SetBinContent(i+1, dpVpGap[s3][n][j][i]);
+				fpVpGap[n][j]->SetBinError(i+1, epVpGap[n][j][i]);
 			}
 		}
 
@@ -268,6 +307,9 @@ void bGetError(int s1 = 1, int s3 = 10)
 		for ( int i = 0; i < 24; i++ ) {
 			fCpGap[n][i]->Write();
 			fVpGap[n][i]->Write();
+
+			fpCpGap[n][i]->Write();
+			fpVpGap[n][i]->Write();
 		}
 		for ( int np = 0; np < 4; np++ ) {
 			fC[n][np]->Write();

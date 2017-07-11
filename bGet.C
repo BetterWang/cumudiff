@@ -27,6 +27,9 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 	TH1D * hV0QGap[7][24] = {};
 	TH1D * hV0QwGap[7][24] = {};
 
+	TH1D * hQpGap[7][24] = {};
+	TH1D * hQpwGap[7][24] = {};
+
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int np = 0; np < 4; np++ ) {
 			hQ[n][np] = (TH1D*) f->Get(Form("hQ%i%i", n, np));
@@ -41,6 +44,9 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 		for ( int i = 0; i < 24; i++ ) {
 			hV0QGap[n][i] = (TH1D*) f->Get(Form("hV0QGap%i_%i", n, i));
 			hV0QwGap[n][i] = (TH1D*) f->Get(Form("hV0QwGap%i_%i", n, i));
+
+			hQpGap[n][i] = (TH1D*) f->Get(Form("hQpGap%i_%i", n, i));
+			hQpwGap[n][i] = (TH1D*) f->Get(Form("hQpwGap%i_%i", n, i));
 		}
 	}
 
@@ -71,6 +77,9 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 	double dV0QGap[7][24][600] = {};
 	double yV0QGap[7][24][600] = {};
 
+	double dQpGap[7][24][600] = {};
+	double yQpGap[7][24][600] = {};
+
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int c = 0; c < 600; c++ ) {
 			dQGap[n][c] = hQGap[n]->GetBinContent( c+1 );
@@ -79,8 +88,11 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			for ( int i = 0; i < 24; i++ ) {
 				dV0QGap[n][i][c] = hV0QGap[n][i]->GetBinContent( c+1 );
 				yV0QGap[n][i][c] = hV0QwGap[n][i]->GetBinContent( c+1 );
-
 				if ( yV0QGap[n][i][c] > 0. ) dV0QGap[n][i][c] /= yV0QGap[n][i][c];
+
+				dQpGap[n][i][c] = hQpGap[n][i]->GetBinContent( c+1 );
+				yQpGap[n][i][c] = hQpwGap[n][i]->GetBinContent( c+1 );
+				if ( yQpGap[n][i][c] > 0. ) dQpGap[n][i][c] /= yQpGap[n][i][c];
 			}
 		}
 	}
@@ -90,6 +102,7 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 
 	double dCGapRaw[7][600];
 	double dCpGapRaw[7][24][600];
+	double dpCpGapRaw[7][24][600];
 
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int c = 0; c < 600; c++ ) {
@@ -123,6 +136,7 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 				dCpraw[n][3][i][c] = Q8p - 12*Q2*Q6p - 4*Q2p*Q6 - 18*Q4p*Q4 + 72*Q4p*Q2*Q2 + 72*Q4*Q2p*Q2 - 144*Q2p*Q2*Q2*Q2;
 
 				dCpGapRaw[n][i][c] = dV0QGap[n][i][c];
+				dpCpGapRaw[n][i][c] = dQpGap[n][i][c];
 			}
 		}
 	}
@@ -137,6 +151,9 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 	double wCGap[7][20];
 	double dCpGap[7][24][20];
 	double wCpGap[7][24][20];
+
+	double dpCpGap[7][24][20];
+	double wpCpGap[7][24][20];
 
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int np = 0; np < 4; np++ ) {
@@ -179,13 +196,23 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			for ( int i = 0; i < 24; i++ ) {
 				double sum = 0;
 				double weight = 0;
+
+				double sump = 0;
+				double weightp = 0;
 				for ( int m = pCent[c]; m < pCent[c+1]; m++ ) {
 					sum += dCpGapRaw[n][i][m] * yV0QGap[n][i][m];
 					weight += yV0QGap[n][i][m];
+
+					sump += dpCpGapRaw[n][i][m] * yQpGap[n][i][m];
+					weightp += yQpGap[n][i][m];
 				}
 				if ( weight > 0. ) sum /= weight;
 				dCpGap[n][i][c] = sum;
 				wCpGap[n][i][c] = weight;
+
+				if ( weightp > 0. ) sump /= weightp;
+				dpCpGap[n][i][c] = sump;
+				wpCpGap[n][i][c] = weightp;
 			}
 		}
 	}
@@ -209,6 +236,9 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 	TH1D * hCGapw[7] = {};
 	TH1D * hCGapp[7][24] = {};
 	TH1D * hCGapwp[7][24] = {};
+
+	TH1D * hpCGapp[7][24] = {};
+	TH1D * hpCGapwp[7][24] = {};
 
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int np = 0; np < 4; np++ ) {
@@ -237,6 +267,9 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 
 			hCGapp[n][i] = new TH1D(Form("hCGapp%i_%i", n, i), "", 20, 0, 20);
 			hCGapwp[n][i] = new TH1D(Form("hCGapwp%i_%i", n, i), "", 20, 0, 20);
+
+			hpCGapp[n][i] = new TH1D(Form("hpCGapp%i_%i", n, i), "", 20, 0, 20);
+			hpCGapwp[n][i] = new TH1D(Form("hpCGapwp%i_%i", n, i), "", 20, 0, 20);
 		}
 	}
 
@@ -275,6 +308,9 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			for ( int i = 0; i < 24; i++ ) {
 				hCGapp[n][i]->SetBinContent( c+1, dCpGap[n][i][c] );
 				hCGapwp[n][i]->SetBinContent( c+1, wCpGap[n][i][c] );
+
+				hpCGapp[n][i]->SetBinContent( c+1, dpCpGap[n][i][c] );
+				hpCGapwp[n][i]->SetBinContent( c+1, wpCpGap[n][i][c] );
 			}
 		}
 	}
@@ -315,6 +351,8 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			hCGapwpraw[n][i]->Write();
 			hCGapp[n][i]->Write();
 			hCGapwp[n][i]->Write();
+			hpCGapp[n][i]->Write();
+			hpCGapwp[n][i]->Write();
 		}
 	}
 

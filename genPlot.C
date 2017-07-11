@@ -21,6 +21,9 @@ void genPlot(int s1 = 1)
 	double dVpGap[7][24][20];
 	double eVpGap[7][24][20];
 
+	double dpVpGap[7][24][20];
+	double epVpGap[7][24][20];
+
 	HIN_14_002();
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int np = 0; np < 4; np++ ) {
@@ -34,15 +37,20 @@ void genPlot(int s1 = 1)
 		}
 		for ( int i = 0; i < 24; i++ ) {
 			TH1D * h = (TH1D*) f->Get(Form("hVpGap%i_%i", n, i));
+			TH1D * h2= (TH1D*) f->Get(Form("hpVpGap%i_%i", n, i));
 			for ( int c = 0; c < 20; c++ ) {
 				dVpGap[n][i][c] = h->GetBinContent(c+1);
 				eVpGap[n][i][c] = h->GetBinError(c+1);
+
+				dpVpGap[n][i][c] = h2->GetBinContent(c+1);
+				epVpGap[n][i][c] = h2->GetBinError(c+1);
 			}
 		}
 	}
 
 	TGraphErrors * grV0pT[7][4][20] = {};
 	TGraphErrors * grV0pTGap[7][20] = {};
+	TGraphErrors * grpTGap[7][20] = {};
 
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int np = 0; np < 4; np++ ) {
@@ -65,6 +73,16 @@ void genPlot(int s1 = 1)
 			}
 			grV0pTGap[n][c] = new TGraphErrors(NpT, pTX, y, 0, e);
 		}
+
+		for ( int c = 0; c < NCent; c++ ) {
+			double y[24] = {};
+			double e[24] = {};
+			for ( int ipt = 0; ipt < NpT; ipt++ ) {
+				y[ipt] = dpVpGap[n][ipt][c];
+				e[ipt] = epVpGap[n][ipt][c];
+			}
+			grpTGap[n][c] = new TGraphErrors(NpT, pTX, y, 0, e);
+		}
 	}
 
 	for ( int n = 2; n < 7; n++ ) {
@@ -72,6 +90,10 @@ void genPlot(int s1 = 1)
 			grV0pTGap[n][c]->SetMarkerStyle(kOpenCircle);
 			grV0pTGap[n][c]->SetMarkerColor(kRed);
 			grV0pTGap[n][c]->SetLineColor(kRed);
+
+			grpTGap[n][c]->SetMarkerStyle(kOpenSquare);
+			grpTGap[n][c]->SetMarkerColor(kBlack);
+			grpTGap[n][c]->SetLineColor(kBlack);
 
 			grV0pT[n][0][c]->SetMarkerStyle(kFullCircle);
 			grV0pT[n][0][c]->SetMarkerColor(kRed);
@@ -106,11 +128,13 @@ void genPlot(int s1 = 1)
 			legPt->SetTextSize(0.03);
 			legPt->SetBorderSize(0);
 
+			grpTGap[n][c]->Draw("psame");
 			grV0pTGap[n][c]->Draw("psame");
 			grV0pT[n][1][c]->Draw("psame");
 //			grV0pT[n][2][c]->Draw("psame");
 //			grV0pT[n][3][c]->Draw("psame");
 
+			legPt->AddEntry(grpTGap[n][c], Form("v_{%i}{2, |#Delta#eta|>2} h#pm", n), "p");
 			legPt->AddEntry(grV0pTGap[n][c], Form("v_{%i}{2, |#Delta#eta|>2}", n), "p");
 			legPt->AddEntry(grV0pT[n][1][c], Form("v_{%i}{4}", n), "p");
 //			legPt->AddEntry(grV0pT[n][2][c], Form("v_{%i}{6}", n), "p");
@@ -145,6 +169,7 @@ void genPlot(int s1 = 1)
 				grV0pT[n][np][c]->Write(Form("grV0pT%i%i_%i", n, np, c));
 			}
 			grV0pTGap[n][c]->Write(Form("grV0pTGap%i_%i", n, c));
+			grpTGap[n][c]->Write(Form("grpTGap%i_%i", n, c));
 		}
 	}
 }
