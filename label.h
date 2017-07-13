@@ -48,6 +48,14 @@ char const * fname[] = {
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_Lambda_cumu_eff_reverse_v8/170710_174708/0000/",	// 45 Lambda HM4 pPb reverse
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_Lambda_cumu_eff_reverse_v8/170710_174725/0000/",	// 46 Lambda HM5 pPb reverse
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_Lambda_cumu_eff_reverse_v8/170710_174744/0000/",	// 47 Lambda HM6 pPb reverse
+	"../cumu/HIMinimumBias5/crab_HIMB5_Kscumu_eff_v2/170711_170943/0000/",				// 48 Ks HIMB5
+	"../cumu/HIMinimumBias6/crab_HIMB6_Kscumu_eff_v2/170711_171005/0000/",				// 49 Ks HIMB6
+	"../cumu/HIMinimumBias7/crab_HIMB7_Kscumu_eff_v2/170711_171025/0000/",				// 50 Ks HIMB7
+	"../cumu/HIMinimumBias5/crab_HIMB5_Lambda_cumu_eff_v2/170711_171101/0000/",			// 51 Lambda HIMB5
+	"../cumu/HIMinimumBias6/crab_HIMB6_Lambda_cumu_eff_v2/170711_171126/0000/",			// 52 Lambda HIMB5
+	"../cumu/HIMinimumBias7/crab_HIMB7_Lambda_cumu_eff_v2/170711_171150/0000/",			// 53 Lambda HIMB5
+	"NA",			// 54 Ks merged HIMB567
+	"NA",			// 55 Lambda merged HIMB567
 };
 
 char const * ftxt[] = {
@@ -99,6 +107,14 @@ char const * ftxt[] = {
 	"txt/PAHM4_Lambda_reverse/",		// 45
 	"txt/PAHM5_Lambda_reverse/",		// 46
 	"txt/PAHM6_Lambda_reverse/",		// 47
+	"txt/PbPb5_Ks/",			// 48
+	"txt/PbPb6_Ks/",			// 49
+	"txt/PbPb7_Ks/",			// 50
+	"txt/PbPb5_Lambda/",			// 51
+	"txt/PbPb6_Lambda/",			// 52
+	"txt/PbPb7_Lambda/",			// 53
+	"txt/PbPb_Ks_merge/",			// 54
+	"txt/PbPb_Lambda_merge/",		// 55
 };
 
 const int Pid_Non	= 0;
@@ -155,6 +171,14 @@ auto PID = std::vector<int>{
 	Pid_Lambda,	// 45
 	Pid_Lambda,	// 46
 	Pid_Lambda,	// 47
+	Pid_Ks,		// 48
+	Pid_Ks,		// 49
+	Pid_Ks,		// 50
+	Pid_Lambda,	// 51
+	Pid_Lambda,	// 52
+	Pid_Lambda,	// 53
+	Pid_Ks,		// 54
+	Pid_Lambda,	// 55
 };
 
 #include <TChain.h>
