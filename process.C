@@ -112,7 +112,10 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 		if ( s2 == s3 ) ievt++;
 		else ievt+= s3;
 
-		if ( (gNoff>=600) or (gV0==0) ) continue;
+		if ( (gNoff>=600) or (gV0==0) ) {
+			hNoff->Fill(gNoff);
+			continue;
+		}
 		for ( int n = 3; n < 7; n++ ) {
 			for ( int np = 0; np < 4; np++ ) {
 				wQ[n][np] = wQ[2][np];
