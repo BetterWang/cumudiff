@@ -3,13 +3,26 @@ TGraphErrors* mgr_pPb_Ks_150_v22;
 TGraphErrors* mgr_pPb_Ks_185_v22;
 TGraphErrors* mgr_pPb_Ks_220_v22;
 
+TGraphErrors* mgr_PbPb_Ks_120_v22;
+TGraphErrors* mgr_PbPb_Ks_150_v22;
+TGraphErrors* mgr_PbPb_Ks_185_v22;
+TGraphErrors* mgr_PbPb_Ks_220_v22;
+
 TGraphErrors* mgr_pPb_Lambda_120_v22;
 TGraphErrors* mgr_pPb_Lambda_150_v22;
 TGraphErrors* mgr_pPb_Lambda_185_v22;
 TGraphErrors* mgr_pPb_Lambda_220_v22;
 
+TGraphErrors* mgr_PbPb_Lambda_120_v22;
+TGraphErrors* mgr_PbPb_Lambda_150_v22;
+TGraphErrors* mgr_PbPb_Lambda_185_v22;
+TGraphErrors* mgr_PbPb_Lambda_220_v22;
+
 TGraphErrors* mgr_pPb_Ks_v22[14] = {};
 TGraphErrors* mgr_pPb_Lambda_v22[14] = {};
+
+TGraphErrors* mgr_PbPb_Ks_v22[14] = {};
+TGraphErrors* mgr_PbPb_Lambda_v22[14] = {};
 
 pair<TGraphErrors*, TGraphErrors*> getGr(string &s)
 {
@@ -24,8 +37,8 @@ pair<TGraphErrors*, TGraphErrors*> getGr(string &s)
                 v2e.push_back(e);
                 v2s.push_back(sys);
         }
-        gr  = new TGraphErrors(Noff.size(), &Noff[0], &v2[0], 0, &v2e[0]);
-        grs = new TGraphErrors(Noff.size(), &Noff[0], &v2[0], 0, &v2s[0]);
+        auto gr  = new TGraphErrors(Noff.size(), &Noff[0], &v2[0], 0, &v2e[0]);
+        auto grs = new TGraphErrors(Noff.size(), &Noff[0], &v2[0], 0, &v2s[0]);
         gr->SetMarkerSize(2.);
         return std::make_pair(gr, grs);
 };
@@ -150,25 +163,25 @@ void HIN_14_002() {
 
 
 	gr = getGr(str_v22_pPb_120_150);
-	gr.first->SetMarkerStyle(kOpenCircle);
+	gr.first->SetMarkerStyle(kOpenSquare);
 	gr.first->SetMarkerColor(kBlue);
 	gr.first->SetLineColor(kBlue);
 	mgr_pPb_Lambda_120_v22 = gr.first;
 
 	gr = getGr(str_v22_pPb_150_185);
-	gr.first->SetMarkerStyle(kOpenCircle);
+	gr.first->SetMarkerStyle(kOpenSquare);
 	gr.first->SetMarkerColor(kBlue);
 	gr.first->SetLineColor(kBlue);
 	mgr_pPb_Lambda_150_v22 = gr.first;
 
 	gr = getGr(str_v22_pPb_185_220);
-	gr.first->SetMarkerStyle(kOpenCircle);
+	gr.first->SetMarkerStyle(kOpenSquare);
 	gr.first->SetMarkerColor(kBlue);
 	gr.first->SetLineColor(kBlue);
 	mgr_pPb_Lambda_185_v22 = gr.first;
 
 	gr = getGr(str_v22_pPb_220_260);
-	gr.first->SetMarkerStyle(kOpenCircle);
+	gr.first->SetMarkerStyle(kOpenSquare);
 	gr.first->SetMarkerColor(kBlue);
 	gr.first->SetLineColor(kBlue);
 	mgr_pPb_Lambda_220_v22 = gr.first;
@@ -182,5 +195,157 @@ void HIN_14_002() {
 	mgr_pPb_Lambda_v22[7] = mgr_pPb_Lambda_150_v22;
 	mgr_pPb_Lambda_v22[8] = mgr_pPb_Lambda_185_v22;
 	mgr_pPb_Lambda_v22[9] = mgr_pPb_Lambda_220_v22;
+
+// PbPb
+	string s =
+"0.313	0.0156  0.0067  0.0010 "
+"0.510	0.0442  0.0041  0.0029 "
+"0.700	0.0768  0.0033  0.0051 "
+"0.896	0.101   0.003   0.007  "
+"1.18	0.121   0.003   0.008  "
+"1.57	0.146   0.003   0.010  "
+"1.98	0.157   0.005   0.010  "
+"2.45	0.168   0.006   0.011  "
+"3.13	0.140   0.009   0.009  "
+"4.00	0.153   0.015   0.010  "
+"5.17	0.0932  0.0251  0.0062 ";
+
+
+	gr = getGr(s);
+	gr.first->SetMarkerStyle(kOpenCircle);
+	gr.first->SetMarkerColor(kBlue);
+	gr.first->SetLineColor(kBlue);
+	mgr_PbPb_Ks_120_v22 = gr.first;
+
+	s =
+"0.314	0.0144  0.0054 0.0010 "
+"0.510	0.0446  0.0033 0.0030 "
+"0.700	0.0716  0.0026 0.0047 "
+"0.896	0.0932  0.0025 0.0062 "
+"1.18	0.126   0.002  0.008  "
+"1.57	0.146   0.003  0.010  "
+"1.98	0.168   0.004  0.011  "
+"2.45	0.166   0.005  0.011  "
+"3.12	0.165   0.007  0.011  "
+"4.00	0.170   0.012  0.011  "
+"5.18	0.194   0.020  0.013  ";
+
+	gr = getGr(s);
+	gr.first->SetMarkerStyle(kOpenCircle);
+	gr.first->SetMarkerColor(kBlue);
+	gr.first->SetLineColor(kBlue);
+	mgr_PbPb_Ks_150_v22 = gr.first;
+
+	s =
+"0.314	0.0232  0.0050 0.0015 "
+"0.511	0.0428  0.0029 0.0028 "
+"0.701	0.0732  0.0023 0.0048 "
+"0.896	0.103   0.002  0.007  "
+"1.18	0.130   0.002  0.009  "
+"1.57	0.158   0.002  0.010  "
+"1.98	0.173   0.003  0.011  "
+"2.45	0.166   0.004  0.011  "
+"3.12	0.158   0.006  0.010  "
+"4.00	0.169   0.010  0.011  "
+"5.17	0.141   0.018  0.009  ";
+
+	gr = getGr(s);
+	gr.first->SetMarkerStyle(kOpenCircle);
+	gr.first->SetMarkerColor(kBlue);
+	gr.first->SetLineColor(kBlue);
+	mgr_PbPb_Ks_185_v22 = gr.first;
+
+	s =
+"0.315	0.0176  0.0042  0.0012 "
+"0.511	0.0407  0.0025  0.0027 "
+"0.701	0.0805  0.0019  0.0053 "
+"0.897	0.103   0.002   0.007  "
+"1.18	0.135   0.001   0.009  "
+"1.57	0.164   0.002   0.011  "
+"1.98	0.175   0.003   0.012  "
+"2.45	0.176   0.003   0.012  "
+"3.12	0.170   0.005   0.011  "
+"4.00	0.137   0.009   0.009  "
+"5.18	0.166   0.015   0.011  ";
+
+	gr = getGr(s);
+	gr.first->SetMarkerStyle(kOpenCircle);
+	gr.first->SetMarkerColor(kBlue);
+	gr.first->SetLineColor(kBlue);
+	mgr_PbPb_Ks_220_v22 = gr.first;
+
+	s =
+"0.846	0.0815  0.0072 0.0054 "
+"1.19	0.0955  0.0055 0.0063 "
+"1.58	0.164   0.006  0.011  "
+"1.98	0.191   0.007  0.013  "
+"2.45	0.180   0.008  0.012  "
+"3.12	0.221   0.011  0.015  "
+"3.98	0.210   0.022  0.014  "
+"5.15	0.136   0.039  0.009  ";
+
+	gr = getGr(s);
+	gr.first->SetMarkerStyle(kOpenSquare);
+	gr.first->SetMarkerColor(kBlue);
+	gr.first->SetLineColor(kBlue);
+	mgr_PbPb_Lambda_120_v22= gr.first;
+
+	s =
+"0.847	0.0715 0.0061 0.0047 "
+"1.19	0.111  0.004  0.007  "
+"1.58	0.163  0.004  0.011  "
+"1.98	0.191  0.005  0.013  "
+"2.45	0.227  0.006  0.015  "
+"3.11	0.227  0.009  0.015  "
+"3.98	0.157  0.016  0.010  "
+"5.14	0.211  0.032  0.014  ";
+
+	gr = getGr(s);
+	gr.first->SetMarkerStyle(kOpenSquare);
+	gr.first->SetMarkerColor(kBlue);
+	gr.first->SetLineColor(kBlue);
+	mgr_PbPb_Lambda_150_v22= gr.first;
+
+	s =
+"0.845	0.0709  0.0054 0.0047 "
+"1.19	0.122   0.004  0.008  "
+"1.58	0.156   0.004  0.010  "
+"1.98	0.186   0.005  0.012  "
+"2.45	0.207   0.005  0.014  "
+"3.12	0.234   0.008  0.016  "
+"3.98	0.213   0.014  0.014  "
+"5.14	0.193   0.025  0.013  ";
+
+	gr = getGr(s);
+	gr.first->SetMarkerStyle(kOpenSquare);
+	gr.first->SetMarkerColor(kBlue);
+	gr.first->SetLineColor(kBlue);
+	mgr_PbPb_Lambda_185_v22= gr.first;
+
+	s =
+"0.844	0.0747  0.0050 0.0049 "
+"1.19	0.105   0.003  0.007  "
+"1.58	0.158   0.003  0.010  "
+"1.98	0.193   0.004  0.013  "
+"2.45	0.213   0.004  0.014  "
+"3.11	0.227   0.006  0.015  "
+"3.98	0.199   0.011  0.013  "
+"5.16	0.205   0.019  0.014  ";
+
+	gr = getGr(s);
+	gr.first->SetMarkerStyle(kOpenSquare);
+	gr.first->SetMarkerColor(kBlue);
+	gr.first->SetLineColor(kBlue);
+	mgr_PbPb_Lambda_220_v22= gr.first;
+
+	mgr_PbPb_Ks_v22[6] = mgr_PbPb_Ks_120_v22;
+	mgr_PbPb_Ks_v22[7] = mgr_PbPb_Ks_150_v22;
+	mgr_PbPb_Ks_v22[8] = mgr_PbPb_Ks_185_v22;
+	mgr_PbPb_Ks_v22[9] = mgr_PbPb_Ks_220_v22;
+
+	mgr_PbPb_Lambda_v22[6] = mgr_PbPb_Lambda_120_v22;
+	mgr_PbPb_Lambda_v22[7] = mgr_PbPb_Lambda_150_v22;
+	mgr_PbPb_Lambda_v22[8] = mgr_PbPb_Lambda_185_v22;
+	mgr_PbPb_Lambda_v22[9] = mgr_PbPb_Lambda_220_v22;
 
 }

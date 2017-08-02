@@ -1,0 +1,11 @@
+root -l -b -q 'plot.C("grVn_std.root", 6)'
+root -l -b -q 'plot.C("grVn_std.root", 7)'
+root -l -b -q 'plot.C("grVn_std.root", 8)'
+root -l -b -q 'plot.C("grVn_std.root", 9)'
+root -l -b -q 'plot.C("grVn_std.root", 10)'
+
+root -l -b -q 'plot.C("grPbPbVn_std.root", 6)'
+root -l -b -q 'plot.C("grPbPbVn_std.root", 7)'
+root -l -b -q 'plot.C("grPbPbVn_std.root", 8)'
+root -l -b -q 'plot.C("grPbPbVn_std.root", 9)'
+root -l -b -q 'plot.C("grPbPbVn_std.root", 10)'

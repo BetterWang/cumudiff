@@ -140,17 +140,25 @@ void genPlot(int s1 = 1)
 //			legPt->AddEntry(grV0pT[n][2][c], Form("v_{%i}{6}", n), "p");
 //			legPt->AddEntry(grV0pT[n][3][c], Form("v_{%i}{8}", n), "p");
 
-			if ( PID[s1] == Pid_Ks ) {
-				if ( mgr_pPb_Ks_v22[c] and n==2 ) {
+			if ( isKs(PID[s1]) ) {
+				if ( isPA(PID[s1]) and mgr_pPb_Ks_v22[c] and n==2 ) {
 					mgr_pPb_Ks_v22[c]->Draw("psame");
 					legPt->AddEntry(mgr_pPb_Ks_v22[c], Form("HIN14002 v_{%i}{2, |#Delta#eta|>2}", n), "p");
 				}
+				if ( not isPA(PID[s1]) and mgr_PbPb_Ks_v22[c] and n==2 ) {
+					mgr_PbPb_Ks_v22[c]->Draw("psame");
+					legPt->AddEntry(mgr_PbPb_Ks_v22[c], Form("HIN14002 v_{%i}{2, |#Delta#eta|>2}", n), "p");
+				}
 			}
 
-			if ( PID[s1] == Pid_Lambda ) {
-				if ( mgr_pPb_Lambda_v22[c] and n==2 ) {
+			if ( isLambda(PID[s1]) ) {
+				if ( isPA(PID[s1]) and mgr_pPb_Lambda_v22[c] and n==2 ) {
 					mgr_pPb_Lambda_v22[c]->Draw("psame");
 					legPt->AddEntry(mgr_pPb_Lambda_v22[c], Form("HIN14002 v_{%i}{2, |#Delta#eta|>2}", n), "p");
+				}
+				if ( not isPA(PID[s1]) and mgr_PbPb_Lambda_v22[c] and n==2 ) {
+					mgr_PbPb_Lambda_v22[c]->Draw("psame");
+					legPt->AddEntry(mgr_PbPb_Lambda_v22[c], Form("HIN14002 v_{%i}{2, |#Delta#eta|>2}", n), "p");
 				}
 			}
 
