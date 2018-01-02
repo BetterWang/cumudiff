@@ -20,3 +20,6 @@ core.*
 *.cxx_tmp
 .DS_Store
 pdf/
+Perform/*
+Eff
+!Perform/*.C
