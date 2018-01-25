@@ -56,6 +56,10 @@ char const * fname[] = {
 	"../cumu/HIMinimumBias7/crab_HIMB7_Lambda_cumu_eff_v2/170711_171150/0000/",			// 53 Lambda HIMB5
 	"NA",			// 54 Ks merged HIMB567
 	"NA",			// 55 Lambda merged HIMB567
+	"NA",			// 56 Ks HM123456 pPb
+	"NA",			// 57 Ks HM123456 pPb reverse
+	"NA",			// 58 Lm HM123456 pPb
+	"NA",			// 59 Lm HM123456 pPb reverse
 };
 
 char const * ftxt[] = {
@@ -115,6 +119,10 @@ char const * ftxt[] = {
 	"txt/PbPb7_Lambda/",			// 53
 	"txt/PbPb_Ks_merge/",			// 54
 	"txt/PbPb_Lambda_merge/",		// 55
+	"txt/PAHM123456_Ks_pPb/",		// 56
+	"txt/PAHM123456_Ks_pPb_reverse/",	// 57
+	"txt/PAHM123456_Lm_pPb/",		// 58
+	"txt/PAHM123456_Lm_pPb_reverse/",	// 59
 };
 
 const int Pid_Non	= 0;
@@ -187,6 +195,10 @@ auto PID = std::vector<int>{
 	Pid_AA_Lambda,	// 53
 	Pid_AA_Ks,		// 54
 	Pid_AA_Lambda,	// 55
+	Pid_PA_Ks,	// 56
+	Pid_PA_Ks,	// 57
+	Pid_PA_Lambda,	// 58
+	Pid_PA_Lambda,	// 59
 };
 
 #include <TChain.h>
