@@ -68,14 +68,14 @@ char const * fname[] = {
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBPos_eff_v1/180128_050402/0000/",			// 65 Ks HM5 pPb SB Pos
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBPos_eff_v1/180128_050414/0000/",			// 66 Ks HM6 pPb SB Pos
 	"../cumu/PAHighMultiplicity7/crab_PAHM7_KscumuSBPos_eff_v1/180128_050426/0000/",			// 67 Ks HM7 pPb SB Pos
-	"",			// 68 Ks HM0 pPb SB Pos reverse
-	"",			// 69 Ks HM1 pPb SB Pos reverse
-	"",			// 70 Ks HM2 pPb SB Pos reverse
-	"",			// 71 Ks HM3 pPb SB Pos reverse
-	"",			// 72 Ks HM4 pPb SB Pos reverse
-	"",			// 73 Ks HM5 pPb SB Pos reverse
-	"",			// 74 Ks HM6 pPb SB Pos reverse
-	"",			// 75 Ks HM7 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_KscumuSBPos_eff_reverse_v1/180201_155045/0000/",		// 68 Ks HM0 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBPos_eff_reverse_v1/180201_155059/0000/",		// 69 Ks HM1 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBPos_eff_reverse_v1/180201_155113/0000/",		// 70 Ks HM2 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBPos_eff_reverse_v1/180201_155127/0000/",		// 71 Ks HM3 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBPos_eff_reverse_v1/180201_155142/0000/",		// 72 Ks HM4 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBPos_eff_reverse_v1/180201_155200/0000/",		// 73 Ks HM5 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBPos_eff_reverse_v1/180201_155215/0000/",		// 74 Ks HM6 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_KscumuSBPos_eff_reverse_v1/180201_155231/0000/",		// 75 Ks HM7 pPb SB Pos reverse
 	"NA",			// 76 Ks HM0 pPb SB Pos merge
 	"NA",			// 77 Ks HM123456 pPb SB Pos merge
 	"NA",			// 78 Ks HM7 pPb SB Pos merge
@@ -98,6 +98,44 @@ char const * fname[] = {
 	"NA",			// 95 Lm HM0 pPb SB Pos merge
 	"NA",			// 96 Lm HM123456 pPb SB Pos merge
 	"NA",			// 97 Lm HM7 pPb SB Pos merge
+	"",			// 98  Ks HM0 pPb SB Neg
+	"",			// 99  Ks HM1 pPb SB Neg
+	"",			// 100 Ks HM2 pPb SB Neg
+	"",			// 101 Ks HM3 pPb SB Neg
+	"",			// 102 Ks HM4 pPb SB Neg
+	"",			// 103 Ks HM5 pPb SB Neg
+	"",			// 104 Ks HM6 pPb SB Neg
+	"",			// 105 Ks HM7 pPb SB Neg
+	"",			// 106 Ks HM0 pPb SB Neg reverse
+	"",			// 107 Ks HM1 pPb SB Neg reverse
+	"",			// 108 Ks HM2 pPb SB Neg reverse
+	"",			// 109 Ks HM3 pPb SB Neg reverse
+	"",			// 110 Ks HM4 pPb SB Neg reverse
+	"",			// 111 Ks HM5 pPb SB Neg reverse
+	"",			// 112 Ks HM6 pPb SB Neg reverse
+	"",			// 113 Ks HM7 pPb SB Neg reverse
+	"NA",			// 114 Ks HM0 pPb SB Neg merge
+	"NA",			// 115 Ks HM123456 pPb SB Neg merge
+	"NA",			// 116 Ks HM7 pPb SB Neg merge
+	"",			// 117 Hm HM0 pPb SB Neg
+	"",			// 118 Hm HM1 pPb SB Neg
+	"",			// 119 Hm HM2 pPb SB Neg
+	"",			// 120 Hm HM3 pPb SB Neg
+	"",			// 121 Hm HM4 pPb SB Neg
+	"",			// 122 Hm HM5 pPb SB Neg
+	"",			// 123 Hm HM6 pPb SB Neg
+	"",			// 124 Hm HM7 pPb SB Neg
+	"",			// 125 Hm HM0 pPb SB Neg reverse
+	"",			// 126 Hm HM1 pPb SB Neg reverse
+	"",			// 127 Hm HM2 pPb SB Neg reverse
+	"",			// 128 Hm HM3 pPb SB Neg reverse
+	"",			// 129 Hm HM4 pPb SB Neg reverse
+	"",			// 130 Hm HM5 pPb SB Neg reverse
+	"",			// 131 Hm HM6 pPb SB Neg reverse
+	"",			// 132 Hm HM7 pPb SB Neg reverse
+	"NA",			// 133 Hm HM0 pPb SB Neg merge
+	"NA",			// 134 Hm HM123456 pPb SB Neg merge
+	"NA",			// 135 Hm HM7 pPb SB Neg merge
 };
 
 char const * ftxt[] = {
@@ -199,6 +237,44 @@ char const * ftxt[] = {
 	"txt/PAHM0_LmSBPos_pPb_merge/",		// 95
 	"txt/PAHM123456_LmSBPos_pPb_merge/",	// 96
 	"txt/PAHM7_LmSBPos_pPb_merge/",		// 97
+	"txt/PAHM0_KsSBNeg_pPb/",		// 98
+	"txt/PAHM1_KsSBNeg_pPb/",		// 99
+	"txt/PAHM2_KsSBNeg_pPb/",		// 100
+	"txt/PAHM3_KsSBNeg_pPb/",		// 101
+	"txt/PAHM4_KsSBNeg_pPb/",		// 102
+	"txt/PAHM5_KsSBNeg_pPb/",		// 103
+	"txt/PAHM6_KsSBNeg_pPb/",		// 104
+	"txt/PAHM7_KsSBNeg_pPb/",		// 105
+	"txt/PAHM0_KsSBNeg_pPb_reverse/",	// 106
+	"txt/PAHM1_KsSBNeg_pPb_reverse/",	// 107
+	"txt/PAHM2_KsSBNeg_pPb_reverse/",	// 108
+	"txt/PAHM3_KsSBNeg_pPb_reverse/",	// 109
+	"txt/PAHM4_KsSBNeg_pPb_reverse/",	// 110
+	"txt/PAHM5_KsSBNeg_pPb_reverse/",	// 111
+	"txt/PAHM6_KsSBNeg_pPb_reverse/",	// 112
+	"txt/PAHM7_KsSBNeg_pPb_reverse/",	// 113
+	"txt/PAHM0_KsSBNeg_pPb_merge/",		// 114
+	"txt/PAHM123456_KsSBNeg_pPb_merge/",	// 115
+	"txt/PAHM7_KsSBNeg_pPb_merge/",		// 116
+	"txt/PAHM0_LmSBNeg_pPb/",		// 117
+	"txt/PAHM1_LmSBNeg_pPb/",		// 118
+	"txt/PAHM2_LmSBNeg_pPb/",		// 119
+	"txt/PAHM3_LmSBNeg_pPb/",		// 120
+	"txt/PAHM4_LmSBNeg_pPb/",		// 121
+	"txt/PAHM5_LmSBNeg_pPb/",		// 122
+	"txt/PAHM6_LmSBNeg_pPb/",		// 123
+	"txt/PAHM7_LmSBNeg_pPb/",		// 124
+	"txt/PAHM0_LmSBNeg_pPb_reverse/",	// 125
+	"txt/PAHM1_LmSBNeg_pPb_reverse/",	// 126
+	"txt/PAHM2_LmSBNeg_pPb_reverse/",	// 127
+	"txt/PAHM3_LmSBNeg_pPb_reverse/",	// 128
+	"txt/PAHM4_LmSBNeg_pPb_reverse/",	// 129
+	"txt/PAHM5_LmSBNeg_pPb_reverse/",	// 130
+	"txt/PAHM6_LmSBNeg_pPb_reverse/",	// 131
+	"txt/PAHM7_LmSBNeg_pPb_reverse/",	// 132
+	"txt/PAHM0_LmSBNeg_pPb_merge/",		// 133
+	"txt/PAHM123456_LmSBNeg_pPb_merge/",	// 134
+	"txt/PAHM7_LmSBNeg_pPb_merge/",		// 135
 };
 
 const int Pid_Non	= 0;
@@ -313,6 +389,44 @@ auto PID = std::vector<int>{
 	Pid_PA_Lambda,		// 95
 	Pid_PA_Lambda,		// 96
 	Pid_PA_Lambda,		// 97
+	Pid_PA_Ks,		// 98
+	Pid_PA_Ks,		// 99
+	Pid_PA_Ks,		// 100
+	Pid_PA_Ks,		// 101
+	Pid_PA_Ks,		// 102
+	Pid_PA_Ks,		// 103
+	Pid_PA_Ks,		// 104
+	Pid_PA_Ks,		// 105
+	Pid_PA_Ks,		// 106
+	Pid_PA_Ks,		// 107
+	Pid_PA_Ks,		// 108
+	Pid_PA_Ks,		// 109
+	Pid_PA_Ks,		// 110
+	Pid_PA_Ks,		// 111
+	Pid_PA_Ks,		// 112
+	Pid_PA_Ks,		// 113
+	Pid_PA_Ks,		// 114
+	Pid_PA_Ks,		// 115
+	Pid_PA_Ks,		// 116
+	Pid_PA_Lambda,		// 117
+	Pid_PA_Lambda,		// 118
+	Pid_PA_Lambda,		// 119
+	Pid_PA_Lambda,		// 120
+	Pid_PA_Lambda,		// 121
+	Pid_PA_Lambda,		// 122
+	Pid_PA_Lambda,		// 123
+	Pid_PA_Lambda,		// 124
+	Pid_PA_Lambda,		// 125
+	Pid_PA_Lambda,		// 126
+	Pid_PA_Lambda,		// 127
+	Pid_PA_Lambda,		// 128
+	Pid_PA_Lambda,		// 129
+	Pid_PA_Lambda,		// 130
+	Pid_PA_Lambda,		// 131
+	Pid_PA_Lambda,		// 132
+	Pid_PA_Lambda,		// 133
+	Pid_PA_Lambda,		// 134
+	Pid_PA_Lambda,		// 135
 };
 
 #include <TChain.h>
