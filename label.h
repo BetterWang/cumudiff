@@ -79,63 +79,63 @@ char const * fname[] = {
 	"NA",			// 76 Ks HM0 pPb SB Pos merge
 	"NA",			// 77 Ks HM123456 pPb SB Pos merge
 	"NA",			// 78 Ks HM7 pPb SB Pos merge
-	"",			// 79 Lm HM0 pPb SB Pos
-	"",			// 80 Lm HM1 pPb SB Pos
-	"",			// 81 Lm HM2 pPb SB Pos
-	"",			// 82 Lm HM3 pPb SB Pos
-	"",			// 83 Lm HM4 pPb SB Pos
-	"",			// 84 Lm HM5 pPb SB Pos
-	"",			// 85 Lm HM6 pPb SB Pos
-	"",			// 86 Lm HM7 pPb SB Pos
-	"",			// 87 Lm HM0 pPb SB Pos reverse
-	"",			// 88 Lm HM1 pPb SB Pos reverse
-	"",			// 89 Lm HM2 pPb SB Pos reverse
-	"",			// 90 Lm HM3 pPb SB Pos reverse
-	"",			// 91 Lm HM4 pPb SB Pos reverse
-	"",			// 92 Lm HM5 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_LambdaSBPos_cumu_eff_v1/180202_212701/0000/",			// 79 Lm HM0 pPb SB Pos
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBPos_cumu_eff_v1/180202_212726/0000/",			// 80 Lm HM1 pPb SB Pos
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBPos_cumu_eff_v1/180202_212753/0000/",			// 81 Lm HM2 pPb SB Pos
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBPos_cumu_eff_v1/180202_212817/0000/",			// 82 Lm HM3 pPb SB Pos
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBPos_cumu_eff_v1/180202_212842/0000/",			// 83 Lm HM4 pPb SB Pos
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBPos_cumu_eff_v1/180202_212907/0000/",			// 84 Lm HM5 pPb SB Pos
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_LambdaSBPos_cumu_eff_v1/180202_212933/0000/",			// 85 Lm HM6 pPb SB Pos
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_LambdaSBPos_cumu_eff_v1/180202_212958/0000/",			// 86 Lm HM7 pPb SB Pos
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_LambdaSBPos_cumu_eff_reverse_v1/180202_214945/0000/",		// 87 Lm HM0 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBPos_cumu_eff_reverse_v1/180202_215011/0000/",		// 88 Lm HM1 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBPos_cumu_eff_reverse_v1/180202_215036/0000/",		// 89 Lm HM2 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBPos_cumu_eff_reverse_v1/180202_215100/0000/",		// 90 Lm HM3 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBPos_cumu_eff_reverse_v1/180202_215125/0000/",		// 91 Lm HM4 pPb SB Pos reverse
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBPos_cumu_eff_reverse_v1/180202_215150/0000/",		// 92 Lm HM5 pPb SB Pos reverse
 	"",			// 93 Lm HM6 pPb SB Pos reverse
 	"",			// 94 Lm HM7 pPb SB Pos reverse
 	"NA",			// 95 Lm HM0 pPb SB Pos merge
 	"NA",			// 96 Lm HM123456 pPb SB Pos merge
 	"NA",			// 97 Lm HM7 pPb SB Pos merge
-	"",			// 98  Ks HM0 pPb SB Neg
-	"",			// 99  Ks HM1 pPb SB Neg
-	"",			// 100 Ks HM2 pPb SB Neg
-	"",			// 101 Ks HM3 pPb SB Neg
-	"",			// 102 Ks HM4 pPb SB Neg
-	"",			// 103 Ks HM5 pPb SB Neg
-	"",			// 104 Ks HM6 pPb SB Neg
-	"",			// 105 Ks HM7 pPb SB Neg
-	"",			// 106 Ks HM0 pPb SB Neg reverse
-	"",			// 107 Ks HM1 pPb SB Neg reverse
-	"",			// 108 Ks HM2 pPb SB Neg reverse
-	"",			// 109 Ks HM3 pPb SB Neg reverse
-	"",			// 110 Ks HM4 pPb SB Neg reverse
-	"",			// 111 Ks HM5 pPb SB Neg reverse
-	"",			// 112 Ks HM6 pPb SB Neg reverse
-	"",			// 113 Ks HM7 pPb SB Neg reverse
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_KscumuSBNeg_eff_v1/180202_155823/0000/",			// 98  Ks HM0 pPb SB Neg
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBNeg_eff_v1/180202_155835/0000/",			// 99  Ks HM1 pPb SB Neg
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBNeg_eff_v1/180202_155848/0000/",			// 100 Ks HM2 pPb SB Neg
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBNeg_eff_v1/180202_155900/0000/",			// 101 Ks HM3 pPb SB Neg
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBNeg_eff_v1/180202_155912/0000/",			// 102 Ks HM4 pPb SB Neg
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBNeg_eff_v1/180202_155925/0000/",			// 103 Ks HM5 pPb SB Neg
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBNeg_eff_v1/180202_155939/0000/",			// 104 Ks HM6 pPb SB Neg
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_KscumuSBNeg_eff_v1/180202_155953/0000/",			// 105 Ks HM7 pPb SB Neg
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_KscumuSBNeg_eff_reverse_v1/180202_164544/0000/",			// 106 Ks HM0 pPb SB Neg reverse
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBNeg_eff_reverse_v1/180202_164559/0000/",			// 107 Ks HM1 pPb SB Neg reverse
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBNeg_eff_reverse_v1/180202_164614/0000/",			// 108 Ks HM2 pPb SB Neg reverse
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBNeg_eff_reverse_v1/180202_164629/0000/",			// 109 Ks HM3 pPb SB Neg reverse
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBNeg_eff_reverse_v1/180202_164643/0000/",			// 110 Ks HM4 pPb SB Neg reverse
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBNeg_eff_reverse_v1/180202_164658/0000/",			// 111 Ks HM5 pPb SB Neg reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBNeg_eff_reverse_v1/180202_164711/0000/",			// 112 Ks HM6 pPb SB Neg reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_KscumuSBNeg_eff_reverse_v1/180202_164724/0000/",			// 113 Ks HM7 pPb SB Neg reverse
 	"NA",			// 114 Ks HM0 pPb SB Neg merge
 	"NA",			// 115 Ks HM123456 pPb SB Neg merge
 	"NA",			// 116 Ks HM7 pPb SB Neg merge
-	"",			// 117 Hm HM0 pPb SB Neg
-	"",			// 118 Hm HM1 pPb SB Neg
-	"",			// 119 Hm HM2 pPb SB Neg
-	"",			// 120 Hm HM3 pPb SB Neg
-	"",			// 121 Hm HM4 pPb SB Neg
-	"",			// 122 Hm HM5 pPb SB Neg
-	"",			// 123 Hm HM6 pPb SB Neg
-	"",			// 124 Hm HM7 pPb SB Neg
-	"",			// 125 Hm HM0 pPb SB Neg reverse
-	"",			// 126 Hm HM1 pPb SB Neg reverse
-	"",			// 127 Hm HM2 pPb SB Neg reverse
-	"",			// 128 Hm HM3 pPb SB Neg reverse
-	"",			// 129 Hm HM4 pPb SB Neg reverse
-	"",			// 130 Hm HM5 pPb SB Neg reverse
-	"",			// 131 Hm HM6 pPb SB Neg reverse
-	"",			// 132 Hm HM7 pPb SB Neg reverse
-	"NA",			// 133 Hm HM0 pPb SB Neg merge
-	"NA",			// 134 Hm HM123456 pPb SB Neg merge
-	"NA",			// 135 Hm HM7 pPb SB Neg merge
+	"",			// 117 Lm HM0 pPb SB Neg
+	"",			// 118 Lm HM1 pPb SB Neg
+	"",			// 119 Lm HM2 pPb SB Neg
+	"",			// 120 Lm HM3 pPb SB Neg
+	"",			// 121 Lm HM4 pPb SB Neg
+	"",			// 122 Lm HM5 pPb SB Neg
+	"",			// 123 Lm HM6 pPb SB Neg
+	"",			// 124 Lm HM7 pPb SB Neg
+	"",			// 125 Lm HM0 pPb SB Neg reverse
+	"",			// 126 Lm HM1 pPb SB Neg reverse
+	"",			// 127 Lm HM2 pPb SB Neg reverse
+	"",			// 128 Lm HM3 pPb SB Neg reverse
+	"",			// 129 Lm HM4 pPb SB Neg reverse
+	"",			// 130 Lm HM5 pPb SB Neg reverse
+	"",			// 131 Lm HM6 pPb SB Neg reverse
+	"",			// 132 Lm HM7 pPb SB Neg reverse
+	"NA",			// 133 Lm HM0 pPb SB Neg merge
+	"NA",			// 134 Lm HM123456 pPb SB Neg merge
+	"NA",			// 135 Lm HM7 pPb SB Neg merge
 };
 
 char const * ftxt[] = {
