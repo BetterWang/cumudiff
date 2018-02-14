@@ -1,6 +1,10 @@
 
-#./runGetE3.sh 1
-#./runGetE3.sh 4
-#./runGetE3.sh 7
-./runGetE3.sh 28
-#./runGetE3.sh 38
+#./runGetE3.sh 10
+#./runGetE3.sh 11
+#./runGetE3.sh 13
+#./runGetE3.sh 15
+#./runGetE3.sh 16
+./runGetE3.sh 17
+#./runGetE3.sh 18
+#./runGetE3.sh 58
+./runGetE3.sh 59

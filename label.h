@@ -136,6 +136,12 @@ char const * fname[] = {
 	"NA",			// 133 Lm HM0 pPb SB Neg merge
 	"NA",			// 134 Lm HM123456 pPb SB Neg merge
 	"NA",			// 135 Lm HM7 pPb SB Neg merge
+	"NA",			// 136 Ks HM0 pPb SB
+	"NA",			// 137 Ks HM123456 pPb SB
+	"NA",			// 138 Ks HM7 pPb SB
+	"NA",			// 139 Lm HM0 pPb SB
+	"NA",			// 140 Lm HM123456 pPb SB
+	"NA",			// 141 Lm HM7 pPb SB
 };
 
 char const * ftxt[] = {
@@ -275,6 +281,12 @@ char const * ftxt[] = {
 	"txt/PAHM0_LmSBNeg_pPb_merge/",		// 133
 	"txt/PAHM123456_LmSBNeg_pPb_merge/",	// 134
 	"txt/PAHM7_LmSBNeg_pPb_merge/",		// 135
+	"txt/PAHM0_KsSB/",			// 136
+	"txt/PAHM123456_KsSB/",			// 137
+	"txt/PAHM7_KsSB/",			// 138
+	"txt/PAHM0_LmSB/",			// 139
+	"txt/PAHM123456_LmSB/",			// 140
+	"txt/PAHM7_LmSB/",			// 141
 };
 
 const int Pid_Non	= 0;
@@ -427,6 +439,12 @@ auto PID = std::vector<int>{
 	Pid_PA_Lambda,		// 133
 	Pid_PA_Lambda,		// 134
 	Pid_PA_Lambda,		// 135
+	Pid_PA_Ks,		// 136
+	Pid_PA_Ks,		// 137
+	Pid_PA_Ks,		// 138
+	Pid_PA_Lambda,		// 139
+	Pid_PA_Lambda,		// 140
+	Pid_PA_Lambda,		// 141
 };
 
 #include <TChain.h>
