@@ -48,12 +48,12 @@ char const * fname[] = {
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_Lambda_cumu_eff_reverse_v11/180119_195852/0000/",	// 45 Lambda HM4 pPb reverse
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_Lambda_cumu_eff_reverse_v11/180119_195916/0000/",	// 46 Lambda HM5 pPb reverse
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_Lambda_cumu_eff_reverse_v11/180119_195941/0000/",	// 47 Lambda HM6 pPb reverse
-	"../cumu/HIMinimumBias5/crab_HIMB5_Kscumu_eff_v2/170711_170943/0000/",				// 48 Ks HIMB5
-	"../cumu/HIMinimumBias6/crab_HIMB6_Kscumu_eff_v2/170711_171005/0000/",				// 49 Ks HIMB6
-	"../cumu/HIMinimumBias7/crab_HIMB7_Kscumu_eff_v2/170711_171025/0000/",				// 50 Ks HIMB7
-	"../cumu/HIMinimumBias5/crab_HIMB5_Lambda_cumu_eff_v2/170711_171101/0000/",			// 51 Lambda HIMB5
-	"../cumu/HIMinimumBias6/crab_HIMB6_Lambda_cumu_eff_v2/170711_171126/0000/",			// 52 Lambda HIMB5
-	"../cumu/HIMinimumBias7/crab_HIMB7_Lambda_cumu_eff_v2/170711_171150/0000/",			// 53 Lambda HIMB5
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_Ks_rapidity_v1/180221_184238/0000/",	// 48 Ks HIMB5
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_Ks_rapidity_v1/180221_184252/0000/",	// 49 Ks HIMB6
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_Ks_rapidity_v1/180221_184306/0000/",	// 50 Ks HIMB7
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_Lm_rapidity_v1/180221_190620/0000/",	// 51 Lambda HIMB5
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_Lm_rapidity_v1/180221_190635/0000/",	// 52 Lambda HIMB6
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_Lm_rapidity_v1/180221_190651/0000/",	// 53 Lambda HIMB7
 	"NA",			// 54 Ks merged HIMB567
 	"NA",			// 55 Lambda merged HIMB567
 	"NA",			// 56 Ks HM123456 pPb
@@ -142,6 +142,24 @@ char const * fname[] = {
 	"NA",			// 139 Lm HM0 pPb SB
 	"NA",			// 140 Lm HM123456 pPb SB
 	"NA",			// 141 Lm HM7 pPb SB
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_KsSBPos_rapidity_v1/180225_201523/0000/",		// 142 Ks HIMB5 PbPb SBPos
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_KsSBPos_rapidity_v1/180225_201536/0000/",		// 143 Ks HIMB6 PbPb SBPos
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_KsSBPos_rapidity_v1/180225_201549/0000/",		// 144 Ks HIMB7 PbPb SBPos
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_KsSBNeg_rapidity_v1/180225_212842/0000/",		// 145 Ks HIMB5 PbPb SBNeg
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_KsSBNeg_rapidity_v1/180225_212855/0000/",		// 146 Ks HIMB6 PbPb SBNeg
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_KsSBNeg_rapidity_v1/180225_212908/0000/",		// 147 Ks HIMB7 PbPb SBNeg
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_LmSBPos_rapidity_v1/180226_051608/0000/",		// 148 Lm HIMB5 PbPb SBPos
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_LmSBPos_rapidity_v1/180226_051623/0000/",		// 149 Lm HIMB6 PbPb SBPos
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_LmSBPos_rapidity_v1/180226_051642/0000/",		// 150 Lm HIMB7 PbPb SBPos
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_LmSBNeg_rapidity_v1/180226_051706/0000/",		// 151 Lm HIMB5 PbPb SBNeg
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_LmSBNeg_rapidity_v1/180226_051719/0000/",		// 152 Lm HIMB6 PbPb SBNeg
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_LmSBNeg_rapidity_v1/180226_051733/0000/",		// 153 Lm HIMB7 PbPb SBNeg
+	"NA",			// 154 Ks HIMB567 PbPb SBPos
+	"NA",			// 155 Ks HIMB567 PbPb SBNeg
+	"NA",			// 156 Ks HIMB567 PbPb SB
+	"NA",			// 157 Lm HIMB567 PbPb SBPos
+	"NA",			// 158 Lm HIMB567 PbPb SBNeg
+	"NA",			// 159 Lm HIMB567 PbPb SB
 };
 
 char const * ftxt[] = {
@@ -287,6 +305,24 @@ char const * ftxt[] = {
 	"txt/PAHM0_LmSB/",			// 139
 	"txt/PAHM123456_LmSB/",			// 140
 	"txt/PAHM7_LmSB/",			// 141
+	"txt/PbPb5_Ks_SBPos/",			// 142
+	"txt/PbPb6_Ks_SBPos/",			// 143
+	"txt/PbPb7_Ks_SBPos/",			// 144
+	"txt/PbPb5_Ks_SBNeg/",			// 145
+	"txt/PbPb6_Ks_SBNeg/",			// 146
+	"txt/PbPb7_Ks_SBNeg/",			// 147
+	"txt/PbPb5_Lm_SBPos/",			// 148
+	"txt/PbPb6_Lm_SBPos/",			// 149
+	"txt/PbPb7_Lm_SBPos/",			// 150
+	"txt/PbPb5_Lm_SBNeg/",			// 151
+	"txt/PbPb6_Lm_SBNeg/",			// 152
+	"txt/PbPb7_Lm_SBNeg/",			// 153
+	"txt/PbPb567_Ks_SBPos/",		// 154
+	"txt/PbPb567_Ks_SBNeg/",		// 155
+	"txt/PbPb567_Ks_SB/",			// 156
+	"txt/PbPb567_Lm_SBPos/",		// 157
+	"txt/PbPb567_Lm_SBNeg/",		// 158
+	"txt/PbPb567_Lm_SB/",			// 159
 };
 
 const int Pid_Non	= 0;
@@ -445,6 +481,24 @@ auto PID = std::vector<int>{
 	Pid_PA_Lambda,		// 139
 	Pid_PA_Lambda,		// 140
 	Pid_PA_Lambda,		// 141
+	Pid_AA_Ks,		// 142
+	Pid_AA_Ks,		// 143
+	Pid_AA_Ks,		// 144
+	Pid_AA_Ks,		// 145
+	Pid_AA_Ks,		// 146
+	Pid_AA_Ks,		// 147
+	Pid_AA_Lambda,		// 148
+	Pid_AA_Lambda,		// 149
+	Pid_AA_Lambda,		// 150
+	Pid_AA_Lambda,		// 151
+	Pid_AA_Lambda,		// 152
+	Pid_AA_Lambda,		// 153
+	Pid_AA_Ks,		// 154
+	Pid_AA_Ks,		// 155
+	Pid_AA_Ks,		// 156
+	Pid_AA_Lambda,		// 157
+	Pid_AA_Lambda,		// 158
+	Pid_AA_Lambda,		// 159
 };
 
 #include <TChain.h>
