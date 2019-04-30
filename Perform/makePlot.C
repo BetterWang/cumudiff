@@ -26,7 +26,7 @@ makePlot()
 	TFile * ftest1 = new TFile( (string("../txt/PbPb2018v2_Perform/Lm_rap")+s+"_test1.root").c_str() );
 	TFile * ftest2 = new TFile( (string("../txt/PbPb2018v2_Perform/Lm_rap")+s+"_test2.root").c_str() );
 	TFile * ftest3 = new TFile( (string("../txt/PbPb2018v2_Perform/Lm_rap")+s+"_test3.root").c_str() );
-	TFile * ftest4 = new TFile( (string("../txt/PbPb2018v2_Perform/Lm_rap")+s+"_test41.root").c_str() );
+	TFile * ftest4 = new TFile( (string("../txt/PbPb2018v2_Perform/Lm_rap")+s+"_test4.root").c_str() );
 	TFile * ftest5 = new TFile( (string("../txt/PbPb2018v2_Perform/Lm_rap")+s+"_test5.root").c_str() );
 	TFile * ftest6 = new TFile( (string("../txt/PbPb2018v2_Perform/Lm_rap")+s+"_test6.root").c_str() );
 	TFile * ftest7 = new TFile( (string("../txt/PbPb2018v2_Perform/Lm_rap")+s+"_test7.root").c_str() );
@@ -49,28 +49,28 @@ makePlot()
 	GetHist( htest3, ftest3, kGreen+2, bNorm );
 	GetHist( htest4, ftest4, kCyan,    bNorm );
 	GetHist( htest5, ftest5, kMagenta, bNorm );
-	GetHist( htest6, ftest6, kViolet,  bNorm );
-	GetHist( htest7, ftest7, kBlue,    bNorm );
-	GetHist( htest8, ftest8, kRed,     bNorm );
+	GetHist( htest6, ftest6, kRed,     bNorm );
+	GetHist( htest7, ftest7, kGreen,   bNorm );
+	GetHist( htest8, ftest8, kBlue,     bNorm );
 	GetHist( htight, ftight, kOrange,  bNorm );
 
 	TCanvas * c1 = new TCanvas("c1", "c1", 800, 600);
 	for ( int c = 0; c < 5; c++ ) {
 		for ( int ipt = 0; ipt < 13; ipt++ ) {
-			//hstd.hMass[ipt][c]  ->Draw("hist");
+//			hstd.hMass[ipt][c]  ->Draw("hist");
 			htight.hMass[ipt][c]->Draw("hist");
 //			htight.hMass[ipt][c]->Draw("histsame");
-			hstd.hMass[ipt][c]  ->Draw("histsame");
-//			htest1.hMass[ipt][c]->Draw("histsame");
-			htest2.hMass[ipt][c]->Draw("histsame");
-//			htest3.hMass[ipt][c]->Draw("histsame");
-//			htest4.hMass[ipt][c]->Draw("histsame");
-//			htest5.hMass[ipt][c]->Draw("histsame");
-			htest6.hMass[ipt][c]->Draw("histsame");
-			htest7.hMass[ipt][c]->Draw("histsame");
-			htest8.hMass[ipt][c]->Draw("histsame");
+			hstd.hMass[ipt][c]  ->Draw("histsame plc pmc");
+			htest1.hMass[ipt][c]->Draw("histsame plc pmc");
+			htest2.hMass[ipt][c]->Draw("histsame plc pmc");
+			htest3.hMass[ipt][c]->Draw("histsame plc pmc");
+			htest4.hMass[ipt][c]->Draw("histsame plc pmc");
+			htest5.hMass[ipt][c]->Draw("histsame plc pmc");
+			htest6.hMass[ipt][c]->Draw("histsame plc pmc");
+			htest7.hMass[ipt][c]->Draw("histsame plc pmc");
+			htest8.hMass[ipt][c]->Draw("histsame plc pmc");
 
-			c1->SaveAs(Form("hMassTest%s_%i_%i.pdf", s.c_str(), ipt, c));
+			c1->SaveAs(Form("hMassTest%s_%s_%i_%i.pdf", s.c_str(), bNorm?"Norm":"", ipt, c));
 		}
 	}
 
