@@ -14,6 +14,9 @@ void V0tuneA(string finput = "MB1",
 		double vtxChi2Min = 0, double vtxChi2Max = 99, // vtxChi2 0.-7.
 		double LxyzMin = 0, double LxyzMax = 9999999, // Lxyz 0. - 200.
 		double DCAMin = 0, double DCAMax = 99, // DCA 0. - 1.
+        bool highPurity = false, // track highPurity?
+        double pTerrMin = 0.0, double pTerrMax = 99999.0, // track pterror / pt  < pTerr
+        int NHitsMin = 0, int NHitsMax = 99999, // track NHits < NHits
 		double massMin = 1.08, double massMax = 1.16
 		)
 {
@@ -22,6 +25,14 @@ void V0tuneA(string finput = "MB1",
 		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Tree_v1/190218_180553/0000/*.root/treeLm/trV");
 		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Tree_v1/190218_180553/0001/*.root/treeLm/trV");
 	}
+	if ( finput == "MB1v2" ) {
+		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_LmTree_v2/190225_190655/0000/*.root/treeLm/trV");
+		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_LmTree_v2/190225_190655/0001/*.root/treeLm/trV");
+    }
+	if ( finput == "MB1v3" ) {
+		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_LmTree_v3/190311_191253/0000/*.root/treeLm/trV");
+		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_LmTree_v3/190311_191253/0001/*.root/treeLm/trV");
+    }
 	trV->SetMakeClass(1);
 
 	vector<double>  *pt = 0;
@@ -36,6 +47,22 @@ void V0tuneA(string finput = "MB1",
 	vector<double>  *DCA = 0;
 	Double_t        Cent = -1;
 
+	vector<double>  *pdgId = 0;
+
+	vector<double>  *pTrkQuality = 0;
+	vector<double>  *pTrkNHit = 0;
+	vector<double>  *pTrkPt = 0;
+	vector<double>  *pTrkPtError = 0;
+	vector<double>  *pTrkEta = 0;
+	vector<double>  *pTrkNPxLayer = 0;
+
+	vector<double>  *nTrkQuality = 0;
+	vector<double>  *nTrkNHit = 0;
+	vector<double>  *nTrkPt = 0;
+	vector<double>  *nTrkPtError = 0;
+	vector<double>  *nTrkEta = 0;
+	vector<double>  *nTrkNPxLayer = 0;
+
 	// List of branches
 	TBranch        *b_pt;   //!
 	TBranch        *b_phi;   //!
@@ -49,6 +76,21 @@ void V0tuneA(string finput = "MB1",
 	TBranch        *b_DCA;   //!
 	TBranch        *b_Cent;   //!
 
+	TBranch        *b_pdgId;   //!
+
+	TBranch        *b_pTrkQuality;   //!
+	TBranch        *b_pTrkNHit;   //!
+	TBranch        *b_pTrkPt;   //!
+	TBranch        *b_pTrkPtError;   //!
+	TBranch        *b_pTrkEta;   //!
+	TBranch        *b_pTrkNPxLayer;   //!
+
+	TBranch        *b_nTrkQuality;   //!
+	TBranch        *b_nTrkNHit;   //!
+	TBranch        *b_nTrkPt;   //!
+	TBranch        *b_nTrkPtError;   //!
+	TBranch        *b_nTrkEta;   //!
+	TBranch        *b_nTrkNPxLayer;   //!
 
 	trV->SetBranchAddress("pt", &pt, &b_pt);
 	trV->SetBranchAddress("phi", &phi, &b_phi);
@@ -62,8 +104,24 @@ void V0tuneA(string finput = "MB1",
 	trV->SetBranchAddress("DCA", &DCA, &b_DCA);
 	trV->SetBranchAddress("Cent", &Cent, &b_Cent);
 
-// pt                              0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12
-	double pTbin[14] = {0.2, 0.4, 0.6, 0.8, 1.0, 1.4, 1.8, 2.2, 2.8, 3.6, 4.6, 6.0, 7.0, 8.5};
+	trV->SetBranchAddress("pdgId",  &pdgId,  &b_pdgId);
+
+	trV->SetBranchAddress("pTrkQuality",  &pTrkQuality,  &b_pTrkQuality);
+	trV->SetBranchAddress("pTrkNHit",     &pTrkNHit,     &b_pTrkNHit);
+	trV->SetBranchAddress("pTrkPt",       &pTrkPt,       &b_pTrkPt);
+	trV->SetBranchAddress("pTrkPtError",  &pTrkPtError,  &b_pTrkPtError);
+	trV->SetBranchAddress("pTrkEta",      &pTrkEta,      &b_pTrkEta);
+	trV->SetBranchAddress("pTrkNPxLayer", &pTrkNPxLayer, &b_pTrkNPxLayer);
+
+	trV->SetBranchAddress("nTrkQuality",  &nTrkQuality,  &b_nTrkQuality);
+	trV->SetBranchAddress("nTrkNHit",     &nTrkNHit,     &b_nTrkNHit);
+	trV->SetBranchAddress("nTrkPt",       &nTrkPt,       &b_nTrkPt);
+	trV->SetBranchAddress("nTrkPtError",  &nTrkPtError,  &b_nTrkPtError);
+	trV->SetBranchAddress("nTrkEta",      &nTrkEta,      &b_nTrkEta);
+	trV->SetBranchAddress("nTrkNPxLayer", &nTrkNPxLayer, &b_nTrkNPxLayer);
+
+// pt                          0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12
+    double pTbin[14] = {0.2, 0.4, 0.6, 0.8, 1.0, 1.4, 1.8, 2.2, 2.8, 3.6, 4.6, 6.0, 7.0, 8.5};
 
 // cent                       0,  1,   2,   3,   4
 	int centBin[6] = {0, 20, 60, 100, 160, 200};
@@ -97,6 +155,17 @@ void V0tuneA(string finput = "MB1",
 			if ( (*vtxChi2)[i] < vtxChi2Min or (*vtxChi2)[i] > vtxChi2Max ) continue;
 			if ( (*Lxyz)[i] < LxyzMin or (*Lxyz)[i] > LxyzMax ) continue;
 			if ( (*DCA)[i] < DCAMin or (*DCA)[i] > DCAMax ) continue;
+
+            if ( highPurity ) {
+                // highPurity = 1<<2
+                if ( !(int((*pTrkQuality)[i]) & 4) or !(int((*nTrkQuality)[i]) & 4) ) continue;
+            }
+
+            if ( ((*pTrkNHit)[i] < NHitsMin) or ((*nTrkNHit)[i] < NHitsMin) or
+                 ((*pTrkNHit)[i] > NHitsMax) or ((*nTrkNHit)[i] > NHitsMax) ) continue;
+
+            if ( ((*pTrkPtError)[i]/(*pTrkPt)[i] > pTerrMax) or ((*pTrkPtError)[i]/(*pTrkPt)[i] < pTerrMin) or
+                 ((*nTrkPtError)[i]/(*nTrkPt)[i] > pTerrMax) or ((*nTrkPtError)[i]/(*nTrkPt)[i] < pTerrMin) ) continue;
 
 			hMass[ipt][c]->Fill((*mass)[i]);
 		}
