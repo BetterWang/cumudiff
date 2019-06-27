@@ -29,15 +29,23 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 	double rVQp[7][4][24];
 	double wVQp[7][4][24];
 
-    double rQpos = 0;
-    double wQpos = 0;
-    double rVpQpos[24] = {};
-    double wVpQpos[24] = {};
+    double rQpos2 = 0;
+    double wQpos2 = 0;
+    double rVpQpos2[24] = {};
+    double wVpQpos2[24] = {};
+    double rQpos4 = 0;
+    double wQpos4 = 0;
+    double rVpQpos4[24] = {};
+    double wVpQpos4[24] = {};
 
-    double rQneg = 0;
-    double wQneg = 0;
-    double rVpQneg[24] = {};
-    double wVpQneg[24] = {};
+    double rQneg2 = 0;
+    double wQneg2 = 0;
+    double rVpQneg2[24] = {};
+    double wVpQneg2[24] = {};
+    double rQneg4 = 0;
+    double wQneg4 = 0;
+    double rVpQneg4[24] = {};
+    double wVpQneg4[24] = {};
 
     chV->SetBranchAddress("Noff", &gNoff);
     chV->SetBranchAddress("Mult", &gMult);
@@ -63,15 +71,23 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 		chV->SetBranchAddress( Form("wVQp%i%i", n, 2+2*np), &wVQp[n][np]);
 	}
 
-    chV->SetBranchAddress("rQpos", &rQpos);
-    chV->SetBranchAddress("wQpos", &wQpos);
-    chV->SetBranchAddress("rVpQpos", rVpQpos);
-    chV->SetBranchAddress("wVpQpos", wVpQpos);
+    chV->SetBranchAddress("rQpos2", &rQpos2);
+    chV->SetBranchAddress("wQpos2", &wQpos2);
+    chV->SetBranchAddress("rVpQpos2", rVpQpos2);
+    chV->SetBranchAddress("wVpQpos2", wVpQpos2);
+    chV->SetBranchAddress("rQpos4", &rQpos4);
+    chV->SetBranchAddress("wQpos4", &wQpos4);
+    chV->SetBranchAddress("rVpQpos4", rVpQpos4);
+    chV->SetBranchAddress("wVpQpos4", wVpQpos4);
 
-    chV->SetBranchAddress("rQneg", &rQneg);
-    chV->SetBranchAddress("wQneg", &wQneg);
-    chV->SetBranchAddress("rVpQneg", rVpQneg);
-    chV->SetBranchAddress("wVpQneg", wVpQneg);
+    chV->SetBranchAddress("rQneg2", &rQneg2);
+    chV->SetBranchAddress("wQneg2", &wQneg2);
+    chV->SetBranchAddress("rVpQneg2", rVpQneg2);
+    chV->SetBranchAddress("wVpQneg2", wVpQneg2);
+    chV->SetBranchAddress("rQneg4", &rQneg4);
+    chV->SetBranchAddress("wQneg4", &wQneg4);
+    chV->SetBranchAddress("rVpQneg4", rVpQneg4);
+    chV->SetBranchAddress("wVpQneg4", wVpQneg4);
 
 	TH1D * hMult = new TH1D("hMult", "hMult", 1000, -0.5, 999.5);
 	TH1D * hNoff = new TH1D("hNoff", "hNoff", 1000, -0.5, 999.5);
@@ -112,21 +128,34 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 		}
 	}
 
-    TH1D * hQpos = new TH1D("hQpos", "", 600, 0, 600);
-    TH1D * hQneg = new TH1D("hQneg", "", 600, 0, 600);
-    TH1D * hwQpos = new TH1D("hwQpos", "", 600, 0, 600);
-    TH1D * hwQneg = new TH1D("hwQneg", "", 600, 0, 600);
+    TH1D * hQpos2 = new TH1D("hQpos2", "", 600, 0, 600);
+    TH1D * hQneg2 = new TH1D("hQneg2", "", 600, 0, 600);
+    TH1D * hwQpos2 = new TH1D("hwQpos2", "", 600, 0, 600);
+    TH1D * hwQneg2 = new TH1D("hwQneg2", "", 600, 0, 600);
+    TH1D * hQpos4 = new TH1D("hQpos4", "", 600, 0, 600);
+    TH1D * hQneg4 = new TH1D("hQneg4", "", 600, 0, 600);
+    TH1D * hwQpos4 = new TH1D("hwQpos4", "", 600, 0, 600);
+    TH1D * hwQneg4 = new TH1D("hwQneg4", "", 600, 0, 600);
 
-    TH1D * hVpQpos[24] = {};
-    TH1D * hVpQneg[24] = {};
-    TH1D * hwVpQpos[24] = {};
-    TH1D * hwVpQneg[24] = {};
+    TH1D * hVpQpos2[24] = {};
+    TH1D * hVpQneg2[24] = {};
+    TH1D * hwVpQpos2[24] = {};
+    TH1D * hwVpQneg2[24] = {};
+    TH1D * hVpQpos4[24] = {};
+    TH1D * hVpQneg4[24] = {};
+    TH1D * hwVpQpos4[24] = {};
+    TH1D * hwVpQneg4[24] = {};
 
     for ( int i = 0; i < 24; i++ ) {
-        hVpQpos[i] = new TH1D(Form("hVpQpos%i", i), "", 600, 0, 600);
-        hVpQneg[i] = new TH1D(Form("hVpQneg%i", i), "", 600, 0, 600);
-        hwVpQpos[i] = new TH1D(Form("hwVpQpos%i", i), "", 600, 0, 600);
-        hwVpQneg[i] = new TH1D(Form("hwVpQneg%i", i), "", 600, 0, 600);
+        hVpQpos2[i] = new TH1D(Form("hVpQpos2%i", i), "", 600, 0, 600);
+        hVpQneg2[i] = new TH1D(Form("hVpQneg2%i", i), "", 600, 0, 600);
+        hwVpQpos2[i] = new TH1D(Form("hwVpQpos2%i", i), "", 600, 0, 600);
+        hwVpQneg2[i] = new TH1D(Form("hwVpQneg2%i", i), "", 600, 0, 600);
+
+        hVpQpos4[i] = new TH1D(Form("hVpQpos4%i", i), "", 600, 0, 600);
+        hVpQneg4[i] = new TH1D(Form("hVpQneg4%i", i), "", 600, 0, 600);
+        hwVpQpos4[i] = new TH1D(Form("hwVpQpos4%i", i), "", 600, 0, 600);
+        hwVpQneg4[i] = new TH1D(Form("hwVpQneg4%i", i), "", 600, 0, 600);
     }
 
 
@@ -144,15 +173,23 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 	double dQpGap[7][24][600] = {};
 	double yQpGap[7][24][600] = {};
 
-    double dQpos[600] = {};
-    double yQpos[600] = {};
-    double dQneg[600] = {};
-    double yQneg[600] = {};
+    double dQpos2[600] = {};
+    double yQpos2[600] = {};
+    double dQneg2[600] = {};
+    double yQneg2[600] = {};
+    double dQpos4[600] = {};
+    double yQpos4[600] = {};
+    double dQneg4[600] = {};
+    double yQneg4[600] = {};
 
-    double dVpQpos[24][600] = {};
-    double yVpQpos[24][600] = {};
-    double dVpQneg[24][600] = {};
-    double yVpQneg[24][600] = {};
+    double dVpQpos2[24][600] = {};
+    double yVpQpos2[24][600] = {};
+    double dVpQneg2[24][600] = {};
+    double yVpQneg2[24][600] = {};
+    double dVpQpos4[24][600] = {};
+    double yVpQpos4[24][600] = {};
+    double dVpQneg4[24][600] = {};
+    double yVpQneg4[24][600] = {};
 
 	unsigned int ievt = 0;
 	if ( s2 != s3 ) ievt = s2;
@@ -199,15 +236,24 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 			}
 		}
 
-        dQpos[gNoff] += rQpos;
-        yQpos[gNoff] += wQpos;
-        dQneg[gNoff] += rQneg;
-        yQneg[gNoff] += wQneg;
+        dQpos2[gNoff] += rQpos2;
+        yQpos2[gNoff] += wQpos2;
+        dQneg2[gNoff] += rQneg2;
+        yQneg2[gNoff] += wQneg2;
+        dQpos4[gNoff] += rQpos4;
+        yQpos4[gNoff] += wQpos4;
+        dQneg4[gNoff] += rQneg4;
+        yQneg4[gNoff] += wQneg4;
         for ( int i = 0; i < 24; i++ ) {
-            dVpQpos[i][gNoff] += rVpQpos[i];
-            yVpQpos[i][gNoff] += wVpQpos[i];
-            dVpQneg[i][gNoff] += rVpQneg[i];
-            yVpQneg[i][gNoff] += wVpQneg[i];
+            dVpQpos2[i][gNoff] += rVpQpos2[i];
+            yVpQpos2[i][gNoff] += wVpQpos2[i];
+            dVpQneg2[i][gNoff] += rVpQneg2[i];
+            yVpQneg2[i][gNoff] += wVpQneg2[i];
+
+            dVpQpos4[i][gNoff] += rVpQpos4[i];
+            yVpQpos4[i][gNoff] += wVpQpos4[i];
+            dVpQneg4[i][gNoff] += rVpQneg4[i];
+            yVpQneg4[i][gNoff] += wVpQneg4[i];
         }
 
 		hNoff->Fill(gNoff);
@@ -241,17 +287,26 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 	}
 
     for ( int c = 0; c < 600; c++ ) {
-        hQpos->SetBinContent( c+1, dQpos[c] );
-        hQneg->SetBinContent( c+1, dQneg[c] );
+        hQpos2->SetBinContent( c+1, dQpos2[c] );
+        hQneg2->SetBinContent( c+1, dQneg2[c] );
+        hQpos4->SetBinContent( c+1, dQpos4[c] );
+        hQneg4->SetBinContent( c+1, dQneg4[c] );
 
-        hwQpos->SetBinContent( c+1, yQpos[c] );
-        hwQneg->SetBinContent( c+1, yQneg[c] );
+        hwQpos2->SetBinContent( c+1, yQpos2[c] );
+        hwQneg2->SetBinContent( c+1, yQneg2[c] );
+        hwQpos4->SetBinContent( c+1, yQpos4[c] );
+        hwQneg4->SetBinContent( c+1, yQneg4[c] );
 
         for ( int i = 0; i < 24; i++ ) {
-            hVpQpos[i]->SetBinContent( c+1, dVpQpos[i][c] );
-            hVpQneg[i]->SetBinContent( c+1, dVpQneg[i][c] );
-            hwVpQpos[i]->SetBinContent( c+1, yVpQpos[i][c] );
-            hwVpQneg[i]->SetBinContent( c+1, yVpQneg[i][c] );
+            hVpQpos2[i]->SetBinContent( c+1, dVpQpos2[i][c] );
+            hVpQneg2[i]->SetBinContent( c+1, dVpQneg2[i][c] );
+            hVpQpos4[i]->SetBinContent( c+1, dVpQpos4[i][c] );
+            hVpQneg4[i]->SetBinContent( c+1, dVpQneg4[i][c] );
+
+            hwVpQpos2[i]->SetBinContent( c+1, yVpQpos2[i][c] );
+            hwVpQneg2[i]->SetBinContent( c+1, yVpQneg2[i][c] );
+            hwVpQpos4[i]->SetBinContent( c+1, yVpQpos4[i][c] );
+            hwVpQneg4[i]->SetBinContent( c+1, yVpQneg4[i][c] );
         }
     }
 
@@ -275,15 +330,24 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 			hQpwGap[n][i]->Write();
 		}
 	}
-    hQpos->Write();
-    hQneg->Write();
-    hwQpos->Write();
-    hwQneg->Write();
+    hQpos2->Write();
+    hQneg2->Write();
+    hwQpos2->Write();
+    hwQneg2->Write();
+    hQpos4->Write();
+    hQneg4->Write();
+    hwQpos4->Write();
+    hwQneg4->Write();
     for ( int i = 0; i < 24; i++ ) {
-        hVpQpos[i]->Write();
-        hVpQneg[i]->Write();
-        hwVpQpos[i]->Write();
-        hwVpQneg[i]->Write();
+        hVpQpos2[i]->Write();
+        hVpQneg2[i]->Write();
+        hVpQpos4[i]->Write();
+        hVpQneg4[i]->Write();
+
+        hwVpQpos2[i]->Write();
+        hwVpQneg2[i]->Write();
+        hwVpQpos4[i]->Write();
+        hwVpQneg4[i]->Write();
     }
 
 	hNoff->Write();
