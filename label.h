@@ -160,6 +160,14 @@ char const * fname[] = {
 	"NA",			// 157 Lm HIMB567 PbPb SBPos
 	"NA",			// 158 Lm HIMB567 PbPb SBNeg
 	"NA",			// 159 Lm HIMB567 PbPb SB
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_Ks_rapidity_Cent_v3/190627_024854/0000/",		// 160 Ks HIMB5 Cent
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_Ks_rapidity_Cent_v3/190627_024914/0000/",		// 161 Ks HIMB6 Cent
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_Ks_rapidity_Cent_v3/190627_024934/0000/",		// 162 Ks HIMB7 Cent
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_Lm_rapidity_Cent_v3/190627_030056/0000/",		// 163 Lm HIMB5 Cent
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_Lm_rapidity_Cent_v3/190627_030117/0000/",		// 164 Lm HIMB6 Cent
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_Lm_rapidity_Cent_v3/190627_030138/0000/",		// 165 Lm HIMB7 Cent
+	"NA",		// 166 Ks HIMB567 Cent
+	"NA",		// 167 Lm HIMB567 Cent
 };
 
 char const * ftxt[] = {
@@ -323,6 +331,14 @@ char const * ftxt[] = {
 	"txt/PbPb567_Lm_SBPos/",		// 157
 	"txt/PbPb567_Lm_SBNeg/",		// 158
 	"txt/PbPb567_Lm_SB/",			// 159
+	"txt/PbPb5_Ks_Cent/",			// 160
+	"txt/PbPb6_Ks_Cent/",			// 161
+	"txt/PbPb7_Ks_Cent/",			// 162
+	"txt/PbPb5_Lm_Cent/",			// 163
+	"txt/PbPb6_Lm_Cent/",			// 164
+	"txt/PbPb7_Lm_Cent/",			// 165
+	"txt/PbPb567_Ks_Cent/",			// 166
+	"txt/PbPb567_Lm_Cent/",			// 167
 };
 
 const int Pid_Non	= 0;
@@ -499,6 +515,14 @@ auto PID = std::vector<int>{
 	Pid_AA_Lambda,		// 157
 	Pid_AA_Lambda,		// 158
 	Pid_AA_Lambda,		// 159
+	Pid_AA_Ks,		    // 160
+	Pid_AA_Ks,		    // 161
+	Pid_AA_Ks,		    // 162
+	Pid_AA_Lambda,		// 163
+	Pid_AA_Lambda,		// 164
+	Pid_AA_Lambda,		// 165
+	Pid_AA_Ks,		    // 166
+	Pid_AA_Lambda,		// 167
 };
 
 #include <TChain.h>
