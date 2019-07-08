@@ -168,6 +168,20 @@ char const * fname[] = {
 	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_Lm_rapidity_Cent_v3/190627_030138/0000/",		// 165 Lm HIMB7 Cent
 	"NA",		// 166 Ks HIMB567 Cent
 	"NA",		// 167 Lm HIMB567 Cent
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_KsSBPos_rapidity_Cent_v3/190702_032506/0000/",		// 168 Ks HIMB5 Cent SBPos
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_KsSBPos_rapidity_Cent_v3/190702_032527/0000/",		// 169 Ks HIMB6 Cent SBPos
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_KsSBPos_rapidity_Cent_v3/190702_032546/0000/",		// 170 Ks HIMB7 Cent SBPos
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_KsSBNeg_rapidity_Cent_v3/190702_032922/0000/",		// 171 Ks HIMB5 Cent SBNeg
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_KsSBNeg_rapidity_Cent_v3/190702_032941/0000/",		// 172 Ks HIMB6 Cent SBNeg
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_KsSBNeg_rapidity_Cent_v3/190702_033000/0000/",		// 173 Ks HIMB7 Cent SBNeg
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_LmSBPos_rapidity_Cent_v3/190702_033704/0000/",		// 174 Lm HIMB5 Cent SBPos
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_LmSBPos_rapidity_Cent_v3/190702_033723/0000/",		// 175 Lm HIMB6 Cent SBPos
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_LmSBPos_rapidity_Cent_v3/190702_033742/0000/",		// 176 Lm HIMB7 Cent SBPos
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_LmSBNeg_rapidity_Cent_v3/190702_034210/0000/",		// 177 Lm HIMB5 Cent SBNeg
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_LmSBNeg_rapidity_Cent_v3/190702_034229/0000/",		// 178 Lm HIMB6 Cent SBNeg
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_LmSBNeg_rapidity_Cent_v3/190702_034247/0000/",		// 179 Lm HIMB7 Cent SBNeg
+	"NA",		// 180 Ks HIMB567 Cent SB
+	"NA",		// 181 Lm HIMB567 Cent SB
 };
 
 char const * ftxt[] = {
@@ -339,6 +353,20 @@ char const * ftxt[] = {
 	"txt/PbPb7_Lm_Cent/",			// 165
 	"txt/PbPb567_Ks_Cent/",			// 166
 	"txt/PbPb567_Lm_Cent/",			// 167
+	"txt/PbPb5_Ks_SBPos_Cent/",		// 168
+	"txt/PbPb6_Ks_SBPos_Cent/",		// 169
+	"txt/PbPb7_Ks_SBPos_Cent/",		// 170
+	"txt/PbPb5_Ks_SBNeg_Cent/",		// 171
+	"txt/PbPb6_Ks_SBNeg_Cent/",		// 172
+	"txt/PbPb7_Ks_SBNeg_Cent/",		// 173
+	"txt/PbPb5_Lm_SBPos_Cent/",		// 174
+	"txt/PbPb6_Lm_SBPos_Cent/",		// 175
+	"txt/PbPb7_Lm_SBPos_Cent/",		// 176
+	"txt/PbPb5_Lm_SBNeg_Cent/",		// 177
+	"txt/PbPb6_Lm_SBNeg_Cent/",		// 178
+	"txt/PbPb7_Lm_SBNeg_Cent/",		// 179
+	"txt/PbPb567_Ks_SB_Cent/",		// 180
+	"txt/PbPb567_Lm_SB_Cent/",		// 181
 };
 
 const int Pid_Non	= 0;
@@ -523,6 +551,20 @@ auto PID = std::vector<int>{
 	Pid_AA_Lambda,		// 165
 	Pid_AA_Ks,		    // 166
 	Pid_AA_Lambda,		// 167
+	Pid_AA_Ks,		    // 168
+	Pid_AA_Ks,		    // 169
+	Pid_AA_Ks,		    // 170
+	Pid_AA_Ks,		    // 171
+	Pid_AA_Ks,		    // 172
+	Pid_AA_Ks,		    // 173
+	Pid_AA_Lambda,	    // 174
+	Pid_AA_Lambda,	    // 175
+	Pid_AA_Lambda,	    // 176
+	Pid_AA_Lambda,	    // 177
+	Pid_AA_Lambda,	    // 178
+	Pid_AA_Lambda,	    // 179
+	Pid_AA_Ks,		    // 180
+	Pid_AA_Lambda,	    // 181
 };
 
 #include <TChain.h>
