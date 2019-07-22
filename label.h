@@ -182,6 +182,59 @@ char const * fname[] = {
 	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_LmSBNeg_rapidity_Cent_v3/190702_034247/0000/",		// 179 Lm HIMB7 Cent SBNeg
 	"NA",		// 180 Ks HIMB567 Cent SB
 	"NA",		// 181 Lm HIMB567 Cent SB
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_Kscumu_eff_v12/190708_155529/0000/",		// 182 Ks HM0 pPb
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_Kscumu_eff_v12/190708_155550/0000/",		// 183 Ks HM1 pPb
+	"",		// 184 Ks HM2 pPb
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_Kscumu_eff_v12/190708_155630/0000/",		// 185 Ks HM3 pPb
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_eff_v12/190708_155650/0000/",		// 186 Ks HM4 pPb
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_Kscumu_eff_v12/190708_155711/0000/",		// 187 Ks HM5 pPb
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Kscumu_eff_v12/190708_155731/0000/",		// 188 Ks HM6 pPb
+	"",		// 189 Ks HM7 pPb
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_Kscumu_eff_reverse_v12/190708_161107/0000/",		// 190 Ks HM0 pPb reverse
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_Kscumu_eff_reverse_v12/190708_161127/0000/",		// 191 Ks HM1 pPb reverse
+	"",		// 192 Ks HM2 pPb reverse
+	"",		// 193 Ks HM3 pPb reverse
+	"",		// 194 Ks HM4 pPb reverse
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_Kscumu_eff_reverse_v12/190708_161247/0000/",		// 195 Ks HM5 pPb reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Kscumu_eff_reverse_v12/190708_161309/0000/",		// 196 Ks HM6 pPb reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_Kscumu_eff_reverse_v12/190708_161330/0000/",		// 197 Ks HM7 pPb reverse
+	"",		// 198 Lm HM0 pPb
+	"",		// 199 Lm HM1 pPb
+	"",		// 200 Lm HM2 pPb
+	"",		// 201 Lm HM3 pPb
+	"",		// 202 Lm HM4 pPb
+	"",		// 203 Lm HM5 pPb
+	"",		// 204 Lm HM6 pPb
+	"",		// 205 Lm HM7 pPb
+	"",		// 206 Lm HM0 pPb reverse
+	"",		// 207 Lm HM1 pPb reverse
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_Lambda_cumu_eff_reverse_v12/190708_164645/0000/",		// 208 Lm HM2 pPb reverse
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_Lambda_cumu_eff_reverse_v12/190708_164727/0000/",		// 209 Lm HM3 pPb reverse
+	"",		// 210 Lm HM4 pPb reverse
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_Lambda_cumu_eff_reverse_v12/190708_164815/0000/",		// 211 Lm HM5 pPb reverse
+	"",		// 212 Lm HM6 pPb reverse
+	"",		// 213 Lm HM7 pPb reverse
+	"NA",		// 214 Ks HM123456 pPb
+	"NA",		// 215 Ks HM123456 pPb reverse
+	"NA",		// 216 Ks HM0 pPb merge
+	"NA",		// 217 Ks HM123456 pPb merge
+	"NA",		// 218 Ks HM7 pPb merge
+	"NA",		// 219 Lm HM123456 pPb
+	"NA",		// 220 Lm HM123456 pPb reverse
+	"NA",		// 221 Lm HM0 pPb merge
+	"NA",		// 222 Lm HM123456 pPb merge
+	"NA",		// 223 Lm HM7 pPb merge
+	"../CumuV0/HIMinimumBias5/crab_HIMB5_V0cumu_ppRecoGMO_Lm_rapidity_Cent_v4/190712_205805/0000/",		// 224 Lm HIMB5 PbPb Cent Update
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_Lm_rapidity_Cent_v4/190712_205827/0000/",		// 225 Lm HIMB6 PbPb Cent Update
+	"",		// 226 Lm HIMB7 PbPb Cent Update
+	"NA",		// 227 Lm HIMB567 PbPb Cent Update
+	"",		// 228 Lm HIMB5 PbPb Cent SBPos Update
+	"",		// 229 Lm HIMB6 PbPb Cent SBPos Update
+	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_LmSBPos_rapidity_Cent_v4/190712_210219/0000/",		// 230 Lm HIMB7 PbPb Cent SBPos Update
+	"",		// 231 Lm HIMB5 PbPb Cent SBNeg Update
+	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_LmSBNeg_rapidity_Cent_v4/190712_210332/0000/",		// 232 Lm HIMB6 PbPb Cent SBNeg Update
+	"",		// 233 Lm HIMB7 PbPb Cent SBNeg Update
+	"NA",		// 234 Lm HIMB567 PbPb Cent SB Update
 };
 
 char const * ftxt[] = {
@@ -367,6 +420,59 @@ char const * ftxt[] = {
 	"txt/PbPb7_Lm_SBNeg_Cent/",		// 179
 	"txt/PbPb567_Ks_SB_Cent/",		// 180
 	"txt/PbPb567_Lm_SB_Cent/",		// 181
+	"txt/PAHM0_Ks2/",		        // 182
+	"txt/PAHM1_Ks2/",		        // 183
+	"txt/PAHM2_Ks2/",		        // 184
+	"txt/PAHM3_Ks2/",		        // 185
+	"txt/PAHM4_Ks2/",		        // 186
+	"txt/PAHM5_Ks2/",		        // 187
+	"txt/PAHM6_Ks2/",		        // 188
+	"txt/PAHM7_Ks2/",		        // 189
+	"txt/PAHM0_Ks2_reverse/",       // 190
+	"txt/PAHM1_Ks2_reverse/",       // 191
+	"txt/PAHM2_Ks2_reverse/",       // 192
+	"txt/PAHM3_Ks2_reverse/",       // 193
+	"txt/PAHM4_Ks2_reverse/",       // 194
+	"txt/PAHM5_Ks2_reverse/",       // 195
+	"txt/PAHM6_Ks2_reverse/",       // 196
+	"txt/PAHM7_Ks2_reverse/",       // 197
+	"txt/PAHM0_Lm2/",		        // 198
+	"txt/PAHM1_Lm2/",		        // 199
+	"txt/PAHM2_Lm2/",		        // 200
+	"txt/PAHM3_Lm2/",		        // 201
+	"txt/PAHM4_Lm2/",		        // 202
+	"txt/PAHM5_Lm2/",		        // 203
+	"txt/PAHM6_Lm2/",		        // 204
+	"txt/PAHM7_Lm2/",		        // 205
+	"txt/PAHM0_Lm2_reverse/",       // 206
+	"txt/PAHM1_Lm2_reverse/",       // 207
+	"txt/PAHM2_Lm2_reverse/",       // 208
+	"txt/PAHM3_Lm2_reverse/",       // 209
+	"txt/PAHM4_Lm2_reverse/",       // 210
+	"txt/PAHM5_Lm2_reverse/",       // 211
+	"txt/PAHM6_Lm2_reverse/",       // 212
+	"txt/PAHM7_Lm2_reverse/",       // 213
+	"txt/PAHM123456_Ks2/",	        // 214
+	"txt/PAHM123456_Ks2_reverse/",  // 215
+	"txt/PAHM0_Ks2_merge/",         // 216
+	"txt/PAHM123456_Ks2_merge/",    // 217
+	"txt/PAHM7_Ks2_merge/",         // 218
+	"txt/PAHM123456_Lm2/",	        // 219
+	"txt/PAHM123456_Lm2_reverse/",  // 220
+	"txt/PAHM0_Lm2_merge/",         // 221
+	"txt/PAHM123456_Lm2_merge/",    // 222
+	"txt/PAHM7_Lm2_merge/",         // 223
+	"txt/PbPb5_Lm_Cent2/",          // 224
+	"txt/PbPb6_Lm_Cent2/",          // 225
+	"txt/PbPb7_Lm_Cent2/",          // 226
+	"txt/PbPb567_Lm_Cent2/",        // 227
+	"txt/PbPb5_Lm_SBPos_Cent2/",     // 228
+	"txt/PbPb6_Lm_SBPos_Cent2/",     // 229
+	"txt/PbPb7_Lm_SBPos_Cent2/",     // 230
+	"txt/PbPb5_Lm_SBNeg_Cent2/",     // 231
+	"txt/PbPb6_Lm_SBNeg_Cent2/",     // 232
+	"txt/PbPb7_Lm_SBNeg_Cent2/",     // 233
+	"txt/PbPb567_Lm_SB_Cent2/",      // 234
 };
 
 const int Pid_Non	= 0;
@@ -565,6 +671,59 @@ auto PID = std::vector<int>{
 	Pid_AA_Lambda,	    // 179
 	Pid_AA_Ks,		    // 180
 	Pid_AA_Lambda,	    // 181
+	Pid_PA_Ks,		    // 182
+	Pid_PA_Ks,		    // 183
+	Pid_PA_Ks,		    // 184
+	Pid_PA_Ks,		    // 185
+	Pid_PA_Ks,		    // 186
+	Pid_PA_Ks,		    // 187
+	Pid_PA_Ks,		    // 188
+	Pid_PA_Ks,		    // 189
+	Pid_PA_Ks,		    // 190
+	Pid_PA_Ks,		    // 191
+	Pid_PA_Ks,		    // 192
+	Pid_PA_Ks,		    // 193
+	Pid_PA_Ks,		    // 194
+	Pid_PA_Ks,		    // 195
+	Pid_PA_Ks,		    // 196
+	Pid_PA_Ks,		    // 197
+	Pid_PA_Lambda,	    // 198
+	Pid_PA_Lambda,	    // 199
+	Pid_PA_Lambda,	    // 200
+	Pid_PA_Lambda,	    // 201
+	Pid_PA_Lambda,	    // 202
+	Pid_PA_Lambda,	    // 203
+	Pid_PA_Lambda,	    // 204
+	Pid_PA_Lambda,	    // 205
+	Pid_PA_Lambda,	    // 206
+	Pid_PA_Lambda,	    // 207
+	Pid_PA_Lambda,	    // 208
+	Pid_PA_Lambda,	    // 209
+	Pid_PA_Lambda,	    // 210
+	Pid_PA_Lambda,	    // 211
+	Pid_PA_Lambda,	    // 212
+	Pid_PA_Lambda,	    // 213
+	Pid_PA_Ks,	        // 214
+	Pid_PA_Ks,	        // 215
+	Pid_PA_Ks,	        // 216
+	Pid_PA_Ks,	        // 217
+	Pid_PA_Ks,	        // 218
+	Pid_PA_Lambda,	    // 219
+	Pid_PA_Lambda,	    // 220
+	Pid_PA_Lambda,	    // 221
+	Pid_PA_Lambda,	    // 222
+	Pid_PA_Lambda,	    // 223
+	Pid_AA_Lambda,	    // 224
+	Pid_AA_Lambda,	    // 225
+	Pid_AA_Lambda,	    // 226
+	Pid_AA_Lambda,	    // 227
+	Pid_AA_Lambda,	    // 228
+	Pid_AA_Lambda,	    // 229
+	Pid_AA_Lambda,	    // 230
+	Pid_AA_Lambda,	    // 231
+	Pid_AA_Lambda,	    // 232
+	Pid_AA_Lambda,	    // 233
+	Pid_AA_Lambda,	    // 234
 };
 
 #include <TChain.h>
