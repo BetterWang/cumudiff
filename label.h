@@ -236,12 +236,12 @@ char const * fname[] = {
 	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_LmSBNeg_rapidity_Cent_v4_rsb/190723_142532/0000/",		// 233 Lm HIMB7 PbPb Cent SBNeg Update
 	"NA",		// 234 Lm HIMB567 PbPb Cent SB Update
 	"",		// 235 Ks pPb HM0 SBPos
-	"",		// 236 Ks pPb HM1 SBPos
-	"",		// 237 Ks pPb HM2 SBPos
-	"",		// 238 Ks pPb HM3 SBPos
-	"",		// 239 Ks pPb HM4 SBPos
-	"",		// 240 Ks pPb HM5 SBPos
-	"",		// 241 Ks pPb HM6 SBPos
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBPos_eff_v2/190809_145047/0000/",		// 236 Ks pPb HM1 SBPos
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBPos_eff_v2/190809_145113/0000/",		// 237 Ks pPb HM2 SBPos
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBPos_eff_v2/190809_145145/0000/",		// 238 Ks pPb HM3 SBPos
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBPos_eff_v2/190809_145221/0000/",		// 239 Ks pPb HM4 SBPos
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBPos_eff_v2/190809_145248/0000/",		// 240 Ks pPb HM5 SBPos
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBPos_eff_v2/190809_145323/0000/",		// 241 Ks pPb HM6 SBPos
 	"",		// 242 Ks pPb HM7 SBPos
 	"",		// 243 Ks pPb HM0 SBPos reverse
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBPos_eff_reverse_v2/190807_190405/0000/",		// 244 Ks pPb HM1 SBPos reverse
@@ -249,37 +249,37 @@ char const * fname[] = {
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBPos_eff_reverse_v2/190807_190447/0000/",		// 246 Ks pPb HM3 SBPos reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBPos_eff_reverse_v2/190807_190506/0000/",		// 247 Ks pPb HM4 SBPos reverse
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBPos_eff_reverse_v2/190807_190527/0000/",		// 248 Ks pPb HM5 SBPos reverse
-	"",		// 249 Ks pPb HM6 SBPos reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBPos_eff_reverse_v2/190807_190545/0000/",		// 249 Ks pPb HM6 SBPos reverse
 	"",		// 250 Ks pPb HM7 SBPos reverse
 	"",		// 251 Ks pPb HM0 SBNeg
-	"",		// 252 Ks pPb HM1 SBNeg
-	"",		// 253 Ks pPb HM2 SBNeg
-	"",		// 254 Ks pPb HM3 SBNeg
-	"",		// 255 Ks pPb HM4 SBNeg
-	"",		// 256 Ks pPb HM5 SBNeg
-	"",		// 257 Ks pPb HM6 SBNeg
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBNeg_eff_v2/190809_145407/0000/",		// 252 Ks pPb HM1 SBNeg
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBNeg_eff_v2/190809_145437/0000/",		// 253 Ks pPb HM2 SBNeg
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBNeg_eff_v2/190809_145507/0000/",		// 254 Ks pPb HM3 SBNeg
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBNeg_eff_v2/190809_145540/0000/",		// 255 Ks pPb HM4 SBNeg
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBNeg_eff_v2/190809_145628/0000/",		// 256 Ks pPb HM5 SBNeg
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBNeg_eff_v2/190809_145708/0000/",		// 257 Ks pPb HM6 SBNeg
 	"",		// 258 Ks pPb HM7 SBNeg
 	"",		// 259 Ks pPb HM0 SBNeg reverse
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBNeg_eff_reverse_v2/190807_190642/0000/",		// 260 Ks pPb HM1 SBNeg reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBNeg_eff_reverse_v2/190807_190701/0000/",		// 261 Ks pPb HM2 SBNeg reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBNeg_eff_reverse_v2/190807_190719/0000/",		// 262 Ks pPb HM3 SBNeg reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBNeg_eff_reverse_v2/190807_190738/0000/",		// 263 Ks pPb HM4 SBNeg reverse
-	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBPos_eff_reverse_v2/190807_190527/0000/",		// 264 Ks pPb HM5 SBNeg reverse
-	"",		// 265 Ks pPb HM6 SBNeg reverse
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBNeg_eff_reverse_v2/190807_190757/0000/",		// 264 Ks pPb HM5 SBNeg reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBNeg_eff_reverse_v2/190807_190817/0000/",		// 265 Ks pPb HM6 SBNeg reverse
 	"",		// 266 Ks pPb HM7 SBNeg reverse
 	"NA",		// 267 Ks pPb HM0 SB merge
 	"NA",		// 268 Ks pPb HM123456 SB merge
 	"NA",		// 269 Ks pPb HM7 SB merge
 	"",		// 270 Lm pPb HM0 SBPos
-	"",		// 271 Lm pPb HM1 SBPos
-	"",		// 272 Lm pPb HM2 SBPos
-	"",		// 273 Lm pPb HM3 SBPos
-	"",		// 274 Lm pPb HM4 SBPos
-	"",		// 275 Lm pPb HM5 SBPos
-	"",		// 276 Lm pPb HM6 SBPos
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBPos_cumu_eff_v2/190809_144402/0000/",		// 271 Lm pPb HM1 SBPos
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBPos_cumu_eff_v2/190809_144433/0000/",		// 272 Lm pPb HM2 SBPos
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBPos_cumu_eff_v2/190809_144459/0000/",		// 273 Lm pPb HM3 SBPos
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBPos_cumu_eff_v2/190809_144531/0000/",		// 274 Lm pPb HM4 SBPos
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBPos_cumu_eff_v2/190809_144611/0000/",		// 275 Lm pPb HM5 SBPos
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_LambdaSBPos_cumu_eff_v2/190809_144637/0000/",		// 276 Lm pPb HM6 SBPos
 	"",		// 277 Lm pPb HM7 SBPos
 	"",		// 278 Lm pPb HM0 SBPos reverse
-	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBPos_cumu_eff_reverse_v2/190728_151139/0000/",		// 279 Lm pPb HM1 SBPos reverse
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBPos_cumu_eff_reverse_v2_rsb/190809_143838/0000/",		// 279 Lm pPb HM1 SBPos reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBPos_cumu_eff_reverse_v2/190728_151156/0000/",		// 280 Lm pPb HM2 SBPos reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBPos_cumu_eff_reverse_v2/190728_151215/0000/",		// 281 Lm pPb HM3 SBPos reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBPos_cumu_eff_reverse_v2/190728_151232/0000/",		// 282 Lm pPb HM4 SBPos reverse
@@ -287,24 +287,100 @@ char const * fname[] = {
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_LambdaSBPos_cumu_eff_reverse_v2/190728_151310/0000/",		// 284 Lm pPb HM6 SBPos reverse
 	"",		// 285 Lm pPb HM7 SBPos reverse
 	"",		// 286 Lm pPb HM0 SBNeg
-	"",		// 287 Lm pPb HM1 SBNeg
-	"",		// 288 Lm pPb HM2 SBNeg
-	"",		// 289 Lm pPb HM3 SBNeg
-	"",		// 290 Lm pPb HM4 SBNeg
-	"",		// 291 Lm pPb HM5 SBNeg
-	"",		// 292 Lm pPb HM6 SBNeg
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBNeg_cumu_eff_v2/190809_144008/0000/",		// 287 Lm pPb HM1 SBNeg
+	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBNeg_cumu_eff_v2/190809_144044/0000/",		// 288 Lm pPb HM2 SBNeg
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBNeg_cumu_eff_v2/190809_144116/0000/",		// 289 Lm pPb HM3 SBNeg
+	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBNeg_cumu_eff_v2/190809_144143/0000/",		// 290 Lm pPb HM4 SBNeg
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBNeg_cumu_eff_v2/190809_144222/0000/",		// 291 Lm pPb HM5 SBNeg
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_LambdaSBNeg_cumu_eff_v2/190809_144254/0000/",		// 292 Lm pPb HM6 SBNeg
 	"",		// 293 Lm pPb HM7 SBNeg
 	"",		// 294 Lm pPb HM0 SBNeg reverse
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBNeg_cumu_eff_reverse_v2/190728_150924/0000/",		// 295 Lm pPb HM1 SBNeg reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBNeg_cumu_eff_reverse_v2/190728_150945/0000/",		// 296 Lm pPb HM2 SBNeg reverse
-	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBNeg_cumu_eff_reverse_v2/190728_151007/0000/",		// 297 Lm pPb HM3 SBNeg reverse
+	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBNeg_cumu_eff_reverse_v2_rsb/190809_143527/0000/",	// 297 Lm pPb HM3 SBNeg reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBNeg_cumu_eff_reverse_v2/190728_151029/0000/",		// 298 Lm pPb HM4 SBNeg reverse
-	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBNeg_cumu_eff_reverse_v2/190728_151047/0000/",		// 299 Lm pPb HM5 SBNeg reverse
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBNeg_cumu_eff_reverse_v2_rsb/190809_143601/0000/",	// 299 Lm pPb HM5 SBNeg reverse
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_LambdaSBNeg_cumu_eff_reverse_v2/190728_151105/0000/",		// 300 Lm pPb HM6 SBNeg reverse
 	"",		// 301 Lm pPb HM7 SBNeg reverse
 	"NA",		// 302 Lm pPb HM0 SB merge
 	"NA",		// 303 Lm pPb HM123456 SB merge
 	"NA",		// 304 Lm pPb HM7 SB merge
+    "",     // 305 Ks pPb HM0 sysTight
+    "",     // 306 Ks pPb HM1 sysTight
+    "",     // 307 Ks pPb HM2 sysTight
+    "",     // 308 Ks pPb HM3 sysTight
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_sysTight_eff_v1/190809_180008/0000/",     // 309 Ks pPb HM4 sysTight
+    "",     // 310 Ks pPb HM5 sysTight
+    "",     // 311 Ks pPb HM6 sysTight
+    "",     // 312 Ks pPb HM7 sysTight
+    "",     // 313 Ks pPb HM0 sysTight reverse
+    "",     // 314 Ks pPb HM1 sysTight reverse
+    "",     // 315 Ks pPb HM2 sysTight reverse
+    "",     // 316 Ks pPb HM3 sysTight reverse
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_sysTight_eff_reverse_v1/190809_180045/0000/",     // 317 Ks pPb HM4 sysTight reverse
+    "",     // 318 Ks pPb HM5 sysTight reverse
+    "",     // 319 Ks pPb HM6 sysTight reverse
+    "",     // 320 Ks pPb HM7 sysTight reverse
+    "",     // 321 Ks pPb HM0 sysTight merge
+    "",     // 322 Ks pPb HM123456 sysTight merge
+    "",     // 323 Ks pPb HM7 sysTight merge
+    "",     // 324 Ks pPb HM0 sysLoose
+    "",     // 325 Ks pPb HM1 sysLoose
+    "",     // 326 Ks pPb HM2 sysLoose
+    "",     // 327 Ks pPb HM3 sysLoose
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_sysLoose_eff_v1/190809_180131/0000/",     // 328 Ks pPb HM4 sysLoose
+    "",     // 329 Ks pPb HM5 sysLoose
+    "",     // 330 Ks pPb HM6 sysLoose
+    "",     // 331 Ks pPb HM7 sysLoose
+    "",     // 332 Ks pPb HM0 sysLoose reverse
+    "",     // 333 Ks pPb HM1 sysLoose reverse
+    "",     // 334 Ks pPb HM2 sysLoose reverse
+    "",     // 335 Ks pPb HM3 sysLoose reverse
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_sysLoose_eff_reverse_v1/190809_180209/0000/",     // 336 Ks pPb HM4 sysLoose reverse
+    "",     // 337 Ks pPb HM5 sysLoose reverse
+    "",     // 338 Ks pPb HM6 sysLoose reverse
+    "",     // 339 Ks pPb HM7 sysLoose reverse
+    "",     // 340 Ks pPb HM0 sysLoose merge
+    "",     // 341 Ks pPb HM123456 sysLoose merge
+    "",     // 342 Ks pPb HM7 sysLoose merge
+    "",     // 343 Lm pPb HM0 sysTight
+    "",     // 344 Lm pPb HM1 sysTight
+    "",     // 345 Lm pPb HM2 sysTight
+    "",     // 346 Lm pPb HM3 sysTight
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Lmcumu_sysTight_eff_v1/190809_180253/0000/",     // 347 Lm pPb HM4 sysTight
+    "",     // 348 Lm pPb HM5 sysTight
+    "",     // 349 Lm pPb HM6 sysTight
+    "",     // 350 Lm pPb HM7 sysTight
+    "",     // 351 Lm pPb HM0 sysTight reverse
+    "",     // 352 Lm pPb HM1 sysTight reverse
+    "",     // 353 Lm pPb HM2 sysTight reverse
+    "",     // 354 Lm pPb HM3 sysTight reverse
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Lmcumu_sysTight_eff_reverse_v1/190809_180326/0000/",     // 355 Lm pPb HM4 sysTight reverse
+    "",     // 356 Lm pPb HM5 sysTight reverse
+    "",     // 357 Lm pPb HM6 sysTight reverse
+    "",     // 358 Lm pPb HM7 sysTight reverse
+    "NA",     // 359 Lm pPb HM0 sysTight merge
+    "NA",     // 360 Lm pPb HM123456 sysTight merge
+    "NA",     // 361 Lm pPb HM7 sysTight merge
+    "",     // 362 Lm pPb HM0 sysLoose
+    "",     // 363 Lm pPb HM1 sysLoose
+    "",     // 364 Lm pPb HM2 sysLoose
+    "",     // 365 Lm pPb HM3 sysLoose
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Lmcumu_sysLoose_eff_v1/190809_180406/0000/",     // 366 Lm pPb HM4 sysLoose
+    "",     // 367 Lm pPb HM5 sysLoose
+    "",     // 368 Lm pPb HM6 sysLoose
+    "",     // 369 Lm pPb HM7 sysLoose
+    "",     // 370 Lm pPb HM0 sysLoose reverse
+    "",     // 371 Lm pPb HM1 sysLoose reverse
+    "",     // 372 Lm pPb HM2 sysLoose reverse
+    "",     // 373 Lm pPb HM3 sysLoose reverse
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Lmcumu_sysLoose_eff_reverse_v1/190809_180439/0000/",     // 374 Lm pPb HM4 sysLoose reverse
+    "",     // 375 Lm pPb HM5 sysLoose reverse
+    "",     // 376 Lm pPb HM6 sysLoose reverse
+    "",     // 377 Lm pPb HM7 sysLoose reverse
+    "NA",     // 378 Lm pPb HM0 sysLoose merge
+    "NA",     // 379 Lm pPb HM123456 sysLoose merge
+    "NA",     // 380 Lm pPb HM7 sysLoose merge
 };
 
 char const * ftxt[] = {
@@ -613,6 +689,82 @@ char const * ftxt[] = {
 	"txt/PAHM0_Lm2_SB_merge/",              // 302
 	"txt/PAHM123456_Lm2_SB_merge/",         // 303
 	"txt/PAHM7_Lm2_SB_merge/",              // 304
+	"txt/PAHM0_Ks_sysTight/",               // 305
+	"txt/PAHM1_Ks_sysTight/",               // 306
+	"txt/PAHM2_Ks_sysTight/",               // 307
+	"txt/PAHM3_Ks_sysTight/",               // 308
+	"txt/PAHM4_Ks_sysTight/",               // 309
+	"txt/PAHM5_Ks_sysTight/",               // 310
+	"txt/PAHM6_Ks_sysTight/",               // 311
+	"txt/PAHM7_Ks_sysTight/",               // 312
+	"txt/PAHM0_Ks_sysTight_reverse/",       // 313
+	"txt/PAHM1_Ks_sysTight_reverse/",       // 314
+	"txt/PAHM2_Ks_sysTight_reverse/",       // 315
+	"txt/PAHM3_Ks_sysTight_reverse/",       // 316
+	"txt/PAHM4_Ks_sysTight_reverse/",       // 317
+	"txt/PAHM5_Ks_sysTight_reverse/",       // 318
+	"txt/PAHM6_Ks_sysTight_reverse/",       // 319
+	"txt/PAHM7_Ks_sysTight_reverse/",       // 320
+	"txt/PAHM0_Ks_sysTight_merge/",         // 321
+	"txt/PAHM123456_Ks_sysTight_merge/",    // 322
+	"txt/PAHM7_Ks_sysTight_merge/",         // 323
+	"txt/PAHM0_Ks_sysLoose/",               // 324
+	"txt/PAHM1_Ks_sysLoose/",               // 325
+	"txt/PAHM2_Ks_sysLoose/",               // 326
+	"txt/PAHM3_Ks_sysLoose/",               // 327
+	"txt/PAHM4_Ks_sysLoose/",               // 328
+	"txt/PAHM5_Ks_sysLoose/",               // 329
+	"txt/PAHM6_Ks_sysLoose/",               // 330
+	"txt/PAHM7_Ks_sysLoose/",               // 331
+	"txt/PAHM0_Ks_sysLoose_reverse/",       // 332
+	"txt/PAHM1_Ks_sysLoose_reverse/",       // 333
+	"txt/PAHM2_Ks_sysLoose_reverse/",       // 334
+	"txt/PAHM3_Ks_sysLoose_reverse/",       // 335
+	"txt/PAHM4_Ks_sysLoose_reverse/",       // 336
+	"txt/PAHM5_Ks_sysLoose_reverse/",       // 337
+	"txt/PAHM6_Ks_sysLoose_reverse/",       // 338
+	"txt/PAHM7_Ks_sysLoose_reverse/",       // 339
+	"txt/PAHM0_Ks_sysLoose_merge/",         // 340
+	"txt/PAHM123456_Ks_sysLoose_merge/",    // 341
+	"txt/PAHM7_Ks_sysLoose_merge/",         // 342
+	"txt/PAHM0_Lm_sysTight/",               // 343
+	"txt/PAHM1_Lm_sysTight/",               // 344
+	"txt/PAHM2_Lm_sysTight/",               // 345
+	"txt/PAHM3_Lm_sysTight/",               // 346
+	"txt/PAHM4_Lm_sysTight/",               // 347
+	"txt/PAHM5_Lm_sysTight/",               // 348
+	"txt/PAHM6_Lm_sysTight/",               // 349
+	"txt/PAHM7_Lm_sysTight/",               // 350
+	"txt/PAHM0_Lm_sysTight_reverse/",       // 351
+	"txt/PAHM1_Lm_sysTight_reverse/",       // 352
+	"txt/PAHM2_Lm_sysTight_reverse/",       // 353
+	"txt/PAHM3_Lm_sysTight_reverse/",       // 354
+	"txt/PAHM4_Lm_sysTight_reverse/",       // 355
+	"txt/PAHM5_Lm_sysTight_reverse/",       // 356
+	"txt/PAHM6_Lm_sysTight_reverse/",       // 357
+	"txt/PAHM7_Lm_sysTight_reverse/",       // 358
+	"txt/PAHM0_Lm_sysTight_merge/",         // 359
+	"txt/PAHM123456_Lm_sysTight_merge/",    // 360
+	"txt/PAHM7_Lm_sysTight_merge/",         // 361
+	"txt/PAHM0_Lm_sysLoose/",               // 362
+	"txt/PAHM1_Lm_sysLoose/",               // 363
+	"txt/PAHM2_Lm_sysLoose/",               // 364
+	"txt/PAHM3_Lm_sysLoose/",               // 365
+	"txt/PAHM4_Lm_sysLoose/",               // 366
+	"txt/PAHM5_Lm_sysLoose/",               // 367
+	"txt/PAHM6_Lm_sysLoose/",               // 368
+	"txt/PAHM7_Lm_sysLoose/",               // 369
+	"txt/PAHM0_Lm_sysLoose_reverse/",       // 370
+	"txt/PAHM1_Lm_sysLoose_reverse/",       // 371
+	"txt/PAHM2_Lm_sysLoose_reverse/",       // 372
+	"txt/PAHM3_Lm_sysLoose_reverse/",       // 373
+	"txt/PAHM4_Lm_sysLoose_reverse/",       // 374
+	"txt/PAHM5_Lm_sysLoose_reverse/",       // 375
+	"txt/PAHM6_Lm_sysLoose_reverse/",       // 376
+	"txt/PAHM7_Lm_sysLoose_reverse/",       // 377
+	"txt/PAHM0_Lm_sysLoose_merge/",         // 378
+	"txt/PAHM123456_Lm_sysLoose_merge/",    // 379
+	"txt/PAHM7_Lm_sysLoose_merge/",         // 380
 };
 
 const int Pid_Non	= 0;
@@ -934,6 +1086,82 @@ auto PID = std::vector<int>{
 	Pid_PA_Lambda,	    // 302
 	Pid_PA_Lambda,	    // 303
 	Pid_PA_Lambda,	    // 304
+	Pid_PA_Ks,	        // 305
+	Pid_PA_Ks,	        // 306
+	Pid_PA_Ks,	        // 307
+	Pid_PA_Ks,	        // 308
+	Pid_PA_Ks,	        // 309
+	Pid_PA_Ks,	        // 310
+	Pid_PA_Ks,	        // 311
+	Pid_PA_Ks,	        // 312
+	Pid_PA_Ks,	        // 313
+	Pid_PA_Ks,	        // 314
+	Pid_PA_Ks,	        // 315
+	Pid_PA_Ks,	        // 316
+	Pid_PA_Ks,	        // 317
+	Pid_PA_Ks,	        // 318
+	Pid_PA_Ks,	        // 319
+	Pid_PA_Ks,	        // 320
+	Pid_PA_Ks,	        // 321
+	Pid_PA_Ks,	        // 322
+	Pid_PA_Ks,	        // 323
+	Pid_PA_Ks,	        // 324
+	Pid_PA_Ks,	        // 325
+	Pid_PA_Ks,	        // 326
+	Pid_PA_Ks,	        // 327
+	Pid_PA_Ks,	        // 328
+	Pid_PA_Ks,	        // 329
+	Pid_PA_Ks,	        // 330
+	Pid_PA_Ks,	        // 331
+	Pid_PA_Ks,	        // 332
+	Pid_PA_Ks,	        // 333
+	Pid_PA_Ks,	        // 334
+	Pid_PA_Ks,	        // 335
+	Pid_PA_Ks,	        // 336
+	Pid_PA_Ks,	        // 337
+	Pid_PA_Ks,	        // 338
+	Pid_PA_Ks,	        // 339
+	Pid_PA_Ks,	        // 340
+	Pid_PA_Ks,	        // 341
+	Pid_PA_Ks,	        // 342
+	Pid_PA_Lambda,	    // 343
+	Pid_PA_Lambda,	    // 344
+	Pid_PA_Lambda,	    // 345
+	Pid_PA_Lambda,	    // 346
+	Pid_PA_Lambda,	    // 347
+	Pid_PA_Lambda,	    // 348
+	Pid_PA_Lambda,	    // 349
+	Pid_PA_Lambda,	    // 350
+	Pid_PA_Lambda,	    // 351
+	Pid_PA_Lambda,	    // 352
+	Pid_PA_Lambda,	    // 353
+	Pid_PA_Lambda,	    // 354
+	Pid_PA_Lambda,	    // 355
+	Pid_PA_Lambda,	    // 356
+	Pid_PA_Lambda,	    // 357
+	Pid_PA_Lambda,	    // 358
+	Pid_PA_Lambda,	    // 359
+	Pid_PA_Lambda,	    // 360
+	Pid_PA_Lambda,	    // 361
+	Pid_PA_Lambda,	    // 362
+	Pid_PA_Lambda,	    // 363
+	Pid_PA_Lambda,	    // 364
+	Pid_PA_Lambda,	    // 365
+	Pid_PA_Lambda,	    // 366
+	Pid_PA_Lambda,	    // 367
+	Pid_PA_Lambda,	    // 368
+	Pid_PA_Lambda,	    // 369
+	Pid_PA_Lambda,	    // 370
+	Pid_PA_Lambda,	    // 371
+	Pid_PA_Lambda,	    // 372
+	Pid_PA_Lambda,	    // 373
+	Pid_PA_Lambda,	    // 374
+	Pid_PA_Lambda,	    // 375
+	Pid_PA_Lambda,	    // 376
+	Pid_PA_Lambda,	    // 377
+	Pid_PA_Lambda,	    // 378
+	Pid_PA_Lambda,	    // 379
+	Pid_PA_Lambda,	    // 380
 };
 
 #include <TChain.h>
