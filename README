@@ -1,3 +1,9 @@
 1) process.C
 2) bGet.C
 3) bGetE.C
+
+
+                 |  QWCumuDiff  |  process  |  bGet     |  bGetError  |  genPlot   |  combinedS  |  vnFsig                                   |
+int    Q         |  rQGap       |  hQGap    |  hCGap    |  hVGap      |            |             |                                           |
+charge Q(pT)     |  rQpGap      |  hQpGap   |  hpCGapp  |  hpVpGap    |  grpTGap   |  grHV0Gap   |  grH_pTGap                                |
+V0     Q(pT)     |  rV0QGap     |  hV0QGap  |  hCGapp   |  hVpGap     |  grV0pTGap |  grV0Gap    |  grSig_pTGap / grObs_pTGap / grBkg_pTGap  |

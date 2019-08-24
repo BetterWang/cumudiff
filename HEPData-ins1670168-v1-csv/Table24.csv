@@ -1,0 +1,22 @@
+#: table_doi: 10.17182/hepdata.83911.v1/t24
+#: name: Table 24
+#: description: The elliptic flow per constituent quark after correcting back-to-back jet contribution, $v_{2}^{sub}/n_{q}$, for $D^{0}$ meson as a function of transverse kinetic energy per constituent quark $KE_{T}/n_{q}$ in PbPb collision at 5.02 TeV.
+#: data_file: data24.yaml
+#: data_license:   
+#: keyword reactions: PB PB --> $D^{0}$ X
+#: keyword observables: CORR
+#: keyword phrases: 
+#: keyword cmenergies: 5020.0-8160.0
+#: RE,PB PB --> $D^{0}$ X
+#: $|\Delta\eta|$,> 1
+#: Centrality Class,30-50%
+#: SQRT(S)/NUCLEON [GEV],5020.0
+#: Rapidity Range,-1 < $y_{cm}$ < 1
+$KE_{T}/n_{q}$ [GEV],$v_{2}^{sub}/n_{q}$,stat +,stat -,sys +,sys -
+0.26,0.040,0.019,-0.019,0.034,-0.034
+0.63,0.0822,0.0056,-0.0056,0.0079,-0.0079
+1.05,0.0857,0.0037,-0.0037,0.0079,-0.0079
+1.50,0.0750,0.0036,-0.0036,0.0079,-0.0079
+1.97,0.0664,0.0040,-0.0040,0.0079,-0.0079
+2.69,0.0560,0.0035,-0.0035,0.0079,-0.0079
+

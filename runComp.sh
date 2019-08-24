@@ -1,0 +1,2 @@
+root -l -b -q 'compare3.C("pPb_Ks_sysTight.root", "pPb_Ks_sysLoose.root", "pPb_Ks2_merged.root", "grV021_8", "Ks_sysTightLoose_8.pdf", "K_{s}^{0} v_{2}{4} Tight", "K_{s}^{0} v_{2}{4} Loose", "K_{s}^{0} v_{2}{4}", "v_{2}{4}", 0.05)'
+root -l -b -q 'compare3.C("pPb_Lm_sysTight.root", "pPb_Lm_sysLoose.root", "pPb_Lm2_merged.root", "grV021_8", "Lm_sysTightLoose_8.pdf", "#Lambda v_{2}{4} Tight", "#Lambda v_{2}{4} Loose", "#Lambda v_{2}{4}", "v_{2}{4}", 0.05)'

@@ -1,0 +1,29 @@
+#: table_doi: 10.17182/hepdata.83911.v1/t16
+#: name: Table 16
+#: description: The elliptic flow after correcting back-to-back jet contribution, $v_{2}^{sub}$, for $K^{0}_{S}$ as a function of $p_{T}$ in PbPb collision at 5.02 TeV.
+#: data_file: data16.yaml
+#: data_license:   
+#: keyword reactions: PB PB --> $K^{0}_{S}$ X
+#: keyword observables: CORR
+#: keyword phrases: 
+#: keyword cmenergies: 5020.0-8160.0
+#: RE,PB PB --> $K^{0}_{S}$ X
+#: $|\Delta\eta|$,> 1
+#: Centrality Class,30-50%
+#: SQRT(S)/NUCLEON [GEV],5020.0
+#: Rapidity Range,-1 < $y_{cm}$ < 1
+$p_{T}$ [GEV],$v_{2}^{sub}$,stat +,stat -,sys +,sys -
+0.36,0.01400,0.00061,-0.00061,0.00089,-0.00089
+0.53,0.0258,0.0001,-0.0001,0.0016,-0.0016
+0.71,0.0492,0.0001,-0.0001,0.0031,-0.0031
+0.90,0.0796,0.0001,-0.0001,0.0050,-0.0050
+1.19,0.1190,0.0000,-0.0000,0.0075,-0.0075
+1.59,0.1570,0.0000,-0.0000,0.0099,-0.0099
+1.98,0.181,0.000,-0.000,0.011,-0.011
+2.45,0.194,0.000,-0.000,0.012,-0.012
+3.12,0.193,0.000,-0.000,0.012,-0.012
+3.99,0.167,0.000,-0.000,0.011,-0.011
+5.13,0.130,0.000,-0.000,0.008,-0.008
+6.43,0.1000,0.0008,-0.0008,0.0063,-0.0063
+7.63,0.0885,0.0010,-0.0010,0.0056,-0.0056
+

@@ -1,0 +1,27 @@
+#: table_doi: 10.17182/hepdata.83911.v1/t11
+#: name: Table 11
+#: description: The elliptic flow per constituent quark after correcting back-to-back jet contribution, $v_{2}^{sub}/n_{q}$, for $K^{0}_{S}$ as a function of transverse kinetic energy per constituent quark $KE_{T}/n_{q}$ in pPb collision at 8.16 TeV.
+#: data_file: data11.yaml
+#: data_license:   
+#: keyword reactions: P PB --> $K^{0}_{S}$ X
+#: keyword observables: CORR
+#: keyword phrases: 
+#: keyword cmenergies: 8160.0
+#: RE,P PB --> $K^{0}_{S}$ X
+#: Rapidity Range,-1.46 < $y_{cm}$ < 0.54
+#: $|\Delta\eta|$,> 1
+#: SQRT(S)/NUCLEON [GEV],8160.0
+#: Multiplicity Class,$185 \leq N_{offline}^{trk} < 250$
+$KE_{T}/n_{q}$ [GEV],$v_{2}^{sub}/n_{q}$,stat +,stat -,sys +,sys -
+0.05,0.0066,0.0010,-0.0010,0.0004,-0.0004
+0.11,0.01390,0.00023,-0.00023,0.00090,-0.00090
+0.18,0.0205,0.0001,-0.0001,0.0013,-0.0013
+0.27,0.0280,0.0001,-0.0001,0.0018,-0.0018
+0.39,0.0384,0.0000,-0.0000,0.0025,-0.0025
+0.58,0.0490,0.0001,-0.0001,0.0032,-0.0032
+0.77,0.0566,0.0001,-0.0001,0.0037,-0.0037
+1.01,0.0616,0.0001,-0.0001,0.0040,-0.0040
+1.34,0.0632,0.0001,-0.0001,0.0041,-0.0041
+1.77,0.0584,0.0003,-0.0003,0.0038,-0.0038
+2.34,0.0469,0.0004,-0.0004,0.0031,-0.0031
+

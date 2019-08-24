@@ -30,6 +30,27 @@ void bGetError(int s1 = 1, int s3 = 10)
 	double dpCpGap[50][7][24][20];
 	double wpCpGap[50][7][24][20];
 
+    // subevent
+    double dCPos2[50][20] = {};
+    double dCNeg2[50][20] = {};
+    double dCPos4[50][20] = {};
+    double dCNeg4[50][20] = {};
+
+    double wCPos2[50][20] = {};
+    double wCNeg2[50][20] = {};
+    double wCPos4[50][20] = {};
+    double wCNeg4[50][20] = {};
+
+    double dCpPos2[50][24][20] = {};
+    double dCpNeg2[50][24][20] = {};
+    double dCpPos4[50][24][20] = {};
+    double dCpNeg4[50][24][20] = {};
+
+    double wCpPos2[50][24][20] = {};
+    double wCpNeg2[50][24][20] = {};
+    double wCpPos4[50][24][20] = {};
+    double wCpNeg4[50][24][20] = {};
+
 	// Get
 	for ( int fn = 0; fn <= s3; fn++ ) {
 		TFile * f = fr[fn];
@@ -79,6 +100,47 @@ void bGetError(int s1 = 1, int s3 = 10)
 				}
 			}
 		}
+
+        TH1D * hCPos2 = (TH1D*) f->Get("hCPos2");
+        TH1D * hCNeg2 = (TH1D*) f->Get("hCNeg2");
+        TH1D * hCPos4 = (TH1D*) f->Get("hCPos4");
+        TH1D * hCNeg4 = (TH1D*) f->Get("hCNeg4");
+        TH1D * hwCPos2 = (TH1D*) f->Get("hwCPos2");
+        TH1D * hwCNeg2 = (TH1D*) f->Get("hwCNeg2");
+        TH1D * hwCPos4 = (TH1D*) f->Get("hwCPos4");
+        TH1D * hwCNeg4 = (TH1D*) f->Get("hwCNeg4");
+        for ( int c = 0; c < 20; c++ ) {
+            dCPos2[fn][c] = hCPos2->GetBinContent( c+1 );
+            dCNeg2[fn][c] = hCNeg2->GetBinContent( c+1 );
+            dCPos4[fn][c] = hCPos4->GetBinContent( c+1 );
+            dCNeg4[fn][c] = hCNeg4->GetBinContent( c+1 );
+
+            wCPos2[fn][c] = hwCPos2->GetBinContent( c+1 );
+            wCNeg2[fn][c] = hwCNeg2->GetBinContent( c+1 );
+            wCPos4[fn][c] = hwCPos4->GetBinContent( c+1 );
+            wCNeg4[fn][c] = hwCNeg4->GetBinContent( c+1 );
+        }
+
+        for ( int i = 0; i < 24; i++ ) {
+            TH1D * hCpPos2 = (TH1D*) f->Get(Form("hCpPos2%i", i));
+            TH1D * hCpNeg2 = (TH1D*) f->Get(Form("hCpNeg2%i", i));
+            TH1D * hCpPos4 = (TH1D*) f->Get(Form("hCpPos4%i", i));
+            TH1D * hCpNeg4 = (TH1D*) f->Get(Form("hCpNeg4%i", i));
+            TH1D * hwCpPos2 = (TH1D*) f->Get(Form("hwCpPos2%i", i));
+            TH1D * hwCpNeg2 = (TH1D*) f->Get(Form("hwCpNeg2%i", i));
+            TH1D * hwCpPos4 = (TH1D*) f->Get(Form("hwCpPos4%i", i));
+            TH1D * hwCpNeg4 = (TH1D*) f->Get(Form("hwCpNeg4%i", i));
+            for ( int c = 0; c < 20; c++ ) {
+                dCpPos2[fn][i][c] = hCpPos2->GetBinContent( c+1 );
+                dCpNeg2[fn][i][c] = hCpNeg2->GetBinContent( c+1 );
+                dCpPos4[fn][i][c] = hCpPos4->GetBinContent( c+1 );
+                dCpNeg4[fn][i][c] = hCpNeg4->GetBinContent( c+1 );
+                wCpPos2[fn][i][c] = hwCpPos2->GetBinContent( c+1 );
+                wCpNeg2[fn][i][c] = hwCpNeg2->GetBinContent( c+1 );
+                wCpPos4[fn][i][c] = hwCpPos4->GetBinContent( c+1 );
+                wCpNeg4[fn][i][c] = hwCpNeg4->GetBinContent( c+1 );
+            }
+        }
 	}
 
 	// C->V
@@ -89,6 +151,16 @@ void bGetError(int s1 = 1, int s3 = 10)
 	double dVpGap[50][7][24][20];
 
 	double dpVpGap[50][7][24][20];
+
+    double dVsub2pos[50][20];
+    double dVsub4pos[50][20];
+    double dpVsub2pos[50][24][20];
+    double dpVsub4pos[50][24][20];
+
+    double dVsub2neg[50][20];
+    double dVsub4neg[50][20];
+    double dpVsub2neg[50][24][20];
+    double dpVsub4neg[50][24][20];
 
 	for ( int fn = 0; fn <= s3; fn++ ) {
 		for ( int n = 2; n < 7; n++ ) {
@@ -147,6 +219,47 @@ void bGetError(int s1 = 1, int s3 = 10)
 				}
 			}
 		}
+
+        for ( int c = 0; c < 20; c++ ) {
+            double C2p = dCPos2[fn][c];
+            double C2n = dCNeg2[fn][c];
+            double C4p = dCPos4[fn][c];
+            double C4n = dCNeg4[fn][c];
+
+            double V2p, V2n, V4p, V4n;
+
+            if ( C2p > 0 ) V2p = pow(C2p, 1./2); else V2p = -pow(-C2p, 1./2);
+            if ( C2n > 0 ) V2n = pow(C2n, 1./2); else V2n = -pow(-C2n, 1./2);
+            if ( C4p > 0 ) V4p = -pow(C4p, 1./4); else V4p = pow(-C4p, 1./4);
+            if ( C4n > 0 ) V4n = -pow(C4n, 1./4); else V4n = pow(-C4n, 1./4);
+
+            dVsub2pos[fn][c] = V2p;
+            dVsub4pos[fn][c] = V4p;
+            dVsub2neg[fn][c] = V2n;
+            dVsub4neg[fn][c] = V4n;
+
+            for ( int i = 0; i < 24; i++ ) {
+                double pC2p = dCpPos2[fn][i][c];
+                double pC2n = dCpNeg2[fn][i][c];
+                double pC4p = dCpPos4[fn][i][c];
+                double pC4n = dCpNeg4[fn][i][c];
+
+                if ( C2n > 0 ) V2p = pC2p/pow(C2n, 1./2); else V2p = -fabs( pC2p/pow(-C2n, 1./2) );
+                if ( C2p > 0 ) V2n = pC2n/pow(C2p, 1./2); else V2n = -fabs( pC2n/pow(-C2p, 1./2) );
+                if ( C4n > 0 ) V4p = -fabs(pC4p/pow(C4n, 3./4)); else V4p = -pC4p/pow(-C4n, 3./4);
+                if ( C4p > 0 ) V4n = -fabs(pC4n/pow(C4p, 3./4)); else V4n = -pC4n/pow(-C4p, 3./4);
+
+                if ( (V2p != V2p) or (abs(V2p)==std::numeric_limits<double>::infinity()) ) V2p = 0;
+                if ( (V4p != V4p) or (abs(V4p)==std::numeric_limits<double>::infinity()) ) V4p = 0;
+                if ( (V2n != V2n) or (abs(V2n)==std::numeric_limits<double>::infinity()) ) V2n = 0;
+                if ( (V4n != V4n) or (abs(V4n)==std::numeric_limits<double>::infinity()) ) V4n = 0;
+
+                dpVsub2pos[fn][i][c] = V2p;
+                dpVsub4pos[fn][i][c] = V4p;
+                dpVsub2neg[fn][i][c] = V2n;
+                dpVsub4neg[fn][i][c] = V4n;
+            }
+        }
 	}
 
 	// Get Error
@@ -162,6 +275,7 @@ void bGetError(int s1 = 1, int s3 = 10)
 
 	double epCpGap[7][24][20];
 	double epVpGap[7][24][20];
+
 
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int i = 0; i < 20; i++ ) {
@@ -232,6 +346,96 @@ void bGetError(int s1 = 1, int s3 = 10)
 		}
 	}
 
+    double eCsub2pos[20];
+    double eCsub4pos[20];
+    double eCsub2neg[20];
+    double eCsub4neg[20];
+
+    double epCsub2pos[24][20];
+    double epCsub4pos[24][20];
+    double epCsub2neg[24][20];
+    double epCsub4neg[24][20];
+
+    for ( int c = 0; c < 20; c++ ) {
+        double sumCp2 = 0;
+        double sumCn2 = 0;
+        double sumCp4 = 0;
+        double sumCn4 = 0;
+        for ( int fn = 0; fn < s3; fn++ ) {
+            sumCp2 += (dCPos2[fn][c] - dCPos2[s3][c]) * (dCPos2[fn][c] - dCPos2[s3][c]);
+            sumCn2 += (dCNeg2[fn][c] - dCNeg2[s3][c]) * (dCNeg2[fn][c] - dCNeg2[s3][c]);
+            sumCp4 += (dCPos4[fn][c] - dCPos4[s3][c]) * (dCPos4[fn][c] - dCPos4[s3][c]);
+            sumCn4 += (dCNeg4[fn][c] - dCNeg4[s3][c]) * (dCNeg4[fn][c] - dCNeg4[s3][c]);
+        }
+        double errCp2 = sqrt( sumCp2 ) / s3;
+        double errCn2 = sqrt( sumCn2 ) / s3;
+        double errCp4 = sqrt( sumCp4 ) / s3;
+        double errCn4 = sqrt( sumCn4 ) / s3;
+        eCsub2pos[c] = errCp2;
+        eCsub2neg[c] = errCn2;
+        eCsub4pos[c] = errCp4;
+        eCsub4neg[c] = errCn4;
+
+        for ( int i = 0; i < 24; i++ ) {
+            double sumCp2 = 0;
+            double sumCn2 = 0;
+            double sumCp4 = 0;
+            double sumCn4 = 0;
+            for ( int fn = 0; fn < s3; fn++ ) {
+                sumCp2 += (dCpPos2[fn][i][c] - dCpPos2[s3][i][c]) * (dCpPos2[fn][i][c] - dCpPos2[s3][i][c]);
+                sumCn2 += (dCpNeg2[fn][i][c] - dCpNeg2[s3][i][c]) * (dCpNeg2[fn][i][c] - dCpNeg2[s3][i][c]);
+                sumCp4 += (dCpPos4[fn][i][c] - dCpPos4[s3][i][c]) * (dCpPos4[fn][i][c] - dCpPos4[s3][i][c]);
+                sumCn4 += (dCpNeg4[fn][i][c] - dCpNeg4[s3][i][c]) * (dCpNeg4[fn][i][c] - dCpNeg4[s3][i][c]);
+            }
+            double errCp2 = sqrt( sumCp2 ) / s3;
+            double errCn2 = sqrt( sumCn2 ) / s3;
+            double errCp4 = sqrt( sumCp4 ) / s3;
+            double errCn4 = sqrt( sumCn4 ) / s3;
+
+            epCsub2pos[i][c] = errCp2;
+            epCsub2neg[i][c] = errCn2;
+            epCsub4pos[i][c] = errCp4;
+            epCsub4neg[i][c] = errCn4;
+        }
+    }
+
+    double eVsub2pos[20];
+    double eVsub4pos[20];
+    double eVsub2neg[20];
+    double eVsub4neg[20];
+
+    double epVsub2pos[24][20];
+    double epVsub4pos[24][20];
+    double epVsub2neg[24][20];
+    double epVsub4neg[24][20];
+
+    for ( int c = 0; c < 20; c++ ) {
+        double e = dVsub2pos[s3][c] * eCsub2pos[c] / 2. / dCPos2[s3][c];
+        if ( e == e ) eVsub2pos[c] = e; else eVsub2pos[c] = 99999.;
+
+        e = dVsub2neg[s3][c] * eCsub2neg[c] / 2. / dCNeg2[s3][c];
+        if ( e == e ) eVsub2neg[c] = e; else eVsub2neg[c] = 99999.;
+
+        e = dVsub4pos[s3][c] * eCsub4pos[c] / 4. / dCPos4[s3][c];
+        if ( e == e ) eVsub4pos[c] = e; else eVsub4pos[c] = 99999.;
+
+        e = dVsub4neg[s3][c] * eCsub4neg[c] / 4. / dCNeg4[s3][c];
+        if ( e == e ) eVsub4neg[c] = e; else eVsub4neg[c] = 99999.;
+    }
+
+    for ( int c = 0; c < 20; c++ ) {
+        for ( int i = 0; i < 24; i++ ) {
+            double e = sqrt( epCsub2pos[i][c]*epCsub2pos[i][c]/dCpPos2[s3][i][c]/dCpPos2[s3][i][c] + eVsub2neg[c]*eVsub2neg[c]/dVsub2neg[s3][c]/dVsub2neg[s3][c] ) * fabs(dpVsub2pos[s3][i][c]);
+            if ( e == e ) epVsub2pos[i][c] = e; else epVsub2pos[i][c] = 9999.;
+            e = sqrt( epCsub2neg[i][c]*epCsub2neg[i][c]/dCpNeg2[s3][i][c]/dCpNeg2[s3][i][c] + eVsub2pos[c]*eVsub2pos[c]/dVsub2pos[s3][c]/dVsub2pos[s3][c] ) * fabs(dpVsub2neg[s3][i][c]);
+            if ( e == e ) epVsub2neg[i][c] = e; else epVsub2neg[i][c] = 9999.;
+
+            e = sqrt( epCsub4pos[i][c]*epCsub4pos[i][c]/dCpPos4[s3][i][c]/dCpPos4[s3][i][c] + 9./16.*eCsub4neg[c]*eCsub4neg[c]/dCNeg4[s3][c]/dCNeg4[s3][c] ) * fabs(dpVsub4pos[s3][i][c]);
+            if ( e == e ) epVsub4pos[i][c] = e; else epVsub4pos[i][c] = 9999.;
+            e = sqrt( epCsub4neg[i][c]*epCsub4neg[i][c]/dCpNeg4[s3][i][c]/dCpNeg4[s3][i][c] + 9./16.*eCsub4pos[c]*eCsub4pos[c]/dCPos4[s3][c]/dCPos4[s3][c] ) * fabs(dpVsub4pos[s3][i][c]);
+            if ( e == e ) epVsub4neg[i][c] = e; else epVsub4neg[i][c] = 9999.;
+        }
+    }
 
 	// Histo
 
@@ -297,28 +501,126 @@ void bGetError(int s1 = 1, int s3 = 10)
 		}
 	}
 
+    TH1D * hCsub2pos = new TH1D("hCsub2pos", "", 20, 0, 20);;
+    TH1D * hCsub2neg = new TH1D("hCsub2neg", "", 20, 0, 20);;
+    TH1D * hCsub4pos = new TH1D("hCsub4pos", "", 20, 0, 20);;
+    TH1D * hCsub4neg = new TH1D("hCsub4neg", "", 20, 0, 20);;
+
+    TH1D * hVsub2pos = new TH1D("hVsub2pos", "", 20, 0, 20);;
+    TH1D * hVsub2neg = new TH1D("hVsub2neg", "", 20, 0, 20);;
+    TH1D * hVsub4pos = new TH1D("hVsub4pos", "", 20, 0, 20);;
+    TH1D * hVsub4neg = new TH1D("hVsub4neg", "", 20, 0, 20);;
+
+    for ( int c = 0; c < 20; c++ ) {
+        hCsub2pos->SetBinContent( c+1, dCPos2[s3][c] );
+        hCsub2neg->SetBinContent( c+1, dCNeg2[s3][c] );
+        hCsub4pos->SetBinContent( c+1, dCPos4[s3][c] );
+        hCsub4neg->SetBinContent( c+1, dCNeg4[s3][c] );
+
+        hVsub2pos->SetBinContent( c+1, dVsub2pos[s3][c] );
+        hVsub2neg->SetBinContent( c+1, dVsub2neg[s3][c] );
+        hVsub4pos->SetBinContent( c+1, dVsub4pos[s3][c] );
+        hVsub4neg->SetBinContent( c+1, dVsub4neg[s3][c] );
+
+        hCsub2pos->SetBinError( c+1, eCsub2pos[c] );
+        hCsub2neg->SetBinError( c+1, eCsub2neg[c] );
+        hCsub4pos->SetBinError( c+1, eCsub4pos[c] );
+        hCsub4neg->SetBinError( c+1, eCsub4neg[c] );
+
+        hVsub2pos->SetBinError( c+1, eVsub2pos[c] );
+        hVsub2neg->SetBinError( c+1, eVsub2neg[c] );
+        hVsub4pos->SetBinError( c+1, eVsub4pos[c] );
+        hVsub4neg->SetBinError( c+1, eVsub4neg[c] );
+    }
+
+    TH1D * hpCsub2pos[24];
+    TH1D * hpCsub2neg[24];
+    TH1D * hpCsub4pos[24];
+    TH1D * hpCsub4neg[24];
+
+    TH1D * hpVsub2pos[24];
+    TH1D * hpVsub2neg[24];
+    TH1D * hpVsub4pos[24];
+    TH1D * hpVsub4neg[24];
+
+    for ( int i = 0; i < 24; i++ ) {
+        hpCsub2pos[i] = new TH1D(Form("hpCsub2pos%i", i), "", 20, 0, 20);
+        hpCsub2neg[i] = new TH1D(Form("hpCsub2neg%i", i), "", 20, 0, 20);
+        hpCsub4pos[i] = new TH1D(Form("hpCsub4pos%i", i), "", 20, 0, 20);
+        hpCsub4neg[i] = new TH1D(Form("hpCsub4neg%i", i), "", 20, 0, 20);
+
+        hpVsub2pos[i] = new TH1D(Form("hpVsub2pos%i", i), "", 20, 0, 20);
+        hpVsub2neg[i] = new TH1D(Form("hpVsub2neg%i", i), "", 20, 0, 20);
+        hpVsub4pos[i] = new TH1D(Form("hpVsub4pos%i", i), "", 20, 0, 20);
+        hpVsub4neg[i] = new TH1D(Form("hpVsub4neg%i", i), "", 20, 0, 20);
+
+        for ( int c = 0; c < 20; c++ ) {
+            hpCsub2pos[i]->SetBinContent( c+1, dCpPos2[s3][i][c] );
+            hpCsub2neg[i]->SetBinContent( c+1, dCpNeg2[s3][i][c] );
+            hpCsub4pos[i]->SetBinContent( c+1, dCpPos4[s3][i][c] );
+            hpCsub4neg[i]->SetBinContent( c+1, dCpNeg4[s3][i][c] );
+
+            hpCsub2pos[i]->SetBinError( c+1, epCsub2pos[i][c] );
+            hpCsub2neg[i]->SetBinError( c+1, epCsub2neg[i][c] );
+            hpCsub4pos[i]->SetBinError( c+1, epCsub4pos[i][c] );
+            hpCsub4neg[i]->SetBinError( c+1, epCsub4neg[i][c] );
+
+            hpVsub2pos[i]->SetBinContent( c+1, dpVsub2pos[s3][i][c] );
+            hpVsub2neg[i]->SetBinContent( c+1, dpVsub2neg[s3][i][c] );
+            hpVsub4pos[i]->SetBinContent( c+1, dpVsub4pos[s3][i][c] );
+            hpVsub4neg[i]->SetBinContent( c+1, dpVsub4neg[s3][i][c] );
+
+            hpVsub2pos[i]->SetBinError( c+1, epVsub2pos[i][c] );
+            hpVsub2neg[i]->SetBinError( c+1, epVsub2neg[i][c] );
+            hpVsub4pos[i]->SetBinError( c+1, epVsub4pos[i][c] );
+            hpVsub4neg[i]->SetBinError( c+1, epVsub4neg[i][c] );
+        }
+    }
+
 
 	// Save
 
-        TFile * fwrite = new TFile(Form("%s/outputE.root", ftxt[s1]), "recreate");
-	for ( int n = 2; n < 7; n++ ) {
-		fCGap[n]->Write();
-		fVGap[n]->Write();
-		for ( int i = 0; i < 24; i++ ) {
-			fCpGap[n][i]->Write();
-			fVpGap[n][i]->Write();
+    TFile * fwrite = new TFile(Form("%s/outputE.root", ftxt[s1]), "recreate");
+    for ( int n = 2; n < 7; n++ ) {
+        fCGap[n]->Write();
+        fVGap[n]->Write();
+        for ( int i = 0; i < 24; i++ ) {
+            fCpGap[n][i]->Write();
+            fVpGap[n][i]->Write();
 
-			fpCpGap[n][i]->Write();
-			fpVpGap[n][i]->Write();
-		}
-		for ( int np = 0; np < 4; np++ ) {
-			fC[n][np]->Write();
-			fV[n][np]->Write();
-			for ( int i = 0; i < 24; i++ ) {
-				fCp[n][np][i]->Write();
-				fVp[n][np][i]->Write();
-			}
-		}
-	}
+            fpCpGap[n][i]->Write();
+            fpVpGap[n][i]->Write();
+        }
+        for ( int np = 0; np < 4; np++ ) {
+            fC[n][np]->Write();
+            fV[n][np]->Write();
+            for ( int i = 0; i < 24; i++ ) {
+                fCp[n][np][i]->Write();
+                fVp[n][np][i]->Write();
+            }
+        }
+    }
+
+    hCsub2pos->Write();
+    hCsub2neg->Write();
+    hCsub4pos->Write();
+    hCsub4neg->Write();
+
+    hVsub2pos->Write();
+    hVsub2neg->Write();
+    hVsub4pos->Write();
+    hVsub4neg->Write();
+
+    for ( int i = 0; i < 24; i++ ) {
+        hpCsub2pos[i]->Write();
+        hpCsub2neg[i]->Write();
+        hpCsub4pos[i]->Write();
+        hpCsub4neg[i]->Write();
+
+        hpVsub2pos[i]->Write();
+        hpVsub2neg[i]->Write();
+        hpVsub4pos[i]->Write();
+        hpVsub4neg[i]->Write();
+    }
 }
 

@@ -1,0 +1,22 @@
+#: table_doi: 10.17182/hepdata.83911.v1/t19
+#: name: Table 19
+#: description: The elliptic flow after correcting back-to-back jet contribution, $v_{2}^{sub}$, for $\Omega^{-}$ as a function of $p_{T}$ in PbPb collision at 5.02 TeV.
+#: data_file: data19.yaml
+#: data_license:   
+#: keyword reactions: PB PB --> $\Omega^{-}$ X
+#: keyword observables: CORR
+#: keyword phrases: 
+#: keyword cmenergies: 5020.0-8160.0
+#: RE,PB PB --> $\Omega^{-}$ X
+#: $|\Delta\eta|$,> 1
+#: Centrality Class,30-50%
+#: SQRT(S)/NUCLEON [GEV],5020.0
+#: Rapidity Range,-1 < $y_{cm}$ < 1
+$p_{T}$ [GEV],$v_{2}^{sub}$,stat +,stat -,sys +,sys -
+1.65,0.1020,0.0042,-0.0042,0.0064,-0.0064
+2.00,0.1310,0.0030,-0.0030,0.0082,-0.0082
+2.48,0.168,0.002,-0.002,0.011,-0.011
+3.15,0.201,0.003,-0.003,0.013,-0.013
+4.01,0.245,0.004,-0.004,0.015,-0.015
+5.10,0.221,0.006,-0.006,0.014,-0.014
+

@@ -1,0 +1,23 @@
+#: table_doi: 10.17182/hepdata.83911.v1/t4
+#: name: Table 4
+#: description: The elliptic flow, $v_{2}$, for $\Omega^{-}$ as a function of $p_{T}$ in pPb collision at 8.16 TeV.
+#: data_file: data4.yaml
+#: data_license:   
+#: keyword reactions: P PB --> $\Omega^{-}$ X
+#: keyword observables: CORR
+#: keyword phrases: 
+#: keyword cmenergies: 8160.0
+#: RE,P PB --> $\Omega^{-}$ X
+#: Rapidity Range,-1.46 < $y_{cm}$ < 0.54
+#: $|\Delta\eta|$,> 1
+#: SQRT(S)/NUCLEON [GEV],8160.0
+#: Multiplicity Class,$185 \leq N_{offline}^{trk} < 250$
+$p_{T}$ [GEV],$v_{2}$,stat +,stat -,sys +,sys -
+2.00,0.0893,0.0059,-0.0059,0.0077,-0.0077
+2.49,0.1160,0.0044,-0.0044,0.0099,-0.0099
+3.17,0.164,0.004,-0.004,0.014,-0.014
+4.04,0.198,0.005,-0.005,0.017,-0.017
+5.15,0.232,0.006,-0.006,0.020,-0.020
+6.48,0.247,0.012,-0.012,0.021,-0.021
+8.04,0.230,0.019,-0.019,0.020,-0.020
+

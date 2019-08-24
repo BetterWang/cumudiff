@@ -1,0 +1,26 @@
+#: table_doi: 10.17182/hepdata.83911.v1/t2
+#: name: Table 2
+#: description: The elliptic flow, $v_{2}$, for $\Lambda$ as a function of $p_{T}$ in pPb collision at 8.16 TeV.
+#: data_file: data2.yaml
+#: data_license:   
+#: keyword reactions: P PB --> $\Lambda$ X
+#: keyword observables: CORR
+#: keyword phrases: 
+#: keyword cmenergies: 8160.0
+#: RE,P PB --> $\Lambda$ X
+#: Rapidity Range,-1.46 < $y_{cm}$ < 0.54
+#: $|\Delta\eta|$,> 1
+#: SQRT(S)/NUCLEON [GEV],8160.0
+#: Multiplicity Class,$185 \leq N_{offline}^{trk} < 250$
+$p_{T}$ [GEV],$v_{2}$,stat +,stat -,sys +,sys -
+0.93,0.0287,0.0008,-0.0008,0.0019,-0.0019
+1.19,0.0502,0.0003,-0.0003,0.0033,-0.0033
+1.60,0.0782,0.0002,-0.0002,0.0051,-0.0051
+1.99,0.1080,0.0003,-0.0003,0.0070,-0.0070
+2.47,0.1400,0.0002,-0.0002,0.0091,-0.0091
+3.14,0.175,0.000,-0.000,0.011,-0.011
+4.00,0.198,0.000,-0.000,0.013,-0.013
+5.12,0.209,0.001,-0.001,0.014,-0.014
+6.42,0.201,0.001,-0.001,0.013,-0.013
+7.60,0.191,0.002,-0.002,0.012,-0.012
+
