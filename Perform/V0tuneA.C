@@ -17,10 +17,15 @@ void V0tuneA(string finput = "MB1",
         bool highPurity = false, // track highPurity?
         double pTerrMin = 0.0, double pTerrMax = 99999.0, // track pterror / pt  < pTerr
         int NHitsMin = 0, int NHitsMax = 99999, // track NHits < NHits
-		double massMin = 1.08, double massMax = 1.16
+		double massMin = 1.08, double massMax = 1.16,
+		double dauPtMin = 0., double dauDCASig = 1.,
+        string prefix = "LM"
 		)
 {
 	TChain * trV = new TChain("trV");
+	if ( finput == "test" ) {
+		trV->Add("/afs/cern.ch/user/q/qwang/work/cleanroomRun2/Ana/CMSSW_10_3_1_patch3/src/QWAna/QWCumuDiff/run2018/cumu.root/tree/trV");
+    }
 	if ( finput == "MB1" ) {
 		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Tree_v1/190218_180553/0000/*.root/treeLm/trV");
 		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Tree_v1/190218_180553/0001/*.root/treeLm/trV");
@@ -34,6 +39,42 @@ void V0tuneA(string finput = "MB1",
 		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_LmTree_v3/190311_191253/0001/*.root/treeLm/trV");
     }
 	trV->SetMakeClass(1);
+    trV->SetBranchStatus("*", 0);
+    trV->SetBranchStatus("Cent", 1);
+    trV->SetBranchStatus("vx", 1);
+
+	trV->SetBranchStatus( (prefix+"pt"            ).c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"phi"           ).c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"eta"           ).c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"rapidity"      ).c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"mass"          ).c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"vtxChi2"       ).c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"cosThetaXYZ"   ).c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"Lxyz"          ).c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"vtxDecaySigXYZ").c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"DCA"           ).c_str(),  1 );
+	trV->SetBranchStatus( (prefix+"pdgId"         ).c_str(),  1 );
+
+	trV->SetBranchStatus( (prefix+"pTrkQuality" ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"pTrkNHit"    ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"pTrkPt"      ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"pTrkPtError" ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"pTrkEta"     ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"pTrkNPxLayer").c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"pTrkDCASigXY").c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"pTrkDCASigZ" ).c_str(), 1 );
+
+	trV->SetBranchStatus( (prefix+"nTrkQuality" ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"nTrkNHit"    ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"nTrkPt"      ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"nTrkPtError" ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"nTrkEta"     ).c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"nTrkNPxLayer").c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"nTrkDCASigXY").c_str(), 1 );
+	trV->SetBranchStatus( (prefix+"nTrkDCASigZ" ).c_str(), 1 );
+
+	Double_t        Cent = -1;
+	Double_t        vz   = -999;
 
 	vector<double>  *pt = 0;
 	vector<double>  *phi = 0;
@@ -45,8 +86,6 @@ void V0tuneA(string finput = "MB1",
 	vector<double>  *Lxyz = 0;
 	vector<double>  *vtxDecaySigXYZ = 0;
 	vector<double>  *DCA = 0;
-	Double_t        Cent = -1;
-
 	vector<double>  *pdgId = 0;
 
 	vector<double>  *pTrkQuality = 0;
@@ -55,6 +94,8 @@ void V0tuneA(string finput = "MB1",
 	vector<double>  *pTrkPtError = 0;
 	vector<double>  *pTrkEta = 0;
 	vector<double>  *pTrkNPxLayer = 0;
+	vector<double>  *pTrkDCASigXY = 0;
+	vector<double>  *pTrkDCASigZ  = 0;
 
 	vector<double>  *nTrkQuality = 0;
 	vector<double>  *nTrkNHit = 0;
@@ -62,73 +103,51 @@ void V0tuneA(string finput = "MB1",
 	vector<double>  *nTrkPtError = 0;
 	vector<double>  *nTrkEta = 0;
 	vector<double>  *nTrkNPxLayer = 0;
+	vector<double>  *nTrkDCASigXY = 0;
+	vector<double>  *nTrkDCASigZ  = 0;
 
-	// List of branches
-	TBranch        *b_pt;   //!
-	TBranch        *b_phi;   //!
-	TBranch        *b_eta;   //!
-	TBranch        *b_rapidity;   //!
-	TBranch        *b_mass;   //!
-	TBranch        *b_vtxChi2;   //!
-	TBranch        *b_cosThetaXYZ;   //!
-	TBranch        *b_Lxyz;   //!
-	TBranch        *b_vtxDecaySigXYZ;   //!
-	TBranch        *b_DCA;   //!
-	TBranch        *b_Cent;   //!
+	trV->SetBranchAddress("Cent", &Cent);
+	trV->SetBranchAddress("vz",   &vz);
 
-	TBranch        *b_pdgId;   //!
+	trV->SetBranchAddress( (prefix+"pt"            ).c_str(), &pt               );
+	trV->SetBranchAddress( (prefix+"phi"           ).c_str(), &phi              );
+	trV->SetBranchAddress( (prefix+"eta"           ).c_str(), &eta              );
+	trV->SetBranchAddress( (prefix+"rapidity"      ).c_str(), &rapidity         );
+	trV->SetBranchAddress( (prefix+"mass"          ).c_str(), &mass             );
+	trV->SetBranchAddress( (prefix+"vtxChi2"       ).c_str(), &vtxChi2          );
+	trV->SetBranchAddress( (prefix+"cosThetaXYZ"   ).c_str(), &cosThetaXYZ      );
+	trV->SetBranchAddress( (prefix+"Lxyz"          ).c_str(), &Lxyz             );
+	trV->SetBranchAddress( (prefix+"vtxDecaySigXYZ").c_str(), &vtxDecaySigXYZ   );
+	trV->SetBranchAddress( (prefix+"DCA"           ).c_str(), &DCA              );
+	trV->SetBranchAddress( (prefix+"pdgId"         ).c_str(), &pdgId            );
 
-	TBranch        *b_pTrkQuality;   //!
-	TBranch        *b_pTrkNHit;   //!
-	TBranch        *b_pTrkPt;   //!
-	TBranch        *b_pTrkPtError;   //!
-	TBranch        *b_pTrkEta;   //!
-	TBranch        *b_pTrkNPxLayer;   //!
+	trV->SetBranchAddress( (prefix+"pTrkQuality" ).c_str(), &pTrkQuality  );
+	trV->SetBranchAddress( (prefix+"pTrkNHit"    ).c_str(), &pTrkNHit     );
+	trV->SetBranchAddress( (prefix+"pTrkPt"      ).c_str(), &pTrkPt       );
+	trV->SetBranchAddress( (prefix+"pTrkPtError" ).c_str(), &pTrkPtError  );
+	trV->SetBranchAddress( (prefix+"pTrkEta"     ).c_str(), &pTrkEta      );
+	trV->SetBranchAddress( (prefix+"pTrkNPxLayer").c_str(), &pTrkNPxLayer );
+	trV->SetBranchAddress( (prefix+"pTrkDCASigXY").c_str(), &pTrkDCASigXY );
+	trV->SetBranchAddress( (prefix+"pTrkDCASigZ" ).c_str(), &pTrkDCASigZ  );
 
-	TBranch        *b_nTrkQuality;   //!
-	TBranch        *b_nTrkNHit;   //!
-	TBranch        *b_nTrkPt;   //!
-	TBranch        *b_nTrkPtError;   //!
-	TBranch        *b_nTrkEta;   //!
-	TBranch        *b_nTrkNPxLayer;   //!
-
-	trV->SetBranchAddress("pt", &pt, &b_pt);
-	trV->SetBranchAddress("phi", &phi, &b_phi);
-	trV->SetBranchAddress("eta", &eta, &b_eta);
-	trV->SetBranchAddress("rapidity", &rapidity, &b_rapidity);
-	trV->SetBranchAddress("mass", &mass, &b_mass);
-	trV->SetBranchAddress("vtxChi2", &vtxChi2, &b_vtxChi2);
-	trV->SetBranchAddress("cosThetaXYZ", &cosThetaXYZ, &b_cosThetaXYZ);
-	trV->SetBranchAddress("Lxyz", &Lxyz, &b_Lxyz);
-	trV->SetBranchAddress("vtxDecaySigXYZ", &vtxDecaySigXYZ, &b_vtxDecaySigXYZ);
-	trV->SetBranchAddress("DCA", &DCA, &b_DCA);
-	trV->SetBranchAddress("Cent", &Cent, &b_Cent);
-
-	trV->SetBranchAddress("pdgId",  &pdgId,  &b_pdgId);
-
-	trV->SetBranchAddress("pTrkQuality",  &pTrkQuality,  &b_pTrkQuality);
-	trV->SetBranchAddress("pTrkNHit",     &pTrkNHit,     &b_pTrkNHit);
-	trV->SetBranchAddress("pTrkPt",       &pTrkPt,       &b_pTrkPt);
-	trV->SetBranchAddress("pTrkPtError",  &pTrkPtError,  &b_pTrkPtError);
-	trV->SetBranchAddress("pTrkEta",      &pTrkEta,      &b_pTrkEta);
-	trV->SetBranchAddress("pTrkNPxLayer", &pTrkNPxLayer, &b_pTrkNPxLayer);
-
-	trV->SetBranchAddress("nTrkQuality",  &nTrkQuality,  &b_nTrkQuality);
-	trV->SetBranchAddress("nTrkNHit",     &nTrkNHit,     &b_nTrkNHit);
-	trV->SetBranchAddress("nTrkPt",       &nTrkPt,       &b_nTrkPt);
-	trV->SetBranchAddress("nTrkPtError",  &nTrkPtError,  &b_nTrkPtError);
-	trV->SetBranchAddress("nTrkEta",      &nTrkEta,      &b_nTrkEta);
-	trV->SetBranchAddress("nTrkNPxLayer", &nTrkNPxLayer, &b_nTrkNPxLayer);
+	trV->SetBranchAddress( (prefix+"nTrkQuality" ).c_str(), &nTrkQuality  );
+	trV->SetBranchAddress( (prefix+"nTrkNHit"    ).c_str(), &nTrkNHit     );
+	trV->SetBranchAddress( (prefix+"nTrkPt"      ).c_str(), &nTrkPt       );
+	trV->SetBranchAddress( (prefix+"nTrkPtError" ).c_str(), &nTrkPtError  );
+	trV->SetBranchAddress( (prefix+"nTrkEta"     ).c_str(), &nTrkEta      );
+	trV->SetBranchAddress( (prefix+"nTrkNPxLayer").c_str(), &nTrkNPxLayer );
+	trV->SetBranchAddress( (prefix+"nTrkDCASigXY").c_str(), &nTrkDCASigXY );
+	trV->SetBranchAddress( (prefix+"nTrkDCASigZ" ).c_str(), &nTrkDCASigZ  );
 
 // pt                          0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12
     double pTbin[14] = {0.2, 0.4, 0.6, 0.8, 1.0, 1.4, 1.8, 2.2, 2.8, 3.6, 4.6, 6.0, 7.0, 8.5};
 
-// cent                       0,  1,   2,   3,   4
-	int centBin[6] = {0, 20, 60, 100, 160, 200};
+// cent                   0,  1,  2,  3,  4,   5,   6,   7
+	int centBin[9] = {0, 10, 20, 40, 60, 80, 100, 160, 200};
 
-	TH1D * hMass[13][6];
+	TH1D * hMass[13][8];
 	for ( int ipt = 0; ipt < 13; ipt++ ) {
-		for ( int c = 0; c < 5; c++ ) {
+		for ( int c = 0; c < 8; c++ ) {
 			hMass[ipt][c] = new TH1D( Form("hMass_%i_%i", ipt, c), Form("%1.1f-%1.1f-%i-%i", pTbin[ipt], pTbin[ipt+1], centBin[c], centBin[c+1]), 160, massMin, massMax);
 		}
 	}
@@ -136,6 +155,10 @@ void V0tuneA(string finput = "MB1",
 
 	while ( trV->GetEntry(idx) ) {
 		if ( (idx%10000)==0 ) cout << " --> idx = " << idx << endl;
+        if ( fabs(vz) > 15 ) {
+            idx++;
+            continue;
+        }
 		int c = 0;
 		while ( int(Cent) >= centBin[c+1] ) {
 			c++;
@@ -164,6 +187,10 @@ void V0tuneA(string finput = "MB1",
             if ( ((*pTrkNHit)[i] < NHitsMin) or ((*nTrkNHit)[i] < NHitsMin) or
                  ((*pTrkNHit)[i] > NHitsMax) or ((*nTrkNHit)[i] > NHitsMax) ) continue;
 
+            if ( ((*pTrkPt)[i] < dauPtMin) or ((*nTrkPt)[i] < dauPtMin) ) continue;
+
+            if ( ((*pTrkDCASigXY)[i] < dauDCASig) or ((*nTrkDCASigXY)[i] < dauDCASig) or ((*pTrkDCASigZ)[i] < dauDCASig) or ((*nTrkDCASigZ)[i] < dauDCASig) ) continue;
+
             if ( ((*pTrkPtError)[i]/(*pTrkPt)[i] > pTerrMax) or ((*pTrkPtError)[i]/(*pTrkPt)[i] < pTerrMin) or
                  ((*nTrkPtError)[i]/(*nTrkPt)[i] > pTerrMax) or ((*nTrkPtError)[i]/(*nTrkPt)[i] < pTerrMin) ) continue;
 
@@ -174,7 +201,7 @@ void V0tuneA(string finput = "MB1",
 
 	TFile * f = new TFile(foutput.c_str(), "recreate");
 	for ( int ipt = 0; ipt < 13; ipt++ ) {
-		for ( int c = 0; c < 5; c++ ) {
+		for ( int c = 0; c < 8; c++ ) {
 			hMass[ipt][c]->Write();
 		}
 	}
