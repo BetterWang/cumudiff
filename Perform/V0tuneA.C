@@ -24,7 +24,7 @@ void V0tuneA(string finput = "MB1",
 {
 	TChain * trV = new TChain("trV");
 	if ( finput == "test" ) {
-		trV->Add("/afs/cern.ch/user/q/qwang/work/cleanroomRun2/Ana/CMSSW_10_3_1_patch3/src/QWAna/QWCumuDiff/run2018/cumu.root/tree/trV");
+		trV->Add("/afs/cern.ch/user/q/qwang/work/cleanroomRun2/Ana/CMSSW_10_3_1_patch3/src/QWAna/QWCumuDiff/run2018/cumu_V0Tree.root/tree/trV");
     }
 	if ( finput == "MB1" ) {
 		trV->Add("../../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Tree_v1/190218_180553/0000/*.root/treeLm/trV");
