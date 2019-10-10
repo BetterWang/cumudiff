@@ -5,7 +5,9 @@ std::pair<double, double> sb1(1.085, 1.1000);
 std::pair<double, double> sb2(1.1450, 1.16);
 
 double mass = 1.115683;
+double Dmass = 0.003;
 int Nbins = 160;
+double sigma = 0.005;
 
 //const std::string signal_func = "[3]*TMath::Gaus(x, [0], [1]) + [4]*TMath::Gaus(x, [0], [2])";
 const std::string gaus_func = "[2]*TMath::Gaus(x, [0], [1])";
@@ -79,13 +81,13 @@ TF1* fitHist(TH1D* hist, string s)
     func->FixParameter(9, func->GetParameter(9));
 
     func->ReleaseParameter(0);
-    func->SetParLimits(0, mass-0.003, mass+0.003);
+    func->SetParLimits(0, mass-Dmass, mass+Dmass);
     func->ReleaseParameter(1);
     func->ReleaseParameter(2);
     func->ReleaseParameter(3);
     func->ReleaseParameter(4);
-    func->SetParLimits(1, 0, 0.005);
-    func->SetParLimits(2, 0, 0.005);
+    func->SetParLimits(1, 0, sigma);
+    func->SetParLimits(2, 0, sigma);
     func->SetParLimits(3, 0, 0.8*hist->GetBinContent(hist->FindBin(mass)));
     func->SetParLimits(4, 0, 0.8*hist->GetBinContent(hist->FindBin(mass)));
 
@@ -103,9 +105,9 @@ TF1* fitHist(TH1D* hist, string s)
     func->ReleaseParameter(7);
     func->ReleaseParameter(8);
     func->ReleaseParameter(9);
-    func->SetParLimits(0, mass-0.003, mass+0.003);
-    func->SetParLimits(1, 0, 0.005);
-    func->SetParLimits(2, 0, 0.005);
+    func->SetParLimits(0, mass-Dmass, mass+Dmass);
+    func->SetParLimits(1, 0, sigma);
+    func->SetParLimits(2, 0, sigma);
     func->SetParLimits(3, 0, 0.8*hist->GetBinContent(hist->FindBin(mass)));
     func->SetParLimits(4, 0, 0.8*hist->GetBinContent(hist->FindBin(mass)));
 
@@ -127,6 +129,8 @@ void massFit3(string fin, string BDT, string fout, string s = "LM")
         sb1 = make_pair<double, double>(0.430, 0.489);
         sb2 = make_pair<double, double>(0.506, 0.503);
         mass = 0.497648;
+        sigma = 0.01;
+        Dmass = 0.005;
     }
 
     TH1D * hmass[200] = {};

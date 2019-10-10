@@ -23,3 +23,6 @@ pdf/
 Perform/*
 Eff
 !Perform/*.C
+!Perform/*.md
+!Perform/BDT
+!Perform/BDT/*
