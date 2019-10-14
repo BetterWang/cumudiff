@@ -311,11 +311,15 @@ The $K_{S}^0$ selection is suggested to use MCFull at 110 (BDT cut = 0.10).
 
 ## Armenteros-Podolanski Plot
 
-### $\Lambda$ $1.8 < p_{T} < 8.5$ 0-80%, 
+### $\Lambda$ $1.8 < p_{T} < 8.5$ $|y|<1.0$ 0-80%,
 
 ![Lm AP](BDT/AP_Lm.png)
 
-### $K_{S}^0$ $0.6 < p_{T} < 8.5$ 0-80%, 
+### $K_{S}^0$ $0.6 < p_{T} < 8.5$ $|y|<1.0$ 0-80%, 
 
 ![Ks AP](BDT/AP_Ks.png)
 
+## Summary
+
+* The weight xml file for $\Lambda$ is located [here](BDT/MC_Full_BDT250_D3.LM.weights.xml).
+* The weight xml file for $K_{S}^0$ is located [here](BDT/MC_Full_BDT250_D3.KS.weights.xml).
