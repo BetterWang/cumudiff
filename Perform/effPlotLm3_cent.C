@@ -223,8 +223,8 @@
     TLegend * leg1 = new TLegend(0.15, 0.75, 0.46, 0.92);
     leg1->AddEntry(hAcc_pT12_0_10,   "0-10% |y|<1.0", "p");
     leg1->AddEntry(hAcc_pT12_10_30, "10-30% |y|<1.0", "p");
-    leg1->AddEntry(hAcc_pT12_30_50, "10-30% |y|<1.0", "p");
-    leg1->AddEntry(hAcc_pT12_50_80, "10-30% |y|<1.0", "p");
+    leg1->AddEntry(hAcc_pT12_30_50, "30-50% |y|<1.0", "p");
+    leg1->AddEntry(hAcc_pT12_50_80, "50-80% |y|<1.0", "p");
     leg1->Draw();
     ceta->SaveAs("Lm_Acc_pT.pdf");
     ceta->SaveAs("Lm_Acc_pT.png");

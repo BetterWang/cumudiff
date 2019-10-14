@@ -308,3 +308,14 @@ The $K_{S}^0$ selection is suggested to use MCFull at 110 (BDT cut = 0.10).
 
 ![Ks Eff 2D](BDT/Ks_Eff2D_50_80.png)
 
+
+## Armenteros-Podolanski Plot
+
+### $\Lambda$ $1.8 < p_{T} < 8.5$ 0-80%, 
+
+![Lm AP](BDT/AP_Lm.png)
+
+### $K_{S}^0$ $0.6 < p_{T} < 8.5$ 0-80%, 
+
+![Ks AP](BDT/AP_Ks.png)
+
