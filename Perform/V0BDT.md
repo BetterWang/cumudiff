@@ -315,9 +315,17 @@ The $K_{S}^0$ selection is suggested to use MCFull at 110 (BDT cut = 0.10).
 
 ![Lm AP](BDT/AP_Lm.png)
 
+### $\Lambda$ $1.8 < p_{T} < 8.5$ $1.0<|y|<2.0$ 0-80%,
+
+![Lm AP](BDT/AP_LmFwd.png)
+
 ### $K_{S}^0$ $0.6 < p_{T} < 8.5$ $|y|<1.0$ 0-80%, 
 
 ![Ks AP](BDT/AP_Ks.png)
+
+### $K_{S}^0$ $0.6 < p_{T} < 8.5$ $1.0<|y|<2.0$ 0-80%, 
+
+![Ks AP](BDT/AP_KsFwd.png)
 
 ## Summary
 
