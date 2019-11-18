@@ -8,7 +8,7 @@
 using namespace TMVA;
 
 
-void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Tree_v6/190917_195729/0000/*.root/tree/trV", string fout = "LM.root" )
+void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Tree_v6/190917_195729/0000/*.root/tree/trV", string fout = "LM.root", bool bForward = false)
 {
     TMVA::Tools::Instance();
     TMVA::Reader *reader = new TMVA::Reader( "!Color:!Silent" );
@@ -70,11 +70,13 @@ void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimum
     reader->AddSpectator( "pdgId",  &pdgId);
 
     reader->BookMVA( string("BDT_MCfull"),     string("dataset_full_")+prefix+"/weights/TMVAClassification_BDT250_D3.weights.xml");
+    reader->BookMVA( string("BDT_MCfull4"),    string("dataset3_full_")+prefix+"/weights/TMVAClassification_BDT250_D4.weights.xml");
     reader->BookMVA( string("BDT_MCrap1"),     string("dataset_rap1_")+prefix+"/weights/TMVAClassification_BDT250_D3.weights.xml");
     reader->BookMVA( string("BDT_DataWSrap1"), string("dataset_dataWS_rap1_")+prefix+"/weights/TMVAClassification_BDT250_D3.weights.xml");
     reader->BookMVA( string("BDT_DataSBrap1"), string("dataset_dataSB_rap1_")+prefix+"/weights/TMVAClassification_BDT250_D3.weights.xml");
 
     Float_t BDT_MCfull = 0.;
+    Float_t BDT_MCfull4= 0.;
     Float_t BDT_MCrap1 = 0.;
     Float_t BDT_DataWSrap1 = 0.;
     Float_t BDT_DataSBrap1 = 0.;
@@ -178,6 +180,7 @@ void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimum
     mtr->Branch("Cent",     &Cent,      "Cent/F" );
 
     mtr->Branch("BDT_MCfull",     &BDT_MCfull,        "BDT_MCfull/F" );
+    mtr->Branch("BDT_MCfull4",    &BDT_MCfull4,       "BDT_MCfull4/F" );
     mtr->Branch("BDT_MCrap1",     &BDT_MCrap1,        "BDT_MCrap1/F" );
     mtr->Branch("BDT_DataWSrap1", &BDT_DataWSrap1,    "BDT_DataWSrap1/F" );
     mtr->Branch("BDT_DataSBrap1", &BDT_DataSBrap1,    "BDT_DataSBrap1/F" );
@@ -211,7 +214,11 @@ void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimum
             nTrkDCASigZ   = (*t_nTrkDCASigZ)[i];
             Cent          = (t_Cent);
 
-            if ( fabs(rapidity)>1.0 ) continue;
+            if ( bForward ) {
+                if ( fabs(rapidity)>2.0 and fabs(rapidity)<1.0 ) continue;
+            } else {
+                if ( fabs(rapidity)>1.0 ) continue;
+            }
 
             mass          = (*t_mass)[i];
             eta           = (*t_eta)[i];
@@ -219,6 +226,7 @@ void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimum
             pdgId         = (*t_pdgId)[i];
 
             BDT_MCfull = reader->EvaluateMVA( "BDT_MCfull" );
+            BDT_MCfull4= reader->EvaluateMVA( "BDT_MCfull4" );
             BDT_MCrap1 = reader->EvaluateMVA( "BDT_MCrap1" );
             BDT_DataWSrap1 = reader->EvaluateMVA( "BDT_DataWSrap1" );
             BDT_DataSBrap1 = reader->EvaluateMVA( "BDT_DataSBrap1" );

@@ -10,7 +10,6 @@ void MVAmass(string s = "LM")
     TChain * mtr = new TChain("mtr");
     string sout = "MVAmass_LM.root";
 
-
     if ( s == "LM" ) {
         mtr->Add("../../PbPb2018/V0Performance/newTree5/LM3_rap1_*.root/mtr");
     } else {

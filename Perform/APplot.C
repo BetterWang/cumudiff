@@ -10,7 +10,7 @@
 using namespace TMVA;
 
 
-void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Tree_v8/191011_032855/0000/*.root/tree/trV", string fout = "LM.root", Float_t BDTCut = 0.1)
+void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Tree_v8/191011_032855/0000/*.root/tree/trV", string fout = "LM.root", Float_t BDTCut = 0.1, string xml = "")
 {
     TMVA::Tools::Instance();
     TMVA::Reader *reader = new TMVA::Reader( "!Color:!Silent" );
@@ -80,7 +80,7 @@ void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/
     reader->AddSpectator( "phi",    &phi);
     reader->AddSpectator( "pdgId",  &pdgId);
 
-    reader->BookMVA( string("BDT_MCfull"),     string("dataset_full_")+prefix+"/weights/TMVAClassification_BDT250_D3.weights.xml");
+    reader->BookMVA( string("BDT_MCfull"),     xml);
 
     Float_t BDT_MCfull = 0.;
 

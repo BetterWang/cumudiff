@@ -59,7 +59,7 @@
 #include "TMVA/Tools.h"
 #include "TMVA/TMVAGui.h"
 
-int TMVAClassification_full( string s = "LM" )
+int TMVAClassification_full5( string s = "LM" )
 {
    // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
    // if you use your private .rootrc, or run from a different directory, please copy the
@@ -156,7 +156,7 @@ int TMVAClassification_full( string s = "LM" )
    TTree *background     = (TTree*)inputB->Get("tree");
 
    // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-   TString outfileName( (string("TMVA3_HydjetMCTruth_MCBkg_")+s+".root").c_str() ); // change
+   TString outfileName( (string("TMVA5_HydjetMCTruth_MCBkg_")+s+".root").c_str() ); // change
    TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
 
    // Create the factory object. Later you can choose the methods
@@ -172,7 +172,7 @@ int TMVAClassification_full( string s = "LM" )
    TMVA::Factory *factory = new TMVA::Factory( "TMVAClassification", outputFile,
                                                "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P:AnalysisType=Classification" );
 
-   TMVA::DataLoader *dataloader=new TMVA::DataLoader( (string("dataset3_full_")+s).c_str() ); // change
+   TMVA::DataLoader *dataloader=new TMVA::DataLoader( (string("dataset5_full_")+s).c_str() ); // change
    // If you wish to modify default settings
    // (please check "src/Config.h" to see all available global options)
    //
@@ -187,22 +187,22 @@ int TMVAClassification_full( string s = "LM" )
    dataloader->AddVariable( "vtxChi2",          'F' );
    dataloader->AddVariable( "cosThetaXYZ",      'F' );
    dataloader->AddVariable( "Lxyz",             'F' );
-   dataloader->AddVariable( "vtxDecaySigXYZ",   'F' );
+//   dataloader->AddVariable( "vtxDecaySigXYZ",   'F' );
    dataloader->AddVariable( "DCA",              'F' );
    dataloader->AddVariable( "pTrkNHit",         'I' );
    dataloader->AddVariable( "pTrkPt",           'F' );
-   dataloader->AddVariable( "pTrkPtError",      'F' );
+//   dataloader->AddVariable( "pTrkPtError",      'F' );
    dataloader->AddVariable( "pTrkEta",          'F' );
-   dataloader->AddVariable( "pTrkNPxLayer",     'I' );
-   dataloader->AddVariable( "pTrkDCASigXY",     'F' );
-   dataloader->AddVariable( "pTrkDCASigZ",      'F' );
+//   dataloader->AddVariable( "pTrkNPxLayer",     'I' );
+//   dataloader->AddVariable( "pTrkDCASigXY",     'F' );
+//   dataloader->AddVariable( "pTrkDCASigZ",      'F' );
    dataloader->AddVariable( "nTrkNHit",         'I' );
    dataloader->AddVariable( "nTrkPt",           'F' );
-   dataloader->AddVariable( "nTrkPtError",      'F' );
+//   dataloader->AddVariable( "nTrkPtError",      'F' );
    dataloader->AddVariable( "nTrkEta",          'F' );
-   dataloader->AddVariable( "nTrkNPxLayer",     'I' );
-   dataloader->AddVariable( "nTrkDCASigXY",     'F' );
-   dataloader->AddVariable( "nTrkDCASigZ",      'F' );
+//   dataloader->AddVariable( "nTrkNPxLayer",     'I' );
+//   dataloader->AddVariable( "nTrkDCASigXY",     'F' );
+//   dataloader->AddVariable( "nTrkDCASigZ",      'F' );
    dataloader->AddVariable( "Cent",             'I' );
 
    // You can add so-called "Spectator variables", which are not used in the MVA training,
@@ -210,14 +210,22 @@ int TMVAClassification_full( string s = "LM" )
    // input variables, the response values of all trained MVAs, and the spectator variables
 
    dataloader->AddSpectator( "mass" );
-//   dataloader->AddSpectator( "pt" );
    dataloader->AddSpectator( "eta" );
    dataloader->AddSpectator( "phi" );
-//   dataloader->AddSpectator( "rapidity" );
-//   dataloader->AddSpectator( "pTrkEta" );
-//   dataloader->AddSpectator( "nTrkEta" );
    dataloader->AddSpectator( "pdgId" );
 
+   dataloader->AddSpectator( "pTrkPtError" );
+   dataloader->AddSpectator( "nTrkPtError" );
+   dataloader->AddSpectator( "pTrkNPxLayer" );
+   dataloader->AddSpectator( "nTrkNPxLayer" );
+
+   dataloader->AddSpectator( "pTrkDCASigZ" );
+   dataloader->AddSpectator( "nTrkDCASigZ" );
+
+   dataloader->AddSpectator( "pTrkDCASigXY" );
+   dataloader->AddSpectator( "nTrkDCASigXY" );
+
+   dataloader->AddSpectator( "vtxDecaySigXYZ" );
 
    // global event weights per tree (see below for setting event-wise weights)
    Double_t signalWeight     = 1.0;
