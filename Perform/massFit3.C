@@ -189,6 +189,8 @@ void massFit3(string fin, string BDT, string fout, string s = "LM")
     TCanvas *c = new TCanvas("c", "c", 800, 600);
 
     TH1D * hSignificance = new TH1D("hSignificance", "hSignificance", 200, -1., 1.);
+    TH1D * hS = new TH1D("hS", "hS", 200, -1., 1.);
+    TH1D * hB = new TH1D("hB", "hB", 200, -1., 1.);
     TH1D * hSigma1 = new TH1D("hSigma1", "hSigma1", 200, -1., 1.);
     TH1D * hSigma2 = new TH1D("hSigma2", "hSigma2", 200, -1., 1.);
     TH1D * hAmpt1 = new TH1D("hAmpt1", "hAmpt1", 200, -1., 1.);
@@ -205,6 +207,8 @@ void massFit3(string fin, string BDT, string fout, string s = "LM")
         double S = func_signal[i]->Integral(signal_range.first, signal_range.second);
         double B = func_bckgnd[i]->Integral(signal_range.first, signal_range.second);
         double sig = S/sqrt(S+B);
+        hS->SetBinContent(i+1, S);
+        hB->SetBinContent(i+1, B);
         hSignificance->SetBinContent(i+1, TMath::IsNaN(sig)?0:sig);
 
         hSigma1->SetBinContent(i+1, gaus1_signal[i]->GetParameter(1));
@@ -220,6 +224,8 @@ void massFit3(string fin, string BDT, string fout, string s = "LM")
         hmass[i]->Write();
         fits[i]->Write(Form("fit_%i", i));
     }
+    hS->Write();
+    hB->Write();
     hSignificance->Write();
     hSigma1->Write();
     hSigma2->Write();
