@@ -8,13 +8,13 @@
 void MVAmass(string s = "LM")
 {
     TChain * mtr = new TChain("mtr");
-    string sout = "MVAmass_LM.root";
+    string sout = "MVAmassBDT250D4_LM.root";
 
     if ( s == "LM" ) {
-        mtr->Add("../../PbPb2018/V0Performance/newTree5/LM3_rap1_*.root/mtr");
+        mtr->Add("../../PbPb2018/V0Performance/newTree8/LM3_rap1_*.root/mtr");
     } else {
-        mtr->Add("../../PbPb2018/V0Performance/newTree5/KS3_rap1_*.root/mtr");
-        sout = "MVAmass_KS.root";
+        mtr->Add("../../PbPb2018/V0Performance/newTree8/KS3_rap1_*.root/mtr");
+        sout = "MVAmassBDT250D4_KS.root";
     }
 
     Float_t         mass;
@@ -54,7 +54,7 @@ void MVAmass(string s = "LM")
 
     int idx = 0;
     while ( mtr->GetEntry(idx++) ) {
-        if ( (idx%1000)==0 ) cout << "  ---> " << idx << endl;
+        if ( (idx%100000)==0 ) cout << "  ---> " << idx << endl;
         if ( pt > pTbin[13] ) continue;
         if ( fabs(rapidity) > 2.0 ) continue;
         int ipt = 0;
