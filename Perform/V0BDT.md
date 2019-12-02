@@ -27,28 +27,28 @@
 
 |Train Variable| description |
 |---|---|
+|cosThetaXYZ | Cosine 3D pointing angle $\theta$ |
+| Cent | centrality bin |
+| DCA | Distance of the closest approach |
+| Lxyz | 3D decay length |
 |pt       |  $p_T$ |
 |rapidity |  $y$   |
-|vtxChi2  | vertex Chi2 |
-|cosThetaXYZ | Cosine 3D pointing angle $\theta$ |
-| Lxyz | 3D decay length |
-| vtxDecaySigXYZ | 3D vertex significance |
-| DCA | Distance of the closest approach |
 | pTrkNHit | NHit of the positive daughter track |
-| pTrkPt | $p_T$ of the positive daughter track |
-| pTrkPtError | $p_T$ error of the positive daughter track |
-| pTrkEta | $\eta$ of the positive daughter track |
-| pTrkNPxLayer | NPixel layer with hits of the positive daughter track |
-| pTrkDCASigXY | transverse DCA significance of the positive daughter track |
-| pTrkDCASigZ  | longitudinal DCA significance of the positive daughter track |
 | nTrkNHit | NHit of the negative daughter track |
+|vtxChi2  | vertex Chi2 |
+| pTrkPt | $p_T$ of the positive daughter track |
 | nTrkPt | $p_T$ of the negative daughter track |
-| nTrkPtError | $p_T$ error of the negative daughter track |
+| pTrkEta | $\eta$ of the positive daughter track |
 | nTrkEta | $\eta$ of the negative daughter track |
-| nTrkNPxLayer | NPixel layer with hits of the negative daughter track |
+| pTrkDCASigXY | transverse DCA significance of the positive daughter track |
 | nTrkDCASigXY | transverse DCA significance of the negative daughter track |
+| pTrkDCASigZ  | longitudinal DCA significance of the positive daughter track |
 | nTrkDCASigZ  | longitudinal DCA significance of the negative daughter track |
-| Cent | centrality bin |
+| vtxDecaySigXYZ | 3D vertex significance |
+| pTrkPtError | $p_T$ error of the positive daughter track |
+| pTrkNPxLayer | NPixel layer with hits of the positive daughter track |
+| nTrkPtError | $p_T$ error of the negative daughter track |
+| nTrkNPxLayer | NPixel layer with hits of the negative daughter track |
 
 |Spectator Variable| description |
 |---|---|

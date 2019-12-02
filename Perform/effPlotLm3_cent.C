@@ -1,6 +1,8 @@
 
 {
-    TFile * f = new TFile("Lm_Hyjet_eff_MVAMCFull.root");
+    //TFile * f = new TFile("Lm_Hyjet_eff_MVAMCFull.root");
+    //TFile * f = new TFile("Lm_Hyjet_eff_MVAMCFullD4.root");
+    TFile * f = new TFile("Lm_Hyjet_eff_MVAMCFull250D4_115.root");
 
     TH1D * hAcc_eta_0_10 = (TH1D*) f->Get("hAcc_eta_0_10");
     TH1D * hEff_eta_0_10 = (TH1D*) f->Get("hEff_eta_0_10");
@@ -164,8 +166,8 @@
     leg->AddEntry(hAcc_eta_30_50, "30-50% 1.8<p_{T}<8.5", "p");
     leg->AddEntry(hAcc_eta_50_80, "50-80% 1.8<p_{T}<8.5", "p");
     leg->Draw();
-    ceta->SaveAs("Lm_Acc_eta.pdf");
-    ceta->SaveAs("Lm_Acc_eta.png");
+    ceta->SaveAs("Lm_Acc_etaD4.pdf");
+    ceta->SaveAs("Lm_Acc_etaD4.png");
 
 
     ///////
@@ -179,8 +181,8 @@
     hREC_eta_30_50->Draw("histplsame");
     hREC_eta_50_80->Draw("histplsame");
     leg->Draw();
-    ceta->SaveAs("Lm_REC_eta.pdf");
-    ceta->SaveAs("Lm_REC_eta.png");
+    ceta->SaveAs("Lm_REC_etaD4.pdf");
+    ceta->SaveAs("Lm_REC_etaD4.png");
 
     ///////
     hEff_eta_0_10->GetXaxis()->CenterTitle();
@@ -193,7 +195,7 @@
     hEff_eta_30_50->Draw("histplsame");
     hEff_eta_50_80->Draw("histplsame");
     leg->Draw();
-    ceta->SaveAs("Lm_Eff_eta.pdf");
+    ceta->SaveAs("Lm_Eff_etaD4.pdf");
     ceta->SaveAs("Lm_Eff_eta.png");
 
     //////// Fak
@@ -207,8 +209,8 @@
     hFak_eta_30_50->Draw("histplsame");
     hFak_eta_50_80->Draw("histplsame");
     leg->Draw();
-    ceta->SaveAs("Lm_Fak_eta.pdf");
-    ceta->SaveAs("Lm_Fak_eta.png");
+    ceta->SaveAs("Lm_Fak_etaD4.pdf");
+    ceta->SaveAs("Lm_Fak_etaD4.png");
 
     //////////
     hAcc_pT12_0_10->GetXaxis()->CenterTitle();
@@ -226,8 +228,8 @@
     leg1->AddEntry(hAcc_pT12_30_50, "30-50% |y|<1.0", "p");
     leg1->AddEntry(hAcc_pT12_50_80, "50-80% |y|<1.0", "p");
     leg1->Draw();
-    ceta->SaveAs("Lm_Acc_pT.pdf");
-    ceta->SaveAs("Lm_Acc_pT.png");
+    ceta->SaveAs("Lm_Acc_pTD4.pdf");
+    ceta->SaveAs("Lm_Acc_pTD4.png");
 
 
     //////////
@@ -241,8 +243,8 @@
     hREC_pT12_30_50->Draw("histplsame");
     hREC_pT12_50_80->Draw("histplsame");
     leg1->Draw();
-    ceta->SaveAs("Lm_REC_pT.pdf");
-    ceta->SaveAs("Lm_REC_pT.png");
+    ceta->SaveAs("Lm_REC_pTD4.pdf");
+    ceta->SaveAs("Lm_REC_pTD4.png");
 
 
     //////////
@@ -256,8 +258,8 @@
     hEff_pT12_30_50->Draw("histplsame");
     hEff_pT12_50_80->Draw("histplsame");
     leg1->Draw();
-    ceta->SaveAs("Lm_Eff_pT.pdf");
-    ceta->SaveAs("Lm_Eff_pT.png");
+    ceta->SaveAs("Lm_Eff_pTD4.pdf");
+    ceta->SaveAs("Lm_Eff_pTD4.png");
 
     //////////
     hFak_pT12_0_10->GetXaxis()->CenterTitle();
@@ -270,8 +272,8 @@
     hFak_pT12_30_50->Draw("histplsame");
     hFak_pT12_50_80->Draw("histplsame");
     leg1->Draw();
-    ceta->SaveAs("Lm_Fak_pT.pdf");
-    ceta->SaveAs("Lm_Fak_pT.png");
+    ceta->SaveAs("Lm_Fak_pTD4.pdf");
+    ceta->SaveAs("Lm_Fak_pTD4.png");
 
 
     ///////////
@@ -290,18 +292,18 @@
     hEff_50_80->SetTitle(";p_{T};y");
 
     hEff_0_10->Draw("colztext");
-    ceta->SaveAs("Lm_Eff2D_0_10.pdf");
-    ceta->SaveAs("Lm_Eff2D_0_10.png");
+    ceta->SaveAs("Lm_Eff2D_0_10D4.pdf");
+    ceta->SaveAs("Lm_Eff2D_0_10D4.png");
 
     hEff_10_30->Draw("colztext");
-    ceta->SaveAs("Lm_Eff2D_10_30.pdf");
-    ceta->SaveAs("Lm_Eff2D_10_30.png");
+    ceta->SaveAs("Lm_Eff2D_10_30D4.pdf");
+    ceta->SaveAs("Lm_Eff2D_10_30D4.png");
 
     hEff_30_50->Draw("colztext");
-    ceta->SaveAs("Lm_Eff2D_30_50.pdf");
-    ceta->SaveAs("Lm_Eff2D_30_50.png");
+    ceta->SaveAs("Lm_Eff2D_30_50D4.pdf");
+    ceta->SaveAs("Lm_Eff2D_30_50D4.png");
 
     hEff_50_80->Draw("colztext");
-    ceta->SaveAs("Lm_Eff2D_50_80.pdf");
-    ceta->SaveAs("Lm_Eff2D_50_80.png");
+    ceta->SaveAs("Lm_Eff2D_50_80D4.pdf");
+    ceta->SaveAs("Lm_Eff2D_50_80D4.png");
 }
