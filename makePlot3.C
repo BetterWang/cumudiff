@@ -1134,8 +1134,8 @@ void makePlot3()
     grPA_Ks8_ratio->Draw("psame");
     grPA_Ks8_sub_ratio->Draw("psame");
 
-    leg1->AddEntry(grPA_Ks8_ratio, "K_{s}^{0} v_{2}{4}/v_{2}{|#Delta#eta|>2}", "p");
-    leg1->AddEntry(grPA_Ks8_sub_ratio, "K_{s}^{0} v_{2}{4, sub-event}/v_{2}{|#Delta#eta|>2}", "p");
+    leg1->AddEntry(grPA_Ks8_ratio, "K_{s}^{0} v_{2}{4}/v_{2}{2, |#Delta#eta|>2}", "p");
+    leg1->AddEntry(grPA_Ks8_sub_ratio, "K_{s}^{0} v_{2}{4, sub-event}/v_{2}{2, |#Delta#eta|>2}", "p");
     leg1->Draw("same");
 
     cResult->SaveAs("F_pPb_Ks8_ratio.pdf");
@@ -1157,8 +1157,8 @@ void makePlot3()
     grPA_Lm8_ratio->Draw("psame");
     grPA_Lm8_sub_ratio->Draw("psame");
 
-    leg1->AddEntry(grPA_Lm8_ratio, "#Lambda v_{2}{4}/v_{2}{|#Delta#eta|>2}", "p");
-    leg1->AddEntry(grPA_Lm8_sub_ratio, "#Lambda v_{2}{4, sub-event}/v_{2}{|#Delta#eta|>2}", "p");
+    leg1->AddEntry(grPA_Lm8_ratio, "#Lambda v_{2}{4}/v_{2}{2, |#Delta#eta|>2}", "p");
+    leg1->AddEntry(grPA_Lm8_sub_ratio, "#Lambda v_{2}{4, sub-event}/v_{2}{2, |#Delta#eta|>2}", "p");
     leg1->Draw("same");
 
     cResult->SaveAs("F_pPb_Lm8_ratio.pdf");

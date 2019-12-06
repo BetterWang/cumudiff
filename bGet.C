@@ -404,16 +404,16 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
             double weight4_p = 0;
             double weight4_n = 0;
 
-            for ( int cc = 0; cc < 600; cc++ ) {
-                sum2_p += dCpRawPos2[i][cc] * yVpQpos2[i][cc];
-                sum2_n += dCpRawNeg2[i][cc] * yVpQneg2[i][cc];
-                sum4_p += dCpRawPos4[i][cc] * yVpQpos4[i][cc];
-                sum4_n += dCpRawNeg4[i][cc] * yVpQneg4[i][cc];
+			for ( int m = pCent[c]; m < pCent[c+1]; m++ ) {
+                sum2_p += dCpRawPos2[i][m] * yVpQpos2[i][m];
+                sum2_n += dCpRawNeg2[i][m] * yVpQneg2[i][m];
+                sum4_p += dCpRawPos4[i][m] * yVpQpos4[i][m];
+                sum4_n += dCpRawNeg4[i][m] * yVpQneg4[i][m];
 
-                weight2_p += yVpQpos2[i][cc];
-                weight2_n += yVpQneg2[i][cc];
-                weight4_p += yVpQpos4[i][cc];
-                weight4_n += yVpQneg4[i][cc];
+                weight2_p += yVpQpos2[i][m];
+                weight2_n += yVpQneg2[i][m];
+                weight4_p += yVpQpos4[i][m];
+                weight4_n += yVpQneg4[i][m];
             }
 
             if ( weight2_p > 0. ) sum2_p /= weight2_p;
