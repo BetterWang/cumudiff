@@ -1,0 +1,28 @@
+#: table_doi: 10.17182/hepdata.83911.v1/t20
+#: name: Table 20
+#: description: The elliptic flow per constituent quark after correcting back-to-back jet contribution, $v_{2}^{sub}/n_{q}$, for $K^{0}_{S}$ as a function of transverse kinetic energy per constituent quark $KE_{T}/n_{q}$ in PbPb collision at 5.02 TeV.
+#: data_file: data20.yaml
+#: data_license:   
+#: keyword reactions: PB PB --> $K^{0}_{S}$ X
+#: keyword observables: CORR
+#: keyword phrases: 
+#: keyword cmenergies: 5020.0-8160.0
+#: RE,PB PB --> $K^{0}_{S}$ X
+#: $|\Delta\eta|$,> 1
+#: Centrality Class,30-50%
+#: SQRT(S)/NUCLEON [GEV],5020.0
+#: Rapidity Range,-1 < $y_{cm}$ < 1
+$KE_{T}/n_{q}$ [GEV],$v_{2}^{sub}/n_{q}$,stat +,stat -,sys +,sys -
+0.06,0.00702,0.00031,-0.00031,0.00044,-0.00044
+0.12,0.012900,0.00006,-0.00006,0.00081,-0.00081
+0.19,0.0246,0.0000,-0.0000,0.0016,-0.0016
+0.27,0.0398,0.0000,-0.0000,0.0025,-0.0025
+0.40,0.0594,0.0000,-0.0000,0.0037,-0.0037
+0.58,0.0784,0.0000,-0.0000,0.0049,-0.0049
+0.77,0.0904,0.0000,-0.0000,0.0057,-0.0057
+1.00,0.0970,0.0000,-0.0000,0.0061,-0.0061
+1.33,0.0965,0.0001,-0.0001,0.0061,-0.0061
+1.76,0.0837,0.0001,-0.0001,0.0053,-0.0053
+2.33,0.0652,0.0002,-0.0002,0.0041,-0.0041
+2.98,0.0502,0.0004,-0.0004,0.0032,-0.0032
+

@@ -21,6 +21,26 @@ const double dbPbPbLm_bp  [13] = {     0,     0,     0,  .285,  .285, 1.367, 1.3
 const double dbPbPbLm_cp  [13] = {     0,     0,     0,- .280,- .280, .3242, .3242, .3242, .1494,- .280,- .280,- .280,- .280};
 const double dbPbPbLm_dp  [13] = {     0,     0,     0,  .176,  .176, 0.463, 0.463, 0.463,-.1105,  .176,  .176,  .176,  .176};
 
+//// PbPb Lm Cent
+////                                         0,     1,     2,     3,     4,     5,     6,     7,     8,     9,    10,    11,   12
+//const double dbPbPbLmCent_sig1[13] = { 100e3, 100e3, 100e3, 933e3,   2e6,   2e6, 486e3, 436e3, 258e3,   1e6,   1e6,   3e3,   3e3};
+//const double dbPbPbLmCent_sig2[13] = { 100e3, 100e3, 100e3,   1e3,   4e6,   4e6, 698e3, 638e3, 376e3,   2e6,   2e6,   3e3,   3e3};
+//const double dbPbPbLmCent_sigp[13] = { 100e3, 100e3, 100e3,   5e6,   5e6,   5e6, 665e3, 565e3, 333e3,   5e6,   3e6,  13e3,  13e3};
+//const double dbPbPbLmCent_ap  [13] = {     0,     0,     0,- .200, 1.200, 1.200, 0.810, 0.810, .0040,- .200,- .200,- .200,- .200};
+//const double dbPbPbLmCent_bp  [13] = {     0,     0,     0,  .285,  .285,  .285, 1.367, 1.367,-.4000,  .285,  .285,  .285,  .285};
+//const double dbPbPbLmCent_cp  [13] = {     0,     0,     0,- .280,  .480,  .480, .3242, .3242, .1494,- .280,- .280,- .280,- .280};
+//const double dbPbPbLmCent_dp  [13] = {     0,     0,     0,  .176,  .376,  .376, 0.463, 0.463,-.1105,  .176,  .176,  .176,  .176};
+//
+// PbPb Lm Cent 2
+//                                         0,     1,     2,     3,     4,     5,     6,     7,     8,     9,    10,    11,   12
+const double dbPbPbLmCent_sig1[13] = { 100e3, 100e3, 100e3, 933e3,   2e6,   2e6, 486e3, 436e3, 258e3,   1e6, 201e3,  43e3,   3e3};
+const double dbPbPbLmCent_sig2[13] = { 100e3, 100e3, 100e3,   1e3,   4e6,   4e6, 698e3, 638e3, 376e3,   2e6, 201e3,  43e3,   3e3};
+const double dbPbPbLmCent_sigp[13] = { 100e3, 100e3, 100e3,   5e6,   5e6,   5e6, 665e3, 565e3, 333e3,   5e6,   3e6,  13e3,  13e3};
+const double dbPbPbLmCent_ap  [13] = {     0,     0,     0,- .200, 1.200, 1.200, 0.810, 0.810, .0040,- .200,- .200,- .200,- .200};
+const double dbPbPbLmCent_bp  [13] = {     0,     0,     0,  .285,  .285,  .285, 1.367, 1.367,-.4000,  .285,  .285,  .285,  .285};
+const double dbPbPbLmCent_cp  [13] = {     0,     0,     0,- .280,  .480,  .480, .3242, .3242, .1494,- .280,- .280,- .280,- .280};
+const double dbPbPbLmCent_dp  [13] = {     0,     0,     0,  .176,  .376,  .376, 0.463, 0.463,-.1105,  .176,  .176,  .176,  .176};
+
 /*   Lm 1.1 - 1.13
 // PbPb Lm
 //                                     0,     1,     2,     3,     4,     5,     6,     7,     8,     9,    10,   11,   12
@@ -43,8 +63,18 @@ const double dbPbPbKs_bp  [13] = {.43815, .4381,.43815,.43815, .2237, .2860, .32
 const double dbPbPbKs_cp  [13] = {-.4343,-.1343,-.1343,-.1343,-.1106,-.0847,-.1070,-.1070,-.1070,-.1294,-.1586,-.1720,-.1720};
 const double dbPbPbKs_dp  [13] = { 0.682, 0.682, 0.682, 0.682, .7775, .7053, .6252, .6252, .6252, .6124, .6001,0.4501,0.4501};
 
+// PbPb Ks Cent
+//                                         0,     1,     2,     3,     4,     5,     6,     7,     8,     9,    10,    11,   12
+const double dbPbPbKsCent_sig1[13] = { 100e3,   2e6,   6e6,   6e6,3200e3,   3e6,   3e6,   3e6,   3e6,   3e6,   3e6,   3e6,  71e3};
+const double dbPbPbKsCent_sig2[13] = { 100e3,   1e6,   9e6,   9e6,6241e3,   3e6,   3e6,   3e6,   3e6,   3e6,   3e6,   3e6,  71e3};
+const double dbPbPbKsCent_sigp[13] = { 340e3,   1e6,   6e6,   6e6,950406,  12e6,  12e6,  12e6,  12e6,  12e6,  12e6,  12e6, 158e3};
+const double dbPbPbKsCent_ap  [13] = {-.5276,-.5276,-.5276,-.5276,-.2331,-.2444,-.2444,-.2444,-.2444,-.2444,-.2444,-.2444,-.2444};
+const double dbPbPbKsCent_bp  [13] = { .4381, .4381,.43815,.43815, .2237, .2860, .2860, .2860, .2860, .2860, .2860, .2860, .2860};
+const double dbPbPbKsCent_cp  [13] = {-.1343,-.1343,-.1343,-.1343,-.1106,-.0847,-.0847,-.0847,-.0847,-.0847,-.0847,-.0847,-.0847};
+const double dbPbPbKsCent_dp  [13] = { 0.682, 0.682, 0.682, 0.682, .7775, .7053, .7053, .7053, .7053, .7053, .7053, .7053, .7053};
 
-// pPb Lm
+
+// pPb Lm Cent
 //                                       0,     1,     2,     3,     4,     5,     6,     7,     8,     9,    10,    11,   12
 const double dbpPbLm250_sig1[13] = { 100e3, 100e3, 100e3, 192e3, 504e3, 504e3, 504e3, 504e3, 504e3, 140e3,  34e3,  14e3,   4e3};
 const double dbpPbLm250_sig2[13] = { 100e3, 100e3, 100e3, 190e3, 504e3, 504e3, 504e3, 504e3, 504e3, 140e3,  54e3,  14e3,   4e3};
@@ -148,6 +178,7 @@ void perform(string fname = "PbPb15_V0_ppRecoGMO567_v4.root",
 //	SetStyle();
 
 	bool bPbPb = (fname.find("pPb") == std::string::npos);
+	bool bCent = (fname.find("Cent") != std::string::npos);
 
 	const double * dbLm_sig1 ;
 	const double * dbLm_sig2 ;
@@ -180,6 +211,23 @@ void perform(string fname = "PbPb15_V0_ppRecoGMO567_v4.root",
 		dbKs_bp   = dbPbPbKs_bp  ;
 		dbKs_cp   = dbPbPbKs_cp  ;
 		dbKs_dp   = dbPbPbKs_dp  ;
+        if ( fname.find("Cent") != std::string::npos ) {
+            dbLm_sig1 = dbPbPbLmCent_sig1;
+            dbLm_sig2 = dbPbPbLmCent_sig2;
+            dbLm_sigp = dbPbPbLmCent_sigp;
+            dbLm_ap   = dbPbPbLmCent_ap  ;
+            dbLm_bp   = dbPbPbLmCent_bp  ;
+            dbLm_cp   = dbPbPbLmCent_cp  ;
+            dbLm_dp   = dbPbPbLmCent_dp  ;
+
+            dbKs_sig1 = dbPbPbKsCent_sig1;
+            dbKs_sig2 = dbPbPbKsCent_sig2;
+            dbKs_sigp = dbPbPbKsCent_sigp;
+            dbKs_ap   = dbPbPbKsCent_ap  ;
+            dbKs_bp   = dbPbPbKsCent_bp  ;
+            dbKs_cp   = dbPbPbKsCent_cp  ;
+            dbKs_dp   = dbPbPbKsCent_dp  ;
+        }
 	} else {
 		// pPb
 
@@ -290,6 +338,21 @@ void perform(string fname = "PbPb15_V0_ppRecoGMO567_v4.root",
 		{"vectLmMassN185", "185 #leq N_{trk}^{offline} < 250"},
 		{"vectLmMassN250", "250 #leq N_{trk}^{offline} < 320"},
 	};
+    if ( bPbPb and bCent ) {
+        noff_map = {
+            {"vectKsMassNAll", "NA"},
+            {"vectKsMassN120", "NA"},
+            {"vectKsMassN150", "NA"},
+            {"vectKsMassN185", "30% < Cent < 50%"},
+            {"vectKsMassN250", "50% < Cent < 70%"},
+            {"vectLmMassNAll", "NA"},
+            {"vectLmMassN120", "NA"},
+            {"vectLmMassN150", "NA"},
+            {"vectLmMassN185", "30% < Cent < 50%"},
+            {"vectLmMassN250", "50% < Cent < 70%"},
+        };
+
+    }
 
 	vector<double> vpt{
 		0.2, // 0

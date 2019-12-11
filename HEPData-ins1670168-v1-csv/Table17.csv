@@ -1,0 +1,26 @@
+#: table_doi: 10.17182/hepdata.83911.v1/t17
+#: name: Table 17
+#: description: The elliptic flow after correcting back-to-back jet contribution, $v_{2}^{sub}$, for $\Lambda$ as a function of $p_{T}$ in PbPb collision at 5.02 TeV.
+#: data_file: data17.yaml
+#: data_license:   
+#: keyword reactions: PB PB --> $\Lambda$ X
+#: keyword observables: CORR
+#: keyword phrases: 
+#: keyword cmenergies: 5020.0-8160.0
+#: RE,PB PB --> $\Lambda$ X
+#: $|\Delta\eta|$,> 1
+#: Centrality Class,30-50%
+#: SQRT(S)/NUCLEON [GEV],5020.0
+#: Rapidity Range,-1 < $y_{cm}$ < 1
+$p_{T}$ [GEV],$v_{2}^{sub}$,stat +,stat -,sys +,sys -
+0.90,0.0170,0.0004,-0.0004,0.0011,-0.0011
+1.20,0.0623,0.0001,-0.0001,0.0039,-0.0039
+1.60,0.1080,0.0001,-0.0001,0.0068,-0.0068
+1.99,0.1570,0.0001,-0.0001,0.0099,-0.0099
+2.47,0.206,0.000,-0.000,0.013,-0.013
+3.13,0.246,0.000,-0.000,0.016,-0.016
+3.98,0.260,0.000,-0.000,0.016,-0.016
+5.10,0.235,0.000,-0.000,0.015,-0.015
+6.42,0.186,0.001,-0.001,0.012,-0.012
+7.62,0.1560,0.0020,-0.0020,0.0098,-0.0098
+
