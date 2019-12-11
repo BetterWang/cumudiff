@@ -182,38 +182,38 @@ char const * fname[] = {
 	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_LmSBNeg_rapidity_Cent_v4_rsb/190723_142532/0000/",		// 179 Lm HIMB7 Cent SBNeg
 	"NA",		// 180 Ks HIMB567 Cent SB
 	"NA",		// 181 Lm HIMB567 Cent SB
-	"../cumu/PAHighMultiplicity0/crab_PAHM0_Kscumu_eff_v12/190708_155529/0000/",		// 182 Ks HM0 pPb
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_Kscumu_eff_v12_rsb/190816_193255/0000/",	// 182 Ks HM0 pPb
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_Kscumu_eff_v12/190708_155550/0000/",		// 183 Ks HM1 pPb
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_Kscumu_eff_v12/190708_155609/0000/",		// 184 Ks HM2 pPb
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_Kscumu_eff_v12/190708_155630/0000/",		// 185 Ks HM3 pPb
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_eff_v12/190708_155650/0000/",		// 186 Ks HM4 pPb
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_Kscumu_eff_v12/190708_155711/0000/",		// 187 Ks HM5 pPb
-	"../cumu/PAHighMultiplicity6/crab_PAHM6_Kscumu_eff_v12/190708_155731/0000/",		// 188 Ks HM6 pPb
-	"",		// 189 Ks HM7 pPb
-	"../cumu/PAHighMultiplicity0/crab_PAHM0_Kscumu_eff_reverse_v12/190708_161107/0000/",		// 190 Ks HM0 pPb reverse
-	"../cumu/PAHighMultiplicity1/crab_PAHM1_Kscumu_eff_reverse_v12/190708_161127/0000/",		// 191 Ks HM1 pPb reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Kscumu_eff_v12_rsb/190818_044056/0000/",	// 188 Ks HM6 pPb
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_Kscumu_eff_v12_rsb/190816_193314/0000/",	// 189 Ks HM7 pPb
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_Kscumu_eff_reverse_v12_rsb/190816_193336/0000/",	// 190 Ks HM0 pPb reverse
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_Kscumu_eff_reverse_v12_rsb/190827_201252/0000/",	// 191 Ks HM1 pPb reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_Kscumu_eff_reverse_v12/190802_163004/0000/",		// 192 Ks HM2 pPb reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_Kscumu_eff_reverse_v12/190708_161206/0000/",		// 193 Ks HM3 pPb reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_eff_reverse_v12/190802_163024/0000/",		// 194 Ks HM4 pPb reverse
-	"../cumu/PAHighMultiplicity5/crab_PAHM5_Kscumu_eff_reverse_v12/190708_161247/0000/",		// 195 Ks HM5 pPb reverse
-	"../cumu/PAHighMultiplicity6/crab_PAHM6_Kscumu_eff_reverse_v12/190708_161309/0000/",		// 196 Ks HM6 pPb reverse
-	"../cumu/PAHighMultiplicity7/crab_PAHM7_Kscumu_eff_reverse_v12/190708_161330/0000/",		// 197 Ks HM7 pPb reverse
-	"",		// 198 Lm HM0 pPb
+	"../cumu/PAHighMultiplicity5/crab_PAHM5_Kscumu_eff_reverse_v12_rsb/190827_204128/0000/",	// 195 Ks HM5 pPb reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Kscumu_eff_reverse_v12_rsb/190818_044205/0000/",	// 196 Ks HM6 pPb reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_Kscumu_eff_reverse_v12_rsb/190816_193356/0000/",	// 197 Ks HM7 pPb reverse
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_Lambda_cumu_eff_v12_rsb/190816_193054/0000/",	// 198 Lm HM0 pPb
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_Lambda_cumu_eff_v12/190802_163854/0000/",		// 199 Lm HM1 pPb
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_Lambda_cumu_eff_v12/190802_163913/0000/",		// 200 Lm HM2 pPb
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_Lambda_cumu_eff_v12/190802_163934/0000/",		// 201 Lm HM3 pPb
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_Lambda_cumu_eff_v12/190802_163954/0000/",		// 202 Lm HM4 pPb
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_Lambda_cumu_eff_v12/190802_164013/0000/",		// 203 Lm HM5 pPb
-	"../cumu/PAHighMultiplicity6/crab_PAHM6_Lambda_cumu_eff_v12/190802_164033/0000/",		// 204 Lm HM6 pPb
-	"",		// 205 Lm HM7 pPb
-	"",		// 206 Lm HM0 pPb reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Lambda_cumu_eff_v12_rsb/190818_044226/0000/",	// 204 Lm HM6 pPb
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_Lambda_cumu_eff_v12_rsb/190816_193115/0000/",	// 205 Lm HM7 pPb
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_Lambda_cumu_eff_reverse_v12_rsb/190816_193419/0000/",	// 206 Lm HM0 pPb reverse
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_Lambda_cumu_eff_reverse_v12/190802_163542/0000/",		// 207 Lm HM1 pPb reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_Lambda_cumu_eff_reverse_v12/190708_164645/0000/",		// 208 Lm HM2 pPb reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_Lambda_cumu_eff_reverse_v12/190708_164727/0000/",		// 209 Lm HM3 pPb reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_Lambda_cumu_eff_reverse_v12/190708_164753/0000/",		// 210 Lm HM4 pPb reverse
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_Lambda_cumu_eff_reverse_v12/190708_164815/0000/",		// 211 Lm HM5 pPb reverse
-	"../cumu/PAHighMultiplicity6/crab_PAHM6_Lambda_cumu_eff_reverse_v12/190802_163601/0000/",		// 212 Lm HM6 pPb reverse
-	"",		// 213 Lm HM7 pPb reverse
+	"../cumu/PAHighMultiplicity6/crab_PAHM6_Lambda_cumu_eff_reverse_v12_rsb/190818_044251/0000/",	// 212 Lm HM6 pPb reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_Lambda_cumu_eff_reverse_v12_rsb/190816_193438/0000/",	// 213 Lm HM7 pPb reverse
 	"NA",		// 214 Ks HM123456 pPb
 	"NA",		// 215 Ks HM123456 pPb reverse
 	"NA",		// 216 Ks HM0 pPb merge
@@ -235,79 +235,79 @@ char const * fname[] = {
 	"../CumuV0/HIMinimumBias6/crab_HIMB6_V0cumu_ppRecoGMO_LmSBNeg_rapidity_Cent_v4_rsb/190723_142513/0000/",		// 232 Lm HIMB6 PbPb Cent SBNeg Update
 	"../CumuV0/HIMinimumBias7/crab_HIMB7_V0cumu_ppRecoGMO_LmSBNeg_rapidity_Cent_v4_rsb/190723_142532/0000/",		// 233 Lm HIMB7 PbPb Cent SBNeg Update
 	"NA",		// 234 Lm HIMB567 PbPb Cent SB Update
-	"",		// 235 Ks pPb HM0 SBPos
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_KscumuSBPos_eff_v2_rsb/190816_193537/0000/",	// 235 Ks pPb HM0 SBPos
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBPos_eff_v2/190809_145047/0000/",		// 236 Ks pPb HM1 SBPos
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBPos_eff_v2/190809_145113/0000/",		// 237 Ks pPb HM2 SBPos
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBPos_eff_v2/190809_145145/0000/",		// 238 Ks pPb HM3 SBPos
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBPos_eff_v2/190809_145221/0000/",		// 239 Ks pPb HM4 SBPos
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBPos_eff_v2/190809_145248/0000/",		// 240 Ks pPb HM5 SBPos
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBPos_eff_v2/190809_145323/0000/",		// 241 Ks pPb HM6 SBPos
-	"",		// 242 Ks pPb HM7 SBPos
-	"",		// 243 Ks pPb HM0 SBPos reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_KscumuSBPos_eff_v2_rsb/190816_193558/0000/",	// 242 Ks pPb HM7 SBPos
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_KscumuSBPos_eff_reverse_v2_rsb/190816_193618/0000/",	// 243 Ks pPb HM0 SBPos reverse
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBPos_eff_reverse_v2/190807_190405/0000/",		// 244 Ks pPb HM1 SBPos reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBPos_eff_reverse_v2/190807_190427/0000/",		// 245 Ks pPb HM2 SBPos reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBPos_eff_reverse_v2/190807_190447/0000/",		// 246 Ks pPb HM3 SBPos reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBPos_eff_reverse_v2/190807_190506/0000/",		// 247 Ks pPb HM4 SBPos reverse
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBPos_eff_reverse_v2/190807_190527/0000/",		// 248 Ks pPb HM5 SBPos reverse
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBPos_eff_reverse_v2/190807_190545/0000/",		// 249 Ks pPb HM6 SBPos reverse
-	"",		// 250 Ks pPb HM7 SBPos reverse
-	"",		// 251 Ks pPb HM0 SBNeg
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_KscumuSBPos_eff_reverse_v2_rsb/190816_193639/0000/",	// 250 Ks pPb HM7 SBPos reverse
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_KscumuSBNeg_eff_v2_rsb/190816_193704/0000/",	// 251 Ks pPb HM0 SBNeg
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBNeg_eff_v2/190809_145407/0000/",		// 252 Ks pPb HM1 SBNeg
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBNeg_eff_v2/190809_145437/0000/",		// 253 Ks pPb HM2 SBNeg
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBNeg_eff_v2/190809_145507/0000/",		// 254 Ks pPb HM3 SBNeg
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBNeg_eff_v2/190809_145540/0000/",		// 255 Ks pPb HM4 SBNeg
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBNeg_eff_v2/190809_145628/0000/",		// 256 Ks pPb HM5 SBNeg
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBNeg_eff_v2/190809_145708/0000/",		// 257 Ks pPb HM6 SBNeg
-	"",		// 258 Ks pPb HM7 SBNeg
-	"",		// 259 Ks pPb HM0 SBNeg reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_KscumuSBNeg_eff_v2_rsb/190816_193725/0000/",	// 258 Ks pPb HM7 SBNeg
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_KscumuSBNeg_eff_reverse_v2_rsb/190816_193749/0000/",	// 259 Ks pPb HM0 SBNeg reverse
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_KscumuSBNeg_eff_reverse_v2/190807_190642/0000/",		// 260 Ks pPb HM1 SBNeg reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_KscumuSBNeg_eff_reverse_v2/190807_190701/0000/",		// 261 Ks pPb HM2 SBNeg reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_KscumuSBNeg_eff_reverse_v2/190807_190719/0000/",		// 262 Ks pPb HM3 SBNeg reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_KscumuSBNeg_eff_reverse_v2/190807_190738/0000/",		// 263 Ks pPb HM4 SBNeg reverse
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_KscumuSBNeg_eff_reverse_v2/190807_190757/0000/",		// 264 Ks pPb HM5 SBNeg reverse
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_KscumuSBNeg_eff_reverse_v2/190807_190817/0000/",		// 265 Ks pPb HM6 SBNeg reverse
-	"",		// 266 Ks pPb HM7 SBNeg reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_KscumuSBNeg_eff_reverse_v2_rsb/190816_193808/0000/",	// 266 Ks pPb HM7 SBNeg reverse
 	"NA",		// 267 Ks pPb HM0 SB merge
 	"NA",		// 268 Ks pPb HM123456 SB merge
 	"NA",		// 269 Ks pPb HM7 SB merge
-	"",		// 270 Lm pPb HM0 SBPos
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_LambdaSBPos_cumu_eff_v2_rsb/190816_193902/0000/",	// 270 Lm pPb HM0 SBPos
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBPos_cumu_eff_v2/190809_144402/0000/",		// 271 Lm pPb HM1 SBPos
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBPos_cumu_eff_v2/190809_144433/0000/",		// 272 Lm pPb HM2 SBPos
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBPos_cumu_eff_v2/190809_144459/0000/",		// 273 Lm pPb HM3 SBPos
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBPos_cumu_eff_v2/190809_144531/0000/",		// 274 Lm pPb HM4 SBPos
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBPos_cumu_eff_v2/190809_144611/0000/",		// 275 Lm pPb HM5 SBPos
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_LambdaSBPos_cumu_eff_v2/190809_144637/0000/",		// 276 Lm pPb HM6 SBPos
-	"",		// 277 Lm pPb HM7 SBPos
-	"",		// 278 Lm pPb HM0 SBPos reverse
-	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBPos_cumu_eff_reverse_v2_rsb/190809_143838/0000/",		// 279 Lm pPb HM1 SBPos reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_LambdaSBPos_cumu_eff_v2_rsb/190816_193921/0000/",	// 277 Lm pPb HM7 SBPos
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_LambdaSBPos_cumu_eff_reverse_v2_rsb/190816_193940/0000/",	// 278 Lm pPb HM0 SBPos reverse
+	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBPos_cumu_eff_reverse_v2_rsb/190809_143838/0000/",	// 279 Lm pPb HM1 SBPos reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBPos_cumu_eff_reverse_v2/190728_151156/0000/",		// 280 Lm pPb HM2 SBPos reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBPos_cumu_eff_reverse_v2/190728_151215/0000/",		// 281 Lm pPb HM3 SBPos reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBPos_cumu_eff_reverse_v2/190728_151232/0000/",		// 282 Lm pPb HM4 SBPos reverse
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBPos_cumu_eff_reverse_v2/190728_151250/0000/",		// 283 Lm pPb HM5 SBPos reverse
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_LambdaSBPos_cumu_eff_reverse_v2/190728_151310/0000/",		// 284 Lm pPb HM6 SBPos reverse
-	"",		// 285 Lm pPb HM7 SBPos reverse
-	"",		// 286 Lm pPb HM0 SBNeg
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_LambdaSBPos_cumu_eff_reverse_v2_rsb/190816_194000/0000/",	// 285 Lm pPb HM7 SBPos reverse
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_LambdaSBNeg_cumu_eff_v2_rsb/190816_194025/0000/",	// 286 Lm pPb HM0 SBNeg
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBNeg_cumu_eff_v2/190809_144008/0000/",		// 287 Lm pPb HM1 SBNeg
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBNeg_cumu_eff_v2/190809_144044/0000/",		// 288 Lm pPb HM2 SBNeg
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBNeg_cumu_eff_v2/190809_144116/0000/",		// 289 Lm pPb HM3 SBNeg
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBNeg_cumu_eff_v2/190809_144143/0000/",		// 290 Lm pPb HM4 SBNeg
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBNeg_cumu_eff_v2/190809_144222/0000/",		// 291 Lm pPb HM5 SBNeg
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_LambdaSBNeg_cumu_eff_v2/190809_144254/0000/",		// 292 Lm pPb HM6 SBNeg
-	"",		// 293 Lm pPb HM7 SBNeg
-	"",		// 294 Lm pPb HM0 SBNeg reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_LambdaSBNeg_cumu_eff_v2_rsb/190816_194044/0000/",	// 293 Lm pPb HM7 SBNeg
+	"../cumu/PAHighMultiplicity0/crab_PAHM0_LambdaSBNeg_cumu_eff_reverse_v2_rsb/190816_194104/0000/",	// 294 Lm pPb HM0 SBNeg reverse
 	"../cumu/PAHighMultiplicity1/crab_PAHM1_LambdaSBNeg_cumu_eff_reverse_v2/190728_150924/0000/",		// 295 Lm pPb HM1 SBNeg reverse
 	"../cumu/PAHighMultiplicity2/crab_PAHM2_LambdaSBNeg_cumu_eff_reverse_v2/190728_150945/0000/",		// 296 Lm pPb HM2 SBNeg reverse
 	"../cumu/PAHighMultiplicity3/crab_PAHM3_LambdaSBNeg_cumu_eff_reverse_v2_rsb/190809_143527/0000/",	// 297 Lm pPb HM3 SBNeg reverse
 	"../cumu/PAHighMultiplicity4/crab_PAHM4_LambdaSBNeg_cumu_eff_reverse_v2/190728_151029/0000/",		// 298 Lm pPb HM4 SBNeg reverse
 	"../cumu/PAHighMultiplicity5/crab_PAHM5_LambdaSBNeg_cumu_eff_reverse_v2_rsb/190809_143601/0000/",	// 299 Lm pPb HM5 SBNeg reverse
 	"../cumu/PAHighMultiplicity6/crab_PAHM6_LambdaSBNeg_cumu_eff_reverse_v2/190728_151105/0000/",		// 300 Lm pPb HM6 SBNeg reverse
-	"",		// 301 Lm pPb HM7 SBNeg reverse
+	"../cumu/PAHighMultiplicity7/crab_PAHM7_LambdaSBNeg_cumu_eff_reverse_v2_rsb/190816_194123/0000/",	// 301 Lm pPb HM7 SBNeg reverse
 	"NA",		// 302 Lm pPb HM0 SB merge
 	"NA",		// 303 Lm pPb HM123456 SB merge
 	"NA",		// 304 Lm pPb HM7 SB merge
     "",     // 305 Ks pPb HM0 sysTight
     "",     // 306 Ks pPb HM1 sysTight
-    "",     // 307 Ks pPb HM2 sysTight
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Kscumu_sysTight_eff_v1/190817_033023/0000/",     // 307 Ks pPb HM2 sysTight
     "",     // 308 Ks pPb HM3 sysTight
     "../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_sysTight_eff_v1/190809_180008/0000/",     // 309 Ks pPb HM4 sysTight
     "",     // 310 Ks pPb HM5 sysTight
@@ -315,18 +315,18 @@ char const * fname[] = {
     "",     // 312 Ks pPb HM7 sysTight
     "",     // 313 Ks pPb HM0 sysTight reverse
     "",     // 314 Ks pPb HM1 sysTight reverse
-    "",     // 315 Ks pPb HM2 sysTight reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Kscumu_sysTight_eff_reverse_v1/190817_033128/0000/",     // 315 Ks pPb HM2 sysTight reverse
     "",     // 316 Ks pPb HM3 sysTight reverse
     "../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_sysTight_eff_reverse_v1/190809_180045/0000/",     // 317 Ks pPb HM4 sysTight reverse
     "",     // 318 Ks pPb HM5 sysTight reverse
     "",     // 319 Ks pPb HM6 sysTight reverse
     "",     // 320 Ks pPb HM7 sysTight reverse
-    "",     // 321 Ks pPb HM0 sysTight merge
-    "",     // 322 Ks pPb HM123456 sysTight merge
-    "",     // 323 Ks pPb HM7 sysTight merge
+    "NA",     // 321 Ks pPb HM0 sysTight merge
+    "NA",     // 322 Ks pPb HM123456 sysTight merge
+    "NA",     // 323 Ks pPb HM7 sysTight merge
     "",     // 324 Ks pPb HM0 sysLoose
     "",     // 325 Ks pPb HM1 sysLoose
-    "",     // 326 Ks pPb HM2 sysLoose
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Kscumu_sysLoose_eff_v1/190817_033218/0000/",     // 326 Ks pPb HM2 sysLoose
     "",     // 327 Ks pPb HM3 sysLoose
     "../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_sysLoose_eff_v1/190809_180131/0000/",     // 328 Ks pPb HM4 sysLoose
     "",     // 329 Ks pPb HM5 sysLoose
@@ -334,18 +334,18 @@ char const * fname[] = {
     "",     // 331 Ks pPb HM7 sysLoose
     "",     // 332 Ks pPb HM0 sysLoose reverse
     "",     // 333 Ks pPb HM1 sysLoose reverse
-    "",     // 334 Ks pPb HM2 sysLoose reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Kscumu_sysLoose_eff_reverse_v1/190817_033304/0000/",     // 334 Ks pPb HM2 sysLoose reverse
     "",     // 335 Ks pPb HM3 sysLoose reverse
     "../cumu/PAHighMultiplicity4/crab_PAHM4_Kscumu_sysLoose_eff_reverse_v1/190809_180209/0000/",     // 336 Ks pPb HM4 sysLoose reverse
     "",     // 337 Ks pPb HM5 sysLoose reverse
     "",     // 338 Ks pPb HM6 sysLoose reverse
     "",     // 339 Ks pPb HM7 sysLoose reverse
-    "",     // 340 Ks pPb HM0 sysLoose merge
-    "",     // 341 Ks pPb HM123456 sysLoose merge
-    "",     // 342 Ks pPb HM7 sysLoose merge
+    "NA",     // 340 Ks pPb HM0 sysLoose merge
+    "NA",     // 341 Ks pPb HM123456 sysLoose merge
+    "NA",     // 342 Ks pPb HM7 sysLoose merge
     "",     // 343 Lm pPb HM0 sysTight
     "",     // 344 Lm pPb HM1 sysTight
-    "",     // 345 Lm pPb HM2 sysTight
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Lmcumu_sysTight_eff_v1/190817_033430/0000/",     // 345 Lm pPb HM2 sysTight
     "",     // 346 Lm pPb HM3 sysTight
     "../cumu/PAHighMultiplicity4/crab_PAHM4_Lmcumu_sysTight_eff_v1/190809_180253/0000/",     // 347 Lm pPb HM4 sysTight
     "",     // 348 Lm pPb HM5 sysTight
@@ -353,8 +353,8 @@ char const * fname[] = {
     "",     // 350 Lm pPb HM7 sysTight
     "",     // 351 Lm pPb HM0 sysTight reverse
     "",     // 352 Lm pPb HM1 sysTight reverse
-    "",     // 353 Lm pPb HM2 sysTight reverse
-    "",     // 354 Lm pPb HM3 sysTight reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Lmcumu_sysTight_eff_reverse_v1/190817_033524/0000/",     // 353 Lm pPb HM2 sysTight reverse
+    "../cumu/PAHighMultiplicity3/crab_PAHM3_Kscumu_sysTight_eff_reverse_v1/190621_180609/0000/",     // 354 Lm pPb HM3 sysTight reverse
     "../cumu/PAHighMultiplicity4/crab_PAHM4_Lmcumu_sysTight_eff_reverse_v1/190809_180326/0000/",     // 355 Lm pPb HM4 sysTight reverse
     "",     // 356 Lm pPb HM5 sysTight reverse
     "",     // 357 Lm pPb HM6 sysTight reverse
@@ -364,7 +364,7 @@ char const * fname[] = {
     "NA",     // 361 Lm pPb HM7 sysTight merge
     "",     // 362 Lm pPb HM0 sysLoose
     "",     // 363 Lm pPb HM1 sysLoose
-    "",     // 364 Lm pPb HM2 sysLoose
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Lmcumu_sysLoose_eff_v1/190817_033610/0000/",     // 364 Lm pPb HM2 sysLoose
     "",     // 365 Lm pPb HM3 sysLoose
     "../cumu/PAHighMultiplicity4/crab_PAHM4_Lmcumu_sysLoose_eff_v1/190809_180406/0000/",     // 366 Lm pPb HM4 sysLoose
     "",     // 367 Lm pPb HM5 sysLoose
@@ -372,7 +372,7 @@ char const * fname[] = {
     "",     // 369 Lm pPb HM7 sysLoose
     "",     // 370 Lm pPb HM0 sysLoose reverse
     "",     // 371 Lm pPb HM1 sysLoose reverse
-    "",     // 372 Lm pPb HM2 sysLoose reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Lmcumu_sysLoose_eff_reverse_v1/190817_033657/0000/",     // 372 Lm pPb HM2 sysLoose reverse
     "",     // 373 Lm pPb HM3 sysLoose reverse
     "../cumu/PAHighMultiplicity4/crab_PAHM4_Lmcumu_sysLoose_eff_reverse_v1/190809_180439/0000/",     // 374 Lm pPb HM4 sysLoose reverse
     "",     // 375 Lm pPb HM5 sysLoose reverse
