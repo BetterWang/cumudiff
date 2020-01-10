@@ -1,0 +1,9 @@
+executable            = bproc.sh
+arguments             = 5 $(ProcId) 10
+JobBatchName          = bproc5
+output                = output/bproc.$(ClusterId).$(ProcId).out
+error                 = output/bproc.$(ClusterId).$(ProcId).err
+log                   = output/bproc.$(ClusterId).log
++MaxRuntime           = 14400
+queue 11
+
