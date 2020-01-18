@@ -121,6 +121,14 @@ char const * fname[] = {
     "",      // 118 HIMB17 Ks SBNeg
     "",      // 119 HIMB18 Ks SBNeg
     "",      // 120 HIMB19 Ks SBNeg
+    "NA",      // 121 HIMB merge Lm
+    "NA",      // 122 HIMB merge Lm SBPos
+    "NA",      // 123 HIMB merge Lm SBNeg
+    "NA",      // 124 HIMB merge Lm SB
+    "NA",      // 125 HIMB merge Ks
+    "NA",      // 126 HIMB merge Ks SBPos
+    "NA",      // 127 HIMB merge Ks SBNeg
+    "NA",      // 128 HIMB merge Ks SB
 };
 
 char const * ftxt[] = {
@@ -245,6 +253,14 @@ char const * ftxt[] = {
     "",      // 118 HIMB17 Ks SBNeg
     "",      // 119 HIMB18 Ks SBNeg
     "",      // 120 HIMB19 Ks SBNeg
+    "txt/HIMB_Lm/",             // 121
+    "txt/HIMB_Lm_SBPos/",       // 122
+    "txt/HIMB_Lm_SBNeg/",       // 123
+    "txt/HIMB_Lm_SB/",          // 124
+    "txt/HIMB_Ks/",             // 125
+    "txt/HIMB_Ks_SBPos/",       // 126
+    "txt/HIMB_Ks_SBNeg/",       // 127
+    "txt/HIMB_Ks_SB/",          // 128
 };
 
 const int Pid_Non	= 0;
@@ -382,6 +398,14 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 118
 	Pid_AA_Ks,		    // 119
 	Pid_AA_Ks,		    // 120
+	Pid_AA_Lambda,	    // 121
+	Pid_AA_Lambda,	    // 122
+	Pid_AA_Lambda,	    // 123
+	Pid_AA_Lambda,	    // 124
+	Pid_AA_Ks,		    // 125
+	Pid_AA_Ks,		    // 126
+	Pid_AA_Ks,		    // 127
+	Pid_AA_Ks,		    // 128
 };
 
 #include <TChain.h>
