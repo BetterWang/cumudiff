@@ -1,0 +1,246 @@
+
+// pt                          0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12
+    double pTbin[14] = {0.2, 0.4, 0.6, 0.8, 1.0, 1.4, 1.8, 2.2, 2.8, 3.6, 4.6, 6.0, 7.0, 8.5};
+
+std::pair<double, double> full_range(1.095, 1.14);
+std::pair<double, double> signal_range(1.1115, 1.1200);
+std::pair<double, double> sb1(1.085, 1.1000);
+std::pair<double, double> sb2(1.1450, 1.16);
+
+double mass = 1.115683;
+double Dmass = 0.003;
+int Nbins = 160;
+double sigma = 0.005;
+
+//const std::string signal_func = "[3]*TMath::Gaus(x, [0], [1]) + [4]*TMath::Gaus(x, [0], [2])";
+const std::string gaus_func = "[2]*TMath::Gaus(x, [0], [1])";
+
+const std::string poly_bkg = "[5] + [6]*x + [7]*x*x + [8]*x*x*x + [9]*x*x*x*x";
+const std::string poly_bkg0= "[0] + [1]*x + [2]*x*x + [3]*x*x*x + [4]*x*x*x*x";
+const std::string double_gaussian = "[3]*TMath::Gaus(x, [0], [1]) + [4]*TMath::Gaus(x, [0], [2])";
+const std::string massfunc = double_gaussian + " + " + poly_bkg;
+
+TH1D * hmass        = 0;
+TF1 * fit           = 0;
+TF1 * func_signal   = 0;
+TF1 * gaus1_signal  = 0;
+TF1 * gaus2_signal  = 0;
+TF1 * func_bckgnd   = 0;
+TFile * f;
+
+string s = "LM";
+int c = 0;
+int ipt = 0;
+
+TF1* fitHist(TH1D* hist, int iter)
+{
+
+    /////////
+    // Setting up the fit func
+    // [0] common mean of double gaussian
+    // [1] signal 1 gaussian sigma
+    // [2] signal 2 gaussian sigma
+    // [3] signal 1 amplitude
+    // [4] signal 2 amplitude
+    //
+    // [5] background pol, 1
+    // [6] background pol, x
+    // [7] background pol, x*x
+    // [8] background pol, x*x*x
+    // [9] background pol, x*x*x*x
+    //
+
+    TF1 * func = new TF1("func", massfunc.c_str(), full_range.first, full_range.second);
+
+    int cnt = 0;
+    for ( int i = 0; i < hist->GetNbinsX(); i++ ) {
+        double center = hist->GetBinCenter(i+1);
+        if ( (center > sb1.first and center < sb1.second) or (center > sb2.first and center < sb2.second) ) {
+            cnt++;
+        }
+    }
+
+    // sb gr
+    TGraphErrors gr(cnt);
+    cnt = 0;
+    for ( int i = 0; i < hist->GetNbinsX(); i++ ) {
+        double center = hist->GetBinCenter(i+1);
+        if ( (center > sb1.first and center < sb1.second) or (center > sb2.first and center < sb2.second) ) {
+            gr.GetX()[cnt] = center;
+            gr.GetY()[cnt] = hist->GetBinContent(i+1);
+            gr.GetEY()[cnt] = hist->GetBinError(i+1);
+            cnt++;
+        }
+    }
+
+    func->SetParameter(5, 10.);
+    func->SetParameter(6, 1.);
+    func->SetParameter(7, 1.);
+    func->SetParameter(8, 1.);
+    func->SetParameter(9, 1.);
+
+    func->FixParameter(0, mass);
+    func->FixParameter(1, 1.);
+    func->FixParameter(2, 1.);
+    func->FixParameter(3, 0.);
+    func->FixParameter(4, 0.);
+
+    gr.Fit(func, "q0");
+    gr.Fit(func, "q0");
+    gr.Fit(func, "q0");
+
+    func->FixParameter(5, func->GetParameter(5));
+    func->FixParameter(6, func->GetParameter(6));
+    func->FixParameter(7, func->GetParameter(7));
+    func->FixParameter(8, func->GetParameter(8));
+    func->FixParameter(9, func->GetParameter(9));
+
+    func->ReleaseParameter(0);
+    func->SetParLimits(0, mass-Dmass, mass+Dmass);
+    func->ReleaseParameter(1);
+    func->ReleaseParameter(2);
+    func->ReleaseParameter(3);
+    func->ReleaseParameter(4);
+    func->SetParLimits(1, 0, sigma);
+    func->SetParLimits(2, 0, sigma);
+    func->SetParLimits(3, 0, 0.8*hist->GetBinContent(hist->FindBin(mass)));
+    func->SetParLimits(4, 0, 0.8*hist->GetBinContent(hist->FindBin(mass)));
+
+    hist->Fit(func, "q0", "", full_range.first, full_range.second);
+    hist->Fit(func, "q0", "", full_range.first, full_range.second);
+    hist->Fit(func, "q0", "", full_range.first, full_range.second);
+
+    func->ReleaseParameter(0);
+    func->ReleaseParameter(1);
+    func->ReleaseParameter(2);
+    func->ReleaseParameter(3);
+    func->ReleaseParameter(4);
+    func->ReleaseParameter(5);
+    func->ReleaseParameter(6);
+    func->ReleaseParameter(7);
+    func->ReleaseParameter(8);
+    func->ReleaseParameter(9);
+    func->SetParLimits(0, mass-Dmass, mass+Dmass);
+    func->SetParLimits(1, 0, sigma);
+    func->SetParLimits(2, 0, sigma);
+    func->SetParLimits(3, 0, 0.8*hist->GetBinContent(hist->FindBin(mass)));
+    func->SetParLimits(4, 0, 0.8*hist->GetBinContent(hist->FindBin(mass)));
+
+    for ( int i = 0; i < iter; i++ ) {
+        hist->Fit(func, "q0", "", full_range.first, full_range.second);
+    }
+
+    return func;
+}
+
+void doFit(int c1 = 3, int ipt1 = 6, string y = "Mid", int iter=5)
+{
+    c = c1;
+    ipt = ipt1;
+
+    if ( hmass          ) hmass->Delete();
+    if ( fit            ) fit->Delete();
+    if ( func_signal    ) func_signal->Delete();
+    if ( gaus1_signal   ) gaus1_signal->Delete();
+    if ( gaus2_signal   ) gaus2_signal->Delete();
+    if ( func_bckgnd    ) func_bckgnd->Delete();
+
+    hmass = (TH1D*) f->Get(Form("hMass%s_%i_%i", y.c_str(), c, ipt));
+    fit = fitHist(hmass, iter);
+
+    func_signal  = new TF1("func_signal" , double_gaussian.c_str(), full_range.first, full_range.second);
+    gaus1_signal = new TF1("gaus1_signal", gaus_func.c_str(), full_range.first, full_range.second);
+    gaus2_signal = new TF1("gaus2_signal", gaus_func.c_str(), full_range.first, full_range.second);
+    func_bckgnd  = new TF1("func_bckgnd" , poly_bkg0.c_str(), full_range.first, full_range.second);
+
+    func_signal->SetParameter(0, fit->GetParameter(0));
+    func_signal->SetParameter(1, fit->GetParameter(1));
+    func_signal->SetParameter(2, fit->GetParameter(2));
+    func_signal->SetParameter(3, fit->GetParameter(3));
+    func_signal->SetParameter(4, fit->GetParameter(4));
+
+    func_bckgnd->SetParameter(0, fit->GetParameter(5));
+    func_bckgnd->SetParameter(1, fit->GetParameter(6));
+    func_bckgnd->SetParameter(2, fit->GetParameter(7));
+    func_bckgnd->SetParameter(3, fit->GetParameter(8));
+    func_bckgnd->SetParameter(4, fit->GetParameter(9));
+
+    func_signal->SetLineColor(kRed);
+    func_bckgnd->SetLineColor(kBlue);
+
+    if ( abs(fit->GetParameter(1)) > abs(fit->GetParameter(2)) ) {
+        gaus1_signal->SetParameter(0, fit->GetParameter(0));
+        gaus1_signal->SetParameter(1, fit->GetParameter(1));
+        gaus1_signal->SetParameter(2, fit->GetParameter(3));
+        gaus2_signal->SetParameter(0, fit->GetParameter(0));
+        gaus2_signal->SetParameter(1, fit->GetParameter(2));
+        gaus2_signal->SetParameter(2, fit->GetParameter(4));
+    } else {
+        gaus2_signal->SetParameter(0, fit->GetParameter(0));
+        gaus2_signal->SetParameter(1, fit->GetParameter(1));
+        gaus2_signal->SetParameter(2, fit->GetParameter(3));
+        gaus1_signal->SetParameter(0, fit->GetParameter(0));
+        gaus1_signal->SetParameter(1, fit->GetParameter(2));
+        gaus1_signal->SetParameter(2, fit->GetParameter(4));
+    }
+
+    gaus1_signal->SetLineColor(kBlue);
+    gaus2_signal->SetLineColor(kRed);
+    gaus1_signal->SetLineStyle(kDashDotted);
+    gaus2_signal->SetLineStyle(kDashDotted);
+}
+
+void doSave(bool bPlot = true)
+{
+    TFile save( ( s + "/" + hmass->GetName() + ".root" ).c_str(), "recreate" );
+    hmass->Write("hmass");
+    fit->Write();
+    func_signal->Write();
+    gaus1_signal->Write();
+    gaus2_signal->Write();
+    func_bckgnd->Write();
+    save.Close();
+
+    if ( bPlot ) {
+        TCanvas c("c", "c", 800, 600);
+        hmass->Draw();
+        fit->Draw("same");
+        func_signal->Draw("same");
+        gaus1_signal->Draw("same");
+        gaus2_signal->Draw("same");
+        func_bckgnd->Draw("same");
+        double S = func_signal->Integral(signal_range.first, signal_range.second);
+        double B = func_bckgnd->Integral(signal_range.first, signal_range.second);
+        double sig = S/sqrt(S+B);
+        TLatex latexS;
+        latexS.SetTextFont(43);
+        latexS.SetTextSize(22);
+        latexS.SetTextAlign(13);
+        latexS.DrawLatexNDC(0.56, 0.92, Form("%s: %.1f < p_{T} < %0.1f", s=="LM"?"#Lambda":"K_{s}", pTbin[ipt], pTbin[ipt+1]) );
+        latexS.DrawLatexNDC(0.56, 0.87, Form("#chi^{2}/NDF = %.2f", fit->GetChisquare()/fit->GetNDF()));
+        latexS.DrawLatexNDC(0.56, 0.82, Form("S = %.2f", S));
+        latexS.DrawLatexNDC(0.56, 0.77, Form("B = %.2f", B));
+        latexS.DrawLatexNDC(0.56, 0.72, Form("S/#sqrt{S+B} = %f", sig));
+        c.SaveAs( ( s + "/" + hmass->GetName() + ".pdf" ).c_str() );
+    }
+}
+
+void MVAmassFit(string s1 = "LM")
+{
+    s = s1;
+    if ( s == "LM" ) {
+        f = new TFile("MVAmassBDT250D4_LM.root");
+    } else if ( s == "KS" ) {
+        f = new TFile("MVAmassBDT250D4_KS.root");
+        Nbins = 270;
+        //full_range = make_pair<double, double>(0.430, 0.565);
+        full_range = make_pair<double, double>(0.450, 0.54);
+        signal_range = make_pair<double, double>(0.492, 0.503);
+        sb1 = make_pair<double, double>(0.430, 0.489);
+        sb2 = make_pair<double, double>(0.506, 0.503);
+        mass = 0.497648;
+        sigma = 0.01;
+        Dmass = 0.005;
+    }
+}
+

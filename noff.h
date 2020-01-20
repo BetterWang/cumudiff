@@ -24,3 +24,11 @@ int NCentAA5TeV4 = 14;
   const double pTX[] =              {0.3, 0.5, 0.7, 0.9, 1.2, 1.6, 2.0, 2.5, 3.2, 4.1, 5.3, 6.5, 7.7};
 
 int NpT = 13;
+
+
+// PbPb 2018
+// CentBin                             0,  1,   2,   3,   4
+  const Int_t CentCutPbPb2018[] = {0, 20, 60, 100, 160, 200};
+  const double CentPbPbX[]      = {   5., 20,  40,  65, 90};
+
+int NCentPbPb2018 = 5;

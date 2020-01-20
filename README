@@ -1,3 +1,39 @@
-1) process.C
-2) bGet.C
-3) bGetE.C
+1) process.C,       done on lxplus
+2) bGet.C,          runGet.sh, runGet1.sh, runGet3.sh
+3) bGetError.C,     runGetE3.sh
+4) genPlot.C,
+5) combinedS.C,     runmerge.sh
+6) vnFsigPbPb.C,    runFsigPbPb.sh
+
+                 |  QWCumuDiff  |  process  |  bGet     |  bGetError  |  genPlot   |  combinedS  |  vnFsig                                   |
+int    Q         |  rQGap       |  hQGap    |  hCGap    |  hVGap      |            |             |                                           |
+charge Q(pT)     |  rQpGap      |  hQpGap   |  hpCGapp  |  hpVpGap    |  grpTGap   |  grHV0Gap   |  grH_pTGap                                |
+V0     Q(pT)     |  rV0QGap     |  hV0QGap  |  hCGapp   |  hVpGap     |  grV0pTGap |  grV0Gap    |  grSig_pTGap / grObs_pTGap / grBkg_pTGap  |
+
+
+Corrected
+
+grSig_pT2_0_8   v2{2}
+grSig_pT2_1_8   v2{4}
+grSig_pT2_2_8   v2{6}
+grSig_pT2_3_8   v2{8}
+grSig_V2sub2_8  v2{2,sub-event}
+grSig_V2sub4_8  v2{4,sub-event}
+grSig_pTGap2_8  v2{2,\Delta\eta>2}
+
+grObs_pT2_0_8   v2{2}
+grObs_pT2_1_8   v2{4}
+grObs_pT2_2_8   v2{6}
+grObs_pT2_3_8   v2{8}
+grObs_V2sub2_8  v2{2,sub-event}
+grObs_V2sub4_8  v2{4,sub-event}
+grObs_pTGap2_8  v2{2,\Delta\eta>2}
+
+grBkg_pT2_0_8   v2{2}
+grBkg_pT2_1_8   v2{4}
+grBkg_pT2_2_8   v2{6}
+grBkg_pT2_3_8   v2{8}
+grBkg_V2sub2_8  v2{2,sub-event}
+grBkg_V2sub4_8  v2{4,sub-event}
+grBkg_pTGap2_8  v2{2,\Delta\eta>2}
+

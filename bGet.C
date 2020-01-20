@@ -10,6 +10,10 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 	TH1::SetDefaultSumw2();
 	int NCent = NCent8TeV4;
 	const int * pCent = CentNoffCutPA8TeV4;
+    if ( not isPA( PID[s1] ) ) {
+        NCent = NCentPbPb2018;
+        pCent = CentCutPbPb2018;
+    }
 
 	TFile * f = new TFile(Form("%s/output_%i_%i.root", ftxt[s1], s2, s3));
 
@@ -49,6 +53,37 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			hQpwGap[n][i] = (TH1D*) f->Get(Form("hQpwGap%i_%i", n, i));
 		}
 	}
+
+    TH1D * hQpos2 = (TH1D*) f->Get("hQpos2");
+    TH1D * hQneg2 = (TH1D*) f->Get("hQneg2");
+    TH1D * hwQpos2 = (TH1D*) f->Get("hwQpos2");
+    TH1D * hwQneg2 = (TH1D*) f->Get("hwQneg2");
+    TH1D * hQpos4 = (TH1D*) f->Get("hQpos4");
+    TH1D * hQneg4 = (TH1D*) f->Get("hQneg4");
+    TH1D * hwQpos4 = (TH1D*) f->Get("hwQpos4");
+    TH1D * hwQneg4 = (TH1D*) f->Get("hwQneg4");
+
+    TH1D * hVpQpos2[24] = {};
+    TH1D * hVpQneg2[24] = {};
+    TH1D * hwVpQpos2[24] = {};
+    TH1D * hwVpQneg2[24] = {};
+    TH1D * hVpQpos4[24] = {};
+    TH1D * hVpQneg4[24] = {};
+    TH1D * hwVpQpos4[24] = {};
+    TH1D * hwVpQneg4[24] = {};
+
+    for ( int i = 0; i < 24; i++ ) {
+        hVpQpos2[i] = (TH1D*) f->Get(Form("hVpQpos2%i", i));
+        hVpQneg2[i] = (TH1D*) f->Get(Form("hVpQneg2%i", i));
+        hVpQpos4[i] = (TH1D*) f->Get(Form("hVpQpos4%i", i));
+        hVpQneg4[i] = (TH1D*) f->Get(Form("hVpQneg4%i", i));
+
+        hwVpQpos2[i] = (TH1D*) f->Get(Form("hwVpQpos2%i", i));
+        hwVpQneg2[i] = (TH1D*) f->Get(Form("hwVpQneg2%i", i));
+        hwVpQpos4[i] = (TH1D*) f->Get(Form("hwVpQpos4%i", i));
+        hwVpQneg4[i] = (TH1D*) f->Get(Form("hwVpQneg4%i", i));
+    }
+
 
 	double dQ[7][4][600];
 	double wQ[7][4][600];
@@ -97,6 +132,58 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 		}
 	}
 
+    double dQpos2[600] = {};
+    double yQpos2[600] = {};
+    double dQneg2[600] = {};
+    double yQneg2[600] = {};
+    double dQpos4[600] = {};
+    double yQpos4[600] = {};
+    double dQneg4[600] = {};
+    double yQneg4[600] = {};
+
+    double dVpQpos2[24][600] = {};
+    double yVpQpos2[24][600] = {};
+    double dVpQneg2[24][600] = {};
+    double yVpQneg2[24][600] = {};
+    double dVpQpos4[24][600] = {};
+    double yVpQpos4[24][600] = {};
+    double dVpQneg4[24][600] = {};
+    double yVpQneg4[24][600] = {};
+
+    for ( int c = 0; c < 600; c++ ) {
+        dQpos2[c] = hQpos2->GetBinContent(c+1);
+        dQneg2[c] = hQneg2->GetBinContent(c+1);
+        yQpos2[c] = hwQpos2->GetBinContent(c+1);
+        yQneg2[c] = hwQneg2->GetBinContent(c+1);
+
+        dQpos4[c] = hQpos4->GetBinContent(c+1);
+        dQneg4[c] = hQneg4->GetBinContent(c+1);
+        yQpos4[c] = hwQpos4->GetBinContent(c+1);
+        yQneg4[c] = hwQneg4->GetBinContent(c+1);
+
+        if ( yQpos2[c] > 0 ) dQpos2[c] /= yQpos2[c];
+        if ( yQneg2[c] > 0 ) dQneg2[c] /= yQneg2[c];
+        if ( yQpos4[c] > 0 ) dQpos4[c] /= yQpos4[c];
+        if ( yQneg4[c] > 0 ) dQneg4[c] /= yQneg4[c];
+
+        for ( int i = 0; i < 24; i++ ) {
+            dVpQpos2[i][c] = hVpQpos2[i]->GetBinContent(c+1);
+            dVpQneg2[i][c] = hVpQneg2[i]->GetBinContent(c+1);
+            yVpQpos2[i][c] = hwVpQpos2[i]->GetBinContent(c+1);
+            yVpQneg2[i][c] = hwVpQneg2[i]->GetBinContent(c+1);
+
+            dVpQpos4[i][c] = hVpQpos4[i]->GetBinContent(c+1);
+            dVpQneg4[i][c] = hVpQneg4[i]->GetBinContent(c+1);
+            yVpQpos4[i][c] = hwVpQpos4[i]->GetBinContent(c+1);
+            yVpQneg4[i][c] = hwVpQneg4[i]->GetBinContent(c+1);
+
+            if ( yVpQpos2[i][c] > 0. ) dVpQpos2[i][c] /= yVpQpos2[i][c];
+            if ( yVpQneg2[i][c] > 0. ) dVpQneg2[i][c] /= yVpQneg2[i][c];
+            if ( yVpQpos4[i][c] > 0. ) dVpQpos4[i][c] /= yVpQpos4[i][c];
+            if ( yVpQneg4[i][c] > 0. ) dVpQneg4[i][c] /= yVpQneg4[i][c];
+        }
+    }
+
 	double dCraw[7][4][600];
 	double dCpraw[7][4][24][600];
 
@@ -140,6 +227,44 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			}
 		}
 	}
+
+    // subevent
+    double dCrawPos2[600];
+    double dCrawNeg2[600];
+    double dCrawPos4[600];
+    double dCrawNeg4[600];
+    double dCpRawPos2[24][600] = {};
+    double dCpRawNeg2[24][600] = {};
+    double dCpRawPos4[24][600] = {};
+    double dCpRawNeg4[24][600] = {};
+
+    for ( int c = 0; c < 600; c++ ) {
+        double Q2pos = dQpos2[c];
+        double Q2neg = dQneg2[c];
+        double Q4pos = dQpos4[c];
+        double Q4neg = dQneg4[c];
+
+        dCrawPos2[c] = Q2pos;
+        dCrawNeg2[c] = Q2neg;
+        dCrawPos4[c] = Q4pos - 2*Q2pos*Q2pos;
+        dCrawNeg4[c] = Q4neg - 2*Q2neg*Q2neg;
+    }
+    for ( int i = 0; i < 24; i++ ) {
+        for ( int c = 0; c < 600; c++ ) {
+            double Q2pos = dQpos2[c];
+            double Q2neg = dQneg2[c];
+            double Qp2pos = dVpQpos2[i][c];
+            double Qp4pos = dVpQpos4[i][c];
+            double Qp2neg = dVpQneg2[i][c];
+            double Qp4neg = dVpQneg4[i][c];
+
+            dCpRawPos2[i][c] = Qp2pos;
+            dCpRawPos4[i][c] = Qp4pos - 2*Qp2pos*Q2neg;
+
+            dCpRawNeg2[i][c] = Qp2neg;
+            dCpRawNeg4[i][c] = Qp4neg - 2*Qp2neg*Q2pos;
+        }
+    }
 
 	// rebin
 
@@ -217,6 +342,102 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 		}
 	}
 
+    // rebin subevent
+    double dCPos2[20] = {};
+    double dCNeg2[20] = {};
+    double dCPos4[20] = {};
+    double dCNeg4[20] = {};
+
+    double wCPos2[20] = {};
+    double wCNeg2[20] = {};
+    double wCPos4[20] = {};
+    double wCNeg4[20] = {};
+
+    double dCpPos2[24][20] = {};
+    double dCpNeg2[24][20] = {};
+    double dCpPos4[24][20] = {};
+    double dCpNeg4[24][20] = {};
+
+    double wCpPos2[24][20] = {};
+    double wCpNeg2[24][20] = {};
+    double wCpPos4[24][20] = {};
+    double wCpNeg4[24][20] = {};
+
+    for ( int c = 0; c < NCent; c++ ) {
+        double sum2_p = 0;
+        double sum2_n = 0;
+        double sum4_p = 0;
+        double sum4_n = 0;
+        double weight2_p = 0;
+        double weight2_n = 0;
+        double weight4_p = 0;
+        double weight4_n = 0;
+        for ( int m = pCent[c]; m < pCent[c+1]; m++ ) {
+            sum2_p += dCrawPos2[m] * yQpos2[m];
+            sum2_n += dCrawNeg2[m] * yQneg2[m];
+            sum4_p += dCrawPos4[m] * yQpos4[m];
+            sum4_n += dCrawNeg4[m] * yQneg4[m];
+
+            weight2_p += yQpos2[m];
+            weight2_n += yQneg2[m];
+            weight4_p += yQpos4[m];
+            weight4_n += yQneg4[m];
+        }
+        if ( weight2_p > 0. ) sum2_p /= weight2_p;
+        if ( weight2_n > 0. ) sum2_n /= weight2_n;
+        if ( weight4_p > 0. ) sum4_p /= weight4_p;
+        if ( weight4_n > 0. ) sum4_n /= weight4_n;
+
+        dCPos2[c] = sum2_p;
+        dCNeg2[c] = sum2_n;
+        dCPos4[c] = sum4_p;
+        dCNeg4[c] = sum4_n;
+
+        wCPos2[c] = weight2_p;
+        wCNeg2[c] = weight2_n;
+        wCPos4[c] = weight4_p;
+        wCNeg4[c] = weight4_n;
+
+        for ( int i = 0; i < 24; i++ ) {
+            double sum2_p = 0;
+            double sum2_n = 0;
+            double sum4_p = 0;
+            double sum4_n = 0;
+            double weight2_p = 0;
+            double weight2_n = 0;
+            double weight4_p = 0;
+            double weight4_n = 0;
+
+			for ( int m = pCent[c]; m < pCent[c+1]; m++ ) {
+                sum2_p += dCpRawPos2[i][m] * yVpQpos2[i][m];
+                sum2_n += dCpRawNeg2[i][m] * yVpQneg2[i][m];
+                sum4_p += dCpRawPos4[i][m] * yVpQpos4[i][m];
+                sum4_n += dCpRawNeg4[i][m] * yVpQneg4[i][m];
+
+                weight2_p += yVpQpos2[i][m];
+                weight2_n += yVpQneg2[i][m];
+                weight4_p += yVpQpos4[i][m];
+                weight4_n += yVpQneg4[i][m];
+            }
+
+            if ( weight2_p > 0. ) sum2_p /= weight2_p;
+            if ( weight2_n > 0. ) sum2_n /= weight2_n;
+            if ( weight4_p > 0. ) sum4_p /= weight4_p;
+            if ( weight4_n > 0. ) sum4_n /= weight4_n;
+
+            dCpPos2[i][c] = sum2_p;
+            dCpNeg2[i][c] = sum2_n;
+            dCpPos4[i][c] = sum4_p;
+            dCpNeg4[i][c] = sum4_n;
+
+            wCpPos2[i][c] = weight2_p;
+            wCpNeg2[i][c] = weight2_n;
+            wCpPos4[i][c] = weight4_p;
+            wCpNeg4[i][c] = weight4_n;
+        }
+    }
+
+    // save
 	TH1D * hCraw[7][4] = {};
 	TH1D * hCwraw[7][4] = {};
 	TH1D * hCpraw[7][4][24] = {};
@@ -315,6 +536,7 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 		}
 	}
 
+
 	TH1D * hNoffR = new TH1D("hNoffR", "hNoffR", 20, 0, 20);
 	for ( int c = 0; c < NCent; c++ ) {
 		double sum = 0;
@@ -323,6 +545,120 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 		}
 		hNoffR->SetBinContent(c+1, sum);
 	}
+
+    //////////
+    TH1D * hCrawPos2 = new TH1D("hCrawPos2", "", 600, 0, 600);
+    TH1D * hCrawNeg2 = new TH1D("hCrawNeg2", "", 600, 0, 600);
+    TH1D * hCrawPos4 = new TH1D("hCrawPos4", "", 600, 0, 600);
+    TH1D * hCrawNeg4 = new TH1D("hCrawNeg4", "", 600, 0, 600);
+    TH1D * hwCrawPos2 = new TH1D("hwCrawPos2", "", 600, 0, 600);
+    TH1D * hwCrawNeg2 = new TH1D("hwCrawNeg2", "", 600, 0, 600);
+    TH1D * hwCrawPos4 = new TH1D("hwCrawPos4", "", 600, 0, 600);
+    TH1D * hwCrawNeg4 = new TH1D("hwCrawNeg4", "", 600, 0, 600);
+
+    for ( int c = 0; c < 600; c++ ) {
+        hCrawPos2->SetBinContent( c+1, dCrawPos2[c] );
+        hCrawNeg2->SetBinContent( c+1, dCrawNeg2[c] );
+        hCrawPos4->SetBinContent( c+1, dCrawPos4[c] );
+        hCrawNeg4->SetBinContent( c+1, dCrawNeg4[c] );
+
+        hwCrawPos2->SetBinContent( c+1, yQpos2[c] );
+        hwCrawNeg2->SetBinContent( c+1, yQneg2[c] );
+        hwCrawPos4->SetBinContent( c+1, yQpos4[c] );
+        hwCrawNeg4->SetBinContent( c+1, yQneg4[c] );
+    }
+
+    TH1D * hCpRawPos2[24];
+    TH1D * hCpRawNeg2[24];
+    TH1D * hCpRawPos4[24];
+    TH1D * hCpRawNeg4[24];
+    TH1D * hwCpRawPos2[24];
+    TH1D * hwCpRawNeg2[24];
+    TH1D * hwCpRawPos4[24];
+    TH1D * hwCpRawNeg4[24];
+
+    for ( int i = 0; i < 24; i++ ) {
+        hCpRawPos2[i] = new TH1D(Form("hCpRawPos2%i", i), "", 600, 0, 600);
+        hCpRawNeg2[i] = new TH1D(Form("hCpRawNeg2%i", i), "", 600, 0, 600);
+        hCpRawPos4[i] = new TH1D(Form("hCpRawPos4%i", i), "", 600, 0, 600);
+        hCpRawNeg4[i] = new TH1D(Form("hCpRawNeg4%i", i), "", 600, 0, 600);
+
+        hwCpRawPos2[i] = new TH1D(Form("hwCpRawPos2%i", i), "", 600, 0, 600);
+        hwCpRawNeg2[i] = new TH1D(Form("hwCpRawNeg2%i", i), "", 600, 0, 600);
+        hwCpRawPos4[i] = new TH1D(Form("hwCpRawPos4%i", i), "", 600, 0, 600);
+        hwCpRawNeg4[i] = new TH1D(Form("hwCpRawNeg4%i", i), "", 600, 0, 600);
+
+        for ( int c = 0; c < 600; c++ ) {
+            hCpRawPos2[i]->SetBinContent( c+1, dCpRawPos2[i][c] );
+            hCpRawNeg2[i]->SetBinContent( c+1, dCpRawNeg2[i][c] );
+            hCpRawPos4[i]->SetBinContent( c+1, dCpRawPos4[i][c] );
+            hCpRawNeg4[i]->SetBinContent( c+1, dCpRawNeg4[i][c] );
+
+            hwCpRawPos2[i]->SetBinContent( c+1, yVpQpos2[i][c] );
+            hwCpRawNeg2[i]->SetBinContent( c+1, yVpQneg2[i][c] );
+            hwCpRawPos4[i]->SetBinContent( c+1, yVpQpos4[i][c] );
+            hwCpRawNeg4[i]->SetBinContent( c+1, yVpQneg4[i][c] );
+        }
+    }
+
+
+
+    // save rebin
+    TH1D * hCPos2 = new TH1D("hCPos2", "", 20, 0, 20);
+    TH1D * hCNeg2 = new TH1D("hCNeg2", "", 20, 0, 20);
+    TH1D * hCPos4 = new TH1D("hCPos4", "", 20, 0, 20);
+    TH1D * hCNeg4 = new TH1D("hCNeg4", "", 20, 0, 20);
+    TH1D * hwCPos2 = new TH1D("hwCPos2", "", 20, 0, 20);
+    TH1D * hwCNeg2 = new TH1D("hwCNeg2", "", 20, 0, 20);
+    TH1D * hwCPos4 = new TH1D("hwCPos4", "", 20, 0, 20);
+    TH1D * hwCNeg4 = new TH1D("hwCNeg4", "", 20, 0, 20);
+
+    for ( int c = 0; c < 20; c++ ) {
+        hCPos2->SetBinContent( c+1, dCPos2[c] );
+        hCNeg2->SetBinContent( c+1, dCNeg2[c] );
+        hCPos4->SetBinContent( c+1, dCPos4[c] );
+        hCNeg4->SetBinContent( c+1, dCNeg4[c] );
+
+        hwCPos2->SetBinContent( c+1, wCPos2[c] );
+        hwCNeg2->SetBinContent( c+1, wCNeg2[c] );
+        hwCPos4->SetBinContent( c+1, wCPos4[c] );
+        hwCNeg4->SetBinContent( c+1, wCNeg4[c] );
+    }
+
+
+    TH1D * hCpPos2[24];
+    TH1D * hCpNeg2[24];
+    TH1D * hCpPos4[24];
+    TH1D * hCpNeg4[24];
+
+    TH1D * hwCpPos2[24];
+    TH1D * hwCpNeg2[24];
+    TH1D * hwCpPos4[24];
+    TH1D * hwCpNeg4[24];
+
+    for ( int i = 0; i < 24; i++ ) {
+        hCpPos2[i] = new TH1D(Form("hCpPos2%i", i), "", 20, 0, 20);
+        hCpNeg2[i] = new TH1D(Form("hCpNeg2%i", i), "", 20, 0, 20);
+        hCpPos4[i] = new TH1D(Form("hCpPos4%i", i), "", 20, 0, 20);
+        hCpNeg4[i] = new TH1D(Form("hCpNeg4%i", i), "", 20, 0, 20);
+
+        hwCpPos2[i] = new TH1D(Form("hwCpPos2%i", i), "", 20, 0, 20);
+        hwCpNeg2[i] = new TH1D(Form("hwCpNeg2%i", i), "", 20, 0, 20);
+        hwCpPos4[i] = new TH1D(Form("hwCpPos4%i", i), "", 20, 0, 20);
+        hwCpNeg4[i] = new TH1D(Form("hwCpNeg4%i", i), "", 20, 0, 20);
+
+        for ( int c = 0; c < 20; c++ ) {
+            hCpPos2[i]->SetBinContent( c+1, dCpPos2[i][c] );
+            hCpNeg2[i]->SetBinContent( c+1, dCpNeg2[i][c] );
+            hCpPos4[i]->SetBinContent( c+1, dCpPos4[i][c] );
+            hCpNeg4[i]->SetBinContent( c+1, dCpNeg4[i][c] );
+
+            hwCpPos2[i]->SetBinContent( c+1, wCpPos2[i][c] );
+            hwCpNeg2[i]->SetBinContent( c+1, wCpNeg2[i][c] );
+            hwCpPos4[i]->SetBinContent( c+1, wCpPos4[i][c] );
+            hwCpNeg4[i]->SetBinContent( c+1, wCpNeg4[i][c] );
+        }
+    }
 
 
 	TFile * fsave = new TFile(Form("%s/outputC_%i_%i.root", ftxt[s1], s2, s3), "recreate");
@@ -355,6 +691,49 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			hpCGapwp[n][i]->Write();
 		}
 	}
+
+    // subevent
+    hCrawPos2->Write();
+    hCrawNeg2->Write();
+    hCrawPos4->Write();
+    hCrawNeg4->Write();
+    hwCrawPos2->Write();
+    hwCrawNeg2->Write();
+    hwCrawPos4->Write();
+    hwCrawNeg4->Write();
+
+    for ( int i = 0; i < 24; i++ ) {
+        hCpRawPos2[i]->Write();
+        hCpRawNeg2[i]->Write();
+        hCpRawPos4[i]->Write();
+        hCpRawNeg4[i]->Write();
+
+        hwCpRawPos2[i]->Write();
+        hwCpRawNeg2[i]->Write();
+        hwCpRawPos4[i]->Write();
+        hwCpRawNeg4[i]->Write();
+    }
+
+    hCPos2->Write();
+    hCNeg2->Write();
+    hCPos4->Write();
+    hCNeg4->Write();
+    hwCPos2->Write();
+    hwCNeg2->Write();
+    hwCPos4->Write();
+    hwCNeg4->Write();
+
+    for ( int i = 0; i < 24; i++ ) {
+        hCpPos2[i]->Write();
+        hCpNeg2[i]->Write();
+        hCpPos4[i]->Write();
+        hCpNeg4[i]->Write();
+
+        hwCpPos2[i]->Write();
+        hwCpNeg2[i]->Write();
+        hwCpPos4[i]->Write();
+        hwCpNeg4[i]->Write();
+    }
 
 	hNoff->Write();
 	hMult->Write();
