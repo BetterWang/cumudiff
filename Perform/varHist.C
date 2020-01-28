@@ -131,6 +131,7 @@ void varHist(string mcsig="HistHydjetMCTruth_LM.root", string mcbkg="HistHydjetM
 
     histAdd( &HistMCSig, &HistMCBkg );
     double MCCount= HistMCSig.hpt->GetEntries();
+    double MCBkgCount= HistMCBkg.hpt->GetEntries();
     double DataCount = HistData.hpt->GetEntries();
     cout << " MCCount = " << MCCount << "\tDataCount = " << DataCount << endl;
 
@@ -240,4 +241,5 @@ void varHist(string mcsig="HistHydjetMCTruth_LM.root", string mcbkg="HistHydjetM
     HistData .hnTrkDCASigZ    ->Draw("histsame");
     c->SaveAs((prefix+"nTrkDCASigZ.pdf").c_str());
 
+//    TFile * fsave = new TFile("varHist.root", "recreate");
 }
