@@ -59,7 +59,7 @@
 #include "TMVA/Tools.h"
 #include "TMVA/TMVAGui.h"
 
-int TMVAClassification_full( string s = "LM" )
+int TMVAClassification_full8( string s = "LM" )
 {
    // The explicit loading of the shared libTMVA is done in TMVAlogon.C, defined in .rootrc
    // if you use your private .rootrc, or run from a different directory, please copy the
@@ -145,8 +145,8 @@ int TMVAClassification_full( string s = "LM" )
 
    // Read training and test data
    // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
-   TFile *inputS = new TFile( (string("/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MC/HydjetMCTruth_")+s+".root").c_str() );
-   TFile *inputB = new TFile( (string("/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MC/HydjetMCBkg_")+s+".root").c_str() );
+   TFile *inputS = new TFile( (string("../../PbPb2018/V0Performance/MC/HydjetMCTruth_")+s+".root").c_str() );
+   TFile *inputB = new TFile( (string("../../PbPb2018/V0Performance/MC/HydjetMCBkg_")+s+".root").c_str() );
    std::cout << "--- TMVAClassification       : Using input Signal file: " << inputS->GetName() << std::endl;
    std::cout << "--- TMVAClassification       : Using input Background file: " << inputB->GetName() << std::endl;
 
@@ -156,7 +156,7 @@ int TMVAClassification_full( string s = "LM" )
    TTree *background     = (TTree*)inputB->Get("tree");
 
    // Create a ROOT output file where TMVA will store ntuples, histograms, etc.
-   TString outfileName( (string("TMVA3_HydjetMCTruth_MCBkg_")+s+".root").c_str() ); // change
+   TString outfileName( (string("TMVA8_HydjetMCTruth_MCBkg_")+s+".root").c_str() ); // change
    TFile* outputFile = TFile::Open( outfileName, "RECREATE" );
 
    // Create the factory object. Later you can choose the methods
@@ -172,7 +172,7 @@ int TMVAClassification_full( string s = "LM" )
    TMVA::Factory *factory = new TMVA::Factory( "TMVAClassification", outputFile,
                                                "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P:AnalysisType=Classification" );
 
-   TMVA::DataLoader *dataloader=new TMVA::DataLoader( (string("dataset3_full_")+s).c_str() ); // change
+   TMVA::DataLoader *dataloader=new TMVA::DataLoader( (string("dataset8_full_")+s).c_str() ); // change
    // If you wish to modify default settings
    // (please check "src/Config.h" to see all available global options)
    //
@@ -194,15 +194,15 @@ int TMVAClassification_full( string s = "LM" )
    dataloader->AddVariable( "pTrkPtError",      'F' );
    dataloader->AddVariable( "pTrkEta",          'F' );
    dataloader->AddVariable( "pTrkNPxLayer",     'I' );
-   dataloader->AddVariable( "pTrkDCASigXY",     'F' );
-   dataloader->AddVariable( "pTrkDCASigZ",      'F' );
+//   dataloader->AddVariable( "pTrkDCASigXY",     'F' );
+//   dataloader->AddVariable( "pTrkDCASigZ",      'F' );
    dataloader->AddVariable( "nTrkNHit",         'I' );
    dataloader->AddVariable( "nTrkPt",           'F' );
    dataloader->AddVariable( "nTrkPtError",      'F' );
    dataloader->AddVariable( "nTrkEta",          'F' );
    dataloader->AddVariable( "nTrkNPxLayer",     'I' );
-   dataloader->AddVariable( "nTrkDCASigXY",     'F' );
-   dataloader->AddVariable( "nTrkDCASigZ",      'F' );
+//   dataloader->AddVariable( "nTrkDCASigXY",     'F' );
+//   dataloader->AddVariable( "nTrkDCASigZ",      'F' );
    dataloader->AddVariable( "Cent",             'I' );
 
    // You can add so-called "Spectator variables", which are not used in the MVA training,
@@ -218,6 +218,10 @@ int TMVAClassification_full( string s = "LM" )
 //   dataloader->AddSpectator( "nTrkEta" );
    dataloader->AddSpectator( "pdgId" );
 
+   dataloader->AddSpectator( "pTrkDCASigXY" );
+   dataloader->AddSpectator( "pTrkDCASigZ" );
+   dataloader->AddSpectator( "nTrkDCASigXY" );
+   dataloader->AddSpectator( "nTrkDCASigZ" );
 
    // global event weights per tree (see below for setting event-wise weights)
    Double_t signalWeight     = 1.0;

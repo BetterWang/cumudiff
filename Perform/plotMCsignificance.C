@@ -72,7 +72,7 @@ void plotMCsignificance(string s = "LM")
         delete hb;
     }
 
-    TFile * fsave = new TFile( (s+"8_Sig.root").c_str(), "recreate" );
+    TFile * fsave = new TFile( (s+"_Sig.root").c_str(), "recreate" );
     grSig->Write("grSig");
     grSig_pTrkDCASigXY->Write("grSig_pTrkDCASigXY");
     grSig_nTrkDCASigXY->Write("grSig_nTrkDCASigXY");
@@ -84,4 +84,20 @@ void plotMCsignificance(string s = "LM")
     grSB_nTrkDCASigXY->Write("grSB_nTrkDCASigXY");
     grSB_pTrkDCASigZ->Write("grSB_pTrkDCASigZ");
     grSB_nTrkDCASigZ->Write("grSB_nTrkDCASigZ");
+
+    TGraph * grSBR_pTrkDCASigXY = (TGraph*) grSB_pTrkDCASigXY->Clone("grSBR_pTrkDCASigXY");
+    TGraph * grSBR_nTrkDCASigXY = (TGraph*) grSB_nTrkDCASigXY->Clone("grSBR_nTrkDCASigXY");
+    TGraph * grSBR_pTrkDCASigZ  = (TGraph*) grSB_pTrkDCASigZ ->Clone("grSBR_pTrkDCASigZ");
+    TGraph * grSBR_nTrkDCASigZ  = (TGraph*) grSB_nTrkDCASigZ ->Clone("grSBR_nTrkDCASigZ");
+
+    for ( int i = 0; i < 51; i++ ) {
+        grSBR_pTrkDCASigXY->GetY()[i] /= grSB->GetY()[i];
+        grSBR_nTrkDCASigXY->GetY()[i] /= grSB->GetY()[i];
+        grSBR_pTrkDCASigZ ->GetY()[i] /= grSB->GetY()[i];
+        grSBR_nTrkDCASigZ ->GetY()[i] /= grSB->GetY()[i];
+    }
+    grSBR_pTrkDCASigXY->Write();
+    grSBR_nTrkDCASigXY->Write();
+    grSBR_pTrkDCASigZ ->Write();
+    grSBR_nTrkDCASigZ ->Write();
 }
