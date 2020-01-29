@@ -11,17 +11,19 @@
 |---|---|
 | Data (HIMB4 RERECO) | `/HIMinimumBias4/qwang-V0Skim_v3-9d53152409b8a9b6fb15042030d9bf69/USER` |
 | MC (Semi-private RECODEBUG)  | `/MinBias_Hydjet_Drum5F_2018_5p02TeV/qwang-crab_HydjetDrum5F_RECODEBUG_V0Skim_v2-4fb2a1ba2f6b043399c08fb9db565e25/USER` |
-| Data (HIMB19 RERECO WrongSign) | `/HIMinimumBias19/qwang-V0Skim_v3-5f932986cf38f9e8dbd6c3aea7f6c2b4/USER` |
 
 ## BDT
 
 ### Training strategy
 
-* Signal is from MC.
-* Backgound is from either Data (WrongSign or SideBand) or MC.
-    * WrongSign, two daughters with the same charge sign.
-    * SideBand, for $K_s$ with (mass<0.489 || mass>0.506), for $\Lambda$ with (mass<1.1095 || mass>1.122).
+* Signal and background are from MC.
 * 250 DTs, Depth = 3, AdaptiveBoost. `H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20`
+* TMVA Classification [code](TMVAClassification_full.C)
+
+~~~bash
+root -l -b -q 'TMVAClassification_full.C("LM")'
+root -l -b -q 'TMVAClassification_full.C("KS")'
+~~~
 
 ### Variables
 
