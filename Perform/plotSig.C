@@ -75,6 +75,20 @@ void plotSig(string s = "LM")
     c->SaveAs( (s + "_sysSBR.pdf").c_str() );
 
     c->SetGridx();
-    grSig->Draw("pla");
+    TH1F *Graph_Graph01 = new TH1F("Graph_Graph01","Graph",100,0,0.55);
+    Graph_Graph01->SetMinimum(0.);
+    if ( s == "KS" ) {
+        Graph_Graph01->SetMinimum(120.);
+        Graph_Graph01->SetMaximum(300.);
+    } else {
+        Graph_Graph01->SetMaximum(70.);
+    }
+    Graph_Graph01->SetDirectory(0);
+    Graph_Graph01->SetStats(0);
+    Graph_Graph01->SetTitle(";BDT;S/#sqrt{S+B}");
+    Graph_Graph01->Draw();
+
+    grSig->Draw("plsame");
     c->SaveAs( (s + "_Sig.pdf").c_str() );
+    c->SaveAs( (s + "_Sig.png").c_str() );
 }
