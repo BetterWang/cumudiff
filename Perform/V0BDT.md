@@ -62,12 +62,9 @@ root -l -b -q 'TMVAClassification_full.C("KS")'
 
 ### Training sets
 
-| Name | Description |
+| MC Description | Location |
 |---|---|
-| MCFull | MC signal + MC background, full eta range.  |
-| MCrap1 | MC signal + MC background, limit V0 rapidity $\|y\|<1.$.  |
-| DataWSrap1 | MC signal + data wrong sign background, limit V0 rapidity $\|y\|<1.$. |
-| DataSBrap1 | MC signal + data side-band background, limit V0 rapidity $\|y\|<1.$. |
+| Hydjet $\Lambda$ signal | ```/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MC/HydjetMCTruth_LM.root```  |
 
 ## $\Lambda$ BDT Performance
 
@@ -331,5 +328,5 @@ The $K_{S}^0$ selection is suggested to use MCFull at 110 (BDT cut = 0.10).
 
 ## Summary
 
-* The weight xml file for $\Lambda$ is located [here](BDT/MC_Full_BDT250_D3.LM.weights.xml).
-* The weight xml file for $K_{S}^0$ is located [here](BDT/MC_Full_BDT250_D3.KS.weights.xml).
+* The weight xml file for $\Lambda$ is located [here](BDT/MC_Full_BDT250_D4.LM.weights.xml).
+* The weight xml file for $K_{S}^0$ is located [here](BDT/MC_Full_BDT250_D4.KS.weights.xml).
