@@ -76,12 +76,12 @@ void plotSig(string s = "LM")
 
     c->SetGridx();
     TH1F *Graph_Graph01 = new TH1F("Graph_Graph01","Graph",100,0,0.55);
-    Graph_Graph01->SetMinimum(0.);
     if ( s == "KS" ) {
-        Graph_Graph01->SetMinimum(120.);
-        Graph_Graph01->SetMaximum(300.);
+        Graph_Graph01->SetMinimum(5500.);
+        Graph_Graph01->SetMaximum(13500.);
     } else {
-        Graph_Graph01->SetMaximum(70.);
+        Graph_Graph01->SetMinimum(100.);
+        Graph_Graph01->SetMaximum(3200.);
     }
     Graph_Graph01->SetDirectory(0);
     Graph_Graph01->SetStats(0);

@@ -25,8 +25,8 @@ void plotMCsignificance(string s = "LM")
         TH1D * hs = (TH1D*) f.Get("hmass_Signal");
         TH1D * hb = (TH1D*) f.Get("hmass_Bckgnd");
 
-        double S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh));
-        double B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh));
+        double S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh)) / hs->GetBinWidth(1);
+        double B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh)) / hb->GetBinWidth(1);
 
         grSig->GetX()[i] = i*0.01;
         grSig->GetY()[i] = S/sqrt(S+B);
@@ -35,8 +35,8 @@ void plotMCsignificance(string s = "LM")
 
         hs = (TH1D*) f.Get("hmass_Signal_pTrkDCASigXY");
         hb = (TH1D*) f.Get("hmass_Bckgnd_pTrkDCASigXY");
-        S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh));
-        B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh));
+        S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh)) / hs->GetBinWidth(1);
+        B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh)) / hb->GetBinWidth(1);
         grSig_pTrkDCASigXY->GetX()[i] = i*0.01;
         grSig_pTrkDCASigXY->GetY()[i] = S/sqrt(S+B);
         grSB_pTrkDCASigXY->GetX()[i] = i*0.01;
@@ -44,8 +44,8 @@ void plotMCsignificance(string s = "LM")
 
         hs = (TH1D*) f.Get("hmass_Signal_nTrkDCASigXY");
         hb = (TH1D*) f.Get("hmass_Bckgnd_nTrkDCASigXY");
-        S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh));
-        B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh));
+        S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh)) / hs->GetBinWidth(1);
+        B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh)) / hb->GetBinWidth(1);
         grSig_nTrkDCASigXY->GetX()[i] = i*0.01;
         grSig_nTrkDCASigXY->GetY()[i] = S/sqrt(S+B);
         grSB_nTrkDCASigXY->GetX()[i] = i*0.01;
@@ -53,8 +53,8 @@ void plotMCsignificance(string s = "LM")
 
         hs = (TH1D*) f.Get("hmass_Signal_pTrkDCASigZ");
         hb = (TH1D*) f.Get("hmass_Bckgnd_pTrkDCASigZ");
-        S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh));
-        B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh));
+        S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh)) / hs->GetBinWidth(1);
+        B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh)) / hb->GetBinWidth(1);
         grSig_pTrkDCASigZ->GetX()[i] = i*0.01;
         grSig_pTrkDCASigZ->GetY()[i] = S/sqrt(S+B);
         grSB_pTrkDCASigZ->GetX()[i] = i*0.01;
@@ -62,8 +62,8 @@ void plotMCsignificance(string s = "LM")
 
         hs = (TH1D*) f.Get("hmass_Signal_nTrkDCASigZ");
         hb = (TH1D*) f.Get("hmass_Bckgnd_nTrkDCASigZ");
-        S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh));
-        B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh));
+        S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh)) / hs->GetBinWidth(1);
+        B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh)) / hb->GetBinWidth(1);
         grSig_nTrkDCASigZ->GetX()[i] = i*0.01;
         grSig_nTrkDCASigZ->GetY()[i] = S/sqrt(S+B);
         grSB_nTrkDCASigZ->GetX()[i] = i*0.01;
