@@ -21,15 +21,15 @@ Skim: `/HIMinimumBias4/qwang-V0Skim_v3-9d53152409b8a9b6fb15042030d9bf69/USER`
 
 ### 0-10% Centrality
 
-![](BDT/KS/hMassMid_0_4.png|width=100)
-![](BDT/KS/hMassMid_0_5.png|width=100)
-![](BDT/KS/hMassMid_0_6.png|width=100)
-![](BDT/KS/hMassMid_0_7.png|width=100)
-![](BDT/KS/hMassMid_0_8.png|width=100)
-![](BDT/KS/hMassMid_0_9.png|width=100)
-![](BDT/KS/hMassMid_0_10.png|width=100)
-![](BDT/KS/hMassMid_0_11.png|width=100)
-![](BDT/KS/hMassMid_0_12.png|width=100)
+![](BDT/KS/hMassMid_0_4.png)
+![](BDT/KS/hMassMid_0_5.png)
+![](BDT/KS/hMassMid_0_6.png)
+![](BDT/KS/hMassMid_0_7.png)
+![](BDT/KS/hMassMid_0_8.png)
+![](BDT/KS/hMassMid_0_9.png)
+![](BDT/KS/hMassMid_0_10.png)
+![](BDT/KS/hMassMid_0_11.png)
+![](BDT/KS/hMassMid_0_12.png)
 
 ### 10-30% Centrality
 
