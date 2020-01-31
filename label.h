@@ -381,6 +381,27 @@ char const * fname[] = {
     "NA",     // 378 Lm pPb HM0 sysLoose merge
     "NA",     // 379 Lm pPb HM123456 sysLoose merge
     "NA",     // 380 Lm pPb HM7 sysLoose merge
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_v2/200130_201229/0000/",     // 381 Charged H pPb HM0
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_v2/200130_202200/0000/",     // 382 Charged H pPb HM1
+    "",     // 383 Charged H pPb HM2
+    "",     // 384 Charged H pPb HM3
+    "",     // 385 Charged H pPb HM4
+    "",     // 386 Charged H pPb HM5
+    "",     // 387 Charged H pPb HM6
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_v2/200130_202338/0000/",     // 388 Charged H pPb HM7
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_reverse_v2/200131_124333/0000/",     // 389 Charged H pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_reverse_v2/200131_124526/0000/",     // 390 Charged H pPb HM1 reverse
+    "",     // 391 Charged H pPb HM2 reverse
+    "",     // 392 Charged H pPb HM3 reverse
+    "",     // 393 Charged H pPb HM4 reverse
+    "",     // 394 Charged H pPb HM5 reverse
+    "",     // 395 Charged H pPb HM6 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_reverse_v2/200131_124627/0000/",     // 396 Charged H pPb HM7 reverse
+    "NA",     // 397 Charged H pPb HM123456
+    "NA",     // 398 Charged H pPb HM123456 reverse
+    "NA",     // 399 Charged H pPb HM0 merge
+    "NA",     // 400 Charged H pPb HM123456 merge
+    "NA",     // 401 Charged H pPb HM7 merge
 };
 
 char const * ftxt[] = {
@@ -765,15 +786,38 @@ char const * ftxt[] = {
 	"txt/PAHM0_Lm_sysLoose_merge/",         // 378
 	"txt/PAHM123456_Lm_sysLoose_merge/",    // 379
 	"txt/PAHM7_Lm_sysLoose_merge/",         // 380
+	"txt/PAHM0_H/",                         // 381
+	"txt/PAHM1_H/",                         // 382
+	"txt/PAHM2_H/",                         // 383
+	"txt/PAHM3_H/",                         // 384
+	"txt/PAHM4_H/",                         // 385
+	"txt/PAHM5_H/",                         // 386
+	"txt/PAHM6_H/",                         // 387
+	"txt/PAHM7_H/",                         // 388
+	"txt/PAHM0_H_reverse/",                 // 389
+	"txt/PAHM1_H_reverse/",                 // 390
+	"txt/PAHM2_H_reverse/",                 // 391
+	"txt/PAHM3_H_reverse/",                 // 392
+	"txt/PAHM4_H_reverse/",                 // 393
+	"txt/PAHM5_H_reverse/",                 // 394
+	"txt/PAHM6_H_reverse/",                 // 395
+	"txt/PAHM7_H_reverse/",                 // 396
+	"txt/PAHM123456_H/",                    // 397
+	"txt/PAHM123456_H_reverse/",            // 398
+	"txt/PAHM0_H_merge/",                   // 399
+	"txt/PAHM123456_H_merge/",              // 400
+	"txt/PAHM7_H_merge/",                   // 401
 };
 
 const int Pid_Non	= 0;
 const int Pid_PA_Ks	= 1;
 const int Pid_PA_Lambda	= 2;
 const int Pid_PA_Omega	= 3;
+const int Pid_PA_Hadron	= 4;
 const int Pid_AA_Ks	= 11;
 const int Pid_AA_Lambda	= 12;
 const int Pid_AA_Omega	= 13;
+const int Pid_AA_Hadron	= 14;
 
 bool isPA(int c) { return c < 10; }
 bool isKs(int c)     { return (c%10)==1; }
@@ -1162,6 +1206,27 @@ auto PID = std::vector<int>{
 	Pid_PA_Lambda,	    // 378
 	Pid_PA_Lambda,	    // 379
 	Pid_PA_Lambda,	    // 380
+	Pid_PA_Hadron,	    // 381
+	Pid_PA_Hadron,	    // 382
+	Pid_PA_Hadron,	    // 383
+	Pid_PA_Hadron,	    // 384
+	Pid_PA_Hadron,	    // 385
+	Pid_PA_Hadron,	    // 386
+	Pid_PA_Hadron,	    // 387
+	Pid_PA_Hadron,	    // 388
+	Pid_PA_Hadron,	    // 389
+	Pid_PA_Hadron,	    // 390
+	Pid_PA_Hadron,	    // 391
+	Pid_PA_Hadron,	    // 392
+	Pid_PA_Hadron,	    // 393
+	Pid_PA_Hadron,	    // 394
+	Pid_PA_Hadron,	    // 395
+	Pid_PA_Hadron,	    // 396
+	Pid_PA_Hadron,	    // 397
+	Pid_PA_Hadron,	    // 398
+	Pid_PA_Hadron,	    // 399
+	Pid_PA_Hadron,	    // 400
+	Pid_PA_Hadron,	    // 401
 };
 
 #include <TChain.h>
