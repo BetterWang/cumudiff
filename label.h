@@ -5,7 +5,7 @@ char const * fname[] = {
     "",      // 2  HIMB1  Lm
     "",      // 3  HIMB2  Lm
     "",      // 4  HIMB3  Lm
-    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Lm_Peak_Mid_v1/191213_201159/0000/",      // 5  HIMB4  Lm
+    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Lm_Peak_Mid_v2/200117_154005/0000/",      // 5  HIMB4  Lm
     "",      // 6  HIMB5  Lm
     "",      // 7  HIMB6  Lm
     "",      // 8  HIMB7  Lm
@@ -25,7 +25,7 @@ char const * fname[] = {
     "",      // 22 HIMB1  Lm SBPos
     "",      // 23 HIMB2  Lm SBPos
     "",      // 24 HIMB3  Lm SBPos
-    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Lm_SBPos_Mid_v1/191213_201729/0000/",      // 25 HIMB4  Lm SBPos
+    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Lm_SBPos_Mid_v2/200127_224231/0000/",      // 25 HIMB4  Lm SBPos
     "",      // 26 HIMB5  Lm SBPos
     "",      // 27 HIMB6  Lm SBPos
     "",      // 28 HIMB7  Lm SBPos
@@ -45,7 +45,7 @@ char const * fname[] = {
     "",      // 42 HIMB1  Lm SBNeg
     "",      // 43 HIMB2  Lm SBNeg
     "",      // 44 HIMB3  Lm SBNeg
-    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Lm_SBNeg_Mid_v1/191213_202156/0000/",      // 45 HIMB4  Lm SBNeg
+    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Lm_SBNeg_Mid_v2/200127_224346/0000/",      // 45 HIMB4  Lm SBNeg
     "",      // 46 HIMB5  Lm SBNeg
     "",      // 47 HIMB6  Lm SBNeg
     "",      // 48 HIMB7  Lm SBNeg
@@ -65,7 +65,7 @@ char const * fname[] = {
     "",      // 62 HIMB1  Ks
     "",      // 63 HIMB2  Ks
     "",      // 64 HIMB3  Ks
-    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Ks_Peak_Mid_v1/191213_201549/0000/",      // 65 HIMB4  Ks
+    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Ks_Peak_Mid_v2/200116_230230/0000/",      // 65 HIMB4  Ks
     "",      // 66 HIMB5  Ks
     "",      // 67 HIMB6  Ks
     "",      // 68 HIMB7  Ks
@@ -85,7 +85,7 @@ char const * fname[] = {
     "",      // 82 HIMB1  Ks SBPos
     "",      // 83 HIMB2  Ks SBPos
     "",      // 84 HIMB3  Ks SBPos
-    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Ks_SBPos_Mid_v1/191213_202447/0000/",      // 85 HIMB4  Ks SBPos
+    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Ks_SBPos_Mid_v2/200127_224507/0000/",      // 85 HIMB4  Ks SBPos
     "",      // 86 HIMB5  Ks SBPos
     "",      // 87 HIMB6  Ks SBPos
     "",      // 88 HIMB7  Ks SBPos
@@ -105,7 +105,7 @@ char const * fname[] = {
     "",      // 102 HIMB1  Ks SBNeg
     "",      // 103 HIMB2  Ks SBNeg
     "",      // 104 HIMB3  Ks SBNeg
-    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Ks_SBNeg_Mid_v1/191213_202537/0000/",      // 105 HIMB4  Ks SBNeg
+    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Ks_SBNeg_Mid_v2/200127_224542/0000/",      // 105 HIMB4  Ks SBNeg
     "",      // 106 HIMB5  Ks SBNeg
     "",      // 107 HIMB6  Ks SBNeg
     "",      // 108 HIMB7  Ks SBNeg
@@ -121,14 +121,35 @@ char const * fname[] = {
     "",      // 118 HIMB17 Ks SBNeg
     "",      // 119 HIMB18 Ks SBNeg
     "",      // 120 HIMB19 Ks SBNeg
-    "NA",      // 121 HIMB merge Lm
-    "NA",      // 122 HIMB merge Lm SBPos
-    "NA",      // 123 HIMB merge Lm SBNeg
-    "NA",      // 124 HIMB merge Lm SB
-    "NA",      // 125 HIMB merge Ks
-    "NA",      // 126 HIMB merge Ks SBPos
-    "NA",      // 127 HIMB merge Ks SBNeg
-    "NA",      // 128 HIMB merge Ks SB
+    "",      // 121 HIMB0  H
+    "",      // 122 HIMB1  H
+    "",      // 123 HIMB2  H
+    "",      // 124 HIMB3  H
+    "",      // 125 HIMB4  H
+    "",      // 126 HIMB5  H
+    "",      // 127 HIMB6  H
+    "",      // 128 HIMB7  H
+    "",      // 129 HIMB8  H
+    "",      // 130 HIMB9  H
+    "",      // 131 HIMB10 H
+    "",      // 132 HIMB11 H
+    "",      // 133 HIMB12 H
+    "",      // 134 HIMB13 H
+    "",      // 135 HIMB14 H
+    "",      // 136 HIMB15 H
+    "",      // 137 HIMB16 H
+    "",      // 138 HIMB17 H
+    "",      // 139 HIMB18 H
+    "",      // 140 HIMB19 H
+    "NA",      // 141 HIMB merge Lm
+    "NA",      // 142 HIMB merge Lm SBPos
+    "NA",      // 143 HIMB merge Lm SBNeg
+    "NA",      // 144 HIMB merge Lm SB
+    "NA",      // 145 HIMB merge Ks
+    "NA",      // 146 HIMB merge Ks SBPos
+    "NA",      // 147 HIMB merge Ks SBNeg
+    "NA",      // 148 HIMB merge Ks SB
+    "NA",      // 149 HIMB merge H
 };
 
 char const * ftxt[] = {
@@ -253,23 +274,46 @@ char const * ftxt[] = {
     "",      // 118 HIMB17 Ks SBNeg
     "",      // 119 HIMB18 Ks SBNeg
     "",      // 120 HIMB19 Ks SBNeg
-    "txt/HIMB_Lm/",             // 121
-    "txt/HIMB_Lm_SBPos/",       // 122
-    "txt/HIMB_Lm_SBNeg/",       // 123
-    "txt/HIMB_Lm_SB/",          // 124
-    "txt/HIMB_Ks/",             // 125
-    "txt/HIMB_Ks_SBPos/",       // 126
-    "txt/HIMB_Ks_SBNeg/",       // 127
-    "txt/HIMB_Ks_SB/",          // 128
+    "txt/HIMB0_H/",      // 121 HIMB0  H
+    "txt/HIMB1_H/",      // 122 HIMB1  H
+    "txt/HIMB2_H/",      // 123 HIMB2  H
+    "txt/HIMB3_H/",      // 124 HIMB3  H
+    "txt/HIMB4_H/",      // 125 HIMB4  H
+    "txt/HIMB5_H/",      // 126 HIMB5  H
+    "txt/HIMB6_H/",      // 127 HIMB6  H
+    "txt/HIMB7_H/",      // 128 HIMB7  H
+    "txt/HIMB8_H/",      // 129 HIMB8  H
+    "txt/HIMB9_H/",      // 130 HIMB9  H
+    "txt/HIMB10_H/",     // 131 HIMB10 H
+    "txt/HIMB11_H/",     // 132 HIMB11 H
+    "txt/HIMB12_H/",     // 133 HIMB12 H
+    "txt/HIMB13_H/",     // 134 HIMB13 H
+    "txt/HIMB14_H/",     // 135 HIMB14 H
+    "txt/HIMB15_H/",     // 136 HIMB15 H
+    "txt/HIMB16_H/",     // 137 HIMB16 H
+    "txt/HIMB17_H/",     // 138 HIMB17 H
+    "txt/HIMB18_H/",     // 139 HIMB18 H
+    "txt/HIMB19_H/",     // 140 HIMB19 H
+    "txt/HIMB_Lm/",             // 141
+    "txt/HIMB_Lm_SBPos/",       // 142
+    "txt/HIMB_Lm_SBNeg/",       // 143
+    "txt/HIMB_Lm_SB/",          // 144
+    "txt/HIMB_Ks/",             // 145
+    "txt/HIMB_Ks_SBPos/",       // 146
+    "txt/HIMB_Ks_SBNeg/",       // 147
+    "txt/HIMB_Ks_SB/",          // 148
+    "txt/HIMB_H/",              // 149
 };
 
 const int Pid_Non	= 0;
 const int Pid_PA_Ks	= 1;
 const int Pid_PA_Lambda	= 2;
 const int Pid_PA_Omega	= 3;
+const int Pid_PA_Hadron = 4;
 const int Pid_AA_Ks	= 11;
 const int Pid_AA_Lambda	= 12;
 const int Pid_AA_Omega	= 13;
+const int Pid_AA_Hadron = 14;
 
 bool isPA(int c) { return c < 10; }
 bool isKs(int c)     { return (c%10)==1; }
@@ -398,14 +442,35 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 118
 	Pid_AA_Ks,		    // 119
 	Pid_AA_Ks,		    // 120
-	Pid_AA_Lambda,	    // 121
-	Pid_AA_Lambda,	    // 122
-	Pid_AA_Lambda,	    // 123
-	Pid_AA_Lambda,	    // 124
-	Pid_AA_Ks,		    // 125
-	Pid_AA_Ks,		    // 126
-	Pid_AA_Ks,		    // 127
-	Pid_AA_Ks,		    // 128
+    Pid_AA_Hadron,      // 121
+    Pid_AA_Hadron,      // 122
+    Pid_AA_Hadron,      // 123
+    Pid_AA_Hadron,      // 124
+    Pid_AA_Hadron,      // 125
+    Pid_AA_Hadron,      // 126
+    Pid_AA_Hadron,      // 127
+    Pid_AA_Hadron,      // 128
+    Pid_AA_Hadron,      // 129
+    Pid_AA_Hadron,      // 130
+    Pid_AA_Hadron,      // 131
+    Pid_AA_Hadron,      // 132
+    Pid_AA_Hadron,      // 133
+    Pid_AA_Hadron,      // 134
+    Pid_AA_Hadron,      // 135
+    Pid_AA_Hadron,      // 136
+    Pid_AA_Hadron,      // 137
+    Pid_AA_Hadron,      // 138
+    Pid_AA_Hadron,      // 139
+    Pid_AA_Hadron,      // 140
+	Pid_AA_Lambda,	    // 141
+	Pid_AA_Lambda,	    // 142
+	Pid_AA_Lambda,	    // 143
+	Pid_AA_Lambda,	    // 144
+	Pid_AA_Ks,		    // 145
+	Pid_AA_Ks,		    // 146
+	Pid_AA_Ks,		    // 147
+	Pid_AA_Ks,		    // 148
+    Pid_AA_Hadron,      // 149
 };
 
 #include <TChain.h>
