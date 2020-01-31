@@ -1,3 +1,5 @@
+# MVA Study of V0 in PbPb 2018
+
 ~~~c++
 // pt                          0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12
     double pTbin[14] = {0.2, 0.4, 0.6, 0.8, 1.0, 1.4, 1.8, 2.2, 2.8, 3.6, 4.6, 6.0, 7.0, 8.5};
@@ -71,93 +73,24 @@ root -l -b -q 'TMVAClassification_full.C("KS")'
 
 ### BDT Optimization
 
-* $K_{S}^0$ Significance as a function of BDT
+MC significance in the mass peak region as a fuction of the BDT cut value.
 
-![Ks Sig](BDT/BDT/KS_Sig.png)
+| V0 | Peak region |
+|---|---|
+| $K_{S}^0$ | $1.1115 < mass < 1.2$ |
+| $\Lambda$ | $0.492 < mass < 0.503$ |  
 
-* $\Lambda$ Significance as a function of BDT
+#### $K_{S}^0$ Significance as a function of BDT
 
-![Lm Sig](BDT/BDT/LM_Sig.png)
+![Ks Sig](BDT/KS_Sig.png)
 
-* To be consistent, the final BDT cut is set at **0.15** for both $K_{S}^0$ and $\Lambda$.
+#### $\Lambda$ Significance as a function of BDT
 
-### $K_{s}^0$ BDT Performance
+![Lm Sig](BDT/LM_Sig.png)
 
-### Centrality 0-10%
+#### To be consistent, the suggested BDT cut is set at **0.15** for both $K_{S}^0$ and $\Lambda$.
 
-
-### Centrality 10-30%
-
-
-### Centrality 30-50%
-
-
-### Centrality 50-80%
-
-
-
-
-
-
-### $\Lambda$ BDT Performance
-
-### Centrality 0-10%
-
-
-### Centrality 10-30%
-
-
-### Centrality 30-50%
-
-
-### Centrality 50-80%
-
-
-
-## $\Lambda$ Efficiencies and fake rates
-
-### $\Lambda$ acceptance
-
-![Lm Acc eta](BDT/Lm_Acc_eta.png)
-![Lm Acc pT ](BDT/Lm_Acc_pT.png)
-
-
-### $\Lambda$ RECO efficiency
-
-![Lm RECO eta](BDT/Lm_REC_eta.png)
-![Lm RECO pT ](BDT/Lm_REC_pT.png)
-
-
-### $\Lambda$ total efficiency
-
-![Lm Eff eta](BDT/Lm_Eff_eta.png)
-![Lm Eff pT ](BDT/Lm_Eff_pT.png)
-
-
-### $\Lambda$ fake rate
-
-![Lm Fake eta](BDT/Lm_Fak_eta.png)
-![Lm Fake pT ](BDT/Lm_Fak_pT.png)
-
-### $\Lambda$ 2D total efficiency
-
-* 0-10%
-
-![Lm Eff 2D](BDT/Lm_Eff2D_0_10.png)
-
-* 10-30%
-
-![Lm Eff 2D](BDT/Lm_Eff2D_10_30.png)
-
-* 30-50%
-
-![Lm Eff 2D](BDT/Lm_Eff2D_30_50.png)
-
-* 50-80%
-
-![Lm Eff 2D](BDT/Lm_Eff2D_50_80.png)
-
-## $K_{S}^0$ Efficiencies and fake rates
+## $K_{S}^0$ Efficiencies
 
 ### $K_{S}^0$ acceptance
 
@@ -175,12 +108,6 @@ root -l -b -q 'TMVAClassification_full.C("KS")'
 
 ![Ks Eff eta](BDT/Ks_Eff_eta.png)
 ![Ks Eff pT ](BDT/Ks_Eff_pT.png)
-
-
-### $K_{S}^0$ fake rate
-
-![Ks Fake eta](BDT/Ks_Fak_eta.png)
-![Ks Fake pT ](BDT/Ks_Fak_pT.png)
 
 ### $K_{S}^0$ 2D total efficiency
 
@@ -200,16 +127,48 @@ root -l -b -q 'TMVAClassification_full.C("KS")'
 
 ![Ks Eff 2D](BDT/Ks_Eff2D_50_80.png)
 
+## $\Lambda$ Efficiencies
+
+### $\Lambda$ acceptance
+
+![Lm Acc eta](BDT/Lm_Acc_eta.png)
+![Lm Acc pT ](BDT/Lm_Acc_pT.png)
+
+
+### $\Lambda$ RECO efficiency
+
+![Lm RECO eta](BDT/Lm_REC_eta.png)
+![Lm RECO pT ](BDT/Lm_REC_pT.png)
+
+
+### $\Lambda$ total efficiency
+
+![Lm Eff eta](BDT/Lm_Eff_eta.png)
+![Lm Eff pT ](BDT/Lm_Eff_pT.png)
+
+
+### $\Lambda$ 2D total efficiency
+
+* 0-10%
+
+![Lm Eff 2D](BDT/Lm_Eff2D_0_10.png)
+
+* 10-30%
+
+![Lm Eff 2D](BDT/Lm_Eff2D_10_30.png)
+
+* 30-50%
+
+![Lm Eff 2D](BDT/Lm_Eff2D_30_50.png)
+
+* 50-80%
+
+![Lm Eff 2D](BDT/Lm_Eff2D_50_80.png)
+
 
 ## Armenteros-Podolanski Plot
 
-### $\Lambda$ $1.8 < p_{T} < 8.5$ $|y|<1.0$ 0-80%,
-
-![Lm AP](BDT/AP_Lm.png)
-
-### $\Lambda$ $1.8 < p_{T} < 8.5$ $1.0<|y|<2.0$ 0-80%,
-
-![Lm AP](BDT/AP_LmFwd.png)
+**Armenteros-Podolanski plot for peak region.**
 
 ### $K_{S}^0$ $0.6 < p_{T} < 8.5$ $|y|<1.0$ 0-80%, 
 
@@ -219,7 +178,19 @@ root -l -b -q 'TMVAClassification_full.C("KS")'
 
 ![Ks AP](BDT/AP_KsFwd.png)
 
+### $\Lambda$ $1.8 < p_{T} < 8.5$ $|y|<1.0$ 0-80%,
+
+![Lm AP](BDT/AP_Lm.png)
+
+### $\Lambda$ $1.8 < p_{T} < 8.5$ $1.0<|y|<2.0$ 0-80%,
+
+![Lm AP](BDT/AP_LmFwd.png)
+
 ## Summary
 
 * The weight xml file for $\Lambda$ is located [here](BDT/MC_Full_BDT250_D4.LM.weights.xml).
 * The weight xml file for $K_{S}^0$ is located [here](BDT/MC_Full_BDT250_D4.KS.weights.xml).
+
+## Performance
+
+[Performance plots](V0perform.md)

@@ -5,7 +5,8 @@
 3) massFit3.C      mass fit / find optimized bdt cut
 4) APplot.C        use bdt cut to get mass hist and AP
 5) APLM.C APKS.C   generate AP plot from 4)
-6) MVAmass.C       generate mass plot from 4)
+6) MVAmass.C       generate mass histogram from 4)
+7) MVAmassFit.C    do mass fit from 6)
 
 
 MC Eff
@@ -22,5 +23,5 @@ MVA validation
 4) reweightMVA.C        get reweight factor from 1) and 2) ([p][n]TrkDCASig[XY][Z])
 5) MCsignificance.C     get S/sqrt(S+B) with reweight
 6) plotMCsignificance.C plot S/sqrt(S+B) vs BDT cut
-7) plotSig.C            plot S/B for TMVA3 vs TMVA8 and reweighting 
+7) plotSig.C            plot S/B for TMVA3 vs TMVA8 and reweighting, plot significance
 

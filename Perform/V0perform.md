@@ -1,63 +1,146 @@
-~~~c++
-// pt                          0,   1,   2,   3,   4,   5,   6,   7,   8,   9,  10,  11,  12
-    double pTbin[14] = {0.2, 0.4, 0.6, 0.8, 1.0, 1.4, 1.8, 2.2, 2.8, 3.6, 4.6, 6.0, 7.0, 8.5};
-// cent                   0,  1,   2,   3,   4
-    int centBin[6] = {0, 20, 60, 100, 160, 200};
-~~~
+# 2018 PbPb 5.02 TeV V0 MVA Performance
 
-## Sample
+## Data Sample
 
-`/HIMinimumBias1/qwang-crab_HIMB1A_V0Skim_v1-029a19037b45547cbe6874802e703632/USER`
+MinBias PD: `/HIMinimumBias4/HIRun2018A-04Apr2019-v1/AOD`
 
-| DecaySigXYZ | cosThetaXYZ | vtxChi2 | Lxyz      | DCA   |
-|:-----------:|:-----------:|:-------:|:---------:|:-----:|
-|$>2.5$       |$>0.997$     |$>0.$    |$>0.$      |$>0.$  |
+Skim: `/HIMinimumBias4/qwang-V0Skim_v3-9d53152409b8a9b6fb15042030d9bf69/USER`
 
-## Cuts
+## Fitting
 
-| RUN | DecaySigXYZ | cosThetaXYZ | vtxChi2 | Lxyz      | DCA   | highPurity |  pTerr  | NHits |
-|:---:|:-----------:|:-----------:|:-------:|:---------:|:-----:|:----------:|:-------:|:-----:|
-| std |5.0-9999999. |0.9999-999.  |0.-99.   |0.-9999999.|0.- 99.|    false   | 0.-9999 |0-99999|
-|test1|**10.-9999999.**|0.9999-999.  |0.-99.   |0.-9999999.|0.- 99.|  false  | 0.-9999 |0-99999|
-|test2|5.0-9999999. |**0.99999-999.**|0.-99.   |0.-9999999.|0.- 99.|  false  | 0.-9999 |0-99999|
-|test3|5.0-9999999. |0.9999-999.  |**0.-3.**   |0.-9999999.|0.- 99.|  false  | 0.-9999 |0-99999|
-|test4|5.0-9999999. |0.9999-999.  |0.-99.   |**1.-9999999**|0.- 99.|  false  | 0.-9999 |0-99999|
-|test5|5.0-9999999. |0.9999-999.  |0.-99.   |0.-9999999.|**0.-0.5**|  false  | 0.-9999 |0-99999|
-|test6|5.0-9999999. |0.9999-999.  |0.-99.   |0.-9999999.|0.- 99.|   **true** | 0.-9999 |0-99999|
-|test7|5.0-9999999. |0.9999-999.  |0.-99.   |0.-9999999.|0.- 99.|    false   |**0.-0.1**|0-99999|
-|test8|5.0-9999999. |0.9999-999.  |0.-99.   |0.-9999999.|0.- 99.|    false   | 0.-9999 |**3-99999**|
-|tight|**10.-9999999.**|**0.99999-999.**|**0.-3.**|**1.-9999999**|**0.-0.5**|false| 0.-9999 |0-99999|
+* Signal (solid red curve): double gaussian with common mean (dashed red and blue curves, solid red).
+* Background(solid blue curve): 4th order polynomial.
+* Sum of signal and background (solid black curve).
+* Data (black histogram).
 
+## $K_{S}^0$
 
-$|\eta|<2.4$:  `Lm_rap24_std.root`...  
-$|\eta|<1.0$:  `Lm_rap10_std.root`...
+* [MVA xml](BDT/MC_Full_BDT250_D4.KS.weights.xml)
+* Mid rapidity: $|y|<1.0$
+* Suggested $p_T$ range: $1.0 < p_T < 8.5$
 
-## Summary
+### 0-10% Centrality
 
-### Table $|\eta|<1.0$
+![](BDT/KS/hMassMid_0_4.png)
+![](BDT/KS/hMassMid_0_5.png)
+![](BDT/KS/hMassMid_0_6.png)
+![](BDT/KS/hMassMid_0_7.png)
+![](BDT/KS/hMassMid_0_8.png)
+![](BDT/KS/hMassMid_0_9.png)
+![](BDT/KS/hMassMid_0_10.png)
+![](BDT/KS/hMassMid_0_11.png)
+![](BDT/KS/hMassMid_0_12.png)
 
-|Bin| Centrality        | 0~10%    | 10~30%    | 30~50%  | 50~80%  | 80~100%  |
-|:-:|:-----------------:|:--------:|:---------:|:-------:|:-------:|:--------:|
-| 4 | $1.0 < p_T < 1.4$ | **NO**   | **NO**    |**Maybe**| **YES** | **Maybe**|
-| 5 | $1.4 < p_T < 1.8$ | **Maybe**| **Maybe** | **YES** | **YES** | **Maybe**|
-| 6 | $1.8 < p_T < 2.2$ | **YES**  | **YES**   | **YES** | **YES** | **YES**  |
-| 7 | $2.2 < p_T < 2.8$ | **YES**  | **YES**   | **YES** | **YES** | **YES**  |
-| 8 | $2.8 < p_T < 3.6$ | **YES**  | **YES**   | **YES** | **YES** | **YES**  |
-| 9 | $3.6 < p_T < 4.6$ | **YES**  | **YES**   | **YES** | **YES** | **YES**  |
-| 10| $4.6 < p_T < 6.0$ | **YES**  | **YES**   | **YES** | **YES** | **YES**  |
-| 11| $6.0 < p_T < 7.0$ | **YES**  | **YES**   | **YES** | **YES** | **YES**  |
-| 12| $7.0 < p_T < 8.5$ | **Maybe**| **YES**   | **YES** | **YES** | **YES**  |
+### 10-30% Centrality
 
-### Table $|\eta|<2.4$
+![](BDT/KS/hMassMid_1_4.png)
+![](BDT/KS/hMassMid_1_5.png)
+![](BDT/KS/hMassMid_1_6.png)
+![](BDT/KS/hMassMid_1_7.png)
+![](BDT/KS/hMassMid_1_8.png)
+![](BDT/KS/hMassMid_1_9.png)
+![](BDT/KS/hMassMid_1_10.png)
+![](BDT/KS/hMassMid_1_11.png)
+![](BDT/KS/hMassMid_1_12.png)
 
-|Bin| Centrality        | 0~10%    | 10~30%    | 30~50%  | 50~80%  | 80~100%  |
-|:-:|:-----------------:|:--------:|:---------:|:-------:|:-------:|:--------:|
-| 4 | $1.0 < p_T < 1.4$ | **NO**   | **NO**    |**Maybe**| **YES** | **YES**  |
-| 5 | $1.4 < p_T < 1.8$ | **NO**   | **Maybe** | **YES** | **YES** | **YES**  |
-| 6 | $1.8 < p_T < 2.2$ | **Maybe**| **YES**   | **YES** | **YES** | **YES**  |
-| 7 | $2.2 < p_T < 2.8$ | **Maybe**| **YES**   | **YES** | **YES** | **YES**  |
-| 8 | $2.8 < p_T < 3.6$ | **Maybe**| **YES**   | **YES** | **YES** | **YES**  |
-| 9 | $3.6 < p_T < 4.6$ | **Maybe**| **YES**   | **YES** | **YES** | **YES**  |
-| 10| $4.6 < p_T < 6.0$ | **NO**   | **Maybe** | **YES** | **YES** | **YES**  |
-| 11| $6.0 < p_T < 7.0$ | **NO**   | **Maybe** | **YES** | **YES** | **YES**  |
-| 12| $7.0 < p_T < 8.5$ | **NO**   | **NO**    | **YES** | **YES** | **YES**  |
+### 30-50% Centrality
+
+![](BDT/KS/hMassMid_2_4.png)
+![](BDT/KS/hMassMid_2_5.png)
+![](BDT/KS/hMassMid_2_6.png)
+![](BDT/KS/hMassMid_2_7.png)
+![](BDT/KS/hMassMid_2_8.png)
+![](BDT/KS/hMassMid_2_9.png)
+![](BDT/KS/hMassMid_2_10.png)
+![](BDT/KS/hMassMid_2_11.png)
+![](BDT/KS/hMassMid_2_12.png)
+
+### 50-80% Centrality
+
+![](BDT/KS/hMassMid_3_4.png)
+![](BDT/KS/hMassMid_3_5.png)
+![](BDT/KS/hMassMid_3_6.png)
+![](BDT/KS/hMassMid_3_7.png)
+![](BDT/KS/hMassMid_3_8.png)
+![](BDT/KS/hMassMid_3_9.png)
+![](BDT/KS/hMassMid_3_10.png)
+![](BDT/KS/hMassMid_3_11.png)
+![](BDT/KS/hMassMid_3_12.png)
+
+### 80-100% Centrality
+
+![](BDT/KS/hMassMid_4_4.png)
+![](BDT/KS/hMassMid_4_5.png)
+![](BDT/KS/hMassMid_4_6.png)
+![](BDT/KS/hMassMid_4_7.png)
+![](BDT/KS/hMassMid_4_8.png)
+![](BDT/KS/hMassMid_4_9.png)
+![](BDT/KS/hMassMid_4_10.png)
+![](BDT/KS/hMassMid_4_11.png)
+![](BDT/KS/hMassMid_4_12.png)
+
+## $\Lambda$
+
+* [MVA xml](BDT/MC_Full_BDT250_D4.LM.weights.xml)
+* Mid rapidity: $|y|<1.0$
+* Suggested $p_T$ range: $1.8 < p_T < 8.5$. (For reference, $1.0 < p_T < 1.8$ plots are also shown.)
+
+### 0-10% Centrality
+
+![](BDT/LM/hMassMid_0_4.png)
+![](BDT/LM/hMassMid_0_5.png)
+![](BDT/LM/hMassMid_0_6.png)
+![](BDT/LM/hMassMid_0_7.png)
+![](BDT/LM/hMassMid_0_8.png)
+![](BDT/LM/hMassMid_0_9.png)
+![](BDT/LM/hMassMid_0_10.png)
+![](BDT/LM/hMassMid_0_11.png)
+![](BDT/LM/hMassMid_0_12.png)
+
+### 10-30% Centrality
+
+![](BDT/LM/hMassMid_1_4.png)
+![](BDT/LM/hMassMid_1_5.png)
+![](BDT/LM/hMassMid_1_6.png)
+![](BDT/LM/hMassMid_1_7.png)
+![](BDT/LM/hMassMid_1_8.png)
+![](BDT/LM/hMassMid_1_9.png)
+![](BDT/LM/hMassMid_1_10.png)
+![](BDT/LM/hMassMid_1_11.png)
+![](BDT/LM/hMassMid_1_12.png)
+
+### 30-50% Centrality
+
+![](BDT/LM/hMassMid_2_4.png)
+![](BDT/LM/hMassMid_2_5.png)
+![](BDT/LM/hMassMid_2_6.png)
+![](BDT/LM/hMassMid_2_7.png)
+![](BDT/LM/hMassMid_2_8.png)
+![](BDT/LM/hMassMid_2_9.png)
+![](BDT/LM/hMassMid_2_10.png)
+![](BDT/LM/hMassMid_2_11.png)
+![](BDT/LM/hMassMid_2_12.png)
+
+### 50-80% Centrality
+
+![](BDT/LM/hMassMid_3_4.png)
+![](BDT/LM/hMassMid_3_5.png)
+![](BDT/LM/hMassMid_3_6.png)
+![](BDT/LM/hMassMid_3_7.png)
+![](BDT/LM/hMassMid_3_8.png)
+![](BDT/LM/hMassMid_3_9.png)
+![](BDT/LM/hMassMid_3_10.png)
+![](BDT/LM/hMassMid_3_11.png)
+![](BDT/LM/hMassMid_3_12.png)
+
+### 80-100% Centrality
+
+![](BDT/LM/hMassMid_4_4.png)
+![](BDT/LM/hMassMid_4_5.png)
+![](BDT/LM/hMassMid_4_6.png)
+![](BDT/LM/hMassMid_4_7.png)
+![](BDT/LM/hMassMid_4_8.png)
+![](BDT/LM/hMassMid_4_9.png)
+![](BDT/LM/hMassMid_4_10.png)
+![](BDT/LM/hMassMid_4_11.png)
+![](BDT/LM/hMassMid_4_12.png)

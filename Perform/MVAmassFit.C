@@ -209,8 +209,8 @@ void doSave(bool bPlot = true)
         gaus1_signal->Draw("same");
         gaus2_signal->Draw("same");
         func_bckgnd->Draw("same");
-        double S = func_signal->Integral(signal_range.first, signal_range.second);
-        double B = func_bckgnd->Integral(signal_range.first, signal_range.second);
+        double S = func_signal->Integral(signal_range.first, signal_range.second)/hmass->GetBinWidth(1);
+        double B = func_bckgnd->Integral(signal_range.first, signal_range.second)/hmass->GetBinWidth(1);
         double sig = S/sqrt(S+B);
         TLatex latexS;
         latexS.SetTextFont(43);
@@ -220,8 +220,9 @@ void doSave(bool bPlot = true)
         latexS.DrawLatexNDC(0.56, 0.87, Form("#chi^{2}/NDF = %.2f", fit->GetChisquare()/fit->GetNDF()));
         latexS.DrawLatexNDC(0.56, 0.82, Form("S = %.2f", S));
         latexS.DrawLatexNDC(0.56, 0.77, Form("B = %.2f", B));
-        latexS.DrawLatexNDC(0.56, 0.72, Form("S/#sqrt{S+B} = %f", sig));
+        latexS.DrawLatexNDC(0.56, 0.72, Form("S/#sqrt{S+B} = %.2f", sig));
         c.SaveAs( ( s + "/" + hmass->GetName() + ".pdf" ).c_str() );
+        c.SaveAs( ( s + "/" + hmass->GetName() + ".png" ).c_str() );
     }
 }
 
