@@ -77,8 +77,8 @@ MC significance in the mass peak region as a fuction of the BDT cut value.
 
 | V0 | Peak region |
 |---|---|
-| $K_{S}^0$ | $1.1115 < mass < 1.2$ |
-| $\Lambda$ | $0.492 < mass < 0.503$ |  
+| $K_{S}^0$ | $0.492 < mass < 0.503$ |  
+| $\Lambda$ | $1.1115 < mass < 1.2$ |
 
 #### $K_{S}^0$ Significance as a function of BDT
 
