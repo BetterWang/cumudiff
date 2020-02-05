@@ -21,12 +21,12 @@ void plotMCsignificance(string s = "LM")
     }
 
     for ( int i = 0; i < 51; i++ ) {
-        TFile f((s + to_string(i) + ".root").c_str());
+        TFile f((string("MCsignificance/") + s + to_string(i) + ".root").c_str());
         TH1D * hs = (TH1D*) f.Get("hmass_Signal");
         TH1D * hb = (TH1D*) f.Get("hmass_Bckgnd");
 
-        double S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh)) / hs->GetBinWidth(1);
-        double B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh)) / hb->GetBinWidth(1);
+        double S = hs->Integral(hs->FindBin(massLow), hs->FindBin(massHigh)); // hs->GetBinWidth(1);
+        double B = hb->Integral(hb->FindBin(massLow), hb->FindBin(massHigh)); // hb->GetBinWidth(1);
 
         grSig->GetX()[i] = i*0.01;
         grSig->GetY()[i] = S/sqrt(S+B);
