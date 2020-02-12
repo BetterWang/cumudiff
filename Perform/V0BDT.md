@@ -19,7 +19,7 @@
 ### Training strategy
 
 * Signal and background are from MC.
-* 250 DTs, Depth = 4, AdaptiveBoost. `H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20`
+* 250 DTs, Depth = 4, AdaptiveBoost. `H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20`
 * TMVA Classification [code](TMVAClassification_full.C)
 
 ~~~bash
@@ -88,7 +88,7 @@ MC significance in the mass peak region as a fuction of the BDT cut value.
 
 ![Lm Sig](BDT/LM_Sig.png)
 
-#### To be consistent, the suggested BDT cut is set at **0.15** for both $K_{S}^0$ and $\Lambda$.
+#### The suggested BDT cut is set at **0.15** for $K_{S}^0$ and **0.20** for $\Lambda$.
 
 ## $K_{S}^0$ Efficiencies
 
@@ -96,7 +96,6 @@ MC significance in the mass peak region as a fuction of the BDT cut value.
 
 ![Ks Acc eta](BDT/Ks_Acc_eta.png)
 ![Ks Acc pT ](BDT/Ks_Acc_pT.png)
-
 
 ### $K_{S}^0$ RECO efficiency
 
