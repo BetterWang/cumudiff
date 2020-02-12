@@ -197,7 +197,7 @@
     hEff_eta_50_80->Draw("histplsame");
     leg->Draw();
     ceta->SaveAs("Lm_Eff_etaD4.pdf");
-    ceta->SaveAs("Lm_Eff_eta.png");
+    ceta->SaveAs("Lm_Eff_etaD4.png");
 
     //////// Fak
     hFak_eta_0_10->GetXaxis()->CenterTitle();
