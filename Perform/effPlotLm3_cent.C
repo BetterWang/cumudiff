@@ -2,7 +2,8 @@
 {
     //TFile * f = new TFile("Lm_Hyjet_eff_MVAMCFull.root");
     //TFile * f = new TFile("Lm_Hyjet_eff_MVAMCFullD4.root");
-    TFile * f = new TFile("Lm_Hyjet_eff_MVAMCFull250D4_115.root");
+    //TFile * f = new TFile("Lm_Hyjet_eff_MVAMCFull250D4_115.root");
+    TFile * f = new TFile("Lm_Hyjet_eff_MVAMCFull250D4_120.root");
 
     TH1D * hAcc_eta_0_10 = (TH1D*) f->Get("hAcc_eta_0_10");
     TH1D * hEff_eta_0_10 = (TH1D*) f->Get("hEff_eta_0_10");
@@ -175,7 +176,7 @@
     hREC_eta_0_10->GetYaxis()->CenterTitle();
     hREC_eta_0_10->GetXaxis()->SetRangeUser(-2.5, 2.5);
     hREC_eta_0_10->GetYaxis()->SetRangeUser(0, 0.06);
-    hREC_eta_0_10->SetTitle(";#eta;RECO Efficiency");
+    hREC_eta_0_10->SetTitle(";y;RECO Efficiency");
     hREC_eta_0_10->Draw("histpl");
     hREC_eta_10_30->Draw("histplsame");
     hREC_eta_30_50->Draw("histplsame");
