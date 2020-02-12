@@ -94,75 +94,75 @@ MC significance in the mass peak region as a fuction of the BDT cut value.
 
 ### $K_{S}^0$ acceptance
 
-![Ks Acc eta](BDT/Ks_Acc_eta.png)
-![Ks Acc pT ](BDT/Ks_Acc_pT.png)
+![Ks Acc eta](BDT/Ks_Acc_etaD4.png)
+![Ks Acc pT ](BDT/Ks_Acc_pTD4.png)
 
 ### $K_{S}^0$ RECO efficiency
 
-![Ks RECO eta](BDT/Ks_REC_eta.png)
-![Ks RECO pT ](BDT/Ks_REC_pT.png)
+![Ks RECO eta](BDT/Ks_REC_etaD4.png)
+![Ks RECO pT ](BDT/Ks_REC_pTD4.png)
 
 
 ### $K_{S}^0$ total efficiency
 
-![Ks Eff eta](BDT/Ks_Eff_eta.png)
-![Ks Eff pT ](BDT/Ks_Eff_pT.png)
+![Ks Eff eta](BDT/Ks_Eff_etaD4.png)
+![Ks Eff pT ](BDT/Ks_Eff_pTD4.png)
 
 ### $K_{S}^0$ 2D total efficiency
 
 * 0-10%
 
-![Ks Eff 2D](BDT/Ks_Eff2D_0_10.png)
+![Ks Eff 2D](BDT/Ks_Eff2D_0_10D4.png)
 
 * 10-30%
 
-![Ks Eff 2D](BDT/Ks_Eff2D_10_30.png)
+![Ks Eff 2D](BDT/Ks_Eff2D_10_30D4.png)
 
 * 30-50%
 
-![Ks Eff 2D](BDT/Ks_Eff2D_30_50.png)
+![Ks Eff 2D](BDT/Ks_Eff2D_30_50D4.png)
 
 * 50-80%
 
-![Ks Eff 2D](BDT/Ks_Eff2D_50_80.png)
+![Ks Eff 2D](BDT/Ks_Eff2D_50_80D4.png)
 
 ## $\Lambda$ Efficiencies
 
 ### $\Lambda$ acceptance
 
-![Lm Acc eta](BDT/Lm_Acc_eta.png)
-![Lm Acc pT ](BDT/Lm_Acc_pT.png)
+![Lm Acc eta](BDT/Lm_Acc_etaD4.png)
+![Lm Acc pT ](BDT/Lm_Acc_pTD4.png)
 
 
 ### $\Lambda$ RECO efficiency
 
-![Lm RECO eta](BDT/Lm_REC_eta.png)
-![Lm RECO pT ](BDT/Lm_REC_pT.png)
+![Lm RECO eta](BDT/Lm_REC_etaD4.png)
+![Lm RECO pT ](BDT/Lm_REC_pTD4.png)
 
 
 ### $\Lambda$ total efficiency
 
-![Lm Eff eta](BDT/Lm_Eff_eta.png)
-![Lm Eff pT ](BDT/Lm_Eff_pT.png)
+![Lm Eff eta](BDT/Lm_Eff_etaD4.png)
+![Lm Eff pT ](BDT/Lm_Eff_pTD4.png)
 
 
 ### $\Lambda$ 2D total efficiency
 
 * 0-10%
 
-![Lm Eff 2D](BDT/Lm_Eff2D_0_10.png)
+![Lm Eff 2D](BDT/Lm_Eff2D_0_10D4.png)
 
 * 10-30%
 
-![Lm Eff 2D](BDT/Lm_Eff2D_10_30.png)
+![Lm Eff 2D](BDT/Lm_Eff2D_10_30D4.png)
 
 * 30-50%
 
-![Lm Eff 2D](BDT/Lm_Eff2D_30_50.png)
+![Lm Eff 2D](BDT/Lm_Eff2D_30_50D4.png)
 
 * 50-80%
 
-![Lm Eff 2D](BDT/Lm_Eff2D_50_80.png)
+![Lm Eff 2D](BDT/Lm_Eff2D_50_80D4.png)
 
 
 ## Armenteros-Podolanski Plot
