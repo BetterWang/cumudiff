@@ -1,12 +1,12 @@
 
 
-1) filter_mass3.C  BDT score tree
-2) genMassHist3.C  mass histo as a func of bdt
-3) massFit3.C      mass fit / find optimized bdt cut
-4) APplot.C        use bdt cut to get mass hist and AP
-5) APLM.C APKS.C   generate AP plot from 4)
-6) MVAmass.C       generate mass histogram from 4)
-7) MVAmassFit.C    do mass fit from 6)
+1) filter_mass3.C               BDT score tree
+2) genMassHist3.C               mass histo as a func of bdt
+3) massFit3.C,                  mass fit / find optimized bdt cut
+4) APplot.C                     use bdt cut to get mass hist and AP
+5) APLM.C APKS.C                generate AP plot from 4)
+6) MVAmass.C                    generate mass histogram from 4)
+7) MVAmassFit.C                 do mass fit from 6)
 
 
 MC Eff

@@ -8,10 +8,10 @@
 void MVAmass(string s = "LM")
 {
     TChain * mtr = new TChain("mtr");
-    string sout = "MVAmassBDT250D4_LM.root";
+    string sout = "MVAmassBDT250D4_LM20.root";
 
     if ( s == "LM" ) {
-        mtr->Add("../../PbPb2018/V0Performance/newTree8/LM3_rap1_*.root/mtr");
+        mtr->Add("../../PbPb2018/V0Performance/newTree8/LM3_20rap1_*.root/mtr");
     } else {
         mtr->Add("../../PbPb2018/V0Performance/newTree8/KS3_rap1_*.root/mtr");
         sout = "MVAmassBDT250D4_KS.root";

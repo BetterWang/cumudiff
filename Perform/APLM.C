@@ -2,7 +2,7 @@
 
 {
     TChain * mtr = new TChain("mtr");
-    mtr->Add("../../PbPb2018/V0Performance/newTree8/LM3_rap1_*.root/mtr");
+    mtr->Add("../../PbPb2018/V0Performance/newTree8/LM3_20rap1_*.root/mtr");
 
     TCanvas * c = new TCanvas();
     c->SetRightMargin(0.15);
