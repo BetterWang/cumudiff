@@ -7,6 +7,7 @@
 5) APLM.C APKS.C                generate AP plot from 4)
 6) MVAmass.C                    generate mass histogram from 4)
 7) MVAmassFit.C                 do mass fit from 6)
+8) getFsig.C                    get Fsig from 7)
 
 
 MC Eff
