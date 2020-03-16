@@ -2,7 +2,8 @@
 2) bGet.C,          runGet.sh, runGet1.sh, runGet3.sh
 3) bGetError.C,     runGetE3.sh
 4) genPlot.C,
-5) combinedS.C,     runmerge.sh
+5) combinedS.C,     runmerge.sh; combine HM0,1,7
+5.5) pPb_merge.C,   runmerge.sh; combine pPb+Pbp
 6) vnFsig.C,        runFsig.sh
 
 
