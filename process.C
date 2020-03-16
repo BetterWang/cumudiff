@@ -4,7 +4,7 @@
 #include <TH1.h>
 #include <TMath.h>
 using namespace std;
-void process(int s1 = 0, int s2 = 10, int s3 = 10)
+void process(int s1 = 0, int s2 = 10, int s3 = 10, int sVz = 0)
 {
 	cout << " s1 = " << s1 << " s2 = " << s2 << " s3 = " << s3 << endl;
 	TH1::SetDefaultSumw2();
@@ -13,6 +13,7 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 	int gNoff;
 	int gMult;
 	int gV0;
+	double Vz;
 
 	double rQ[7][4];
 	double wQ[7][4];
@@ -50,6 +51,7 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
     chV->SetBranchAddress("Noff", &gNoff);
     chV->SetBranchAddress("Mult", &gMult);
     chV->SetBranchAddress("NV0",  &gV0);
+    chV->SetBranchAddress("Vz",   &Vz);
 
     chV->SetBranchAddress("wQGap2", &wQGap[2]);
     chV->SetBranchAddress("wV0QGap2", wV0QGap[2]);
@@ -197,6 +199,11 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10)
 		if ( !((ievt-s2)%100000) ) cout << "!! ievt = " << ievt << endl;
 		if ( s2 == s3 ) ievt++;
 		else ievt+= s3;
+
+        if ( sVz > 0 ) {
+            if ( (sVz==1) && (fabs(Vz) > 3.0) ) continue;
+            if ( (sVz==2) && (fabs(Vz) <= 3.0) ) continue;
+        }
 
 		if ( (gNoff>=600) or (gV0==0) ) {
 			hNoff->Fill(gNoff);
