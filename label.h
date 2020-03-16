@@ -402,6 +402,20 @@ char const * fname[] = {
     "NA",     // 399 Charged H pPb HM0 merge
     "NA",     // 400 Charged H pPb HM123456 merge
     "NA",     // 401 Charged H pPb HM7 merge
+    "NA",     // 402 Ks pPb HM0 SB
+    "NA",     // 403 Ks pPb HM123456 SB
+    "NA",     // 404 Ks pPb HM7 SB
+    "NA",     // 405 Ks pPb HM0 SB reverse
+    "NA",     // 406 Ks pPb HM123456 SB reverse
+    "NA",     // 407 Ks pPb HM7 SB reverse
+    "NA",     // 408 Lm pPb HM0 SB
+    "NA",     // 409 Lm pPb HM123456 SB
+    "NA",     // 410 Lm pPb HM7 SB
+    "NA",     // 411 Lm pPb HM0 SB reverse
+    "NA",     // 412 Lm pPb HM123456 SB reverse
+    "NA",     // 413 Lm pPb HM7 SB reverse
+    "NA",     // 414 H pPb HM123456
+    "NA",     // 415 H pPb HM123456 reverse
 };
 
 char const * ftxt[] = {
@@ -807,6 +821,20 @@ char const * ftxt[] = {
 	"txt/PAHM0_H_merge/",                   // 399
 	"txt/PAHM123456_H_merge/",              // 400
 	"txt/PAHM7_H_merge/",                   // 401
+	"txt/PAHM0_Ks2_SB/",                    // 402
+	"txt/PAHM123456_Ks2_SB/",               // 403
+	"txt/PAHM7_Ks2_SB/",                    // 404
+	"txt/PAHM0_Ks2_SB_reverse/",            // 405
+	"txt/PAHM123456_Ks2_SB_reverse/",       // 406
+	"txt/PAHM7_Ks2_SB_reverse/",            // 407
+	"txt/PAHM0_Lm2_SB/",                    // 408
+	"txt/PAHM123456_Lm2_SB/",               // 409
+	"txt/PAHM7_Lm2_SB/",                    // 410
+	"txt/PAHM0_Lm2_SB_reverse/",            // 411
+	"txt/PAHM123456_Lm2_SB_reverse/",       // 412
+	"txt/PAHM7_Lm2_SB_reverse/",            // 413
+	"txt/PAHM123456_H/",                    // 414
+	"txt/PAHM123456_H_reverse/",            // 415
 };
 
 const int Pid_Non	= 0;
@@ -1227,6 +1255,20 @@ auto PID = std::vector<int>{
 	Pid_PA_Hadron,	    // 399
 	Pid_PA_Hadron,	    // 400
 	Pid_PA_Hadron,	    // 401
+	Pid_PA_Ks,	        // 402
+	Pid_PA_Ks,	        // 403
+	Pid_PA_Ks,	        // 404
+	Pid_PA_Ks,	        // 405
+	Pid_PA_Ks,	        // 406
+	Pid_PA_Ks,	        // 407
+	Pid_PA_Lambda,	    // 408
+	Pid_PA_Lambda,	    // 409
+	Pid_PA_Lambda,	    // 410
+	Pid_PA_Lambda,	    // 411
+	Pid_PA_Lambda,	    // 412
+	Pid_PA_Lambda,	    // 413
+	Pid_PA_Hadron,	    // 414
+	Pid_PA_Hadron,	    // 415
 };
 
 #include <TChain.h>
