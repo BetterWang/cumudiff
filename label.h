@@ -738,6 +738,14 @@ char const * fname[] = {
     "NA",   // 735 HIMB merge H sysVz2
     "NA",   // 736 HIMB merge H sysTight
     "NA",   // 737 HIMB merge H sysLoose
+    "NA",   // 738 HIMB merge Lm SB sysVz1
+    "NA",   // 739 HIMB merge Lm SB sysVz2
+    "NA",   // 740 HIMB merge Lm SB BDT25
+    "NA",   // 741 HIMB merge Lm SB BDT15
+    "NA",   // 742 HIMB merge Ks SB sysVz1
+    "NA",   // 743 HIMB merge Ks SB sysVz2
+    "NA",   // 744 HIMB merge Ks SB BDT20
+    "NA",   // 745 HIMB merge Ks SB BDT10
 };
 
 char const * ftxt[] = {
@@ -1479,6 +1487,14 @@ char const * ftxt[] = {
     "txt/HIMB_H_sysVz2/",                    // 735
     "txt/HIMB_H_sysTight/",                  // 736
     "txt/HIMB_H_sysLoose/",                  // 737
+    "txt/HIMB_Lm_SB_sysVz1/",                // 738
+    "txt/HIMB_Lm_SB_sysVz2/",                // 739
+    "txt/HIMB_Lm_SB_sysBDT25/",              // 740
+    "txt/HIMB_Lm_SB_sysBDT15/",              // 741
+    "txt/HIMB_Ks_SB_sysVz1/",                // 742
+    "txt/HIMB_Ks_SB_sysVz2/",                // 743
+    "txt/HIMB_Ks_SB_sysBDT20/",              // 744
+    "txt/HIMB_Ks_SB_sysBDT10/",              // 745
 };
 
 const int Pid_Non	= 0;
@@ -2235,6 +2251,14 @@ auto PID = std::vector<int>{
 	Pid_AA_Hadron,		// 735
 	Pid_AA_Hadron,		// 736
 	Pid_AA_Hadron,		// 737
+	Pid_AA_Lambda,		// 738
+	Pid_AA_Lambda,		// 739
+	Pid_AA_Lambda,		// 740
+	Pid_AA_Lambda,		// 741
+	Pid_AA_Ks,		    // 742
+	Pid_AA_Ks,		    // 743
+	Pid_AA_Ks,		    // 744
+	Pid_AA_Ks,		    // 745
 };
 
 #include <TChain.h>
