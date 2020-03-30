@@ -80,7 +80,7 @@ char const * fname[] = {
     "",      // 77 HIMB16 Ks
     "",      // 78 HIMB17 Ks
     "",      // 79 HIMB18 Ks
-    "",      // 80 HIMB19 Ks
+    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_Peak_Mid_v2/200314_050841/0000/",      // 80 HIMB19 Ks
     "",      // 81 HIMB0  Ks SBPos
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_SBPos_Mid_v2/200223_165018/0000/",      // 82 HIMB1  Ks SBPos
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Ks_SBPos_Mid_v2/200304_163409/0000/",      // 83 HIMB2  Ks SBPos
@@ -90,7 +90,7 @@ char const * fname[] = {
     "",      // 87 HIMB6  Ks SBPos
     "",      // 88 HIMB7  Ks SBPos
     "",      // 89 HIMB8  Ks SBPos
-    "",      // 80 HIMB9  Ks SBPos
+    "",      // 90 HIMB9  Ks SBPos
     "",      // 91 HIMB10 Ks SBPos
     "",      // 92 HIMB11 Ks SBPos
     "",      // 93 HIMB12 Ks SBPos
@@ -120,7 +120,7 @@ char const * fname[] = {
     "",      // 117 HIMB16 Ks SBNeg
     "",      // 118 HIMB17 Ks SBNeg
     "",      // 119 HIMB18 Ks SBNeg
-    "",      // 120 HIMB19 Ks SBNeg
+    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_SBNeg_Mid_v2/200314_051108/0000/",      // 120 HIMB19 Ks SBNeg
     "",      // 121 HIMB0  H
     "",      // 122 HIMB1  H
     "",      // 123 HIMB2  H
@@ -193,7 +193,7 @@ char const * fname[] = {
     "",     // 190 HIMB0  Lm BDT sys25
     "",     // 191 HIMB1  Lm BDT sys25
     "",     // 192 HIMB2  Lm BDT sys25
-    "",     // 193 HIMB3  Lm BDT sys25
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Lm_Peak_Mid_BDT25_v1/200318_041057/0000/",     // 193 HIMB3  Lm BDT sys25
     "",     // 194 HIMB4  Lm BDT sys25
     "",     // 195 HIMB5  Lm BDT sys25
     "",     // 196 HIMB6  Lm BDT sys25
@@ -273,7 +273,7 @@ char const * fname[] = {
     "",     // 270 HIMB0  Lm SBPos BDT sys25
     "",     // 271 HIMB1  Lm SBPos BDT sys25
     "",     // 272 HIMB2  Lm SBPos BDT sys25
-    "",     // 273 HIMB3  Lm SBPos BDT sys25
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Lm_SBPos_Mid_BDT25_v1/200318_035515/0000/",     // 273 HIMB3  Lm SBPos BDT sys25
     "",     // 274 HIMB4  Lm SBPos BDT sys25
     "",     // 275 HIMB5  Lm SBPos BDT sys25
     "",     // 276 HIMB6  Lm SBPos BDT sys25
@@ -353,7 +353,7 @@ char const * fname[] = {
     "",     // 350 HIMB0  Lm SBNeg BDT sys25
     "",     // 351 HIMB1  Lm SBNeg BDT sys25
     "",     // 352 HIMB2  Lm SBNeg BDT sys25
-    "",     // 353 HIMB3  Lm SBNeg BDT sys25
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Lm_SBNeg_Mid_BDT25_v1/200318_041329/0000/",     // 353 HIMB3  Lm SBNeg BDT sys25
     "",     // 354 HIMB4  Lm SBNeg BDT sys25
     "",     // 355 HIMB5  Lm SBNeg BDT sys25
     "",     // 356 HIMB6  Lm SBNeg BDT sys25
@@ -670,6 +670,74 @@ char const * fname[] = {
     "",     // 667 HIMB17 H Vz sys2
     "",     // 668 HIMB18 H Vz sys2
     "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_H_Mid_v3/200315_194811/0000/",     // 669 HIMB19 H Vz sys2
+    "",     // 670 HIMB0  H sysTight
+    "",     // 671 HIMB1  H sysTight
+    "",     // 672 HIMB2  H sysTight
+    "",     // 673 HIMB3  H sysTight
+    "",     // 674 HIMB4  H sysTight
+    "",     // 675 HIMB5  H sysTight
+    "",     // 676 HIMB6  H sysTight
+    "",     // 677 HIMB7  H sysTight
+    "",     // 678 HIMB8  H sysTight
+    "",     // 679 HIMB9  H sysTight
+    "",     // 680 HIMB10 H sysTight
+    "",     // 681 HIMB11 H sysTight
+    "",     // 682 HIMB12 H sysTight
+    "",     // 683 HIMB13 H sysTight
+    "",     // 684 HIMB14 H sysTight
+    "",     // 685 HIMB15 H sysTight
+    "",     // 686 HIMB16 H sysTight
+    "",     // 687 HIMB17 H sysTight
+    "",     // 688 HIMB18 H sysTight
+    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_H_Mid_sysTight_v3/200321_033128/0000/",     // 689 HIMB19 H sysTight
+    "",     // 690 HIMB0  H sysLoose
+    "",     // 691 HIMB1  H sysLoose
+    "",     // 692 HIMB2  H sysLoose
+    "",     // 693 HIMB3  H sysLoose
+    "",     // 694 HIMB4  H sysLoose
+    "",     // 695 HIMB5  H sysLoose
+    "",     // 696 HIMB6  H sysLoose
+    "",     // 697 HIMB7  H sysLoose
+    "",     // 698 HIMB8  H sysLoose
+    "",     // 699 HIMB9  H sysLoose
+    "",     // 700 HIMB10 H sysLoose
+    "",     // 701 HIMB11 H sysLoose
+    "",     // 702 HIMB12 H sysLoose
+    "",     // 703 HIMB13 H sysLoose
+    "",     // 704 HIMB14 H sysLoose
+    "",     // 705 HIMB15 H sysLoose
+    "",     // 706 HIMB16 H sysLoose
+    "",     // 707 HIMB17 H sysLoose
+    "",     // 708 HIMB18 H sysLoose
+    "",     // 709 HIMB19 H sysLoose
+    "NA",   // 710 HIMB merge Lm Peak  sysVz1
+    "NA",   // 711 HIMB merge Lm Peak  sysVz2
+    "NA",   // 712 HIMB merge Lm SBPos sysVz1
+    "NA",   // 713 HIMB merge Lm SBPos sysVz2
+    "NA",   // 714 HIMB merge Lm SBNeg sysVz1
+    "NA",   // 715 HIMB merge Lm SBNeg sysVz2
+    "NA",   // 716 HIMB merge Lm Peak  BDT25
+    "NA",   // 717 HIMB merge Lm Peak  BDT15
+    "NA",   // 718 HIMB merge Lm SBPos BDT25
+    "NA",   // 719 HIMB merge Lm SBPos BDT15
+    "NA",   // 710 HIMB merge Lm SBNeg BDT25
+    "NA",   // 721 HIMB merge Lm SBNeg BDT15
+    "NA",   // 722 HIMB merge Ks Peak  sysVz1
+    "NA",   // 723 HIMB merge Ks Peak  sysVz2
+    "NA",   // 724 HIMB merge Ks SBPos sysVz1
+    "NA",   // 725 HIMB merge Ks SBPos sysVz2
+    "NA",   // 726 HIMB merge Ks SBNeg sysVz1
+    "NA",   // 727 HIMB merge Ks SBNeg sysVz2
+    "NA",   // 728 HIMB merge Ks Peak  BDT20
+    "NA",   // 729 HIMB merge Ks Peak  BDT10
+    "NA",   // 730 HIMB merge Ks SBPos BDT20
+    "NA",   // 731 HIMB merge Ks SBPos BDT10
+    "NA",   // 732 HIMB merge Ks SBNeg BDT20
+    "NA",   // 733 HIMB merge Ks SBNeg BDT10
+    "NA",   // 734 HIMB merge H sysVz1
+    "NA",   // 735 HIMB merge H sysVz2
+    "NA",   // 736 HIMB merge H sysTight
+    "NA",   // 737 HIMB merge H sysLoose
 };
 
 char const * ftxt[] = {
@@ -753,7 +821,7 @@ char const * ftxt[] = {
     "",      // 77 HIMB16 Ks
     "",      // 78 HIMB17 Ks
     "",      // 79 HIMB18 Ks
-    "",      // 80 HIMB19 Ks
+    "txt/HIMB19_Ks_Peak/",      // 80 HIMB19 Ks
     "",      // 81 HIMB0  Ks SBPos
     "txt/HIMB1_Ks_SBPos/",      // 82 HIMB1  Ks SBPos
     "txt/HIMB2_Ks_SBPos/",      // 83 HIMB2  Ks SBPos
@@ -763,7 +831,7 @@ char const * ftxt[] = {
     "",      // 87 HIMB6  Ks SBPos
     "",      // 88 HIMB7  Ks SBPos
     "",      // 89 HIMB8  Ks SBPos
-    "",      // 80 HIMB9  Ks SBPos
+    "",      // 90 HIMB9  Ks SBPos
     "",      // 91 HIMB10 Ks SBPos
     "",      // 92 HIMB11 Ks SBPos
     "",      // 93 HIMB12 Ks SBPos
@@ -793,7 +861,7 @@ char const * ftxt[] = {
     "",      // 117 HIMB16 Ks SBNeg
     "",      // 118 HIMB17 Ks SBNeg
     "",      // 119 HIMB18 Ks SBNeg
-    "",      // 120 HIMB19 Ks SBNeg
+    "txt/HIMB19_Ks_SBNeg/",      // 120 HIMB19 Ks SBNeg
     "txt/HIMB0_H/",      // 121 HIMB0  H
     "txt/HIMB1_H/",      // 122 HIMB1  H
     "txt/HIMB2_H/",      // 123 HIMB2  H
@@ -866,7 +934,7 @@ char const * ftxt[] = {
     "",              // 190
     "",              // 191
     "",              // 192
-    "",              // 193
+    "txt/HIMB3_Lm_Peak_sys25/",              // 193
     "",              // 194
     "",              // 195
     "",              // 196
@@ -946,7 +1014,7 @@ char const * ftxt[] = {
     "",              // 270
     "",              // 271
     "",              // 272
-    "",              // 273
+    "txt/HIMB3_Lm_SBPos_sys25/",              // 273
     "",              // 274
     "",              // 275
     "",              // 276
@@ -1026,7 +1094,7 @@ char const * ftxt[] = {
     "",              // 350
     "",              // 351
     "",              // 352
-    "",              // 353
+    "txt/HIMB3_Lm_SBNeg_sys25/",              // 353
     "",              // 354
     "",              // 355
     "",              // 356
@@ -1242,7 +1310,7 @@ char const * ftxt[] = {
     "",              // 566
     "",              // 567
     "",              // 568
-    "",              // 569
+    "txt/HIMB19_Ks_SBPos_sysVz1/",              // 569
     "",              // 570
     "",              // 571
     "txt/HIMB2_Ks_SBPos_sysVz2/",              // 572
@@ -1262,7 +1330,7 @@ char const * ftxt[] = {
     "",              // 586
     "",              // 587
     "",              // 588
-    "",              // 589
+    "txt/HIMB19_Ks_SBPos_sysVz2/",              // 589
     "",              // 590
     "",              // 591
     "txt/HIMB2_Ks_SBNeg_sysVz1/",              // 592
@@ -1343,6 +1411,74 @@ char const * ftxt[] = {
     "",              // 667
     "",              // 668
     "txt/HIMB19_H_sysVz2/",              // 669
+    "",              // 670
+    "",              // 671
+    "",              // 672
+    "",              // 673
+    "",              // 674
+    "",              // 675
+    "",              // 676
+    "",              // 677
+    "",              // 678
+    "",              // 679
+    "",              // 680
+    "",              // 681
+    "",              // 682
+    "",              // 683
+    "",              // 684
+    "",              // 685
+    "",              // 686
+    "",              // 687
+    "",              // 688
+    "txt/HIMB19_H_sysTight/",              // 689
+    "",              // 690
+    "",              // 691
+    "",              // 692
+    "",              // 693
+    "",              // 694
+    "",              // 695
+    "",              // 696
+    "",              // 697
+    "",              // 698
+    "",              // 699
+    "",              // 700
+    "",              // 701
+    "",              // 702
+    "",              // 703
+    "",              // 704
+    "",              // 705
+    "",              // 706
+    "",              // 707
+    "",              // 708
+    "",              // 709
+    "txt/HIMB_Lm_Peak_sysVz1/",              // 710
+    "txt/HIMB_Lm_Peak_sysVz2/",              // 711
+    "txt/HIMB_Lm_SBPos_sysVz1/",             // 712
+    "txt/HIMB_Lm_SBPos_sysVz2/",             // 713
+    "txt/HIMB_Lm_SBNeg_sysVz1/",             // 714
+    "txt/HIMB_Lm_SBNeg_sysVz2/",             // 715
+    "txt/HIMB_Lm_Peak_sysBDT25/",            // 716
+    "txt/HIMB_Lm_Peak_sysBDT15/",            // 717
+    "txt/HIMB_Lm_SBPos_sysBDT25/",           // 718
+    "txt/HIMB_Lm_SBPos_sysBDT15/",           // 719
+    "txt/HIMB_Lm_SBNeg_sysBDT25/",           // 720
+    "txt/HIMB_Lm_SBNeg_sysBDT15/",           // 721
+    "txt/HIMB_Ks_Peak_sysVz1/",              // 722
+    "txt/HIMB_Ks_Peak_sysVz2/",              // 723
+    "txt/HIMB_Ks_SBPos_sysVz1/",             // 724
+    "txt/HIMB_Ks_SBPos_sysVz2/",             // 725
+    "txt/HIMB_Ks_SBNeg_sysVz1/",             // 726
+    "txt/HIMB_Ks_SBNeg_sysVz2/",             // 727
+    "txt/HIMB_Ks_Peak_sysBDT20/",            // 728
+    "txt/HIMB_Ks_Peak_sysBDT10/",            // 729
+    "txt/HIMB_Ks_SBPos_sysBDT20/",           // 730
+    "txt/HIMB_Ks_SBPos_sysBDT10/",           // 731
+    "txt/HIMB_Ks_SBNeg_sysBDT20/",           // 732
+    "txt/HIMB_Ks_SBNeg_sysBDT10/",           // 733
+    "txt/HIMB_H_sysVz1/",                    // 734
+    "txt/HIMB_H_sysVz2/",                    // 735
+    "txt/HIMB_H_sysTight/",                  // 736
+    "txt/HIMB_H_sysLoose/",                  // 737
 };
 
 const int Pid_Non	= 0;
@@ -2031,6 +2167,74 @@ auto PID = std::vector<int>{
 	Pid_AA_Hadron,		// 667
 	Pid_AA_Hadron,		// 668
 	Pid_AA_Hadron,		// 669
+	Pid_AA_Hadron,		// 670
+	Pid_AA_Hadron,		// 671
+	Pid_AA_Hadron,		// 672
+	Pid_AA_Hadron,		// 673
+	Pid_AA_Hadron,		// 674
+	Pid_AA_Hadron,		// 675
+	Pid_AA_Hadron,		// 676
+	Pid_AA_Hadron,		// 677
+	Pid_AA_Hadron,		// 678
+	Pid_AA_Hadron,		// 679
+	Pid_AA_Hadron,		// 680
+	Pid_AA_Hadron,		// 681
+	Pid_AA_Hadron,		// 682
+	Pid_AA_Hadron,		// 683
+	Pid_AA_Hadron,		// 684
+	Pid_AA_Hadron,		// 685
+	Pid_AA_Hadron,		// 686
+	Pid_AA_Hadron,		// 687
+	Pid_AA_Hadron,		// 688
+	Pid_AA_Hadron,		// 689
+	Pid_AA_Hadron,		// 690
+	Pid_AA_Hadron,		// 691
+	Pid_AA_Hadron,		// 692
+	Pid_AA_Hadron,		// 693
+	Pid_AA_Hadron,		// 694
+	Pid_AA_Hadron,		// 695
+	Pid_AA_Hadron,		// 696
+	Pid_AA_Hadron,		// 697
+	Pid_AA_Hadron,		// 698
+	Pid_AA_Hadron,		// 699
+	Pid_AA_Hadron,		// 700
+	Pid_AA_Hadron,		// 701
+	Pid_AA_Hadron,		// 702
+	Pid_AA_Hadron,		// 703
+	Pid_AA_Hadron,		// 704
+	Pid_AA_Hadron,		// 705
+	Pid_AA_Hadron,		// 706
+	Pid_AA_Hadron,		// 707
+	Pid_AA_Hadron,		// 708
+	Pid_AA_Hadron,		// 709
+	Pid_AA_Lambda,		// 710
+	Pid_AA_Lambda,		// 711
+	Pid_AA_Lambda,		// 712
+	Pid_AA_Lambda,		// 713
+	Pid_AA_Lambda,		// 714
+	Pid_AA_Lambda,		// 715
+	Pid_AA_Lambda,		// 716
+	Pid_AA_Lambda,		// 717
+	Pid_AA_Lambda,		// 718
+	Pid_AA_Lambda,		// 719
+	Pid_AA_Lambda,		// 720
+	Pid_AA_Lambda,		// 721
+	Pid_AA_Ks,		    // 722
+	Pid_AA_Ks,		    // 723
+	Pid_AA_Ks,		    // 724
+	Pid_AA_Ks,		    // 725
+	Pid_AA_Ks,		    // 726
+	Pid_AA_Ks,		    // 727
+	Pid_AA_Ks,		    // 728
+	Pid_AA_Ks,		    // 729
+	Pid_AA_Ks,		    // 730
+	Pid_AA_Ks,		    // 731
+	Pid_AA_Ks,		    // 732
+	Pid_AA_Ks,		    // 733
+	Pid_AA_Hadron,		// 734
+	Pid_AA_Hadron,		// 735
+	Pid_AA_Hadron,		// 736
+	Pid_AA_Hadron,		// 737
 };
 
 #include <TChain.h>
