@@ -750,6 +750,8 @@ char const * fname[] = {
     "NA",   // 747 HIMB2 merge Lm SB sysVz2
     "NA",   // 748 HIMB19 merge Lm SB sysVz1
     "NA",   // 749 HIMB19 merge Lm SB sysVz2
+    "NA",   // 750 HIMB2  merge Lm SB
+    "NA",   // 751 HIMB19 merge Lm SB
 };
 
 char const * ftxt[] = {
@@ -1503,6 +1505,8 @@ char const * ftxt[] = {
     "txt/HIMB2_Lm_SB_sysVz2/",               // 747
     "txt/HIMB19_Lm_SB_sysVz1/",              // 748
     "txt/HIMB19_Lm_SB_sysVz2/",              // 749
+    "txt/HIMB2_Lm_SB/",                      // 750
+    "txt/HIMB19_Lm_SB/",                     // 751
 };
 
 const int Pid_Non	= 0;
@@ -2271,6 +2275,8 @@ auto PID = std::vector<int>{
 	Pid_AA_Lambda,		// 747
 	Pid_AA_Lambda,		// 748
 	Pid_AA_Lambda,		// 749
+	Pid_AA_Lambda,		// 750
+	Pid_AA_Lambda,		// 751
 };
 
 #include <TChain.h>
