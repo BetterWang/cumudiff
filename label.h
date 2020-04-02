@@ -529,7 +529,7 @@ char const * fname[] = {
     "",     // 526 HIMB16 Ks Peak Vz sys1
     "",     // 527 HIMB17 Ks Peak Vz sys1
     "",     // 528 HIMB18 Ks Peak Vz sys1
-    "",     // 529 HIMB19 Ks Peak Vz sys1
+    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_Peak_Mid_v2/200314_050841/0000/",     // 529 HIMB19 Ks Peak Vz sys1
     "",     // 530 HIMB0  Ks Peak Vz sys2
     "",     // 531 HIMB1  Ks Peak Vz sys2
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Ks_Peak_Mid_v2/200304_163148/0000/",     // 532 HIMB2  Ks Peak Vz sys2
@@ -549,7 +549,7 @@ char const * fname[] = {
     "",     // 546 HIMB16 Ks Peak Vz sys2
     "",     // 547 HIMB17 Ks Peak Vz sys2
     "",     // 548 HIMB18 Ks Peak Vz sys2
-    "",     // 549 HIMB19 Ks Peak Vz sys2
+    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_Peak_Mid_v2/200314_050841/0000/",     // 549 HIMB19 Ks Peak Vz sys2
     "",     // 550 HIMB0  Ks SBPos Vz sys1
     "",     // 551 HIMB1  Ks SBPos Vz sys1
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Ks_SBPos_Mid_v2/200304_163409/0000/",     // 552 HIMB2  Ks SBPos Vz sys1
@@ -709,7 +709,7 @@ char const * fname[] = {
     "",     // 706 HIMB16 H sysLoose
     "",     // 707 HIMB17 H sysLoose
     "",     // 708 HIMB18 H sysLoose
-    "",     // 709 HIMB19 H sysLoose
+    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_H_Mid_sysLoose_v3/200323_042607/0000/",     // 709 HIMB19 H sysLoose
     "NA",   // 710 HIMB merge Lm Peak  sysVz1
     "NA",   // 711 HIMB merge Lm Peak  sysVz2
     "NA",   // 712 HIMB merge Lm SBPos sysVz1
@@ -752,6 +752,9 @@ char const * fname[] = {
     "NA",   // 749 HIMB19 merge Lm SB sysVz2
     "NA",   // 750 HIMB2  merge Lm SB
     "NA",   // 751 HIMB19 merge Lm SB
+    "NA",   // 752 HIMB2  merge Ks SB
+    "NA",   // 753 HIMB2  merge Ks SB sysVz1
+    "NA",   // 754 HIMB2  merge Ks SB sysVz2
 };
 
 char const * ftxt[] = {
@@ -1284,7 +1287,7 @@ char const * ftxt[] = {
     "",              // 526
     "",              // 527
     "",              // 528
-    "",              // 529
+    "txt/HIMB19_Ks_Peak_sysVz1/",              // 529
     "",              // 530
     "",              // 531
     "txt/HIMB2_Ks_Peak_sysVz2/",              // 532
@@ -1304,7 +1307,7 @@ char const * ftxt[] = {
     "",              // 546
     "",              // 547
     "",              // 548
-    "",              // 549
+    "txt/HIMB19_Ks_Peak_sysVz2/",              // 549
     "",              // 550
     "",              // 551
     "txt/HIMB2_Ks_SBPos_sysVz1/",              // 552
@@ -1464,7 +1467,7 @@ char const * ftxt[] = {
     "",              // 706
     "",              // 707
     "",              // 708
-    "",              // 709
+    "txt/HIMB19_H_sysLoose/",                // 709
     "txt/HIMB_Lm_Peak_sysVz1/",              // 710
     "txt/HIMB_Lm_Peak_sysVz2/",              // 711
     "txt/HIMB_Lm_SBPos_sysVz1/",             // 712
@@ -1507,6 +1510,9 @@ char const * ftxt[] = {
     "txt/HIMB19_Lm_SB_sysVz2/",              // 749
     "txt/HIMB2_Lm_SB/",                      // 750
     "txt/HIMB19_Lm_SB/",                     // 751
+    "txt/HIMB2_Ks_SB/",                      // 752
+    "txt/HIMB2_Ks_SB_sysVz1/",               // 753
+    "txt/HIMB2_Ks_SB_sysVz2/",               // 754
 };
 
 const int Pid_Non	= 0;
@@ -2277,6 +2283,9 @@ auto PID = std::vector<int>{
 	Pid_AA_Lambda,		// 749
 	Pid_AA_Lambda,		// 750
 	Pid_AA_Lambda,		// 751
+	Pid_AA_Ks,		    // 752
+	Pid_AA_Ks,		    // 753
+	Pid_AA_Ks,		    // 754
 };
 
 #include <TChain.h>
