@@ -76,16 +76,23 @@ void genPlot(int s1 = 1)
             dVsub4pos[i][c] = h4p->GetBinContent( c+1 );
             dVsub4neg[i][c] = h4n->GetBinContent( c+1 );
 
-            dVsub2[i][c] = (dVsub2pos[i][c] + dVsub2neg[i][c])/2.;
-            dVsub4[i][c] = (dVsub4pos[i][c] + dVsub4neg[i][c])/2.;
+            //dVsub2[i][c] = (dVsub2pos[i][c] + dVsub2neg[i][c])/2.;
+            //dVsub4[i][c] = (dVsub4pos[i][c] + dVsub4neg[i][c])/2.;
 
             eVsub2pos[i][c] = h2p->GetBinError( c+1 );
             eVsub2neg[i][c] = h2n->GetBinError( c+1 );
             eVsub4pos[i][c] = h4p->GetBinError( c+1 );
             eVsub4neg[i][c] = h4n->GetBinError( c+1 );
 
-            eVsub2[i][c] = sqrt(eVsub2pos[i][c]*eVsub2pos[i][c] + eVsub2neg[i][c]*eVsub2neg[i][c])/2.;
-            eVsub4[i][c] = sqrt(eVsub4pos[i][c]*eVsub4pos[i][c] + eVsub4neg[i][c]*eVsub4neg[i][c])/2.;
+            //eVsub2[i][c] = sqrt(eVsub2pos[i][c]*eVsub2pos[i][c] + eVsub2neg[i][c]*eVsub2neg[i][c])/2.;
+            //eVsub4[i][c] = sqrt(eVsub4pos[i][c]*eVsub4pos[i][c] + eVsub4neg[i][c]*eVsub4neg[i][c])/2.;
+
+
+            dVsub2[i][c] = (dVsub2pos[i][c]/eVsub2pos[i][c]/eVsub2pos[i][c] + dVsub2neg[i][c]/eVsub2neg[i][c]/eVsub2neg[i][c])/(1./eVsub2pos[i][c]/eVsub2pos[i][c] + 1./eVsub2neg[i][c]/eVsub2neg[i][c]);
+            dVsub4[i][c] = (dVsub4pos[i][c]/eVsub4pos[i][c]/eVsub4pos[i][c] + dVsub4neg[i][c]/eVsub4neg[i][c]/eVsub4neg[i][c])/(1./eVsub4pos[i][c]/eVsub4pos[i][c] + 1./eVsub4neg[i][c]/eVsub4neg[i][c]);
+
+            eVsub2[i][c] = sqrt(1./eVsub2pos[i][c]/eVsub2pos[i][c] + 1./eVsub2neg[i][c]/eVsub2neg[i][c])/(1./eVsub2pos[i][c]/eVsub2pos[i][c] + 1./eVsub2neg[i][c]/eVsub2neg[i][c]);
+            eVsub4[i][c] = sqrt(1./eVsub4pos[i][c]/eVsub4pos[i][c] + 1./eVsub4neg[i][c]/eVsub4neg[i][c])/(1./eVsub4pos[i][c]/eVsub4pos[i][c] + 1./eVsub4neg[i][c]/eVsub4neg[i][c]);
         }
     }
 

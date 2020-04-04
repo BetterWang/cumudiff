@@ -4,6 +4,7 @@ void verify(int s1 = 1){
 //	int s1 = 1;
 	int s3 = 10;
 
+    cout << ftxt[s1] << endl;
 	TFile *f;
 	for ( int s2 = 0; s2 <= s3; s2++ ) {
 		f = new TFile(Form("%s/output_%i_%i.root", ftxt[s1], s2, s3));
