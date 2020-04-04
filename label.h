@@ -293,7 +293,7 @@ char const * fname[] = {
     "",     // 290 HIMB0  Ks SBPos BDT sys20
     "",     // 291 HIMB1  Ks SBPos BDT sys20
     "",     // 292 HIMB2  Ks SBPos BDT sys20
-    "",     // 293 HIMB3  Ks SBPos BDT sys20
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_SBPos_Mid_BDT20_v2/200323_174148/0000/",     // 293 HIMB3  Ks SBPos BDT sys20
     "",     // 294 HIMB4  Ks SBPos BDT sys20
     "",     // 295 HIMB5  Ks SBPos BDT sys20
     "",     // 296 HIMB6  Ks SBPos BDT sys20
@@ -373,7 +373,7 @@ char const * fname[] = {
     "",     // 370 HIMB0  Ks SBNeg BDT sys20
     "",     // 371 HIMB1  Ks SBNeg BDT sys20
     "",     // 372 HIMB2  Ks SBNeg BDT sys20
-    "",     // 373 HIMB3  Ks SBNeg BDT sys20
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_SBNeg_Mid_BDT20_v2/200323_174422/0000/",     // 373 HIMB3  Ks SBNeg BDT sys20
     "",     // 374 HIMB4  Ks SBNeg BDT sys20
     "",     // 375 HIMB5  Ks SBNeg BDT sys20
     "",     // 376 HIMB6  Ks SBNeg BDT sys20
@@ -1051,7 +1051,7 @@ char const * ftxt[] = {
     "",              // 290
     "",              // 291
     "",              // 292
-    "",              // 293
+    "txt/HIMB3_Ks_SBPos_sys20/",              // 293
     "",              // 294
     "",              // 295
     "",              // 296
@@ -1131,7 +1131,7 @@ char const * ftxt[] = {
     "",              // 370
     "",              // 371
     "",              // 372
-    "",              // 373
+    "txt/HIMB3_Ks_SBNeg_sys20/",              // 373
     "",              // 374
     "",              // 375
     "",              // 376
