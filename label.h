@@ -80,7 +80,7 @@ char const * fname[] = {
     "",      // 77 HIMB16 Ks
     "",      // 78 HIMB17 Ks
     "",      // 79 HIMB18 Ks
-    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_Peak_Mid_v2/200314_050841/0000/",      // 80 HIMB19 Ks
+    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_Peak_Mid_v2_rerun/200329_162352/0000/",      // 80 HIMB19 Ks
     "",      // 81 HIMB0  Ks SBPos
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_SBPos_Mid_v2/200223_165018/0000/",      // 82 HIMB1  Ks SBPos
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Ks_SBPos_Mid_v2/200304_163409/0000/",      // 83 HIMB2  Ks SBPos
@@ -120,7 +120,7 @@ char const * fname[] = {
     "",      // 117 HIMB16 Ks SBNeg
     "",      // 118 HIMB17 Ks SBNeg
     "",      // 119 HIMB18 Ks SBNeg
-    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_SBNeg_Mid_v2/200314_051108/0000/",      // 120 HIMB19 Ks SBNeg
+    "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_SBNeg_Mid_v2_rerun/200329_162740/0000/",      // 120 HIMB19 Ks SBNeg
     "",      // 121 HIMB0  H
     "",      // 122 HIMB1  H
     "",      // 123 HIMB2  H
@@ -173,7 +173,7 @@ char const * fname[] = {
     "",     // 170 HIMB0  Ks BDT sys10
     "",     // 171 HIMB1  Ks BDT sys10
     "",     // 172 HIMB2  Ks BDT sys10
-    "",     // 173 HIMB3  Ks BDT sys10
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_Peak_Mid_BDT10_v2/200404_174638/0000/",     // 173 HIMB3  Ks BDT sys10
     "",     // 174 HIMB4  Ks BDT sys10
     "",     // 175 HIMB5  Ks BDT sys10
     "",     // 176 HIMB6  Ks BDT sys10
@@ -253,7 +253,7 @@ char const * fname[] = {
     "",     // 250 HIMB0  Ks SBPos BDT sys10
     "",     // 251 HIMB1  Ks SBPos BDT sys10
     "",     // 252 HIMB2  Ks SBPos BDT sys10
-    "",     // 253 HIMB3  Ks SBPos BDT sys10
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_SBPos_Mid_BDT10_v2/200404_174723/0000/",     // 253 HIMB3  Ks SBPos BDT sys10
     "",     // 254 HIMB4  Ks SBPos BDT sys10
     "",     // 255 HIMB5  Ks SBPos BDT sys10
     "",     // 256 HIMB6  Ks SBPos BDT sys10
@@ -333,7 +333,7 @@ char const * fname[] = {
     "",     // 330 HIMB0  Ks SBNeg BDT sys10
     "",     // 331 HIMB1  Ks SBNeg BDT sys10
     "",     // 332 HIMB2  Ks SBNeg BDT sys10
-    "",     // 333 HIMB3  Ks SBNeg BDT sys10
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_SBNeg_Mid_BDT10_v2/200404_174954/0000/",     // 333 HIMB3  Ks SBNeg BDT sys10
     "",     // 334 HIMB4  Ks SBNeg BDT sys10
     "",     // 335 HIMB5  Ks SBNeg BDT sys10
     "",     // 336 HIMB6  Ks SBNeg BDT sys10
@@ -931,7 +931,7 @@ char const * ftxt[] = {
     "",              // 170
     "",              // 171
     "",              // 172
-    "",              // 173
+    "txt/HIMB3_Ks_Peak_sys10/",              // 173
     "",              // 174
     "",              // 175
     "",              // 176
@@ -1011,7 +1011,7 @@ char const * ftxt[] = {
     "",              // 250
     "",              // 251
     "",              // 252
-    "",              // 253
+    "txt/HIMB3_Ks_SBPos_sys10/",              // 253
     "",              // 254
     "",              // 255
     "",              // 256
@@ -1091,7 +1091,7 @@ char const * ftxt[] = {
     "",              // 330
     "",              // 331
     "",              // 332
-    "",              // 333
+    "txt/HIMB3_Ks_SBNeg_sys10/",              // 333
     "",              // 334
     "",              // 335
     "",              // 336
