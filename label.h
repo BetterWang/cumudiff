@@ -1367,7 +1367,7 @@ char const * ftxt[] = {
     "",              // 606
     "",              // 607
     "",              // 608
-    "",              // 609
+    "txt/HIMB19_Ks_SBNeg_sysVz1/",              // 609
     "",              // 610
     "",              // 611
     "txt/HIMB2_Ks_SBNeg_sysVz2/",              // 612
