@@ -5,6 +5,14 @@
 5) combinedS.C,     runmerge.sh
 6) vnFsigPbPb.C,    runFsigPbPb.sh
 
+
+SP:
+1) /home/sanders/PbPb_2018/macros/PbPb_v0.root
+2) vnFsigPbPbSP.C
+
+
+
+
                  |  QWCumuDiff  |  process  |  bGet     |  bGetError  |  genPlot   |  combinedS  |  vnFsig                                   |
 int    Q         |  rQGap       |  hQGap    |  hCGap    |  hVGap      |            |             |                                           |
 charge Q(pT)     |  rQpGap      |  hQpGap   |  hpCGapp  |  hpVpGap    |  grpTGap   |  grHV0Gap   |  grH_pTGap                                |
