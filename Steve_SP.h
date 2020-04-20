@@ -116,97 +116,135 @@ private:
     };
 } SteveGraph;
 
-SteveGraph* ch_v2_PbPb_0_10;
+SteveGraph* ch_v2_PbPb_0_5;
+SteveGraph* ch_v2_PbPb_5_10;
 SteveGraph* ch_v2_PbPb_10_30;
 SteveGraph* ch_v2_PbPb_30_50;
 SteveGraph* ch_v2_PbPb_50_80;
-SteveGraph* Ks_v2_PbPb_0_10;
+
+SteveGraph* Ks_v2_PbPb_0_5;
+SteveGraph* Ks_v2_PbPb_5_10;
 SteveGraph* Ks_v2_PbPb_10_30;
 SteveGraph* Ks_v2_PbPb_30_50;
 SteveGraph* Ks_v2_PbPb_50_80;
-SteveGraph* Lm_v2_PbPb_0_10;
+
+SteveGraph* Lm_v2_PbPb_0_5;
+SteveGraph* Lm_v2_PbPb_5_10;
 SteveGraph* Lm_v2_PbPb_10_30;
 SteveGraph* Lm_v2_PbPb_30_50;
 SteveGraph* Lm_v2_PbPb_50_80;
-SteveGraph* Ks_SBPos_v2_PbPb_0_10;
+
+SteveGraph* Ks_SBPos_v2_PbPb_0_5;
+SteveGraph* Ks_SBPos_v2_PbPb_5_10;
 SteveGraph* Ks_SBPos_v2_PbPb_10_30;
 SteveGraph* Ks_SBPos_v2_PbPb_30_50;
 SteveGraph* Ks_SBPos_v2_PbPb_50_80;
-SteveGraph* Ks_SBNeg_v2_PbPb_0_10;
+
+SteveGraph* Ks_SBNeg_v2_PbPb_0_5;
+SteveGraph* Ks_SBNeg_v2_PbPb_5_10;
 SteveGraph* Ks_SBNeg_v2_PbPb_10_30;
 SteveGraph* Ks_SBNeg_v2_PbPb_30_50;
 SteveGraph* Ks_SBNeg_v2_PbPb_50_80;
-SteveGraph* Lm_SBPos_v2_PbPb_0_10;
+
+SteveGraph* Lm_SBPos_v2_PbPb_0_5;
+SteveGraph* Lm_SBPos_v2_PbPb_5_10;
 SteveGraph* Lm_SBPos_v2_PbPb_10_30;
 SteveGraph* Lm_SBPos_v2_PbPb_30_50;
 SteveGraph* Lm_SBPos_v2_PbPb_50_80;
-SteveGraph* Lm_SBNeg_v2_PbPb_0_10;
+
+SteveGraph* Lm_SBNeg_v2_PbPb_0_5;
+SteveGraph* Lm_SBNeg_v2_PbPb_5_10;
 SteveGraph* Lm_SBNeg_v2_PbPb_10_30;
 SteveGraph* Lm_SBNeg_v2_PbPb_30_50;
 SteveGraph* Lm_SBNeg_v2_PbPb_50_80;
 
-SteveGraph* Ks_SB_v2_PbPb_0_10;
+SteveGraph* Ks_SB_v2_PbPb_0_5;
+SteveGraph* Ks_SB_v2_PbPb_5_10;
 SteveGraph* Ks_SB_v2_PbPb_10_30;
 SteveGraph* Ks_SB_v2_PbPb_30_50;
 SteveGraph* Ks_SB_v2_PbPb_50_80;
-SteveGraph* Lm_SB_v2_PbPb_0_10;
+
+SteveGraph* Lm_SB_v2_PbPb_0_5;
+SteveGraph* Lm_SB_v2_PbPb_5_10;
 SteveGraph* Lm_SB_v2_PbPb_10_30;
 SteveGraph* Lm_SB_v2_PbPb_30_50;
 SteveGraph* Lm_SB_v2_PbPb_50_80;
 
-SteveGraph* ch_v3_PbPb_0_10;
+SteveGraph* ch_v3_PbPb_0_5;
+SteveGraph* ch_v3_PbPb_5_10;
 SteveGraph* ch_v3_PbPb_10_30;
 SteveGraph* ch_v3_PbPb_30_50;
 SteveGraph* ch_v3_PbPb_50_80;
-SteveGraph* Ks_v3_PbPb_0_10;
+
+SteveGraph* Ks_v3_PbPb_0_5;
+SteveGraph* Ks_v3_PbPb_5_10;
 SteveGraph* Ks_v3_PbPb_10_30;
 SteveGraph* Ks_v3_PbPb_30_50;
 SteveGraph* Ks_v3_PbPb_50_80;
-SteveGraph* Lm_v3_PbPb_0_10;
+
+SteveGraph* Lm_v3_PbPb_0_5;
+SteveGraph* Lm_v3_PbPb_5_10;
 SteveGraph* Lm_v3_PbPb_10_30;
 SteveGraph* Lm_v3_PbPb_30_50;
 SteveGraph* Lm_v3_PbPb_50_80;
-SteveGraph* Ks_SBPos_v3_PbPb_0_10;
+
+SteveGraph* Ks_SBPos_v3_PbPb_0_5;
+SteveGraph* Ks_SBPos_v3_PbPb_5_10;
 SteveGraph* Ks_SBPos_v3_PbPb_10_30;
 SteveGraph* Ks_SBPos_v3_PbPb_30_50;
 SteveGraph* Ks_SBPos_v3_PbPb_50_80;
-SteveGraph* Ks_SBNeg_v3_PbPb_0_10;
+
+SteveGraph* Ks_SBNeg_v3_PbPb_0_5;
+SteveGraph* Ks_SBNeg_v3_PbPb_5_10;
 SteveGraph* Ks_SBNeg_v3_PbPb_10_30;
 SteveGraph* Ks_SBNeg_v3_PbPb_30_50;
 SteveGraph* Ks_SBNeg_v3_PbPb_50_80;
-SteveGraph* Lm_SBPos_v3_PbPb_0_10;
+
+SteveGraph* Lm_SBPos_v3_PbPb_0_5;
+SteveGraph* Lm_SBPos_v3_PbPb_5_10;
 SteveGraph* Lm_SBPos_v3_PbPb_10_30;
 SteveGraph* Lm_SBPos_v3_PbPb_30_50;
 SteveGraph* Lm_SBPos_v3_PbPb_50_80;
-SteveGraph* Lm_SBNeg_v3_PbPb_0_10;
+
+SteveGraph* Lm_SBNeg_v3_PbPb_0_5;
+SteveGraph* Lm_SBNeg_v3_PbPb_5_10;
 SteveGraph* Lm_SBNeg_v3_PbPb_10_30;
 SteveGraph* Lm_SBNeg_v3_PbPb_30_50;
 SteveGraph* Lm_SBNeg_v3_PbPb_50_80;
 
-SteveGraph* Ks_SB_v3_PbPb_0_10;
+SteveGraph* Ks_SB_v3_PbPb_0_5;
+SteveGraph* Ks_SB_v3_PbPb_5_10;
 SteveGraph* Ks_SB_v3_PbPb_10_30;
 SteveGraph* Ks_SB_v3_PbPb_30_50;
 SteveGraph* Ks_SB_v3_PbPb_50_80;
-SteveGraph* Lm_SB_v3_PbPb_0_10;
+
+SteveGraph* Lm_SB_v3_PbPb_0_5;
+SteveGraph* Lm_SB_v3_PbPb_5_10;
 SteveGraph* Lm_SB_v3_PbPb_10_30;
 SteveGraph* Lm_SB_v3_PbPb_30_50;
 SteveGraph* Lm_SB_v3_PbPb_50_80;
 
 
-SteveGraph* Ks_corrected_v2_PbPb_0_10;
+SteveGraph* Ks_corrected_v2_PbPb_0_5;
+SteveGraph* Ks_corrected_v2_PbPb_5_10;
 SteveGraph* Ks_corrected_v2_PbPb_10_30;
 SteveGraph* Ks_corrected_v2_PbPb_30_50;
 SteveGraph* Ks_corrected_v2_PbPb_50_80;
-SteveGraph* Lm_corrected_v2_PbPb_0_10;
+
+SteveGraph* Lm_corrected_v2_PbPb_0_5;
+SteveGraph* Lm_corrected_v2_PbPb_5_10;
 SteveGraph* Lm_corrected_v2_PbPb_10_30;
 SteveGraph* Lm_corrected_v2_PbPb_30_50;
 SteveGraph* Lm_corrected_v2_PbPb_50_80;
 
-SteveGraph* Ks_corrected_v3_PbPb_0_10;
+SteveGraph* Ks_corrected_v3_PbPb_0_5;
+SteveGraph* Ks_corrected_v3_PbPb_5_10;
 SteveGraph* Ks_corrected_v3_PbPb_10_30;
 SteveGraph* Ks_corrected_v3_PbPb_30_50;
 SteveGraph* Ks_corrected_v3_PbPb_50_80;
-SteveGraph* Lm_corrected_v3_PbPb_0_10;
+
+SteveGraph* Lm_corrected_v3_PbPb_0_5;
+SteveGraph* Lm_corrected_v3_PbPb_5_10;
 SteveGraph* Lm_corrected_v3_PbPb_10_30;
 SteveGraph* Lm_corrected_v3_PbPb_30_50;
 SteveGraph* Lm_corrected_v3_PbPb_50_80;
@@ -242,152 +280,198 @@ void LoadSP()
 {
     TFile* f = new TFile("PbPb_v0.root");
 
-    ch_v2_PbPb_0_10            = new SteveGraph( (TDirectoryFile*) f->Get("ch_v2_PbPb_0_10") );
+    ch_v2_PbPb_0_5             = new SteveGraph( (TDirectoryFile*) f->Get("ch_v2_PbPb_0_5") );
+    ch_v2_PbPb_5_10            = new SteveGraph( (TDirectoryFile*) f->Get("ch_v2_PbPb_5_10") );
     ch_v2_PbPb_10_30           = new SteveGraph( (TDirectoryFile*) f->Get("ch_v2_PbPb_10_30") );
     ch_v2_PbPb_30_50           = new SteveGraph( (TDirectoryFile*) f->Get("ch_v2_PbPb_30_50") );
     ch_v2_PbPb_50_80           = new SteveGraph( (TDirectoryFile*) f->Get("ch_v2_PbPb_50_80") );
-    Ks_v2_PbPb_0_10            = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v2_PbPb_0_10") );
+
+    Ks_v2_PbPb_0_5             = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v2_PbPb_0_5") );
+    Ks_v2_PbPb_5_10            = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v2_PbPb_5_10") );
     Ks_v2_PbPb_10_30           = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v2_PbPb_10_30") );
     Ks_v2_PbPb_30_50           = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v2_PbPb_30_50") );
     Ks_v2_PbPb_50_80           = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v2_PbPb_50_80") );
-    Lm_v2_PbPb_0_10            = new SteveGraph( (TDirectoryFile*) f->Get("LM_v2_PbPb_0_10") );
+
+    Lm_v2_PbPb_0_5             = new SteveGraph( (TDirectoryFile*) f->Get("LM_v2_PbPb_0_5") );
+    Lm_v2_PbPb_5_10            = new SteveGraph( (TDirectoryFile*) f->Get("LM_v2_PbPb_5_10") );
     Lm_v2_PbPb_10_30           = new SteveGraph( (TDirectoryFile*) f->Get("LM_v2_PbPb_10_30") );
     Lm_v2_PbPb_30_50           = new SteveGraph( (TDirectoryFile*) f->Get("LM_v2_PbPb_30_50") );
     Lm_v2_PbPb_50_80           = new SteveGraph( (TDirectoryFile*) f->Get("LM_v2_PbPb_50_80") );
-    Ks_SBPos_v2_PbPb_0_10      = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v2_PbPb_0_10") );
+
+    Ks_SBPos_v2_PbPb_0_5       = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v2_PbPb_0_5") );
+    Ks_SBPos_v2_PbPb_5_10      = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v2_PbPb_5_10") );
     Ks_SBPos_v2_PbPb_10_30     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v2_PbPb_10_30") );
     Ks_SBPos_v2_PbPb_30_50     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v2_PbPb_30_50") );
     Ks_SBPos_v2_PbPb_50_80     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v2_PbPb_50_80") );
-    Ks_SBNeg_v2_PbPb_0_10      = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v2_PbPb_0_10") );
+
+    Ks_SBNeg_v2_PbPb_0_5       = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v2_PbPb_0_5") );
+    Ks_SBNeg_v2_PbPb_5_10      = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v2_PbPb_5_10") );
     Ks_SBNeg_v2_PbPb_10_30     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v2_PbPb_10_30") );
     Ks_SBNeg_v2_PbPb_30_50     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v2_PbPb_30_50") );
     Ks_SBNeg_v2_PbPb_50_80     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v2_PbPb_50_80") );
-    Lm_SBPos_v2_PbPb_0_10      = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v2_PbPb_0_10") );
+
+    Lm_SBPos_v2_PbPb_0_5       = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v2_PbPb_0_5") );
+    Lm_SBPos_v2_PbPb_5_10      = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v2_PbPb_5_10") );
     Lm_SBPos_v2_PbPb_10_30     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v2_PbPb_10_30") );
     Lm_SBPos_v2_PbPb_30_50     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v2_PbPb_30_50") );
     Lm_SBPos_v2_PbPb_50_80     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v2_PbPb_50_80") );
-    Lm_SBNeg_v2_PbPb_0_10      = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v2_PbPb_0_10") );
+
+    Lm_SBNeg_v2_PbPb_0_5       = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v2_PbPb_0_5") );
+    Lm_SBNeg_v2_PbPb_5_10      = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v2_PbPb_5_10") );
     Lm_SBNeg_v2_PbPb_10_30     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v2_PbPb_10_30") );
     Lm_SBNeg_v2_PbPb_30_50     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v2_PbPb_30_50") );
     Lm_SBNeg_v2_PbPb_50_80     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v2_PbPb_50_80") );
 
-    Ks_SB_v2_PbPb_0_10         = new SteveGraph( Ks_SBPos_v2_PbPb_0_10 , Ks_SBNeg_v2_PbPb_0_10   );
+    Ks_SB_v2_PbPb_0_5          = new SteveGraph( Ks_SBPos_v2_PbPb_0_5  , Ks_SBNeg_v2_PbPb_0_5    );
+    Ks_SB_v2_PbPb_5_10         = new SteveGraph( Ks_SBPos_v2_PbPb_5_10 , Ks_SBNeg_v2_PbPb_5_10   );
     Ks_SB_v2_PbPb_10_30        = new SteveGraph( Ks_SBPos_v2_PbPb_10_30, Ks_SBNeg_v2_PbPb_10_30  );
     Ks_SB_v2_PbPb_30_50        = new SteveGraph( Ks_SBPos_v2_PbPb_30_50, Ks_SBNeg_v2_PbPb_30_50  );
     Ks_SB_v2_PbPb_50_80        = new SteveGraph( Ks_SBPos_v2_PbPb_50_80, Ks_SBNeg_v2_PbPb_50_80  );
-    Lm_SB_v2_PbPb_0_10         = new SteveGraph( Lm_SBPos_v2_PbPb_0_10 , Lm_SBNeg_v2_PbPb_0_10   );
+
+    Lm_SB_v2_PbPb_0_5          = new SteveGraph( Lm_SBPos_v2_PbPb_0_5  , Lm_SBNeg_v2_PbPb_0_5    );
+    Lm_SB_v2_PbPb_5_10         = new SteveGraph( Lm_SBPos_v2_PbPb_5_10 , Lm_SBNeg_v2_PbPb_5_10   );
     Lm_SB_v2_PbPb_10_30        = new SteveGraph( Lm_SBPos_v2_PbPb_10_30, Lm_SBNeg_v2_PbPb_10_30  );
     Lm_SB_v2_PbPb_30_50        = new SteveGraph( Lm_SBPos_v2_PbPb_30_50, Lm_SBNeg_v2_PbPb_30_50  );
     Lm_SB_v2_PbPb_50_80        = new SteveGraph( Lm_SBPos_v2_PbPb_50_80, Lm_SBNeg_v2_PbPb_50_80  );
 
 
-    ch_v3_PbPb_0_10            = new SteveGraph( (TDirectoryFile*) f->Get("ch_v3_PbPb_0_10") );
+    ch_v3_PbPb_0_5             = new SteveGraph( (TDirectoryFile*) f->Get("ch_v3_PbPb_0_5") );
+    ch_v3_PbPb_5_10            = new SteveGraph( (TDirectoryFile*) f->Get("ch_v3_PbPb_5_10") );
     ch_v3_PbPb_10_30           = new SteveGraph( (TDirectoryFile*) f->Get("ch_v3_PbPb_10_30") );
     ch_v3_PbPb_30_50           = new SteveGraph( (TDirectoryFile*) f->Get("ch_v3_PbPb_30_50") );
     ch_v3_PbPb_50_80           = new SteveGraph( (TDirectoryFile*) f->Get("ch_v3_PbPb_50_80") );
-    Ks_v3_PbPb_0_10            = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v3_PbPb_0_10") );
+
+    Ks_v3_PbPb_0_5             = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v3_PbPb_0_5") );
+    Ks_v3_PbPb_5_10            = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v3_PbPb_5_10") );
     Ks_v3_PbPb_10_30           = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v3_PbPb_10_30") );
     Ks_v3_PbPb_30_50           = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v3_PbPb_30_50") );
     Ks_v3_PbPb_50_80           = new SteveGraph( (TDirectoryFile*) f->Get("Ks_v3_PbPb_50_80") );
-    Lm_v3_PbPb_0_10            = new SteveGraph( (TDirectoryFile*) f->Get("LM_v3_PbPb_0_10") );
+
+    Lm_v3_PbPb_0_5             = new SteveGraph( (TDirectoryFile*) f->Get("LM_v3_PbPb_0_5") );
+    Lm_v3_PbPb_5_10            = new SteveGraph( (TDirectoryFile*) f->Get("LM_v3_PbPb_5_10") );
     Lm_v3_PbPb_10_30           = new SteveGraph( (TDirectoryFile*) f->Get("LM_v3_PbPb_10_30") );
     Lm_v3_PbPb_30_50           = new SteveGraph( (TDirectoryFile*) f->Get("LM_v3_PbPb_30_50") );
     Lm_v3_PbPb_50_80           = new SteveGraph( (TDirectoryFile*) f->Get("LM_v3_PbPb_50_80") );
-    Ks_SBPos_v3_PbPb_0_10      = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v3_PbPb_0_10") );
+
+    Ks_SBPos_v3_PbPb_0_5       = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v3_PbPb_0_5") );
+    Ks_SBPos_v3_PbPb_5_10      = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v3_PbPb_5_10") );
     Ks_SBPos_v3_PbPb_10_30     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v3_PbPb_10_30") );
     Ks_SBPos_v3_PbPb_30_50     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v3_PbPb_30_50") );
     Ks_SBPos_v3_PbPb_50_80     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBPos_v3_PbPb_50_80") );
-    Ks_SBNeg_v3_PbPb_0_10      = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v3_PbPb_0_10") );
+
+    Ks_SBNeg_v3_PbPb_0_5       = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v3_PbPb_0_5") );
+    Ks_SBNeg_v3_PbPb_5_10      = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v3_PbPb_5_10") );
     Ks_SBNeg_v3_PbPb_10_30     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v3_PbPb_10_30") );
     Ks_SBNeg_v3_PbPb_30_50     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v3_PbPb_30_50") );
     Ks_SBNeg_v3_PbPb_50_80     = new SteveGraph( (TDirectoryFile*) f->Get("Ks_SBNeg_v3_PbPb_50_80") );
-    Lm_SBPos_v3_PbPb_0_10      = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v3_PbPb_0_10") );
+
+    Lm_SBPos_v3_PbPb_0_5       = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v3_PbPb_0_5") );
+    Lm_SBPos_v3_PbPb_5_10      = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v3_PbPb_5_10") );
     Lm_SBPos_v3_PbPb_10_30     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v3_PbPb_10_30") );
     Lm_SBPos_v3_PbPb_30_50     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v3_PbPb_30_50") );
     Lm_SBPos_v3_PbPb_50_80     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBPos_v3_PbPb_50_80") );
-    Lm_SBNeg_v3_PbPb_0_10      = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v3_PbPb_0_10") );
+
+    Lm_SBNeg_v3_PbPb_0_5       = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v3_PbPb_0_5") );
+    Lm_SBNeg_v3_PbPb_5_10      = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v3_PbPb_5_10") );
     Lm_SBNeg_v3_PbPb_10_30     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v3_PbPb_10_30") );
     Lm_SBNeg_v3_PbPb_30_50     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v3_PbPb_30_50") );
     Lm_SBNeg_v3_PbPb_50_80     = new SteveGraph( (TDirectoryFile*) f->Get("LM_SBNeg_v3_PbPb_50_80") );
 
-    Ks_SB_v3_PbPb_0_10         = new SteveGraph( Ks_SBPos_v3_PbPb_0_10 , Ks_SBNeg_v3_PbPb_0_10   );
+    Ks_SB_v3_PbPb_0_5          = new SteveGraph( Ks_SBPos_v3_PbPb_0_5  , Ks_SBNeg_v3_PbPb_0_5    );
+    Ks_SB_v3_PbPb_5_10         = new SteveGraph( Ks_SBPos_v3_PbPb_5_10 , Ks_SBNeg_v3_PbPb_5_10   );
     Ks_SB_v3_PbPb_10_30        = new SteveGraph( Ks_SBPos_v3_PbPb_10_30, Ks_SBNeg_v3_PbPb_10_30  );
     Ks_SB_v3_PbPb_30_50        = new SteveGraph( Ks_SBPos_v3_PbPb_30_50, Ks_SBNeg_v3_PbPb_30_50  );
     Ks_SB_v3_PbPb_50_80        = new SteveGraph( Ks_SBPos_v3_PbPb_50_80, Ks_SBNeg_v3_PbPb_50_80  );
-    Lm_SB_v3_PbPb_0_10         = new SteveGraph( Lm_SBPos_v3_PbPb_0_10 , Lm_SBNeg_v3_PbPb_0_10   );
+
+    Lm_SB_v3_PbPb_0_5          = new SteveGraph( Lm_SBPos_v3_PbPb_0_5  , Lm_SBNeg_v3_PbPb_0_5    );
+    Lm_SB_v3_PbPb_5_10         = new SteveGraph( Lm_SBPos_v3_PbPb_5_10 , Lm_SBNeg_v3_PbPb_5_10   );
     Lm_SB_v3_PbPb_10_30        = new SteveGraph( Lm_SBPos_v3_PbPb_10_30, Lm_SBNeg_v3_PbPb_10_30  );
     Lm_SB_v3_PbPb_30_50        = new SteveGraph( Lm_SBPos_v3_PbPb_30_50, Lm_SBNeg_v3_PbPb_30_50  );
     Lm_SB_v3_PbPb_50_80        = new SteveGraph( Lm_SBPos_v3_PbPb_50_80, Lm_SBNeg_v3_PbPb_50_80  );
 
-    ch_v2_PbPb[0]       = ch_v2_PbPb_0_10;
-    ch_v2_PbPb[1]       = ch_v2_PbPb_10_30;
-    ch_v2_PbPb[2]       = ch_v2_PbPb_30_50;
-    ch_v2_PbPb[3]       = ch_v2_PbPb_50_80;
+    ch_v2_PbPb[0]       = ch_v2_PbPb_0_5;
+    ch_v2_PbPb[1]       = ch_v2_PbPb_5_10;
+    ch_v2_PbPb[2]       = ch_v2_PbPb_10_30;
+    ch_v2_PbPb[3]       = ch_v2_PbPb_30_50;
+    ch_v2_PbPb[4]       = ch_v2_PbPb_50_80;
 
-    Ks_v2_PbPb_Obs[0]   = Ks_v2_PbPb_0_10;
-    Ks_v2_PbPb_Obs[1]   = Ks_v2_PbPb_10_30;
-    Ks_v2_PbPb_Obs[2]   = Ks_v2_PbPb_30_50;
-    Ks_v2_PbPb_Obs[3]   = Ks_v2_PbPb_50_80;
+    Ks_v2_PbPb_Obs[0]   = Ks_v2_PbPb_0_5;
+    Ks_v2_PbPb_Obs[1]   = Ks_v2_PbPb_5_10;
+    Ks_v2_PbPb_Obs[2]   = Ks_v2_PbPb_10_30;
+    Ks_v2_PbPb_Obs[3]   = Ks_v2_PbPb_30_50;
+    Ks_v2_PbPb_Obs[4]   = Ks_v2_PbPb_50_80;
 
-    Ks_v2_PbPb_Bkg[0]   = Ks_SB_v2_PbPb_0_10;
-    Ks_v2_PbPb_Bkg[1]   = Ks_SB_v2_PbPb_10_30;
-    Ks_v2_PbPb_Bkg[2]   = Ks_SB_v2_PbPb_30_50;
-    Ks_v2_PbPb_Bkg[3]   = Ks_SB_v2_PbPb_50_80;
+    Ks_v2_PbPb_Bkg[0]   = Ks_SB_v2_PbPb_0_5;
+    Ks_v2_PbPb_Bkg[1]   = Ks_SB_v2_PbPb_5_10;
+    Ks_v2_PbPb_Bkg[2]   = Ks_SB_v2_PbPb_10_30;
+    Ks_v2_PbPb_Bkg[3]   = Ks_SB_v2_PbPb_30_50;
+    Ks_v2_PbPb_Bkg[4]   = Ks_SB_v2_PbPb_50_80;
 
     Ks_v2_PbPb_Sig[0]   = new SteveGraph();
     Ks_v2_PbPb_Sig[1]   = new SteveGraph();
     Ks_v2_PbPb_Sig[2]   = new SteveGraph();
     Ks_v2_PbPb_Sig[3]   = new SteveGraph();
+    Ks_v2_PbPb_Sig[4]   = new SteveGraph();
 
-    Lm_v2_PbPb_Obs[0]   = Lm_v2_PbPb_0_10;
-    Lm_v2_PbPb_Obs[1]   = Lm_v2_PbPb_10_30;
-    Lm_v2_PbPb_Obs[2]   = Lm_v2_PbPb_30_50;
-    Lm_v2_PbPb_Obs[3]   = Lm_v2_PbPb_50_80;
+    Lm_v2_PbPb_Obs[0]   = Lm_v2_PbPb_0_5;
+    Lm_v2_PbPb_Obs[1]   = Lm_v2_PbPb_5_10;
+    Lm_v2_PbPb_Obs[2]   = Lm_v2_PbPb_10_30;
+    Lm_v2_PbPb_Obs[3]   = Lm_v2_PbPb_30_50;
+    Lm_v2_PbPb_Obs[4]   = Lm_v2_PbPb_50_80;
 
-    Lm_v2_PbPb_Bkg[0]   = Lm_SB_v2_PbPb_0_10;
-    Lm_v2_PbPb_Bkg[1]   = Lm_SB_v2_PbPb_10_30;
-    Lm_v2_PbPb_Bkg[2]   = Lm_SB_v2_PbPb_30_50;
-    Lm_v2_PbPb_Bkg[3]   = Lm_SB_v2_PbPb_50_80;
+    Lm_v2_PbPb_Bkg[0]   = Lm_SB_v2_PbPb_0_5;
+    Lm_v2_PbPb_Bkg[1]   = Lm_SB_v2_PbPb_5_10;
+    Lm_v2_PbPb_Bkg[2]   = Lm_SB_v2_PbPb_10_30;
+    Lm_v2_PbPb_Bkg[3]   = Lm_SB_v2_PbPb_30_50;
+    Lm_v2_PbPb_Bkg[4]   = Lm_SB_v2_PbPb_50_80;
 
     Lm_v2_PbPb_Sig[0]   = new SteveGraph();
     Lm_v2_PbPb_Sig[1]   = new SteveGraph();
     Lm_v2_PbPb_Sig[2]   = new SteveGraph();
     Lm_v2_PbPb_Sig[3]   = new SteveGraph();
+    Lm_v2_PbPb_Sig[4]   = new SteveGraph();
 
-    ch_v3_PbPb[0]       = ch_v3_PbPb_0_10;
-    ch_v3_PbPb[1]       = ch_v3_PbPb_10_30;
-    ch_v3_PbPb[2]       = ch_v3_PbPb_30_50;
-    ch_v3_PbPb[3]       = ch_v3_PbPb_50_80;
+    ch_v3_PbPb[0]       = ch_v3_PbPb_0_5;
+    ch_v3_PbPb[1]       = ch_v3_PbPb_5_10;
+    ch_v3_PbPb[2]       = ch_v3_PbPb_10_30;
+    ch_v3_PbPb[3]       = ch_v3_PbPb_30_50;
+    ch_v3_PbPb[4]       = ch_v3_PbPb_50_80;
 
-    Ks_v3_PbPb_Obs[0]   = Ks_v3_PbPb_0_10;
-    Ks_v3_PbPb_Obs[1]   = Ks_v3_PbPb_10_30;
-    Ks_v3_PbPb_Obs[2]   = Ks_v3_PbPb_30_50;
-    Ks_v3_PbPb_Obs[3]   = Ks_v3_PbPb_50_80;
+    Ks_v3_PbPb_Obs[0]   = Ks_v3_PbPb_0_5;
+    Ks_v3_PbPb_Obs[1]   = Ks_v3_PbPb_5_10;
+    Ks_v3_PbPb_Obs[2]   = Ks_v3_PbPb_10_30;
+    Ks_v3_PbPb_Obs[3]   = Ks_v3_PbPb_30_50;
+    Ks_v3_PbPb_Obs[4]   = Ks_v3_PbPb_50_80;
 
-    Ks_v3_PbPb_Bkg[0]   = Ks_SB_v3_PbPb_0_10;
-    Ks_v3_PbPb_Bkg[1]   = Ks_SB_v3_PbPb_10_30;
-    Ks_v3_PbPb_Bkg[2]   = Ks_SB_v3_PbPb_30_50;
-    Ks_v3_PbPb_Bkg[3]   = Ks_SB_v3_PbPb_50_80;
+    Ks_v3_PbPb_Bkg[0]   = Ks_SB_v3_PbPb_0_5;
+    Ks_v3_PbPb_Bkg[1]   = Ks_SB_v3_PbPb_5_10;
+    Ks_v3_PbPb_Bkg[2]   = Ks_SB_v3_PbPb_10_30;
+    Ks_v3_PbPb_Bkg[3]   = Ks_SB_v3_PbPb_30_50;
+    Ks_v3_PbPb_Bkg[4]   = Ks_SB_v3_PbPb_50_80;
 
     Ks_v3_PbPb_Sig[0]   = new SteveGraph();
     Ks_v3_PbPb_Sig[1]   = new SteveGraph();
     Ks_v3_PbPb_Sig[2]   = new SteveGraph();
     Ks_v3_PbPb_Sig[3]   = new SteveGraph();
+    Ks_v3_PbPb_Sig[4]   = new SteveGraph();
 
-    Lm_v3_PbPb_Obs[0]   = Lm_v3_PbPb_0_10;
-    Lm_v3_PbPb_Obs[1]   = Lm_v3_PbPb_10_30;
-    Lm_v3_PbPb_Obs[2]   = Lm_v3_PbPb_30_50;
-    Lm_v3_PbPb_Obs[3]   = Lm_v3_PbPb_50_80;
+    Lm_v3_PbPb_Obs[0]   = Lm_v3_PbPb_0_5;
+    Lm_v3_PbPb_Obs[1]   = Lm_v3_PbPb_5_10;
+    Lm_v3_PbPb_Obs[2]   = Lm_v3_PbPb_10_30;
+    Lm_v3_PbPb_Obs[3]   = Lm_v3_PbPb_30_50;
+    Lm_v3_PbPb_Obs[4]   = Lm_v3_PbPb_50_80;
 
-    Lm_v3_PbPb_Bkg[0]   = Lm_SB_v3_PbPb_0_10;
-    Lm_v3_PbPb_Bkg[1]   = Lm_SB_v3_PbPb_10_30;
-    Lm_v3_PbPb_Bkg[2]   = Lm_SB_v3_PbPb_30_50;
-    Lm_v3_PbPb_Bkg[3]   = Lm_SB_v3_PbPb_50_80;
+    Lm_v3_PbPb_Bkg[0]   = Lm_SB_v3_PbPb_0_5;
+    Lm_v3_PbPb_Bkg[1]   = Lm_SB_v3_PbPb_5_10;
+    Lm_v3_PbPb_Bkg[2]   = Lm_SB_v3_PbPb_10_30;
+    Lm_v3_PbPb_Bkg[3]   = Lm_SB_v3_PbPb_30_50;
+    Lm_v3_PbPb_Bkg[4]   = Lm_SB_v3_PbPb_50_80;
 
     Lm_v3_PbPb_Sig[0]   = new SteveGraph();
     Lm_v3_PbPb_Sig[1]   = new SteveGraph();
     Lm_v3_PbPb_Sig[2]   = new SteveGraph();
     Lm_v3_PbPb_Sig[3]   = new SteveGraph();
+    Lm_v3_PbPb_Sig[4]   = new SteveGraph();
 
 }
 
@@ -396,7 +480,7 @@ void LoadSPCorrected(bool bTrim = false)
 {
     TFile * fSP  = new TFile("PbPb_v0_SP_corrected.root");
     int idx = 0;
-    for ( auto dir : {"_0_10", "_10_30", "_30_50", "_50_80"} ) {
+    for ( auto dir : {"_0_5", "_5_10", "_10_30", "_30_50", "_50_80"} ) {
         TDirectoryFile * d = (TDirectoryFile*) fSP->Get( (string("ch_v2_PbPb") + dir).c_str() );
         ch_v2_PbPb[idx] = new SteveGraph(d);
 
@@ -424,19 +508,19 @@ void LoadSPCorrected(bool bTrim = false)
         Lm_v2_sysPbPb_Sig[idx]  = new SteveGraph( Lm_v2_PbPb_Sig[idx],  sp_syst[2] );
         Lm_v3_sysPbPb_Sig[idx]  = new SteveGraph( Lm_v3_PbPb_Sig[idx],  sp_syst[2] );
 
-        ch_v2_PbPb         [idx]->ResetX();
-        Ks_v2_PbPb_Sig     [idx]->ResetX();
-        Lm_v2_PbPb_Sig     [idx]->ResetX();
-        ch_v3_PbPb         [idx]->ResetX();
-        Ks_v3_PbPb_Sig     [idx]->ResetX();
-        Lm_v3_PbPb_Sig     [idx]->ResetX();
-
-        ch_v2_sysPbPb      [idx]->ResetX();
-        Ks_v2_sysPbPb_Sig  [idx]->ResetX();
-        Lm_v2_sysPbPb_Sig  [idx]->ResetX();
-        ch_v3_sysPbPb      [idx]->ResetX();
-        Ks_v3_sysPbPb_Sig  [idx]->ResetX();
-        Lm_v3_sysPbPb_Sig  [idx]->ResetX();
+//        ch_v2_PbPb         [idx]->ResetX();
+//        Ks_v2_PbPb_Sig     [idx]->ResetX();
+//        Lm_v2_PbPb_Sig     [idx]->ResetX();
+//        ch_v3_PbPb         [idx]->ResetX();
+//        Ks_v3_PbPb_Sig     [idx]->ResetX();
+//        Lm_v3_PbPb_Sig     [idx]->ResetX();
+//
+//        ch_v2_sysPbPb      [idx]->ResetX();
+//        Ks_v2_sysPbPb_Sig  [idx]->ResetX();
+//        Lm_v2_sysPbPb_Sig  [idx]->ResetX();
+//        ch_v3_sysPbPb      [idx]->ResetX();
+//        Ks_v3_sysPbPb_Sig  [idx]->ResetX();
+//        Lm_v3_sysPbPb_Sig  [idx]->ResetX();
 
         if ( bTrim ) {
             ch_v2_PbPb         [idx]->dropPoints(2);
