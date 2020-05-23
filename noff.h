@@ -28,7 +28,7 @@ int NpT = 13;
 
 // PbPb 2018
 // CentBin                             0,  1,   2,   3,   4
-  const Int_t CentCutPbPb2018[] = {0, 20, 60, 100, 160, 200};
-  const double CentPbPbX[]      = {   5., 20,  40,  65, 90};
+  const Int_t CentCutPbPb2018[] = {0, 10,  20, 60, 100, 160};
+  const double CentPbPbX[]      = {  2.5, 7.5, 20,  40,  65};
 
 int NCentPbPb2018 = 5;

@@ -37,20 +37,20 @@ void vnFsigPbPbSP(string strSave = "PbPb_v0_SP_corrected.root", double sys = 0.0
 	TH1D * hSigLm[5] = {};
 
     hSigKs[0] = (TH1D*) fFsigKs->Get("hFsigMid0");
-    hSigKs[1] = (TH1D*) fFsigKs->Get("hFsigMid1");
-    hSigKs[2] = (TH1D*) fFsigKs->Get("hFsigMid2");
-    hSigKs[3] = (TH1D*) fFsigKs->Get("hFsigMid3");
-    hSigKs[4] = (TH1D*) fFsigKs->Get("hFsigMid4");
+    hSigKs[1] = (TH1D*) fFsigKs->Get("hFsigMid0");
+    hSigKs[2] = (TH1D*) fFsigKs->Get("hFsigMid1");
+    hSigKs[3] = (TH1D*) fFsigKs->Get("hFsigMid2");
+    hSigKs[4] = (TH1D*) fFsigKs->Get("hFsigMid3");
 
     hSigLm[0] = (TH1D*) fFsigLm->Get("hFsigMid0");
-    hSigLm[1] = (TH1D*) fFsigLm->Get("hFsigMid1");
-    hSigLm[2] = (TH1D*) fFsigLm->Get("hFsigMid2");
-    hSigLm[3] = (TH1D*) fFsigLm->Get("hFsigMid3");
-    hSigLm[4] = (TH1D*) fFsigLm->Get("hFsigMid4");
+    hSigLm[1] = (TH1D*) fFsigLm->Get("hFsigMid0");
+    hSigLm[2] = (TH1D*) fFsigLm->Get("hFsigMid1");
+    hSigLm[3] = (TH1D*) fFsigLm->Get("hFsigMid2");
+    hSigLm[4] = (TH1D*) fFsigLm->Get("hFsigMid3");
 
     LoadSP();
 
-    for ( int c = 0; c < 4; c++ ) {
+    for ( int c = 0; c < 5; c++ ) {
         Ks_v2_PbPb_Sig[c]->vn_NegEta           = getSigVn( Ks_v2_PbPb_Obs[c]->vn_NegEta,           Ks_v2_PbPb_Bkg[c]->vn_NegEta          , hSigKs[c], sys);
         Ks_v2_PbPb_Sig[c]->vn_PosEta           = getSigVn( Ks_v2_PbPb_Obs[c]->vn_PosEta,           Ks_v2_PbPb_Bkg[c]->vn_PosEta          , hSigKs[c], sys);
         Ks_v2_PbPb_Sig[c]->vn_NegEta_SubEvt    = getSigVn( Ks_v2_PbPb_Obs[c]->vn_NegEta_SubEvt,    Ks_v2_PbPb_Bkg[c]->vn_NegEta_SubEvt   , hSigKs[c], sys);
@@ -83,7 +83,7 @@ void vnFsigPbPbSP(string strSave = "PbPb_v0_SP_corrected.root", double sys = 0.0
 	TFile * fsave = new TFile(strSave.c_str(), "recreate");
 
     int c = 0;
-    for ( auto dir : {"_0_10", "_10_30", "_30_50", "_50_80"} ) {
+    for ( auto dir : {"_0_5", "_5_10", "_10_30", "_30_50", "_50_80"} ) {
         TDirectory * d = fsave->mkdir( (string("ch_v2_PbPb") + dir).c_str() );
         ch_v2_PbPb[c]->Write(d);
 
