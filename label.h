@@ -4,7 +4,7 @@ char const * fname[] = {
     "",      // 1  HIMB0  Lm
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_Peak_Mid_BDT20_v1/200218_183251/0000/",      // 2  HIMB1  Lm
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Lm_Peak_Mid_BDT20_v1/200226_164720/0000/",      // 3  HIMB2  Lm
-    "",      // 4  HIMB3  Lm
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Lm_Peak_Mid_BDT20_v1/200518_144824/0000/",      // 4  HIMB3  Lm
     "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Lm_Peak_Mid_BDT20_v1/200211_221741/0000/",      // 5  HIMB4  Lm
     "",      // 6  HIMB5  Lm
     "",      // 7  HIMB6  Lm
@@ -19,12 +19,12 @@ char const * fname[] = {
     "",      // 16 HIMB15 Lm
     "",      // 17 HIMB16 Lm
     "",      // 18 HIMB17 Lm
-    "",      // 19 HIMB18 Lm
+    "../PbPb2018/HIMinimumBias18/crab_HIMB18_V0Cumu_Lm_Peak_Mid_BDT20_v1/200522_041531/0000/",      // 19 HIMB18 Lm
     "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Lm_Peak_Mid_BDT20_v1/200311_161134/0000/",      // 20 HIMB19 Lm
     "",      // 21 HIMB0  Lm SBPos
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBPos_Mid_BDT20_v1/200221_161134/0000/",      // 22 HIMB1  Lm SBPos
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Lm_SBPos_Mid_BDT20_v1/200226_175333/0000/",      // 23 HIMB2  Lm SBPos
-    "",      // 24 HIMB3  Lm SBPos
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Lm_SBPos_Mid_BDT20_v1/200518_161808/0000/",      // 24 HIMB3  Lm SBPos
     "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Lm_SBPos_Mid_BDT20_v1/200211_222001/0000/",      // 25 HIMB4  Lm SBPos
     "",      // 26 HIMB5  Lm SBPos
     "",      // 27 HIMB6  Lm SBPos
@@ -44,7 +44,7 @@ char const * fname[] = {
     "",      // 41 HIMB0  Lm SBNeg
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBNeg_Mid_BDT20_v1/200221_161253/0000/",      // 42 HIMB1  Lm SBNeg
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Lm_SBNeg_Mid_BDT20_v1/200226_175419/0000/",      // 43 HIMB2  Lm SBNeg
-    "",      // 44 HIMB3  Lm SBNeg
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Lm_SBNeg_Mid_BDT20_v1/200518_163258/0000/",      // 44 HIMB3  Lm SBNeg
     "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Lm_SBNeg_Mid_BDT20_v1/200211_222114/0000/",      // 45 HIMB4  Lm SBNeg
     "",      // 46 HIMB5  Lm SBNeg
     "",      // 47 HIMB6  Lm SBNeg
@@ -762,7 +762,7 @@ char const * ftxt[] = {
     "",      // 1  HIMB0  Lm
     "txt/HIMB1_Lm_Peak/",      // 2  HIMB1  Lm
     "txt/HIMB2_Lm_Peak/",      // 3  HIMB2  Lm
-    "",      // 4  HIMB3  Lm
+    "txt/HIMB3_Lm_Peak/",      // 4  HIMB3  Lm
     "txt/HIMB4_Lm_Peak/",      // 5  HIMB4  Lm
     "",      // 6  HIMB5  Lm
     "",      // 7  HIMB6  Lm
@@ -777,12 +777,12 @@ char const * ftxt[] = {
     "",      // 16 HIMB15 Lm
     "",      // 17 HIMB16 Lm
     "",      // 18 HIMB17 Lm
-    "",      // 19 HIMB18 Lm
+    "txt/HIMB18_Lm_Peak/",      // 19 HIMB18 Lm
     "txt/HIMB19_Lm_Peak/",      // 20 HIMB19 Lm
     "",      // 21 HIMB0  Lm SBPos
     "txt/HIMB1_Lm_SBPos/",      // 22 HIMB1  Lm SBPos
     "txt/HIMB2_Lm_SBPos/",      // 23 HIMB2  Lm SBPos
-    "",      // 24 HIMB3  Lm SBPos
+    "txt/HIMB3_Lm_SBPos/",      // 24 HIMB3  Lm SBPos
     "txt/HIMB4_Lm_SBPos/",      // 25 HIMB4  Lm SBPos
     "",      // 26 HIMB5  Lm SBPos
     "",      // 27 HIMB6  Lm SBPos
@@ -802,7 +802,7 @@ char const * ftxt[] = {
     "",      // 41 HIMB0  Lm SBNeg
     "txt/HIMB1_Lm_SBNeg/",      // 42 HIMB1  Lm SBNeg
     "txt/HIMB2_Lm_SBNeg/",      // 43 HIMB2  Lm SBNeg
-    "",      // 44 HIMB3  Lm SBNeg
+    "txt/HIMB3_Lm_SBNeg/",      // 44 HIMB3  Lm SBNeg
     "txt/HIMB4_Lm_SBNeg/",      // 45 HIMB4  Lm SBNeg
     "",      // 46 HIMB5  Lm SBNeg
     "",      // 47 HIMB6  Lm SBNeg
