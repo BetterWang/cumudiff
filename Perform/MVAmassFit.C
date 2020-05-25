@@ -230,9 +230,9 @@ void MVAmassFit(string s1 = "LM")
 {
     s = s1;
     if ( s == "LM" ) {
-        f = new TFile("MVAmassBDT250D4_LM20.root");
+        f = new TFile("MVAmassBDT250D4_LM20_cent7.root");
     } else if ( s == "KS" ) {
-        f = new TFile("MVAmassBDT250D4_KS.root");
+        f = new TFile("MVAmassBDT250D4_KS_cent7.root");
         Nbins = 270;
         //full_range = make_pair<double, double>(0.430, 0.565);
         full_range = make_pair<double, double>(0.450, 0.54);
