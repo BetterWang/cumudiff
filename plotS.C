@@ -32,7 +32,8 @@ void plotS(
         string st = "185 #leq N_{trk}^{offline} < 250",
         string save = "Ks_v24_Pb",
         int sratio = -1,
-        double delta = 0.9
+        double delta = 0.9,
+        int dropPoint = 0
         )
 {
     stringstream ss(s);
@@ -65,6 +66,10 @@ void plotS(
         gr->SetMarkerColor( color_list[idx] );
         gr->SetLineColor( color_list[idx] );
         gr->SetMarkerSize( 2 );
+
+        for ( int i = 0; i < dropPoint; i++ ) {
+            gr->RemovePoint(0);
+        }
 
         grs.push_back(gr);
         idx++;
@@ -100,7 +105,7 @@ void plotS(
     cPA->SetGridy();
     if ( sratio >= 0 ) {
         TH2D * hframePtR = new TH2D("hframePtR", "", 1, 0, 8.5, 1, 1.-delta, 1.+delta);
-        InitHist(hframePt, "p_{T}", "Ratio");
+        InitHist(hframePtR, "p_{T}", "Ratio");
 
         hframePtR->Draw();
         for ( int i = 0; i < grs.size(); i++ ) {
@@ -109,6 +114,7 @@ void plotS(
             TGraphErrors * r = getRatio( grs[i], grs[sratio] );
             r->Draw("psame");
         }
+        latexS.DrawLatexNDC(0.60, 0.90, st.c_str());
         cPA->SaveAs( (save+"_Ratio.pdf").c_str() );
     }
 }

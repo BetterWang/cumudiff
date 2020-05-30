@@ -86,9 +86,9 @@
 ./runGet1.sh 744
 
 # Ks Peak 3 sysBDT10
-#./runGet1.sh 173
+./runGet1.sh 173
 # Ks SB 3 sysBDT10
-#./runGet1.sh 745
+./runGet1.sh 745
 
 ### Lm Peak sysBDT25 3
 ./runGet1.sh 193

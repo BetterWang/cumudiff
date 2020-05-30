@@ -134,10 +134,10 @@ root -l -b -q "combinedS.C(744)"
 #ln -s combinedS_744.root PbPb2018_Ks_MB3_SB_sysBDT20.root
 
 ### PbPb Ks Peak 3 sysBDT10
-#root -l -b -q "combinedS.C(173)"
+root -l -b -q "combinedS.C(173)"
 #ln -s combinedS_173.root PbPb2018_Ks_MB3_sysBDT10.root
 ### PbPb Ks SB 3 sysBDT10
-#root -l -b -q "combinedS.C(745)"
+root -l -b -q "combinedS.C(745)"
 #ln -s combinedS_745.root PbPb2018_Ks_MB3_SB_sysBDT10.root
 
 ### PbPb Lm Peak 3 sysBDT25
