@@ -21,7 +21,7 @@ TGraphErrors* merge(TGraphErrors* gr1, TGraphErrors* gr2){
     return gr;
 }
 
-void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.root", string strSave = "test.root", double sys = 0.0)
+void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.root", string strSave = "test.root", double sys = 0.0, bool bPol3 = false)
 {
     for ( int i = 0; i < 13; i++ ) {
         dummy->GetX()[i] = 0.;
@@ -109,14 +109,22 @@ void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.roo
     if ( bKs ) {
         // Ks
         if ( bMid ) {
-            fFsig = new TFile("FsigKSMid.root");
+            if ( bPol3 ) {
+                fFsig = new TFile("FsigKSpol3Mid_cent7.root");
+            } else {
+                fFsig = new TFile("FsigKSMid_cent7.root");
+            }
         } else {
             fFsig = new TFile("FsigKSFwd.root");
         }
     } else {
         // Lm
         if ( bMid ) {
-            fFsig = new TFile("FsigLMMid.root");
+            if ( bPol3 ) {
+                fFsig = new TFile("FsigLMpol3Mid_cent7.root");
+            } else {
+                fFsig = new TFile("FsigLMMid_cent7.root");
+            }
         } else {
             fFsig = new TFile("FsigLMFwd.root");
         }
@@ -126,6 +134,7 @@ void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.roo
     hSig[2] = (TH1D*) fFsig->Get("hFsigMid2");
     hSig[3] = (TH1D*) fFsig->Get("hFsigMid3");
     hSig[4] = (TH1D*) fFsig->Get("hFsigMid4");
+    hSig[5] = (TH1D*) fFsig->Get("hFsigMid5");
 
 	for ( int n = 2; n < 7; n++ ) {
 		for ( int c = 0; c < 5; c++ ) {
@@ -206,6 +215,8 @@ void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.roo
         else                                dummy->Write(Form("grBkg_V2sub4neg_%i", c));
         grPureV2sub4neg[c]->Write(Form("grSig_V2sub4neg_%i", c));
     }
+
+    fsave->Close();
 }
 
 

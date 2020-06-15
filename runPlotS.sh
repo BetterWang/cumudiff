@@ -55,7 +55,7 @@
 
 #root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_1;PbPb2018_Lm_MB4_sysBDT15_corrected.root:grSig_pT2_1_1;PbPb2018_Lm_MB3_sysBDT25_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4} BDT>0.20;v_{2}^{Sig}{4} BDT>0.25;v_{2}^{Sig}{4} BDT>0.15", "#splitline{PbPb 5.02 TeV}{#Lambda 10-30\%}", "Lm_v24_sysBDT", 0, 0.2)'
 
-root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_1;PbPb2018_Ks_MB3_sysBDT10_corrected.root:grSig_pT2_1_1;PbPb2018_Ks_MB3_sysBDT20_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4} BDT>0.15;v_{2}^{Sig}{4} BDT>0.10;v_{2}^{Sig}{4} BDT>0.20", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 10-30\%}", "Ks_v24_sysBDT", 0, 0.2)'
+#root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_1;PbPb2018_Ks_MB3_sysBDT10_corrected.root:grSig_pT2_1_1;PbPb2018_Ks_MB3_sysBDT20_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4} BDT>0.15;v_{2}^{Sig}{4} BDT>0.10;v_{2}^{Sig}{4} BDT>0.20", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 10-30\%}", "Ks_v24_sysBDT", 0, 0.2)'
 
 #root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_0;PbPb_v0_SP_corrected.root:Ks_v2_PbPb_Sig_0_10/vn_MergedEta;PbPb_v0_SP_corrected.root:Ks_v3_PbPb_Sig_0_10/vn_MergedEta", "v_{2}^{Sig}{4};v_{2}^{Sig}{SP};v_{3}^{Sig}{SP}", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 0-10\%}", "Ks_0_vn")'
 #
@@ -90,3 +90,40 @@ root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_1;PbPb2018_Ks_MB3
 
 
 
+#root -l -b -q 'plotS.C("../cumudiff/pPb_H_merged_corrected.root:grSig_pT2_1_6;../cumudiff/pPb_H_veto10_merged2_corrected.root:grSig_pT2_1_6", "v_{2}{4};v_{2}{4} veto p_{T}>10.", "#splitline{pPb 8.16 TeV}{Ch 120 #leq N_{trk}^{offline} < 150}", "vetoPt_v24_6", 0, 0.9)'
+#
+#root -l -b -q 'plotS.C("../cumudiff/pPb_H_merged_corrected.root:grSig_pT2_2_6;../cumudiff/pPb_H_veto10_merged2_corrected.root:grSig_pT2_2_6", "v_{2}{6};v_{2}{6} veto p_{T}>10.", "#splitline{pPb 8.16 TeV}{Ch 120 #leq N_{trk}^{offline} < 150}", "vetoPt_v26_6", 0, 0.9)'
+#
+#root -l -b -q 'plotS.C("../cumudiff/pPb_H_merged_corrected.root:grSig_pT2_1_7;../cumudiff/pPb_H_veto10_merged2_corrected.root:grSig_pT2_1_7", "v_{2}{4};v_{2}{4} veto p_{T}>10.", "#splitline{pPb 8.16 TeV}{Ch 150 #leq N_{trk}^{offline} < 185}", "vetoPt_v24_7", 0, 0.9)'
+#
+#root -l -b -q 'plotS.C("../cumudiff/pPb_H_merged_corrected.root:grSig_pT2_2_7;../cumudiff/pPb_H_veto10_merged2_corrected.root:grSig_pT2_2_7", "v_{2}{6};v_{2}{6} veto p_{T}>10.", "#splitline{pPb 8.16 TeV}{Ch 150 #leq N_{trk}^{offline} < 185}", "vetoPt_v26_7", 0, 0.9)'
+#
+#root -l -b -q 'plotS.C("../cumudiff/pPb_H_merged_corrected.root:grSig_pT2_1_8;../cumudiff/pPb_H_veto10_merged2_corrected.root:grSig_pT2_1_8", "v_{2}{4};v_{2}{4} veto p_{T}>10.", "#splitline{pPb 8.16 TeV}{Ch 185 #leq N_{trk}^{offline} < 250}", "vetoPt_v24_8", 0, 0.9)'
+#
+#root -l -b -q 'plotS.C("../cumudiff/pPb_H_merged_corrected.root:grSig_pT2_2_8;../cumudiff/pPb_H_veto10_merged2_corrected.root:grSig_pT2_2_8", "v_{2}{6};v_{2}{6} veto p_{T}>10.", "#splitline{pPb 8.16 TeV}{Ch 185 #leq N_{trk}^{offline} < 250}", "vetoPt_v26_8", 0, 0.9)'
+#
+#root -l -b -q 'plotS.C("../cumudiff/pPb_H_merged_corrected.root:grSig_pT2_1_9;../cumudiff/pPb_H_veto10_merged2_corrected.root:grSig_pT2_1_9", "v_{2}{4};v_{2}{4} veto p_{T}>10.", "#splitline{pPb 8.16 TeV}{Ch N_{trk}^{offline} #geq 250}", "vetoPt_v24_9", 0, 0.9)'
+#
+#root -l -b -q 'plotS.C("../cumudiff/pPb_H_merged_corrected.root:grSig_pT2_2_9;../cumudiff/pPb_H_veto10_merged2_corrected.root:grSig_pT2_2_9", "v_{2}{6};v_{2}{6} veto p_{T}>10.", "#splitline{pPb 8.16 TeV}{Ch N_{trk}^{offline} #geq 250}", "vetoPt_v26_9", 0, 0.9)'
+
+root -l -b -q 'plotS.C("PbPb_v0_SP_corrected.root:Lm_v2_PbPb_Sig_5_10/vn_MergedEta;PbPb_v0_SP_corrected.root:Lm_z3_v2_PbPb_Sig_5_10/vn_MergedEta;PbPb_v0_SP_corrected.root:Lm_z15_v2_PbPb_Sig_5_10/vn_MergedEta", "v_{2}^{Sig}{SP} |vz|<15;v_{2}^{Sig}{SP} |vz|<3;v_{2}^{Sig}{SP} 3<|vz|<15", "#splitline{PbPb 5.02 TeV}{#Lambda 5-10\%}", "Lm_v2SP_sysVz1", 0, 0.5, 5)'
+root -l -b -q 'plotS.C("PbPb_v0_SP_corrected.root:Lm_v2_PbPb_Sig_10_30/vn_MergedEta;PbPb_v0_SP_corrected.root:Lm_z3_v2_PbPb_Sig_10_30/vn_MergedEta;PbPb_v0_SP_corrected.root:Lm_z15_v2_PbPb_Sig_10_30/vn_MergedEta", "v_{2}^{Sig}{SP} |vz|<15;v_{2}^{Sig}{SP} |vz|<3;v_{2}^{Sig}{SP} 3<|vz|<15", "#splitline{PbPb 5.02 TeV}{#Lambda 10-30\%}", "Lm_v2SP_sysVz2", 0, 0.5, 5)'
+root -l -b -q 'plotS.C("PbPb_v0_SP_corrected.root:Lm_v2_PbPb_Sig_30_50/vn_MergedEta;PbPb_v0_SP_corrected.root:Lm_z3_v2_PbPb_Sig_30_50/vn_MergedEta;PbPb_v0_SP_corrected.root:Lm_z15_v2_PbPb_Sig_30_50/vn_MergedEta", "v_{2}^{Sig}{SP} |vz|<15;v_{2}^{Sig}{SP} |vz|<3;v_{2}^{Sig}{SP} 3<|vz|<15", "#splitline{PbPb 5.02 TeV}{#Lambda 30-50\%}", "Lm_v2SP_sysVz3", 0, 0.5, 5)'
+root -l -b -q 'plotS.C("PbPb_v0_SP_corrected.root:Lm_v2_PbPb_Sig_50_80/vn_MergedEta;PbPb_v0_SP_corrected.root:Lm_z3_v2_PbPb_Sig_50_80/vn_MergedEta;PbPb_v0_SP_corrected.root:Lm_z15_v2_PbPb_Sig_50_80/vn_MergedEta", "v_{2}^{Sig}{SP} |vz|<15;v_{2}^{Sig}{SP} |vz|<3;v_{2}^{Sig}{SP} 3<|vz|<15", "#splitline{PbPb 5.02 TeV}{#Lambda 50-80\%}", "Lm_v2SP_sysVz4", 0, 0.5, 5)'
+
+root -l -b -q 'plotS.C("PbPb_v0_SP_corrected.root:Ks_v2_PbPb_Sig_5_10/vn_MergedEta;PbPb_v0_SP_corrected.root:Ks_z3_v2_PbPb_Sig_5_10/vn_MergedEta;PbPb_v0_SP_corrected.root:Ks_z15_v2_PbPb_Sig_5_10/vn_MergedEta", "v_{2}^{Sig}{SP} |vz|<15;v_{2}^{Sig}{SP} |vz|<3;v_{2}^{Sig}{SP} 3<|vz|<15", "#splitline{PbPb 5.02 TeV}{#Lambda 5-10\%}", "Ks_v2SP_sysVz1", 0, 0.5, 5)'
+root -l -b -q 'plotS.C("PbPb_v0_SP_corrected.root:Ks_v2_PbPb_Sig_10_30/vn_MergedEta;PbPb_v0_SP_corrected.root:Ks_z3_v2_PbPb_Sig_10_30/vn_MergedEta;PbPb_v0_SP_corrected.root:Ks_z15_v2_PbPb_Sig_10_30/vn_MergedEta", "v_{2}^{Sig}{SP} |vz|<15;v_{2}^{Sig}{SP} |vz|<3;v_{2}^{Sig}{SP} 3<|vz|<15", "#splitline{PbPb 5.02 TeV}{#Lambda 10-30\%}", "Ks_v2SP_sysVz2", 0, 0.5, 5)'
+root -l -b -q 'plotS.C("PbPb_v0_SP_corrected.root:Ks_v2_PbPb_Sig_30_50/vn_MergedEta;PbPb_v0_SP_corrected.root:Ks_z3_v2_PbPb_Sig_30_50/vn_MergedEta;PbPb_v0_SP_corrected.root:Ks_z15_v2_PbPb_Sig_30_50/vn_MergedEta", "v_{2}^{Sig}{SP} |vz|<15;v_{2}^{Sig}{SP} |vz|<3;v_{2}^{Sig}{SP} 3<|vz|<15", "#splitline{PbPb 5.02 TeV}{#Lambda 30-50\%}", "Ks_v2SP_sysVz3", 0, 0.5, 5)'
+root -l -b -q 'plotS.C("PbPb_v0_SP_corrected.root:Ks_v2_PbPb_Sig_50_80/vn_MergedEta;PbPb_v0_SP_corrected.root:Ks_z3_v2_PbPb_Sig_50_80/vn_MergedEta;PbPb_v0_SP_corrected.root:Ks_z15_v2_PbPb_Sig_50_80/vn_MergedEta", "v_{2}^{Sig}{SP} |vz|<15;v_{2}^{Sig}{SP} |vz|<3;v_{2}^{Sig}{SP} 3<|vz|<15", "#splitline{PbPb 5.02 TeV}{#Lambda 50-80\%}", "Ks_v2SP_sysVz4", 0, 0.5, 5)'
+#
+#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_1;PbPb2018_Lm_sysVz1_corrected.root:grSig_pT2_1_1;PbPb2018_Lm_sysVz2_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4};v_{2}^{Sig}{4} 0<|vz|<3.;v_{2}^{Sig}{4} 3.<|vz|<15.", "#splitline{PbPb 5.02 TeV}{#Lambda 5-10\%}", "Lm_v24_sysVz1", 0, 0.5, 5)'
+#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_2;PbPb2018_Lm_sysVz1_corrected.root:grSig_pT2_1_2;PbPb2018_Lm_sysVz2_corrected.root:grSig_pT2_1_2", "v_{2}^{Sig}{4};v_{2}^{Sig}{4} 0<|vz|<3.;v_{2}^{Sig}{4} 3.<|vz|<15.", "#splitline{PbPb 5.02 TeV}{#Lambda 10-30\%}", "Lm_v24_sysVz2", 0, 0.5, 5)'
+#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_3;PbPb2018_Lm_sysVz1_corrected.root:grSig_pT2_1_3;PbPb2018_Lm_sysVz2_corrected.root:grSig_pT2_1_3", "v_{2}^{Sig}{4};v_{2}^{Sig}{4} 0<|vz|<3.;v_{2}^{Sig}{4} 3.<|vz|<15.", "#splitline{PbPb 5.02 TeV}{#Lambda 30-50\%}", "Lm_v24_sysVz3", 0, 0.5, 5)'
+#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_4;PbPb2018_Lm_sysVz1_corrected.root:grSig_pT2_1_4;PbPb2018_Lm_sysVz2_corrected.root:grSig_pT2_1_4", "v_{2}^{Sig}{4};v_{2}^{Sig}{4} 0<|vz|<3.;v_{2}^{Sig}{4} 3.<|vz|<15.", "#splitline{PbPb 5.02 TeV}{#Lambda 50-80\%}", "Lm_v24_sysVz4", 0, 0.5, 5)'
+
+
+
+
+
+#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_1;PbPb2018_Lm_sysPol3_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4} Pol4;v_{2}^{Sig}{4} Pol3", "#splitline{PbPb 5.02 TeV}{#Lambda 10-30\%}", "Lm_v24_sysPol3", 0, 0.3, 4)'
+#root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_1;PbPb2018_Ks_sysPol3_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4} Pol4;v_{2}^{Sig}{4} Pol3", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 10-30\%}", "Ks_v24_sysPol3", 0, 0.3, 3)'

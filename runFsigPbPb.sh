@@ -35,9 +35,13 @@ root -l -b -q 'vnFsigPbPb.C("PbPb2018_H_sysLoose.root", "dummy.root", "PbPb2018_
 
 
 root -l -b -q 'vnFsigPbPb.C("PbPb2018_Ks_MB3_sysBDT20.root", "PbPb2018_Ks_MB3_SB_sysBDT20.root", "PbPb2018_Ks_MB3_sysBDT20_corrected.root")'
-#root -l -b -q 'vnFsigPbPb.C("PbPb2018_Ks_MB3_sysBDT10.root", "PbPb2018_Ks_MB3_SB_sysBDT10.root", "PbPb2018_Ks_MB3_sysBDT10_corrected.root")'
+root -l -b -q 'vnFsigPbPb.C("PbPb2018_Ks_MB3_sysBDT10.root", "PbPb2018_Ks_MB3_SB_sysBDT10.root", "PbPb2018_Ks_MB3_sysBDT10_corrected.root")'
 
 root -l -b -q 'vnFsigPbPb.C("PbPb2018_Lm_MB3_sysBDT25.root", "PbPb2018_Lm_SB_MB3_sysBDT25.root", "PbPb2018_Lm_MB3_sysBDT25_corrected.root")'
 root -l -b -q 'vnFsigPbPb.C("PbPb2018_Lm_MB4_sysBDT15.root", "PbPb2018_Lm_SB_MB4_sysBDT15.root", "PbPb2018_Lm_MB4_sysBDT15_corrected.root")'
 
 #root -l -b -q vnFsigPbPbSP.C
+
+root -l -b -q 'vnFsigPbPb.C("PbPb2018_Ks.root", "PbPb2018_Ks_SB.root", "PbPb2018_Ks_sysPol3_corrected.root", 0., true)'
+root -l -b -q 'vnFsigPbPb.C("PbPb2018_Lm.root", "PbPb2018_Lm_SB.root", "PbPb2018_Lm_sysPol3_corrected.root", 0., true)'
+

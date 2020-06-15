@@ -658,9 +658,6 @@ void plotResult()
         c2->SaveAs(Form("PbPb2018_Lm_EbyE_%i.pdf", c));
     }
 
-//    TCanvas * cSub  = MakeCanvas("cSub",  "cSub",  800, 600);
-//    TCanvas * cSubR = MakeCanvas("cSubR", "cSubR", 800, 600);
-
     for ( int c = 0; c < 5; c++ ) {
         c0->cd();
         hframe_pt->Draw();
@@ -868,6 +865,7 @@ void plotResult()
         legR->AddEntry(gLmRatio,   "Cumu: #Lambda", "p");
 
         legR->Draw();
+
         //
         c0->SaveAs(Form("PbPb2018_H_Sub_%i.pdf", c));
         c1->SaveAs(Form("PbPb2018_Ks_Sub_%i.pdf", c));
@@ -875,4 +873,113 @@ void plotResult()
         cR->SaveAs(Form("PbPb2018_SubRatio_%i.pdf", c));
     }
 
+    for ( int c = 0; c < 5; c++ ) {
+        c0->cd();
+        hframeS_ratio->Draw();
+        line1.Draw();
+
+        latexS.DrawLatexNDC(0.15, 0.99, "#bf{CMS}");
+        latexS.DrawLatexNDC(0.75, 0.99, "PbPb 5.02 TeV");
+        latexS.DrawLatexNDC(0.25, 0.90, (centBins[c]+ " Ch").c_str());
+
+        TLegend * leg0 = new TLegend(0.68, 0.71, 0.90, 0.93);
+        leg0->SetFillColor(kWhite);
+        leg0->SetTextFont(42);
+        leg0->SetTextSize(0.05);
+        leg0->SetBorderSize(0);
+        auto grChRatio64 = getRatio( vH .grSig_pT[2][2][c], vH .grSig_pT[2][1][c] );
+        auto grChRatio84 = getRatio( vH .grSig_pT[2][3][c], vH .grSig_pT[2][1][c] );
+
+        grChRatio64->SetMarkerStyle(kOpenCircle);
+        grChRatio64->SetMarkerColor(kRed);
+        grChRatio64->SetLineColor  (kRed);
+        grChRatio64->SetMarkerSize (2.);
+
+        grChRatio84->SetMarkerStyle(kOpenSquare);
+        grChRatio84->SetMarkerColor(kBlue);
+        grChRatio84->SetLineColor  (kBlue);
+        grChRatio84->SetMarkerSize (2.);
+
+        grChRatio64->Draw("psame");
+        grChRatio84->Draw("psame");
+
+        leg0->AddEntry(grChRatio64, "v_{2}{6}/v_{2}{4}", "p");
+        leg0->AddEntry(grChRatio84, "v_{2}{8}/v_{2}{4}", "p");
+        leg0->Draw();
+
+        //
+        c1->cd();
+        hframeS_ratio->Draw();
+        line1.Draw();
+
+        latexS.DrawLatexNDC(0.15, 0.99, "#bf{CMS}");
+        latexS.DrawLatexNDC(0.75, 0.99, "PbPb 5.02 TeV");
+        latexS.DrawLatexNDC(0.25, 0.90, (centBins[c]+ " K_{S}^{0}").c_str());
+
+        TLegend * leg1 = new TLegend(0.68, 0.71, 0.90, 0.93);
+        leg1->SetFillColor(kWhite);
+        leg1->SetTextFont(42);
+        leg1->SetTextSize(0.05);
+        leg1->SetBorderSize(0);
+
+        auto grKsRatio64 = getRatio( vKs.grSig_pT[2][2][c], vKs.grSig_pT[2][1][c] );
+        auto grKsRatio84 = getRatio( vKs.grSig_pT[2][3][c], vKs.grSig_pT[2][1][c] );
+
+        grKsRatio64->SetMarkerStyle(kOpenCircle);
+        grKsRatio64->SetMarkerColor(kRed);
+        grKsRatio64->SetLineColor  (kRed);
+        grKsRatio64->SetMarkerSize (2.);
+
+        grKsRatio84->SetMarkerStyle(kOpenSquare);
+        grKsRatio84->SetMarkerColor(kBlue);
+        grKsRatio84->SetLineColor  (kBlue);
+        grKsRatio84->SetMarkerSize (2.);
+
+        grKsRatio64->Draw("psame");
+        grKsRatio84->Draw("psame");
+
+        leg1->AddEntry(grChRatio64, "v_{2}{6}/v_{2}{4}", "p");
+        leg1->AddEntry(grChRatio84, "v_{2}{8}/v_{2}{4}", "p");
+        leg1->Draw();
+
+        //
+        c2->cd();
+        hframeS_ratio->Draw();
+        line1.Draw();
+
+        latexS.DrawLatexNDC(0.15, 0.99, "#bf{CMS}");
+        latexS.DrawLatexNDC(0.75, 0.99, "PbPb 5.02 TeV");
+        latexS.DrawLatexNDC(0.25, 0.90, (centBins[c]+ " K_{S}^{0}").c_str());
+
+        TLegend * leg2 = new TLegend(0.68, 0.71, 0.90, 0.93);
+        leg2->SetFillColor(kWhite);
+        leg2->SetTextFont(42);
+        leg2->SetTextSize(0.05);
+        leg2->SetBorderSize(0);
+
+        auto grLmRatio64 = getRatio( vLm.grSig_pT[2][2][c], vLm.grSig_pT[2][1][c] );
+        auto grLmRatio84 = getRatio( vLm.grSig_pT[2][3][c], vLm.grSig_pT[2][1][c] );
+
+        grLmRatio64->SetMarkerStyle(kOpenCircle);
+        grLmRatio64->SetMarkerColor(kRed);
+        grLmRatio64->SetLineColor  (kRed);
+        grLmRatio64->SetMarkerSize (2.);
+
+        grLmRatio84->SetMarkerStyle(kOpenSquare);
+        grLmRatio84->SetMarkerColor(kBlue);
+        grLmRatio84->SetLineColor  (kBlue);
+        grLmRatio84->SetMarkerSize (2.);
+
+        grLmRatio64->Draw("psame");
+        grLmRatio84->Draw("psame");
+
+        leg2->AddEntry(grChRatio64, "v_{2}{6}/v_{2}{4}", "p");
+        leg2->AddEntry(grChRatio84, "v_{2}{8}/v_{2}{4}", "p");
+        leg2->Draw();
+
+        //
+        c0->SaveAs(Form("Ratio_ChCumu_%i.pdf", c));
+        c1->SaveAs(Form("Ratio_KsCumu_%i.pdf", c));
+        c2->SaveAs(Form("Ratio_LmCumu_%i.pdf", c));
+    }
 }

@@ -22,6 +22,17 @@ TGraphErrors* merge(TGraphErrors* gr1, TGraphErrors* gr2){
     return gr;
 }
 
+void GraphSigVn( SteveGraph * grT, SteveGraph* grO, SteveGraph * grB, TH1D* hSig, double sys )
+{
+    grT->vn_NegEta           = getSigVn( grO->vn_NegEta          , grB->vn_NegEta          , hSig, sys );
+    grT->vn_PosEta           = getSigVn( grO->vn_PosEta          , grB->vn_PosEta          , hSig, sys );
+    grT->vn_NegEta_SubEvt    = getSigVn( grO->vn_NegEta_SubEvt   , grB->vn_NegEta_SubEvt   , hSig, sys );
+    grT->vn_PosEta_SubEvt    = getSigVn( grO->vn_PosEta_SubEvt   , grB->vn_PosEta_SubEvt   , hSig, sys );
+    grT->vn_MergedEta        = getSigVn( grO->vn_MergedEta       , grB->vn_MergedEta       , hSig, sys );
+    grT->vn_MergedEta_SubEvt = getSigVn( grO->vn_MergedEta_SubEvt, grB->vn_MergedEta_SubEvt, hSig, sys );
+
+}
+
 void vnFsigPbPbSP(string strSave = "PbPb_v0_SP_corrected.root", double sys = 0.0)
 {
     for ( int i = 0; i < 13; i++ ) {
@@ -31,53 +42,43 @@ void vnFsigPbPbSP(string strSave = "PbPb_v0_SP_corrected.root", double sys = 0.0
     }
 
 
-    TFile * fFsigKs = new TFile("FsigKSMid.root");
-    TFile * fFsigLm = new TFile("FsigLMMid.root");
-	TH1D * hSigKs[5] = {};
-	TH1D * hSigLm[5] = {};
+    TFile * fFsigKs = new TFile("FsigKSMid_cent7.root");
+    TFile * fFsigLm = new TFile("FsigLMMid_cent7.root");
+    TH1D * hSigKs[5] = {};
+    TH1D * hSigLm[5] = {};
 
     hSigKs[0] = (TH1D*) fFsigKs->Get("hFsigMid0");
-    hSigKs[1] = (TH1D*) fFsigKs->Get("hFsigMid0");
-    hSigKs[2] = (TH1D*) fFsigKs->Get("hFsigMid1");
-    hSigKs[3] = (TH1D*) fFsigKs->Get("hFsigMid2");
-    hSigKs[4] = (TH1D*) fFsigKs->Get("hFsigMid3");
+    hSigKs[1] = (TH1D*) fFsigKs->Get("hFsigMid1");
+    hSigKs[2] = (TH1D*) fFsigKs->Get("hFsigMid2");
+    hSigKs[3] = (TH1D*) fFsigKs->Get("hFsigMid3");
+    hSigKs[4] = (TH1D*) fFsigKs->Get("hFsigMid4");
 
     hSigLm[0] = (TH1D*) fFsigLm->Get("hFsigMid0");
-    hSigLm[1] = (TH1D*) fFsigLm->Get("hFsigMid0");
-    hSigLm[2] = (TH1D*) fFsigLm->Get("hFsigMid1");
-    hSigLm[3] = (TH1D*) fFsigLm->Get("hFsigMid2");
-    hSigLm[4] = (TH1D*) fFsigLm->Get("hFsigMid3");
+    hSigLm[1] = (TH1D*) fFsigLm->Get("hFsigMid1");
+    hSigLm[2] = (TH1D*) fFsigLm->Get("hFsigMid2");
+    hSigLm[3] = (TH1D*) fFsigLm->Get("hFsigMid3");
+    hSigLm[4] = (TH1D*) fFsigLm->Get("hFsigMid4");
 
     LoadSP();
 
     for ( int c = 0; c < 5; c++ ) {
-        Ks_v2_PbPb_Sig[c]->vn_NegEta           = getSigVn( Ks_v2_PbPb_Obs[c]->vn_NegEta,           Ks_v2_PbPb_Bkg[c]->vn_NegEta          , hSigKs[c], sys);
-        Ks_v2_PbPb_Sig[c]->vn_PosEta           = getSigVn( Ks_v2_PbPb_Obs[c]->vn_PosEta,           Ks_v2_PbPb_Bkg[c]->vn_PosEta          , hSigKs[c], sys);
-        Ks_v2_PbPb_Sig[c]->vn_NegEta_SubEvt    = getSigVn( Ks_v2_PbPb_Obs[c]->vn_NegEta_SubEvt,    Ks_v2_PbPb_Bkg[c]->vn_NegEta_SubEvt   , hSigKs[c], sys);
-        Ks_v2_PbPb_Sig[c]->vn_PosEta_SubEvt    = getSigVn( Ks_v2_PbPb_Obs[c]->vn_PosEta_SubEvt,    Ks_v2_PbPb_Bkg[c]->vn_PosEta_SubEvt   , hSigKs[c], sys);
-        Ks_v2_PbPb_Sig[c]->vn_MergedEta        = getSigVn( Ks_v2_PbPb_Obs[c]->vn_MergedEta,        Ks_v2_PbPb_Bkg[c]->vn_MergedEta       , hSigKs[c], sys);
-        Ks_v2_PbPb_Sig[c]->vn_MergedEta_SubEvt = getSigVn( Ks_v2_PbPb_Obs[c]->vn_MergedEta_SubEvt, Ks_v2_PbPb_Bkg[c]->vn_MergedEta_SubEvt, hSigKs[c], sys);
+        GraphSigVn( Ks_v2_PbPb_Sig[c], Ks_v2_PbPb_Obs[c], Ks_v2_PbPb_Bkg[c], hSigKs[c], sys );
+        GraphSigVn( Ks_v3_PbPb_Sig[c], Ks_v3_PbPb_Obs[c], Ks_v3_PbPb_Bkg[c], hSigKs[c], sys );
 
-        Ks_v3_PbPb_Sig[c]->vn_NegEta           = getSigVn( Ks_v3_PbPb_Obs[c]->vn_NegEta,           Ks_v3_PbPb_Bkg[c]->vn_NegEta          , hSigKs[c], sys);
-        Ks_v3_PbPb_Sig[c]->vn_PosEta           = getSigVn( Ks_v3_PbPb_Obs[c]->vn_PosEta,           Ks_v3_PbPb_Bkg[c]->vn_PosEta          , hSigKs[c], sys);
-        Ks_v3_PbPb_Sig[c]->vn_NegEta_SubEvt    = getSigVn( Ks_v3_PbPb_Obs[c]->vn_NegEta_SubEvt,    Ks_v3_PbPb_Bkg[c]->vn_NegEta_SubEvt   , hSigKs[c], sys);
-        Ks_v3_PbPb_Sig[c]->vn_PosEta_SubEvt    = getSigVn( Ks_v3_PbPb_Obs[c]->vn_PosEta_SubEvt,    Ks_v3_PbPb_Bkg[c]->vn_PosEta_SubEvt   , hSigKs[c], sys);
-        Ks_v3_PbPb_Sig[c]->vn_MergedEta        = getSigVn( Ks_v3_PbPb_Obs[c]->vn_MergedEta,        Ks_v3_PbPb_Bkg[c]->vn_MergedEta       , hSigKs[c], sys);
-        Ks_v3_PbPb_Sig[c]->vn_MergedEta_SubEvt = getSigVn( Ks_v3_PbPb_Obs[c]->vn_MergedEta_SubEvt, Ks_v3_PbPb_Bkg[c]->vn_MergedEta_SubEvt, hSigKs[c], sys);
+        GraphSigVn( Ks_z3_v2_PbPb_Sig[c], Ks_z3_v2_PbPb_Obs[c], Ks_z3_v2_PbPb_Bkg[c], hSigKs[c], sys );
+        GraphSigVn( Ks_z3_v3_PbPb_Sig[c], Ks_z3_v3_PbPb_Obs[c], Ks_z3_v3_PbPb_Bkg[c], hSigKs[c], sys );
 
-        Lm_v2_PbPb_Sig[c]->vn_NegEta           = getSigVn( Lm_v2_PbPb_Obs[c]->vn_NegEta,           Lm_v2_PbPb_Bkg[c]->vn_NegEta          , hSigLm[c], sys);
-        Lm_v2_PbPb_Sig[c]->vn_PosEta           = getSigVn( Lm_v2_PbPb_Obs[c]->vn_PosEta,           Lm_v2_PbPb_Bkg[c]->vn_PosEta          , hSigLm[c], sys);
-        Lm_v2_PbPb_Sig[c]->vn_NegEta_SubEvt    = getSigVn( Lm_v2_PbPb_Obs[c]->vn_NegEta_SubEvt,    Lm_v2_PbPb_Bkg[c]->vn_NegEta_SubEvt   , hSigLm[c], sys);
-        Lm_v2_PbPb_Sig[c]->vn_PosEta_SubEvt    = getSigVn( Lm_v2_PbPb_Obs[c]->vn_PosEta_SubEvt,    Lm_v2_PbPb_Bkg[c]->vn_PosEta_SubEvt   , hSigLm[c], sys);
-        Lm_v2_PbPb_Sig[c]->vn_MergedEta        = getSigVn( Lm_v2_PbPb_Obs[c]->vn_MergedEta,        Lm_v2_PbPb_Bkg[c]->vn_MergedEta       , hSigLm[c], sys);
-        Lm_v2_PbPb_Sig[c]->vn_MergedEta_SubEvt = getSigVn( Lm_v2_PbPb_Obs[c]->vn_MergedEta_SubEvt, Lm_v2_PbPb_Bkg[c]->vn_MergedEta_SubEvt, hSigLm[c], sys);
+        GraphSigVn( Ks_z15_v2_PbPb_Sig[c], Ks_z15_v2_PbPb_Obs[c], Ks_z15_v2_PbPb_Bkg[c], hSigKs[c], sys );
+        GraphSigVn( Ks_z15_v3_PbPb_Sig[c], Ks_z15_v3_PbPb_Obs[c], Ks_z15_v3_PbPb_Bkg[c], hSigKs[c], sys );
 
-        Lm_v3_PbPb_Sig[c]->vn_NegEta           = getSigVn( Lm_v3_PbPb_Obs[c]->vn_NegEta,           Lm_v3_PbPb_Bkg[c]->vn_NegEta          , hSigLm[c], sys);
-        Lm_v3_PbPb_Sig[c]->vn_PosEta           = getSigVn( Lm_v3_PbPb_Obs[c]->vn_PosEta,           Lm_v3_PbPb_Bkg[c]->vn_PosEta          , hSigLm[c], sys);
-        Lm_v3_PbPb_Sig[c]->vn_NegEta_SubEvt    = getSigVn( Lm_v3_PbPb_Obs[c]->vn_NegEta_SubEvt,    Lm_v3_PbPb_Bkg[c]->vn_NegEta_SubEvt   , hSigLm[c], sys);
-        Lm_v3_PbPb_Sig[c]->vn_PosEta_SubEvt    = getSigVn( Lm_v3_PbPb_Obs[c]->vn_PosEta_SubEvt,    Lm_v3_PbPb_Bkg[c]->vn_PosEta_SubEvt   , hSigLm[c], sys);
-        Lm_v3_PbPb_Sig[c]->vn_MergedEta        = getSigVn( Lm_v3_PbPb_Obs[c]->vn_MergedEta,        Lm_v3_PbPb_Bkg[c]->vn_MergedEta       , hSigLm[c], sys);
-        Lm_v3_PbPb_Sig[c]->vn_MergedEta_SubEvt = getSigVn( Lm_v3_PbPb_Obs[c]->vn_MergedEta_SubEvt, Lm_v3_PbPb_Bkg[c]->vn_MergedEta_SubEvt, hSigLm[c], sys);
+        GraphSigVn( Lm_v2_PbPb_Sig[c], Lm_v2_PbPb_Obs[c], Lm_v2_PbPb_Bkg[c], hSigLm[c], sys );
+        GraphSigVn( Lm_v3_PbPb_Sig[c], Lm_v3_PbPb_Obs[c], Lm_v3_PbPb_Bkg[c], hSigLm[c], sys );
+
+        GraphSigVn( Lm_z3_v2_PbPb_Sig[c], Lm_z3_v2_PbPb_Obs[c], Lm_z3_v2_PbPb_Bkg[c], hSigLm[c], sys );
+        GraphSigVn( Lm_z3_v3_PbPb_Sig[c], Lm_z3_v3_PbPb_Obs[c], Lm_z3_v3_PbPb_Bkg[c], hSigLm[c], sys );
+
+        GraphSigVn( Lm_z15_v2_PbPb_Sig[c], Lm_z15_v2_PbPb_Obs[c], Lm_z15_v2_PbPb_Bkg[c], hSigLm[c], sys );
+        GraphSigVn( Lm_z15_v3_PbPb_Sig[c], Lm_z15_v3_PbPb_Obs[c], Lm_z15_v3_PbPb_Bkg[c], hSigLm[c], sys );
     }
 
 	TFile * fsave = new TFile(strSave.c_str(), "recreate");
@@ -104,6 +105,20 @@ void vnFsigPbPbSP(string strSave = "PbPb_v0_SP_corrected.root", double sys = 0.0
         d = fsave->mkdir( (string("Ks_v3_PbPb_Sig") + dir).c_str() );
         Ks_v3_PbPb_Sig[c]->Write(d);
 
+        d = fsave->mkdir( (string("Ks_z3_v2_PbPb_Obs") + dir).c_str() );
+        Ks_z3_v2_PbPb_Obs[c]->Write(d);
+        d = fsave->mkdir( (string("Ks_z3_v2_PbPb_Bkg") + dir).c_str() );
+        Ks_z3_v2_PbPb_Bkg[c]->Write(d);
+        d = fsave->mkdir( (string("Ks_z3_v2_PbPb_Sig") + dir).c_str() );
+        Ks_z3_v2_PbPb_Sig[c]->Write(d);
+
+        d = fsave->mkdir( (string("Ks_z15_v2_PbPb_Obs") + dir).c_str() );
+        Ks_z15_v2_PbPb_Obs[c]->Write(d);
+        d = fsave->mkdir( (string("Ks_z15_v2_PbPb_Bkg") + dir).c_str() );
+        Ks_z15_v2_PbPb_Bkg[c]->Write(d);
+        d = fsave->mkdir( (string("Ks_z15_v2_PbPb_Sig") + dir).c_str() );
+        Ks_z15_v2_PbPb_Sig[c]->Write(d);
+
         d = fsave->mkdir( (string("Lm_v2_PbPb_Obs") + dir).c_str() );
         Lm_v2_PbPb_Obs[c]->Write(d);
         d = fsave->mkdir( (string("Lm_v2_PbPb_Bkg") + dir).c_str() );
@@ -117,6 +132,20 @@ void vnFsigPbPbSP(string strSave = "PbPb_v0_SP_corrected.root", double sys = 0.0
         Lm_v3_PbPb_Bkg[c]->Write(d);
         d = fsave->mkdir( (string("Lm_v3_PbPb_Sig") + dir).c_str() );
         Lm_v3_PbPb_Sig[c]->Write(d);
+
+        d = fsave->mkdir( (string("Lm_z3_v2_PbPb_Obs") + dir).c_str() );
+        Lm_z3_v2_PbPb_Obs[c]->Write(d);
+        d = fsave->mkdir( (string("Lm_z3_v2_PbPb_Bkg") + dir).c_str() );
+        Lm_z3_v2_PbPb_Bkg[c]->Write(d);
+        d = fsave->mkdir( (string("Lm_z3_v2_PbPb_Sig") + dir).c_str() );
+        Lm_z3_v2_PbPb_Sig[c]->Write(d);
+
+        d = fsave->mkdir( (string("Lm_z15_v2_PbPb_Obs") + dir).c_str() );
+        Lm_z15_v2_PbPb_Obs[c]->Write(d);
+        d = fsave->mkdir( (string("Lm_z15_v2_PbPb_Bkg") + dir).c_str() );
+        Lm_z15_v2_PbPb_Bkg[c]->Write(d);
+        d = fsave->mkdir( (string("Lm_z15_v2_PbPb_Sig") + dir).c_str() );
+        Lm_z15_v2_PbPb_Sig[c]->Write(d);
 
         c++;
     }
