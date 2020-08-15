@@ -45,54 +45,6 @@ root -l -b -q "combinedS.C(669)"
 
 
 
-## PbPb MB2 Lm
-#root -l -b -q "combinedS.C(3)"
-#ln -s combinedS_3.root PbPb2018_Lm_MB2.root
-## PbPb MB2 Lm SB
-#root -l -b -q "combinedS.C(750)"
-#ln -s combinedS_750.root PbPb2018_Lm_SB_MB2.root
-#
-## PbPb MB19 Lm
-#root -l -b -q "combinedS.C(20)"
-#ln -s combinedS_20.root PbPb2018_Lm_MB19.root
-## PbPb MB19 Lm SB
-#root -l -b -q "combinedS.C(751)"
-#ln -s combinedS_751.root PbPb2018_Lm_SB_MB19.root
-#
-#
-## PbPb MB2 Lm sysVz1
-#root -l -b -q "combinedS.C(392)"
-#ln -s combinedS_392.root PbPb2018_Lm_MB2_sysVz1.root
-## PbPb MB2 Lm SB sysVz1
-#root -l -b -q "combinedS.C(746)"
-#ln -s combinedS_746.root PbPb2018_Lm_SB_MB2_sysVz1.root
-#
-## PbPb MB2 Lm sysVz2
-#root -l -b -q "combinedS.C(412)"
-#ln -s combinedS_412.root PbPb2018_Lm_MB2_sysVz2.root
-## PbPb MB2 Lm SB sysVz2
-#root -l -b -q "combinedS.C(747)"
-#ln -s combinedS_747.root PbPb2018_Lm_SB_MB2_sysVz2.root
-#
-#
-## PbPb MB19 Lm sysVz1
-#root -l -b -q "combinedS.C(409)"
-#ln -s combinedS_409.root PbPb2018_Lm_MB19_sysVz1.root
-## PbPb MB19 Lm SB sysVz1
-#root -l -b -q "combinedS.C(748)"
-#ln -s combinedS_748.root PbPb2018_Lm_SB_MB19_sysVz1.root
-#
-#
-#
-## PbPb MB19 Lm sysVz2
-#root -l -b -q "combinedS.C(429)"
-#ln -s combinedS_429.root PbPb2018_Lm_MB19_sysVz2.root
-## PbPb MB19 Lm SB sysVz2
-#root -l -b -q "combinedS.C(749)"
-#ln -s combinedS_749.root PbPb2018_Lm_SB_MB19_sysVz2.root
-#
-
-
 
 
 ### PbPb Ks Peak 2

@@ -8,42 +8,109 @@ TColor *gray = new TColor(3005, 0, 0, 0, "black", 0.4);
 const double pPb_sysY = 0.025;
 const double pPb_sysX = 0.35;
 
-TGraphErrors* getFluct(TGraphErrors* gr1, TGraphErrors* gr2) {
-    TGraphErrors* ret = new TGraphErrors(gr1->GetN());
-    for ( int i = 0; i < gr1->GetN(); i++ ) {
-		double y1 = gr1->GetY()[i];
-		double ey1 = gr1->GetEY()[i];
-		double y2 = gr2->GetY()[i];
-		double ey2 = gr2->GetEY()[i];
-
-		ret->GetX()[i] = gr1->GetX()[i];
-		ret->GetY()[i] = sqrt( (y1*y1 - y2*y2)/(y1*y1 + y2*y2) );
-
-		double t = y1*y1 - y2*y2;
-		double g = y1*y1 + y2*y2;
-		double f1 = 2*y1;
-		double f2 = -2*y2;
-		double g1 = 2*y1;
-		double g2 = 2*y2;
-
-		double err1 = (f1/g - t*g1/g/g)*(f1/g - t*g1/g/g)*ey1*ey1;
-		double err2 = (f2/g - t*g2/g/g)*(f2/g - t*g2/g/g)*ey2*ey2;
-		double x = t/g;
-		double ex = sqrt(err1 + err2);
-
-		ret->GetEY()[i] = ex/sqrt(x)/2;
+TGraphErrors* getFluct(TGraphErrors* gr1, TGraphErrors* gr2 ) {
+    if ( gr1->GetN() != gr2->GetN() ) {
+        cout << " --> getFluct mismatch!!" << endl;
+        return nullptr;
     }
-	return ret;
+    TGraphErrors* ret = new TGraphErrors(gr2->GetN());
+    for ( int i = 0; i < gr1->GetN(); i++ ) {
+        double y1 = gr1->GetY()[i];
+        double ey1 = gr1->GetEY()[i];
+        double y2 = gr2->GetY()[i];
+        double ey2 = gr2->GetEY()[i];
+
+        ret->GetX()[i] = gr1->GetX()[i];
+        ret->GetY()[i] = sqrt( (y1*y1 - y2*y2)/(y1*y1 + y2*y2) );
+
+        double t = y1*y1 - y2*y2;
+        double g = y1*y1 + y2*y2;
+        double f1 = 2*y1;
+        double f2 = -2*y2;
+        double g1 = 2*y1;
+        double g2 = 2*y2;
+
+        double err1 = (f1/g - t*g1/g/g)*(f1/g - t*g1/g/g)*ey1*ey1;
+        double err2 = (f2/g - t*g2/g/g)*(f2/g - t*g2/g/g)*ey2*ey2;
+        double x = t/g;
+        double ex = sqrt(err1 + err2);
+
+        ret->GetEY()[i] = ex/sqrt(x)/2;
+    }
+    return ret;
+}
+TGraphErrors* getFluct(TGraphErrors* gr1, TGraphErrors* gr2, TGraphErrors*& grSys, double sys = pPb_sysY) {
+    if ( gr1->GetN() != gr2->GetN() ) {
+        cout << " --> getFluct mismatch!!" << endl;
+        return nullptr;
+    }
+    TGraphErrors* ret = new TGraphErrors(gr2->GetN());
+    grSys = new TGraphErrors(gr2->GetN());
+    for ( int i = 0; i < gr1->GetN(); i++ ) {
+        double y1 = gr1->GetY()[i];
+        double ey1 = gr1->GetEY()[i];
+        double y2 = gr2->GetY()[i];
+        double ey2 = gr2->GetEY()[i];
+
+        ret->GetX()[i] = gr1->GetX()[i];
+        ret->GetY()[i] = sqrt( (y1*y1 - y2*y2)/(y1*y1 + y2*y2) );
+
+
+        double t = y1*y1 - y2*y2;
+        double g = y1*y1 + y2*y2;
+        double f1 = 2*y1;
+        double f2 = -2*y2;
+        double g1 = 2*y1;
+        double g2 = 2*y2;
+
+        double err1 = (f1/g - t*g1/g/g)*(f1/g - t*g1/g/g)*ey1*ey1;
+        double err2 = (f2/g - t*g2/g/g)*(f2/g - t*g2/g/g)*ey2*ey2;
+        double x = t/g;
+        double ex = sqrt(err1 + err2);
+
+        ret->GetEY()[i] = ex/sqrt(x)/2;
+
+        grSys->GetX()[i] = ret->GetX()[i];
+        grSys->GetEX()[i] = pPb_sysX;
+        grSys->GetY()[i] = ret->GetY()[i];
+
+        double serr1 = (f1/g - t*g1/g/g)*sys*y1;
+        grSys->GetEY()[i] = serr1 / 2. / sqrt(x);
+    }
+    return ret;
 }
 
-TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2)
+TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, int option = 0)
+    /*
+     * 0 - errors are independent
+     * 1 - use only gr1 error
+     * 2 - use only gr2 error
+     * 3 - use only pPb_sysY error
+     */
 {
+    if ( gr1->GetN() != gr2->GetN() ) {
+        cout << " --> Warning mismatch getRatio" << endl;
+        return nullptr;
+    }
     TGraphErrors * ret = new TGraphErrors(gr2->GetN());
     for ( int i = 0; i < gr2->GetN(); i++ ) {
         ret->GetX()[i] = gr2->GetX()[i];
         ret->GetEX()[i] = gr2->GetEX()[i];
         ret->GetY()[i] = gr1->GetY()[i] / gr2->GetY()[i];
-        ret->GetEY()[i] = sqrt( gr1->GetEY()[i]*gr1->GetEY()[i]/gr1->GetY()[i]/gr1->GetY()[i] + gr2->GetEY()[i]*gr2->GetEY()[i]/gr2->GetY()[i]/gr2->GetY()[i]  );
+        double y1 = gr1->GetY()[i];
+        double y2 = gr2->GetY()[i];
+        double e1 = gr1->GetEY()[i];
+        double e2 = gr2->GetEY()[i];
+        if ( option == 1 ) {
+            e2 = 0;
+        } else if ( option == 2 ) {
+            e1 = 0;
+        }
+        ret->GetEY()[i] = sqrt( e1*e1/y1/y1 + e2*e2/y2/y2 );
+        if ( option == 3 ) {
+            ret->GetEY()[i] = pPb_sysY * ret->GetY()[i];
+            ret->GetEX()[i] = pPb_sysX;
+        }
     }
     return ret;
 }
@@ -107,6 +174,11 @@ TGraphErrors * getGr(TFile *f, string s, int kstyle, int kcolor, int ksz = 2)
 typedef struct CumuGraph
 {
     // Sig
+    TGraphErrors* gr6_v22Gap;
+    TGraphErrors* gr7_v22Gap;
+    TGraphErrors* gr8_v22Gap;
+    TGraphErrors* gr9_v22Gap;
+
     TGraphErrors* gr6_v24;
     TGraphErrors* gr7_v24;
     TGraphErrors* gr8_v24;
@@ -133,6 +205,11 @@ typedef struct CumuGraph
     TGraphErrors* gr9_v24subneg;
 
     // Obs
+    TGraphErrors* grObs6_v22Gap;
+    TGraphErrors* grObs7_v22Gap;
+    TGraphErrors* grObs8_v22Gap;
+    TGraphErrors* grObs9_v22Gap;
+
     TGraphErrors* grObs6_v24;
     TGraphErrors* grObs7_v24;
     TGraphErrors* grObs8_v24;
@@ -149,6 +226,11 @@ typedef struct CumuGraph
     TGraphErrors* grObs9_v24sub;
 
     // SB
+    TGraphErrors* grSB6_v22Gap;
+    TGraphErrors* grSB7_v22Gap;
+    TGraphErrors* grSB8_v22Gap;
+    TGraphErrors* grSB9_v22Gap;
+
     TGraphErrors* grSB6_v24;
     TGraphErrors* grSB7_v24;
     TGraphErrors* grSB8_v24;
@@ -165,12 +247,15 @@ typedef struct CumuGraph
     TGraphErrors* grSB9_v24sub;
 
     //
+    TGraphErrors* gr_v22Gap   [10] = {};
     TGraphErrors* gr_v24      [10] = {};
     TGraphErrors* gr_v26      [10] = {};
     TGraphErrors* gr_v24sub   [10] = {};
+    TGraphErrors* grObs_v22Gap[10] = {};
     TGraphErrors* grObs_v24   [10] = {};
     TGraphErrors* grObs_v26   [10] = {};
     TGraphErrors* grObs_v24sub[10] = {};
+    TGraphErrors* grSB_v22Gap [10] = {};
     TGraphErrors* grSB_v24    [10] = {};
     TGraphErrors* grSB_v26    [10] = {};
     TGraphErrors* grSB_v24sub [10] = {};
@@ -178,6 +263,7 @@ typedef struct CumuGraph
     TGraphErrors* gr_v24subpos[10] = {};
     TGraphErrors* gr_v24subneg[10] = {};
 
+    TGraphErrors* grSys_v22Gap[10] = {};
     TGraphErrors* grSys_v24   [10] = {};
     TGraphErrors* grSys_v26   [10] = {};
     TGraphErrors* grSys_v24sub[10] = {};
@@ -187,6 +273,11 @@ typedef struct CumuGraph
 
     CumuGraph(TFile *f) {
         // Sig
+        gr6_v22Gap = getGr( f, "grSig_pTGap2_6" , kOpenSquare, kBlue );
+        gr7_v22Gap = getGr( f, "grSig_pTGap2_7" , kOpenSquare, kBlue );
+        gr8_v22Gap = getGr( f, "grSig_pTGap2_8" , kOpenSquare, kBlue );
+        gr9_v22Gap = getGr( f, "grSig_pTGap2_9" , kOpenSquare, kBlue );
+
         gr6_v24    = getGr( f, "grSig_pT2_1_6" , kOpenSquare, kBlue );
         gr7_v24    = getGr( f, "grSig_pT2_1_7" , kOpenSquare, kBlue );
         gr8_v24    = getGr( f, "grSig_pT2_1_8" , kOpenSquare, kBlue );
@@ -213,6 +304,11 @@ typedef struct CumuGraph
         gr9_v24subpos = getGr( f, "grSig_V2sub4pos_9", kOpenCircle, kBlue );
 
         // Obs
+        grObs6_v22Gap = getGr( f, "grObs_pTGap2_6" , kOpenSquare, kBlue );
+        grObs7_v22Gap = getGr( f, "grObs_pTGap2_7" , kOpenSquare, kBlue );
+        grObs8_v22Gap = getGr( f, "grObs_pTGap2_8" , kOpenSquare, kBlue );
+        grObs9_v22Gap = getGr( f, "grObs_pTGap2_9" , kOpenSquare, kBlue );
+
         grObs6_v24    = getGr( f, "grObs_pT2_1_6" , kOpenSquare, kBlue );
         grObs7_v24    = getGr( f, "grObs_pT2_1_7" , kOpenSquare, kBlue );
         grObs8_v24    = getGr( f, "grObs_pT2_1_8" , kOpenSquare, kBlue );
@@ -229,6 +325,11 @@ typedef struct CumuGraph
         grObs9_v24sub = getGr( f, "grObs_V2sub4_9", kOpenCircle, kBlue );
 
         // SB
+        grSB6_v22Gap = getGr( f, "grBkg_pTGap2_6" , kOpenSquare, kBlue );
+        grSB7_v22Gap = getGr( f, "grBkg_pTGap2_7" , kOpenSquare, kBlue );
+        grSB8_v22Gap = getGr( f, "grBkg_pTGap2_8" , kOpenSquare, kBlue );
+        grSB9_v22Gap = getGr( f, "grBkg_pTGap2_9" , kOpenSquare, kBlue );
+
         grSB6_v24    = getGr( f, "grBkg_pT2_1_6" , kOpenSquare, kBlue );
         grSB7_v24    = getGr( f, "grBkg_pT2_1_7" , kOpenSquare, kBlue );
         grSB8_v24    = getGr( f, "grBkg_pT2_1_8" , kOpenSquare, kBlue );
@@ -245,6 +346,10 @@ typedef struct CumuGraph
         grSB9_v24sub = getGr( f, "grBkg_V2sub4_9", kOpenCircle, kBlue );
 
         //
+        gr_v22Gap     [6] = gr6_v22Gap;
+        gr_v22Gap     [7] = gr7_v22Gap;
+        gr_v22Gap     [8] = gr8_v22Gap;
+        gr_v22Gap     [9] = gr9_v22Gap;
         gr_v24        [6] = gr6_v24;
         gr_v24        [7] = gr7_v24;
         gr_v24        [8] = gr8_v24;
@@ -268,6 +373,10 @@ typedef struct CumuGraph
         gr_v24subneg [8] = gr8_v24subneg;
         gr_v24subneg [9] = gr9_v24subneg;
 
+        grObs_v22Gap  [6] = grObs6_v22Gap;
+        grObs_v22Gap  [7] = grObs7_v22Gap;
+        grObs_v22Gap  [8] = grObs8_v22Gap;
+        grObs_v22Gap  [9] = grObs9_v22Gap;
         grObs_v24     [6] = grObs6_v24;
         grObs_v24     [7] = grObs7_v24;
         grObs_v24     [8] = grObs8_v24;
@@ -281,6 +390,10 @@ typedef struct CumuGraph
         grObs_v24sub  [8] = grObs8_v24sub;
         grObs_v24sub  [9] = grObs9_v24sub;
 
+        grSB_v22Gap   [6] = grSB6_v22Gap;
+        grSB_v22Gap   [7] = grSB7_v22Gap;
+        grSB_v22Gap   [8] = grSB8_v22Gap;
+        grSB_v22Gap   [9] = grSB9_v22Gap;
         grSB_v24      [6] = grSB6_v24;
         grSB_v24      [7] = grSB7_v24;
         grSB_v24      [8] = grSB8_v24;
@@ -297,6 +410,7 @@ typedef struct CumuGraph
 
     void SetSys(double sysX = pPb_sysX, double sysY = pPb_sysY) {
         for ( int c = 6; c < 10; c++ ) {
+            grSys_v22Gap[c] = grSys( gr_v22Gap[c], sysX, sysY);
             grSys_v24   [c] = grSys( gr_v24   [c], sysX, sysY);
             grSys_v26   [c] = grSys( gr_v26   [c], sysX, sysY);
             grSys_v24sub[c] = grSys( gr_v24sub[c], sysX, sysY);
@@ -308,12 +422,14 @@ typedef struct CumuGraph
 
     void DropPoints(int N) {
         for ( int c = 6; c < 10; c++ ) {
+            grDropPoints( gr_v22Gap[c], N);
             grDropPoints( gr_v24[c],    N);
             grDropPoints( gr_v26[c],    N);
             grDropPoints( gr_v24sub[c], N);
             grDropPoints( gr_v24subpos[c], N);
             grDropPoints( gr_v24subneg[c], N);
 
+            grDropPoints( grSys_v22Gap[c], N);
             grDropPoints( grSys_v24[c],    N);
             grDropPoints( grSys_v26[c],    N);
             grDropPoints( grSys_v24sub[c], N);
@@ -324,6 +440,7 @@ typedef struct CumuGraph
 
     void ReplaceX(SteveGraph** sp) {
         for ( int c= 6; c < 10; c++ ) {
+            grReplaceX( gr_v22Gap[c], sp[c]->vn_Full_PosEtaEP );
             grReplaceX( gr_v24[c],    sp[c]->vn_Full_PosEtaEP );
             grReplaceX( gr_v26[c],    sp[c]->vn_Full_PosEtaEP );
             grReplaceX( gr_v24sub[c], sp[c]->vn_Full_PosEtaEP );
@@ -410,6 +527,26 @@ private:
 
 } SteveGraphSP;
 
+struct SaveToFile
+{
+    TFile * fsave;
+    SaveToFile(TFile *f) { fsave = f; };
+    void WriteGr( TGraphErrors * gr, string name ) {
+        fsave->cd();
+        gr->Write(name.c_str());
+    };
+    ~SaveToFile() {fsave->Close();};
+};
 
-
-
+void DropPoints( TGraphErrors* gr, int N )
+{
+    if ( N > 0 ) {
+        for ( int i = 0; i < N; i++ ) {
+            gr->RemovePoint(0);
+        }
+    } else {
+        for ( int i = 0; i < -N; i++ ) {
+            gr->RemovePoint(gr->GetN()-1);
+        }
+    }
+}

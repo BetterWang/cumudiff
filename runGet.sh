@@ -12,9 +12,9 @@
 # H 4+19
 ./runGet1.sh 149
 
-## Lm Peak sysVz1 2+19
+## Lm Peak sysVz1 2+19...
 ./runGet1.sh 710
-## Lm Peak sysVz2 2+19
+## Lm Peak sysVz2 2+19...
 ./runGet1.sh 711
 ## Lm SB sysVz1 2+19
 ./runGet1.sh 738
