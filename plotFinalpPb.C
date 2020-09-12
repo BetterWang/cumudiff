@@ -1,21 +1,20 @@
-
-
 #include "../../style.h"
 #include "theory.h"
 #include "pPb_header.h"
 
 void plotFinalpPb()
 {
-    SetStyle();
+//    SetStyle();
 
-    TFile * fPA_Ks = new TFile("../cumudiff/pPb_Ks2_merged_corrected.root");
-    TFile * fPA_Lm = new TFile("../cumudiff/pPb_Lm2_merged_corrected.root");
-    TFile * fPA_H  = new TFile("../cumudiff/pPb_H_merged_corrected.root");
-//    TFile * fPA_H  = new TFile("../cumudiff/pPb_H_veto10_merged2_corrected.root");
+    TFile * fPA_Ks = new TFile("../cumudiff/pPb_Ks2_merged2_corrected.root");
+    TFile * fPA_Lm = new TFile("../cumudiff/pPb_Lm2_merged2_corrected.root");
+    TFile * fPA_H  = new TFile("../cumudiff/pPb_H_merged2_corrected.root");
+    TFile * fPA_Hveto  = new TFile("../cumudiff/pPb_H_veto10_merged2_corrected.root");
 
     CumuGraph grKs(fPA_Ks);
     CumuGraph grLm(fPA_Lm);
     CumuGraph grH (fPA_H);
+    CumuGraph grHveto (fPA_Hveto);
 
     TFile * fPA_SP = new TFile("../cumudiff/V0SP.root");
 
@@ -23,17 +22,26 @@ void plotFinalpPb()
     grSP.SetSys();
 
     grH .ReplaceX(grSP.grSP_H);
+    grHveto.ReplaceX(grSP.grSP_H);
     grKs.ReplaceX(grSP.grSP_Ks_Sig);
     grLm.ReplaceX(grSP.grSP_Lm_Sig);
 
     grH .SetSys();
+    grHveto.SetSys();
     grKs.SetSys();
     grLm.SetSys();
 
+    // H  -- 1
+    // Ks -- 0
+    // Lm -- 3
     grSP.DropPoints();
 
     grH.DropPoints(1);
+    grHveto.DropPoints(1);
     grLm.DropPoints(3);
+
+    TFile * fsave = new TFile( "plotFinalpPb.root", "recreate" );
+    SaveToFile s2f( fsave );
 
     const char* strNoff[] = {
         "", // 0
@@ -61,11 +69,370 @@ void plotFinalpPb()
     TCanvas * cpPbV2_1 = MakeCanvas("cpPbV2_1", "cpPbV2_1", 1400, 400);
     splitCanv4(cpPbV2_1);
 
-    TH2D * hframe_pt = new TH2D("hframe_pt", "hframe_pt", 1, 0.01, 8.5, 1, 0, 0.32);
-    InitHist(hframe_pt, "p_{T}", "v_{2}");
+    TH2D * hframe_pt = new TH2D("hframe_pt", "hframe_pt", 1, 0.01, 8.5, 1, 0, 0.36);
+    InitHist(hframe_pt, "p_{T} (GeV)", "v_{2}");
     hframe_pt->GetYaxis()->SetTitleOffset(1.0);
     hframe_pt->GetXaxis()->SetTitleOffset(0.90);
 
+    TGraphErrors * gChF[10] = {};
+    TGraphErrors * gKsF[10] = {};
+    TGraphErrors * gLmF[10] = {};
+
+    TGraphErrors * gChF_sys[10] = {};
+    TGraphErrors * gKsF_sys[10] = {};
+    TGraphErrors * gLmF_sys[10] = {};
+
+    TGraphErrors * gCh42[10] = {};
+    TGraphErrors * gKs42[10] = {};
+    TGraphErrors * gLm42[10] = {};
+
+    TGraphErrors * gCh42_sys[10] = {};
+    TGraphErrors * gKs42_sys[10] = {};
+    TGraphErrors * gLm42_sys[10] = {};
+
+    TGraphErrors * gCh6[10] = {};
+    TGraphErrors * gKs6[10] = {};
+    TGraphErrors * gLm6[10] = {};
+
+    TGraphErrors* grChRatioCu1[10] = {};
+    TGraphErrors* grKsRatioCu1[10] = {};
+    TGraphErrors* grLmRatioCu1[10] = {};
+
+    TGraphErrors* grChRatioVeto2[10] = {};
+    TGraphErrors* grChRatioVeto4[10] = {};
+    TGraphErrors* grChRatioVeto6[10] = {};
+
+    TGraphErrors * grChRatioPos[10] = {};
+    TGraphErrors * grChRatioNeg[10] = {};
+
+    TGraphErrors * grChVetoRatioPos[10] = {};
+    TGraphErrors * grChVetoRatioNeg[10] = {};
+
+    for ( int c = 6; c < 10; c++ ) {
+        gChF[c] = getFluct( grSP.grSP_H[c]->vn_Full_NegEtaEP     , grH .gr_v24[c], gChF_sys[c] );
+        gKsF[c] = getFluct( grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP, grKs.gr_v24[c], gKsF_sys[c] );
+        gLmF[c] = getFluct( grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP, grLm.gr_v24[c], gLmF_sys[c] );
+
+        gCh42[c] = getRatio(grH .gr_v24[c], grSP.grSP_H[c]->vn_Full_NegEtaEP      );
+        gKs42[c] = getRatio(grKs.gr_v24[c], grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP );
+        gLm42[c] = getRatio(grLm.gr_v24[c], grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP );
+
+        gCh42_sys[c] = getRatio(grH .gr_v24[c], grSP.grSP_H[c]->vn_Full_NegEtaEP,      10 );
+        gKs42_sys[c] = getRatio(grKs.gr_v24[c], grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP, 11 );
+        gLm42_sys[c] = getRatio(grLm.gr_v24[c], grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP, 12 );
+
+        s2f.WriteGr( gCh42[c], Form("grCh42_%i", c) );
+        s2f.WriteGr( gKs42[c], Form("grKs42_%i", c) );
+        s2f.WriteGr( gLm42[c], Form("grLm42_%i", c) );
+        s2f.WriteGr( gCh42_sys[c], Form("grCh42sys_%i", c) );
+        s2f.WriteGr( gKs42_sys[c], Form("grKs42sys_%i", c) );
+        s2f.WriteGr( gLm42_sys[c], Form("grLm42sys_%i", c) );
+
+        gCh6[c] = getFluct( grSP.grSP_H[c]->vn_Full_NegEtaEP     , grH .gr_v26[c] );
+        gKs6[c] = getFluct( grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP, grKs.gr_v26[c] );
+        gLm6[c] = getFluct( grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP, grLm.gr_v26[c] );
+
+        grChRatioCu1[c] = getRatio( grH.gr_v24sub[c],    grH.gr_v24[c] );
+        grKsRatioCu1[c] = getRatio( grKs.gr_v24sub[c],   grKs.gr_v24[c] );
+        grLmRatioCu1[c] = getRatio( grLm.gr_v24sub[c],   grLm.gr_v24[c] );
+
+        grChRatioVeto2[c] = getRatio( grHveto.gr_v22Gap[c], grH.gr_v22Gap[c] );
+        grChRatioVeto4[c] = getRatio( grHveto.gr_v24[c], grH.gr_v24[c] );
+        grChRatioVeto6[c] = getRatio( grHveto.gr_v26[c], grH.gr_v26[c] );
+
+        grChRatioPos[c] = getRatio(grH.gr_v24subpos[c], grH.gr_v24sub[c]);
+        grChRatioNeg[c] = getRatio(grH.gr_v24subneg[c], grH.gr_v24sub[c]);
+
+        grChVetoRatioPos[c] = getRatio(grHveto.gr_v24subpos[c], grHveto.gr_v24sub[c]);
+        grChVetoRatioNeg[c] = getRatio(grHveto.gr_v24subneg[c], grHveto.gr_v24sub[c]);
+
+        if ( c == 6 ) {
+            // H
+            DropPoints( grH.grSys_v24[c], -2 );
+            DropPoints( grH.gr_v24[c],    -2 );
+            DropPoints( grH.gr_v24sub[c], -2 );
+
+            DropPoints( grH.gr_v24subpos[c], -2 );
+            DropPoints( grH.gr_v24subneg[c], -2 );
+            DropPoints( grHveto.gr_v24[c],   -2 );
+
+            DropPoints( grHveto.gr_v24sub[c],    -2 );
+            DropPoints( grHveto.gr_v24subpos[c], -2 );
+            DropPoints( grHveto.gr_v24subneg[c], -2 );
+
+            DropPoints( grChRatioVeto4[c], -2 );
+            DropPoints( grChRatioCu1[c], -2 );
+
+            DropPoints( gChF_sys[c], -2 );
+            DropPoints( gChF[c],     -2 );
+
+            // Ks
+            DropPoints( grKs.grSys_v24[c], 1 );
+            DropPoints( grKs.gr_v24[c],    1 );
+            DropPoints( grKs.gr_v24sub[c], 1 );
+
+            DropPoints( grKs.grSys_v24[c], -2 );
+            DropPoints( grKs.gr_v24[c],    -2 );
+            DropPoints( grKs.gr_v24sub[c], -2 );
+
+            DropPoints( grKs.grSys_v26[c], 1 );
+            DropPoints( grKs.gr_v26[c],    1 );
+
+            DropPoints( grKs.grSys_v26[c], -3 );
+            DropPoints( grKs.gr_v26[c],    -3 );
+
+            DropPoints( gKsF_sys[c], 1 );
+            DropPoints( gKsF[c],     1 );
+            DropPoints( gKsF_sys[c], -2 );
+            DropPoints( gKsF[c],     -2 );
+
+            // Lm
+            DropPoints( grLm.grSys_v24[c], -1 );
+            DropPoints( grLm.gr_v24[c],    -1 );
+
+            DropPoints( gLmF_sys[c], -1 );
+            DropPoints( gLmF[c],     -1 );
+
+        } else if ( c == 7 ) {
+            // H
+            DropPoints( grH.grSys_v24[c], -1 );
+            DropPoints( grH.gr_v24[c],    -1 );
+            DropPoints( grH.gr_v24sub[c], -2 );
+
+            DropPoints( grH.gr_v24subpos[c], -1 );
+            DropPoints( grH.gr_v24subneg[c], -1 );
+            DropPoints( grHveto.gr_v24[c],   -1 );
+
+            DropPoints( grHveto.gr_v24sub[c],    -1 );
+            DropPoints( grHveto.gr_v24subpos[c], -1 );
+            DropPoints( grHveto.gr_v24subneg[c], -1 );
+
+            DropPoints( grChRatioVeto4[c], -1 );
+            DropPoints( grChRatioCu1[c],   -2 );
+
+            DropPoints( gChF_sys[c], -1 );
+            DropPoints( gChF[c],     -1 );
+
+            // Ks
+            DropPoints( grKs.grSys_v24[c], 1 );
+            DropPoints( grKs.gr_v24[c],    1 );
+            DropPoints( grKs.grSys_v24[c], -1 );
+            DropPoints( grKs.gr_v24[c],    -1 );
+
+            DropPoints( grKs.gr_v24sub[c], 1 );
+            DropPoints( grKs.gr_v24sub[c], -2 );
+            DropPoints( grKsRatioCu1[c],   1 );
+            DropPoints( grKsRatioCu1[c],   -2 );
+
+            DropPoints( gKsF_sys[c], 1 );
+            DropPoints( gKsF[c],     1 );
+            DropPoints( gKsF_sys[c], -1 );
+            DropPoints( gKsF[c],     -1 );
+
+            // Lm
+            DropPoints( grLm.grSys_v24[c], -1 );
+            DropPoints( grLm.gr_v24[c],    -1 );
+
+            DropPoints( gLmF_sys[c], -1 );
+            DropPoints( gLmF[c],     -1 );
+
+        } else if ( c == 8 ) {
+            // H
+            DropPoints( grH.gr_v24sub[c], -1 );
+            DropPoints( grChRatioCu1[c],   -1 );
+
+            // Ks
+            DropPoints( grKs.grSys_v24[c], 1 );
+            DropPoints( grKs.gr_v24[c],    1 );
+
+            DropPoints( grKs.gr_v24sub[c], 1 );
+            DropPoints( grKs.gr_v24sub[c], -1 );
+            DropPoints( grKsRatioCu1[c],   1 );
+            DropPoints( grKsRatioCu1[c],   -1 );
+
+            DropPoints( grKs.grSys_v26[c], 1 );
+            DropPoints( grKs.gr_v26[c],    1 );
+
+            DropPoints( gKsF_sys[c], 1 );
+            DropPoints( gKsF[c],     1 );
+            DropPoints( gKs42_sys[c], 1 );
+            DropPoints( gKs42[c],     1 );
+
+            // Lm
+            DropPoints( grLm.grSys_v26[c], 1 );
+            DropPoints( grLm.gr_v26[c],    1 );
+        } else if ( c == 9 ) {
+            // H
+            // Ks
+            DropPoints( grKs.grSys_v24[c], 1 );
+            DropPoints( grKs.gr_v24[c],    1 );
+            DropPoints( grKs.gr_v24sub[c], 1 );
+
+            DropPoints( grKsRatioCu1[c],   1 );
+
+            DropPoints( gKsF_sys[c], 1 );
+            DropPoints( gKsF[c],     1 );
+
+            // Lm
+            DropPoints( grLm.grSys_v24[c], 1 );
+            DropPoints( grLm.gr_v24[c],    1 );
+            DropPoints( grLm.grSys_v24[c], -1 );
+            DropPoints( grLm.gr_v24[c],    -1 );
+
+            DropPoints( gLmF_sys[c], 1 );
+            DropPoints( gLmF[c],     1 );
+            DropPoints( gLmF_sys[c], -1 );
+            DropPoints( gLmF[c],     -1 );
+        }
+        /*
+        // H
+        if ( c == 6 ) {
+            DropPoints( grH.grSys_v24[c], -2 );
+            DropPoints( grH.gr_v24[c],    -2 );
+            DropPoints( grH.gr_v24sub[c], -2 );
+
+            DropPoints( grH.gr_v24subpos[c], -2 );
+            DropPoints( grH.gr_v24subneg[c], -2 );
+            DropPoints( grHveto.gr_v24[c],-2 );
+
+            DropPoints( grHveto.gr_v24sub[c],-2 );
+            DropPoints( grHveto.gr_v24subpos[c],-2 );
+            DropPoints( grHveto.gr_v24subneg[c],-2 );
+        } else if ( c == 7 ) {
+            DropPoints( grH.grSys_v24[c], -1 );
+            DropPoints( grH.gr_v24[c],    -1 );
+            DropPoints( grH.gr_v24sub[c], -1 );
+            DropPoints( grH.gr_v24subpos[c], -1 );
+            DropPoints( grH.gr_v24subneg[c], -1 );
+
+            DropPoints( grHveto.gr_v24[c],-1 );
+            DropPoints( grHveto.gr_v24sub[c], -1 );
+            DropPoints( grHveto.gr_v24subpos[c], -1 );
+            DropPoints( grHveto.gr_v24subneg[c], -1 );
+        } else if ( c == 8 ) {
+        } else if ( c == 9 ) {
+        }
+
+        // Ks
+        if ( c == 6 ) {
+            DropPoints( grKs.grSys_v24[c], 1 );
+            DropPoints( grKs.gr_v24[c],    1 );
+            DropPoints( grKs.gr_v24sub[c], 1 );
+
+            DropPoints( grKs.grSys_v24[c], -2 );
+            DropPoints( grKs.gr_v24[c],    -2 );
+            DropPoints( grKs.gr_v24sub[c], -2 );
+
+            DropPoints( grKs.grSys_v26[c], 1 );
+            DropPoints( grKs.gr_v26[c],    1 );
+
+            DropPoints( grKs.grSys_v26[c], -3 );
+            DropPoints( grKs.gr_v26[c],    -3 );
+        } else if ( c == 7 ) {
+            DropPoints( grKs.grSys_v24[c], 1 );
+            DropPoints( grKs.gr_v24[c],    1 );
+            DropPoints( grKs.gr_v24sub[c], 1 );
+            DropPoints( grKs.grSys_v24[c], -2 );
+            DropPoints( grKs.gr_v24[c],    -2 );
+            DropPoints( grKs.gr_v24sub[c], -2 );
+
+        } else if ( c == 8 ) {
+            DropPoints( grKs.grSys_v24[c], 1 );
+            DropPoints( grKs.gr_v24[c],    1 );
+            DropPoints( grKs.gr_v24sub[c], 1 );
+            DropPoints( grKs.gr_v24sub[c], -1 );
+
+            DropPoints( grKs.grSys_v26[c], 1 );
+            DropPoints( grKs.gr_v26[c],    1 );
+        } else if ( c == 9 ) {
+            DropPoints( grKs.grSys_v24[c], 1 );
+            DropPoints( grKs.gr_v24[c],    1 );
+            DropPoints( grKs.gr_v24sub[c], 1 );
+        }
+
+        // Lm
+        if ( c == 6 ) {
+            DropPoints( grLm.grSys_v24[c], -1 );
+            DropPoints( grLm.gr_v24[c],    -1 );
+            DropPoints( grLm.gr_v24sub[c], -1 );
+        } else if ( c == 7 ) {
+            DropPoints( grLm.grSys_v24[c], -1 );
+            DropPoints( grLm.gr_v24[c],    -1 );
+            DropPoints( grLm.gr_v24sub[c], -1 );
+        } else if ( c == 8 ) {
+            DropPoints( grLm.grSys_v26[c], 1 );
+            DropPoints( grLm.gr_v26[c],    1 );
+            DropPoints( grLm.grSys_v26[c], -1 );
+            DropPoints( grLm.gr_v26[c],    -1 );
+        } else if ( c == 9 ) {
+            DropPoints( grLm.grSys_v24[c], 1 );
+            DropPoints( grLm.gr_v24[c],    1 );
+            DropPoints( grLm.gr_v24sub[c], 1 );
+
+            DropPoints( grLm.grSys_v24[c], -1 );
+            DropPoints( grLm.gr_v24[c],    -1 );
+            DropPoints( grLm.gr_v24sub[c], -1 );
+        }
+
+        // Fluct
+        if ( c == 6 ) {
+            DropPoints( gChF[c], -2 );
+            DropPoints( gKsF[c], 2 );
+            DropPoints( gKsF[c], -2 );
+            DropPoints( gLmF[c], 1 );
+            DropPoints( gLmF[c], -1 );
+
+            DropPoints( gChF_sys[c], -2 );
+            DropPoints( gKsF_sys[c], 2 );
+            DropPoints( gKsF_sys[c], -2 );
+            DropPoints( gLmF_sys[c], 1 );
+            DropPoints( gLmF_sys[c], -1 );
+        } else if ( c == 7 ) {
+            DropPoints( gChF[c], -1 );
+            DropPoints( gKsF[c], 2 );
+            DropPoints( gKsF[c], -2 );
+            DropPoints( gLmF[c], 2 );
+            DropPoints( gLmF[c], -1 );
+
+            DropPoints( gChF_sys[c], -1 );
+            DropPoints( gKsF_sys[c], 2 );
+            DropPoints( gKsF_sys[c], -2 );
+            DropPoints( gLmF_sys[c], 2 );
+            DropPoints( gLmF_sys[c], -1 );
+        } else if ( c == 8 ) {
+        } else if ( c == 9 ) {
+            DropPoints( gKsF[c], 2 );
+            DropPoints( gLmF[c], 1 );
+            DropPoints( gLmF[c], -1 );
+
+            DropPoints( gKsF_sys[c], 2 );
+            DropPoints( gLmF_sys[c], 1 );
+            DropPoints( gLmF_sys[c], -1 );
+        }
+
+        if ( c == 6 ) {
+            DropPoints( grChRatioCu1[c], -2 );
+
+        } else if ( c == 7 ) {
+            DropPoints( grChRatioCu1[c], -1 );
+
+        } else if ( c == 8 ) {
+            DropPoints( grKsRatioCu1[c], -1 );
+            DropPoints( grKsRatioCu1[c], 1 );
+        } else if ( c == 9 ) {
+        }
+
+        if ( c == 6 ) {
+        } if ( c == 7 ) {
+        } if ( c == 8 ) {
+            DropPoints( grLmRatioCu1[c], 1 );
+            DropPoints( grLmRatioCu1[c], -1 );
+        } if ( c == 9 ) {
+        }
+
+        */
+
+    }
     // ch v2
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
@@ -77,23 +444,35 @@ void plotFinalpPb()
         grSP.grSP_H[c]->vn_sys_Full_PosEtaEP->SetFillColor(3003);
         grSP.grSP_H[c]->vn_sys_Full_NegEtaEP->SetFillColor(3001);
 
-        grSP.grSP_H[c]->vn_sys_Full_PosEtaEP->Draw("[]2");
-        grSP.grSP_H[c]->vn_sys_Full_NegEtaEP->Draw("[]2");
-
-        grSP.grSP_H[c]->vn_Full_PosEtaEP->Draw("psame");
-        grSP.grSP_H[c]->vn_Full_NegEtaEP->Draw("psame");
-
         setGr(grH.gr_v24[c], kOpenStar,  kBlue, 2.);
         setGr(grH.gr_v26[c], kFullCross, kRed,  2.);
 
         grH.grSys_v24[c]->SetFillColor(3003);
         grH.grSys_v26[c]->SetFillColor(3001);
 
+        grSP.grSP_H[c]->vn_sys_Full_PosEtaEP->Draw("[]2");
+        grSP.grSP_H[c]->vn_sys_Full_NegEtaEP->Draw("[]2");
+
+        grSP.grSP_H[c]->vn_Full_PosEtaEP->Draw("psame");
+        grSP.grSP_H[c]->vn_Full_NegEtaEP->Draw("psame");
+
         grH.grSys_v24[c]->Draw("[]2");
         grH.grSys_v26[c]->Draw("[]2");
 
         grH.gr_v24[c]->Draw("psame");
         grH.gr_v26[c]->Draw("psame");
+
+        s2f.WriteGr( grSP.grSP_H[c]->vn_sys_Full_PosEtaEP, Form( "grChSys_v2sp_Full_PosEtaEP_%i", c ) );
+        s2f.WriteGr( grSP.grSP_H[c]->vn_sys_Full_NegEtaEP, Form( "grChSys_v2sp_Full_NegEtaEP_%i", c ) );
+        s2f.WriteGr( grSP.grSP_H[c]->vn_Full_PosEtaEP,     Form( "grCh_v2sp_Full_PosEtaEP_%i", c ) );
+        s2f.WriteGr( grSP.grSP_H[c]->vn_Full_NegEtaEP,     Form( "grCh_v2sp_Full_NegEtaEP_%i", c ) );
+
+        s2f.WriteGr( grH.grSys_v22Gap[c], Form( "grChSys_v22Gap_%i", c ) );
+        s2f.WriteGr( grH.grSys_v24[c], Form( "grChSys_v24_%i", c ) );
+        s2f.WriteGr( grH.grSys_v26[c], Form( "grChSys_v26_%i", c ) );
+        s2f.WriteGr( grH.gr_v22Gap[c],    Form( "grCh_v22Gap_%i", c ) );
+        s2f.WriteGr( grH.gr_v24[c],    Form( "grCh_v24_%i", c ) );
+        s2f.WriteGr( grH.gr_v26[c],    Form( "grCh_v26_%i", c ) );
     }
     cpPbV2->cd(1);
     latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
@@ -128,7 +507,7 @@ void plotFinalpPb()
     latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
 
-    cpPbV2->SaveAs("pPbV2_ch.pdf");
+    cpPbV2->SaveAs("pPbV2_Ch.pdf");
 
     // Ks v2
     for ( int c = 6; c < 10; c++ ) {
@@ -141,23 +520,35 @@ void plotFinalpPb()
         grSP.grSP_Ks_Sig[c]->vn_sys_Full_PosEtaEP->SetFillColor(3003);
         grSP.grSP_Ks_Sig[c]->vn_sys_Full_NegEtaEP->SetFillColor(3001);
 
-        grSP.grSP_Ks_Sig[c]->vn_sys_Full_PosEtaEP->Draw("[]2");
-        grSP.grSP_Ks_Sig[c]->vn_sys_Full_NegEtaEP->Draw("[]2");
-
-        grSP.grSP_Ks_Sig[c]->vn_Full_PosEtaEP->Draw("psame");
-        grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP->Draw("psame");
-
         setGr(grKs.gr_v24[c], kOpenStar,  kBlue, 2.);
         setGr(grKs.gr_v26[c], kFullCross, kRed,  2.);
 
         grKs.grSys_v24[c]->SetFillColor(3003);
         grKs.grSys_v26[c]->SetFillColor(3001);
 
-        grKs.grSys_v24[c]->Draw("[]2");
-        grKs.grSys_v26[c]->Draw("[]2");
+        grSP.grSP_Ks_Sig[c]->vn_sys_Full_PosEtaEP->Draw("[]2");
+        grSP.grSP_Ks_Sig[c]->vn_sys_Full_NegEtaEP->Draw("[]2");
 
+        grSP.grSP_Ks_Sig[c]->vn_Full_PosEtaEP->Draw("psame");
+        grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP->Draw("psame");
+
+        grKs.grSys_v24[c]->Draw("[]2");
         grKs.gr_v24[c]->Draw("psame");
-        grKs.gr_v26[c]->Draw("psame");
+
+        if ( c == 8 ) {
+            grKs.grSys_v26[c]->Draw("[]2");
+            grKs.gr_v26[c]->Draw("psame");
+        }
+
+        s2f.WriteGr( grSP.grSP_Ks_Sig[c]->vn_sys_Full_PosEtaEP, Form( "grKsSys_v2sp_Full_PosEtaEP_%i", c ) );
+        s2f.WriteGr( grSP.grSP_Ks_Sig[c]->vn_sys_Full_NegEtaEP, Form( "grKsSys_v2sp_Full_NegEtaEP_%i", c ) );
+        s2f.WriteGr( grSP.grSP_Ks_Sig[c]->vn_Full_PosEtaEP,     Form( "grKs_v2sp_Full_PosEtaEP_%i", c ) );
+        s2f.WriteGr( grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP,     Form( "grKs_v2sp_Full_NegEtaEP_%i", c ) );
+
+        s2f.WriteGr( grKs.grSys_v24[c], Form( "grKsSys_v24_%i", c ) );
+        s2f.WriteGr( grKs.grSys_v26[c], Form( "grKsSys_v26_%i", c ) );
+        s2f.WriteGr( grKs.gr_v24[c],    Form( "grKs_v24_%i", c ) );
+        s2f.WriteGr( grKs.gr_v26[c],    Form( "grKs_v26_%i", c ) );
     }
     cpPbV2->cd(1);
     latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
@@ -205,23 +596,35 @@ void plotFinalpPb()
         grSP.grSP_Lm_Sig[c]->vn_sys_Full_PosEtaEP->SetFillColor(3003);
         grSP.grSP_Lm_Sig[c]->vn_sys_Full_NegEtaEP->SetFillColor(3001);
 
-        grSP.grSP_Lm_Sig[c]->vn_sys_Full_PosEtaEP->Draw("[]2");
-        grSP.grSP_Lm_Sig[c]->vn_sys_Full_NegEtaEP->Draw("[]2");
-
-        grSP.grSP_Lm_Sig[c]->vn_Full_PosEtaEP->Draw("psame");
-        grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP->Draw("psame");
-
         setGr(grLm.gr_v24[c], kOpenStar,  kBlue, 2.);
         setGr(grLm.gr_v26[c], kFullCross, kRed,  2.);
 
         grLm.grSys_v24[c]->SetFillColor(3003);
         grLm.grSys_v26[c]->SetFillColor(3001);
 
-        grLm.grSys_v24[c]->Draw("[]2");
-        grLm.grSys_v26[c]->Draw("[]2");
+        grSP.grSP_Lm_Sig[c]->vn_sys_Full_PosEtaEP->Draw("[]2");
+        grSP.grSP_Lm_Sig[c]->vn_sys_Full_NegEtaEP->Draw("[]2");
 
+        grSP.grSP_Lm_Sig[c]->vn_Full_PosEtaEP->Draw("psame");
+        grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP->Draw("psame");
+
+        grLm.grSys_v24[c]->Draw("[]2");
         grLm.gr_v24[c]->Draw("psame");
-        grLm.gr_v26[c]->Draw("psame");
+
+        if ( c == 8 ) {
+            grLm.grSys_v26[c]->Draw("[]2");
+            grLm.gr_v26[c]->Draw("psame");
+        }
+
+        s2f.WriteGr( grSP.grSP_Lm_Sig[c]->vn_sys_Full_PosEtaEP, Form( "grLmSys_v2sp_Full_PosEtaEP_%i", c ) );
+        s2f.WriteGr( grSP.grSP_Lm_Sig[c]->vn_sys_Full_NegEtaEP, Form( "grLmSys_v2sp_Full_NegEtaEP_%i", c ) );
+        s2f.WriteGr( grSP.grSP_Lm_Sig[c]->vn_Full_PosEtaEP,     Form( "grLm_v2sp_Full_PosEtaEP_%i", c ) );
+        s2f.WriteGr( grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP,     Form( "grLm_v2sp_Full_NegEtaEP_%i", c ) );
+
+        s2f.WriteGr( grLm.grSys_v24[c], Form( "grLmSys_v24_%i", c ) );
+        s2f.WriteGr( grLm.grSys_v26[c], Form( "grLmSys_v26_%i", c ) );
+        s2f.WriteGr( grLm.gr_v24[c],    Form( "grLm_v24_%i", c ) );
+        s2f.WriteGr( grLm.gr_v26[c],    Form( "grLm_v26_%i", c ) );
     }
 
     cpPbV2->cd(1);
@@ -261,35 +664,21 @@ void plotFinalpPb()
 
     // fluctuation
     TH2D * hframe_fluct = new TH2D("hframe_fluct", "hframe_fluct", 1, 0.01, 8.5, 1, 0.05, 1.5);
-    InitHist(hframe_fluct, "p_{T}", "Fluctuation");
+    InitHist(hframe_fluct, "p_{T} (GeV)", "Fluctuation");
     hframe_fluct->GetYaxis()->SetTitleOffset(1.0);
     hframe_fluct->GetXaxis()->SetTitleOffset(0.90);
-
-    TGraphErrors * gChF[10] = {};
-    TGraphErrors * gKsF[10] = {};
-    TGraphErrors * gLmF[10] = {};
-
-    TGraphErrors * gCh6[10] = {};
-    TGraphErrors * gKs6[10] = {};
-    TGraphErrors * gLm6[10] = {};
 
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
         hframe_fluct->Draw();
         line1.Draw();
 
-        gChF[c] = getFluct( grSP.grSP_H[c]->vn_Full_PosEtaEP     , grH .gr_v24[c] );
-        gKsF[c] = getFluct( grSP.grSP_Ks_Sig[c]->vn_Full_PosEtaEP, grKs.gr_v24[c] );
-        gLmF[c] = getFluct( grSP.grSP_Lm_Sig[c]->vn_Full_PosEtaEP, grLm.gr_v24[c] );
-
-        gCh6[c] = getFluct( grSP.grSP_H[c]->vn_Full_PosEtaEP     , grH .gr_v26[c] );
-        gKs6[c] = getFluct( grSP.grSP_Ks_Sig[c]->vn_Full_PosEtaEP, grKs.gr_v26[c] );
-        gLm6[c] = getFluct( grSP.grSP_Lm_Sig[c]->vn_Full_PosEtaEP, grLm.gr_v26[c] );
-
         gChF[c]->SetMarkerStyle(kOpenCircle);
         gChF[c]->SetMarkerColor(kBlack);
         gChF[c]->SetLineColor  (kBlack);
         gChF[c]->SetMarkerSize(2.);
+
+        gChF_sys[c]->SetFillColor(3005);
 
         gCh6[c]->SetMarkerStyle(kFullCircle);
         gCh6[c]->SetMarkerColor(kBlack);
@@ -301,6 +690,8 @@ void plotFinalpPb()
         gKsF[c]->SetLineColor  (kBlue);
         gKsF[c]->SetMarkerSize(2.);
 
+        gKsF_sys[c]->SetFillColor(3003);
+
         gKs6[c]->SetMarkerStyle(kFullSquare);
         gKs6[c]->SetMarkerColor(kBlue);
         gKs6[c]->SetLineColor  (kBlue);
@@ -311,10 +702,16 @@ void plotFinalpPb()
         gLmF[c]->SetLineColor  (kRed);
         gLmF[c]->SetMarkerSize(2.);
 
+        gLmF_sys[c]->SetFillColor(3001);
+
         gLm6[c]->SetMarkerStyle(kFullCircle);
         gLm6[c]->SetMarkerColor(kRed);
         gLm6[c]->SetLineColor  (kRed);
         gLm6[c]->SetMarkerSize(2.);
+
+        gChF_sys[c]->Draw("[]2");
+        gKsF_sys[c]->Draw("[]2");
+        gLmF_sys[c]->Draw("[]2");
 
         gChF[c]->Draw("psame");
         gKsF[c]->Draw("psame");
@@ -325,6 +722,18 @@ void plotFinalpPb()
         line1.Draw();
         gChF[c]->Draw("psame");
         gCh6[c]->Draw("psame");
+
+        s2f.WriteGr( gChF_sys[c], Form( "grCh_Fluct_sys_%i", c ) );
+        s2f.WriteGr( gKsF_sys[c], Form( "grKs_Fluct_sys_%i", c ) );
+        s2f.WriteGr( gLmF_sys[c], Form( "grLm_Fluct_sys_%i", c ) );
+
+        s2f.WriteGr( gChF[c], Form( "grCh_Fluct_%i", c ) );
+        s2f.WriteGr( gKsF[c], Form( "grKs_Fluct_%i", c ) );
+        s2f.WriteGr( gLmF[c], Form( "grLm_Fluct_%i", c ) );
+
+        s2f.WriteGr( gCh6[c], Form( "grCh6_Fluct_%i", c ) );
+        s2f.WriteGr( gKs6[c], Form( "grKs6_Fluct_%i", c ) );
+        s2f.WriteGr( gLm6[c], Form( "grLm6_Fluct_%i", c ) );
     }
 
     cpPbV2->cd(1);
@@ -477,6 +886,7 @@ void plotFinalpPb()
         grH.gr_v24sub[c]                       ->Draw("psame");
 //        grH.gr_v24subpos[c]                    ->Draw("psame");
 //        grH.gr_v24subneg[c]                    ->Draw("psame");
+        s2f.WriteGr( grH.gr_v24sub[c], Form( "grCh_v24sub_%i", c ) );
     }
     cpPbV2->cd(1);
     latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
@@ -521,7 +931,7 @@ void plotFinalpPb()
 
     // ch ratio
     TH2D * hframe_ratio = new TH2D("hframe_ratio", "hframe_ratio", 1, 0.01, 8.5, 1, 0.05, 1.95);
-    InitHist(hframe_ratio, "p_{T}", "Ratio");
+    InitHist(hframe_ratio, "p_{T} (GeV)", "Ratio");
     hframe_ratio->GetYaxis()->SetTitleOffset(1.0);
     hframe_ratio->GetXaxis()->SetTitleOffset(0.90);
 
@@ -529,9 +939,8 @@ void plotFinalpPb()
     TGraphErrors* grChRatioSP2[10] = {};
     TGraphErrors* grChRatioSP3[10] = {};
 
-    TGraphErrors* grChRatioCu1[10] = {};
-    TGraphErrors* grChRatioCu2[10] = {};
-    TGraphErrors* grChRatioCu3[10] = {};
+//    TGraphErrors* grChRatioCu2[10] = {};
+//    TGraphErrors* grChRatioCu3[10] = {};
 
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
@@ -542,64 +951,79 @@ void plotFinalpPb()
         grChRatioSP2[c] = getRatio( grSP.grSP_H[c]->vn_PosEta_NegEtaEP,        grSP.grSP_H[c]->vn_Full_NegEtaEP );
         grChRatioSP3[c] = getRatio( grSP.grSP_H[c]->vn_PosEta_NegEtaEP_SubEvt, grSP.grSP_H[c]->vn_Full_NegEtaEP );
 
-        grChRatioCu1[c] = getRatio( grH.gr_v24sub[c],    grH.gr_v24[c] );
-        grChRatioCu2[c] = getRatio( grH.gr_v24subpos[c], grH.gr_v24[c] );
-        grChRatioCu3[c] = getRatio( grH.gr_v24subneg[c], grH.gr_v24[c] );
+//        grChRatioCu2[c] = getRatio( grH.gr_v24subpos[c], grH.gr_v24[c] );
+//        grChRatioCu3[c] = getRatio( grH.gr_v24subneg[c], grH.gr_v24[c] );
+
+
 
         setGr( grChRatioSP1[c], kOpenCircle, kRed, 2.);
         setGr( grChRatioSP2[c], kOpenCircle, kBlack, 2.);
         setGr( grChRatioSP3[c], kOpenCircle, kGreen+2, 2.);
 
-        setGr( grChRatioCu1[c], kOpenSquare, kRed, 2.);
-        setGr( grChRatioCu2[c], kOpenSquare, kBlack, 2.);
-        setGr( grChRatioCu3[c], kOpenSquare, kGreen+2, 2.);
+        setGr( grChRatioCu1[c], kOpenCircle, kBlack, 2.);
+        setGr( grKsRatioCu1[c], kOpenSquare, kBlue, 2.);
+        setGr( grLmRatioCu1[c], kOpenCircle, kRed, 2.);
+//        setGr( grChRatioCu2[c], kOpenSquare, kBlack, 2.);
+//        setGr( grChRatioCu3[c], kOpenSquare, kGreen+2, 2.);
 
 //        grChRatioSP1[c]->Draw("psame");
 //        grChRatioSP2[c]->Draw("psame");
 //        grChRatioSP3[c]->Draw("psame");
 
         grChRatioCu1[c]->Draw("psame");
-        grChRatioCu2[c]->Draw("psame");
-        grChRatioCu3[c]->Draw("psame");
+//        grChRatioCu2[c]->Draw("psame");
+//        grChRatioCu3[c]->Draw("psame");
+
+        s2f.WriteGr( grChRatioCu1[c], Form( "grCh_v24subRatio_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} v_{2}{4,Sub}/v_{2}{4}");
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
-    TLegend * legChRatio0 = new TLegend(0.16, 0.58, 0.50, 0.82);
-    legChRatio0->SetFillColor(kWhite);
-    legChRatio0->SetTextFont(42);
-    legChRatio0->SetTextSize(0.05);
-    legChRatio0->SetBorderSize(0);
-
-    legChRatio0->AddEntry( grChRatioSP1[6], "v_{2}{Pb-SP,Sub} |#eta|<1.", "p" );
-    legChRatio0->AddEntry( grChRatioSP2[6], "v_{2}{Pb-SP} 0.<#eta<1.",        "p" );
-    legChRatio0->AddEntry( grChRatioSP3[6], "v_{2}{Pb-SP,Sub} 0.<#eta<1.",    "p" );
-
+//    TLegend * legChRatio0 = new TLegend(0.16, 0.58, 0.50, 0.82);
+//    legChRatio0->SetFillColor(kWhite);
+//    legChRatio0->SetTextFont(42);
+//    legChRatio0->SetTextSize(0.05);
+//    legChRatio0->SetBorderSize(0);
+//
+//    legChRatio0->AddEntry( grChRatioSP1[6], "v_{2}{Pb-SP,Sub} |#eta|<1.", "p" );
+//    legChRatio0->AddEntry( grChRatioSP2[6], "v_{2}{Pb-SP} 0.<#eta<1.",        "p" );
+//    legChRatio0->AddEntry( grChRatioSP3[6], "v_{2}{Pb-SP,Sub} 0.<#eta<1.",    "p" );
+//
 //    legChRatio0->Draw();
 
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
 
-    TLegend * legChRatio1 = new TLegend(0.10, 0.58, 0.50, 0.82);
+    TLegend * legChRatio1 = new TLegend(0.50, 0.68, 0.98, 0.92);
     legChRatio1->SetFillColor(kWhite);
     legChRatio1->SetTextFont(42);
     legChRatio1->SetTextSize(0.05);
     legChRatio1->SetBorderSize(0);
 
-    legChRatio1->AddEntry( grChRatioCu1[6], "v_{2}{4,Sub} |#eta|<1.", "p" );
-    legChRatio1->AddEntry( grChRatioCu2[6], "v_{2}{4,Sub} 0.<#eta<1.", "p" );
-    legChRatio1->AddEntry( grChRatioCu3[6], "v_{2}{4,Sub} -1.<#eta<0.", "p" );
+    legChRatio1->AddEntry( grChRatioCu1[8], "charge hadron", "p" );
+    legChRatio1->AddEntry( grKsRatioCu1[8], "K_{S}^{0}", "p" );
+    legChRatio1->AddEntry( grLmRatioCu1[8], "#Lambda", "p" );
+//    legChRatio1->AddEntry( grChRatioCu2[6], "v_{2}{4,Sub} 0.<#eta<1.", "p" );
+//    legChRatio1->AddEntry( grChRatioCu3[6], "v_{2}{4,Sub} -1.<#eta<0.", "p" );
 
-    legChRatio1->Draw();
 
     cpPbV2->cd(3);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+
+    DropPoints(grKsRatioCu1[8], 1);
+    DropPoints(grKsRatioCu1[8], -1);
+    DropPoints(grLmRatioCu1[8], 1);
+
+    grKsRatioCu1[8]->Draw("psame");
+    grLmRatioCu1[8]->Draw("psame");
+
 
     cpPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
 
+    legChRatio1->Draw();
     cpPbV2->SaveAs("pPbV2_Ratio_Ch.pdf");
 
     // Ks v2 subevent
@@ -626,6 +1050,7 @@ void plotFinalpPb()
         grKs.gr_v24sub[c]   ->Draw("psame");
 //        grKs.gr_v24subpos[c]->Draw("psame");
 //        grKs.gr_v24subneg[c]->Draw("psame");
+        s2f.WriteGr( grKs.gr_v24sub[c], Form( "grKs_v24sub_%i", c ) );
     }
     cpPbV2->cd(1);
     latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
@@ -674,9 +1099,8 @@ void plotFinalpPb()
     TGraphErrors* grKsRatioSP2[10] = {};
     TGraphErrors* grKsRatioSP3[10] = {};
 
-    TGraphErrors* grKsRatioCu1[10] = {};
-    TGraphErrors* grKsRatioCu2[10] = {};
-    TGraphErrors* grKsRatioCu3[10] = {};
+//    TGraphErrors* grKsRatioCu2[10] = {};
+//    TGraphErrors* grKsRatioCu3[10] = {};
 
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
@@ -687,17 +1111,16 @@ void plotFinalpPb()
         grKsRatioSP2[c] = getRatio( grSP.grSP_Ks_Sig[c]->vn_PosEta_NegEtaEP,        grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP );
         grKsRatioSP3[c] = getRatio( grSP.grSP_Ks_Sig[c]->vn_PosEta_NegEtaEP_SubEvt, grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP );
 
-        grKsRatioCu1[c] = getRatio( grKs.gr_v24sub[c],    grKs.gr_v24[c] );
-        grKsRatioCu2[c] = getRatio( grKs.gr_v24subpos[c], grKs.gr_v24[c] );
-        grKsRatioCu3[c] = getRatio( grKs.gr_v24subneg[c], grKs.gr_v24[c] );
+//        grKsRatioCu2[c] = getRatio( grKs.gr_v24subpos[c], grKs.gr_v24[c] );
+//        grKsRatioCu3[c] = getRatio( grKs.gr_v24subneg[c], grKs.gr_v24[c] );
 
         setGr( grKsRatioSP1[c], kOpenCircle, kRed, 2.);
         setGr( grKsRatioSP2[c], kOpenCircle, kBlack, 2.);
         setGr( grKsRatioSP3[c], kOpenCircle, kGreen+2, 2.);
 
         setGr( grKsRatioCu1[c], kOpenSquare, kRed, 2.);
-        setGr( grKsRatioCu2[c], kOpenSquare, kBlack, 2.);
-        setGr( grKsRatioCu3[c], kOpenSquare, kGreen+2, 2.);
+//        setGr( grKsRatioCu2[c], kOpenSquare, kBlack, 2.);
+//        setGr( grKsRatioCu3[c], kOpenSquare, kGreen+2, 2.);
 
 //        grKsRatioSP1[c]->Draw("psame");
 //        grKsRatioSP2[c]->Draw("psame");
@@ -706,6 +1129,7 @@ void plotFinalpPb()
         grKsRatioCu1[c]->Draw("psame");
 //        grKsRatioCu2[c]->Draw("psame");
 //        grKsRatioCu3[c]->Draw("psame");
+        s2f.WriteGr( grKsRatioCu1[c], Form( "grKs_v24subRatio_%i", c ) );
     }
     cpPbV2->cd(1);
     latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
@@ -732,7 +1156,7 @@ void plotFinalpPb()
     legKsRatio1->SetTextSize(0.05);
     legKsRatio1->SetBorderSize(0);
 
-    legKsRatio1->AddEntry( grKsRatioCu1[6], "v_{2}{4,Sub} |#eta|<1.", "p" );
+    legKsRatio1->AddEntry( grKsRatioCu1[6], "v_{2}{4,Sub}/v_{2}{4} |y|<1.", "p" );
 //    legKsRatio1->AddEntry( grKsRatioCu2[6], "v_{2}{4,Sub} 0.<#eta<1.", "p" );
 //    legKsRatio1->AddEntry( grKsRatioCu3[6], "v_{2}{4,Sub} -1.<#eta<0.", "p" );
 
@@ -771,6 +1195,7 @@ void plotFinalpPb()
         grLm.gr_v24sub[c]   ->Draw("psame");
 //        grLm.gr_v24subpos[c]->Draw("psame");
 //        grLm.gr_v24subneg[c]->Draw("psame");
+        s2f.WriteGr( grLm.gr_v24sub[c], Form( "grLm_v24sub_%i", c ) );
     }
     cpPbV2->cd(1);
     latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
@@ -819,9 +1244,8 @@ void plotFinalpPb()
     TGraphErrors* grLmRatioSP2[10] = {};
     TGraphErrors* grLmRatioSP3[10] = {};
 
-    TGraphErrors* grLmRatioCu1[10] = {};
-    TGraphErrors* grLmRatioCu2[10] = {};
-    TGraphErrors* grLmRatioCu3[10] = {};
+//    TGraphErrors* grLmRatioCu2[10] = {};
+//    TGraphErrors* grLmRatioCu3[10] = {};
 
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
@@ -832,17 +1256,16 @@ void plotFinalpPb()
         grLmRatioSP2[c] = getRatio( grSP.grSP_Lm_Sig[c]->vn_PosEta_NegEtaEP,        grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP );
         grLmRatioSP3[c] = getRatio( grSP.grSP_Lm_Sig[c]->vn_PosEta_NegEtaEP_SubEvt, grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP );
 
-        grLmRatioCu1[c] = getRatio( grLm.gr_v24sub[c],    grLm.gr_v24[c] );
-        grLmRatioCu2[c] = getRatio( grLm.gr_v24subpos[c], grLm.gr_v24[c] );
-        grLmRatioCu3[c] = getRatio( grLm.gr_v24subneg[c], grLm.gr_v24[c] );
+//        grLmRatioCu2[c] = getRatio( grLm.gr_v24subpos[c], grLm.gr_v24[c] );
+//        grLmRatioCu3[c] = getRatio( grLm.gr_v24subneg[c], grLm.gr_v24[c] );
 
         setGr( grLmRatioSP1[c], kOpenCircle, kRed, 2.);
         setGr( grLmRatioSP2[c], kOpenCircle, kBlack, 2.);
         setGr( grLmRatioSP3[c], kOpenCircle, kGreen+2, 2.);
 
         setGr( grLmRatioCu1[c], kOpenSquare, kRed, 2.);
-        setGr( grLmRatioCu2[c], kOpenSquare, kBlack, 2.);
-        setGr( grLmRatioCu3[c], kOpenSquare, kGreen+2, 2.);
+//        setGr( grLmRatioCu2[c], kOpenSquare, kBlack, 2.);
+//        setGr( grLmRatioCu3[c], kOpenSquare, kGreen+2, 2.);
 
 //        grLmRatioSP1[c]->Draw("psame");
 //        grLmRatioSP2[c]->Draw("psame");
@@ -851,6 +1274,7 @@ void plotFinalpPb()
         grLmRatioCu1[c]->Draw("psame");
 //        grLmRatioCu2[c]->Draw("psame");
 //        grLmRatioCu3[c]->Draw("psame");
+        s2f.WriteGr( grLmRatioCu1[c], Form( "grLm_v24subRatio_%i", c ) );
     }
     cpPbV2->cd(1);
     latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
@@ -877,7 +1301,7 @@ void plotFinalpPb()
     legLmRatio1->SetTextSize(0.05);
     legLmRatio1->SetBorderSize(0);
 
-    legLmRatio1->AddEntry( grLmRatioCu1[6], "v_{2}{4,Sub} |#eta|<1.", "p" );
+    legLmRatio1->AddEntry( grLmRatioCu1[6], "v_{2}{4,Sub}/v_{2}{4} |y|<1.", "p" );
 //    legLmRatio1->AddEntry( grLmRatioCu2[6], "v_{2}{4,Sub} 0.<#eta<1.", "p" );
 //    legLmRatio1->AddEntry( grLmRatioCu3[6], "v_{2}{4,Sub} -1.<#eta<0.", "p" );
 
@@ -891,4 +1315,352 @@ void plotFinalpPb()
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
 
     cpPbV2->SaveAs("pPbV2_Ratio_Lm.pdf");
+
+    // veto only for Ch
+    for ( int c = 6; c < 10; c++ ) {
+        cpPbV2->cd(c-5);
+        hframe_pt->Draw();
+
+        setGr( grH.gr_v22Gap [c]    , kOpenCircle, kBlue, 2. );
+        setGr( grHveto.gr_v22Gap [c], kFullCircle, kRed,  2. );
+
+        setGr( grH.gr_v24    [c], kOpenSquare, kBlue, 2. );
+        setGr( grHveto.gr_v24[c], kFullSquare, kRed,  2. );
+
+        setGr( grH.gr_v26    [c], kOpenStar, kBlue, 2. );
+        setGr( grHveto.gr_v26[c], kFullStar, kRed,  2. );
+
+//        grHveto.gr_v22Gap[c]->Draw("psame");
+        grHveto.gr_v24[c]->Draw("psame");
+        grHveto.gr_v26[c]->Draw("psame");
+//        grH    .gr_v22Gap[c]->Draw("psame");
+        grH    .gr_v24[c]->Draw("psame");
+        grH    .gr_v26[c]->Draw("psame");
+
+        s2f.WriteGr( grHveto.gr_v22Gap[c], Form( "grCh_v22Gapveto_%i", c ) );
+        s2f.WriteGr( grHveto.gr_v24[c], Form( "grCh_v24veto_%i", c ) );
+        s2f.WriteGr( grHveto.gr_v26[c], Form( "grCh_v26veto_%i", c ) );
+    }
+    cpPbV2->cd(1);
+    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
+    cpPbV2->cd(2);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
+
+    TLegend * legChVeto = new TLegend(0.45, 0.58, 0.90, 0.92);
+    legChVeto->SetFillColor(kWhite);
+    legChVeto->SetTextFont(42);
+    legChVeto->SetTextSize(0.05);
+    legChVeto->SetBorderSize(0);
+
+//    legChVeto->AddEntry( grH.gr_v22Gap[6], "v_{2}{2,|#Delta#eta|>2.}", "p" );
+    legChVeto->AddEntry( grH.gr_v24[6], "v_{2}{4}", "p" );
+    legChVeto->AddEntry( grH.gr_v26[6], "v_{2}{6}", "p" );
+//    legChVeto->AddEntry( grHveto.gr_v22Gap[6], "v_{2}{2, veto,|#Delta#eta|>2.}", "p" );
+    legChVeto->AddEntry( grHveto.gr_v24[6], "v_{2}{4,veto}", "p" );
+    legChVeto->AddEntry( grHveto.gr_v26[6], "v_{2}{6,veto}", "p" );
+
+
+    cpPbV2->cd(3);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    cpPbV2->cd(4);
+    latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
+    legChVeto->Draw();
+
+    cpPbV2->SaveAs("pPbV2_Ch_veto.pdf");
+
+    // veto ratio only for Ch
+    TH2D * hframe_ratioVeto = new TH2D("hframe_ratioVeto", "hframe_ratioVeto", 1, 0.01, 8.5, 1, 0.05, 1.95);
+    InitHist(hframe_ratioVeto, "p_{T} (GeV)", "Ratio");
+    hframe_ratioVeto->GetYaxis()->SetTitleOffset(1.0);
+    hframe_ratioVeto->GetXaxis()->SetTitleOffset(0.90);
+
+    for ( int c = 6; c < 10; c++ ) {
+        cpPbV2->cd(c-5);
+        hframe_ratioVeto->Draw();
+        line1.Draw();
+
+
+        setGr( grChRatioVeto2[c], kOpenCircle, kBlack, 2. );
+        setGr( grChRatioVeto4[c], kOpenSquare, kRed, 2. );
+        setGr( grChRatioVeto6[c], kOpenStar, kBlue, 2. );
+
+//        grChRatioVeto2[c]->Draw("plsame");
+        grChRatioVeto4[c]->Draw("plsame");
+        grChRatioVeto6[c]->Draw("plsame");
+
+        s2f.WriteGr( grChRatioVeto4[c], Form( "grCh_v24vetoRatio_%i", c ) );
+        s2f.WriteGr( grChRatioVeto6[c], Form( "grCh_v26vetoRatio_%i", c ) );
+    }
+    cpPbV2->cd(1);
+    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
+
+    cpPbV2->cd(2);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
+
+    TLegend * legChVetoRatio = new TLegend(0.05, 0.6, 0.45, 0.82);
+    legChVetoRatio->SetFillColor(kWhite);
+    legChVetoRatio->SetTextFont(42);
+    legChVetoRatio->SetTextSize(0.05);
+    legChVetoRatio->SetBorderSize(0);
+
+//    legChVetoRatio->AddEntry( grChRatioVeto2[6], "v_{2}{2,veto}/v_{2}{2}", "p" );
+    legChVetoRatio->AddEntry( grChRatioVeto4[6], "v_{2}{4,veto}/v_{2}{4}", "p" );
+    legChVetoRatio->AddEntry( grChRatioVeto6[6], "v_{2}{6,veto}/v_{2}{6}", "p" );
+
+    legChVetoRatio->Draw();
+
+    cpPbV2->cd(3);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+
+    cpPbV2->cd(4);
+    latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
+
+    cpPbV2->SaveAs("pPbV2_Ch_vetoRatio.pdf");
+
+    // subevent pos neg
+    for ( int c = 6; c < 10; c++ ) {
+        cpPbV2->cd(c-5);
+        hframe_pt->Draw();
+
+
+        setGr( grH.gr_v24sub   [c], kOpenCircle, kBlack, 2. );
+        setGr( grH.gr_v24subneg[c], kOpenCircle, kRed,   2. );
+        setGr( grH.gr_v24subpos[c], kOpenCircle, kBlue,  2. );
+
+        grH.gr_v24sub   [c]->Draw("psame");
+        grH.gr_v24subneg[c]->Draw("psame");
+        grH.gr_v24subpos[c]->Draw("psame");
+    }
+    cpPbV2->cd(1);
+    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
+    cpPbV2->cd(2);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
+
+    TLegend * legChPosNeg = new TLegend(0.05, 0.6, 0.45, 0.82);
+    legChPosNeg->SetFillColor(kWhite);
+    legChPosNeg->SetTextFont(42);
+    legChPosNeg->SetTextSize(0.05);
+    legChPosNeg->SetBorderSize(0);
+
+    legChPosNeg->AddEntry( grH.gr_v24sub[6], "v_{2}{4,Sub}", "p" );
+    legChPosNeg->AddEntry( grH.gr_v24subpos[6], "v_{2}{4,p-Sub}", "p" );
+    legChPosNeg->AddEntry( grH.gr_v24subneg[6], "v_{2}{4,Pb-Sub}", "p" );
+
+    legChPosNeg->Draw();
+
+    cpPbV2->cd(3);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    cpPbV2->cd(4);
+    latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
+
+    cpPbV2->SaveAs("pPbV2_Subevt_Ch_PosNeg.pdf");
+
+    // subevent pos neg ratio
+    TH2D * hframe_ratioPosNeg = new TH2D("hframe_ratioPosNeg", "hframe_ratioPosNeg", 1, 0.01, 8.5, 1, 0.05, 1.95);
+    InitHist(hframe_ratioPosNeg, "p_{T} (GeV)", "Ratio");
+    hframe_ratioPosNeg->GetYaxis()->SetTitleOffset(1.0);
+    hframe_ratioPosNeg->GetXaxis()->SetTitleOffset(0.90);
+
+    for ( int c = 6; c < 10; c++ ) {
+        cpPbV2->cd(c-5);
+        hframe_ratioPosNeg->Draw();
+        line1.Draw();
+
+        setGr( grChRatioPos[c], kOpenCircle, kBlue, 2. );
+        setGr( grChRatioNeg[c], kOpenCircle, kRed,  2. );
+
+        grChRatioPos[c]->Draw("psame");
+        grChRatioNeg[c]->Draw("psame");
+    }
+    cpPbV2->cd(1);
+    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
+    cpPbV2->cd(2);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
+
+    TLegend * legChPosNegRatio = new TLegend(0.05, 0.65, 0.45, 0.82);
+    legChPosNegRatio->SetFillColor(kWhite);
+    legChPosNegRatio->SetTextFont(42);
+    legChPosNegRatio->SetTextSize(0.05);
+    legChPosNegRatio->SetBorderSize(0);
+
+    legChPosNegRatio->AddEntry( grChRatioPos[6], "v_{2}{4,p-Sub}/v_{2}{4,Sub}", "p" );
+    legChPosNegRatio->AddEntry( grChRatioNeg[6], "v_{2}{4,Pb-Sub}/v_{2}{4,Sub}", "p" );
+
+    legChPosNegRatio->Draw();
+
+    cpPbV2->cd(3);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    cpPbV2->cd(4);
+    latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
+
+    cpPbV2->SaveAs("pPbV2_Subevt_Ch_RatioPosNeg.pdf");
+
+    // subevent veto pos neg
+    for ( int c = 6; c < 10; c++ ) {
+        cpPbV2->cd(c-5);
+        hframe_pt->Draw();
+
+        setGr( grHveto.gr_v24sub   [c], kOpenSquare, kBlack, 2. );
+        setGr( grHveto.gr_v24subneg[c], kOpenSquare, kRed,   2. );
+        setGr( grHveto.gr_v24subpos[c], kOpenSquare, kBlue,  2. );
+
+        grHveto.gr_v24sub   [c]->Draw("psame");
+        grHveto.gr_v24subneg[c]->Draw("psame");
+        grHveto.gr_v24subpos[c]->Draw("psame");
+    }
+    cpPbV2->cd(1);
+    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
+    cpPbV2->cd(2);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
+
+    TLegend * legChVetoPosNeg = new TLegend(0.05, 0.6, 0.45, 0.82);
+    legChVetoPosNeg->SetFillColor(kWhite);
+    legChVetoPosNeg->SetTextFont(42);
+    legChVetoPosNeg->SetTextSize(0.05);
+    legChVetoPosNeg->SetBorderSize(0);
+
+    legChVetoPosNeg->AddEntry( grHveto.gr_v24sub[6], "v_{2}{4,Sub}", "p" );
+    legChVetoPosNeg->AddEntry( grHveto.gr_v24subpos[6], "v_{2}{4,p-Sub}", "p" );
+    legChVetoPosNeg->AddEntry( grHveto.gr_v24subneg[6], "v_{2}{4,Pb-Sub}", "p" );
+
+    legChVetoPosNeg->Draw();
+
+    cpPbV2->cd(3);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    cpPbV2->cd(4);
+    latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
+
+    cpPbV2->SaveAs("pPbV2_Subevt_ChVeto_PosNeg.pdf");
+
+    // subevent veto pos neg ratio
+    for ( int c = 6; c < 10; c++ ) {
+        cpPbV2->cd(c-5);
+        hframe_ratioPosNeg->Draw();
+        line1.Draw();
+
+        setGr( grChVetoRatioPos[c], kOpenSquare, kBlue, 2. );
+        setGr( grChVetoRatioNeg[c], kOpenSquare, kRed,  2. );
+
+        grChVetoRatioPos[c]->Draw("psame");
+        grChVetoRatioNeg[c]->Draw("psame");
+    }
+    cpPbV2->cd(1);
+    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
+    cpPbV2->cd(2);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
+
+    TLegend * legChVetoPosNegRatio = new TLegend(0.05, 0.65, 0.45, 0.82);
+    legChVetoPosNegRatio->SetFillColor(kWhite);
+    legChVetoPosNegRatio->SetTextFont(42);
+    legChVetoPosNegRatio->SetTextSize(0.05);
+    legChVetoPosNegRatio->SetBorderSize(0);
+
+    legChVetoPosNegRatio->AddEntry( grChRatioPos[6], "v_{2}{4,p-Sub}/v_{2}{4,Sub} veto", "p" );
+    legChVetoPosNegRatio->AddEntry( grChRatioNeg[6], "v_{2}{4,Pb-Sub}/v_{2}{4,Sub} veto", "p" );
+
+    legChVetoPosNegRatio->Draw();
+
+    cpPbV2->cd(3);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    cpPbV2->cd(4);
+    latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
+
+    cpPbV2->SaveAs("pPbV2_Subevt_ChVeto_RatioPosNeg.pdf");
+
+    // sub veto
+    for ( int c = 6; c < 10; c++ ) {
+        cpPbV2->cd(c-5);
+        hframe_pt->Draw();
+
+        setGr( grH    .gr_v24   [c], kOpenCircle, kBlue, 2. );
+        setGr( grHveto.gr_v24   [c], kFullCircle, kRed,  2. );
+        setGr( grH    .gr_v24sub[c], kOpenSquare, kBlue, 2. );
+        setGr( grHveto.gr_v24sub[c], kFullSquare, kRed,  2. );
+
+        grHveto.gr_v24   [c]->Draw("psame");
+        grHveto.gr_v24sub[c]->Draw("psame");
+        grH    .gr_v24   [c]->Draw("psame");
+        grH    .gr_v24sub[c]->Draw("psame");
+    }
+    cpPbV2->cd(1);
+    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
+    cpPbV2->cd(2);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
+
+    TLegend * legChSubVeto = new TLegend(0.05, 0.55, 0.45, 0.82);
+    legChSubVeto->SetFillColor(kWhite);
+    legChSubVeto->SetTextFont(42);
+    legChSubVeto->SetTextSize(0.05);
+    legChSubVeto->SetBorderSize(0);
+
+    legChSubVeto->AddEntry( grH    .gr_v24   [6], "v_{2}{4}", "p" );
+    legChSubVeto->AddEntry( grH    .gr_v24sub[6], "v_{2}{4,Sub}", "p" );
+    legChSubVeto->AddEntry( grHveto.gr_v24   [6], "v_{2}{4,veto}", "p" );
+    legChSubVeto->AddEntry( grHveto.gr_v24sub[6], "v_{2}{4,Sub,veto}", "p" );
+
+    legChSubVeto->Draw();
+
+    cpPbV2->cd(3);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    cpPbV2->cd(4);
+    latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
+
+    cpPbV2->SaveAs("pPbV2_ChSub_veto.pdf");
+
+    // sub veto ratio
+    TGraphErrors * grChVetoSubRatio[10] = {};
+    for ( int c = 6; c < 10; c++ ) {
+        cpPbV2->cd(c-5);
+        hframe_ratioVeto->Draw();
+        line1.Draw();
+
+        grChVetoSubRatio[c] = getRatio( grHveto.gr_v24sub[c], grH.gr_v24[c] );
+
+        setGr( grChRatioVeto4  [c], kOpenCircle, kRed,  2. );
+        setGr( grChRatioCu1    [c], kOpenSquare, kBlue, 2. );
+        setGr( grChVetoSubRatio[c], kOpenSquare, kRed,  2. );
+
+        grChVetoSubRatio[c]->Draw("psame");
+        grChRatioCu1  [c]->Draw("psame");
+        grChRatioVeto4[c]->Draw("psame");
+    }
+    cpPbV2->cd(1);
+    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
+    cpPbV2->cd(2);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
+
+    TLegend * legChSubVetoRatio = new TLegend(0.05, 0.60, 0.45, 0.82);
+    legChSubVetoRatio->SetFillColor(kWhite);
+    legChSubVetoRatio->SetTextFont(42);
+    legChSubVetoRatio->SetTextSize(0.05);
+    legChSubVetoRatio->SetBorderSize(0);
+
+    legChSubVetoRatio->AddEntry( grChRatioVeto4  [6], "v_{2}{4,veto}/v_{2}{4}", "p" );
+    legChSubVetoRatio->AddEntry( grChRatioCu1    [6], "v_{2}{4,Sub}/v_{2}{4}", "p" );
+    legChSubVetoRatio->AddEntry( grChVetoSubRatio[6], "v_{2}{4,Sub,veto}/v_{2}{4}", "p" );
+
+    legChSubVetoRatio->Draw();
+
+    cpPbV2->cd(3);
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    cpPbV2->cd(4);
+    latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
+    latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
+
+    cpPbV2->SaveAs("pPbV2_ChSub_veto_ratio.pdf");
 }

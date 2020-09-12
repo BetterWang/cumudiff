@@ -10,6 +10,7 @@ TColor *gray = new TColor(3005, 0, 0, 0, "black", 0.4);
 // 1 -- Ks  3.5
 // 2 -- Lm  5.7
 const double cumu_syst[3] = {0.014, 0.035, 0.057};
+const double PbPb_sysX = 0.35;
 
 struct QWCumu {
     TGraphErrors * grSig_pT[7][4][20] = {};
@@ -82,7 +83,7 @@ struct QWCumu {
             g->GetX()[i] = gr->GetX()[i];
             g->GetY()[i] = gr->GetY()[i];
             g->GetEY()[i] = gr->GetY()[i] * sys;
-            g->GetEX()[i] = 0.30;
+            g->GetEX()[i] = PbPb_sysX;
         }
         return g;
     };
@@ -157,45 +158,124 @@ struct QWCumu {
     }
 };
 
-TGraphErrors* getFluct(TGraphErrors* gr1, TGraphErrors* gr2) {
-    TGraphErrors* ret = new TGraphErrors(gr1->GetN());
-    for ( int i = 0; i < gr1->GetN(); i++ ) {
-		double y1 = gr1->GetY()[i];
-		double ey1 = gr1->GetEY()[i];
-		double y2 = gr2->GetY()[i];
-		double ey2 = gr2->GetEY()[i];
-
-		ret->GetX()[i] = gr1->GetX()[i];
-		ret->GetY()[i] = sqrt( (y1*y1 - y2*y2)/(y1*y1 + y2*y2) );
-
-		double t = y1*y1 - y2*y2;
-		double g = y1*y1 + y2*y2;
-		double f1 = 2*y1;
-		double f2 = -2*y2;
-		double g1 = 2*y1;
-		double g2 = 2*y2;
-
-		double err1 = (f1/g - t*g1/g/g)*(f1/g - t*g1/g/g)*ey1*ey1;
-		double err2 = (f2/g - t*g2/g/g)*(f2/g - t*g2/g/g)*ey2*ey2;
-		double x = t/g;
-		double ex = sqrt(err1 + err2);
-
-		ret->GetEY()[i] = ex/sqrt(x)/2;
+TGraphErrors* getFluct(TGraphErrors* gr1, TGraphErrors* gr2 ) {
+    if ( gr1->GetN() != gr2->GetN() ) {
+        cout << " --> getFluct mismatch!!" << endl;
+        return nullptr;
     }
-	return ret;
-}
+    TGraphErrors* ret = new TGraphErrors(gr2->GetN());
+    for ( int i = 0; i < gr1->GetN(); i++ ) {
+        double y1 = gr1->GetY()[i];
+        double ey1 = gr1->GetEY()[i];
+        double y2 = gr2->GetY()[i];
+        double ey2 = gr2->GetEY()[i];
 
-TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2)
-{
-    TGraphErrors * ret = new TGraphErrors(gr2->GetN());
-    for ( int i = 0; i < gr2->GetN(); i++ ) {
-        ret->GetX()[i] = gr2->GetX()[i];
-        ret->GetEX()[i] = gr2->GetEX()[i];
-        ret->GetY()[i] = gr1->GetY()[i] / gr2->GetY()[i];
-        ret->GetEY()[i] = sqrt( gr1->GetEY()[i]*gr1->GetEY()[i]/gr1->GetY()[i]/gr1->GetY()[i] + gr2->GetEY()[i]*gr2->GetEY()[i]/gr2->GetY()[i]/gr2->GetY()[i]  );
+        ret->GetX()[i] = gr1->GetX()[i];
+        ret->GetY()[i] = sqrt( (y1*y1 - y2*y2)/(y1*y1 + y2*y2) );
+
+        double t = y1*y1 - y2*y2;
+        double g = y1*y1 + y2*y2;
+        double f1 = 2*y1;
+        double f2 = -2*y2;
+        double g1 = 2*y1;
+        double g2 = 2*y2;
+
+        double err1 = (f1/g - t*g1/g/g)*(f1/g - t*g1/g/g)*ey1*ey1;
+        double err2 = (f2/g - t*g2/g/g)*(f2/g - t*g2/g/g)*ey2*ey2;
+        double x = t/g;
+        double ex = sqrt(err1 + err2);
+
+        ret->GetEY()[i] = ex/sqrt(x)/2;
     }
     return ret;
 }
+TGraphErrors* getFluct(TGraphErrors* gr1, TGraphErrors* gr2, TGraphErrors*& grSys, double sys = cumu_syst[0]) {
+    if ( gr1->GetN() != gr2->GetN() ) {
+        cout << " --> getFluct mismatch!!" << endl;
+        return nullptr;
+    }
+    TGraphErrors* ret = new TGraphErrors(gr2->GetN());
+    grSys = new TGraphErrors(gr2->GetN());
+    for ( int i = 0; i < gr1->GetN(); i++ ) {
+        double y1 = gr1->GetY()[i];
+        double ey1 = gr1->GetEY()[i];
+        double y2 = gr2->GetY()[i];
+        double ey2 = gr2->GetEY()[i];
+
+        ret->GetX()[i] = gr1->GetX()[i];
+        ret->GetY()[i] = sqrt( (y1*y1 - y2*y2)/(y1*y1 + y2*y2) );
+
+
+        double t = y1*y1 - y2*y2;
+        double g = y1*y1 + y2*y2;
+        double f1 = 2*y1;
+        double f2 = -2*y2;
+        double g1 = 2*y1;
+        double g2 = 2*y2;
+
+        double err1 = (f1/g - t*g1/g/g)*(f1/g - t*g1/g/g)*ey1*ey1;
+        double err2 = (f2/g - t*g2/g/g)*(f2/g - t*g2/g/g)*ey2*ey2;
+        double x = t/g;
+        double ex = sqrt(err1 + err2);
+
+        ret->GetEY()[i] = ex/sqrt(x)/2;
+
+        grSys->GetX()[i] = ret->GetX()[i];
+        grSys->GetEX()[i] = PbPb_sysX;
+        grSys->GetY()[i] = ret->GetY()[i];
+
+        double serr1 = (f1/g - t*g1/g/g)*sys*y1;
+        grSys->GetEY()[i] = serr1 / 2. / sqrt(x);
+    }
+    return ret;
+}
+
+TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, int option = 0)
+    /*
+     * 0 - errors are independent
+     * 1 - use only gr1 error
+     * 2 - use only gr2 error
+     * 10 - use only cumu_syst[0] error
+     * 11 - use only cumu_syst[1] error
+     * 12 - use only cumu_syst[2] error
+     */
+{
+    if ( gr1->GetN() != gr2->GetN() ) {
+        cout << " --> Warning mismatch getRatio" << endl;
+        return nullptr;
+    }
+    TGraphErrors * ret = new TGraphErrors(gr2->GetN());
+    for ( int i = 0; i < gr2->GetN(); i++ ) {
+        if ( gr1->GetX()[i] != gr2->GetX()[i] ) cout << "--> Warning mismatch X" << endl;
+        ret->GetX()[i] = gr2->GetX()[i];
+        ret->GetEX()[i] = gr2->GetEX()[i];
+        ret->GetY()[i] = gr1->GetY()[i] / gr2->GetY()[i];
+        double y1 = gr1->GetY()[i];
+        double y2 = gr2->GetY()[i];
+        double e1 = gr1->GetEY()[i];
+        double e2 = gr2->GetEY()[i];
+        if ( option == 1 ) {
+            e2 = 0;
+        } else if ( option == 2 ) {
+            e1 = 0;
+        }
+        ret->GetEY()[i] = sqrt( e1*e1/y1/y1 + e2*e2/y2/y2 );
+        if ( option == 10 ) {
+            ret->GetEY()[i] = cumu_syst[0] * ret->GetY()[i];
+            ret->GetEX()[i] = PbPb_sysX;
+        }
+        if ( option == 11 ) {
+            ret->GetEY()[i] = cumu_syst[1] * ret->GetY()[i];
+            ret->GetEX()[i] = PbPb_sysX;
+        }
+        if ( option == 12 ) {
+            ret->GetEY()[i] = cumu_syst[2] * ret->GetY()[i];
+            ret->GetEX()[i] = PbPb_sysX;
+        }
+    }
+    return ret;
+}
+
 
 void splitCanv4(TCanvas * c)
 {
@@ -432,6 +512,26 @@ typedef struct SteveGraphSP
 
 } SteveGraphSP;
 
+struct SaveToFile
+{
+    TFile * fsave;
+    SaveToFile(TFile *f) { fsave = f; };
+    void WriteGr( TGraphErrors * gr, string name ) {
+        fsave->cd();
+        gr->Write(name.c_str());
+    };
+    ~SaveToFile() {fsave->Close();};
+};
 
-
-
+void DropPoints( TGraphErrors* gr, int N )
+{
+    if ( N > 0 ) {
+        for ( int i = 0; i < N; i++ ) {
+            gr->RemovePoint(0);
+        }
+    } else {
+        for ( int i = 0; i < -N; i++ ) {
+            gr->RemovePoint(gr->GetN()-1);
+        }
+    }
+}
