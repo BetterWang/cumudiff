@@ -755,6 +755,16 @@ char const * fname[] = {
     "NA",   // 752 HIMB2  merge Ks SB
     "NA",   // 753 HIMB2  merge Ks SB sysVz1
     "NA",   // 754 HIMB2  merge Ks SB sysVz2
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_Peak_Mid_BDT20Cent_v1/200916_182833/0000/",     // 755 HIMB0 Lm MVACent
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBPos_Mid_BDT20Cent_v1/200917_141203/0000/",    // 756 HIMB0 Lm SBPos MVACent
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBNeg_Mid_BDT20Cent_v1/200917_141335/0000/",    // 757 HIMB0 Lm SBNeg MVACent
+    "NA",    // 758 HIMB merge Lm Peak MVACent
+    "NA",    // 759 HIMB merge Lm SB MVACent
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_Peak_Mid_BDT20Cent_v1/200918_160922/0000/",     // 760 HIMB0 Ks MVACent
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBPos_Mid_BDT20Cent_v1/200918_201634/0000/",    // 761 HIMB0 Ks SBPos MVACent
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBNeg_Mid_BDT20Cent_v1/200918_203208/0000/",    // 762 HIMB0 Ks SBNeg MVACent
+    "NA",    // 763 HIMB merge Lm SB MVACent
+    "NA",    // 764 HIMB merge Lm SB MVACent
 };
 
 char const * ftxt[] = {
@@ -1513,6 +1523,16 @@ char const * ftxt[] = {
     "txt/HIMB2_Ks_SB/",                      // 752
     "txt/HIMB2_Ks_SB_sysVz1/",               // 753
     "txt/HIMB2_Ks_SB_sysVz2/",               // 754
+    "txt/HIMB0_Lm_Peak_sysMVACent/",         // 755
+    "txt/HIMB0_Lm_SBPos_sysMVACent/",        // 756
+    "txt/HIMB0_Lm_SBNeg_sysMVACent/",        // 757
+    "txt/HIMB_Lm_Peak_sysMVACent/",          // 758
+    "txt/HIMB_Lm_SB_sysMVACent/",            // 759
+    "txt/HIMB0_Ks_Peak_sysMVACent/",         // 760
+    "txt/HIMB0_Ks_SBPos_sysMVACent/",        // 761
+    "txt/HIMB0_Ks_SBNeg_sysMVACent/",        // 762
+    "txt/HIMB_Ks_Peak_sysMVACent/",          // 763
+    "txt/HIMB_Ks_SB_sysMVACent/",            // 764
 };
 
 const int Pid_Non	= 0;
@@ -2286,6 +2306,16 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 752
 	Pid_AA_Ks,		    // 753
 	Pid_AA_Ks,		    // 754
+	Pid_AA_Lambda,		// 755
+	Pid_AA_Lambda,		// 756
+	Pid_AA_Lambda,		// 757
+	Pid_AA_Lambda,		// 758
+	Pid_AA_Lambda,		// 759
+	Pid_AA_Ks,		    // 760
+	Pid_AA_Ks,		    // 761
+	Pid_AA_Ks,		    // 762
+	Pid_AA_Ks,		    // 763
+	Pid_AA_Ks,		    // 764
 };
 
 #include <TChain.h>
