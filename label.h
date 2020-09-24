@@ -765,6 +765,12 @@ char const * fname[] = {
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBNeg_Mid_BDT20Cent_v1/200918_203208/0000/",    // 762 HIMB0 Ks SBNeg MVACent
     "NA",    // 763 HIMB merge Lm SB MVACent
     "NA",    // 764 HIMB merge Lm SB MVACent
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBPos1_Mid_BDT20_v1/200923_030229/0000/",    // 765 HIMB0 Lm SBPos1
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBNeg1_Mid_BDT20_v1/200923_030834/0000/",    // 766 HIMB0 Lm SBNeg1
+    "NA",    // 767 HIMB merge Lm SB1
+    "../PbPb2018/HIMinimumBias16/crab_HIMB16_V0Cumu_Ks_SBPos1_Mid_v2/200923_031435/0000/",    // 768 HIMB16 Ks SBPos1
+    "../PbPb2018/HIMinimumBias16/crab_HIMB16_V0Cumu_Ks_SBNeg1_Mid_v2/200923_031335/0000/",    // 769 HIMB16 Ks SBNeg1
+    "NA",    // 770 HIMB merge Ks SB1
 };
 
 char const * ftxt[] = {
@@ -1533,6 +1539,12 @@ char const * ftxt[] = {
     "txt/HIMB0_Ks_SBNeg_sysMVACent/",        // 762
     "txt/HIMB_Ks_Peak_sysMVACent/",          // 763
     "txt/HIMB_Ks_SB_sysMVACent/",            // 764
+    "txt/HIMB0_Lm_SBPos1/",                  // 765
+    "txt/HIMB0_Lm_SBNeg1/",                  // 766
+    "txt/HIMB_Lm_SB1/",                      // 767
+    "txt/HIMB16_Lm_SBPos1/",                 // 768
+    "txt/HIMB16_Lm_SBNeg1/",                 // 769
+    "txt/HIMB_Ks_SB1/",                      // 770
 };
 
 const int Pid_Non	= 0;
@@ -2316,6 +2328,12 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 762
 	Pid_AA_Ks,		    // 763
 	Pid_AA_Ks,		    // 764
+	Pid_AA_Lambda,		// 765
+	Pid_AA_Lambda,		// 766
+	Pid_AA_Lambda,		// 767
+	Pid_AA_Ks,		    // 768
+	Pid_AA_Ks,		    // 769
+	Pid_AA_Ks,		    // 770
 };
 
 #include <TChain.h>
