@@ -42,7 +42,7 @@ void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/
     Float_t nTrkNPxLayer;
     Float_t nTrkDCASigXY;
     Float_t nTrkDCASigZ;
-    Float_t Cent; 
+    Float_t Cent;
 
     Float_t mass;
     Float_t eta;
@@ -90,6 +90,7 @@ void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/
     trV->SetMakeClass(1);
     trV->SetBranchStatus("*", 0);
     trV->SetBranchStatus("Cent", 1);
+    trV->SetBranchStatus("vz", 1);
     trV->SetBranchStatus( (prefix+"pt").c_str(), 1 );
     trV->SetBranchStatus( (prefix+"phi").c_str(), 1 );
     trV->SetBranchStatus( (prefix+"eta").c_str(), 1 );
@@ -158,6 +159,7 @@ void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/
     vector<double>  *t_nTrkDCASigXY = 0;
     vector<double>  *t_nTrkDCASigZ = 0;
     Double_t        t_Cent = -1;
+    Double_t        t_vz = -999;
 
     trV->SetBranchAddress( (prefix+"pt").c_str(),             &t_pt);
     trV->SetBranchAddress( (prefix+"phi").c_str(),            &t_phi);
@@ -193,6 +195,7 @@ void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/
     trV->SetBranchAddress( (prefix+"nTrkDCASigXY").c_str(),   &t_nTrkDCASigXY);
     trV->SetBranchAddress( (prefix+"nTrkDCASigZ").c_str(),    &t_nTrkDCASigZ);
     trV->SetBranchAddress( "Cent",                            &t_Cent);
+    trV->SetBranchAddress( "vz",                              &t_vz);
 
     TTree * mtr = new TTree("mtr", "mtr");
     mtr->Branch("mass",     &mass,      "mass/F" );
@@ -207,6 +210,10 @@ void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/
     int ievt= 0;
     while (trV->GetEntry(ievt)) {
         if (ievt%1000 == 0) std::cout << "--- ... Processing event: " << ievt << std::endl;
+        if ( (t_vz<-15.) or (t_vz>15.) ) {
+            ievt++;
+            continue;
+        }
         int n = t_pt->size();
         for ( int i = 0; i < n; i++ ) {
             pt            = (*t_pt)[i];

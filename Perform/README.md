@@ -26,3 +26,16 @@ MVA validation
 6) plotMCsignificance.C plot S/sqrt(S+B) vs BDT cut
 7) plotSig.C            plot S/B for TMVA3 vs TMVA8 and reweighting, plot significance
 
+
+- Hydjet dataset,   501271 events,  0-80% 400058  events, 0-70% 351280  events.
+- HIMB19 WrongSign, 5855529 events, 0-80% 4846890 events, 0-70% 4219953 events.
+- HIMB19 WrongSign, 0-80% 400058/4846890=0.0825, 0-70% 351280/4219953 = 0.0832
+- HIMB19 WrongSign `cumu_1*.root`, 1481434 events, 0-80% 1223986 events, 0-70% 1065043 events.
+- HIMB19 WrongSign, 0-80% 1223986/4846890=0.2525, 0-70% 1065043/4219953 = 0.2524
+- HIMB4 v9 `cumu_90*.root`, 1181092 events, 0-80% 979090 events, 0-70% 851993.
+- HIMB4 v9, 0-80% 400058/979090 = 0.409, 0-70% 351280/851993 = 0.4123
+- HIMB19 SameSign (|vz|<15.), 5841434
+- HIMB19 WrongSign (|vz|15),  5841434 events, 0-80% 4835223 events, 0-70% 4209781 events.
+
+
+

@@ -5,36 +5,39 @@
 // cent                   0,  1,   2,   3,   4,   5
     int centBin[7] = {0, 10, 20,  60, 100, 160, 200};
 
-void MVAmass(string s = "LM", string fin = "", string fout = "")
+void FlatMass(string s = "LM", string ss = "SS")
 {
     TChain * mtr = new TChain("mtr");
-    mtr->Add(fin.c_str());
-    string sout = fout;
+    string sout = "FlatMassWS2_LM.root";
 
-//    string sout = "MVAmassBDT250D4_LM20_cent7.root";
-//
-//    if ( s == "LM" ) {
-//        mtr->Add("../../PbPb2018/V0Performance/newTree8/LM3_20rap1_*.root/mtr");
-//    } else {
-//        mtr->Add("../../PbPb2018/V0Performance/newTree8/KS3_rap1_*.root/mtr");
-//        sout = "MVAmassBDT250D4_KS_cent7.root";
-//    }
+    if ( s == "LM" ) {
+        if ( ss == "SS"  ) {
+            mtr->Add("../../PbPb2018/V0Performance/MB19v9_LM.root/tree");
+            sout = "FlatMassSS2_LM.root";
+        } else {
+            mtr->Add("../../PbPb2018/V0Performance/MBWrongSign2_LM.root/tree");
+            sout = "FlatMassWS2_LM.root";
+        }
+    } else {
+        if ( ss == "SS"  ) {
+            mtr->Add("../../PbPb2018/V0Performance/MB19v9_KS.root/tree");
+            sout = "FlatMassSS2_KS.root";
+        } else {
+            mtr->Add("../../PbPb2018/V0Performance/MBWrongSign2_KS.root/tree");
+            sout = "FlatMassWS2_KS.root";
+        }
+    }
 
-    Float_t         mass;
-    Float_t         rapidity;
-    Float_t         pt;
-//    Float_t         pdgId;
-    Float_t         Cent;
-    Float_t         alpha;
-    Float_t         v0qt;
+    Double_t         mass;
+    Double_t         rapidity;
+    Double_t         pt;
+    Double_t        Cent;
 
+    mtr->SetMakeClass(1);
     mtr->SetBranchAddress("mass", &mass);
     mtr->SetBranchAddress("rapidity", &rapidity);
     mtr->SetBranchAddress("pt", &pt);
-//    mtr->SetBranchAddress("pdgId", &pdgId);
     mtr->SetBranchAddress("Cent", &Cent);
-//    mtr->SetBranchAddress("alpha", &alpha);
-//    mtr->SetBranchAddress("v0qt", &v0qt);
 
     TH1D * hMassMid[6][13];
     TH1D * hMassFwd[6][13];

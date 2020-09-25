@@ -99,7 +99,7 @@ int TMVAClassification_DataWS( string s = "LM" )
    Use["KNN"]             = 0; // k-nearest neighbour method
    //
    // Linear Discriminant Analysis
-   Use["LD"]              = 1; // Linear Discriminant identical to Fisher
+   Use["LD"]              = 0; // Linear Discriminant identical to Fisher
    Use["Fisher"]          = 0;
    Use["FisherG"]         = 0;
    Use["BoostedFisher"]   = 0; // uses generalised MVA method boosting
@@ -127,7 +127,7 @@ int TMVAClassification_DataWS( string s = "LM" )
    //
    // Boosted Decision Trees
    Use["BDT"]             = 1; // uses Adaptive Boost
-   Use["BDTG"]            = 1; // uses Gradient Boost
+   Use["BDTG"]            = 0; // uses Gradient Boost
    Use["BDTB"]            = 0; // uses Bagging
    Use["BDTD"]            = 0; // decorrelation + Adaptive Boost
    Use["BDTF"]            = 0; // allow usage of fisher discriminant for node splitting
@@ -145,8 +145,8 @@ int TMVAClassification_DataWS( string s = "LM" )
 
    // Read training and test data
    // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
-   TFile *inputS = new TFile( (string("../../PbPb2018/V0Performance/MC/HydjetMCTruth_")+s+".root").c_str() );
-   TFile *inputB = new TFile( (string("../../PbPb2018/V0Performance/MBWrongSign_")+s+".root").c_str() );
+   TFile *inputS = new TFile( (string("/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MC/HydjetMCTruth_")+s+".root").c_str() );
+   TFile *inputB = new TFile( (string("/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MBWrongSign2_")+s+".root").c_str() );
    std::cout << "--- TMVAClassification       : Using input Signal file: " << inputS->GetName() << std::endl;
    std::cout << "--- TMVAClassification       : Using input Background file: " << inputB->GetName() << std::endl;
 
@@ -172,7 +172,7 @@ int TMVAClassification_DataWS( string s = "LM" )
    TMVA::Factory *factory = new TMVA::Factory( "TMVAClassification", outputFile,
                                                "!V:!Silent:Color:DrawProgressBar:Transformations=I;D;P:AnalysisType=Classification" );
 
-   TMVA::DataLoader *dataloader=new TMVA::DataLoader( (string("dataset_dataWS_rap1_")+s).c_str() );
+   TMVA::DataLoader *dataloader=new TMVA::DataLoader( (string("dataset_dataWS_")+s).c_str() );
    // If you wish to modify default settings
    // (please check "src/Config.h" to see all available global options)
    //
@@ -221,7 +221,7 @@ int TMVAClassification_DataWS( string s = "LM" )
 
    // global event weights per tree (see below for setting event-wise weights)
    Double_t signalWeight     = 1.0;
-   Double_t backgroundWeight = 1.0;
+   Double_t backgroundWeight = 0.0832;
 
    // You can add an arbitrary number of signal or background trees
    dataloader->AddSignalTree    ( signalTree,     signalWeight );
@@ -274,10 +274,10 @@ int TMVAClassification_DataWS( string s = "LM" )
 
    // Apply additional cuts on the signal and background samples (can be different)
 //   TCut mycuts = "mass>1.1115 && mass<1.12"; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-   TCut mycuts = "fabs(rapidity)<1.0"; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-   TCut mycutb = "fabs(rapidity)<1.0"; // for example: TCut mycutb = "abs(var1)<0.5";
-//   TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-//   TCut mycutb = ""; // for example: TCut mycutb = "abs(var1)<0.5";
+//   TCut mycuts = "fabs(rapidity)<1.0"; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
+//   TCut mycutb = "fabs(rapidity)<1.0"; // for example: TCut mycutb = "abs(var1)<0.5";
+   TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
+   TCut mycutb = ""; // for example: TCut mycutb = "abs(var1)<0.5";
 
    // Tell the dataloader how to use the training and testing events
    //
@@ -499,15 +499,17 @@ int TMVAClassification_DataWS( string s = "LM" )
    if (Use["BDT"])  // Adaptive Boost
    {
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT850_D3",
-                           "H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
-      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT500_D3",
-                           "H:!V:NTrees=500:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
-      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT500_D2",
-                           "H:!V:NTrees=500:MinNodeSize=2.5%:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
+                           "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
+//      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT500_D3",
+//                           "!H:!V:NTrees=500:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
+//      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT500_D2",
+//                           "!H:!V:NTrees=500:MinNodeSize=2.5%:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
+      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT250_D4",
+                           "!H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT250_D3",
-                           "H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
-      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT250_D2",
-                           "H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
+                           "!H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
+//      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT250_D2",
+//                           "!H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
    }
 
    if (Use["BDTB"]) // Bagging

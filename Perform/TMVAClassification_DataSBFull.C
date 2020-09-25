@@ -99,7 +99,7 @@ int TMVAClassification_DataSBFull( string s = "LM" )
    Use["KNN"]             = 0; // k-nearest neighbour method
    //
    // Linear Discriminant Analysis
-   Use["LD"]              = 1; // Linear Discriminant identical to Fisher
+   Use["LD"]              = 0; // Linear Discriminant identical to Fisher
    Use["Fisher"]          = 0;
    Use["FisherG"]         = 0;
    Use["BoostedFisher"]   = 0; // uses generalised MVA method boosting
@@ -127,7 +127,7 @@ int TMVAClassification_DataSBFull( string s = "LM" )
    //
    // Boosted Decision Trees
    Use["BDT"]             = 1; // uses Adaptive Boost
-   Use["BDTG"]            = 1; // uses Gradient Boost
+   Use["BDTG"]            = 0; // uses Gradient Boost
    Use["BDTB"]            = 0; // uses Bagging
    Use["BDTD"]            = 0; // decorrelation + Adaptive Boost
    Use["BDTF"]            = 0; // allow usage of fisher discriminant for node splitting
@@ -145,8 +145,8 @@ int TMVAClassification_DataSBFull( string s = "LM" )
 
    // Read training and test data
    // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
-   TFile *inputS = new TFile( (string("../../PbPb2018/V0Performance/MC/HydjetMCTruth_")+s+".root").c_str() );
-   TFile *inputB = new TFile( (string("../../PbPb2018/V0Performance/MB4SB_")+s+"_Full.root").c_str() );
+   TFile *inputS = new TFile( (string("/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MC/HydjetMCTruth_")+s+".root").c_str() );
+   TFile *inputB = new TFile( (string("/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MB4v9SB_")+s+"_Full.root").c_str() );
    std::cout << "--- TMVAClassification       : Using input Signal file: " << inputS->GetName() << std::endl;
    std::cout << "--- TMVAClassification       : Using input Background file: " << inputB->GetName() << std::endl;
 

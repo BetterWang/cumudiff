@@ -16,16 +16,20 @@ void flatten_tree(string s = "test", string prefix = "LM", string sout = "test.r
     } else if ( s == "HydjetMCBkg" ) {
         trV->Add("../../PbPb2018/MinBias_Hydjet_Drum5F_2018_5p02TeV/crab_Hydjet_RECODEBUG_BkgV0Tree_v1/190911_160359/0000/cumu_*.root/tree/trV");
     } else if ( s == "MBWrongSign" ) {
-        trV->Add("../../PbPb2018/HIMinimumBias19/crab_HIMB19_WrongSignV0Tree_v3/190910_033131/0000/cumu_*.root/tree/trV");
-        limit = 300000;
+        trV->Add("../../PbPb2018/HIMinimumBias19/crab_HIMB19_WrongSignV0Tree_v4/200916_134822/0000/cumu_*.root/tree/trV");
+        limit = 10000000;
     } else if ( s == "MB4" ) {
-        trV->Add("../../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Tree_v6/190917_195729/0000/cumu_*.root/tree/trV");
+        trV->Add("../../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Tree_v9/200909_044330/0000/cumu_90*.root/tree/trV");
 //        limit = 1000000;
+    } else if ( s == "MB19" ) {
+        trV->Add("../../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Tree_v9/200918_050416/0000/cumu_*.root/tree/trV");
+        limit = 10000000;
     }
 
 	trV->SetMakeClass(1);
     trV->SetBranchStatus("*", 0);
     trV->SetBranchStatus("Cent", 1);
+    trV->SetBranchStatus("vz", 1);
     trV->SetBranchStatus( (prefix+"pt").c_str(), 1 );
     trV->SetBranchStatus( (prefix+"phi").c_str(), 1 );
     trV->SetBranchStatus( (prefix+"eta").c_str(), 1 );
@@ -82,6 +86,7 @@ void flatten_tree(string s = "test", string prefix = "LM", string sout = "test.r
     vector<double>  *nTrkDCASigXY = 0;
     vector<double>  *nTrkDCASigZ = 0;
     Double_t        Cent = -1;
+    Double_t        vz = -9999;
 
     trV->SetBranchAddress( (prefix+"pt").c_str(),             &pt);
     trV->SetBranchAddress( (prefix+"phi").c_str(),            &phi);
@@ -111,6 +116,7 @@ void flatten_tree(string s = "test", string prefix = "LM", string sout = "test.r
     trV->SetBranchAddress( (prefix+"nTrkDCASigXY").c_str(),   &nTrkDCASigXY);
     trV->SetBranchAddress( (prefix+"nTrkDCASigZ").c_str(),    &nTrkDCASigZ);
     trV->SetBranchAddress( "Cent",                            &Cent);
+    trV->SetBranchAddress( "vz",                              &vz);
 
 
     TFile * fout = new TFile( sout.c_str(), "recreate" );
@@ -175,10 +181,14 @@ void flatten_tree(string s = "test", string prefix = "LM", string sout = "test.r
     tree->Branch( "Cent",           &Cent,             "Cent/D");
 
 	int idx = 0;
-    cout << trV->GetEntries() << endl;
+    // cout << trV->GetEntries() << endl;
 	while ( trV->GetEntry(idx) ) {
 		//cout << " --> idx = " << idx << endl;
 		if ( (idx%10000)==0 ) cout << " --> idx = " << idx << endl;
+        if ( (vz > 15.) or (vz < -15.) ) {
+            idx++;
+            continue;
+        }
 		int sz = pt->size();
 		for ( int i = 0; i < sz; i++ ) {
             n_pt             = (*pt            )[i];

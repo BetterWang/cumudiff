@@ -144,3 +144,23 @@ Skim: `/HIMinimumBias4/qwang-V0Skim_v3-9d53152409b8a9b6fb15042030d9bf69/USER`
 ![](BDT/LM/hMassMid_4_10.png)
 ![](BDT/LM/hMassMid_4_11.png)
 ![](BDT/LM/hMassMid_4_12.png)
+
+
+## MVA Training with individual centrality bin (systematics)
+
+### $K_{S}^0$
+
+* [MVA xml 0-5%](BDTCent/TMVAClassification_BDT250_D4.KS_0.weights.xml)
+* [MVA xml 5-10%](BDTCent/TMVAClassification_BDT250_D4.KS_1.weights.xml)
+* [MVA xml 10-30%](BDTCent/TMVAClassification_BDT250_D4.KS_2.weights.xml)
+* [MVA xml 30-50%](BDTCent/TMVAClassification_BDT250_D4.KS_3.weights.xml)
+* [MVA xml 50-80%](BDTCent/TMVAClassification_BDT250_D4.KS_4.weights.xml)
+
+### $\Lambda$
+
+* [MVA xml 0-5%](BDTCent/TMVAClassification_BDT250_D4.LM_0.weights.xml)
+* [MVA xml 5-10%](BDTCent/TMVAClassification_BDT250_D4.LM_1.weights.xml)
+* [MVA xml 10-30%](BDTCent/TMVAClassification_BDT250_D4.LM_2.weights.xml)
+* [MVA xml 30-50%](BDTCent/TMVAClassification_BDT250_D4.LM_3.weights.xml)
+* [MVA xml 50-80%](BDTCent/TMVAClassification_BDT250_D4.LM_4.weights.xml)
+
