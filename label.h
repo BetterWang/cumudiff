@@ -763,14 +763,16 @@ char const * fname[] = {
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_Peak_Mid_BDT20Cent_v1/200918_160922/0000/",     // 760 HIMB0 Ks MVACent
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBPos_Mid_BDT20Cent_v1/200918_201634/0000/",    // 761 HIMB0 Ks SBPos MVACent
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBNeg_Mid_BDT20Cent_v1/200918_203208/0000/",    // 762 HIMB0 Ks SBNeg MVACent
-    "NA",    // 763 HIMB merge Lm SB MVACent
-    "NA",    // 764 HIMB merge Lm SB MVACent
+    "NA",    // 763 HIMB merge Ks Peak MVACent
+    "NA",    // 764 HIMB merge Ks SB MVACent
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBPos1_Mid_BDT20_v1/200923_030229/0000/",    // 765 HIMB0 Lm SBPos1
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBNeg1_Mid_BDT20_v1/200923_030834/0000/",    // 766 HIMB0 Lm SBNeg1
     "NA",    // 767 HIMB merge Lm SB1
     "../PbPb2018/HIMinimumBias16/crab_HIMB16_V0Cumu_Ks_SBPos1_Mid_v2/200923_031435/0000/",    // 768 HIMB16 Ks SBPos1
-    "../PbPb2018/HIMinimumBias16/crab_HIMB16_V0Cumu_Ks_SBNeg1_Mid_v2/200923_031335/0000/",    // 769 HIMB16 Ks SBNeg1
+    "../PbPb2018/HIMinimumBias16/crab_HIMB16_V0Cumu_Ks_SBNeg1_Mid_v2/200925_221736/0000/",    // 769 HIMB16 Ks SBNeg1
     "NA",    // 770 HIMB merge Ks SB1
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBPos1_Mid_BDT20_v1/200925_050931/0000/",    // 771 HIMB1 Lm SBPos1
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBNeg1_Mid_BDT20_v1/200925_051105/0000/",    // 772 HIMB1 Lm SBNeg1
 };
 
 char const * ftxt[] = {
@@ -1545,6 +1547,8 @@ char const * ftxt[] = {
     "txt/HIMB16_Lm_SBPos1/",                 // 768
     "txt/HIMB16_Lm_SBNeg1/",                 // 769
     "txt/HIMB_Ks_SB1/",                      // 770
+    "txt/HIMB1_Lm_SBPos1/",                  // 771
+    "txt/HIMB1_Lm_SBNeg1/",                  // 772
 };
 
 const int Pid_Non	= 0;
@@ -2334,6 +2338,8 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 768
 	Pid_AA_Ks,		    // 769
 	Pid_AA_Ks,		    // 770
+	Pid_AA_Lambda,		// 771
+	Pid_AA_Lambda,		// 772
 };
 
 #include <TChain.h>
