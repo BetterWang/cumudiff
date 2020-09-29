@@ -15,6 +15,12 @@ void flatten_tree(string s = "test", string prefix = "LM", string sout = "test.r
         trV->Add("../../PbPb2018/MinBias_Hydjet_Drum5F_2018_5p02TeV/crab_Hydjet_RECODEBUG_TruthV0Tree_v1/190909_202145/0000/cumu_*.root/tree/trV");
     } else if ( s == "HydjetMCBkg" ) {
         trV->Add("../../PbPb2018/MinBias_Hydjet_Drum5F_2018_5p02TeV/crab_Hydjet_RECODEBUG_BkgV0Tree_v1/190911_160359/0000/cumu_*.root/tree/trV");
+    } else if ( s == "MBWrongSign1" ) {
+        trV->Add("../../PbPb2018/HIMinimumBias19/crab_HIMB19_WrongSignV0Tree_v4/200916_134822/0000/cumu_1*.root/tree/trV");
+        limit = 10000000;
+    } else if ( s == "MBWrongSign3" ) {
+        trV->Add("../../PbPb2018/HIMinimumBias19/crab_HIMB19_WrongSignV0Tree_v4/200916_134822/0000/cumu_1*.root/tree/trV");
+        limit = 503271;
     } else if ( s == "MBWrongSign" ) {
         trV->Add("../../PbPb2018/HIMinimumBias19/crab_HIMB19_WrongSignV0Tree_v4/200916_134822/0000/cumu_*.root/tree/trV");
         limit = 10000000;

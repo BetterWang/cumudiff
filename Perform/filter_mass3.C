@@ -8,10 +8,11 @@
 using namespace TMVA;
 
 
-void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Tree_v6/190917_195729/0000/*.root/tree/trV", string fout = "LM.root", bool bForward = false)
+void filter_mass3(string prefix = "LM", string input = "", string fout = "", bool bForward = false)
 {
     TMVA::Tools::Instance();
     TMVA::Reader *reader = new TMVA::Reader( "!Color:!Silent" );
+    TMVA::Reader *readerC = new TMVA::Reader( "!Color:!Silent" );
 
     Float_t pt;
     Float_t rapidity;
@@ -34,7 +35,7 @@ void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimum
     Float_t nTrkNPxLayer;
     Float_t nTrkDCASigXY;
     Float_t nTrkDCASigZ;
-    Float_t Cent; 
+    Float_t Cent;
 
     Float_t mass;
     Float_t eta;
@@ -69,17 +70,46 @@ void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimum
     reader->AddSpectator( "phi",    &phi);
     reader->AddSpectator( "pdgId",  &pdgId);
 
-    reader->BookMVA( string("BDT_MCfull"),     string("dataset_full_")+prefix+"/weights/TMVAClassification_BDT250_D3.weights.xml");
-    reader->BookMVA( string("BDT_MCfull4"),    string("dataset3_full_")+prefix+"/weights/TMVAClassification_BDT250_D4.weights.xml");
-    reader->BookMVA( string("BDT_MCrap1"),     string("dataset_rap1_")+prefix+"/weights/TMVAClassification_BDT250_D3.weights.xml");
-    reader->BookMVA( string("BDT_DataWSrap1"), string("dataset_dataWS_rap1_")+prefix+"/weights/TMVAClassification_BDT250_D3.weights.xml");
-    reader->BookMVA( string("BDT_DataSBrap1"), string("dataset_dataSB_rap1_")+prefix+"/weights/TMVAClassification_BDT250_D3.weights.xml");
 
-    Float_t BDT_MCfull = 0.;
+    readerC->AddVariable( "pt",               &pt             );
+    readerC->AddVariable( "rapidity",         &rapidity       );
+    readerC->AddVariable( "vtxChi2",          &vtxChi2        );
+    readerC->AddVariable( "cosThetaXYZ",      &cosThetaXYZ    );
+    readerC->AddVariable( "Lxyz",             &Lxyz           );
+    readerC->AddVariable( "vtxDecaySigXYZ",   &vtxDecaySigXYZ );
+    readerC->AddVariable( "DCA",              &DCA            );
+    readerC->AddVariable( "pTrkNHit",         &pTrkNHit       );
+    readerC->AddVariable( "pTrkPt",           &pTrkPt         );
+    readerC->AddVariable( "pTrkPtError",      &pTrkPtError    );
+    readerC->AddVariable( "pTrkEta",          &pTrkEta        );
+    readerC->AddVariable( "pTrkNPxLayer",     &pTrkNPxLayer   );
+    readerC->AddVariable( "pTrkDCASigXY",     &pTrkDCASigXY   );
+    readerC->AddVariable( "pTrkDCASigZ",      &pTrkDCASigZ    );
+    readerC->AddVariable( "nTrkNHit",         &nTrkNHit       );
+    readerC->AddVariable( "nTrkPt",           &nTrkPt         );
+    readerC->AddVariable( "nTrkPtError",      &nTrkPtError    );
+    readerC->AddVariable( "nTrkEta",          &nTrkEta        );
+    readerC->AddVariable( "nTrkNPxLayer",     &nTrkNPxLayer   );
+    readerC->AddVariable( "nTrkDCASigXY",     &nTrkDCASigXY   );
+    readerC->AddVariable( "nTrkDCASigZ",      &nTrkDCASigZ    );
+
+    readerC->AddSpectator( "mass",   &mass);
+    readerC->AddSpectator( "eta",    &eta);
+    readerC->AddSpectator( "phi",    &phi);
+    readerC->AddSpectator( "pdgId",  &pdgId);
+    readerC->AddSpectator( "Cent",             &Cent           );
+
+    reader->BookMVA( string("BDT_MCfull4"),    string("dataset3_full_")+prefix+"/weights/TMVAClassification_BDT250_D4.weights.xml");
+    reader->BookMVA( string("BDT_DataWS"), string("dataset_dataWS_")+prefix+"/weights/TMVAClassification_BDT250_D4.weights.xml");
+
+    readerC->BookMVA( string("BDT_MCfull4C_1"),    string("dataset3_full_")+prefix+"_1/weights/TMVAClassification_BDT250_D4.weights.xml");
+    readerC->BookMVA( string("BDT_MCfull4C_2"),    string("dataset3_full_")+prefix+"_2/weights/TMVAClassification_BDT250_D4.weights.xml");
+    readerC->BookMVA( string("BDT_MCfull4C_3"),    string("dataset3_full_")+prefix+"_3/weights/TMVAClassification_BDT250_D4.weights.xml");
+    readerC->BookMVA( string("BDT_MCfull4C_4"),    string("dataset3_full_")+prefix+"_4/weights/TMVAClassification_BDT250_D4.weights.xml");
+
     Float_t BDT_MCfull4= 0.;
-    Float_t BDT_MCrap1 = 0.;
-    Float_t BDT_DataWSrap1 = 0.;
-    Float_t BDT_DataSBrap1 = 0.;
+    Float_t BDT_DataWS = 0.;
+    Float_t BDT_MCfull4C= 0.;
 
     TChain * trV = new TChain();
     trV->Add(input.c_str());
@@ -179,11 +209,9 @@ void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimum
     mtr->Branch("pt",       &pt,        "pt/F" );
     mtr->Branch("Cent",     &Cent,      "Cent/F" );
 
-    mtr->Branch("BDT_MCfull",     &BDT_MCfull,        "BDT_MCfull/F" );
     mtr->Branch("BDT_MCfull4",    &BDT_MCfull4,       "BDT_MCfull4/F" );
-    mtr->Branch("BDT_MCrap1",     &BDT_MCrap1,        "BDT_MCrap1/F" );
-    mtr->Branch("BDT_DataWSrap1", &BDT_DataWSrap1,    "BDT_DataWSrap1/F" );
-    mtr->Branch("BDT_DataSBrap1", &BDT_DataSBrap1,    "BDT_DataSBrap1/F" );
+    mtr->Branch("BDT_DataWS",     &BDT_DataWS,        "BDT_DataWS/F" );
+    mtr->Branch("BDT_MCfull4C",   &BDT_MCfull4C,      "BDT_MCfull4C/F" );
 
     TFile * fsave = new TFile( fout.c_str(), "recreate" );
     int ievt= 0;
@@ -225,11 +253,18 @@ void filter_mass3(string prefix = "LM", string input = "../../PbPb2018/HIMinimum
             phi           = (*t_phi)[i];
             pdgId         = (*t_pdgId)[i];
 
-            BDT_MCfull = reader->EvaluateMVA( "BDT_MCfull" );
             BDT_MCfull4= reader->EvaluateMVA( "BDT_MCfull4" );
-            BDT_MCrap1 = reader->EvaluateMVA( "BDT_MCrap1" );
-            BDT_DataWSrap1 = reader->EvaluateMVA( "BDT_DataWSrap1" );
-            BDT_DataSBrap1 = reader->EvaluateMVA( "BDT_DataSBrap1" );
+            BDT_DataWS = reader->EvaluateMVA( "BDT_DataWS" );
+            BDT_MCfull4C = -1.;
+            if ( Cent >= 10. and Cent < 20. ) {
+                BDT_MCfull4C = readerC->EvaluateMVA( "BDT_MCfull4C_1" );
+            } else if ( Cent >=20 and Cent < 60 ) {
+                BDT_MCfull4C = readerC->EvaluateMVA( "BDT_MCfull4C_2" );
+            } else if ( Cent >=60 and Cent < 100 ) {
+                BDT_MCfull4C = readerC->EvaluateMVA( "BDT_MCfull4C_3" );
+            } else if ( Cent >=100 and Cent < 160 ) {
+                BDT_MCfull4C = readerC->EvaluateMVA( "BDT_MCfull4C_4" );
+            }
 
             mtr->Fill();
         }

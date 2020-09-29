@@ -146,7 +146,7 @@ int TMVAClassification_DataWS( string s = "LM" )
    // Read training and test data
    // (it is also possible to use ASCII format as input -> see TMVA Users Guide)
    TFile *inputS = new TFile( (string("/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MC/HydjetMCTruth_")+s+".root").c_str() );
-   TFile *inputB = new TFile( (string("/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MBWrongSign2_")+s+".root").c_str() );
+   TFile *inputB = new TFile( (string("/eos/cms/store/group/phys_heavyions/qwang/PbPb2018/V0Performance/MBWrongSign3_")+s+".root").c_str() );
    std::cout << "--- TMVAClassification       : Using input Signal file: " << inputS->GetName() << std::endl;
    std::cout << "--- TMVAClassification       : Using input Background file: " << inputB->GetName() << std::endl;
 
@@ -221,7 +221,7 @@ int TMVAClassification_DataWS( string s = "LM" )
 
    // global event weights per tree (see below for setting event-wise weights)
    Double_t signalWeight     = 1.0;
-   Double_t backgroundWeight = 0.0832;
+   Double_t backgroundWeight = 1.0;
 
    // You can add an arbitrary number of signal or background trees
    dataloader->AddSignalTree    ( signalTree,     signalWeight );
@@ -276,8 +276,8 @@ int TMVAClassification_DataWS( string s = "LM" )
 //   TCut mycuts = "mass>1.1115 && mass<1.12"; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
 //   TCut mycuts = "fabs(rapidity)<1.0"; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
 //   TCut mycutb = "fabs(rapidity)<1.0"; // for example: TCut mycutb = "abs(var1)<0.5";
-   TCut mycuts = ""; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
-   TCut mycutb = ""; // for example: TCut mycutb = "abs(var1)<0.5";
+   TCut mycuts = "Cent<160"; // for example: TCut mycuts = "abs(var1)<0.5 && abs(var2-0.5)<1";
+   TCut mycutb = "Cent<160"; // for example: TCut mycutb = "abs(var1)<0.5";
 
    // Tell the dataloader how to use the training and testing events
    //
@@ -498,16 +498,16 @@ int TMVAClassification_DataWS( string s = "LM" )
 
    if (Use["BDT"])  // Adaptive Boost
    {
+      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT250_D4",
+                           "!H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
+      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT250_D3",
+                           "!H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
       factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT850_D3",
                            "!H:!V:NTrees=850:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
 //      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT500_D3",
 //                           "!H:!V:NTrees=500:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
 //      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT500_D2",
 //                           "!H:!V:NTrees=500:MinNodeSize=2.5%:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
-      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT250_D4",
-                           "!H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=4:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
-      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT250_D3",
-                           "!H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=3:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
 //      factory->BookMethod( dataloader, TMVA::Types::kBDT, "BDT250_D2",
 //                           "!H:!V:NTrees=250:MinNodeSize=2.5%:MaxDepth=2:BoostType=AdaBoost:AdaBoostBeta=0.5:UseBaggedBoost:BaggedSampleFraction=0.5:SeparationType=GiniIndex:nCuts=20" );
    }
