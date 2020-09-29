@@ -773,6 +773,8 @@ char const * fname[] = {
     "NA",    // 770 HIMB merge Ks SB1
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBPos1_Mid_BDT20_v1/200925_050931/0000/",    // 771 HIMB1 Lm SBPos1
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBNeg1_Mid_BDT20_v1/200925_051105/0000/",    // 772 HIMB1 Lm SBNeg1
+    "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Lm_SBPos1_Mid_BDT20_v1/200926_153007/0000/",    // 773 HIMB1 Lm SBPos1
+    "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Lm_SBNeg1_Mid_BDT20_v1/200926_153150/0000/",    // 774 HIMB1 Lm SBNeg1
 };
 
 char const * ftxt[] = {
@@ -1549,6 +1551,8 @@ char const * ftxt[] = {
     "txt/HIMB_Ks_SB1/",                      // 770
     "txt/HIMB1_Lm_SBPos1/",                  // 771
     "txt/HIMB1_Lm_SBNeg1/",                  // 772
+    "txt/HIMB2_Lm_SBPos1/",                  // 773
+    "txt/HIMB2_Lm_SBNeg1/",                  // 774
 };
 
 const int Pid_Non	= 0;
@@ -2340,6 +2344,8 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 770
 	Pid_AA_Lambda,		// 771
 	Pid_AA_Lambda,		// 772
+	Pid_AA_Lambda,		// 773
+	Pid_AA_Lambda,		// 774
 };
 
 #include <TChain.h>
