@@ -1546,8 +1546,8 @@ char const * ftxt[] = {
     "txt/HIMB0_Lm_SBPos1/",                  // 765
     "txt/HIMB0_Lm_SBNeg1/",                  // 766
     "txt/HIMB_Lm_SB1/",                      // 767
-    "txt/HIMB16_Lm_SBPos1/",                 // 768
-    "txt/HIMB16_Lm_SBNeg1/",                 // 769
+    "txt/HIMB16_Ks_SBPos1/",                 // 768
+    "txt/HIMB16_Ks_SBNeg1/",                 // 769
     "txt/HIMB_Ks_SB1/",                      // 770
     "txt/HIMB1_Lm_SBPos1/",                  // 771
     "txt/HIMB1_Lm_SBNeg1/",                  // 772
