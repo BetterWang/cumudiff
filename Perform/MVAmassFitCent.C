@@ -17,8 +17,6 @@ const std::string gaus_func = "[2]*TMath::Gaus(x, [0], [1])";
 
 const std::string poly_bkg4 = "[5] + [6]*x + [7]*x*x + [8]*x*x*x + [9]*x*x*x*x";
 const std::string poly_bkg3 = "[5] + [6]*x + [7]*x*x + [8]*x*x*x";
-const std::string poly_bkg1 = "[5] + [6]*x";
-const std::string poly_exp1 = "TMath::Exp([5] + [6]*x)";
 
 std::string poly_bkg0= "[0] + [1]*x + [2]*x*x + [3]*x*x*x + [4]*x*x*x*x";
 
@@ -33,10 +31,7 @@ TF1 * gaus2_signal  = 0;
 TF1 * func_bckgnd   = 0;
 TFile * f;
 
-bool bPol4 = false;
 bool bPol3 = false;
-bool bPol1 = false;
-bool bExp  = false;
 
 string s = "LM";
 string tag = "";
@@ -86,9 +81,9 @@ TF1* fitHist(TH1D* hist, int iter)
 
     func->SetParameter(5, 10.);
     func->SetParameter(6, 1.);
-    if ( bPol4 or bPol3 ) func->SetParameter(7, 1.);
-    if ( bPol4 or bPol3 ) func->SetParameter(8, 1.);
-    if ( bPol4 )          func->SetParameter(9, 1.);
+    func->SetParameter(7, 1.);
+    func->SetParameter(8, 1.);
+    func->SetParameter(9, 1.);
 
     func->FixParameter(0, mass);
     func->FixParameter(1, 1.);
@@ -102,9 +97,9 @@ TF1* fitHist(TH1D* hist, int iter)
 
     func->FixParameter(5, func->GetParameter(5));
     func->FixParameter(6, func->GetParameter(6));
-    if ( bPol4 or bPol3 ) func->FixParameter(7, func->GetParameter(7));
-    if ( bPol4 or bPol3 ) func->FixParameter(8, func->GetParameter(8));
-    if ( bPol4 )          func->FixParameter(9, func->GetParameter(9));
+    func->FixParameter(7, func->GetParameter(7));
+    func->FixParameter(8, func->GetParameter(8));
+    if (not bPol3) func->FixParameter(9, func->GetParameter(9));
 
     func->ReleaseParameter(0);
     func->SetParLimits(0, mass-Dmass, mass+Dmass);
@@ -128,9 +123,9 @@ TF1* fitHist(TH1D* hist, int iter)
     func->ReleaseParameter(4);
     func->ReleaseParameter(5);
     func->ReleaseParameter(6);
-    if ( bPol4 or bPol3 ) func->ReleaseParameter(7);
-    if ( bPol4 or bPol3 ) func->ReleaseParameter(8);
-    if ( bPol4 )          func->ReleaseParameter(9);
+    func->ReleaseParameter(7);
+    func->ReleaseParameter(8);
+    func->ReleaseParameter(9);
     func->SetParLimits(0, mass-Dmass, mass+Dmass);
     func->SetParLimits(1, 0, sigma);
     func->SetParLimits(2, 0, sigma);
@@ -144,7 +139,7 @@ TF1* fitHist(TH1D* hist, int iter)
     return func;
 }
 
-void doFit(int c1 = 3, int ipt1 = 6, string y = "Mid", int iter=5)
+void doFit(int c1 = 3, int ipt1 = 6, string y = "Mid", int iter=100)
 {
     c = c1;
     ipt = ipt1;
@@ -172,9 +167,9 @@ void doFit(int c1 = 3, int ipt1 = 6, string y = "Mid", int iter=5)
 
     func_bckgnd->SetParameter(0, fit->GetParameter(5));
     func_bckgnd->SetParameter(1, fit->GetParameter(6));
-    if ( bPol4 or bPol3 ) func_bckgnd->SetParameter(2, fit->GetParameter(7));
-    if ( bPol4 or bPol3 ) func_bckgnd->SetParameter(3, fit->GetParameter(8));
-    if ( bPol4 )          func_bckgnd->SetParameter(4, fit->GetParameter(9));
+    func_bckgnd->SetParameter(2, fit->GetParameter(7));
+    func_bckgnd->SetParameter(3, fit->GetParameter(8));
+    if (not bPol3) func_bckgnd->SetParameter(4, fit->GetParameter(9));
 
     func_signal->SetLineColor(kRed);
     func_bckgnd->SetLineColor(kBlue);
@@ -203,7 +198,7 @@ void doFit(int c1 = 3, int ipt1 = 6, string y = "Mid", int iter=5)
 
 void doSave(bool bPlot = true)
 {
-    TFile save( ( s + tag + "/" + hmass->GetName() + ".root" ).c_str(), "recreate" );
+    TFile save( ( s + tag + "/" + hmass->GetName() + "_centS.root" ).c_str(), "recreate" );
     hmass->Write("hmass");
     fit->Write();
     func_signal->Write();
@@ -232,18 +227,18 @@ void doSave(bool bPlot = true)
         latexS.DrawLatexNDC(0.56, 0.82, Form("S = %.2f", S));
         latexS.DrawLatexNDC(0.56, 0.77, Form("B = %.2f", B));
         latexS.DrawLatexNDC(0.56, 0.72, Form("S/#sqrt{S+B} = %.2f", sig));
-        c.SaveAs( ( s + tag + "/" + hmass->GetName() + ".pdf" ).c_str() );
-        c.SaveAs( ( s + tag + "/" + hmass->GetName() + ".png" ).c_str() );
+        c.SaveAs( ( s + tag + "/" + hmass->GetName() + "_centS.pdf" ).c_str() );
+        c.SaveAs( ( s + tag + "/" + hmass->GetName() + "_centS.png" ).c_str() );
     }
 }
 
-void MVAmassFit(string s1 = "LM", string option = "pol4")
+void MVAmassFitCent(string s1 = "LM", string option = "")
 {
     s = s1;
     if ( s == "LM" ) {
-        f = new TFile("MVAmassBDT250D4_LM20_cent7.root");
+        f = new TFile("MVAmassBDT250D4_LM20_centS.root");
     } else if ( s == "KS" ) {
-        f = new TFile("MVAmassBDT250D4_KS_cent7.root");
+        f = new TFile("MVAmassBDT250D4_KS_centS.root");
         Nbins = 270;
         //full_range = make_pair<double, double>(0.430, 0.565);
         full_range = make_pair<double, double>(0.450, 0.54);
@@ -255,26 +250,11 @@ void MVAmassFit(string s1 = "LM", string option = "pol4")
         Dmass = 0.005;
     }
 
-    if ( option == "pol4" ) {
-        bPol4 = true;
-    }
     if ( option == "pol3" ) {
         massfunc = double_gaussian + " + " + poly_bkg3;
         bPol3 = true;
         poly_bkg0= "[0] + [1]*x + [2]*x*x + [3]*x*x*x";
         tag = "pol3";
-    }
-    if ( option == "pol1" ) {
-        massfunc = double_gaussian + " + " + poly_bkg1;
-        bPol1 = true;
-        poly_bkg0= "[0] + [1]*x";
-        tag = "pol1";
-    }
-    if ( option == "exp" ) {
-        massfunc = double_gaussian + " + " + poly_exp1;
-        bExp = true;
-        poly_bkg0= "TMath::Exp([0] + [1]*x)";
-        tag = "exp";
     }
 }
 

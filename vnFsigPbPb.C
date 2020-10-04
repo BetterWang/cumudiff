@@ -21,7 +21,7 @@ TGraphErrors* merge(TGraphErrors* gr1, TGraphErrors* gr2){
     return gr;
 }
 
-void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.root", string strSave = "test.root", double sys = 0.0, bool bPol3 = false)
+void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.root", string strSave = "test.root", double sys = 0.0, string option = "")
 {
     for ( int i = 0; i < 13; i++ ) {
         dummy->GetX()[i] = 0.;
@@ -109,8 +109,14 @@ void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.roo
     if ( bKs ) {
         // Ks
         if ( bMid ) {
-            if ( bPol3 ) {
+            if ( option == "pol3" ) {
                 fFsig = new TFile("FsigKSpol3Mid_cent7.root");
+            } else if ( option == "pol1" ) {
+                fFsig = new TFile("FsigKSpol1Mid_cent7.root");
+            } else if ( option == "exp" ) {
+                fFsig = new TFile("FsigKSExpMid_cent7.root");
+            } else if ( option == "centS" ) {
+                fFsig = new TFile("FsigKSMid_centS.root");
             } else {
                 fFsig = new TFile("FsigKSMid_cent7.root");
             }
@@ -120,8 +126,14 @@ void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.roo
     } else {
         // Lm
         if ( bMid ) {
-            if ( bPol3 ) {
+            if ( option == "pol3" ) {
                 fFsig = new TFile("FsigLMpol3Mid_cent7.root");
+            } else if ( option == "pol1" ) {
+                fFsig = new TFile("FsigLMpol1Mid_cent7.root");
+            } else if ( option == "exp" ) {
+                fFsig = new TFile("FsigLMExpMid_cent7.root");
+            } else if ( option == "centS" ) {
+                fFsig = new TFile("FsigLMMid_centS.root");
             } else {
                 fFsig = new TFile("FsigLMMid_cent7.root");
             }
