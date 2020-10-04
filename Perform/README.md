@@ -22,7 +22,7 @@ MVA validation
 2) DataMVA_VarHist.C        get data var distribution
 3) varHist.C                plot/compare 1) and 2)
 4) reweightMVA.C            get reweight factor from 1) and 2) ([p][n]TrkDCASig[XY][Z])
-5) MCsignificanceT.C        get S/sqrt(S+B) with reweight
+5) MCsignificanceT.C        get S/sqrt(S+B) vs BDT cut, from TMVA trainging tree
 6) plotMCsignificanceT.C    plot S/sqrt(S+B) vs BDT cut
 7) plotSig.C                plot S/B for TMVA3 vs TMVA8 and reweighting, plot significance
 

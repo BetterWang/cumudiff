@@ -5,13 +5,16 @@
 
 using namespace std;
 
-void genMassHist3( Float_t centMin, Float_t centMax, Float_t ptMin, Float_t ptMax, string fout, string s = "LM", bool bForward = false)
+void genMassHist3( Float_t centMin, Float_t centMax, Float_t ptMin, Float_t ptMax, string fout, string s = "LM", bool bForward = false, TString option = "")
 {
 	TChain * mtr = new TChain("mtr");
     if ( bForward ) {
-//	    mtr->Add( (string("../../PbPb2018/V0Performance/newTree8/BDT_")+s+"3_*.root/mtr").c_str() );
     } else {
-	    mtr->Add( (string("../../PbPb2018/V0Performance/newTree9/BDT_")+s+"3_*.root/mtr").c_str() );
+        if ( option.Contains("WrongSign") ) {
+	        mtr->Add( (string("../../PbPb2018/V0Performance/newTree9/BDT_")+s+"3_WrongSignMB19.root/mtr").c_str() );
+        } else {
+	        mtr->Add( (string("../../PbPb2018/V0Performance/newTree9/BDT_")+s+"3_*.root/mtr").c_str() );
+        }
     }
 
     TH1D * hMassBDT_MCfull4 [200] = {};
