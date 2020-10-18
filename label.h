@@ -836,6 +836,22 @@ char const * fname[] = {
     "NA",     // 833 HIMB LM SB   limited merge for MVACent
     "NA",     // 834 HIMB KS Peak limited merge for MVACent
     "NA",     // 835 HIMB KS SB   limited merge for MVACent
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_Peak_Mid_BDT20_sysCentPlus_v1/201016_151104/0000/",      // 836 HIMB0 Lm Peak sysCentPlus
+    "",     // 837 HIMB1 Lm Peak sysCentPlus
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBPos_Mid_BDT20_sysCentPlus_v1/201016_151631/0000/",     // 838 HIMB0 Lm SBPos sysCentPlus
+    "",     // 839 HIMB1 Lm SBPos sysCentPlus
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBNeg_Mid_BDT20_sysCentPlus_v1/201016_151757/0000/",     // 840 HIMB0 Lm SBNeg sysCentPlus
+    "",     // 841 HIMB1 Lm SBNeg sysCentPlus
+    "NA",     // 842 HIMB Lm merge Peak sysCentPlus
+    "NA",     // 843 HIMB Lm merge SB sysCentPlus
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_Peak_Mid_sysCentPlus_v2/201016_153741/0000/",          // 844 HIMB0 Ks Peak sysCentPlus
+    "",     // 845 HIMB1 Ks Peak sysCentPlus
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBPos_Mid_sysCentPlus_v2/201016_153852/0000/",         // 846 HIMB0 Ks SBPos sysCentPlus
+    "",     // 847 HIMB1 Ks SBPos sysCentPlus
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBNeg_Mid_sysCentPlus_v2/201016_154018/0000/",         // 848 HIMB0 Ks SBNeg sysCentPlus
+    "",     // 849 HIMB1 Ks SBNeg sysCentPlus
+    "NA",     // 850 HIMB Ks merge Peak sysCentPlus
+    "NA",     // 851 HIMB Ks merge SB sysCentPlus
 };
 
 char const * ftxt[] = {
@@ -1675,6 +1691,22 @@ char const * ftxt[] = {
     "txt/HIMB_Lm_SB_A/", // 833
     "txt/HIMB_Ks_A/",    // 834
     "txt/HIMB_Ks_SB_A/", // 835
+    "txt/HIMB0_Lm_Peak_sysCentPlus/",               // 836
+    "txt/HIMB1_Lm_Peak_sysCentPlus/",               // 837
+    "txt/HIMB0_Lm_SBPos_sysCentPlus/",              // 838
+    "txt/HIMB1_Lm_SBPos_sysCentPlus/",              // 839
+    "txt/HIMB0_Lm_SBNeg_sysCentPlus/",              // 840
+    "txt/HIMB1_Lm_SBNeg_sysCentPlus/",              // 841
+    "txt/HIMB_Lm_Peak_sysCentPlus/",                // 842
+    "txt/HIMB_Lm_SB_sysCentPlus/",                  // 843
+    "txt/HIMB0_Ks_Peak_sysCentPlus/",               // 844
+    "txt/HIMB1_Ks_Peak_sysCentPlus/",               // 845
+    "txt/HIMB0_Ks_SBPos_sysCentPlus/",              // 846
+    "txt/HIMB1_Ks_SBPos_sysCentPlus/",              // 847
+    "txt/HIMB0_Ks_SBNeg_sysCentPlus/",              // 848
+    "txt/HIMB1_Ks_SBNeg_sysCentPlus/",              // 849
+    "txt/HIMB_Ks_Peak_sysCentPlus/",                // 850
+    "txt/HIMB_Ks_SB_sysCentPlus/",                  // 851
 };
 
 const int Pid_Non	= 0;
@@ -2529,6 +2561,22 @@ auto PID = std::vector<int>{
 	Pid_AA_Lambda,		// 833
 	Pid_AA_Ks,		    // 834
 	Pid_AA_Ks,		    // 835
+	Pid_AA_Lambda,		// 836
+	Pid_AA_Lambda,		// 837
+	Pid_AA_Lambda,		// 838
+	Pid_AA_Lambda,		// 839
+	Pid_AA_Lambda,		// 840
+	Pid_AA_Lambda,		// 841
+	Pid_AA_Lambda,		// 842
+	Pid_AA_Lambda,		// 843
+	Pid_AA_Ks,		    // 844
+	Pid_AA_Ks,		    // 845
+	Pid_AA_Ks,		    // 846
+	Pid_AA_Ks,		    // 847
+	Pid_AA_Ks,		    // 848
+	Pid_AA_Ks,		    // 849
+	Pid_AA_Ks,		    // 850
+	Pid_AA_Ks,		    // 851
 };
 
 #include <TChain.h>
