@@ -19,3 +19,6 @@ cp pPbV2_ch.pdf                     /Users/qwang/github/tdr/HIN-19-004/figures/
 cp pPbV2_Ch_veto.pdf                /Users/qwang/github/tdr/HIN-19-004/figures/
 cp pPbV2_Ch_vetoRatio.pdf           /Users/qwang/github/tdr/HIN-19-004/figures/
 cp pPbV2_Ratio_Ch.pdf               /Users/qwang/github/tdr/HIN-19-004/figures/
+cp PbPbV2_Ch42.pdf                  /Users/qwang/github/tdr/HIN-19-004/figures/
+cp PbPbV2_Ks42.pdf                  /Users/qwang/github/tdr/HIN-19-004/figures/
+cp PbPbV2_Lm42.pdf                  /Users/qwang/github/tdr/HIN-19-004/figures/

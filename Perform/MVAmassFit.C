@@ -237,13 +237,23 @@ void doSave(bool bPlot = true)
     }
 }
 
-void MVAmassFit(string s1 = "LM", string option = "pol4")
+void MVAmassFit(string s1 = "LM", TString option = "pol4")
 {
     s = s1;
     if ( s == "LM" ) {
-        f = new TFile("MVAmassBDT250D4_LM20_cent7.root");
+        if ( option.Contains("CentPlus") ) {
+            f = new TFile("MVAmassBDT250D4_LM_CentPlus.root");
+            tag = "CentPlus";
+        } else {
+            f = new TFile("MVAmassBDT250D4_LM20_cent7.root");
+        }
     } else if ( s == "KS" ) {
-        f = new TFile("MVAmassBDT250D4_KS_cent7.root");
+        if ( option.Contains("CentPlus") ) {
+            f = new TFile("MVAmassBDT250D4_KS_CentPlus.root");
+            tag = "CentPlus";
+        } else {
+            f = new TFile("MVAmassBDT250D4_KS_cent7.root");
+        }
         Nbins = 270;
         //full_range = make_pair<double, double>(0.430, 0.565);
         full_range = make_pair<double, double>(0.450, 0.54);
@@ -255,22 +265,22 @@ void MVAmassFit(string s1 = "LM", string option = "pol4")
         Dmass = 0.005;
     }
 
-    if ( option == "pol4" ) {
+    if ( option.Contains("pol4") ) {
         bPol4 = true;
     }
-    if ( option == "pol3" ) {
+    if ( option.Contains("pol3") ) {
         massfunc = double_gaussian + " + " + poly_bkg3;
         bPol3 = true;
         poly_bkg0= "[0] + [1]*x + [2]*x*x + [3]*x*x*x";
         tag = "pol3";
     }
-    if ( option == "pol1" ) {
+    if ( option.Contains("pol1") ) {
         massfunc = double_gaussian + " + " + poly_bkg1;
         bPol1 = true;
         poly_bkg0= "[0] + [1]*x";
         tag = "pol1";
     }
-    if ( option == "exp" ) {
+    if ( option.Contains("exp") ) {
         massfunc = double_gaussian + " + " + poly_exp1;
         bExp = true;
         poly_bkg0= "TMath::Exp([0] + [1]*x)";

@@ -1,5 +1,5 @@
 
-void plotDATAsignificanceT(string fin="", string fout="", string fMC="", string fWS="")
+void plotDATAsignificanceT(string fin="", string fout="", string fMC="", string fWS="", string WSbdt = "BDT_MCfull4")
 {
     TFile * ffin = new TFile(fin.c_str());
     TH1D * hS = (TH1D*)ffin->Get("hS");
@@ -17,7 +17,7 @@ void plotDATAsignificanceT(string fin="", string fout="", string fMC="", string 
     }
 
     TFile * ffWS = new TFile(fWS.c_str());
-    TH1D * hWCB = (TH1D*)ffWS->Get("BDT_MCfull4/hMassBDT_MCfull4_0");
+    TH1D * hWCB = (TH1D*)ffWS->Get((WSbdt+ "/hMass" + WSbdt + "_0").c_str());
     int binLow = hWCB->FindBin(massLow);
     int binHigh= hWCB->FindBin(massHigh);
     double tot = hWCB->Integral(binLow, binHigh);
@@ -34,7 +34,7 @@ void plotDATAsignificanceT(string fin="", string fout="", string fMC="", string 
         double S0 = hS->GetBinContent(1);
         double Bx = hS->GetBinContent(1);
         double Seff = hMCS->GetBinContent(i+1)/dbMCS;
-        TH1D * h = (TH1D*)ffWS->Get(Form("BDT_MCfull4/hMassBDT_MCfull4_%i", i));
+        TH1D * h = (TH1D*)ffWS->Get(Form("%s/hMass%s_%i", WSbdt.c_str(), WSbdt.c_str(), i));
         double Beff = h->Integral(binLow, binHigh) / tot;
         S = S0*Seff;
         B = Bx*Beff;
