@@ -10,7 +10,9 @@ void genMassHist3( Float_t centMin, Float_t centMax, Float_t ptMin, Float_t ptMa
 	TChain * mtr = new TChain("mtr");
     if ( bForward ) {
     } else {
-        if ( option.Contains("WrongSign") ) {
+        if ( option.Contains("CentBiasPlus5") ) {
+	        mtr->Add( (string("../../PbPb2018/V0Performance/newTree9/CentPlusBDT_")+s+"3_*.root/mtr").c_str() );
+        } else if ( option.Contains("WrongSign") ) {
 	        mtr->Add( (string("../../PbPb2018/V0Performance/newTree9/BDT_")+s+"3_WrongSignMB19.root/mtr").c_str() );
         } else {
 	        mtr->Add( (string("../../PbPb2018/V0Performance/newTree9/BDT_")+s+"3_*.root/mtr").c_str() );

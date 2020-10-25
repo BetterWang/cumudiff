@@ -1,5 +1,6 @@
 #include "TFile.h"
 #include "TChain.h"
+#include "TString.h"
 #include "TMVA/DataLoader.h"
 #include "TMVA/Tools.h"
 #include "TMVA/Reader.h"
@@ -8,7 +9,7 @@
 using namespace TMVA;
 
 
-void filter_mass3(string prefix = "LM", string input = "", string fout = "", bool bForward = false)
+void filter_mass3(string prefix = "LM", string input = "", string fout = "", bool bForward = false, TString options = "")
 {
     TMVA::Tools::Instance();
     TMVA::Reader *reader = new TMVA::Reader( "!Color:!Silent" );
@@ -213,6 +214,10 @@ void filter_mass3(string prefix = "LM", string input = "", string fout = "", boo
     mtr->Branch("BDT_DataWS",     &BDT_DataWS,        "BDT_DataWS/F" );
     mtr->Branch("BDT_MCfull4C",   &BDT_MCfull4C,      "BDT_MCfull4C/F" );
 
+    Float_t centBias = 0.;
+    if ( options.Contains("centBiasPlus5") ) centBias = 10.;
+    if ( options.Contains("centBiasMinus5") ) centBias = -10.;
+
     TFile * fsave = new TFile( fout.c_str(), "recreate" );
     int ievt= 0;
     while (trV->GetEntry(ievt)) {
@@ -241,6 +246,8 @@ void filter_mass3(string prefix = "LM", string input = "", string fout = "", boo
             nTrkDCASigXY  = (*t_nTrkDCASigXY)[i];
             nTrkDCASigZ   = (*t_nTrkDCASigZ)[i];
             Cent          = (t_Cent);
+
+            Cent += centBias;
 
             if ( bForward ) {
                 if ( fabs(rapidity)>2.0 and fabs(rapidity)<1.0 ) continue;

@@ -4,14 +4,20 @@
 #include "TMVA/DataLoader.h"
 #include "TMVA/Tools.h"
 #include "TMVA/Reader.h"
+#include "TString.h"
 #include <iostream>
 #include <TVector3.h>
 
 using namespace TMVA;
 
 
-void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Tree_v8/191011_032855/0000/*.root/tree/trV", string fout = "LM.root", Float_t BDTCut = 0.1, string xml = "")
+void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Tree_v8/191011_032855/0000/*.root/tree/trV", string fout = "LM.root", Float_t BDTCut = 0.1, string xml = "", TString options = "")
 {
+    Float_t centBias = 0.;
+    if ( options.Contains("CentBiasPlus5") ) {
+        centBias = 10.;
+    }
+
     TMVA::Tools::Instance();
     TMVA::Reader *reader = new TMVA::Reader( "!Color:!Silent" );
 
@@ -243,7 +249,7 @@ void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/
             nTrkNPxLayer  = (*t_nTrkNPxLayer)[i];
             nTrkDCASigXY  = (*t_nTrkDCASigXY)[i];
             nTrkDCASigZ   = (*t_nTrkDCASigZ)[i];
-            Cent          = (t_Cent);
+            Cent          = (t_Cent) + centBias;
 
             mass          = (*t_mass)[i];
             eta           = (*t_eta)[i];
@@ -267,11 +273,12 @@ void APplot(string prefix = "LM", string input = "../../PbPb2018/HIMinimumBias4/
 
                 alpha = 1.-2./(1.+pQl/nQl);
 
+                Cent          = (t_Cent);
                 mtr->Fill();
             }
         }
         ievt++;
-//        if ( ievt > 100000 ) break;
+//        if ( ievt > 10000 ) break;
     }
 
     mtr->Write();
