@@ -11,6 +11,9 @@ SP:
 2) vnFsigPbPbSP.C
 
 
+To plot:
+1) plotFinalpPb.C
+2) plotFinal.C
 
 
                  |  QWCumuDiff  |  process  |  bGet     |  bGetError  |  genPlot   |  combinedS  |  vnFsig                                   |

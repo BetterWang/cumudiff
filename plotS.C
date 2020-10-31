@@ -5,7 +5,7 @@ int color_list[] = {kRed,         kBlue,        kBlack,        kBlue,         kR
 int style_list[] = {kOpenCircle,  kOpenSquare,  kOpenCircle,   kOpenCircle,   kOpenSquare,    kOpenSquare};
 
 
-TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2)
+TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, TString options = "")
 {
     TGraphErrors * gr = new TGraphErrors(gr1->GetN());
     gr->SetMarkerStyle( gr1->GetMarkerStyle() );
@@ -33,7 +33,8 @@ void plotS(
         string save = "Ks_v24_Pb",
         int sratio = -1,
         double delta = 0.9,
-        int dropPoint = 0
+        int dropPoint = 0,
+        TString options = ""
         )
 {
     stringstream ss(s);
