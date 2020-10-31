@@ -61,10 +61,10 @@ char const * fname[] = {
     "../PbPb2018/HIMinimumBias17/crab_HIMB17_V0Cumu_Lm_SBNeg_Mid_BDT20_v1/200614_170042/0000/",      // 58 HIMB17 Lm SBNeg
     "../PbPb2018/HIMinimumBias18/crab_HIMB18_V0Cumu_Lm_SBNeg_Mid_BDT20_v1/200611_052941/0000/",      // 59 HIMB18 Lm SBNeg
     "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Lm_SBNeg_Mid_BDT20_v1/200311_161301/0000/",      // 60 HIMB19 Lm SBNeg
-    "",      // 61 HIMB0  Ks
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_Peak_Mid_v3/201025_194334/0000/",      // 61 HIMB0  Ks
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_Peak_Mid_v2/200223_164645/0000/",      // 62 HIMB1  Ks
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Ks_Peak_Mid_v2/200304_163148/0000/",      // 63 HIMB2  Ks
-    "",      // 64 HIMB3  Ks
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_Peak_Mid_v3/201025_195053/0000/",      // 64 HIMB3  Ks
     "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Ks_Peak_Mid_v2/200116_230230/0000/",      // 65 HIMB4  Ks
     "",      // 66 HIMB5  Ks
     "",      // 67 HIMB6  Ks
@@ -81,10 +81,10 @@ char const * fname[] = {
     "../PbPb2018/HIMinimumBias17/crab_HIMB17_V0Cumu_Ks_Peak_Mid_v2/200703_155321/0000/",      // 78 HIMB17 Ks
     "../PbPb2018/HIMinimumBias18/crab_HIMB18_V0Cumu_Ks_Peak_Mid_v2/200627_042748/0000/",      // 79 HIMB18 Ks
     "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_Peak_Mid_v2_rerun/200329_162352/0000/",      // 80 HIMB19 Ks
-    "",      // 81 HIMB0  Ks SBPos
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBPos_Mid_v2/201030_033308/0000/",      // 81 HIMB0  Ks SBPos
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_SBPos_Mid_v2/200223_165018/0000/",      // 82 HIMB1  Ks SBPos
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Ks_SBPos_Mid_v2/200304_163409/0000/",      // 83 HIMB2  Ks SBPos
-    "",      // 84 HIMB3  Ks SBPos
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_SBPos_Mid_v2/201026_161754/0000/",      // 84 HIMB3  Ks SBPos
     "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Ks_SBPos_Mid_v2/200127_224507/0000/",      // 85 HIMB4  Ks SBPos
     "",      // 86 HIMB5  Ks SBPos
     "",      // 87 HIMB6  Ks SBPos
@@ -101,10 +101,10 @@ char const * fname[] = {
     "../PbPb2018/HIMinimumBias17/crab_HIMB17_V0Cumu_Ks_SBPos_Mid_v2/200706_221537/0000/",      // 98 HIMB17 Ks SBPos
     "../PbPb2018/HIMinimumBias18/crab_HIMB18_V0Cumu_Ks_SBPos_Mid_v2/200627_043017/0000/",      // 99 HIMB18 Ks SBPos
     "../PbPb2018/HIMinimumBias19/crab_HIMB19_V0Cumu_Ks_SBPos_Mid_v2/200314_050956/0000/",      // 100 HIMB19 Ks SBPos
-    "",      // 101 HIMB0  Ks SBNeg
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBNeg_Mid_v2/201026_161516/0000/",      // 101 HIMB0  Ks SBNeg
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_SBNeg_Mid_v2/200223_165102/0000/",      // 102 HIMB1  Ks SBNeg
     "../PbPb2018/HIMinimumBias2/crab_HIMB2_V0Cumu_Ks_SBNeg_Mid_v2/200304_163523/0000/",      // 103 HIMB2  Ks SBNeg
-    "",      // 104 HIMB3  Ks SBNeg
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_SBNeg_Mid_v2/201026_162118/0000/",      // 104 HIMB3  Ks SBNeg
     "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_Ks_SBNeg_Mid_v2/200127_224542/0000/",      // 105 HIMB4  Ks SBNeg
     "",      // 106 HIMB5  Ks SBNeg
     "",      // 107 HIMB6  Ks SBNeg
@@ -769,7 +769,7 @@ char const * fname[] = {
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBNeg1_Mid_BDT20_v1/200923_030834/0000/",    // 766 HIMB0 Lm SBNeg1
     "NA",    // 767 HIMB merge Lm SB1
     "../PbPb2018/HIMinimumBias16/crab_HIMB16_V0Cumu_Ks_SBPos1_Mid_v2/200923_031435/0000/",    // 768 HIMB16 Ks SBPos1
-    "../PbPb2018/HIMinimumBias16/crab_HIMB16_V0Cumu_Ks_SBNeg1_Mid_v2/200925_221736/0000/",    // 769 HIMB16 Ks SBNeg1
+    "../PbPb2018/HIMinimumBias16/crab_HIMB16_V0Cumu_Ks_SBNeg1_Mid_v3/201028_205648/0000/",    // 769 HIMB16 Ks SBNeg1
     "NA",    // 770 HIMB merge Ks SB1
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBPos1_Mid_BDT20_v1/200925_050931/0000/",    // 771 HIMB1 Lm SBPos1
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBNeg1_Mid_BDT20_v1/200925_051105/0000/",    // 772 HIMB1 Lm SBNeg1
@@ -852,6 +852,10 @@ char const * fname[] = {
     "",     // 849 HIMB1 Ks SBNeg sysCentPlus
     "NA",     // 850 HIMB Ks merge Peak sysCentPlus
     "NA",     // 851 HIMB Ks merge SB sysCentPlus
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBPos1_Mid_v2/201025_194636/0000/",    // 852 HIMB0 Ks SBPos1
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_SBPos1_Mid_v2/201025_195142/0000/",    // 853 HIMB3 Ks SBPos1
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBNeg1_Mid_v3/201028_210144/0000/",    // 854 HIMB0 Ks SBNeg1
+    "../PbPb2018/HIMinimumBias3/crab_HIMB3_V0Cumu_Ks_SBNeg1_Mid_v3/201028_210323/0000/",    // 855 HIMB3 Ks SBNeg1
 };
 
 char const * ftxt[] = {
@@ -916,10 +920,10 @@ char const * ftxt[] = {
     "txt/HIMB17_Lm_SBNeg/",      // 58 HIMB17 Lm SBNeg
     "txt/HIMB18_Lm_SBNeg/",      // 59 HIMB18 Lm SBNeg
     "txt/HIMB19_Lm_SBNeg/",      // 60 HIMB19 Lm SBNeg
-    "",      // 61 HIMB0  Ks
+    "txt/HIMB0_Ks_Peak/",      // 61 HIMB0  Ks
     "txt/HIMB1_Ks_Peak/",      // 62 HIMB1  Ks
     "txt/HIMB2_Ks_Peak/",      // 63 HIMB2  Ks
-    "",      // 64 HIMB3  Ks
+    "txt/HIMB3_Ks_Peak/",      // 64 HIMB3  Ks
     "txt/HIMB4_Ks_Peak/",      // 65 HIMB4  Ks
     "",      // 66 HIMB5  Ks
     "",      // 67 HIMB6  Ks
@@ -936,10 +940,10 @@ char const * ftxt[] = {
     "txt/HIMB17_Ks_Peak/",      // 78 HIMB17 Ks
     "txt/HIMB18_Ks_Peak/",      // 79 HIMB18 Ks
     "txt/HIMB19_Ks_Peak/",      // 80 HIMB19 Ks
-    "",      // 81 HIMB0  Ks SBPos
+    "txt/HIMB0_Ks_SBPos/",      // 81 HIMB0  Ks SBPos
     "txt/HIMB1_Ks_SBPos/",      // 82 HIMB1  Ks SBPos
     "txt/HIMB2_Ks_SBPos/",      // 83 HIMB2  Ks SBPos
-    "",      // 84 HIMB3  Ks SBPos
+    "txt/HIMB3_Ks_SBPos/",      // 84 HIMB3  Ks SBPos
     "txt/HIMB4_Ks_SBPos/",      // 85 HIMB4  Ks SBPos
     "",      // 86 HIMB5  Ks SBPos
     "",      // 87 HIMB6  Ks SBPos
@@ -956,10 +960,10 @@ char const * ftxt[] = {
     "txt/HIMB17_Ks_SBPos/",      // 98 HIMB17 Ks SBPos
     "txt/HIMB18_Ks_SBPos/",      // 99 HIMB18 Ks SBPos
     "txt/HIMB19_Ks_SBPos/",      // 100 HIMB19 Ks SBPos
-    "",      // 101 HIMB0  Ks SBNeg
+    "txt/HIMB0_Ks_SBNeg/",      // 101 HIMB0  Ks SBNeg
     "txt/HIMB1_Ks_SBNeg/",      // 102 HIMB1  Ks SBNeg
     "txt/HIMB2_Ks_SBNeg/",      // 103 HIMB2  Ks SBNeg
-    "",      // 104 HIMB3  Ks SBNeg
+    "txt/HIMB3_Ks_SBNeg/",      // 104 HIMB3  Ks SBNeg
     "txt/HIMB4_Ks_SBNeg/",      // 105 HIMB4  Ks SBNeg
     "",      // 106 HIMB5  Ks SBNeg
     "",      // 107 HIMB6  Ks SBNeg
@@ -1707,6 +1711,10 @@ char const * ftxt[] = {
     "txt/HIMB1_Ks_SBNeg_sysCentPlus/",              // 849
     "txt/HIMB_Ks_Peak_sysCentPlus/",                // 850
     "txt/HIMB_Ks_SB_sysCentPlus/",                  // 851
+    "txt/HIMB0_Ks_SBPos1/",                         // 852
+    "txt/HIMB3_Ks_SBPos1/",                         // 853
+    "txt/HIMB0_Ks_SBNeg1/",                         // 854
+    "txt/HIMB3_Ks_SBNeg1/",                         // 855
 };
 
 const int Pid_Non	= 0;
@@ -2577,6 +2585,10 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 849
 	Pid_AA_Ks,		    // 850
 	Pid_AA_Ks,		    // 851
+	Pid_AA_Ks,		    // 852
+	Pid_AA_Ks,		    // 853
+	Pid_AA_Ks,		    // 854
+	Pid_AA_Ks,		    // 855
 };
 
 #include <TChain.h>
