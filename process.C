@@ -196,13 +196,15 @@ void process(int s1 = 0, int s2 = 10, int s3 = 10, int sVz = 0)
 	unsigned int ievt = 0;
 	if ( s2 != s3 ) ievt = s2;
 	while ( chV->GetEntry(ievt) ) {
-		if ( !((ievt-s2)%100000) ) cout << "!! ievt = " << ievt << endl;
+		if ( !((ievt-s2)%1000000) ) cout << "!! ievt = " << ievt << endl;
 		if ( s2 == s3 ) ievt++;
 		else ievt+= s3;
 
         if ( sVz > 0 ) {
             if ( (sVz==1) && (fabs(Vz) > 3.0) ) continue;
             if ( (sVz==2) && (fabs(Vz) <= 3.0) ) continue;
+            if ( (sVz==3) && (Vz>0.) ) continue;
+            if ( (sVz==4) && (Vz<0.) ) continue;
         }
 
 		if ( (gNoff>=600) or (gV0==0) ) {
