@@ -936,6 +936,16 @@ char const * fname[] = {
     "../PbPb2018/HIMinimumBias7/crab_HIMB7_V0Cumu_Ks_SBNeg_Mid_v2/201101_194546/0000/",   // 933  HIMB7 Ks SBNeg sysVz4
     "../PbPb2018/HIMinimumBias8/crab_HIMB8_V0Cumu_Ks_SBNeg_Mid_v2/201104_214126/0000/",   // 934  HIMB8 Ks SBNeg sysVz3
     "../PbPb2018/HIMinimumBias8/crab_HIMB8_V0Cumu_Ks_SBNeg_Mid_v2/201104_214126/0000/",   // 935  HIMB8 Ks SBNeg sysVz4
+    "NA",   // 936 HIMB Lm Peak noAP
+    "NA",   // 937 HIMB Lm SB noAP
+    "NA",   // 938 HIMB Ks Peak noAP
+    "NA",   // 939 HIMB Ks SB noAP
+    "",   // 940 HIMB0 Lm Peak noAP
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBPos_Mid_BDT20_noAPCut_v1/201119_051324/0000/",   // 941 HIMB0 Lm SBPos noAP
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBNeg_Mid_BDT20_noAPCut_v1/201119_051447/0000/",   // 942 HIMB0 Lm SBNeg noAP
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_Peak_Mid_noAPCut_v3/201119_050832/0000/",      // 943 HIMB0 Ks Peak noAP
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBPos_Mid_noAPCut_v2/201119_050959/0000/",     // 944 HIMB0 Ks SBPos noAP
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBNeg_Mid_noAPCut_v2/201119_051110/0000/",     // 945 HIMB0 Ks SBNeg noAP
 };
 
 char const * ftxt[] = {
@@ -1034,8 +1044,8 @@ char const * ftxt[] = {
     "txt/HIMB11_Ks_SBPos/",      // 92 HIMB11 Ks SBPos
     "txt/HIMB12_Ks_SBPos/",      // 93 HIMB12 Ks SBPos
     "txt/HIMB13_Ks_SBPos/",      // 94 HIMB13 Ks SBPos
-    "",      // 95 HIMB14 Ks SBPos
-    "",      // 96 HIMB15 Ks SBPos
+    "txt/HIMB14_Ks_SBPos/",      // 95 HIMB14 Ks SBPos
+    "txt/HIMB15_Ks_SBPos/",      // 96 HIMB15 Ks SBPos
     "txt/HIMB16_Ks_SBPos/",      // 97 HIMB16 Ks SBPos
     "txt/HIMB17_Ks_SBPos/",      // 98 HIMB17 Ks SBPos
     "txt/HIMB18_Ks_SBPos/",      // 99 HIMB18 Ks SBPos
@@ -1503,8 +1513,8 @@ char const * ftxt[] = {
     "txt/HIMB11_Ks_SBPos_sysVz1/",              // 561
     "txt/HIMB12_Ks_SBPos_sysVz1/",              // 562
     "txt/HIMB13_Ks_SBPos_sysVz1/",              // 563
-    "",              // 564
-    "",              // 565
+    "txt/HIMB14_Ks_SBPos_sysVz1/",              // 564
+    "txt/HIMB15_Ks_SBPos_sysVz1/",              // 565
     "txt/HIMB16_Ks_SBPos_sysVz1/",              // 566
     "txt/HIMB17_Ks_SBPos_sysVz1/",              // 567
     "txt/HIMB18_Ks_SBPos_sysVz1/",              // 568
@@ -1523,8 +1533,8 @@ char const * ftxt[] = {
     "txt/HIMB11_Ks_SBPos_sysVz2/",              // 581
     "txt/HIMB12_Ks_SBPos_sysVz2/",              // 582
     "txt/HIMB13_Ks_SBPos_sysVz2/",              // 583
-    "",              // 584
-    "",              // 585
+    "txt/HIMB14_Ks_SBPos_sysVz2/",              // 584
+    "txt/HIMB15_Ks_SBPos_sysVz2/",              // 585
     "txt/HIMB16_Ks_SBPos_sysVz2/",              // 586
     "txt/HIMB17_Ks_SBPos_sysVz2/",              // 587
     "txt/HIMB18_Ks_SBPos_sysVz2/",              // 588
@@ -1875,6 +1885,16 @@ char const * ftxt[] = {
     "txt/HIMB7_Ks_SBNeg_sysVz4/",                    // 933
     "txt/HIMB8_Ks_SBNeg_sysVz3/",                    // 934
     "txt/HIMB8_Ks_SBNeg_sysVz4/",                    // 935
+    "txt/HIMB_Lm_Peak_noAP/",                        // 936
+    "txt/HIMB_Lm_SB_noAP/",                          // 937
+    "txt/HIMB_Ks_Peak_noAP/",                        // 938
+    "txt/HIMB_Ks_SB_noAP/",                          // 939
+    "txt/HIMB0_Lm_Peak_noAP/",                       // 940
+    "txt/HIMB0_Lm_SBPos_noAP/",                      // 941
+    "txt/HIMB0_Lm_SBNeg_noAP/",                      // 942
+    "txt/HIMB0_Ks_Peak_noAP/",                       // 943
+    "txt/HIMB0_Ks_SBPos_noAP/",                      // 944
+    "txt/HIMB0_Ks_SBNeg_noAP/",                      // 945
 };
 
 const int Pid_Non	= 0;
@@ -2830,6 +2850,16 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 933
 	Pid_AA_Ks,		    // 934
 	Pid_AA_Ks,		    // 935
+	Pid_AA_Lambda,		// 936
+	Pid_AA_Lambda,		// 937
+	Pid_AA_Ks,		    // 938
+	Pid_AA_Ks,		    // 939
+	Pid_AA_Lambda,		// 940
+	Pid_AA_Lambda,		// 941
+	Pid_AA_Lambda,		// 942
+	Pid_AA_Ks,		    // 943
+	Pid_AA_Ks,		    // 944
+	Pid_AA_Ks,		    // 945
 };
 
 #include <TChain.h>
