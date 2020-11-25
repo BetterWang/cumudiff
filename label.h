@@ -940,12 +940,16 @@ char const * fname[] = {
     "NA",   // 937 HIMB Lm SB noAP
     "NA",   // 938 HIMB Ks Peak noAP
     "NA",   // 939 HIMB Ks SB noAP
-    "",   // 940 HIMB0 Lm Peak noAP
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_Peak_Mid_BDT20_noAPCut_v1/201119_051228/0000/",   // 940 HIMB0 Lm Peak noAP
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBPos_Mid_BDT20_noAPCut_v1/201119_051324/0000/",   // 941 HIMB0 Lm SBPos noAP
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBNeg_Mid_BDT20_noAPCut_v1/201119_051447/0000/",   // 942 HIMB0 Lm SBNeg noAP
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_Peak_Mid_noAPCut_v3/201119_050832/0000/",      // 943 HIMB0 Ks Peak noAP
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBPos_Mid_noAPCut_v2/201119_050959/0000/",     // 944 HIMB0 Ks SBPos noAP
     "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBNeg_Mid_noAPCut_v2/201119_051110/0000/",     // 945 HIMB0 Ks SBNeg noAP
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_Peak_Mid_BDT20_noAPCut_v1/201122_201156/0000/",    // 946 HIMB1 Lm Peak noAP
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBPos_Mid_BDT20_noAPCut_v1/201122_201327/0000/",   // 947 HIMB1 Lm SBPos noAP
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBNeg_Mid_BDT20_noAPCut_v1/201122_201421/0000/",   // 948 HIMB1 Lm SBNeg noAP
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_Peak_Mid_noAPCut_v3/201119_050832/0000/",      // 949 HIMB1 Ks Peak noAP
 };
 
 char const * ftxt[] = {
@@ -1895,6 +1899,10 @@ char const * ftxt[] = {
     "txt/HIMB0_Ks_Peak_noAP/",                       // 943
     "txt/HIMB0_Ks_SBPos_noAP/",                      // 944
     "txt/HIMB0_Ks_SBNeg_noAP/",                      // 945
+    "txt/HIMB1_Lm_Peak_noAP/",                       // 946
+    "txt/HIMB1_Lm_SBPos_noAP/",                      // 947
+    "txt/HIMB1_Lm_SBNeg_noAP/",                      // 948
+    "txt/HIMB1_Ks_Peak_noAP/",                       // 949
 };
 
 const int Pid_Non	= 0;
@@ -2860,6 +2868,10 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 943
 	Pid_AA_Ks,		    // 944
 	Pid_AA_Ks,		    // 945
+	Pid_AA_Lambda,		// 946
+	Pid_AA_Lambda,		// 947
+	Pid_AA_Lambda,		// 948
+	Pid_AA_Ks,		    // 949
 };
 
 #include <TChain.h>
