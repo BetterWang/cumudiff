@@ -435,6 +435,9 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity7/crab_PAHM7_H_veto10_reverse_v2/200502_171057/0000/",             // 432 H veto10 pPb HM7 reverse
     "NA",             // 433 H veto10 pPb HM123456
     "NA",             // 434 H veto10 pPb HM123456 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta18_veto10_v2/201208_070502/0000/",               // 435 H veto10 eta18 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta18_veto10_reverse_v2/201208_070535/0000/",       // 436 H veto10 eta18 pPb HM0 reverse
+    "NA",             // 437 H veto10 eta18 pPb HM0 merge
 };
 
 char const * ftxt[] = {
@@ -873,6 +876,9 @@ char const * ftxt[] = {
 	"txt/PAHM7_H_veto10_reverse/",          // 432
 	"txt/PAHM123456_H_veto10/",             // 433
 	"txt/PAHM123456_H_veto10_reverse/",     // 434
+	"txt/PAHM0_H_veto10_eta18/",            // 435
+	"txt/PAHM0_H_veto10_eta18_reverse/",    // 436
+	"txt/PAHM0_H_veto10_eta18_merge/",      // 437
 };
 
 const int Pid_Non	= 0;
@@ -1326,6 +1332,9 @@ auto PID = std::vector<int>{
 	Pid_PA_Hadron,	    // 432
 	Pid_PA_Hadron,	    // 433
 	Pid_PA_Hadron,	    // 434
+	Pid_PA_Hadron,	    // 435
+	Pid_PA_Hadron,	    // 436
+	Pid_PA_Hadron,	    // 437
 };
 
 #include <TChain.h>
