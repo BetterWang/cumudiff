@@ -438,6 +438,12 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta18_veto10_v2/201208_070502/0000/",               // 435 H veto10 eta18 pPb HM0
     "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta18_veto10_reverse_v2/201208_070535/0000/",       // 436 H veto10 eta18 pPb HM0 reverse
     "NA",             // 437 H veto10 eta18 pPb HM0 merge
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta24_veto10_v2/201211_055629/0000/",               // 438 H veto10 eta24 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta24_veto10_reverse_v2/201211_055656/0000/",       // 439 H veto10 eta24 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta18_v2/201211_060938/0000/",                      // 440 H eta18 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta18_reverse_v2/201211_062315/0000/",              // 441 H eta18 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta24_v2/201211_061917/0000/",                      // 442 H eta24 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta24_reverse_v2/201211_062410/0000/",              // 443 H eta24 pPb HM0 reverse
 };
 
 char const * ftxt[] = {
@@ -879,6 +885,12 @@ char const * ftxt[] = {
 	"txt/PAHM0_H_veto10_eta18/",            // 435
 	"txt/PAHM0_H_veto10_eta18_reverse/",    // 436
 	"txt/PAHM0_H_veto10_eta18_merge/",      // 437
+	"txt/PAHM0_H_veto10_eta24/",            // 438
+	"txt/PAHM0_H_veto10_eta24_reverse/",    // 439
+	"txt/PAHM0_H_eta18/",                   // 440
+	"txt/PAHM0_H_eta18_reverse/",           // 441
+	"txt/PAHM0_H_eta24/",                   // 442
+	"txt/PAHM0_H_eta24_reverse/",           // 443
 };
 
 const int Pid_Non	= 0;
@@ -1335,6 +1347,12 @@ auto PID = std::vector<int>{
 	Pid_PA_Hadron,	    // 435
 	Pid_PA_Hadron,	    // 436
 	Pid_PA_Hadron,	    // 437
+	Pid_PA_Hadron,	    // 438
+	Pid_PA_Hadron,	    // 439
+	Pid_PA_Hadron,	    // 440
+	Pid_PA_Hadron,	    // 441
+	Pid_PA_Hadron,	    // 442
+	Pid_PA_Hadron,	    // 443
 };
 
 #include <TChain.h>
