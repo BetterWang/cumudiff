@@ -949,7 +949,17 @@ char const * fname[] = {
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_Peak_Mid_BDT20_noAPCut_v1/201122_201156/0000/",    // 946 HIMB1 Lm Peak noAP
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBPos_Mid_BDT20_noAPCut_v1/201122_201327/0000/",   // 947 HIMB1 Lm SBPos noAP
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBNeg_Mid_BDT20_noAPCut_v1/201122_201421/0000/",   // 948 HIMB1 Lm SBNeg noAP
-    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_Peak_Mid_noAPCut_v3/201124_044808/0000/",      // 949 HIMB1 Ks Peak noAP
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_Peak_Mid_noAPCut_v3/201124_044808/0000/",          // 949 HIMB1 Ks Peak noAP
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_Peak_Mid_sysMCBias_v2/201218_050743/0000/",        // 950 HIMB0 Ks Peak sysMCBias
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBPos_Mid_sysMCBias_v2/201218_050832/0000/",       // 951 HIMB0 Ks SBPos sysMCBias
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Ks_SBNeg_Mid_sysMCBias_v2/201218_050918/0000/",       // 952 HIMB0 Ks SBNeg sysMCBias
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_Peak_Mid_BDT20_sysMCBias_v1/201218_051022/0000/",  // 953 HIMB0 Lm Peak sysMCBias
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBPos_Mid_BDT20_sysMCBias_v1/201218_051129/0000/", // 954 HIMB0 Lm SBPos sysMCBias
+    "../PbPb2018/HIMinimumBias0/crab_HIMB0_V0Cumu_Lm_SBNeg_Mid_BDT20_sysMCBias_v1/201218_051212/0000/", // 955 HIMB0 Lm SBNeg sysMCBias
+    "NA",      // 956 HIMB Ks Peak sysMCBias
+    "NA",      // 957 HIMB Ks SB sysMCBias
+    "NA",      // 958 HIMB Lm Peak sysMCBias
+    "NA",      // 959 HIMB Lm SB sysMCBias
 };
 
 char const * ftxt[] = {
@@ -1903,6 +1913,16 @@ char const * ftxt[] = {
     "txt/HIMB1_Lm_SBPos_noAP/",                      // 947
     "txt/HIMB1_Lm_SBNeg_noAP/",                      // 948
     "txt/HIMB1_Ks_Peak_noAP/",                       // 949
+    "txt/HIMB0_Ks_Peak_sysMCBias/",                  // 950
+    "txt/HIMB0_Ks_SBPos_sysMCBias/",                 // 951
+    "txt/HIMB0_Ks_SBNeg_sysMCBias/",                 // 952
+    "txt/HIMB0_Lm_Peak_sysMCBias/",                  // 953
+    "txt/HIMB0_Lm_SBPos_sysMCBias/",                 // 954
+    "txt/HIMB0_Lm_SBNeg_sysMCBias/",                 // 955
+    "txt/HIMB_Ks_Peak_sysMCBias/",                   // 956
+    "txt/HIMB_Ks_SB_sysMCBias/",                     // 957
+    "txt/HIMB_Lm_Peak_sysMCBias/",                   // 958
+    "txt/HIMB_Lm_SB_sysMCBias/",                     // 959
 };
 
 const int Pid_Non	= 0;
@@ -2872,6 +2892,16 @@ auto PID = std::vector<int>{
 	Pid_AA_Lambda,		// 947
 	Pid_AA_Lambda,		// 948
 	Pid_AA_Ks,		    // 949
+	Pid_AA_Ks,		    // 950
+	Pid_AA_Ks,		    // 951
+	Pid_AA_Ks,		    // 952
+	Pid_AA_Lambda,		// 953
+	Pid_AA_Lambda,		// 954
+	Pid_AA_Lambda,		// 955
+	Pid_AA_Ks,		    // 956
+	Pid_AA_Ks,		    // 957
+	Pid_AA_Lambda,		// 958
+	Pid_AA_Lambda,		// 959
 };
 
 #include <TChain.h>
