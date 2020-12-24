@@ -960,6 +960,12 @@ char const * fname[] = {
     "NA",      // 957 HIMB Ks SB sysMCBias
     "NA",      // 958 HIMB Lm Peak sysMCBias
     "NA",      // 959 HIMB Lm SB sysMCBias
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_Peak_Mid_sysMCBias_v2/201222_195707/0000/",         // 960 HIMB1 Ks Peak sysMCBias
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_SBPos_Mid_sysMCBias_v2/201222_195801/0000/",        // 961 HIMB1 Ks SBPos sysMCBias
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Ks_SBNeg_Mid_sysMCBias_v2/201222_200015/0000/",        // 962 HIMB1 Ks SBNeg sysMCBias
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_Peak_Mid_BDT20_sysMCBias_v1/201222_043742/0000/",         // 963 HIMB1 Lm Peak sysMCBias
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBPos_Mid_BDT20_sysMCBias_v1/201222_043918/0000/",        // 964 HIMB1 Lm SBPos sysMCBias
+    "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBNeg_Mid_BDT20_sysMCBias_v1/201222_044002/0000/",        // 965 HIMB1 Lm SBNeg sysMCBias
 };
 
 char const * ftxt[] = {
@@ -1923,6 +1929,12 @@ char const * ftxt[] = {
     "txt/HIMB_Ks_SB_sysMCBias/",                     // 957
     "txt/HIMB_Lm_Peak_sysMCBias/",                   // 958
     "txt/HIMB_Lm_SB_sysMCBias/",                     // 959
+    "txt/HIMB1_Ks_Peak_sysMCBias/",                  // 960
+    "txt/HIMB1_Ks_SBPos_sysMCBias/",                 // 961
+    "txt/HIMB1_Ks_SBNeg_sysMCBias/",                 // 962
+    "txt/HIMB1_Lm_Peak_sysMCBias/",                  // 963
+    "txt/HIMB1_Lm_SBPos_sysMCBias/",                 // 964
+    "txt/HIMB1_Lm_SBNeg_sysMCBias/",                 // 965
 };
 
 const int Pid_Non	= 0;
@@ -2902,6 +2914,12 @@ auto PID = std::vector<int>{
 	Pid_AA_Ks,		    // 957
 	Pid_AA_Lambda,		// 958
 	Pid_AA_Lambda,		// 959
+	Pid_AA_Ks,		    // 960
+	Pid_AA_Ks,		    // 961
+	Pid_AA_Ks,		    // 962
+	Pid_AA_Lambda,		// 963
+	Pid_AA_Lambda,		// 964
+	Pid_AA_Lambda,		// 965
 };
 
 #include <TChain.h>
