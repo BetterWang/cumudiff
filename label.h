@@ -444,6 +444,24 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta18_reverse_v2/201211_062315/0000/",              // 441 H eta18 pPb HM0 reverse
     "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta24_v2/201211_061917/0000/",                      // 442 H eta24 pPb HM0
     "../cumu/PAHighMultiplicity0/crab_PAHM0_H_eta24_reverse_v2/201211_062410/0000/",              // 443 H eta24 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet20_v1/210120_222306/0000/",                // 444 H vetoJet20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet20_reverse_v1/210120_222926/0000/",        // 445 H vetoJet20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet20_v1/210121_154159/0000/",                // 446 H vetoJet20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet20_reverse_v1/210121_154438/0000/",        // 447 H vetoJet20 pPb HM1 reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_H_vetoJet20_v1/210122_055804/0000/",                // 448 H vetoJet20 pPb HM2
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_H_vetoJet20_reverse_v1/210122_055939/0000/",        // 449 H vetoJet20 pPb HM2 reverse
+    "../cumu/PAHighMultiplicity3/crab_PAHM3_H_vetoJet20_v1/210122_170846/0000/",                // 450 H vetoJet20 pPb HM3
+    "../cumu/PAHighMultiplicity3/crab_PAHM3_H_vetoJet20_reverse_v1/210122_171011/0000/",        // 451 H vetoJet20 pPb HM3 reverse
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_H_vetoJet20_v1/210123_050254/0000/",                // 452 H vetoJet20 pPb HM4
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_H_vetoJet20_reverse_v1/210123_050536/0000/",        // 453 H vetoJet20 pPb HM4 reverse
+    "../cumu/PAHighMultiplicity5/crab_PAHM5_H_vetoJet20_v1/210123_053421/0000/",                // 454 H vetoJet20 pPb HM5
+    "../cumu/PAHighMultiplicity5/crab_PAHM5_H_vetoJet20_reverse_v1/210123_053454/0000/",        // 455 H vetoJet20 pPb HM5 reverse
+    "../cumu/PAHighMultiplicity6/crab_PAHM6_H_vetoJet20_v1/210123_053633/0000/",                // 456 H vetoJet20 pPb HM6
+    "../cumu/PAHighMultiplicity6/crab_PAHM6_H_vetoJet20_reverse_v1/210123_053728/0000/",        // 457 H vetoJet20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet20_v1/210121_154720/0000/",                // 458 H vetoJet20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet20_reverse_v1/210121_154826/0000/",        // 459 H vetoJet20 pPb HM7 reverse
+    "NA",   // 460 H vetoJet20 pPb HM123456 merge
+    "NA",   // 461 H vetoJet20 pPb HM123456 merge reverse
 };
 
 char const * ftxt[] = {
@@ -891,6 +909,24 @@ char const * ftxt[] = {
 	"txt/PAHM0_H_eta18_reverse/",           // 441
 	"txt/PAHM0_H_eta24/",                   // 442
 	"txt/PAHM0_H_eta24_reverse/",           // 443
+	"txt/PAHM0_H_vetoJet20/",               // 444
+	"txt/PAHM0_H_vetoJet20_reverse/",       // 445
+	"txt/PAHM1_H_vetoJet20/",               // 446
+	"txt/PAHM1_H_vetoJet20_reverse/",       // 447
+	"txt/PAHM2_H_vetoJet20/",               // 448
+	"txt/PAHM2_H_vetoJet20_reverse/",       // 449
+	"txt/PAHM3_H_vetoJet20/",               // 450
+	"txt/PAHM3_H_vetoJet20_reverse/",       // 451
+	"txt/PAHM4_H_vetoJet20/",               // 452
+	"txt/PAHM4_H_vetoJet20_reverse/",       // 453
+	"txt/PAHM5_H_vetoJet20/",               // 454
+	"txt/PAHM5_H_vetoJet20_reverse/",       // 455
+	"txt/PAHM6_H_vetoJet20/",               // 456
+	"txt/PAHM6_H_vetoJet20_reverse/",       // 457
+	"txt/PAHM7_H_vetoJet20/",               // 458
+	"txt/PAHM7_H_vetoJet20_reverse/",       // 459
+	"txt/PAHM123456_H_vetoJet20/",          // 460
+	"txt/PAHM123456_H_vetoJet20_reverse/",  // 461
 };
 
 const int Pid_Non	= 0;
@@ -1353,6 +1389,24 @@ auto PID = std::vector<int>{
 	Pid_PA_Hadron,	    // 441
 	Pid_PA_Hadron,	    // 442
 	Pid_PA_Hadron,	    // 443
+	Pid_PA_Hadron,	    // 444
+	Pid_PA_Hadron,	    // 445
+	Pid_PA_Hadron,	    // 446
+	Pid_PA_Hadron,	    // 447
+	Pid_PA_Hadron,	    // 448
+	Pid_PA_Hadron,	    // 449
+	Pid_PA_Hadron,	    // 450
+	Pid_PA_Hadron,	    // 451
+	Pid_PA_Hadron,	    // 452
+	Pid_PA_Hadron,	    // 453
+	Pid_PA_Hadron,	    // 454
+	Pid_PA_Hadron,	    // 455
+	Pid_PA_Hadron,	    // 456
+	Pid_PA_Hadron,	    // 457
+	Pid_PA_Hadron,	    // 458
+	Pid_PA_Hadron,	    // 459
+	Pid_PA_Hadron,	    // 460
+	Pid_PA_Hadron,	    // 461
 };
 
 #include <TChain.h>
