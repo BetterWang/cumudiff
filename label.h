@@ -606,6 +606,24 @@ char const * fname[] = {
     "",                // 603 H vetoJet30eta16 pPb HM7 reverse
     "NA",              // 604 H vetoJet30eta16 pPb HM123456 merge
     "NA",              // 605 H vetoJet30eta16 pPb HM123456 merge reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_Jet20eta20_v1/210208_151305/0000/",                // 606 H Jet20eta20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_Jet20eta20_reverse_v1/210208_151335/0000/",        // 607 H Jet20eta20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_Jet20eta20_v1/210208_164506/0000/",                // 608 H Jet20eta20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_Jet20eta20_reverse_v1/210208_164541/0000/",        // 609 H Jet20eta20 pPb HM1 reverse
+    "",                // 610 H Jet20eta20 pPb HM2
+    "",                // 611 H Jet20eta20 pPb HM2 reverse
+    "",                // 612 H Jet20eta20 pPb HM3
+    "",                // 613 H Jet20eta20 pPb HM3 reverse
+    "",                // 614 H Jet20eta20 pPb HM4
+    "",                // 615 H Jet20eta20 pPb HM4 reverse
+    "",                // 616 H Jet20eta20 pPb HM5
+    "",                // 617 H Jet20eta20 pPb HM5 reverse
+    "",                // 618 H Jet20eta20 pPb HM6
+    "",                // 619 H Jet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_Jet20eta20_v1/210208_164955/0000/",                // 620 H Jet20eta20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_Jet20eta20_reverse_v1/210209_024724/0000/",        // 621 H Jet20eta20 pPb HM7 reverse
+    "NA",              // 622 H Jet20eta20 pPb HM123456 merge
+    "NA",              // 623 H Jet20eta20 pPb HM123456 merge reverse
 };
 
 char const * ftxt[] = {
@@ -1215,6 +1233,24 @@ char const * ftxt[] = {
 	"txt/PAHM7_H_vetoJet30eta16_reverse/",       // 603
 	"txt/PAHM123456_H_vetoJet30eta16/",          // 604
 	"txt/PAHM123456_H_vetoJet30eta16_reverse/",  // 605
+	"txt/PAHM0_H_Jet20eta20/",                   // 606
+	"txt/PAHM0_H_Jet20eta20_reverse/",           // 607
+	"txt/PAHM1_H_Jet20eta20/",                   // 608
+	"txt/PAHM1_H_Jet20eta20_reverse/",           // 609
+	"txt/PAHM2_H_Jet20eta20/",                   // 610
+	"txt/PAHM2_H_Jet20eta20_reverse/",           // 611
+	"txt/PAHM3_H_Jet20eta20/",                   // 612
+	"txt/PAHM3_H_Jet20eta20_reverse/",           // 613
+	"txt/PAHM4_H_Jet20eta20/",                   // 614
+	"txt/PAHM4_H_Jet20eta20_reverse/",           // 615
+	"txt/PAHM5_H_Jet20eta20/",                   // 616
+	"txt/PAHM5_H_Jet20eta20_reverse/",           // 617
+	"txt/PAHM6_H_Jet20eta20/",                   // 618
+	"txt/PAHM6_H_Jet20eta20_reverse/",           // 619
+	"txt/PAHM7_H_Jet20eta20/",                   // 620
+	"txt/PAHM7_H_Jet20eta20_reverse/",           // 621
+	"txt/PAHM123456_H_Jet20eta20/",              // 622
+	"txt/PAHM123456_H_Jet20eta20_reverse/",      // 623
 };
 
 const int Pid_Non	= 0;
@@ -1839,6 +1875,24 @@ auto PID = std::vector<int>{
 	Pid_PA_Hadron,	    // 603
 	Pid_PA_Hadron,	    // 604
 	Pid_PA_Hadron,	    // 605
+	Pid_PA_Hadron,	    // 606
+	Pid_PA_Hadron,	    // 607
+	Pid_PA_Hadron,	    // 608
+	Pid_PA_Hadron,	    // 609
+	Pid_PA_Hadron,	    // 610
+	Pid_PA_Hadron,	    // 611
+	Pid_PA_Hadron,	    // 612
+	Pid_PA_Hadron,	    // 613
+	Pid_PA_Hadron,	    // 614
+	Pid_PA_Hadron,	    // 615
+	Pid_PA_Hadron,	    // 616
+	Pid_PA_Hadron,	    // 617
+	Pid_PA_Hadron,	    // 618
+	Pid_PA_Hadron,	    // 619
+	Pid_PA_Hadron,	    // 620
+	Pid_PA_Hadron,	    // 621
+	Pid_PA_Hadron,	    // 622
+	Pid_PA_Hadron,	    // 623
 };
 
 #include <TChain.h>
