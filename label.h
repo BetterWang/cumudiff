@@ -502,7 +502,7 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet20eta20_reverse_v1/210204_201647/0000/",        // 499 H vetoJet20eta20 pPb HM0 reverse
     "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet20eta20_v1/210204_231601/0000/",                // 500 H vetoJet20eta20 pPb HM1
     "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet20eta20_reverse_v1/210204_231642/0000/",        // 501 H vetoJet20eta20 pPb HM1 reverse
-    "",                // 502 H vetoJet20eta20 pPb HM2
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_H_vetoJet20eta20_v1/210306_063706/0000/",                // 502 H vetoJet20eta20 pPb HM2
     "",                // 503 H vetoJet20eta20 pPb HM2 reverse
     "",                // 504 H vetoJet20eta20 pPb HM3
     "",                // 505 H vetoJet20eta20 pPb HM3 reverse
@@ -636,6 +636,12 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoak4PFJet20eta20_reverse_v1/210226_043234/0000/",     // 633 H vetoak4PFJet20eta20 pPb HM1 reverse
     "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoak4PFJet20eta20_v1/210226_043447/0000/",             // 634 H vetoak4PFJet20eta20 pPb HM7
     "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoak4PFJet20eta20_reverse_v1/210226_043814/0000/",     // 635 H vetoak4PFJet20eta20 pPb HM7 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet21eta20_v1/210307_052100/0000/",               // 636 H vetoak4PFJet21eta20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet21eta20_reverse_v1/210307_052720/0000/",       // 637 H vetoak4PFJet21eta20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet21eta20_v1/210307_052235/0000/",               // 638 H vetoak4PFJet21eta20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet21eta20_reverse_v1/210307_053509/0000/",       // 639 H vetoak4PFJet21eta20 pPb HM1 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet21eta20_v1/210308_015116/0000/",               // 640 H vetoak4PFJet21eta20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet21eta20_reverse_v1/210308_015206/0000/",       // 641 H vetoak4PFJet21eta20 pPb HM7 reverse
 };
 
 char const * ftxt[] = {
@@ -1275,6 +1281,12 @@ char const * ftxt[] = {
 	"txt/PAHM1_H_ak4PFJet20eta20_reverse/",      // 633
 	"txt/PAHM7_H_ak4PFJet20eta20/",              // 634
 	"txt/PAHM7_H_ak4PFJet20eta20_reverse/",      // 635
+	"txt/PAHM0_H_ak4PFJet21eta20/",              // 636
+	"txt/PAHM0_H_ak4PFJet21eta20_reverse/",      // 637
+	"txt/PAHM1_H_ak4PFJet21eta20/",              // 638
+	"txt/PAHM1_H_ak4PFJet21eta20_reverse/",      // 639
+	"txt/PAHM7_H_ak4PFJet21eta20/",              // 640
+	"txt/PAHM7_H_ak4PFJet21eta20_reverse/",      // 641
 };
 
 const int Pid_Non	= 0;
@@ -1929,6 +1941,12 @@ auto PID = std::vector<int>{
 	Pid_PA_Hadron,	    // 633
 	Pid_PA_Hadron,	    // 634
 	Pid_PA_Hadron,	    // 635
+	Pid_PA_Hadron,	    // 636
+	Pid_PA_Hadron,	    // 637
+	Pid_PA_Hadron,	    // 638
+	Pid_PA_Hadron,	    // 639
+	Pid_PA_Hadron,	    // 640
+	Pid_PA_Hadron,	    // 641
 };
 
 #include <TChain.h>
