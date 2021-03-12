@@ -503,7 +503,7 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet20eta20_v1/210204_231601/0000/",                // 500 H vetoJet20eta20 pPb HM1
     "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet20eta20_reverse_v1/210204_231642/0000/",        // 501 H vetoJet20eta20 pPb HM1 reverse
     "../cumu/PAHighMultiplicity2/crab_PAHM2_H_vetoJet20eta20_v1/210306_063706/0000/",                // 502 H vetoJet20eta20 pPb HM2
-    "",                // 503 H vetoJet20eta20 pPb HM2 reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_H_vetoJet20eta20_reverse_v1/210308_155333/0000/",        // 503 H vetoJet20eta20 pPb HM2 reverse
     "",                // 504 H vetoJet20eta20 pPb HM3
     "",                // 505 H vetoJet20eta20 pPb HM3 reverse
     "",                // 506 H vetoJet20eta20 pPb HM4
@@ -636,12 +636,108 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoak4PFJet20eta20_reverse_v1/210226_043234/0000/",     // 633 H vetoak4PFJet20eta20 pPb HM1 reverse
     "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoak4PFJet20eta20_v1/210226_043447/0000/",             // 634 H vetoak4PFJet20eta20 pPb HM7
     "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoak4PFJet20eta20_reverse_v1/210226_043814/0000/",     // 635 H vetoak4PFJet20eta20 pPb HM7 reverse
-    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet21eta20_v1/210307_052100/0000/",               // 636 H vetoak4PFJet21eta20 pPb HM0
-    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet21eta20_reverse_v1/210307_052720/0000/",       // 637 H vetoak4PFJet21eta20 pPb HM0 reverse
-    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet21eta20_v1/210307_052235/0000/",               // 638 H vetoak4PFJet21eta20 pPb HM1
-    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet21eta20_reverse_v1/210307_053509/0000/",       // 639 H vetoak4PFJet21eta20 pPb HM1 reverse
-    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet21eta20_v1/210308_015116/0000/",               // 640 H vetoak4PFJet21eta20 pPb HM7
-    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet21eta20_reverse_v1/210308_015206/0000/",       // 641 H vetoak4PFJet21eta20 pPb HM7 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet21eta20_v1/210307_052100/0000/",               // 636 H vetoakPu4PFJet21eta20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet21eta20_reverse_v1/210307_052720/0000/",       // 637 H vetoakPu4PFJet21eta20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet21eta20_v1/210307_052235/0000/",               // 638 H vetoakPu4PFJet21eta20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet21eta20_reverse_v1/210307_053509/0000/",       // 639 H vetoakPu4PFJet21eta20 pPb HM1 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet21eta20_v1/210308_015116/0000/",               // 640 H vetoakPu4PFJet21eta20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet21eta20_reverse_v1/210308_015206/0000/",       // 641 H vetoakPu4PFJet21eta20 pPb HM7 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_Ks_vetoJet20eta20_v1/210308_163915/0000/",              // 642 Ks vetoakPu4PFJet20eta20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_Ks_vetoJet20eta20_reverse_v1/210308_164606/0000/",      // 643 Ks vetoakPu4PFJet20eta20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_Ks_vetoJet20eta20_v1/210309_061618/0000/",              // 644 Ks vetoakPu4PFJet20eta20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_Ks_vetoJet20eta20_reverse_v1/210309_061733/0000/",      // 645 Ks vetoakPu4PFJet20eta20 pPb HM1 reverse
+    "",         // 646 Ks vetoakPu4PFJet20eta20 pPb HM2
+    "",         // 647 Ks vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "",         // 648 Ks vetoakPu4PFJet20eta20 pPb HM3
+    "",         // 649 Ks vetoakPu4PFJet20eta20 pPb HM3 reverse
+    "",         // 650 Ks vetoakPu4PFJet20eta20 pPb HM4
+    "",         // 651 Ks vetoakPu4PFJet20eta20 pPb HM4 reverse
+    "",         // 652 Ks vetoakPu4PFJet20eta20 pPb HM5
+    "",         // 653 Ks vetoakPu4PFJet20eta20 pPb HM5 reverse
+    "",         // 654 Ks vetoakPu4PFJet20eta20 pPb HM6
+    "",         // 655 Ks vetoakPu4PFJet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_Ks_vetoJet20eta20_v1/210310_060630/0000/",              // 656 Ks vetoakPu4PFJet20eta20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_Ks_vetoJet20eta20_reverse_v1/210310_060730/0000/",      // 657 Ks vetoakPu4PFJet20eta20 pPb HM7 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_KsSBPos_vetoJet20eta20_v1/210308_164858/0000/",         // 658 KsSBPos vetoakPu4PFJet20eta20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_KsSBPos_vetoJet20eta20_reverse_v1/210308_164935/0000/", // 659 KsSBPos vetoakPu4PFJet20eta20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_KsSBPos_vetoJet20eta20_v1/210309_061825/0000/",         // 660 KsSBPos vetoakPu4PFJet20eta20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_KsSBPos_vetoJet20eta20_reverse_v1/210309_061912/0000/", // 661 KsSBPos vetoakPu4PFJet20eta20 pPb HM1 reverse
+    "",         // 662 KsSBPos vetoakPu4PFJet20eta20 pPb HM2
+    "",         // 663 KsSBPos vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "",         // 664 KsSBPos vetoakPu4PFJet20eta20 pPb HM3
+    "",         // 665 KsSBPos vetoakPu4PFJet20eta20 pPb HM3 reverse
+    "",         // 666 KsSBPos vetoakPu4PFJet20eta20 pPb HM4
+    "",         // 667 KsSBPos vetoakPu4PFJet20eta20 pPb HM4 reverse
+    "",         // 668 KsSBPos vetoakPu4PFJet20eta20 pPb HM5
+    "",         // 669 KsSBPos vetoakPu4PFJet20eta20 pPb HM5 reverse
+    "",         // 670 KsSBPos vetoakPu4PFJet20eta20 pPb HM6
+    "",         // 671 KsSBPos vetoakPu4PFJet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_KsSBPos_vetoJet20eta20_v1/210310_060951/0000/",         // 672 KsSBPos vetoakPu4PFJet20eta20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_KsSBPos_vetoJet20eta20_reverse_v1/210310_061128/0000/", // 673 KsSBPos vetoakPu4PFJet20eta20 pPb HM7 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_KsSBNeg_vetoJet20eta20_v1/210308_165248/0000/",         // 674 KsSBNeg vetoakPu4PFJet20eta20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_KsSBNeg_vetoJet20eta20_reverse_v1/210308_165411/0000/", // 675 KsSBNeg vetoakPu4PFJet20eta20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_KsSBNeg_vetoJet20eta20_v1/210309_062017/0000/",         // 676 KsSBNeg vetoakPu4PFJet20eta20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_KsSBNeg_vetoJet20eta20_reverse_v1/210309_062105/0000/", // 677 KsSBNeg vetoakPu4PFJet20eta20 pPb HM1 reverse
+    "",         // 678 KsSBNeg vetoakPu4PFJet20eta20 pPb HM2
+    "",         // 679 KsSBNeg vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "",         // 680 KsSBNeg vetoakPu4PFJet20eta20 pPb HM3
+    "",         // 681 KsSBNeg vetoakPu4PFJet20eta20 pPb HM3 reverse
+    "",         // 682 KsSBNeg vetoakPu4PFJet20eta20 pPb HM4
+    "",         // 683 KsSBNeg vetoakPu4PFJet20eta20 pPb HM4 reverse
+    "",         // 684 KsSBNeg vetoakPu4PFJet20eta20 pPb HM5
+    "",         // 685 KsSBNeg vetoakPu4PFJet20eta20 pPb HM5 reverse
+    "",         // 686 KsSBNeg vetoakPu4PFJet20eta20 pPb HM6
+    "",         // 687 KsSBNeg vetoakPu4PFJet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_KsSBNeg_vetoJet20eta20_v1/210310_061308/0000/",         // 688 KsSBNeg vetoakPu4PFJet20eta20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_KsSBNeg_vetoJet20eta20_reverse_v1/210310_061346/0000/", // 689 KsSBNeg vetoakPu4PFJet20eta20 pPb HM7 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_Lm_vetoJet20eta20_v1/210311_042147/0000/",              // 690 Lm vetoakPu4PFJet20eta20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_Lm_vetoJet20eta20_reverse_v1/210311_042314/0000/",      // 691 Lm vetoakPu4PFJet20eta20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_Lm_vetoJet20eta20_v1/210312_054147/0000/",              // 692 Lm vetoakPu4PFJet20eta20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_Lm_vetoJet20eta20_reverse_v1/210312_054321/0000/",      // 693 Lm vetoakPu4PFJet20eta20 pPb HM1 reverse
+    "",         // 694 Lm vetoakPu4PFJet20eta20 pPb HM2
+    "",         // 695 Lm vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "",         // 696 Lm vetoakPu4PFJet20eta20 pPb HM3
+    "",         // 697 Lm vetoakPu4PFJet20eta20 pPb HM3 reverse
+    "",         // 698 Lm vetoakPu4PFJet20eta20 pPb HM4
+    "",         // 699 Lm vetoakPu4PFJet20eta20 pPb HM4 reverse
+    "",         // 700 Lm vetoakPu4PFJet20eta20 pPb HM5
+    "",         // 701 Lm vetoakPu4PFJet20eta20 pPb HM5 reverse
+    "",         // 702 Lm vetoakPu4PFJet20eta20 pPb HM6
+    "",         // 703 Lm vetoakPu4PFJet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_Lm_vetoJet20eta20_v1/210310_155726/0000/",              // 704 Lm vetoakPu4PFJet20eta20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_Lm_vetoJet20eta20_reverse_v1/210310_170904/0000/",      // 705 Lm vetoakPu4PFJet20eta20 pPb HM7 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_LmSBPos_vetoJet20eta20_v1/210311_042443/0000/",         // 706 LmSBPos vetoakPu4PFJet20eta20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_LmSBPos_vetoJet20eta20_reverse_v1/210311_042547/0000/", // 707 LmSBPos vetoakPu4PFJet20eta20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_LmSBPos_vetoJet20eta20_v1/210312_054336/0000/",         // 708 LmSBPos vetoakPu4PFJet20eta20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_LmSBPos_vetoJet20eta20_reverse_v1/210312_054350/0000/", // 709 LmSBPos vetoakPu4PFJet20eta20 pPb HM1 reverse
+    "",         // 710 LmSBPos vetoakPu4PFJet20eta20 pPb HM2
+    "",         // 711 LmSBPos vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "",         // 712 LmSBPos vetoakPu4PFJet20eta20 pPb HM3
+    "",         // 713 LmSBPos vetoakPu4PFJet20eta20 pPb HM3 reverse
+    "",         // 714 LmSBPos vetoakPu4PFJet20eta20 pPb HM4
+    "",         // 715 LmSBPos vetoakPu4PFJet20eta20 pPb HM4 reverse
+    "",         // 716 LmSBPos vetoakPu4PFJet20eta20 pPb HM5
+    "",         // 717 LmSBPos vetoakPu4PFJet20eta20 pPb HM5 reverse
+    "",         // 718 LmSBPos vetoakPu4PFJet20eta20 pPb HM6
+    "",         // 719 LmSBPos vetoakPu4PFJet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBPos_vetoJet20eta20_v1/210310_171313/0000/",             // 720 LmSBPos vetoakPu4PFJet20eta20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBPos_vetoJet20eta20_reverse_v1/210310_171351/0000/",     // 721 LmSBPos vetoakPu4PFJet20eta20 pPb HM7 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_LmSBNeg_vetoJet20eta20_v1/210311_042901/0000/",             // 722 LmSBNeg vetoakPu4PFJet20eta20 pPb HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_LmSBNeg_vetoJet20eta20_reverse_v1/210311_043350/0000/",     // 723 LmSBNeg vetoakPu4PFJet20eta20 pPb HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_LmSBNeg_vetoJet20eta20_v1/210312_054405/0000/",             // 724 LmSBNeg vetoakPu4PFJet20eta20 pPb HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_LmSBNeg_vetoJet20eta20_reverse_v1/210312_054424/0000/",     // 725 LmSBNeg vetoakPu4PFJet20eta20 pPb HM1 reverse
+    "",         // 726 LmSBNeg vetoakPu4PFJet20eta20 pPb HM2
+    "",         // 727 LmSBNeg vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "",         // 728 LmSBNeg vetoakPu4PFJet20eta20 pPb HM3
+    "",         // 729 LmSBNeg vetoakPu4PFJet20eta20 pPb HM3 reverse
+    "",         // 730 LmSBNeg vetoakPu4PFJet20eta20 pPb HM4
+    "",         // 731 LmSBNeg vetoakPu4PFJet20eta20 pPb HM4 reverse
+    "",         // 732 LmSBNeg vetoakPu4PFJet20eta20 pPb HM5
+    "",         // 733 LmSBNeg vetoakPu4PFJet20eta20 pPb HM5 reverse
+    "",         // 734 LmSBNeg vetoakPu4PFJet20eta20 pPb HM6
+    "",         // 735 LmSBNeg vetoakPu4PFJet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBNeg_vetoJet20eta20_v1/210310_171433/0000/",             // 736 LmSBNeg vetoakPu4PFJet20eta20 pPb HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBNeg_vetoJet20eta20_reverse_v1/210310_171507/0000/",     // 737 LmSBNeg vetoakPu4PFJet20eta20 pPb HM7 reverse
 };
 
 char const * ftxt[] = {
@@ -1281,12 +1377,108 @@ char const * ftxt[] = {
 	"txt/PAHM1_H_ak4PFJet20eta20_reverse/",      // 633
 	"txt/PAHM7_H_ak4PFJet20eta20/",              // 634
 	"txt/PAHM7_H_ak4PFJet20eta20_reverse/",      // 635
-	"txt/PAHM0_H_ak4PFJet21eta20/",              // 636
-	"txt/PAHM0_H_ak4PFJet21eta20_reverse/",      // 637
-	"txt/PAHM1_H_ak4PFJet21eta20/",              // 638
-	"txt/PAHM1_H_ak4PFJet21eta20_reverse/",      // 639
-	"txt/PAHM7_H_ak4PFJet21eta20/",              // 640
-	"txt/PAHM7_H_ak4PFJet21eta20_reverse/",      // 641
+	"txt/PAHM0_H_akPu4PFJet21eta20/",            // 636
+	"txt/PAHM0_H_akPu4PFJet21eta20_reverse/",    // 637
+	"txt/PAHM1_H_akPu4PFJet21eta20/",            // 638
+	"txt/PAHM1_H_akPu4PFJet21eta20_reverse/",    // 639
+	"txt/PAHM7_H_akPu4PFJet21eta20/",            // 640
+	"txt/PAHM7_H_akPu4PFJet21eta20_reverse/",    // 641
+	"txt/PAHM0_Ks_akPu4PFJet20eta20/",                  // 642
+	"txt/PAHM0_Ks_akPu4PFJet20eta20_reverse/",          // 643
+	"txt/PAHM1_Ks_akPu4PFJet20eta20/",                  // 644
+	"txt/PAHM1_Ks_akPu4PFJet20eta20_reverse/",          // 645
+	"txt/PAHM2_Ks_akPu4PFJet20eta20/",                  // 646
+	"txt/PAHM2_Ks_akPu4PFJet20eta20_reverse/",          // 647
+	"txt/PAHM3_Ks_akPu4PFJet20eta20/",                  // 648
+	"txt/PAHM3_Ks_akPu4PFJet20eta20_reverse/",          // 649
+	"txt/PAHM4_Ks_akPu4PFJet20eta20/",                  // 650
+	"txt/PAHM4_Ks_akPu4PFJet20eta20_reverse/",          // 651
+	"txt/PAHM5_Ks_akPu4PFJet20eta20/",                  // 652
+	"txt/PAHM5_Ks_akPu4PFJet20eta20_reverse/",          // 653
+	"txt/PAHM6_Ks_akPu4PFJet20eta20/",                  // 654
+	"txt/PAHM6_Ks_akPu4PFJet20eta20_reverse/",          // 655
+	"txt/PAHM7_Ks_akPu4PFJet20eta20/",                  // 656
+	"txt/PAHM7_Ks_akPu4PFJet20eta20_reverse/",          // 657
+	"txt/PAHM0_KsSBPos_akPu4PFJet20eta20/",             // 658
+	"txt/PAHM0_KsSBPos_akPu4PFJet20eta20_reverse/",     // 659
+	"txt/PAHM1_KsSBPos_akPu4PFJet20eta20/",             // 660
+	"txt/PAHM1_KsSBPos_akPu4PFJet20eta20_reverse/",     // 661
+	"txt/PAHM2_KsSBPos_akPu4PFJet20eta20/",             // 662
+	"txt/PAHM2_KsSBPos_akPu4PFJet20eta20_reverse/",     // 663
+	"txt/PAHM3_KsSBPos_akPu4PFJet20eta20/",             // 664
+	"txt/PAHM3_KsSBPos_akPu4PFJet20eta20_reverse/",     // 665
+	"txt/PAHM4_KsSBPos_akPu4PFJet20eta20/",             // 666
+	"txt/PAHM4_KsSBPos_akPu4PFJet20eta20_reverse/",     // 667
+	"txt/PAHM5_KsSBPos_akPu4PFJet20eta20/",             // 668
+	"txt/PAHM5_KsSBPos_akPu4PFJet20eta20_reverse/",     // 669
+	"txt/PAHM6_KsSBPos_akPu4PFJet20eta20/",             // 670
+	"txt/PAHM6_KsSBPos_akPu4PFJet20eta20_reverse/",     // 671
+	"txt/PAHM7_KsSBPos_akPu4PFJet20eta20/",             // 672
+	"txt/PAHM7_KsSBPos_akPu4PFJet20eta20_reverse/",     // 673
+	"txt/PAHM0_KsSBNeg_akPu4PFJet20eta20/",             // 674
+	"txt/PAHM0_KsSBNeg_akPu4PFJet20eta20_reverse/",     // 675
+	"txt/PAHM1_KsSBNeg_akPu4PFJet20eta20/",             // 676
+	"txt/PAHM1_KsSBNeg_akPu4PFJet20eta20_reverse/",     // 677
+	"txt/PAHM2_KsSBNeg_akPu4PFJet20eta20/",             // 678
+	"txt/PAHM2_KsSBNeg_akPu4PFJet20eta20_reverse/",     // 679
+	"txt/PAHM3_KsSBNeg_akPu4PFJet20eta20/",             // 680
+	"txt/PAHM3_KsSBNeg_akPu4PFJet20eta20_reverse/",     // 681
+	"txt/PAHM4_KsSBNeg_akPu4PFJet20eta20/",             // 682
+	"txt/PAHM4_KsSBNeg_akPu4PFJet20eta20_reverse/",     // 683
+	"txt/PAHM5_KsSBNeg_akPu4PFJet20eta20/",             // 684
+	"txt/PAHM5_KsSBNeg_akPu4PFJet20eta20_reverse/",     // 685
+	"txt/PAHM6_KsSBNeg_akPu4PFJet20eta20/",             // 686
+	"txt/PAHM6_KsSBNeg_akPu4PFJet20eta20_reverse/",     // 687
+	"txt/PAHM7_KsSBNeg_akPu4PFJet20eta20/",             // 688
+	"txt/PAHM7_KsSBNeg_akPu4PFJet20eta20_reverse/",     // 689
+	"txt/PAHM0_Lm_akPu4PFJet20eta20/",                  // 690
+	"txt/PAHM0_Lm_akPu4PFJet20eta20_reverse/",          // 691
+	"txt/PAHM1_Lm_akPu4PFJet20eta20/",                  // 692
+	"txt/PAHM1_Lm_akPu4PFJet20eta20_reverse/",          // 693
+	"txt/PAHM2_Lm_akPu4PFJet20eta20/",                  // 694
+	"txt/PAHM2_Lm_akPu4PFJet20eta20_reverse/",          // 695
+	"txt/PAHM3_Lm_akPu4PFJet20eta20/",                  // 696
+	"txt/PAHM3_Lm_akPu4PFJet20eta20_reverse/",          // 697
+	"txt/PAHM4_Lm_akPu4PFJet20eta20/",                  // 698
+	"txt/PAHM4_Lm_akPu4PFJet20eta20_reverse/",          // 699
+	"txt/PAHM5_Lm_akPu4PFJet20eta20/",                  // 700
+	"txt/PAHM5_Lm_akPu4PFJet20eta20_reverse/",          // 701
+	"txt/PAHM6_Lm_akPu4PFJet20eta20/",                  // 702
+	"txt/PAHM6_Lm_akPu4PFJet20eta20_reverse/",          // 703
+	"txt/PAHM7_Lm_akPu4PFJet20eta20/",                  // 704
+	"txt/PAHM7_Lm_akPu4PFJet20eta20_reverse/",          // 705
+	"txt/PAHM0_LmSBPos_akPu4PFJet20eta20/",             // 706
+	"txt/PAHM0_LmSBPos_akPu4PFJet20eta20_reverse/",     // 707
+	"txt/PAHM1_LmSBPos_akPu4PFJet20eta20/",             // 708
+	"txt/PAHM1_LmSBPos_akPu4PFJet20eta20_reverse/",     // 709
+	"txt/PAHM2_LmSBPos_akPu4PFJet20eta20/",             // 710
+	"txt/PAHM2_LmSBPos_akPu4PFJet20eta20_reverse/",     // 711
+	"txt/PAHM3_LmSBPos_akPu4PFJet20eta20/",             // 712
+	"txt/PAHM3_LmSBPos_akPu4PFJet20eta20_reverse/",     // 713
+	"txt/PAHM4_LmSBPos_akPu4PFJet20eta20/",             // 714
+	"txt/PAHM4_LmSBPos_akPu4PFJet20eta20_reverse/",     // 715
+	"txt/PAHM5_LmSBPos_akPu4PFJet20eta20/",             // 716
+	"txt/PAHM5_LmSBPos_akPu4PFJet20eta20_reverse/",     // 717
+	"txt/PAHM6_LmSBPos_akPu4PFJet20eta20/",             // 718
+	"txt/PAHM6_LmSBPos_akPu4PFJet20eta20_reverse/",     // 719
+	"txt/PAHM7_LmSBPos_akPu4PFJet20eta20/",             // 720
+	"txt/PAHM7_LmSBPos_akPu4PFJet20eta20_reverse/",     // 721
+	"txt/PAHM0_LmSBNeg_akPu4PFJet20eta20/",             // 722
+	"txt/PAHM0_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 723
+	"txt/PAHM1_LmSBNeg_akPu4PFJet20eta20/",             // 724
+	"txt/PAHM1_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 725
+	"txt/PAHM2_LmSBNeg_akPu4PFJet20eta20/",             // 726
+	"txt/PAHM2_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 727
+	"txt/PAHM3_LmSBNeg_akPu4PFJet20eta20/",             // 728
+	"txt/PAHM3_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 729
+	"txt/PAHM4_LmSBNeg_akPu4PFJet20eta20/",             // 730
+	"txt/PAHM4_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 731
+	"txt/PAHM5_LmSBNeg_akPu4PFJet20eta20/",             // 732
+	"txt/PAHM5_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 733
+	"txt/PAHM6_LmSBNeg_akPu4PFJet20eta20/",             // 734
+	"txt/PAHM6_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 735
+	"txt/PAHM7_LmSBNeg_akPu4PFJet20eta20/",             // 736
+	"txt/PAHM7_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 737
 };
 
 const int Pid_Non	= 0;
@@ -1947,6 +2139,102 @@ auto PID = std::vector<int>{
 	Pid_PA_Hadron,	    // 639
 	Pid_PA_Hadron,	    // 640
 	Pid_PA_Hadron,	    // 641
+	Pid_PA_Ks,	        // 642
+	Pid_PA_Ks,	        // 643
+	Pid_PA_Ks,	        // 644
+	Pid_PA_Ks,	        // 645
+	Pid_PA_Ks,	        // 646
+	Pid_PA_Ks,	        // 647
+	Pid_PA_Ks,	        // 648
+	Pid_PA_Ks,	        // 649
+	Pid_PA_Ks,	        // 650
+	Pid_PA_Ks,	        // 651
+	Pid_PA_Ks,	        // 652
+	Pid_PA_Ks,	        // 653
+	Pid_PA_Ks,	        // 654
+	Pid_PA_Ks,	        // 655
+	Pid_PA_Ks,	        // 656
+	Pid_PA_Ks,	        // 657
+	Pid_PA_Ks,	        // 658
+	Pid_PA_Ks,	        // 659
+	Pid_PA_Ks,	        // 660
+	Pid_PA_Ks,	        // 661
+	Pid_PA_Ks,	        // 662
+	Pid_PA_Ks,	        // 663
+	Pid_PA_Ks,	        // 664
+	Pid_PA_Ks,	        // 665
+	Pid_PA_Ks,	        // 666
+	Pid_PA_Ks,	        // 667
+	Pid_PA_Ks,	        // 668
+	Pid_PA_Ks,	        // 669
+	Pid_PA_Ks,	        // 670
+	Pid_PA_Ks,	        // 671
+	Pid_PA_Ks,	        // 672
+	Pid_PA_Ks,	        // 673
+	Pid_PA_Ks,	        // 674
+	Pid_PA_Ks,	        // 675
+	Pid_PA_Ks,	        // 676
+	Pid_PA_Ks,	        // 677
+	Pid_PA_Ks,	        // 678
+	Pid_PA_Ks,	        // 679
+	Pid_PA_Ks,	        // 680
+	Pid_PA_Ks,	        // 681
+	Pid_PA_Ks,	        // 682
+	Pid_PA_Ks,	        // 683
+	Pid_PA_Ks,	        // 684
+	Pid_PA_Ks,	        // 685
+	Pid_PA_Ks,	        // 686
+	Pid_PA_Ks,	        // 687
+	Pid_PA_Ks,	        // 688
+	Pid_PA_Ks,	        // 689
+	Pid_PA_Lambda,	        // 690
+	Pid_PA_Lambda,	        // 691
+	Pid_PA_Lambda,	        // 692
+	Pid_PA_Lambda,	        // 693
+	Pid_PA_Lambda,	        // 694
+	Pid_PA_Lambda,	        // 695
+	Pid_PA_Lambda,	        // 696
+	Pid_PA_Lambda,	        // 697
+	Pid_PA_Lambda,	        // 698
+	Pid_PA_Lambda,	        // 699
+	Pid_PA_Lambda,	        // 700
+	Pid_PA_Lambda,	        // 701
+	Pid_PA_Lambda,	        // 702
+	Pid_PA_Lambda,	        // 703
+	Pid_PA_Lambda,	        // 704
+	Pid_PA_Lambda,	        // 705
+	Pid_PA_Lambda,	        // 706
+	Pid_PA_Lambda,	        // 707
+	Pid_PA_Lambda,	        // 708
+	Pid_PA_Lambda,	        // 709
+	Pid_PA_Lambda,	        // 710
+	Pid_PA_Lambda,	        // 711
+	Pid_PA_Lambda,	        // 712
+	Pid_PA_Lambda,	        // 713
+	Pid_PA_Lambda,	        // 714
+	Pid_PA_Lambda,	        // 715
+	Pid_PA_Lambda,	        // 716
+	Pid_PA_Lambda,	        // 717
+	Pid_PA_Lambda,	        // 718
+	Pid_PA_Lambda,	        // 719
+	Pid_PA_Lambda,	        // 720
+	Pid_PA_Lambda,	        // 721
+	Pid_PA_Lambda,	        // 722
+	Pid_PA_Lambda,	        // 723
+	Pid_PA_Lambda,	        // 724
+	Pid_PA_Lambda,	        // 725
+	Pid_PA_Lambda,	        // 726
+	Pid_PA_Lambda,	        // 727
+	Pid_PA_Lambda,	        // 728
+	Pid_PA_Lambda,	        // 729
+	Pid_PA_Lambda,	        // 730
+	Pid_PA_Lambda,	        // 731
+	Pid_PA_Lambda,	        // 732
+	Pid_PA_Lambda,	        // 733
+	Pid_PA_Lambda,	        // 734
+	Pid_PA_Lambda,	        // 735
+	Pid_PA_Lambda,	        // 736
+	Pid_PA_Lambda,	        // 737
 };
 
 #include <TChain.h>
