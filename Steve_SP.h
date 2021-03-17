@@ -2,25 +2,25 @@
 
 typedef struct SteveGraph
 {
-    TGraphErrors* vn_NegEta_PosEtaEP;
-    TGraphErrors* vn_NegEta_PosEtaEP_SubEvt;
-    TGraphErrors* vn_PosEta_NegEtaEP;
-    TGraphErrors* vn_PosEta_NegEtaEP_SubEvt;
-    TGraphErrors* vn_Full_PosEtaEP;
-    TGraphErrors* vn_Full_PosEtaEP_SubEvt;
-    TGraphErrors* vn_Full_NegEtaEP;
-    TGraphErrors* vn_Full_NegEtaEP_SubEvt;
+    TGraphErrors* vn_NegEta_PosEtaEP        = 0;
+    TGraphErrors* vn_NegEta_PosEtaEP_SubEvt = 0;
+    TGraphErrors* vn_PosEta_NegEtaEP        = 0;
+    TGraphErrors* vn_PosEta_NegEtaEP_SubEvt = 0;
+    TGraphErrors* vn_Full_PosEtaEP          = 0;
+    TGraphErrors* vn_Full_PosEtaEP_SubEvt   = 0;
+    TGraphErrors* vn_Full_NegEtaEP          = 0;
+    TGraphErrors* vn_Full_NegEtaEP_SubEvt   = 0;
 
-    SteveGraph() {
-        vn_NegEta_PosEtaEP        = 0;
-        vn_NegEta_PosEtaEP_SubEvt = 0;
-        vn_PosEta_NegEtaEP        = 0;
-        vn_PosEta_NegEtaEP_SubEvt = 0;
-        vn_Full_PosEtaEP          = 0;
-        vn_Full_PosEtaEP_SubEvt   = 0;
-        vn_Full_NegEtaEP          = 0;
-        vn_Full_NegEtaEP_SubEvt   = 0;
-    };
+    TGraphErrors* vn_sys_NegEta_PosEtaEP        = 0;
+    TGraphErrors* vn_sys_NegEta_PosEtaEP_SubEvt = 0;
+    TGraphErrors* vn_sys_PosEta_NegEtaEP        = 0;
+    TGraphErrors* vn_sys_PosEta_NegEtaEP_SubEvt = 0;
+    TGraphErrors* vn_sys_Full_PosEtaEP          = 0;
+    TGraphErrors* vn_sys_Full_PosEtaEP_SubEvt   = 0;
+    TGraphErrors* vn_sys_Full_NegEtaEP          = 0;
+    TGraphErrors* vn_sys_Full_NegEtaEP_SubEvt   = 0;
+
+    SteveGraph() {};
 
     SteveGraph(TDirectoryFile * dir) {
         vn_NegEta_PosEtaEP          = (TGraphErrors*) dir->Get("vn_NegEta_PosEtaEP");
@@ -67,7 +67,51 @@ typedef struct SteveGraph
         vn_Full_NegEtaEP_SubEvt     ->Write( "vn_Full_NegEtaEP_SubEvt" );
     };
 
+    void SetSys(double sysX, double sysY) {
+        vn_sys_NegEta_PosEtaEP        = grSys( vn_NegEta_PosEtaEP        , sysX, sysY );
+        vn_sys_NegEta_PosEtaEP_SubEvt = grSys( vn_NegEta_PosEtaEP_SubEvt , sysX, sysY );
+        vn_sys_PosEta_NegEtaEP        = grSys( vn_PosEta_NegEtaEP        , sysX, sysY );
+        vn_sys_PosEta_NegEtaEP_SubEvt = grSys( vn_PosEta_NegEtaEP_SubEvt , sysX, sysY );
+        vn_sys_Full_PosEtaEP          = grSys( vn_Full_PosEtaEP          , sysX, sysY );
+        vn_sys_Full_PosEtaEP_SubEvt   = grSys( vn_Full_PosEtaEP_SubEvt   , sysX, sysY );
+        vn_sys_Full_NegEtaEP          = grSys( vn_Full_NegEtaEP          , sysX, sysY );
+        vn_sys_Full_NegEtaEP_SubEvt   = grSys( vn_Full_NegEtaEP_SubEvt   , sysX, sysY );
+    };
+
+    void DropPoints(int N) {
+        for ( int i = 0; i < N; i++ ) {
+            vn_NegEta_PosEtaEP       ->RemovePoint(0);
+            vn_NegEta_PosEtaEP_SubEvt->RemovePoint(0);
+            vn_PosEta_NegEtaEP       ->RemovePoint(0);
+            vn_PosEta_NegEtaEP_SubEvt->RemovePoint(0);
+            vn_Full_PosEtaEP         ->RemovePoint(0);
+            vn_Full_PosEtaEP_SubEvt  ->RemovePoint(0);
+            vn_Full_NegEtaEP         ->RemovePoint(0);
+            vn_Full_NegEtaEP_SubEvt  ->RemovePoint(0);
+
+            vn_sys_NegEta_PosEtaEP       ->RemovePoint(0);
+            vn_sys_NegEta_PosEtaEP_SubEvt->RemovePoint(0);
+            vn_sys_PosEta_NegEtaEP       ->RemovePoint(0);
+            vn_sys_PosEta_NegEtaEP_SubEvt->RemovePoint(0);
+            vn_sys_Full_PosEtaEP         ->RemovePoint(0);
+            vn_sys_Full_PosEtaEP_SubEvt  ->RemovePoint(0);
+            vn_sys_Full_NegEtaEP         ->RemovePoint(0);
+            vn_sys_Full_NegEtaEP_SubEvt  ->RemovePoint(0);
+        }
+    }
+
 private:
+    TGraphErrors* grSys(TGraphErrors* gr, double sysX, double sysY) {
+        int N = gr->GetN();
+        TGraphErrors* ret = new TGraphErrors(N);
+        for ( int i = 0; i < N; i++ ) {
+            ret->GetX()[i] = gr->GetX()[i];
+            ret->GetY()[i] = gr->GetY()[i];
+            ret->GetEX()[i] = sysX;
+            ret->GetEY()[i] = sysY * gr->GetY()[i];
+        }
+        return ret;
+    }
     TGraphErrors* merge(TGraphErrors* gr1, TGraphErrors* gr2){
         int N = gr1->GetN();
         TGraphErrors * gr = new TGraphErrors(N);

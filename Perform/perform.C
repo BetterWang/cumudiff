@@ -485,7 +485,12 @@ void perform(string fname = "PbPb15_V0_ppRecoGMO567_v4.root",
 			RooCurve * sumCurv = xframe_ks->getCurve("sum");
 
 			for ( int i = 1; i <= hMass->GetNbinsX(); i++ ) {
-				hMass->SetBinContent(i, hMass->GetBinContent(i)/sumCurv->Eval(hMass->GetBinCenter(i)));
+                if ( (hMass->GetBinCenter(i) > (bKs?Ks_mass_min:Lm_mass_min)) and (hMass->GetBinCenter(i) < (bKs?Ks_mass_max:Lm_mass_max)) ) {
+                    hMass->SetBinContent(i, hMass->GetBinContent(i)/sumCurv->Eval(hMass->GetBinCenter(i)));
+                } else {
+                    hMass->SetBinContent(i, 0);
+                }
+
 			}
 //			InitHist2(hMass, "Mass", "Ratio");
 			hMass->SetMarkerStyle(kFullCircle);
