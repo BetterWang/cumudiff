@@ -738,6 +738,18 @@ char const * fname[] = {
     "",         // 735 LmSBNeg vetoakPu4PFJet20eta20 pPb HM6 reverse
     "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBNeg_vetoJet20eta20_v3/210315_174701/0000/",             // 736 LmSBNeg vetoakPu4PFJet20eta20 pPb HM7
     "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBNeg_vetoJet20eta20_reverse_v3/210315_174715/0000/",     // 737 LmSBNeg vetoakPu4PFJet20eta20 pPb HM7 reverse
+    "NA",       // 738 Ks SB HM0
+    "NA",       // 739 Ks SB HM123456
+    "NA",       // 740 Ks SB HM7
+    "NA",       // 741 Ks SB HM0 reverse
+    "NA",       // 742 Ks SB HM123456 reverse
+    "NA",       // 743 Ks SB HM7 reverse
+    "NA",       // 744 Lm SB HM0
+    "NA",       // 745 Lm SB HM123456
+    "NA",       // 746 Lm SB HM7
+    "NA",       // 747 Lm SB HM0 reverse
+    "NA",       // 748 Lm SB HM123456 reverse
+    "NA",       // 749 Lm SB HM7 reverse
 };
 
 char const * ftxt[] = {
@@ -1479,6 +1491,18 @@ char const * ftxt[] = {
 	"txt/PAHM6_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 735
 	"txt/PAHM7_LmSBNeg_akPu4PFJet20eta20/",             // 736
 	"txt/PAHM7_LmSBNeg_akPu4PFJet20eta20_reverse/",     // 737
+    "txt/PAHM0_KsSB_akPu4PFJet20eta20/",                // 738
+    "txt/PAHM123456_KsSB_akPu4PFJet20eta20/",           // 739
+    "txt/PAHM7_KsSB_akPu4PFJet20eta20/",                // 740
+    "txt/PAHM0_KsSB_akPu4PFJet20eta20_reverse/",        // 741
+    "txt/PAHM123456_KsSB_akPu4PFJet20eta20_reverse/",   // 742
+    "txt/PAHM7_KsSB_akPu4PFJet20eta20_reverse/",        // 743
+    "txt/PAHM0_LmSB_akPu4PFJet20eta20/",                // 744
+    "txt/PAHM123456_LmSB_akPu4PFJet20eta20/",           // 745
+    "txt/PAHM7_LmSB_akPu4PFJet20eta20/",                // 746
+    "txt/PAHM0_LmSB_akPu4PFJet20eta20_reverse/",        // 747
+    "txt/PAHM123456_LmSB_akPu4PFJet20eta20_reverse/",   // 748
+    "txt/PAHM7_LmSB_akPu4PFJet20eta20_reverse/",        // 749
 };
 
 const int Pid_Non	= 0;
@@ -2235,6 +2259,18 @@ auto PID = std::vector<int>{
 	Pid_PA_Lambda,	        // 735
 	Pid_PA_Lambda,	        // 736
 	Pid_PA_Lambda,	        // 737
+    Pid_PA_Ks,              // 738
+    Pid_PA_Ks,              // 739
+    Pid_PA_Ks,              // 740
+    Pid_PA_Ks,              // 741
+    Pid_PA_Ks,              // 742
+    Pid_PA_Ks,              // 743
+    Pid_PA_Lambda,          // 744
+    Pid_PA_Lambda,          // 745
+    Pid_PA_Lambda,          // 746
+    Pid_PA_Lambda,          // 747
+    Pid_PA_Lambda,          // 748
+    Pid_PA_Lambda,          // 749
 };
 
 #include <TChain.h>
