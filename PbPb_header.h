@@ -9,7 +9,7 @@ TColor *gray = new TColor(3005, 0, 0, 0, "black", 0.4);
 // 0 -- H   1.4
 // 1 -- Ks  3.5
 // 2 -- Lm  5.7
-const double cumu_syst[3] = {0.014, 0.035, 0.057};
+const double cumu_syst[3] = {0.014, 0.042, 0.055};
 const double PbPb_sysX = 0.35;
 
 struct QWCumu {

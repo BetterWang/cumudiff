@@ -36,5 +36,53 @@ void massHist(string s = "LM", int c = 2, int ipt = 7)
     mSSmva->hMassMid[c][ipt]->Draw("histsame");
     mWSmva->hMassMid[c][ipt]->Draw("histsame");
 
+    TLegend * leg = new TLegend(0.60, 0.70, 0.85 , 0.87);
+    leg->SetFillColor(kWhite);
+    leg->SetTextFont(42);
+    leg->SetTextSize(0.04);
+    leg->SetBorderSize(0);
+
+    leg->AddEntry(mSS->hMassMid[c][ipt], "OS before MVA", "l");
+    leg->AddEntry(mWS->hMassMid[c][ipt], "SS before MVA", "l");
+    leg->AddEntry(mSSmva->hMassMid[c][ipt], "OS after MVA", "l");
+    leg->AddEntry(mWSmva->hMassMid[c][ipt], "SS after MVA", "l");
+
+    leg->Draw();
+    TLatex latexS;
+    latexS.SetTextFont(43);
+    latexS.SetTextSize(24);
+    latexS.SetTextAlign(13);
+
+    string strCent[5] = {
+        "0-5\%",
+        "5-10\%",
+        "10-30\%",
+        "30-50\%",
+        "50-80\%",
+    };
+
+    string strPt[13] = {
+        " ", // 0
+        " ", // 1
+        " ", // 2
+        " ", // 3
+        " 1.0<p_{T}<1.4", // 4
+        " 1.4<p_{T}<1.8", // 5
+        " 1.8<p_{T}<2.2", // 6
+        " 2.2<p_{T}<2.8", // 7
+        " 2.8<p_{T}<3.6", // 8
+        " 3.6<p_{T}<4.6", // 9
+        " 4.6<p_{T}<6.0", // 10
+        " 6.0<p_{T}<7.0", // 11
+        " 7.0<p_{T}<8.5", // 12
+    };
+
+    string part = "#Lambda ";
+    if (s != "LM") {
+        part = "K_{S}^{0} ";
+    }
+    cout << (part+strCent[c]+strPt[ipt]) << endl;;
+    latexS.DrawLatexNDC(0.55, 0.93, (part+strCent[c]+strPt[ipt]).c_str());
+
     c1->SaveAs(Form("massWS_%s_%i_%i.pdf", s.c_str(), c, ipt));
 }

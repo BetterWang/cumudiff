@@ -872,10 +872,10 @@ void plotFinalpPb()
         setGr( grSP.grSP_H[c]->vn_PosEta_NegEtaEP,        kOpenCircle, kBlack,   2.);
         setGr( grSP.grSP_H[c]->vn_PosEta_NegEtaEP_SubEvt, kOpenCircle, kGreen+2, 2.);
 
-        setGr( grH.gr_v24[c],       kFullSquare,  kBlue,     2.);
-        setGr( grH.gr_v24sub[c],    kOpenSquare,  kRed,      2.);
-        setGr( grH.gr_v24subpos[c], kOpenSquare,  kBlack,    2.);
-        setGr( grH.gr_v24subneg[c], kOpenSquare,  kGreen+2,  2.);
+        setGr( grH.gr_v24[c],       kFullCircle,  kBlue,     2.);
+        setGr( grH.gr_v24sub[c],    kOpenCircle,  kRed,      2.);
+        setGr( grH.gr_v24subpos[c], kOpenCircle,  kBlack,    2.);
+        setGr( grH.gr_v24subneg[c], kOpenCircle,  kGreen+2,  2.);
 
 //        grSP.grSP_H[c]->vn_Full_NegEtaEP         ->Draw("psame");
 //        grSP.grSP_H[c]->vn_Full_NegEtaEP_SubEvt  ->Draw("psame");

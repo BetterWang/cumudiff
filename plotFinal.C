@@ -93,14 +93,15 @@ void plotFinal()
         ampt  ->grCh_v24[c]->SetLineColor(kBlue);
         ampt  ->grCh_v22[c]->SetLineWidth(0);
         ampt  ->grCh_v24[c]->SetLineWidth(0);
-
         ampt  ->grCh_v22[c]->SetFillColor(3003);
         ampt  ->grCh_v24[c]->SetFillColor(3001);
 
-        trento->grCh_v22[c]->SetLineColor(kRed);
-        trento->grCh_v24[c]->SetLineColor(kBlue);
-        trento->grCh_v22[c]->SetLineStyle(kDashed);
-        trento->grCh_v24[c]->SetLineStyle(kDashed);
+        trento  ->grCh_v22[c]->SetLineColor(kRed);
+        trento  ->grCh_v24[c]->SetLineColor(kBlue);
+        trento  ->grCh_v22[c]->SetLineWidth(0);
+        trento  ->grCh_v24[c]->SetLineWidth(0);
+        trento  ->grCh_v22[c]->SetFillColor(3003);
+        trento  ->grCh_v24[c]->SetFillColor(3001);
 
         ampt  ->grCh_v22[c]->Draw("[]3");
         ampt  ->grCh_v24[c]->Draw("[]3");
@@ -200,14 +201,15 @@ void plotFinal()
         ampt  ->grKs_v24[c]->SetLineColor(kBlue);
         ampt  ->grKs_v22[c]->SetLineWidth(0);
         ampt  ->grKs_v24[c]->SetLineWidth(0);
-
         ampt  ->grKs_v22[c]->SetFillColor(3003);
         ampt  ->grKs_v24[c]->SetFillColor(3001);
 
         trento->grKs_v22[c]->SetLineColor(kRed);
         trento->grKs_v24[c]->SetLineColor(kBlue);
-        trento->grKs_v22[c]->SetLineStyle(kDashed);
-        trento->grKs_v24[c]->SetLineStyle(kDashed);
+        trento->grKs_v22[c]->SetLineWidth(0);
+        trento->grKs_v24[c]->SetLineWidth(0);
+        trento->grKs_v22[c]->SetFillColor(3003);
+        trento->grKs_v24[c]->SetFillColor(3001);
 
         ampt  ->grKs_v22[c]->Draw("[]3");
         ampt  ->grKs_v24[c]->Draw("[]3");
@@ -320,14 +322,15 @@ void plotFinal()
         ampt  ->grLm_v24[c]->SetLineColor(kBlue);
         ampt  ->grLm_v22[c]->SetLineWidth(0);
         ampt  ->grLm_v24[c]->SetLineWidth(0);
-
         ampt  ->grLm_v22[c]->SetFillColor(3003);
         ampt  ->grLm_v24[c]->SetFillColor(3001);
 
         trento->grLm_v22[c]->SetLineColor(kRed);
         trento->grLm_v24[c]->SetLineColor(kBlue);
-        trento->grLm_v22[c]->SetLineStyle(kDashed);
-        trento->grLm_v24[c]->SetLineStyle(kDashed);
+        trento->grLm_v22[c]->SetLineWidth(0);
+        trento->grLm_v24[c]->SetLineWidth(0);
+        trento->grLm_v22[c]->SetFillColor(3003);
+        trento->grLm_v24[c]->SetFillColor(3001);
 
         ampt  ->grLm_v22[c]->Draw("[]3");
         ampt  ->grLm_v24[c]->Draw("[]3");
@@ -404,9 +407,9 @@ void plotFinal()
 
     // fluctuation
     TH2D * hframe_fluct = new TH2D("hframe_fluct", "hframe_fluct", 1, 0.01, 8.5, 1, 0.01, 1.3);
-    InitHist(hframe_fluct, "p_{T} (GeV)", "Fluctuation");
+    InitHist(hframe_fluct, "p_{T} (GeV)", "#sigma / v_{2}");
     hframe_fluct->GetYaxis()->SetTitleOffset(1.0);
-    hframe_fluct->GetYaxis()->CenterTitle(false);
+    //hframe_fluct->GetYaxis()->CenterTitle(false);
     hframe_fluct->GetXaxis()->SetTitleOffset(0.90);
 
     TGraphErrors * gChF[5] = {};
@@ -1284,7 +1287,7 @@ void plotFinal()
     TGraphErrors* gKs84Ratio[5] = {};
     TGraphErrors* gLm84Ratio[5] = {};
 
-    TH2D * hframe_ratio1 = new TH2D("hframe_ratio1", "hframe_ratio1", 1, 0.01, 8.5, 1, 0.2, 1.75);
+    TH2D * hframe_ratio1 = new TH2D("hframe_ratio1", "hframe_ratio1", 1, 0.01, 8.5, 1, 0.4, 1.55);
     InitHist(hframe_ratio1, "p_{T} (GeV)", "Ratio");
     hframe_ratio1->GetYaxis()->SetTitleOffset(1.0);
     hframe_ratio1->GetXaxis()->SetTitleOffset(0.90);

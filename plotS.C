@@ -5,7 +5,7 @@ int color_list[] = {kRed,         kBlue,        kBlack,        kBlue,         kR
 int style_list[] = {kOpenCircle,  kOpenSquare,  kOpenCircle,   kOpenCircle,   kOpenSquare,    kOpenSquare};
 
 
-TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, TString options = "")
+TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, TString options = "correlate")
 {
     TGraphErrors * gr = new TGraphErrors(gr1->GetN());
     gr->SetMarkerStyle( gr1->GetMarkerStyle() );
@@ -14,12 +14,22 @@ TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, TString options = "
     gr->SetLineStyle( gr1->GetLineStyle() );
     gr->SetLineColor( gr1->GetLineColor() );
 
+//    cout << " -> getRatio N1 = " << gr1->GetN() << " N2 = " << gr2->GetN() << endl;
     for ( int i = 0; i < gr1->GetN(); i++ ) {
         gr->GetX()[i] = gr1->GetX()[i];
         gr->GetY()[i] = gr1->GetY()[i] / gr2->GetY()[i];
+        double y1 = gr1->GetY()[i];
+        double y2 = gr2->GetY()[i];
+        double e1 = gr1->GetEY()[i];
+        double e2 = gr2->GetEY()[i];
 
-        gr->GetEY()[i] = sqrt( gr1->GetEY()[i]*gr1->GetEY()[i]/gr1->GetY()[i]/gr1->GetY()[i]
-                +  gr2->GetEY()[i]*gr2->GetEY()[i]/gr2->GetY()[i]/gr2->GetY()[i] );
+//        cout << " ---> i = " << i << " X = " << gr->GetX()[i] << " Y1 = " << gr1->GetY()[i] << " Y2 = " << gr2->GetY()[i] << " Y = " << gr->GetY()[i] << endl;
+
+        if ( options.Contains("correlate") ) {
+            gr->GetEY()[i] = sqrt( abs(e1*e1/y1/y1 + e2*e2/y2/y2 - 2*e1*e1/y1/y2) ) * y1 / y2;
+        } else {
+            gr->GetEY()[i] = sqrt( e1*e1/y1/y1 + e2*e2/y2/y2 );
+        }
     }
     return gr;
 }
@@ -34,7 +44,7 @@ void plotS(
         int sratio = -1,
         double delta = 0.9,
         int dropPoint = 0,
-        TString options = ""
+        TString options = "correlate"
         )
 {
     stringstream ss(s);
@@ -62,6 +72,9 @@ void plotS(
 
         TFile * f = new TFile(sname.c_str());
         TGraphErrors* gr = (TGraphErrors*) f->Get(sgr.c_str());
+        if ( gr == nullptr ) {
+            cout << "!!! -> nullptr " << sname << " : " << sgr <<endl;
+        }
 
         gr->SetMarkerStyle( style_list[idx] );
         gr->SetMarkerColor( color_list[idx] );
@@ -93,6 +106,8 @@ void plotS(
 	latexS.SetTextAlign(13);
 
     hframePt->Draw();
+    TLine * line0 = new TLine(0, 0, 8.5, 0);
+    line0->Draw();
     for ( int i = 0; i < grs.size(); i++ ) {
         TGraphErrors* gr = grs[i];
         gr->Draw("p");
@@ -112,7 +127,7 @@ void plotS(
         for ( int i = 0; i < grs.size(); i++ ) {
             if ( i == sratio ) continue;
 
-            TGraphErrors * r = getRatio( grs[i], grs[sratio] );
+            TGraphErrors * r = getRatio( grs[i], grs[sratio], options );
             r->Draw("psame");
         }
         latexS.DrawLatexNDC(0.60, 0.90, st.c_str());

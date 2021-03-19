@@ -119,6 +119,8 @@ void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.roo
                 fFsig = new TFile("FsigKSMid_centS.root");
             } else if ( option == "CentPlus" ) {
                 fFsig = new TFile("FsigKSCentPlusMid_cent7.root");
+            } else if ( option == "WS" ) {
+                fFsig = new TFile("FsigKSMid_WS.root");
             } else {
                 fFsig = new TFile("FsigKSMid_cent7.root");
             }
@@ -138,6 +140,8 @@ void vnFsigPbPb(string sig = "PbPb2018_Ks.root", string sb = "PbPb2018_Ks_SB.roo
                 fFsig = new TFile("FsigLMMid_centS.root");
             } else if ( option == "CentPlus" ) {
                 fFsig = new TFile("FsigLMCentPlusMid_cent7.root");
+            } else if ( option == "WS" ) {
+                fFsig = new TFile("FsigLMMid_WS.root");
             } else {
                 fFsig = new TFile("FsigLMMid_cent7.root");
             }

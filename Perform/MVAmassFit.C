@@ -201,6 +201,81 @@ void doFit(int c1 = 3, int ipt1 = 6, string y = "Mid", int iter=5)
     gaus2_signal->SetLineStyle(kDashDotted);
 }
 
+void doFitPA(int c1 = 3, int ipt1 = 6, string y = "Mid", int iter=50)
+{
+    // c1 = 0, 120
+    // c1 = 1, 150
+    // c1 = 2, 185
+    // c1 = 3, 250
+    ipt = ipt1;
+    string dir = "vect";
+    if ( s == "LM" ) {
+        if ( c1 == 0 ) dir += "LmMassN120";
+        if ( c1 == 1 ) dir += "LmMassN150";
+        if ( c1 == 2 ) dir += "LmMassN185";
+        if ( c1 == 3 ) dir += "LmMassN250";
+    } else if ( s == "KS" ) {
+        if ( c1 == 0 ) dir += "KsMassN120";
+        if ( c1 == 1 ) dir += "KsMassN150";
+        if ( c1 == 2 ) dir += "KsMassN185";
+        if ( c1 == 3 ) dir += "KsMassN250";
+    }
+    cout << "-->" << Form("%s/h3DPhi_%i", dir.c_str(), ipt1) << endl;
+
+    if ( hmass          ) hmass->Delete();
+    if ( fit            ) fit->Delete();
+    if ( func_signal    ) func_signal->Delete();
+    if ( gaus1_signal   ) gaus1_signal->Delete();
+    if ( gaus2_signal   ) gaus2_signal->Delete();
+    if ( func_bckgnd    ) func_bckgnd->Delete();
+
+    TH3D * h3D = (TH3D*) f->Get(Form("%s/h3DPhi_%i", dir.c_str(), ipt1));
+    hmass = h3D->ProjectionX(Form("hMassMid_%i_%i", c1, ipt1), 0, -1, h3D->GetZaxis()->FindBin(-1.), h3D->GetZaxis()->FindBin(1.)-1);
+
+    fit = fitHist(hmass, iter);
+
+    func_signal  = new TF1("func_signal" , double_gaussian.c_str(), full_range.first, full_range.second);
+    gaus1_signal = new TF1("gaus1_signal", gaus_func.c_str(), full_range.first, full_range.second);
+    gaus2_signal = new TF1("gaus2_signal", gaus_func.c_str(), full_range.first, full_range.second);
+    func_bckgnd  = new TF1("func_bckgnd" , poly_bkg0.c_str(), full_range.first, full_range.second);
+
+    func_signal->SetParameter(0, fit->GetParameter(0));
+    func_signal->SetParameter(1, fit->GetParameter(1));
+    func_signal->SetParameter(2, fit->GetParameter(2));
+    func_signal->SetParameter(3, fit->GetParameter(3));
+    func_signal->SetParameter(4, fit->GetParameter(4));
+
+    func_bckgnd->SetParameter(0, fit->GetParameter(5));
+    func_bckgnd->SetParameter(1, fit->GetParameter(6));
+    if ( bPol4 or bPol3 ) func_bckgnd->SetParameter(2, fit->GetParameter(7));
+    if ( bPol4 or bPol3 ) func_bckgnd->SetParameter(3, fit->GetParameter(8));
+    if ( bPol4 )          func_bckgnd->SetParameter(4, fit->GetParameter(9));
+
+    func_signal->SetLineColor(kRed);
+    func_bckgnd->SetLineColor(kBlue);
+
+    if ( abs(fit->GetParameter(1)) > abs(fit->GetParameter(2)) ) {
+        gaus1_signal->SetParameter(0, fit->GetParameter(0));
+        gaus1_signal->SetParameter(1, fit->GetParameter(1));
+        gaus1_signal->SetParameter(2, fit->GetParameter(3));
+        gaus2_signal->SetParameter(0, fit->GetParameter(0));
+        gaus2_signal->SetParameter(1, fit->GetParameter(2));
+        gaus2_signal->SetParameter(2, fit->GetParameter(4));
+    } else {
+        gaus2_signal->SetParameter(0, fit->GetParameter(0));
+        gaus2_signal->SetParameter(1, fit->GetParameter(1));
+        gaus2_signal->SetParameter(2, fit->GetParameter(3));
+        gaus1_signal->SetParameter(0, fit->GetParameter(0));
+        gaus1_signal->SetParameter(1, fit->GetParameter(2));
+        gaus1_signal->SetParameter(2, fit->GetParameter(4));
+    }
+
+    gaus1_signal->SetLineColor(kBlue);
+    gaus2_signal->SetLineColor(kRed);
+    gaus1_signal->SetLineStyle(kDashDotted);
+    gaus2_signal->SetLineStyle(kDashDotted);
+}
+
 void doSave(bool bPlot = true)
 {
     TFile save( ( s + tag + "/" + hmass->GetName() + ".root" ).c_str(), "recreate" );
@@ -244,6 +319,15 @@ void MVAmassFit(string s1 = "LM", TString option = "pol4")
         if ( option.Contains("CentPlus") ) {
             f = new TFile("MVAmassBDT250D4_LM_CentPlus.root");
             tag = "CentPlus";
+        } else if ( option.Contains("pPb0") ){
+            f = new TFile("pPb16_V0_HM0_rap_merge_v5.root");
+            tag = "HM0";
+        } else if ( option.Contains("pPb1") ){
+            f = new TFile("pPb16_V0_HM123456_rap_merge_v5.root");
+            tag = "HM123456";
+        } else if ( option.Contains("pPb7") ){
+            f = new TFile("pPb16_V0_HM7_rap_merge_v5.root");
+            tag = "HM7";
         } else {
             f = new TFile("MVAmassBDT250D4_LM20_cent7.root");
         }
@@ -251,6 +335,15 @@ void MVAmassFit(string s1 = "LM", TString option = "pol4")
         if ( option.Contains("CentPlus") ) {
             f = new TFile("MVAmassBDT250D4_KS_CentPlus.root");
             tag = "CentPlus";
+        } else if ( option.Contains("pPb0") ){
+            f = new TFile("pPb16_V0_HM0_rap_merge_v5.root");
+            tag = "HM0";
+        } else if ( option.Contains("pPb1") ){
+            f = new TFile("pPb16_V0_HM123456_rap_merge_v5.root");
+            tag = "HM123456";
+        } else if ( option.Contains("pPb7") ){
+            f = new TFile("pPb16_V0_HM7_rap_merge_v5.root");
+            tag = "HM7";
         } else {
             f = new TFile("MVAmassBDT250D4_KS_cent7.root");
         }
