@@ -646,8 +646,8 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity0/crab_PAHM0_Ks_vetoJet20eta20_reverse_v1/210308_164606/0000/",      // 643 Ks vetoakPu4PFJet20eta20 pPb HM0 reverse
     "../cumu/PAHighMultiplicity1/crab_PAHM1_Ks_vetoJet20eta20_v1/210309_061618/0000/",              // 644 Ks vetoakPu4PFJet20eta20 pPb HM1
     "../cumu/PAHighMultiplicity1/crab_PAHM1_Ks_vetoJet20eta20_reverse_v1/210309_061733/0000/",      // 645 Ks vetoakPu4PFJet20eta20 pPb HM1 reverse
-    "",         // 646 Ks vetoakPu4PFJet20eta20 pPb HM2
-    "",         // 647 Ks vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Ks_vetoJet20eta20_v1/210319_202740/0000/",              // 646 Ks vetoakPu4PFJet20eta20 pPb HM2
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Ks_vetoJet20eta20_reverse_v2/210323_152350/0000/",      // 647 Ks vetoakPu4PFJet20eta20 pPb HM2 reverse
     "",         // 648 Ks vetoakPu4PFJet20eta20 pPb HM3
     "",         // 649 Ks vetoakPu4PFJet20eta20 pPb HM3 reverse
     "",         // 650 Ks vetoakPu4PFJet20eta20 pPb HM4
@@ -662,8 +662,8 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity0/crab_PAHM0_KsSBPos_vetoJet20eta20_reverse_v1/210308_164935/0000/", // 659 KsSBPos vetoakPu4PFJet20eta20 pPb HM0 reverse
     "../cumu/PAHighMultiplicity1/crab_PAHM1_KsSBPos_vetoJet20eta20_v1/210309_061825/0000/",         // 660 KsSBPos vetoakPu4PFJet20eta20 pPb HM1
     "../cumu/PAHighMultiplicity1/crab_PAHM1_KsSBPos_vetoJet20eta20_reverse_v1/210309_061912/0000/", // 661 KsSBPos vetoakPu4PFJet20eta20 pPb HM1 reverse
-    "",         // 662 KsSBPos vetoakPu4PFJet20eta20 pPb HM2
-    "",         // 663 KsSBPos vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_KsSBPos_vetoJet20eta20_v3/210325_141745/0000/",         // 662 KsSBPos vetoakPu4PFJet20eta20 pPb HM2
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_KsSBPos_vetoJet20eta20_reverse_v2/210323_152607/0000/", // 663 KsSBPos vetoakPu4PFJet20eta20 pPb HM2 reverse
     "",         // 664 KsSBPos vetoakPu4PFJet20eta20 pPb HM3
     "",         // 665 KsSBPos vetoakPu4PFJet20eta20 pPb HM3 reverse
     "",         // 666 KsSBPos vetoakPu4PFJet20eta20 pPb HM4
@@ -678,8 +678,8 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity0/crab_PAHM0_KsSBNeg_vetoJet20eta20_reverse_v1/210308_165411/0000/", // 675 KsSBNeg vetoakPu4PFJet20eta20 pPb HM0 reverse
     "../cumu/PAHighMultiplicity1/crab_PAHM1_KsSBNeg_vetoJet20eta20_v1/210309_062017/0000/",         // 676 KsSBNeg vetoakPu4PFJet20eta20 pPb HM1
     "../cumu/PAHighMultiplicity1/crab_PAHM1_KsSBNeg_vetoJet20eta20_reverse_v1/210309_062105/0000/", // 677 KsSBNeg vetoakPu4PFJet20eta20 pPb HM1 reverse
-    "",         // 678 KsSBNeg vetoakPu4PFJet20eta20 pPb HM2
-    "",         // 679 KsSBNeg vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_KsSBNeg_vetoJet20eta20_v2/210323_152708/0000/",         // 678 KsSBNeg vetoakPu4PFJet20eta20 pPb HM2
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_KsSBNeg_vetoJet20eta20_reverse_v2/210323_152755/0000/", // 679 KsSBNeg vetoakPu4PFJet20eta20 pPb HM2 reverse
     "",         // 680 KsSBNeg vetoakPu4PFJet20eta20 pPb HM3
     "",         // 681 KsSBNeg vetoakPu4PFJet20eta20 pPb HM3 reverse
     "",         // 682 KsSBNeg vetoakPu4PFJet20eta20 pPb HM4
@@ -694,62 +694,66 @@ char const * fname[] = {
     "../cumu/PAHighMultiplicity0/crab_PAHM0_Lm_vetoJet20eta20_reverse_v1/210311_042314/0000/",      // 691 Lm vetoakPu4PFJet20eta20 pPb HM0 reverse
     "../cumu/PAHighMultiplicity1/crab_PAHM1_Lm_vetoJet20eta20_v1/210312_054147/0000/",              // 692 Lm vetoakPu4PFJet20eta20 pPb HM1
     "../cumu/PAHighMultiplicity1/crab_PAHM1_Lm_vetoJet20eta20_reverse_v1/210312_054321/0000/",      // 693 Lm vetoakPu4PFJet20eta20 pPb HM1 reverse
-    "",         // 694 Lm vetoakPu4PFJet20eta20 pPb HM2
-    "",         // 695 Lm vetoakPu4PFJet20eta20 pPb HM2 reverse
-    "",         // 696 Lm vetoakPu4PFJet20eta20 pPb HM3
-    "",         // 697 Lm vetoakPu4PFJet20eta20 pPb HM3 reverse
-    "",         // 698 Lm vetoakPu4PFJet20eta20 pPb HM4
-    "",         // 699 Lm vetoakPu4PFJet20eta20 pPb HM4 reverse
-    "",         // 700 Lm vetoakPu4PFJet20eta20 pPb HM5
-    "",         // 701 Lm vetoakPu4PFJet20eta20 pPb HM5 reverse
-    "",         // 702 Lm vetoakPu4PFJet20eta20 pPb HM6
-    "",         // 703 Lm vetoakPu4PFJet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Lm_vetoJet20eta20_v2/210322_040112/0000/",              // 694 Lm vetoakPu4PFJet20eta20 pPb HM2
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_Lm_vetoJet20eta20_reverse_v2/210322_040127/0000/",      // 695 Lm vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "../cumu/PAHighMultiplicity3/crab_PAHM3_Lm_vetoJet20eta20_v2/210323_130343/0000/",              // 696 Lm vetoakPu4PFJet20eta20 pPb HM3
+    "../cumu/PAHighMultiplicity3/crab_PAHM3_Lm_vetoJet20eta20_reverse_v2/210323_130400/0000/",      // 697 Lm vetoakPu4PFJet20eta20 pPb HM3 reverse
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Lm_vetoJet20eta20_v2/210325_044754/0000/",              // 698 Lm vetoakPu4PFJet20eta20 pPb HM4
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_Lm_vetoJet20eta20_reverse_v2/210325_044808/0000/",      // 699 Lm vetoakPu4PFJet20eta20 pPb HM4 reverse
+    "../cumu/PAHighMultiplicity5/crab_PAHM5_Lm_vetoJet20eta20_v2/210325_051143/0000/",              // 700 Lm vetoakPu4PFJet20eta20 pPb HM5
+    "../cumu/PAHighMultiplicity5/crab_PAHM5_Lm_vetoJet20eta20_reverse_v2/210325_051157/0000/",      // 701 Lm vetoakPu4PFJet20eta20 pPb HM5 reverse
+    "../cumu/PAHighMultiplicity6/crab_PAHM6_Lm_vetoJet20eta20_v2/210325_051453/0000/",              // 702 Lm vetoakPu4PFJet20eta20 pPb HM6
+    "../cumu/PAHighMultiplicity6/crab_PAHM6_Lm_vetoJet20eta20_reverse_v2/210325_051507/0000/",      // 703 Lm vetoakPu4PFJet20eta20 pPb HM6 reverse
     "../cumu/PAHighMultiplicity7/crab_PAHM7_Lm_vetoJet20eta20_v3/210315_174603/0000/",              // 704 Lm vetoakPu4PFJet20eta20 pPb HM7
     "../cumu/PAHighMultiplicity7/crab_PAHM7_Lm_vetoJet20eta20_reverse_v3/210315_174617/0000/",      // 705 Lm vetoakPu4PFJet20eta20 pPb HM7 reverse
     "../cumu/PAHighMultiplicity0/crab_PAHM0_LmSBPos_vetoJet20eta20_v1/210311_042443/0000/",         // 706 LmSBPos vetoakPu4PFJet20eta20 pPb HM0
     "../cumu/PAHighMultiplicity0/crab_PAHM0_LmSBPos_vetoJet20eta20_reverse_v1/210311_042547/0000/", // 707 LmSBPos vetoakPu4PFJet20eta20 pPb HM0 reverse
     "../cumu/PAHighMultiplicity1/crab_PAHM1_LmSBPos_vetoJet20eta20_v1/210312_054336/0000/",         // 708 LmSBPos vetoakPu4PFJet20eta20 pPb HM1
     "../cumu/PAHighMultiplicity1/crab_PAHM1_LmSBPos_vetoJet20eta20_reverse_v1/210312_054350/0000/", // 709 LmSBPos vetoakPu4PFJet20eta20 pPb HM1 reverse
-    "",         // 710 LmSBPos vetoakPu4PFJet20eta20 pPb HM2
-    "",         // 711 LmSBPos vetoakPu4PFJet20eta20 pPb HM2 reverse
-    "",         // 712 LmSBPos vetoakPu4PFJet20eta20 pPb HM3
-    "",         // 713 LmSBPos vetoakPu4PFJet20eta20 pPb HM3 reverse
-    "",         // 714 LmSBPos vetoakPu4PFJet20eta20 pPb HM4
-    "",         // 715 LmSBPos vetoakPu4PFJet20eta20 pPb HM4 reverse
-    "",         // 716 LmSBPos vetoakPu4PFJet20eta20 pPb HM5
-    "",         // 717 LmSBPos vetoakPu4PFJet20eta20 pPb HM5 reverse
-    "",         // 718 LmSBPos vetoakPu4PFJet20eta20 pPb HM6
-    "",         // 719 LmSBPos vetoakPu4PFJet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_LmSBPos_vetoJet20eta20_v2/210322_040144/0000/",         // 710 LmSBPos vetoakPu4PFJet20eta20 pPb HM2
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_LmSBPos_vetoJet20eta20_reverse_v2/210322_040158/0000/", // 711 LmSBPos vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "../cumu/PAHighMultiplicity3/crab_PAHM3_LmSBPos_vetoJet20eta20_v2/210323_130421/0000/",         // 712 LmSBPos vetoakPu4PFJet20eta20 pPb HM3
+    "../cumu/PAHighMultiplicity3/crab_PAHM3_LmSBPos_vetoJet20eta20_reverse_v2/210323_130438/0000/", // 713 LmSBPos vetoakPu4PFJet20eta20 pPb HM3 reverse
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_LmSBPos_vetoJet20eta20_v2/210325_044824/0000/",         // 714 LmSBPos vetoakPu4PFJet20eta20 pPb HM4
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_LmSBPos_vetoJet20eta20_reverse_v2/210325_044838/0000/", // 715 LmSBPos vetoakPu4PFJet20eta20 pPb HM4 reverse
+    "../cumu/PAHighMultiplicity5/crab_PAHM5_LmSBPos_vetoJet20eta20_v2/210325_051211/0000/",         // 716 LmSBPos vetoakPu4PFJet20eta20 pPb HM5
+    "../cumu/PAHighMultiplicity5/crab_PAHM5_LmSBPos_vetoJet20eta20_reverse_v2/210325_051227/0000/", // 717 LmSBPos vetoakPu4PFJet20eta20 pPb HM5 reverse
+    "../cumu/PAHighMultiplicity6/crab_PAHM6_LmSBPos_vetoJet20eta20_v2/210325_051520/0000/",         // 718 LmSBPos vetoakPu4PFJet20eta20 pPb HM6
+    "../cumu/PAHighMultiplicity6/crab_PAHM6_LmSBPos_vetoJet20eta20_reverse_v2/210325_051535/0000/", // 719 LmSBPos vetoakPu4PFJet20eta20 pPb HM6 reverse
     "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBPos_vetoJet20eta20_v3/210315_174631/0000/",             // 720 LmSBPos vetoakPu4PFJet20eta20 pPb HM7
     "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBPos_vetoJet20eta20_reverse_v3/210315_174647/0000/",     // 721 LmSBPos vetoakPu4PFJet20eta20 pPb HM7 reverse
     "../cumu/PAHighMultiplicity0/crab_PAHM0_LmSBNeg_vetoJet20eta20_v1/210311_042901/0000/",             // 722 LmSBNeg vetoakPu4PFJet20eta20 pPb HM0
     "../cumu/PAHighMultiplicity0/crab_PAHM0_LmSBNeg_vetoJet20eta20_reverse_v1/210311_043350/0000/",     // 723 LmSBNeg vetoakPu4PFJet20eta20 pPb HM0 reverse
     "../cumu/PAHighMultiplicity1/crab_PAHM1_LmSBNeg_vetoJet20eta20_v1/210312_054405/0000/",             // 724 LmSBNeg vetoakPu4PFJet20eta20 pPb HM1
     "../cumu/PAHighMultiplicity1/crab_PAHM1_LmSBNeg_vetoJet20eta20_reverse_v1/210312_054424/0000/",     // 725 LmSBNeg vetoakPu4PFJet20eta20 pPb HM1 reverse
-    "",         // 726 LmSBNeg vetoakPu4PFJet20eta20 pPb HM2
-    "",         // 727 LmSBNeg vetoakPu4PFJet20eta20 pPb HM2 reverse
-    "",         // 728 LmSBNeg vetoakPu4PFJet20eta20 pPb HM3
-    "",         // 729 LmSBNeg vetoakPu4PFJet20eta20 pPb HM3 reverse
-    "",         // 730 LmSBNeg vetoakPu4PFJet20eta20 pPb HM4
-    "",         // 731 LmSBNeg vetoakPu4PFJet20eta20 pPb HM4 reverse
-    "",         // 732 LmSBNeg vetoakPu4PFJet20eta20 pPb HM5
-    "",         // 733 LmSBNeg vetoakPu4PFJet20eta20 pPb HM5 reverse
-    "",         // 734 LmSBNeg vetoakPu4PFJet20eta20 pPb HM6
-    "",         // 735 LmSBNeg vetoakPu4PFJet20eta20 pPb HM6 reverse
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_LmSBNeg_vetoJet20eta20_v3/210324_025820/0000/",             // 726 LmSBNeg vetoakPu4PFJet20eta20 pPb HM2
+    "../cumu/PAHighMultiplicity2/crab_PAHM2_LmSBNeg_vetoJet20eta20_reverse_v3/210324_025903/0000/",     // 727 LmSBNeg vetoakPu4PFJet20eta20 pPb HM2 reverse
+    "../cumu/PAHighMultiplicity3/crab_PAHM3_LmSBNeg_vetoJet20eta20_v3/210324_031445/0000/",             // 728 LmSBNeg vetoakPu4PFJet20eta20 pPb HM3
+    "../cumu/PAHighMultiplicity3/crab_PAHM3_LmSBNeg_vetoJet20eta20_reverse_v3/210324_031500/0000/",     // 729 LmSBNeg vetoakPu4PFJet20eta20 pPb HM3 reverse
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_LmSBNeg_vetoJet20eta20_v2/210325_044853/0000/",             // 730 LmSBNeg vetoakPu4PFJet20eta20 pPb HM4
+    "../cumu/PAHighMultiplicity4/crab_PAHM4_LmSBNeg_vetoJet20eta20_reverse_v2/210325_044907/0000/",     // 731 LmSBNeg vetoakPu4PFJet20eta20 pPb HM4 reverse
+    "../cumu/PAHighMultiplicity5/crab_PAHM5_LmSBNeg_vetoJet20eta20_v2/210325_051241/0000/",             // 732 LmSBNeg vetoakPu4PFJet20eta20 pPb HM5
+    "../cumu/PAHighMultiplicity5/crab_PAHM5_LmSBNeg_vetoJet20eta20_reverse_v2/210325_051256/0000/",     // 733 LmSBNeg vetoakPu4PFJet20eta20 pPb HM5 reverse
+    "../cumu/PAHighMultiplicity6/crab_PAHM6_LmSBNeg_vetoJet20eta20_v2/210325_051549/0000/",             // 734 LmSBNeg vetoakPu4PFJet20eta20 pPb HM6
+    "../cumu/PAHighMultiplicity6/crab_PAHM6_LmSBNeg_vetoJet20eta20_reverse_v2/210325_051605/0000/",     // 735 LmSBNeg vetoakPu4PFJet20eta20 pPb HM6 reverse
     "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBNeg_vetoJet20eta20_v3/210315_174701/0000/",             // 736 LmSBNeg vetoakPu4PFJet20eta20 pPb HM7
     "../cumu/PAHighMultiplicity7/crab_PAHM7_LmSBNeg_vetoJet20eta20_reverse_v3/210315_174715/0000/",     // 737 LmSBNeg vetoakPu4PFJet20eta20 pPb HM7 reverse
-    "NA",       // 738 Ks SB HM0
-    "NA",       // 739 Ks SB HM123456
-    "NA",       // 740 Ks SB HM7
-    "NA",       // 741 Ks SB HM0 reverse
-    "NA",       // 742 Ks SB HM123456 reverse
-    "NA",       // 743 Ks SB HM7 reverse
-    "NA",       // 744 Lm SB HM0
-    "NA",       // 745 Lm SB HM123456
-    "NA",       // 746 Lm SB HM7
-    "NA",       // 747 Lm SB HM0 reverse
-    "NA",       // 748 Lm SB HM123456 reverse
-    "NA",       // 749 Lm SB HM7 reverse
+    "NA",       // 738 Ks SB vetoakPu4PFJet20eta20 HM0
+    "NA",       // 739 Ks SB vetoakPu4PFJet20eta20 HM123456
+    "NA",       // 740 Ks SB vetoakPu4PFJet20eta20 HM7
+    "NA",       // 741 Ks SB vetoakPu4PFJet20eta20 HM0 reverse
+    "NA",       // 742 Ks SB vetoakPu4PFJet20eta20 HM123456 reverse
+    "NA",       // 743 Ks SB vetoakPu4PFJet20eta20 HM7 reverse
+    "NA",       // 744 Lm SB vetoakPu4PFJet20eta20 HM0
+    "NA",       // 745 Lm SB vetoakPu4PFJet20eta20 HM123456
+    "NA",       // 746 Lm SB vetoakPu4PFJet20eta20 HM7
+    "NA",       // 747 Lm SB vetoakPu4PFJet20eta20 HM0 reverse
+    "NA",       // 748 Lm SB vetoakPu4PFJet20eta20 HM123456 reverse
+    "NA",       // 749 Lm SB vetoakPu4PFJet20eta20 HM7 reverse
+    "NA",       // 750 Ks Peak vetoakPu4PFJet20eta20 HM123456
+    "NA",       // 751 Ks Peak vetoakPu4PFJet20eta20 HM123456 reverse
+    "NA",       // 752 Lm Peak vetoakPu4PFJet20eta20 HM123456
+    "NA",       // 753 Lm Peak vetoakPu4PFJet20eta20 HM123456 reverse
 };
 
 char const * ftxt[] = {
@@ -1503,6 +1507,10 @@ char const * ftxt[] = {
     "txt/PAHM0_LmSB_akPu4PFJet20eta20_reverse/",        // 747
     "txt/PAHM123456_LmSB_akPu4PFJet20eta20_reverse/",   // 748
     "txt/PAHM7_LmSB_akPu4PFJet20eta20_reverse/",        // 749
+    "txt/PAHM123456_Ks_akPu4PFJet20eta20/",             // 750
+    "txt/PAHM123456_Ks_akPu4PFJet20eta20_reverse/",     // 751
+    "txt/PAHM123456_Lm_akPu4PFJet20eta20/",             // 752
+    "txt/PAHM123456_Lm_akPu4PFJet20eta20_reverse/",     // 753
 };
 
 const int Pid_Non	= 0;
@@ -2271,6 +2279,10 @@ auto PID = std::vector<int>{
     Pid_PA_Lambda,          // 747
     Pid_PA_Lambda,          // 748
     Pid_PA_Lambda,          // 749
+    Pid_PA_Ks,              // 750
+    Pid_PA_Ks,              // 751
+    Pid_PA_Lambda,          // 752
+    Pid_PA_Lambda,          // 753
 };
 
 #include <TChain.h>
