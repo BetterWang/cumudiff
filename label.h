@@ -754,6 +754,12 @@ char const * fname[] = {
     "NA",       // 751 Ks Peak vetoakPu4PFJet20eta20 HM123456 reverse
     "NA",       // 752 Lm Peak vetoakPu4PFJet20eta20 HM123456
     "NA",       // 753 Lm Peak vetoakPu4PFJet20eta20 HM123456 reverse
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet20_JER_v1/210402_042233/0000/",            // 754 H akPu4PFJet20eta20 JER20 HM0
+    "../cumu/PAHighMultiplicity0/crab_PAHM0_H_vetoJet20_JER_reverse_v1/210402_043433/0000/",    // 755 H akPu4PFJet20eta20 JER20 HM0 reverse
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet20_JER_v1/210402_042335/0000/",            // 756 H akPu4PFJet20eta20 JER20 HM1
+    "../cumu/PAHighMultiplicity1/crab_PAHM1_H_vetoJet20_JER_reverse_v1/210402_043842/0000/",    // 757 H akPu4PFJet20eta20 JER20 HM1 reverse
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet20_JER_v1/210402_043134/0000/",            // 758 H akPu4PFJet20eta20 JER20 HM7
+    "../cumu/PAHighMultiplicity7/crab_PAHM7_H_vetoJet20_JER_reverse_v1/210402_044039/0000/",    // 759 H akPu4PFJet20eta20 JER20 HM7 reverse
 };
 
 char const * ftxt[] = {
@@ -1511,6 +1517,12 @@ char const * ftxt[] = {
     "txt/PAHM123456_Ks_akPu4PFJet20eta20_reverse/",     // 751
     "txt/PAHM123456_Lm_akPu4PFJet20eta20/",             // 752
     "txt/PAHM123456_Lm_akPu4PFJet20eta20_reverse/",     // 753
+    "txt/PAHM0_H_akPu4PFJet20eta20_JER/",               // 754
+    "txt/PAHM0_H_akPu4PFJet20eta20_JER_reverse/",       // 755
+    "txt/PAHM1_H_akPu4PFJet20eta20_JER/",               // 756
+    "txt/PAHM1_H_akPu4PFJet20eta20_JER_reverse/",       // 757
+    "txt/PAHM7_H_akPu4PFJet20eta20_JER/",               // 758
+    "txt/PAHM7_H_akPu4PFJet20eta20_JER_reverse/",       // 759
 };
 
 const int Pid_Non	= 0;
@@ -2283,6 +2295,12 @@ auto PID = std::vector<int>{
     Pid_PA_Ks,              // 751
     Pid_PA_Lambda,          // 752
     Pid_PA_Lambda,          // 753
+    Pid_PA_Hadron,          // 754
+    Pid_PA_Hadron,          // 755
+    Pid_PA_Hadron,          // 756
+    Pid_PA_Hadron,          // 757
+    Pid_PA_Hadron,          // 758
+    Pid_PA_Hadron,          // 759
 };
 
 #include <TChain.h>
