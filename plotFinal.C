@@ -909,6 +909,12 @@ void plotFinal()
         vH.grSig_V2sub4merge[c]->SetLineColor  (kRed);
         vH.grSig_V2sub4merge[c]->SetMarkerSize(2.);
 
+        vH.grSysSig_pT[2][1][c]->SetFillColor(3003);
+        vH.grSysSig_V2sub4merge[c]->SetFillColor(3001);
+
+        vH.grSysSig_pT[2][1][c]->Draw("[]2");
+        vH.grSysSig_V2sub4merge[c]->Draw("[]2");
+
 //        ch_v2_PbPb[c]->vn_MergedEta       ->Draw("psame");
 //        ch_v2_PbPb[c]->vn_MergedEta_SubEvt->Draw("psame");
         vH.grSig_pT[2][1][c]->Draw("psame");
@@ -990,6 +996,12 @@ void plotFinal()
         vKs.grSig_V2sub4merge[c]->SetLineColor  (kRed);
         vKs.grSig_V2sub4merge[c]->SetMarkerSize(2.);
 
+        vKs.grSysSig_pT[2][1][c]->SetFillColor(3003);
+        vKs.grSysSig_V2sub4merge[c]->SetFillColor(3001);
+
+        vKs.grSysSig_pT[2][1][c]->Draw("[]2");
+        vKs.grSysSig_V2sub4merge[c]->Draw("[]2");
+
 //        Ks_v2_PbPb_Sig[c]->vn_MergedEta       ->Draw("psame");
 //        Ks_v2_PbPb_Sig[c]->vn_MergedEta_SubEvt->Draw("psame");
         vKs.grSig_pT[2][1][c]->Draw("psame");
@@ -1068,6 +1080,12 @@ void plotFinal()
         vLm.grSig_V2sub4merge[c]->SetMarkerColor(kRed);
         vLm.grSig_V2sub4merge[c]->SetLineColor  (kRed);
         vLm.grSig_V2sub4merge[c]->SetMarkerSize(2.);
+
+        vLm.grSysSig_pT[2][1][c]->SetFillColor(3003);
+        vLm.grSysSig_V2sub4merge[c]->SetFillColor(3001);
+
+        vLm.grSysSig_pT[2][1][c]->Draw("[]2");
+        vLm.grSysSig_V2sub4merge[c]->Draw("[]2");
 
 //        Lm_v2_PbPb_Sig[c]->vn_MergedEta       ->Draw("psame");
 //        Lm_v2_PbPb_Sig[c]->vn_MergedEta_SubEvt->Draw("psame");
