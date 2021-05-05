@@ -2,7 +2,7 @@
 #include "theory.h"
 #include "pPb_header.h"
 
-void plotFinalpPb()
+void plotFinalpPb( bool bPre = false )
 {
 //    SetStyle();
 
@@ -88,9 +88,17 @@ void plotFinalpPb()
     TGraphErrors * gKsF[10] = {};
     TGraphErrors * gLmF[10] = {};
 
+    TGraphErrors * gChFveto[10] = {};
+    TGraphErrors * gKsFveto[10] = {};
+    TGraphErrors * gLmFveto[10] = {};
+
     TGraphErrors * gChF_sys[10] = {};
     TGraphErrors * gKsF_sys[10] = {};
     TGraphErrors * gLmF_sys[10] = {};
+
+    TGraphErrors * gChFveto_sys[10] = {};
+    TGraphErrors * gKsFveto_sys[10] = {};
+    TGraphErrors * gLmFveto_sys[10] = {};
 
     TGraphErrors * gCh42[10] = {};
     TGraphErrors * gKs42[10] = {};
@@ -103,6 +111,10 @@ void plotFinalpPb()
     TGraphErrors * gCh6[10] = {};
     TGraphErrors * gKs6[10] = {};
     TGraphErrors * gLm6[10] = {};
+
+    TGraphErrors * gCh6_sys[10] = {};
+    TGraphErrors * gKs6_sys[10] = {};
+    TGraphErrors * gLm6_sys[10] = {};
 
     TGraphErrors* grChRatioCu1[10] = {};
     TGraphErrors* grKsRatioCu1[10] = {};
@@ -143,6 +155,10 @@ void plotFinalpPb()
         gKsF[c] = getFluct( grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP, grKs.gr_v24[c], gKsF_sys[c] );
         gLmF[c] = getFluct( grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP, grLm.gr_v24[c], gLmF_sys[c] );
 
+        gChFveto[c] = getFluct( grSP.grSP_H[c]->vn_Full_NegEtaEP     , grHveto .gr_v24[c], gChFveto_sys[c] );
+        gKsFveto[c] = getFluct( grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP, grKsveto.gr_v24[c], gKsFveto_sys[c] );
+        gLmFveto[c] = getFluct( grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP, grLmveto.gr_v24[c], gLmFveto_sys[c] );
+
         gCh42[c] = getRatio(grH .gr_v24[c], grSP.grSP_H[c]->vn_Full_NegEtaEP      );
         gKs42[c] = getRatio(grKs.gr_v24[c], grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP );
         gLm42[c] = getRatio(grLm.gr_v24[c], grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP );
@@ -158,9 +174,9 @@ void plotFinalpPb()
         s2f.WriteGr( gKs42_sys[c], Form("grKs42sys_%i", c) );
         s2f.WriteGr( gLm42_sys[c], Form("grLm42sys_%i", c) );
 
-        gCh6[c] = getFluct( grSP.grSP_H[c]->vn_Full_NegEtaEP     , grH .gr_v26[c] );
-        gKs6[c] = getFluct( grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP, grKs.gr_v26[c] );
-        gLm6[c] = getFluct( grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP, grLm.gr_v26[c] );
+        gCh6[c] = getFluct( grSP.grSP_H[c]->vn_Full_NegEtaEP     , grH .gr_v26[c], gCh6_sys[c]);
+        gKs6[c] = getFluct( grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP, grKs.gr_v26[c], gKs6_sys[c]);
+        gLm6[c] = getFluct( grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP, grLm.gr_v26[c], gLm6_sys[c]);
 
         grChRatioCu1[c] = getRatio( grH.gr_v24sub[c],    grH.gr_v24[c] );
         grKsRatioCu1[c] = getRatio( grKs.gr_v24sub[c],   grKs.gr_v24[c] );
@@ -218,6 +234,8 @@ void plotFinalpPb()
 
             DropPoints( gChF_sys[c], -2 );
             DropPoints( gChF[c],     -2 );
+            DropPoints( gCh6_sys[c], -1 );
+            DropPoints( gCh6[c],     -1 );
 
             // Ks
             DropPoints( grKs.grSys_v24[c], 1 );
@@ -267,6 +285,8 @@ void plotFinalpPb()
 
             DropPoints( gChF_sys[c], -1 );
             DropPoints( gChF[c],     -1 );
+            DropPoints( gCh6_sys[c], -1 );
+            DropPoints( gCh6[c],     -1 );
 
             // Ks
             DropPoints( grKs.grSys_v24[c], 1 );
@@ -374,6 +394,7 @@ void plotFinalpPb()
 
         grH.gr_v24[c]->Draw("psame");
         grH.gr_v26[c]->Draw("psame");
+//        grH.gr_v28[c]->Draw("psame");
 
         s2f.WriteGr( grSP.grSP_H[c]->vn_sys_Full_PosEtaEP, Form( "grChSys_v2sp_Full_PosEtaEP_%i", c ) );
         s2f.WriteGr( grSP.grSP_H[c]->vn_sys_Full_NegEtaEP, Form( "grChSys_v2sp_Full_NegEtaEP_%i", c ) );
@@ -388,7 +409,11 @@ void plotFinalpPb()
         s2f.WriteGr( grH.gr_v26[c],    Form( "grCh_v26_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legCh0 = new TLegend(0.16, 0.68, 0.50, 0.82);
@@ -464,7 +489,11 @@ void plotFinalpPb()
         s2f.WriteGr( grKs.gr_v26[c],    Form( "grKs_v26_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} K_{S}^{0}");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legKs0 = new TLegend(0.16, 0.68, 0.50, 0.82);
@@ -541,7 +570,11 @@ void plotFinalpPb()
     }
 
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} #Lambda");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legLm0 = new TLegend(0.16, 0.68, 0.50, 0.82);
@@ -577,7 +610,7 @@ void plotFinalpPb()
 
     // fluctuation
     TH2D * hframe_fluct = new TH2D("hframe_fluct", "hframe_fluct", 1, 0.01, 8.5, 1, 0.05, 1.5);
-    InitHist(hframe_fluct, "p_{T} (GeV)", "Fluctuation");
+    InitHist(hframe_fluct, "p_{T} (GeV)", "#sigma / v_{2}");
     hframe_fluct->GetYaxis()->SetTitleOffset(1.0);
     hframe_fluct->GetXaxis()->SetTitleOffset(0.90);
 
@@ -591,11 +624,18 @@ void plotFinalpPb()
         gChF[c]->SetLineColor  (kBlack);
         gChF[c]->SetMarkerSize(2.);
 
+        gChFveto[c]->SetMarkerStyle(kOpenSquare);
+        gChFveto[c]->SetMarkerColor(kRed);
+        gChFveto[c]->SetLineColor  (kRed);
+        gChFveto[c]->SetMarkerSize(2.);
+
         gChF_sys[c]->SetFillColor(3005);
+        gCh6_sys[c]->SetFillColor(3003);
+        gChFveto_sys[c]->SetFillColor(3001);
 
         gCh6[c]->SetMarkerStyle(kFullCircle);
-        gCh6[c]->SetMarkerColor(kBlack);
-        gCh6[c]->SetLineColor  (kBlack);
+        gCh6[c]->SetMarkerColor(kBlue);
+        gCh6[c]->SetLineColor  (kBlue);
         gCh6[c]->SetMarkerSize(2.);
 
         gKsF[c]->SetMarkerStyle(kOpenSquare);
@@ -633,8 +673,13 @@ void plotFinalpPb()
         cpPbV2_1->cd(c-5);
         hframe_fluct->Draw();
         line1.Draw();
+        gChF_sys[c]->Draw("[]2");
+        gCh6_sys[c]->Draw("[]2");
+        gChFveto_sys[c]->Draw("[]2");
+
         gChF[c]->Draw("psame");
         gCh6[c]->Draw("psame");
+        gChFveto[c]->Draw("psame");
 
         s2f.WriteGr( gChF_sys[c], Form( "grCh_Fluct_sys_%i", c ) );
         s2f.WriteGr( gKsF_sys[c], Form( "grKs_Fluct_sys_%i", c ) );
@@ -644,13 +689,29 @@ void plotFinalpPb()
         s2f.WriteGr( gKsF[c], Form( "grKs_Fluct_%i", c ) );
         s2f.WriteGr( gLmF[c], Form( "grLm_Fluct_%i", c ) );
 
+        s2f.WriteGr( gChFveto_sys[c], Form( "grChveto_Fluct_sys_%i", c ) );
+        s2f.WriteGr( gKsFveto_sys[c], Form( "grKsveto_Fluct_sys_%i", c ) );
+        s2f.WriteGr( gLmFveto_sys[c], Form( "grLmveto_Fluct_sys_%i", c ) );
+
+        s2f.WriteGr( gChFveto[c], Form( "grChveto_Fluct_%i", c ) );
+        s2f.WriteGr( gKsFveto[c], Form( "grKsveto_Fluct_%i", c ) );
+        s2f.WriteGr( gLmFveto[c], Form( "grLmveto_Fluct_%i", c ) );
+
+        s2f.WriteGr( gCh6_sys[c], Form( "grCh6_Fluct_sys_%i", c ) );
+        s2f.WriteGr( gKs6_sys[c], Form( "grKs6_Fluct_sys_%i", c ) );
+        s2f.WriteGr( gLm6_sys[c], Form( "grLm6_Fluct_sys_%i", c ) );
+
         s2f.WriteGr( gCh6[c], Form( "grCh6_Fluct_%i", c ) );
         s2f.WriteGr( gKs6[c], Form( "grKs6_Fluct_%i", c ) );
         s2f.WriteGr( gLm6[c], Form( "grLm6_Fluct_%i", c ) );
     }
 
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}}");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legFl = new TLegend(0.56, 0.18, 0.80, 0.42);
@@ -679,10 +740,14 @@ void plotFinalpPb()
 
     //
     cpPbV2_1->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
-    TLegend * legFl6 = new TLegend(0.16, 0.68, 0.50, 0.82);
+    TLegend * legFl6 = new TLegend(0.56, 0.72, 0.90, 0.92);
     legFl6->SetFillColor(kWhite);
     legFl6->SetTextFont(42);
     legFl6->SetTextSize(0.05);
@@ -690,8 +755,8 @@ void plotFinalpPb()
 
     legFl6->AddEntry(gChF[6], "from v_{2}{4}", "p");
     legFl6->AddEntry(gCh6[6], "from v_{2}{6}", "p");
+    legFl6->AddEntry(gChFveto[6], "from v_{2}{4, veto}", "p");
 
-    legFl6->Draw();
 
     cpPbV2_1->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
@@ -702,6 +767,7 @@ void plotFinalpPb()
     cpPbV2_1->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
+    legFl6->Draw();
 
     cpPbV2_1->SaveAs("pPbV2_FluctCh6.pdf");
 
@@ -720,7 +786,11 @@ void plotFinalpPb()
         gLm6[c]->Draw("psame");
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} K_{S}^{0}");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legFlKs6 = new TLegend(0.16, 0.68, 0.50, 0.82);
@@ -748,7 +818,11 @@ void plotFinalpPb()
 
     //
     cpPbV2_1->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} #Lambda");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legFlLm6 = new TLegend(0.16, 0.68, 0.50, 0.82);
@@ -805,9 +879,14 @@ void plotFinalpPb()
 //        grH.gr_v24subpos[c]                    ->Draw("psame");
 //        grH.gr_v24subneg[c]                    ->Draw("psame");
         s2f.WriteGr( grH.gr_v24sub[c], Form( "grCh_v24sub_%i", c ) );
+        s2f.WriteGr( grH.grSys_v24sub[c], Form( "grSysCh_v24sub_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
 //    TLegend * legChSub0 = new TLegend(0.16, 0.58, 0.50, 0.82);
@@ -899,7 +978,11 @@ void plotFinalpPb()
         s2f.WriteGr( grChRatioCu1[c], Form( "grCh_v24subRatio_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} v_{2}{4,Sub}/v_{2}{4}");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} v_{2}{4,Sub}/v_{2}{4}");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} v_{2}{4,Sub}/v_{2}{4}");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
 //    TLegend * legChRatio0 = new TLegend(0.16, 0.58, 0.50, 0.82);
@@ -983,9 +1066,14 @@ void plotFinalpPb()
 //        grKs.gr_v24subpos[c]->Draw("psame");
 //        grKs.gr_v24subneg[c]->Draw("psame");
         s2f.WriteGr( grKs.gr_v24sub[c], Form( "grKs_v24sub_%i", c ) );
+        s2f.WriteGr( grKs.grSys_v24sub[c], Form( "grSysKs_v24sub_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} K_{S}^{0}");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legKsSub0 = new TLegend(0.16, 0.58, 0.50, 0.82);
@@ -1064,7 +1152,11 @@ void plotFinalpPb()
         s2f.WriteGr( grKsRatioCu1[c], Form( "grKs_v24subRatio_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} K_{S}^{0}");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legKsRatio0 = new TLegend(0.16, 0.58, 0.50, 0.82);
@@ -1128,9 +1220,14 @@ void plotFinalpPb()
 //        grLm.gr_v24subpos[c]->Draw("psame");
 //        grLm.gr_v24subneg[c]->Draw("psame");
         s2f.WriteGr( grLm.gr_v24sub[c], Form( "grLm_v24sub_%i", c ) );
+        s2f.WriteGr( grLm.grSys_v24sub[c], Form( "grSysLm_v24sub_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} #Lambda");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legLmSub0 = new TLegend(0.16, 0.58, 0.50, 0.82);
@@ -1209,7 +1306,11 @@ void plotFinalpPb()
         s2f.WriteGr( grLmRatioCu1[c], Form( "grLm_v24subRatio_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} #Lambda");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     TLegend * legLmRatio0 = new TLegend(0.16, 0.58, 0.50, 0.82);
@@ -1282,7 +1383,11 @@ void plotFinalpPb()
         s2f.WriteGr( grHveto.gr_v26[c], Form( "grCh_v26veto_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
@@ -1345,7 +1450,11 @@ void plotFinalpPb()
     }
 
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} K_{S}^{0}");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
@@ -1405,7 +1514,11 @@ void plotFinalpPb()
     }
 
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} #Lambda");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
@@ -1462,7 +1575,11 @@ void plotFinalpPb()
         s2f.WriteGr( grChRatioVeto6[c], Form( "grCh_v26vetoRatio_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     cpPbV2->cd(2);
@@ -1514,7 +1631,11 @@ void plotFinalpPb()
         s2f.WriteGr( grKsRatioVeto6[c], Form( "grKs_v26vetoRatio_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} K_{S}^{0}");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} K_{S}^{0}");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     cpPbV2->cd(2);
@@ -1565,7 +1686,11 @@ void plotFinalpPb()
         s2f.WriteGr( grLmRatioVeto6[c], Form( "grLm_v26vetoRatio_%i", c ) );
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} #Lambda");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} #Lambda");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
     cpPbV2->cd(2);
@@ -1605,7 +1730,11 @@ void plotFinalpPb()
         grH.gr_v24subpos[c]->Draw("psame");
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
@@ -1648,7 +1777,11 @@ void plotFinalpPb()
         grChRatioNeg[c]->Draw("psame");
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
@@ -1686,7 +1819,11 @@ void plotFinalpPb()
         grHveto.gr_v24subpos[c]->Draw("psame");
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
@@ -1724,7 +1861,11 @@ void plotFinalpPb()
         grChVetoRatioNeg[c]->Draw("psame");
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
@@ -1764,7 +1905,11 @@ void plotFinalpPb()
         grH    .gr_v24sub[c]->Draw("psame");
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
@@ -1808,7 +1953,11 @@ void plotFinalpPb()
         grChRatioVeto4[c]->Draw("psame");
     }
     cpPbV2->cd(1);
-    latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}} Charge hadron");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS} Charge hadron");
+    }
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);

@@ -413,30 +413,29 @@
 #root -l -b -q 'plotS.C("../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_2_9;../cumudiff/pPb_H_vetoakPu4Jet21eta20_merged2_corrected.root:grSig_pT2_2_9", "v_{2}{6} p_{T,jet}>20;v_{2}{6} p_{T,jet}>21", "#splitline{pPb 8.16 TeV}{Ch N_{trk}^{offline} #geq 250}",       "Pt_v6sysvetoJet_9", 0, 0.5)'
 #
 
-
-### Ks v24 standard vs vetoakPu4Jet20eta20
-root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_1_6;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_6", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 120 #leq N_{trk}^{offline} < 150}", "Ks_v4vetoJet20_6", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_1_7;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_7", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 150 #leq N_{trk}^{offline} < 185}", "Ks_v4vetoJet20_7", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_1_8;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_8", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 185 #leq N_{trk}^{offline} < 250}", "Ks_v4vetoJet20_8", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_1_9;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_9", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} N_{trk}^{offline} #geq 250}",       "Ks_v4vetoJet20_9", 0, 2.5)'
-
-### Ks v26 standard vs vetoakPu4Jet20eta20
-root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_2_6;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_6", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 120 #leq N_{trk}^{offline} < 150}", "Ks_v6vetoJet20_6", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_2_7;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_7", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 150 #leq N_{trk}^{offline} < 185}", "Ks_v6vetoJet20_7", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_2_8;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_8", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 185 #leq N_{trk}^{offline} < 250}", "Ks_v6vetoJet20_8", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_2_9;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_9", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} N_{trk}^{offline} #geq 250}",       "Ks_v6vetoJet20_9", 0, 2.5)'
-
-### Lm v24 standard vs vetoakPu4Jet20eta20
-root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_1_6;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_6", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 120 #leq N_{trk}^{offline} < 150}", "Lm_v4vetoJet20_6", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_1_7;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_7", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 150 #leq N_{trk}^{offline} < 185}", "Lm_v4vetoJet20_7", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_1_8;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_8", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 185 #leq N_{trk}^{offline} < 250}", "Lm_v4vetoJet20_8", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_1_9;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_9", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda N_{trk}^{offline} #geq 250}",       "Lm_v4vetoJet20_9", 0, 2.5)'
-
-### Lm v26 standard vs vetoakPu4Jet20eta20
-root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_2_6;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_6", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 120 #leq N_{trk}^{offline} < 150}", "Lm_v6vetoJet20_6", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_2_7;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_7", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 150 #leq N_{trk}^{offline} < 185}", "Lm_v6vetoJet20_7", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_2_8;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_8", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 185 #leq N_{trk}^{offline} < 250}", "Lm_v6vetoJet20_8", 0, 2.5)'
-root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_2_9;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_9", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda N_{trk}^{offline} #geq 250}",       "Lm_v6vetoJet20_9", 0, 2.5)'
+#### Ks v24 standard vs vetoakPu4Jet20eta20
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_1_6;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_6", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 120 #leq N_{trk}^{offline} < 150}", "Ks_v4vetoJet20_6", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_1_7;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_7", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 150 #leq N_{trk}^{offline} < 185}", "Ks_v4vetoJet20_7", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_1_8;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_8", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 185 #leq N_{trk}^{offline} < 250}", "Ks_v4vetoJet20_8", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_1_9;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_9", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} N_{trk}^{offline} #geq 250}",       "Ks_v4vetoJet20_9", 0, 2.5)'
+#
+#### Ks v26 standard vs vetoakPu4Jet20eta20
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_2_6;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_6", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 120 #leq N_{trk}^{offline} < 150}", "Ks_v6vetoJet20_6", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_2_7;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_7", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 150 #leq N_{trk}^{offline} < 185}", "Ks_v6vetoJet20_7", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_2_8;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_8", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} 185 #leq N_{trk}^{offline} < 250}", "Ks_v6vetoJet20_8", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Ks2_merged2_corrected.root:grSig_pT2_2_9;../cumudiff/pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_9", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{K_{S}^{0} N_{trk}^{offline} #geq 250}",       "Ks_v6vetoJet20_9", 0, 2.5)'
+#
+#### Lm v24 standard vs vetoakPu4Jet20eta20
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_1_6;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_6", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 120 #leq N_{trk}^{offline} < 150}", "Lm_v4vetoJet20_6", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_1_7;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_7", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 150 #leq N_{trk}^{offline} < 185}", "Lm_v4vetoJet20_7", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_1_8;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_8", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 185 #leq N_{trk}^{offline} < 250}", "Lm_v4vetoJet20_8", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_1_9;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_1_9", "v_{2}{4} standard;v_{2}{4} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda N_{trk}^{offline} #geq 250}",       "Lm_v4vetoJet20_9", 0, 2.5)'
+#
+#### Lm v26 standard vs vetoakPu4Jet20eta20
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_2_6;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_6", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 120 #leq N_{trk}^{offline} < 150}", "Lm_v6vetoJet20_6", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_2_7;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_7", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 150 #leq N_{trk}^{offline} < 185}", "Lm_v6vetoJet20_7", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_2_8;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_8", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda 185 #leq N_{trk}^{offline} < 250}", "Lm_v6vetoJet20_8", 0, 2.5)'
+#root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_2_9;../cumudiff/pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root:grSig_pT2_2_9", "v_{2}{6} standard;v_{2}{6} vetoJet20", "#splitline{pPb 8.16 TeV}{#Lambda N_{trk}^{offline} #geq 250}",       "Lm_v6vetoJet20_9", 0, 2.5)'
 
 #### vetoakPu4Jet20eta20 JER v24
 #root -l -b -q 'plotS.C("../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_1_6;../cumudiff/pPb_H_vetoakPu4Jet20eta20_JER_merged2_corrected.root:grSig_pT2_1_6", "v_{2}{4,veto};v_{2}{4,veto} JER 20\%", "#splitline{pPb 8.16 TeV}{Ch 120 #leq N_{trk}^{offline} < 150}", "Pt_v4sysvetoJetJER_6", 0, 0.5)'
@@ -450,4 +449,8 @@ root -l -b -q 'plotS.C("../cumudiff/pPb_Lm2_merged2_corrected.root:grSig_pT2_2_9
 #root -l -b -q 'plotS.C("../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_2_8;../cumudiff/pPb_H_vetoakPu4Jet20eta20_JER_merged2_corrected.root:grSig_pT2_2_8", "v_{2}{6,veto};v_{2}{6,veto} JER 20\%", "#splitline{pPb 8.16 TeV}{Ch 185 #leq N_{trk}^{offline} < 250}", "Pt_v6sysvetoJetJER_8", 0, 0.5)'
 #root -l -b -q 'plotS.C("../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_2_9;../cumudiff/pPb_H_vetoakPu4Jet20eta20_JER_merged2_corrected.root:grSig_pT2_2_9", "v_{2}{6,veto};v_{2}{6,veto} JER 20\%", "#splitline{pPb 8.16 TeV}{Ch N_{trk}^{offline} #geq 250}",       "Pt_v6sysvetoJetJER_9", 0, 0.5)'
 #
-#
+
+### vetoakPu4Jet20eta20 v24 v26
+root -l -b -q 'plotS.C("../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_1_6;../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_1_7;../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_1_8;../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_1_9", "120 #leq N_{trk}^{offline} < 150;150 #leq N_{trk}^{offline} < 185;185 #leq N_{trk}^{offline} < 250;N_{trk}^{offline} #geq 250", "#splitline{pPb 8.16 TeV}{Ch v_{2}#{}{4,veto}}", "Pt_v24veto")'
+root -l -b -q 'plotS.C("../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_2_6;../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_2_7;../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_2_8;../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_2_9", "120 #leq N_{trk}^{offline} < 150;150 #leq N_{trk}^{offline} < 185;185 #leq N_{trk}^{offline} < 250;N_{trk}^{offline} #geq 250", "#splitline{pPb 8.16 TeV}{Ch v_{2}#{}{6,veto}}", "Pt_v26veto")'
+
