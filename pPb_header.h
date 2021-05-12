@@ -203,6 +203,11 @@ typedef struct CumuGraph
     TGraphErrors* gr8_v26;
     TGraphErrors* gr9_v26;
 
+    TGraphErrors* gr6_v28;
+    TGraphErrors* gr7_v28;
+    TGraphErrors* gr8_v28;
+    TGraphErrors* gr9_v28;
+
     TGraphErrors* gr6_v24sub;
     TGraphErrors* gr7_v24sub;
     TGraphErrors* gr8_v24sub;
@@ -234,6 +239,11 @@ typedef struct CumuGraph
     TGraphErrors* grObs8_v26;
     TGraphErrors* grObs9_v26;
 
+    TGraphErrors* grObs6_v28;
+    TGraphErrors* grObs7_v28;
+    TGraphErrors* grObs8_v28;
+    TGraphErrors* grObs9_v28;
+
     TGraphErrors* grObs6_v24sub;
     TGraphErrors* grObs7_v24sub;
     TGraphErrors* grObs8_v24sub;
@@ -255,6 +265,11 @@ typedef struct CumuGraph
     TGraphErrors* grSB8_v26;
     TGraphErrors* grSB9_v26;
 
+    TGraphErrors* grSB6_v28;
+    TGraphErrors* grSB7_v28;
+    TGraphErrors* grSB8_v28;
+    TGraphErrors* grSB9_v28;
+
     TGraphErrors* grSB6_v24sub;
     TGraphErrors* grSB7_v24sub;
     TGraphErrors* grSB8_v24sub;
@@ -264,14 +279,17 @@ typedef struct CumuGraph
     TGraphErrors* gr_v22Gap   [10] = {};
     TGraphErrors* gr_v24      [10] = {};
     TGraphErrors* gr_v26      [10] = {};
+    TGraphErrors* gr_v28      [10] = {};
     TGraphErrors* gr_v24sub   [10] = {};
     TGraphErrors* grObs_v22Gap[10] = {};
     TGraphErrors* grObs_v24   [10] = {};
     TGraphErrors* grObs_v26   [10] = {};
+    TGraphErrors* grObs_v28   [10] = {};
     TGraphErrors* grObs_v24sub[10] = {};
     TGraphErrors* grSB_v22Gap [10] = {};
     TGraphErrors* grSB_v24    [10] = {};
     TGraphErrors* grSB_v26    [10] = {};
+    TGraphErrors* grSB_v28    [10] = {};
     TGraphErrors* grSB_v24sub [10] = {};
 
     TGraphErrors* gr_v24subpos[10] = {};
@@ -280,6 +298,7 @@ typedef struct CumuGraph
     TGraphErrors* grSys_v22Gap[10] = {};
     TGraphErrors* grSys_v24   [10] = {};
     TGraphErrors* grSys_v26   [10] = {};
+    TGraphErrors* grSys_v28   [10] = {};
     TGraphErrors* grSys_v24sub[10] = {};
 
     TGraphErrors* grSys_v24subpos[10] = {};
@@ -301,6 +320,11 @@ typedef struct CumuGraph
         gr7_v26    = getGr( f, "grSig_pT2_2_7" , kOpenCross,  kRed  );
         gr8_v26    = getGr( f, "grSig_pT2_2_8" , kOpenCross,  kRed  );
         gr9_v26    = getGr( f, "grSig_pT2_2_9" , kOpenCross,  kRed  );
+
+        gr6_v28    = getGr( f, "grSig_pT2_3_6" , kFullDiamond,  kRed  );
+        gr7_v28    = getGr( f, "grSig_pT2_3_7" , kFullDiamond,  kRed  );
+        gr8_v28    = getGr( f, "grSig_pT2_3_8" , kFullDiamond,  kRed  );
+        gr9_v28    = getGr( f, "grSig_pT2_3_9" , kFullDiamond,  kRed  );
 
         gr6_v24sub = getGr( f, "grSig_V2sub4_6", kOpenCircle, kBlue );
         gr7_v24sub = getGr( f, "grSig_V2sub4_7", kOpenCircle, kBlue );
@@ -333,6 +357,11 @@ typedef struct CumuGraph
         grObs8_v26    = getGr( f, "grObs_pT2_2_8" , kOpenCross,  kRed  );
         grObs9_v26    = getGr( f, "grObs_pT2_2_9" , kOpenCross,  kRed  );
 
+        grObs6_v28    = getGr( f, "grObs_pT2_3_6" , kOpenCross,  kRed  );
+        grObs7_v28    = getGr( f, "grObs_pT2_3_7" , kOpenCross,  kRed  );
+        grObs8_v28    = getGr( f, "grObs_pT2_3_8" , kOpenCross,  kRed  );
+        grObs9_v28    = getGr( f, "grObs_pT2_3_9" , kOpenCross,  kRed  );
+
         grObs6_v24sub = getGr( f, "grObs_V2sub4_6", kOpenCircle, kBlue );
         grObs7_v24sub = getGr( f, "grObs_V2sub4_7", kOpenCircle, kBlue );
         grObs8_v24sub = getGr( f, "grObs_V2sub4_8", kOpenCircle, kBlue );
@@ -354,6 +383,11 @@ typedef struct CumuGraph
         grSB8_v26    = getGr( f, "grBkg_pT2_2_8" , kOpenCross,  kRed  );
         grSB9_v26    = getGr( f, "grBkg_pT2_2_9" , kOpenCross,  kRed  );
 
+        grSB6_v28    = getGr( f, "grBkg_pT2_3_6" , kOpenCross,  kRed  );
+        grSB7_v28    = getGr( f, "grBkg_pT2_3_7" , kOpenCross,  kRed  );
+        grSB8_v28    = getGr( f, "grBkg_pT2_3_8" , kOpenCross,  kRed  );
+        grSB9_v28    = getGr( f, "grBkg_pT2_3_9" , kOpenCross,  kRed  );
+
         grSB6_v24sub = getGr( f, "grBkg_V2sub4_6", kOpenCircle, kBlue );
         grSB7_v24sub = getGr( f, "grBkg_V2sub4_7", kOpenCircle, kBlue );
         grSB8_v24sub = getGr( f, "grBkg_V2sub4_8", kOpenCircle, kBlue );
@@ -372,6 +406,10 @@ typedef struct CumuGraph
         gr_v26        [7] = gr7_v26;
         gr_v26        [8] = gr8_v26;
         gr_v26        [9] = gr9_v26;
+        gr_v28        [6] = gr6_v28;
+        gr_v28        [7] = gr7_v28;
+        gr_v28        [8] = gr8_v28;
+        gr_v28        [9] = gr9_v28;
         gr_v24sub     [6] = gr6_v24sub;
         gr_v24sub     [7] = gr7_v24sub;
         gr_v24sub     [8] = gr8_v24sub;
@@ -399,6 +437,10 @@ typedef struct CumuGraph
         grObs_v26     [7] = grObs7_v26;
         grObs_v26     [8] = grObs8_v26;
         grObs_v26     [9] = grObs9_v26;
+        grObs_v28     [6] = grObs6_v28;
+        grObs_v28     [7] = grObs7_v28;
+        grObs_v28     [8] = grObs8_v28;
+        grObs_v28     [9] = grObs9_v28;
         grObs_v24sub  [6] = grObs6_v24sub;
         grObs_v24sub  [7] = grObs7_v24sub;
         grObs_v24sub  [8] = grObs8_v24sub;
@@ -416,6 +458,10 @@ typedef struct CumuGraph
         grSB_v26      [7] = grSB7_v26;
         grSB_v26      [8] = grSB8_v26;
         grSB_v26      [9] = grSB9_v26;
+        grSB_v28      [6] = grSB6_v28;
+        grSB_v28      [7] = grSB7_v28;
+        grSB_v28      [8] = grSB8_v28;
+        grSB_v28      [9] = grSB9_v28;
         grSB_v24sub   [6] = grSB6_v24sub;
         grSB_v24sub   [7] = grSB7_v24sub;
         grSB_v24sub   [8] = grSB8_v24sub;
@@ -427,6 +473,7 @@ typedef struct CumuGraph
             grSys_v22Gap[c] = grSys( gr_v22Gap[c], sysX, sysY);
             grSys_v24   [c] = grSys( gr_v24   [c], sysX, sysY);
             grSys_v26   [c] = grSys( gr_v26   [c], sysX, sysY);
+            grSys_v28   [c] = grSys( gr_v28   [c], sysX, sysY);
             grSys_v24sub[c] = grSys( gr_v24sub[c], sysX, sysY);
             grSys_v24subpos[c] = grSys( gr_v24subpos[c], sysX, sysY);
             grSys_v24subneg[c] = grSys( gr_v24subneg[c], sysX, sysY);
@@ -439,6 +486,7 @@ typedef struct CumuGraph
             grDropPoints( gr_v22Gap[c], N);
             grDropPoints( gr_v24[c],    N);
             grDropPoints( gr_v26[c],    N);
+            grDropPoints( gr_v28[c],    N);
             grDropPoints( gr_v24sub[c], N);
             grDropPoints( gr_v24subpos[c], N);
             grDropPoints( gr_v24subneg[c], N);
@@ -446,6 +494,7 @@ typedef struct CumuGraph
             grDropPoints( grSys_v22Gap[c], N);
             grDropPoints( grSys_v24[c],    N);
             grDropPoints( grSys_v26[c],    N);
+            grDropPoints( grSys_v28[c],    N);
             grDropPoints( grSys_v24sub[c], N);
             grDropPoints( grSys_v24subpos[c], N);
             grDropPoints( grSys_v24subneg[c], N);
@@ -457,6 +506,7 @@ typedef struct CumuGraph
             grReplaceX( gr_v22Gap[c], sp[c]->vn_Full_PosEtaEP );
             grReplaceX( gr_v24[c],    sp[c]->vn_Full_PosEtaEP );
             grReplaceX( gr_v26[c],    sp[c]->vn_Full_PosEtaEP );
+            grReplaceX( gr_v28[c],    sp[c]->vn_Full_PosEtaEP );
             grReplaceX( gr_v24sub[c], sp[c]->vn_Full_PosEtaEP );
             grReplaceX( gr_v24subpos[c], sp[c]->vn_NegEta_PosEtaEP );
             grReplaceX( gr_v24subneg[c], sp[c]->vn_PosEta_NegEtaEP );
