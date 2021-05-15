@@ -33,6 +33,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     latexS.SetTextAlign(13);
 
     TLine line1(0.1, 1., 8.5, 1.);
+    TLine line0(0.1, 0., 8.5, 0.);
 
     TCanvas * cPbPbV2 = MakeCanvas("cPbPbV2", "cPbPbV2", 1400, 400);
     splitCanv4(cPbPbV2);
@@ -51,7 +52,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 //        p->SetLogx();
         hframe_pt->Draw();
 
-        ch_v2_PbPb[c]   ->vn_MergedEta->SetMarkerStyle(kOpenCircle);
+        ch_v2_PbPb[c]   ->vn_MergedEta->SetMarkerStyle(kOpenSquare);
         ch_v2_PbPb[c]   ->vn_MergedEta->SetMarkerColor(kBlue);
         ch_v2_PbPb[c]   ->vn_MergedEta->SetLineColor  (kBlue);
         ch_v2_PbPb[c]   ->vn_MergedEta->SetMarkerSize(2.);
@@ -173,14 +174,18 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
-    cPbPbV2->SaveAs("PbPbV2_Ch.pdf");
+    if ( bAmpt ) {
+        cPbPbV2->SaveAs("PbPbV2_Ch.pdf");
+    } else {
+        cPbPbV2->SaveAs("PbPbV2_Ch_Trento.pdf");
+    }
 
     // Ks v2
     for ( int c = 1; c < 5; c++ ) {
         cPbPbV2->cd(c);
         hframe_pt->Draw();
 
-        Ks_v2_PbPb_Sig[c]   ->vn_MergedEta->SetMarkerStyle(kOpenCircle);
+        Ks_v2_PbPb_Sig[c]   ->vn_MergedEta->SetMarkerStyle(kOpenSquare);
         Ks_v2_PbPb_Sig[c]   ->vn_MergedEta->SetMarkerColor(kBlue);
         Ks_v2_PbPb_Sig[c]   ->vn_MergedEta->SetLineColor  (kBlue);
         Ks_v2_PbPb_Sig[c]   ->vn_MergedEta->SetMarkerSize(2.);
@@ -302,7 +307,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
-    cPbPbV2->SaveAs("PbPbV2_Ks.pdf");
+
+    if ( bAmpt ) {
+        cPbPbV2->SaveAs("PbPbV2_Ks.pdf");
+    } else {
+        cPbPbV2->SaveAs("PbPbV2_Ks_Trento.pdf");
+    }
 
 
     // Lm v2
@@ -310,7 +320,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         cPbPbV2->cd(c);
         hframe_pt->Draw();
 
-        Lm_v2_PbPb_Sig[c]   ->vn_MergedEta->SetMarkerStyle(kOpenCircle);
+        Lm_v2_PbPb_Sig[c]   ->vn_MergedEta->SetMarkerStyle(kOpenSquare);
         Lm_v2_PbPb_Sig[c]   ->vn_MergedEta->SetMarkerColor(kBlue);
         Lm_v2_PbPb_Sig[c]   ->vn_MergedEta->SetLineColor  (kBlue);
         Lm_v2_PbPb_Sig[c]   ->vn_MergedEta->SetMarkerSize(2.);
@@ -433,7 +443,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
-    cPbPbV2->SaveAs("PbPbV2_Lm.pdf");
+
+    if ( bAmpt ) {
+        cPbPbV2->SaveAs("PbPbV2_Lm.pdf");
+    } else {
+        cPbPbV2->SaveAs("PbPbV2_Lm_Trento.pdf");
+    }
 
     // fluctuation
     TH2D * hframe_fluct = new TH2D("hframe_fluct", "hframe_fluct", 1, 0.01, 8.5, 1, 0.01, 1.3);
@@ -637,7 +652,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     grPAKs_fluct->Draw("psame");
     grPALm_fluct->Draw("psame");
 
-    cPbPbV2->SaveAs("PbPbV2_Fluct.pdf");
+    if ( bAmpt ) {
+        cPbPbV2->SaveAs("PbPbV2_Fluct.pdf");
+    }
+    else {
+        cPbPbV2->SaveAs("PbPbV2_Fluct_Trento.pdf");
+    }
 
     /***** Plot fluctuation separately ******/
     // Ch
@@ -791,7 +811,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TGraphErrors * grPALm42 = (TGraphErrors*) fpPb->Get("grLm42_8");
 
     setGr( grPACh42, kFullCircle, kBlack, 2 );
-    setGr( grPAKs42, kFullSquare, kBlue , 2 );
+    setGr( grPAKs42, kFullCircle, kBlue , 2 );
     setGr( grPALm42, kFullCircle, kRed  , 2 );
 
     TGraphErrors * grPACh42_sys = (TGraphErrors*) fpPb->Get("grCh42sys_8");
@@ -813,9 +833,9 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         hframe_ratio24->Draw();
         line1.Draw();
 
-        setGr( gCh42[c], kOpenCircle, kBlack, 2 );
+        setGr( gCh42[c], kOpenSquare, kBlack, 2 );
         setGr( gKs42[c], kOpenSquare, kBlue , 2 );
-        setGr( gLm42[c], kOpenCircle, kRed  , 2 );
+        setGr( gLm42[c], kOpenSquare, kRed  , 2 );
 
         gCh42_sys[c]->SetFillColor(3005);
         gKs42_sys[c]->SetFillColor(3003);
@@ -1274,6 +1294,13 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TGraphErrors* gKsRatioCuSys[5] = {};
     TGraphErrors* gLmRatioCuSys[5] = {};
 
+    TGraphErrors* gChDeltaCu[5] = {};
+    TGraphErrors* gKsDeltaCu[5] = {};
+    TGraphErrors* gLmDeltaCu[5] = {};
+    TGraphErrors* gChDeltaCuSys[5] = {};
+    TGraphErrors* gKsDeltaCuSys[5] = {};
+    TGraphErrors* gLmDeltaCuSys[5] = {};
+
 
     TGraphErrors* gChRatioSP[5] = {};
     TGraphErrors* gKsRatioSP[5] = {};
@@ -1284,9 +1311,9 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         hframe_ratio->Draw();
         line1.Draw();
 
-        gChRatioSP[c]= getRatio( ch_v2_PbPb[c]->vn_MergedEta_SubEvt,     ch_v2_PbPb[c]->vn_MergedEta );
-        gKsRatioSP[c]= getRatio( Ks_v2_PbPb_Sig[c]->vn_MergedEta_SubEvt, Ks_v2_PbPb_Sig[c]->vn_MergedEta );
-        gLmRatioSP[c]= getRatio( Lm_v2_PbPb_Sig[c]->vn_MergedEta_SubEvt, Lm_v2_PbPb_Sig[c]->vn_MergedEta );
+        gChRatioSP[c]= getRatio( ch_v2_PbPb[c]->vn_MergedEta_SubEvt,     ch_v2_PbPb[c]->vn_MergedEta    , 3 );
+        gKsRatioSP[c]= getRatio( Ks_v2_PbPb_Sig[c]->vn_MergedEta_SubEvt, Ks_v2_PbPb_Sig[c]->vn_MergedEta, 3 );
+        gLmRatioSP[c]= getRatio( Lm_v2_PbPb_Sig[c]->vn_MergedEta_SubEvt, Lm_v2_PbPb_Sig[c]->vn_MergedEta, 3 );
 
         gChRatioSP[c]->SetMarkerStyle(kOpenSquare);
         gChRatioSP[c]->SetMarkerColor(kBlue);
@@ -1320,11 +1347,11 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         gKsRatioCuSys[c]->SetFillColor(3003);
         gLmRatioCuSys[c]->SetFillColor(3001);
 
-        gChRatioCu[c]= getRatio( vH.grSig_V2sub4merge[c],  vH.grSig_pT[2][1][c] );
-        gKsRatioCu[c]= getRatio( vKs.grSig_V2sub4merge[c], vKs.grSig_pT[2][1][c] );
-        gLmRatioCu[c]= getRatio( vLm.grSig_V2sub4merge[c], vLm.grSig_pT[2][1][c] );
+        gChRatioCu[c]= getRatio( vH.grSig_V2sub4merge[c],  vH.grSig_pT[2][1][c] , 3 );
+        gKsRatioCu[c]= getRatio( vKs.grSig_V2sub4merge[c], vKs.grSig_pT[2][1][c], 3 );
+        gLmRatioCu[c]= getRatio( vLm.grSig_V2sub4merge[c], vLm.grSig_pT[2][1][c], 3 );
 
-        gChRatioCu[c]->SetMarkerStyle(kOpenCircle);
+        gChRatioCu[c]->SetMarkerStyle(kOpenSquare);
         gChRatioCu[c]->SetMarkerColor(kBlack);
         gChRatioCu[c]->SetLineColor  (kBlack);
         gChRatioCu[c]->SetMarkerSize(2.);
@@ -1334,24 +1361,47 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         gKsRatioCu[c]->SetLineColor  (kBlue);
         gKsRatioCu[c]->SetMarkerSize(2.);
 
-        gLmRatioCu[c]->SetMarkerStyle(kOpenCircle);
+        gLmRatioCu[c]->SetMarkerStyle(kOpenSquare);
         gLmRatioCu[c]->SetMarkerColor(kRed);
         gLmRatioCu[c]->SetLineColor  (kRed);
         gLmRatioCu[c]->SetMarkerSize(2.);
 
+
+        //
+        gChDeltaCuSys[c]= getDelta( vH.grSig_V2sub4merge[c],  vH.grSig_pT[2][1][c] , 10 );
+        gKsDeltaCuSys[c]= getDelta( vKs.grSig_V2sub4merge[c], vKs.grSig_pT[2][1][c], 11 );
+        gLmDeltaCuSys[c]= getDelta( vLm.grSig_V2sub4merge[c], vLm.grSig_pT[2][1][c], 12 );
+
+        gChDeltaCuSys[c]->SetFillColor(3005);
+        gKsDeltaCuSys[c]->SetFillColor(3003);
+        gLmDeltaCuSys[c]->SetFillColor(3001);
+
+        gChDeltaCu[c]= getDelta( vH.grSig_V2sub4merge[c],  vH.grSig_pT[2][1][c] , 3 );
+        gKsDeltaCu[c]= getDelta( vKs.grSig_V2sub4merge[c], vKs.grSig_pT[2][1][c], 3 );
+        gLmDeltaCu[c]= getDelta( vLm.grSig_V2sub4merge[c], vLm.grSig_pT[2][1][c], 3 );
+
+        gChDeltaCu[c]->SetMarkerStyle(kOpenSquare);
+        gChDeltaCu[c]->SetMarkerColor(kBlack);
+        gChDeltaCu[c]->SetLineColor  (kBlack);
+        gChDeltaCu[c]->SetMarkerSize(2.);
+
+        gKsDeltaCu[c]->SetMarkerStyle(kOpenSquare);
+        gKsDeltaCu[c]->SetMarkerColor(kBlue);
+        gKsDeltaCu[c]->SetLineColor  (kBlue);
+        gKsDeltaCu[c]->SetMarkerSize(2.);
+
+        gLmDeltaCu[c]->SetMarkerStyle(kOpenSquare);
+        gLmDeltaCu[c]->SetMarkerColor(kRed);
+        gLmDeltaCu[c]->SetLineColor  (kRed);
+        gLmDeltaCu[c]->SetMarkerSize(2.);
+
         if ( c == 0 ) {
         } else if ( c == 1 ) {
-//            DropPoints( gKsRatioCu[c], -2 );
-//            DropPoints( gLmRatioCu[c], -2 );
         } else if ( c == 2 ) {
         } else if ( c == 3 ) {
         } else if ( c == 4 ) {
         } else if ( c == 5 ) {
         }
-
-//        gChRatioCu[c]->Draw("psame");
-//        gKsRatioCu[c]->Draw("psame");
-//        gLmRatioCu[c]->Draw("psame");
 
         s2f.WriteGr( gChRatioCu[c], Form("grCh_v24subratio_%i", c) );
         s2f.WriteGr( gKsRatioCu[c], Form("grKs_v24subratio_%i", c) );
@@ -1454,6 +1504,86 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     gLmRatioCu[4]->Draw("psame");
 
     cPbPbV2_1->SaveAs("PbPbV2_SubevtCu_Ratio.pdf");
+
+    // sub-event delta
+    TH2D * hframe_pt_delta = new TH2D("hframe_pt_delta", "hframe_pt_delta", 1, 0.01, 8.5, 1, -0.08, 0.12);
+    InitHist(hframe_pt_delta, "p_{T} (GeV)", "#Deltav_{2}");
+    hframe_pt_delta->GetYaxis()->SetTitleOffset(1.0);
+    hframe_pt_delta->GetXaxis()->SetTitleOffset(0.90);
+
+    cPbPbV2_1->cd(1);
+    hframe_pt_delta->Draw();
+    line0.Draw();
+    if ( bPre ) {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS #it{Preliminary}}");
+    } else {
+        latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
+    }
+    latexS.DrawLatexNDC(0.16, 0.80, "v_{2}{4,Sub} - v_{2}{4}");
+    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+
+    gChDeltaCuSys[1]->Draw("[]2");
+    gKsDeltaCuSys[1]->Draw("[]2");
+    gLmDeltaCuSys[1]->Draw("[]2");
+
+    gChDeltaCu[1]->Draw("psame");
+    gKsDeltaCu[1]->Draw("psame");
+    gLmDeltaCu[1]->Draw("psame");
+
+    TLegend * legCu_D = new TLegend(0.50, 0.68, 0.98, 0.92);
+    legCu_D->SetFillColor(kWhite);
+    legCu_D->SetTextFont(42);
+    legCu_D->SetTextSize(0.05);
+    legCu_D->SetBorderSize(0);
+
+    legCu_D->AddEntry(gChDeltaCu[1], "charge hadron", "p");
+    legCu_D->AddEntry(gKsDeltaCu[1], "K_{S}^{0}", "p");
+    legCu_D->AddEntry(gLmDeltaCu[1], "#Lambda", "p");
+
+    cPbPbV2_1->cd(2);
+    hframe_pt_delta->Draw();
+    line0.Draw();
+    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+
+    gChDeltaCuSys[2]->Draw("[]2");
+    gKsDeltaCuSys[2]->Draw("[]2");
+    gLmDeltaCuSys[2]->Draw("[]2");
+
+    gChDeltaCu[2]->Draw("psame");
+    gKsDeltaCu[2]->Draw("psame");
+    gLmDeltaCu[2]->Draw("psame");
+
+    cPbPbV2_1->cd(3);
+    hframe_pt_delta->Draw();
+    line0.Draw();
+    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+
+    gChDeltaCuSys[3]->Draw("[]2");
+    gKsDeltaCuSys[3]->Draw("[]2");
+    gLmDeltaCuSys[3]->Draw("[]2");
+
+    gChDeltaCu[3]->Draw("psame");
+    gKsDeltaCu[3]->Draw("psame");
+    gLmDeltaCu[3]->Draw("psame");
+
+    cPbPbV2_1->cd(4);
+    hframe_pt_delta->Draw();
+    line0.Draw();
+    latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
+    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+
+    legCu_D->Draw();
+
+    gChDeltaCuSys[4]->Draw("[]2");
+    gKsDeltaCuSys[4]->Draw("[]2");
+    gLmDeltaCuSys[4]->Draw("[]2");
+
+    gChDeltaCu[4]->Draw("psame");
+    gKsDeltaCu[4]->Draw("psame");
+    gLmDeltaCu[4]->Draw("psame");
+
+    cPbPbV2_1->SaveAs("PbPbV2_SubevtCu_Delta.pdf");
+
     //
     // v26/v24 v28/v24 ratio
 
@@ -1465,6 +1595,14 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TGraphErrors* gKs84Ratio[5] = {};
     TGraphErrors* gLm84Ratio[5] = {};
 
+    TGraphErrors* gCh64RatioSys[5] = {};
+    TGraphErrors* gKs64RatioSys[5] = {};
+    TGraphErrors* gLm64RatioSys[5] = {};
+
+    TGraphErrors* gCh84RatioSys[5] = {};
+    TGraphErrors* gKs84RatioSys[5] = {};
+    TGraphErrors* gLm84RatioSys[5] = {};
+
     TH2D * hframe_ratio1 = new TH2D("hframe_ratio1", "hframe_ratio1", 1, 0.01, 8.5, 1, 0.68, 1.42);
     InitHist(hframe_ratio1, "p_{T} (GeV)", "Ratio");
     hframe_ratio1->GetYaxis()->SetTitleOffset(1.0);
@@ -1475,17 +1613,30 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         hframe_ratio1->Draw();
         line1.Draw();
 
-        gCh64Ratio[c] = getRatio( vH .grSig_pT[2][2][c], vH .grSig_pT[2][1][c] );
-        gKs64Ratio[c] = getRatio( vKs.grSig_pT[2][2][c], vKs.grSig_pT[2][1][c] );
-        gLm64Ratio[c] = getRatio( vLm.grSig_pT[2][2][c], vLm.grSig_pT[2][1][c] );
+        gCh64RatioSys[c] = getRatio( vH .grSig_pT[2][2][c], vH .grSig_pT[2][1][c], 10 );
+        gKs64RatioSys[c] = getRatio( vKs.grSig_pT[2][2][c], vKs.grSig_pT[2][1][c], 11 );
+        gLm64RatioSys[c] = getRatio( vLm.grSig_pT[2][2][c], vLm.grSig_pT[2][1][c], 12 );
+        gCh84RatioSys[c] = getRatio( vH .grSig_pT[2][3][c], vH .grSig_pT[2][1][c], 10 );
+        gKs84RatioSys[c] = getRatio( vKs.grSig_pT[2][3][c], vKs.grSig_pT[2][1][c], 11 );
+        gLm84RatioSys[c] = getRatio( vLm.grSig_pT[2][3][c], vLm.grSig_pT[2][1][c], 12 );
 
-        gCh84Ratio[c] = getRatio( vH .grSig_pT[2][3][c], vH .grSig_pT[2][1][c] );
-        gKs84Ratio[c] = getRatio( vKs.grSig_pT[2][3][c], vKs.grSig_pT[2][1][c] );
-        gLm84Ratio[c] = getRatio( vLm.grSig_pT[2][3][c], vLm.grSig_pT[2][1][c] );
+        gCh64RatioSys[c]->SetFillColor(3005);
+        gKs64RatioSys[c]->SetFillColor(3003);
+        gLm64RatioSys[c]->SetFillColor(3001);
+        gCh84RatioSys[c]->SetFillColor(3005);
+        gKs84RatioSys[c]->SetFillColor(3003);
+        gLm84RatioSys[c]->SetFillColor(3001);
 
-        gCh64Ratio[c]->SetMarkerStyle(kOpenCircle);
+        gCh64Ratio[c] = getRatio( vH .grSig_pT[2][2][c], vH .grSig_pT[2][1][c], 3 );
+        gKs64Ratio[c] = getRatio( vKs.grSig_pT[2][2][c], vKs.grSig_pT[2][1][c], 3 );
+        gLm64Ratio[c] = getRatio( vLm.grSig_pT[2][2][c], vLm.grSig_pT[2][1][c], 3 );
+        gCh84Ratio[c] = getRatio( vH .grSig_pT[2][3][c], vH .grSig_pT[2][1][c], 3 );
+        gKs84Ratio[c] = getRatio( vKs.grSig_pT[2][3][c], vKs.grSig_pT[2][1][c], 3 );
+        gLm84Ratio[c] = getRatio( vLm.grSig_pT[2][3][c], vLm.grSig_pT[2][1][c], 3 );
+
+        gCh64Ratio[c]->SetMarkerStyle(kOpenSquare);
         gKs64Ratio[c]->SetMarkerStyle(kOpenSquare);
-        gLm64Ratio[c]->SetMarkerStyle(kOpenCircle);
+        gLm64Ratio[c]->SetMarkerStyle(kOpenSquare);
         gCh64Ratio[c]->SetMarkerSize(2.);
         gKs64Ratio[c]->SetMarkerSize(2.);
         gLm64Ratio[c]->SetMarkerSize(2.);
@@ -1498,9 +1649,9 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         gKs64Ratio[c]->SetLineColor(kBlue);
         gLm64Ratio[c]->SetLineColor(kRed);
 
-        gCh84Ratio[c]->SetMarkerStyle(kOpenCircle);
+        gCh84Ratio[c]->SetMarkerStyle(kOpenSquare);
         gKs84Ratio[c]->SetMarkerStyle(kOpenSquare);
-        gLm84Ratio[c]->SetMarkerStyle(kOpenCircle);
+        gLm84Ratio[c]->SetMarkerStyle(kOpenSquare);
         gCh84Ratio[c]->SetMarkerSize(2.);
         gKs84Ratio[c]->SetMarkerSize(2.);
         gLm84Ratio[c]->SetMarkerSize(2.);
@@ -1515,6 +1666,11 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
         if ( c == 0 ) {
         } else if ( c == 1 ) {
+            DropPoints( gKs64RatioSys[c], -2 );
+            DropPoints( gLm64RatioSys[c], -1 );
+            DropPoints( gKs84RatioSys[c], -2 );
+            DropPoints( gLm84RatioSys[c], -1 );
+
             DropPoints( gKs64Ratio[c], -2 );
             DropPoints( gLm64Ratio[c], -1 );
             DropPoints( gKs84Ratio[c], -2 );
@@ -1525,6 +1681,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         } else if ( c == 5 ) {
         }
 
+//        gCh64RatioSys[c]->Draw("[]2");
+//        gKs64RatioSys[c]->Draw("[]2");
+//        gLm64RatioSys[c]->Draw("[]2");
+//
         gCh64Ratio[c]->Draw("psame");
         gKs64Ratio[c]->Draw("psame");
         gLm64Ratio[c]->Draw("psame");
@@ -1534,14 +1694,24 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         hframe_ratio1->Draw();
         line1.Draw();
 
+//        gCh84RatioSys[c]->Draw("[]2");
+//        gKs84RatioSys[c]->Draw("[]2");
+//        gLm84RatioSys[c]->Draw("[]2");
+//
         gCh84Ratio[c]->Draw("psame");
         gKs84Ratio[c]->Draw("psame");
         gLm84Ratio[c]->Draw("psame");
 
+        s2f.WriteGr( gCh64RatioSys[c], Form("grChSys_r64_%i", c) );
+        s2f.WriteGr( gKs64RatioSys[c], Form("grKsSys_r64_%i", c) );
+        s2f.WriteGr( gLm64RatioSys[c], Form("grLmSys_r64_%i", c) );
+        s2f.WriteGr( gCh84RatioSys[c], Form("grChSys_r84_%i", c) );
+        s2f.WriteGr( gKs84RatioSys[c], Form("grKsSys_r84_%i", c) );
+        s2f.WriteGr( gLm84RatioSys[c], Form("grLmSys_r84_%i", c) );
+
         s2f.WriteGr( gCh64Ratio[c], Form("grCh_r64_%i", c) );
         s2f.WriteGr( gKs64Ratio[c], Form("grKs_r64_%i", c) );
         s2f.WriteGr( gLm64Ratio[c], Form("grLm_r64_%i", c) );
-
         s2f.WriteGr( gCh84Ratio[c], Form("grCh_r84_%i", c) );
         s2f.WriteGr( gKs84Ratio[c], Form("grKs_r84_%i", c) );
         s2f.WriteGr( gLm84Ratio[c], Form("grLm_r84_%i", c) );
@@ -1581,11 +1751,11 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 //    DropPoints(t, -1);
 
     cout << __LINE__ << endl;
-    TGraphErrors* gpPbCh64Ratio = getRatio( (TGraphErrors*) fpPb->Get("grCh_v26_8"), (TGraphErrors*) fpPb->Get("grCh_v24_8"));
+    TGraphErrors* gpPbCh64Ratio = getRatio( (TGraphErrors*) fpPb->Get("grCh_v26_8"), (TGraphErrors*) fpPb->Get("grCh_v24_8"), 3);
     cout << __LINE__ << endl;
-    TGraphErrors* gpPbKs64Ratio = getRatio( (TGraphErrors*) fpPb->Get("grKs_v26_8"), (TGraphErrors*) fpPb->Get("grKs_v24_8"));
+    TGraphErrors* gpPbKs64Ratio = getRatio( (TGraphErrors*) fpPb->Get("grKs_v26_8"), (TGraphErrors*) fpPb->Get("grKs_v24_8"), 3);
     cout << __LINE__ << " t->GetN() = " << t->GetN() << "\t" << ((TGraphErrors*) fpPb->Get("grLm_v26_8"))->GetN() << endl;
-    TGraphErrors* gpPbLm64Ratio = getRatio( (TGraphErrors*) fpPb->Get("grLm_v26_8"), t );
+    TGraphErrors* gpPbLm64Ratio = getRatio( (TGraphErrors*) fpPb->Get("grLm_v26_8"), t , 3);
     cout << __LINE__ << endl;
 
     gpPbCh64Ratio->SetMarkerStyle(kFullCircle);

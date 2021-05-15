@@ -93,12 +93,53 @@ TGraphErrors* getFluct(TGraphErrors* gr1, TGraphErrors* gr2, TGraphErrors*& grSy
     return ret;
 }
 
+TGraphErrors* getDelta(TGraphErrors* gr1, TGraphErrors* gr2, int option = 0)
+    /*
+     * 0 - errors are independent
+     * 1 - use only gr1 error
+     * 2 - use only gr2 error
+     * 3 - errors are correlated
+     * 10, 11, 12 - use only pPb_sysY error
+     */
+{
+    if ( gr1->GetN() != gr2->GetN() ) {
+        cout << " --> Warning mismatch getDelta: N1 = " << gr1->GetN() << " N2 = " << gr2->GetN() << endl;
+        //return nullptr;
+    }
+    int N = (gr1->GetN()<gr2->GetN()) ? gr1->GetN() : gr2->GetN();
+    TGraphErrors * ret = new TGraphErrors(gr2->GetN());
+    for ( int i = 0; i < N; i++ ) {
+        ret->GetX()[i] = gr2->GetX()[i];
+        ret->GetEX()[i] = gr2->GetEX()[i];
+        ret->GetY()[i] = gr1->GetY()[i] - gr2->GetY()[i];
+        double y1 = gr1->GetY()[i];
+        double y2 = gr2->GetY()[i];
+        double e1 = gr1->GetEY()[i];
+        double e2 = gr2->GetEY()[i];
+        if ( option == 1 ) {
+            e2 = 0;
+        } else if ( option == 2 ) {
+            e1 = 0;
+        }
+        ret->GetEY()[i] = sqrt( e1*e1 + e2*e2 );
+        if ( option == 3 ) {
+            ret->GetEY()[i] = sqrt( abs(e1*e1-e2*e2) );
+        }
+        if ( (option == 10) or (option == 11) or (option == 12) ) {
+            ret->GetEY()[i] = pPb_sysY * ret->GetY()[i];
+            ret->GetEX()[i] = pPb_sysX;
+        }
+    }
+    return ret;
+}
+
 TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, int option = 0)
     /*
      * 0 - errors are independent
      * 1 - use only gr1 error
      * 2 - use only gr2 error
-     * 3 or 10, 11, 12 - use only pPb_sysY error
+     * 3 - errors are correlated
+     * 10, 11, 12 - use only pPb_sysY error
      */
 {
     if ( gr1->GetN() != gr2->GetN() ) {
@@ -120,8 +161,11 @@ TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, int option = 0)
         } else if ( option == 2 ) {
             e1 = 0;
         }
-        ret->GetEY()[i] = sqrt( e1*e1/y1/y1 + e2*e2/y2/y2 );
-        if ( (option == 3) or (option == 10) or (option == 11) or (option == 12) ) {
+        ret->GetEY()[i] = y1/y2*sqrt( e1*e1/y1/y1 + e2*e2/y2/y2 );
+        if ( option == 3 ) {
+            ret->GetEY()[i] = y1/y2*sqrt( abs(e1*e1/y1/y1 + e2*e2/y2/y2 - 2*e1*e1/y1/y2) );
+        }
+        if ( (option == 10) or (option == 11) or (option == 12) ) {
             ret->GetEY()[i] = pPb_sysY * ret->GetY()[i];
             ret->GetEX()[i] = pPb_sysX;
         }

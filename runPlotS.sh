@@ -133,9 +133,15 @@
 #root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_1;PbPb2018_Ks_sysPol3_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4} Pol4;v_{2}^{Sig}{4} Pol3", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 10-30\%}", "Ks_v24_sysPol3", 0, 0.3, 3)'
 #
 #
-#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_2;PbPb2018_LmSBPos_corrected.root:grSig_pT2_1_2;PbPb2018_LmSBNeg_corrected.root:grSig_pT2_1_2", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{#Lambda 10-30\%}", "Lm_v24_sysSB", 0, 0.3, 4)'
+#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_1;PbPb2018_LmSBPos_corrected.root:grSig_pT2_1_1;PbPb2018_LmSBNeg_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{#Lambda 5-10\%}",  "Lm_v24_sysSB_1", 0, 0.3, 6)'
+#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_2;PbPb2018_LmSBPos_corrected.root:grSig_pT2_1_2;PbPb2018_LmSBNeg_corrected.root:grSig_pT2_1_2", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{#Lambda 10-30\%}", "Lm_v24_sysSB_2", 0, 0.3, 6)'
+#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_3;PbPb2018_LmSBPos_corrected.root:grSig_pT2_1_3;PbPb2018_LmSBNeg_corrected.root:grSig_pT2_1_3", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{#Lambda 30-50\%}", "Lm_v24_sysSB_3", 0, 0.3, 6)'
+#root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_4;PbPb2018_LmSBPos_corrected.root:grSig_pT2_1_4;PbPb2018_LmSBNeg_corrected.root:grSig_pT2_1_4", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{#Lambda 50-80\%}", "Lm_v24_sysSB_4", 0, 0.3, 6)'
 #
-#root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_2;PbPb2018_KsSBPos_corrected.root:grSig_pT2_1_2;PbPb2018_KsSBNeg_corrected.root:grSig_pT2_1_2", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 10-30\%}", "Ks_v24_sysSB", 0, 0.3, 4)'
+#root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_1;PbPb2018_KsSBPos_corrected.root:grSig_pT2_1_1;PbPb2018_KsSBNeg_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 5-10\%}",  "Ks_v24_sysSB_1", 0, 0.3, 4)'
+#root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_2;PbPb2018_KsSBPos_corrected.root:grSig_pT2_1_2;PbPb2018_KsSBNeg_corrected.root:grSig_pT2_1_2", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 10-30\%}", "Ks_v24_sysSB_2", 0, 0.3, 4)'
+#root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_3;PbPb2018_KsSBPos_corrected.root:grSig_pT2_1_3;PbPb2018_KsSBNeg_corrected.root:grSig_pT2_1_3", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 30-50\%}", "Ks_v24_sysSB_3", 0, 0.3, 4)'
+#root -l -b -q 'plotS.C("PbPb2018_Ks_corrected.root:grSig_pT2_1_4;PbPb2018_KsSBPos_corrected.root:grSig_pT2_1_4;PbPb2018_KsSBNeg_corrected.root:grSig_pT2_1_4", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} SB+;v_{2}^{Sig}{4} SB-", "#splitline{PbPb 5.02 TeV}{K_{S}^{0} 50-80\%}", "Ks_v24_sysSB_4", 0, 0.3, 4)'
 #
 #
 #root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_1;PbPb2018_Lm_sysMVACent_corrected.root:grSig_pT2_1_1", "v_{2}^{Sig}{4} Std;v_{2}^{Sig}{4} MVACent", "#splitline{PbPb 5.02 TeV}{#Lambda 5-10\%}", "Lm_v24_sysMVACent_1", 0, 0.3, 6)'

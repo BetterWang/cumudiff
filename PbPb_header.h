@@ -230,14 +230,65 @@ TGraphErrors* getFluct(TGraphErrors* gr1, TGraphErrors* gr2, TGraphErrors*& grSy
     return ret;
 }
 
+TGraphErrors* getDelta(TGraphErrors* gr1, TGraphErrors* gr2, int option = 0)
+    /*
+     * 0 - errors are independent
+     * 1 - use only gr1 error
+     * 2 - use only gr2 error
+     * 3 - errors are correlated
+     * 10 - use only cumu_syst[0] error Ch
+     * 11 - use only cumu_syst[1] error Ks
+     * 12 - use only cumu_syst[2] error Lm
+     */
+{
+    if ( gr1->GetN() != gr2->GetN() ) {
+        cout << " --> Warning mismatch getDelta" << endl;
+        return nullptr;
+    }
+    TGraphErrors * ret = new TGraphErrors(gr2->GetN());
+    for ( int i = 0; i < gr2->GetN(); i++ ) {
+        if ( gr1->GetX()[i] != gr2->GetX()[i] ) cout << "--> Warning mismatch X" << endl;
+        ret->GetX()[i] = gr2->GetX()[i];
+        ret->GetEX()[i] = gr2->GetEX()[i];
+        ret->GetY()[i] = gr1->GetY()[i] - gr2->GetY()[i];
+        double y1 = gr1->GetY()[i];
+        double y2 = gr2->GetY()[i];
+        double e1 = gr1->GetEY()[i];
+        double e2 = gr2->GetEY()[i];
+        if ( option == 1 ) {
+            e2 = 0;
+        } else if ( option == 2 ) {
+            e1 = 0;
+        }
+        ret->GetEY()[i] = sqrt( e1*e1 + e2*e2 );
+        if ( option == 3 ) {
+            ret->GetEY()[i] = sqrt( abs(e1*e1 - e2*e2) );
+        }
+        if ( option == 10 ) {
+            ret->GetEY()[i] = cumu_syst[0] * ret->GetY()[i];
+            ret->GetEX()[i] = PbPb_sysX;
+        }
+        if ( option == 11 ) {
+            ret->GetEY()[i] = cumu_syst[1] * ret->GetY()[i];
+            ret->GetEX()[i] = PbPb_sysX;
+        }
+        if ( option == 12 ) {
+            ret->GetEY()[i] = cumu_syst[2] * ret->GetY()[i];
+            ret->GetEX()[i] = PbPb_sysX;
+        }
+    }
+    return ret;
+}
+
 TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, int option = 0)
     /*
      * 0 - errors are independent
      * 1 - use only gr1 error
      * 2 - use only gr2 error
-     * 10 - use only cumu_syst[0] error
-     * 11 - use only cumu_syst[1] error
-     * 12 - use only cumu_syst[2] error
+     * 3 - errors are correlated
+     * 10 - use only cumu_syst[0] error Ch
+     * 11 - use only cumu_syst[1] error Ks
+     * 12 - use only cumu_syst[2] error Lm
      */
 {
     if ( gr1->GetN() != gr2->GetN() ) {
@@ -259,7 +310,10 @@ TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, int option = 0)
         } else if ( option == 2 ) {
             e1 = 0;
         }
-        ret->GetEY()[i] = sqrt( e1*e1/y1/y1 + e2*e2/y2/y2 );
+        ret->GetEY()[i] = y1/y2*sqrt( e1*e1/y1/y1 + e2*e2/y2/y2 );
+        if ( option == 3 ) {
+            ret->GetEY()[i] = y1/y2*sqrt( abs(e1*e1/y1/y1 + e2*e2/y2/y2 - 2*e1*e1/y1/y2) );
+        }
         if ( option == 10 ) {
             ret->GetEY()[i] = cumu_syst[0] * ret->GetY()[i];
             ret->GetEX()[i] = PbPb_sysX;
