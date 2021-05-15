@@ -80,7 +80,7 @@ void plotFinalpPb( bool bPre = false )
     TCanvas * cpPbV2_1 = MakeCanvas("cpPbV2_1", "cpPbV2_1", 1400, 400);
     splitCanv4(cpPbV2_1);
 
-    TH2D * hframe_pt = new TH2D("hframe_pt", "hframe_pt", 1, 0.01, 8.5, 1, 0, 0.36);
+    TH2D * hframe_pt = new TH2D("hframe_pt", "hframe_pt", 1, 0.01, 8.5, 1, -0.12, 0.36);
     InitHist(hframe_pt, "p_{T} (GeV)", "v_{2}");
     hframe_pt->GetYaxis()->SetTitleOffset(1.0);
     hframe_pt->GetXaxis()->SetTitleOffset(0.90);
@@ -241,9 +241,9 @@ void plotFinalpPb( bool bPre = false )
 
         if ( c == 6 ) {
             // H
-            DropPoints( grH.grSys_v24[c], -2 );
-            DropPoints( grH.gr_v24[c],    -2 );
-            DropPoints( grH.gr_v24sub[c], -2 );
+//            DropPoints( grH.grSys_v24[c], -2 );
+//            DropPoints( grH.gr_v24[c],    -2 );
+//            DropPoints( grH.gr_v24sub[c], -2 );
 
             DropPoints( grH.gr_v24subpos[c], -2 );
             DropPoints( grH.gr_v24subneg[c], -2 );
@@ -255,13 +255,13 @@ void plotFinalpPb( bool bPre = false )
 
             DropPoints( grChRatioVeto4[c], -2 );
             DropPoints( grChRatioVeto4_sys[c], -2 );
-            DropPoints( grChVetoDelta4[c], -2 );
-            DropPoints( grChVetoDelta4_sys[c], -2 );
+//            DropPoints( grChVetoDelta4[c], -2 );
+//            DropPoints( grChVetoDelta4_sys[c], -2 );
 
             DropPoints( grChRatioCu1[c], -2 );
             DropPoints( grSysChRatioCu1[c], -2 );
-            DropPoints( grChDeltaCu1[c], -2 );
-            DropPoints( grSysChDeltaCu1[c], -2 );
+//            DropPoints( grChDeltaCu1[c], -2 );
+//            DropPoints( grSysChDeltaCu1[c], -2 );
 
             DropPoints( gChF_sys[c], -2 );
             DropPoints( gChF[c],     -2 );
@@ -273,9 +273,9 @@ void plotFinalpPb( bool bPre = false )
             DropPoints( grKs.gr_v24[c],    1 );
             DropPoints( grKs.gr_v24sub[c], 1 );
 
-            DropPoints( grKs.grSys_v24[c], -2 );
-            DropPoints( grKs.gr_v24[c],    -2 );
-            DropPoints( grKs.gr_v24sub[c], -2 );
+//            DropPoints( grKs.grSys_v24[c], -2 );
+//            DropPoints( grKs.gr_v24[c],    -2 );
+//            DropPoints( grKs.gr_v24sub[c], -2 );
 
             DropPoints( grKs.grSys_v26[c], 1 );
             DropPoints( grKs.gr_v26[c],    1 );
@@ -289,17 +289,17 @@ void plotFinalpPb( bool bPre = false )
             DropPoints( gKsF[c],     -2 );
 
             // Lm
-            DropPoints( grLm.grSys_v24[c], -1 );
-            DropPoints( grLm.gr_v24[c],    -1 );
+//            DropPoints( grLm.grSys_v24[c], -1 );
+//            DropPoints( grLm.gr_v24[c],    -1 );
 
             DropPoints( gLmF_sys[c], -1 );
             DropPoints( gLmF[c],     -1 );
 
         } else if ( c == 7 ) {
             // H
-            DropPoints( grH.grSys_v24[c], -1 );
-            DropPoints( grH.gr_v24[c],    -1 );
-            DropPoints( grH.gr_v24sub[c], -2 );
+//            DropPoints( grH.grSys_v24[c], -1 );
+//            DropPoints( grH.gr_v24[c],    -1 );
+//            DropPoints( grH.gr_v24sub[c], -2 );
 
             DropPoints( grH.gr_v24subpos[c], -1 );
             DropPoints( grH.gr_v24subneg[c], -1 );
@@ -311,13 +311,13 @@ void plotFinalpPb( bool bPre = false )
 
             DropPoints( grChRatioVeto4[c], -1 );
             DropPoints( grChRatioVeto4_sys[c], -1 );
-            DropPoints( grChVetoDelta4[c], -1 );
-            DropPoints( grChVetoDelta4_sys[c], -1 );
+//            DropPoints( grChVetoDelta4[c], -1 );
+//            DropPoints( grChVetoDelta4_sys[c], -1 );
 
             DropPoints( grChRatioCu1[c],   -2 );
             DropPoints( grSysChRatioCu1[c],   -2 );
-            DropPoints( grChDeltaCu1[c],   -2 );
-            DropPoints( grSysChDeltaCu1[c],   -2 );
+//            DropPoints( grChDeltaCu1[c],   -2 );
+//            DropPoints( grSysChDeltaCu1[c],   -2 );
 
             DropPoints( gChF_sys[c], -1 );
             DropPoints( gChF[c],     -1 );
@@ -327,11 +327,10 @@ void plotFinalpPb( bool bPre = false )
             // Ks
             DropPoints( grKs.grSys_v24[c], 1 );
             DropPoints( grKs.gr_v24[c],    1 );
-            DropPoints( grKs.grSys_v24[c], -1 );
-            DropPoints( grKs.gr_v24[c],    -1 );
-
-            DropPoints( grKs.gr_v24sub[c], 1 );
-            DropPoints( grKs.gr_v24sub[c], -2 );
+//            DropPoints( grKs.grSys_v24[c], -1 );
+//            DropPoints( grKs.gr_v24[c],    -1 );
+//            DropPoints( grKs.gr_v24sub[c], 1 );
+//            DropPoints( grKs.gr_v24sub[c], -2 );
 
             DropPoints( grKsRatioCu1[c],   1 );
             DropPoints( grKsRatioCu1[c],   -2 );
@@ -348,32 +347,32 @@ void plotFinalpPb( bool bPre = false )
             DropPoints( gKsF[c],     -1 );
 
             // Lm
-            DropPoints( grLm.grSys_v24[c], -1 );
-            DropPoints( grLm.gr_v24[c],    -1 );
+//            DropPoints( grLm.grSys_v24[c], -1 );
+//            DropPoints( grLm.gr_v24[c],    -1 );
 
             DropPoints( gLmF_sys[c], -1 );
             DropPoints( gLmF[c],     -1 );
 
         } else if ( c == 8 ) {
             // H
-            DropPoints( grH.gr_v24sub[c], -1 );
-            DropPoints( grChRatioCu1[c],   -1 );
-            DropPoints( grSysChRatioCu1[c],   -1 );
-            DropPoints( grChDeltaCu1[c],   -1 );
-            DropPoints( grSysChDeltaCu1[c],   -1 );
+//            DropPoints( grH.gr_v24sub[c],   -1 );
+            DropPoints( grChRatioCu1[c],    -1 );
+            DropPoints( grSysChRatioCu1[c], -1 );
+//            DropPoints( grChDeltaCu1[c],    -1 );
+//            DropPoints( grSysChDeltaCu1[c], -1 );
 
             // Ks
             DropPoints( grKs.grSys_v24[c], 1 );
             DropPoints( grKs.gr_v24[c],    1 );
 
             DropPoints( grKs.gr_v24sub[c], 1 );
-            DropPoints( grKs.gr_v24sub[c], -1 );
+//            DropPoints( grKs.gr_v24sub[c], -1 );
             DropPoints( grKsRatioCu1[c],   1 );
             DropPoints( grKsRatioCu1[c],   -1 );
             DropPoints( grSysKsRatioCu1[c],   1 );
             DropPoints( grSysKsRatioCu1[c],   -1 );
             DropPoints( grKsDeltaCu1[c],   1 );
-            DropPoints( grKsDeltaCu1[c],   -1 );
+//            DropPoints( grKsDeltaCu1[c],   -1 );
             DropPoints( grSysKsDeltaCu1[c],   1 );
             DropPoints( grSysKsDeltaCu1[c],   -1 );
 
@@ -407,8 +406,8 @@ void plotFinalpPb( bool bPre = false )
             // Lm
             DropPoints( grLm.grSys_v24[c], 1 );
             DropPoints( grLm.gr_v24[c],    1 );
-            DropPoints( grLm.grSys_v24[c], -1 );
-            DropPoints( grLm.gr_v24[c],    -1 );
+//            DropPoints( grLm.grSys_v24[c], -1 );
+//            DropPoints( grLm.gr_v24[c],    -1 );
 
             DropPoints( gLmF_sys[c], 1 );
             DropPoints( gLmF[c],     1 );
@@ -420,6 +419,7 @@ void plotFinalpPb( bool bPre = false )
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
         hframe_pt->Draw();
+        line0.Draw();
 
         setGr(grSP.grSP_H[c]->vn_Full_PosEtaEP, kOpenCircle, kBlue, 2.);
         setGr(grSP.grSP_H[c]->vn_Full_NegEtaEP, kOpenCircle, kRed,  2.);
@@ -475,7 +475,7 @@ void plotFinalpPb( bool bPre = false )
     latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charge hadron}");
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
-    TLegend * legCh0 = new TLegend(0.16, 0.68, 0.50, 0.82);
+    TLegend * legCh0 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legCh0->SetFillColor(kWhite);
     legCh0->SetTextFont(42);
     legCh0->SetTextSize(0.05);
@@ -484,7 +484,7 @@ void plotFinalpPb( bool bPre = false )
     legCh0->AddEntry(grSP.grSP_H[6]->vn_Full_PosEtaEP, "v_{2}{p-SP}",  "p");
     legCh0->AddEntry(grSP.grSP_H[6]->vn_Full_NegEtaEP, "v_{2}{Pb-SP}", "p");
 
-    TLegend * legCh1 = new TLegend(0.10, 0.60, 0.50, 0.82);
+    TLegend * legCh1 = new TLegend(0.65, 0.665, 0.95, 0.92);
     legCh1->SetFillColor(kWhite);
     legCh1->SetTextFont(42);
     legCh1->SetTextSize(0.05);
@@ -497,13 +497,13 @@ void plotFinalpPb( bool bPre = false )
 
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
-    legCh1->Draw();
     cpPbV2->cd(3);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    legCh0->Draw();
     cpPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
-    legCh0->Draw();
+    legCh1->Draw();
 
     cpPbV2->SaveAs("pPbV2_Ch.pdf");
 
@@ -511,6 +511,7 @@ void plotFinalpPb( bool bPre = false )
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
         hframe_pt->Draw();
+        line0.Draw();
 
         setGr(grSP.grSP_Ks_Sig[c]->vn_Full_PosEtaEP, kOpenCircle, kBlue, 2.);
         setGr(grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP, kOpenCircle, kRed,  2.);
@@ -557,7 +558,7 @@ void plotFinalpPb( bool bPre = false )
     latexS.DrawLatexNDC(0.16, 0.80, "#bf{K_{S}^{0}}");
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
-    TLegend * legKs0 = new TLegend(0.16, 0.68, 0.50, 0.82);
+    TLegend * legKs0 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legKs0->SetFillColor(kWhite);
     legKs0->SetTextFont(42);
     legKs0->SetTextSize(0.05);
@@ -566,7 +567,7 @@ void plotFinalpPb( bool bPre = false )
     legKs0->AddEntry(grSP.grSP_Ks_Sig[6]->vn_Full_PosEtaEP, "v_{2}{p-SP}",  "p");
     legKs0->AddEntry(grSP.grSP_Ks_Sig[6]->vn_Full_NegEtaEP, "v_{2}{Pb-SP}", "p");
 
-    TLegend * legKs1 = new TLegend(0.10, 0.68, 0.50, 0.82);
+    TLegend * legKs1 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legKs1->SetFillColor(kWhite);
     legKs1->SetTextFont(42);
     legKs1->SetTextSize(0.05);
@@ -575,16 +576,15 @@ void plotFinalpPb( bool bPre = false )
     legKs1->AddEntry(grH.gr_v24[6], "v_{2}{4}",     "p");
     legKs1->AddEntry(grH.gr_v26[6], "v_{2}{6}",     "p");
 
-
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
-    legKs1->Draw();
     cpPbV2->cd(3);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    legKs0->Draw();
     cpPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
-    legKs0->Draw();
+    legKs1->Draw();
 
     cpPbV2->SaveAs("pPbV2_Ks.pdf");
 
@@ -592,6 +592,7 @@ void plotFinalpPb( bool bPre = false )
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
         hframe_pt->Draw();
+        line0.Draw();
 
         setGr(grSP.grSP_Lm_Sig[c]->vn_Full_PosEtaEP, kOpenCircle, kBlue, 2.);
         setGr(grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP, kOpenCircle, kRed,  2.);
@@ -639,7 +640,7 @@ void plotFinalpPb( bool bPre = false )
     latexS.DrawLatexNDC(0.16, 0.80, "#bf{#Lambda}");
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
-    TLegend * legLm0 = new TLegend(0.16, 0.68, 0.50, 0.82);
+    TLegend * legLm0 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legLm0->SetFillColor(kWhite);
     legLm0->SetTextFont(42);
     legLm0->SetTextSize(0.05);
@@ -648,7 +649,7 @@ void plotFinalpPb( bool bPre = false )
     legLm0->AddEntry(grSP.grSP_Lm_Sig[6]->vn_Full_PosEtaEP, "v_{2}{p-SP}",  "p");
     legLm0->AddEntry(grSP.grSP_Lm_Sig[6]->vn_Full_NegEtaEP, "v_{2}{Pb-SP}", "p");
 
-    TLegend * legLm1 = new TLegend(0.10, 0.68, 0.40, 0.82);
+    TLegend * legLm1 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legLm1->SetFillColor(kWhite);
     legLm1->SetTextFont(42);
     legLm1->SetTextSize(0.05);
@@ -660,13 +661,13 @@ void plotFinalpPb( bool bPre = false )
 
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
-    legLm1->Draw();
     cpPbV2->cd(3);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
+    legLm0->Draw();
     cpPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "pPb 8.16 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[9]);
-    legLm0->Draw();
+    legLm1->Draw();
 
     cpPbV2->SaveAs("pPbV2_Lm.pdf");
 
@@ -914,9 +915,15 @@ void plotFinalpPb( bool bPre = false )
     cpPbV2_1->SaveAs("pPbV2_FluctLm6.pdf");
 
     // ch v2 subevent
+    TH2D * hframe_ptsub = new TH2D("hframe_ptsub", "hframe_ptsub", 1, 0.01, 8.5, 1, -0.18, 0.36);
+    InitHist(hframe_ptsub, "p_{T} (GeV)", "v_{2}");
+    hframe_ptsub->GetYaxis()->SetTitleOffset(1.0);
+    hframe_ptsub->GetXaxis()->SetTitleOffset(0.90);
+
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
-        hframe_pt->Draw();
+        hframe_ptsub->Draw();
+        line0.Draw();
 
         setGr( grSP.grSP_H[c]->vn_Full_NegEtaEP,          kFullCircle, kBlue,    2.);
         setGr( grSP.grSP_H[c]->vn_Full_NegEtaEP_SubEvt,   kOpenCircle, kRed,     2.);
@@ -1099,7 +1106,7 @@ void plotFinalpPb( bool bPre = false )
     cpPbV2->SaveAs("pPbV2_Ratio_Ch.pdf");
 
     // Ch v2 subevent delta
-    TH2D * hframe_pt_delta = new TH2D("hframe_pt_delta", "hframe_pt_delta", 1, 0.01, 8.5, 1, -0.08, 0.12);
+    TH2D * hframe_pt_delta = new TH2D("hframe_pt_delta", "hframe_pt_delta", 1, 0.01, 8.5, 1, -0.11, 0.09);
     InitHist(hframe_pt_delta, "p_{T} (GeV)", "#Deltav_{2}");
     hframe_pt_delta->GetYaxis()->SetTitleOffset(1.0);
     hframe_pt_delta->GetXaxis()->SetTitleOffset(0.90);
@@ -1146,9 +1153,9 @@ void plotFinalpPb( bool bPre = false )
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[8]);
 
     DropPoints(grKsDeltaCu1[8], 1);
-    DropPoints(grKsDeltaCu1[8], -1);
+//    DropPoints(grKsDeltaCu1[8], -1);
     DropPoints(grLmDeltaCu1[8], 1);
-    DropPoints(grLmDeltaCu1[8], -1);
+//    DropPoints(grLmDeltaCu1[8], -1);
 
     DropPoints(grSysKsDeltaCu1[8], 1);
     DropPoints(grSysKsDeltaCu1[8], -1);
@@ -1174,7 +1181,8 @@ void plotFinalpPb( bool bPre = false )
     // Ks v2 subevent
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
-        hframe_pt->Draw();
+        hframe_ptsub->Draw();
+        line0.Draw();
 
         setGr( grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP,          kFullCircle, kBlue,    2.);
         setGr( grSP.grSP_Ks_Sig[c]->vn_Full_NegEtaEP_SubEvt,   kOpenCircle, kRed,     2.);
@@ -1331,6 +1339,7 @@ void plotFinalpPb( bool bPre = false )
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
         hframe_pt->Draw();
+        line0.Draw();
 
         setGr( grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP,          kFullCircle, kBlue,    2.);
         setGr( grSP.grSP_Lm_Sig[c]->vn_Full_NegEtaEP_SubEvt,   kOpenCircle, kRed,     2.);
@@ -1487,6 +1496,7 @@ void plotFinalpPb( bool bPre = false )
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
         hframe_pt->Draw();
+        line0.Draw();
 
         setGr( grH.gr_v22Gap [c]    , kOpenCircle, kBlue, 2. );
         setGr( grHveto.gr_v22Gap [c], kFullCircle, kRed,  2. );
@@ -1746,9 +1756,14 @@ void plotFinalpPb( bool bPre = false )
 
 
     // veto delta only for Ch
+    TH2D * hframe_pt_deltaVeto = new TH2D("hframe_pt_deltaVeto", "hframe_pt_deltaVeto", 1, 0.01, 8.5, 1, -0.09, 0.19);
+    InitHist(hframe_pt_deltaVeto, "p_{T} (GeV)", "#Deltav_{2}");
+    hframe_pt_deltaVeto->GetYaxis()->SetTitleOffset(1.0);
+    hframe_pt_deltaVeto->GetXaxis()->SetTitleOffset(0.90);
+
     for ( int c = 6; c < 10; c++ ) {
         cpPbV2->cd(c-5);
-        hframe_pt_delta->Draw();
+        hframe_pt_deltaVeto->Draw();
         line0.Draw();
 
         setGr( grChVetoDelta4[c], kOpenCircle, kRed,  2. );
