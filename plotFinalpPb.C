@@ -1501,16 +1501,16 @@ void plotFinalpPb( bool bPre = false )
         setGr( grH.gr_v22Gap [c]    , kOpenCircle, kBlue, 2. );
         setGr( grHveto.gr_v22Gap [c], kFullCircle, kRed,  2. );
 
-        setGr( grH.gr_v24    [c], kOpenCircle, kRed, 2. );
-        setGr( grHveto.gr_v24[c], kFullCircle, kRed, 2. );
+        setGr( grH.gr_v24    [c], kOpenStar, kBlue, 2. );
+        setGr( grHveto.gr_v24[c], kFullStar, kBlue, 2. );
 
-        setGr( grH.gr_v26    [c], kOpenStar, kBlue, 2. );
-        setGr( grHveto.gr_v26[c], kFullStar, kBlue,  2. );
+        setGr( grH.gr_v26    [c], kOpenCross, kRed, 2. );
+        setGr( grHveto.gr_v26[c], kFullCross, kRed,  2. );
 
-        grHveto.grSys_v24[c]->SetFillColor(3001);
-        grHveto.grSys_v26[c]->SetFillColor(3003);
-        grH    .grSys_v24[c]->SetFillColor(3001);
-        grH    .grSys_v26[c]->SetFillColor(3003);
+        grHveto.grSys_v24[c]->SetFillColor(3003);
+        grHveto.grSys_v26[c]->SetFillColor(3001);
+        grH    .grSys_v24[c]->SetFillColor(3003);
+        grH    .grSys_v26[c]->SetFillColor(3001);
 
         grHveto.grSys_v24[c]->Draw("[]2");
         grHveto.grSys_v26[c]->Draw("[]2");
@@ -1703,11 +1703,11 @@ void plotFinalpPb( bool bPre = false )
 
 
         setGr( grChRatioVeto2[c], kOpenCircle, kBlack, 2. );
-        setGr( grChRatioVeto4[c], kOpenCircle, kRed, 2. );
-        setGr( grChRatioVeto6[c], kOpenStar, kBlue, 2. );
+        setGr( grChRatioVeto4[c], kOpenStar,  kBlue, 2. );
+        setGr( grChRatioVeto6[c], kOpenCross, kRed,  2. );
 
-        grChRatioVeto4_sys[c]->SetFillColor(3001);
-        grChRatioVeto6_sys[c]->SetFillColor(3003);
+        grChRatioVeto4_sys[c]->SetFillColor(3003);
+        grChRatioVeto6_sys[c]->SetFillColor(3001);
 
         grChRatioVeto4_sys[c]->Draw("[]2");
         grChRatioVeto6_sys[c]->Draw("[]2");
@@ -1766,11 +1766,11 @@ void plotFinalpPb( bool bPre = false )
         hframe_pt_deltaVeto->Draw();
         line0.Draw();
 
-        setGr( grChVetoDelta4[c], kOpenCircle, kRed,  2. );
-        setGr( grChVetoDelta6[c], kOpenStar,   kBlue, 2. );
+        setGr( grChVetoDelta4[c], kOpenStar,  kBlue, 2. );
+        setGr( grChVetoDelta6[c], kOpenCross, kRed,  2. );
 
-        grChVetoDelta4_sys[c]->SetFillColor(3001);
-        grChVetoDelta6_sys[c]->SetFillColor(3003);
+        grChVetoDelta4_sys[c]->SetFillColor(3003);
+        grChVetoDelta6_sys[c]->SetFillColor(3001);
 
         grChVetoDelta4_sys[c]->Draw("[]2");
         grChVetoDelta6_sys[c]->Draw("[]2");

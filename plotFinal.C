@@ -691,8 +691,8 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
     legFlCh->AddEntry(gChF[1], "PbPb", "p");
     legFlCh->AddEntry(grPACh_fluct, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
-    legFlCh->AddEntry(gChAmptF[1], "AMPT-IC", "f");
-    legFlCh->AddEntry(gChTrentoF[1], "Trento-IC", "f");
+    legFlCh->AddEntry(gChAmptF[1], "AMPT-IC (PbPb)", "f");
+    legFlCh->AddEntry(gChTrentoF[1], "Trento-IC (PbPb)", "f");
 
     legFlCh->Draw();
 
@@ -739,8 +739,8 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
     legFlKs->AddEntry(gKsF[1], "PbPb", "p");
     legFlKs->AddEntry(grPAKs_fluct, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
-    legFlKs->AddEntry(gKsAmptF[1], "AMPT-IC", "f");
-    legFlKs->AddEntry(gKsTrentoF[1], "Trento-IC", "f");
+    legFlKs->AddEntry(gKsAmptF[1], "AMPT-IC (PbPb)", "f");
+    legFlKs->AddEntry(gKsTrentoF[1], "Trento-IC (PbPb)", "f");
 
     legFlKs->Draw();
 
@@ -787,8 +787,8 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
     legFlLm->AddEntry(gLmF[1], "PbPb", "p");
     legFlLm->AddEntry(grPALm_fluct, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
-    legFlLm->AddEntry(gLmAmptF[1], "AMPT-IC", "f");
-    legFlLm->AddEntry(gLmTrentoF[1], "Trento-IC", "f");
+    legFlLm->AddEntry(gLmAmptF[1], "AMPT-IC (PbPb)", "f");
+    legFlLm->AddEntry(gLmTrentoF[1], "Trento-IC (PbPb)", "f");
 
     legFlLm->Draw();
 
