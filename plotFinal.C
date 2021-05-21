@@ -267,7 +267,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     } else {
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
-    latexS.DrawLatexNDC(0.16, 0.80, "#bf{K_{S}^{0}}");
+    latexS.DrawLatexNDC(0.16, 0.82, "#bf{K_{S}^{0}}");
     latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
 
     TLegend * legKs = new TLegend(0.60, 0.55, 0.90, 0.90);
@@ -683,25 +683,33 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
     cPbPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
-    TLegend * legFlCh = new TLegend(0.35, 0.55, 0.75, 0.92);
+    TLegend * legFlCh = new TLegend(0.35, 0.75, 0.75, 0.92);
     legFlCh->SetFillColor(kWhite);
     legFlCh->SetTextFont(42);
     legFlCh->SetTextSize(0.05);
     legFlCh->SetBorderSize(0);
 
-    legFlCh->AddEntry(gChF[1], "PbPb", "p");
     legFlCh->AddEntry(grPACh_fluct, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
-    legFlCh->AddEntry(gChAmptF[1], "AMPT-IC (PbPb)", "f");
-    legFlCh->AddEntry(gChTrentoF[1], "Trento-IC (PbPb)", "f");
+    legFlCh->AddEntry(gChF[1], "PbPb", "p");
 
-    legFlCh->Draw();
+    TLegend * legFlCh1 = new TLegend(0.35, 0.75, 0.75, 0.92);
+    legFlCh1->SetFillColor(kWhite);
+    legFlCh1->SetTextFont(42);
+    legFlCh1->SetTextSize(0.05);
+    legFlCh1->SetBorderSize(0);
+    legFlCh1->AddEntry(gChAmptF[1], "AMPT-IC (PbPb)", "f");
+    legFlCh1->AddEntry(gChTrentoF[1], "Trento-IC (PbPb)", "f");
+
+    legFlCh1->Draw();
 
     cPbPbV2->cd(3);
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
-    latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
+    //latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
+    latexS.DrawLatexNDC(0.20, 0.99, "pPb 8.16 TeV PbPb 5.02 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    legFlCh->Draw();
 
     grPACh_fluct_sys->Draw("[]2");
     grPACh_fluct->Draw("psame");
@@ -726,12 +734,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     } else {
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
-    latexS.DrawLatexNDC(0.16, 0.80, "#bf{K_{S}^{0}}");
+    latexS.DrawLatexNDC(0.16, 0.82, "#bf{K_{S}^{0}}");
     latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
 
     cPbPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
-    TLegend * legFlKs = new TLegend(0.35, 0.55, 0.75, 0.92);
+    TLegend * legFlKs = new TLegend(0.35, 0.75, 0.75, 0.92);
     legFlKs->SetFillColor(kWhite);
     legFlKs->SetTextFont(42);
     legFlKs->SetTextSize(0.05);
@@ -739,17 +747,26 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
     legFlKs->AddEntry(gKsF[1], "PbPb", "p");
     legFlKs->AddEntry(grPAKs_fluct, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
-    legFlKs->AddEntry(gKsAmptF[1], "AMPT-IC (PbPb)", "f");
-    legFlKs->AddEntry(gKsTrentoF[1], "Trento-IC (PbPb)", "f");
 
-    legFlKs->Draw();
+    TLegend * legFlKs1 = new TLegend(0.35, 0.75, 0.75, 0.92);
+    legFlKs1->SetFillColor(kWhite);
+    legFlKs1->SetTextFont(42);
+    legFlKs1->SetTextSize(0.05);
+    legFlKs1->SetBorderSize(0);
+
+    legFlKs1->AddEntry(gKsAmptF[1], "AMPT-IC (PbPb)", "f");
+    legFlKs1->AddEntry(gKsTrentoF[1], "Trento-IC (PbPb)", "f");
+
+    legFlKs1->Draw();
 
     cPbPbV2->cd(3);
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
-    latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
+    //latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
+    latexS.DrawLatexNDC(0.20, 0.99, "pPb 8.16 TeV PbPb 5.02 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    legFlKs->Draw();
 
     grPAKs_fluct_sys->Draw("[]2");
     grPAKs_fluct->Draw("psame");
@@ -779,25 +796,33 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
     cPbPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
-    TLegend * legFlLm = new TLegend(0.35, 0.55, 0.75, 0.92);
+    TLegend * legFlLm = new TLegend(0.35, 0.75, 0.75, 0.92);
     legFlLm->SetFillColor(kWhite);
     legFlLm->SetTextFont(42);
     legFlLm->SetTextSize(0.05);
     legFlLm->SetBorderSize(0);
 
-    legFlLm->AddEntry(gLmF[1], "PbPb", "p");
     legFlLm->AddEntry(grPALm_fluct, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
-    legFlLm->AddEntry(gLmAmptF[1], "AMPT-IC (PbPb)", "f");
-    legFlLm->AddEntry(gLmTrentoF[1], "Trento-IC (PbPb)", "f");
+    legFlLm->AddEntry(gLmF[1], "PbPb", "p");
 
-    legFlLm->Draw();
+    TLegend * legFlLm1 = new TLegend(0.35, 0.75, 0.75, 0.92);
+    legFlLm1->SetFillColor(kWhite);
+    legFlLm1->SetTextFont(42);
+    legFlLm1->SetTextSize(0.05);
+    legFlLm1->SetBorderSize(0);
+    legFlLm1->AddEntry(gLmAmptF[1], "AMPT-IC (PbPb)", "f");
+    legFlLm1->AddEntry(gLmTrentoF[1], "Trento-IC (PbPb)", "f");
+
+    legFlLm1->Draw();
 
     cPbPbV2->cd(3);
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
-    latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
+    //latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
+    latexS.DrawLatexNDC(0.20, 0.99, "pPb 8.16 TeV PbPb 5.02 TeV");
     latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    legFlLm->Draw();
 
     grPALm_fluct_sys->Draw("[]2");
     grPALm_fluct->Draw("psame");
@@ -896,7 +921,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     } else {
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
-    latexS.DrawLatexNDC(0.16, 0.80, "#bf{K_{S}^{0}}");
+    latexS.DrawLatexNDC(0.16, 0.82, "#bf{K_{S}^{0}}");
     latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
 
     cPbPbV2->cd(2);
@@ -1134,7 +1159,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     } else {
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
-    latexS.DrawLatexNDC(0.16, 0.80, "#bf{K_{S}^{0}}");
+    latexS.DrawLatexNDC(0.16, 0.82, "#bf{K_{S}^{0}}");
     latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
 
     TLegend * legSubKs = new TLegend(0.55, 0.65, 0.95, 0.92);
@@ -1627,12 +1652,19 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         gKs84RatioSys[c]->SetFillColor(3003);
         gLm84RatioSys[c]->SetFillColor(3001);
 
-        gCh64Ratio[c] = getRatio( vH .grSig_pT[2][2][c], vH .grSig_pT[2][1][c], 3 );
-        gKs64Ratio[c] = getRatio( vKs.grSig_pT[2][2][c], vKs.grSig_pT[2][1][c], 3 );
-        gLm64Ratio[c] = getRatio( vLm.grSig_pT[2][2][c], vLm.grSig_pT[2][1][c], 3 );
-        gCh84Ratio[c] = getRatio( vH .grSig_pT[2][3][c], vH .grSig_pT[2][1][c], 3 );
-        gKs84Ratio[c] = getRatio( vKs.grSig_pT[2][3][c], vKs.grSig_pT[2][1][c], 3 );
-        gLm84Ratio[c] = getRatio( vLm.grSig_pT[2][3][c], vLm.grSig_pT[2][1][c], 3 );
+        gCh64Ratio[c] = getRatio( vH .grSig_pT[2][2][c], vH .grSig_pT[2][1][c], 0 );
+        gKs64Ratio[c] = getRatio( vKs.grSig_pT[2][2][c], vKs.grSig_pT[2][1][c], 0 );
+        gLm64Ratio[c] = getRatio( vLm.grSig_pT[2][2][c], vLm.grSig_pT[2][1][c], 0 );
+        gCh84Ratio[c] = getRatio( vH .grSig_pT[2][3][c], vH .grSig_pT[2][1][c], 0 );
+        gKs84Ratio[c] = getRatio( vKs.grSig_pT[2][3][c], vKs.grSig_pT[2][1][c], 0 );
+        gLm84Ratio[c] = getRatio( vLm.grSig_pT[2][3][c], vLm.grSig_pT[2][1][c], 0 );
+
+//        gCh64Ratio[c] = getRatio( vH .grSig_pT[2][2][c], vH .grSig_pT[2][1][c], 3 );
+//        gKs64Ratio[c] = getRatio( vKs.grSig_pT[2][2][c], vKs.grSig_pT[2][1][c], 3 );
+//        gLm64Ratio[c] = getRatio( vLm.grSig_pT[2][2][c], vLm.grSig_pT[2][1][c], 3 );
+//        gCh84Ratio[c] = getRatio( vH .grSig_pT[2][3][c], vH .grSig_pT[2][1][c], 3 );
+//        gKs84Ratio[c] = getRatio( vKs.grSig_pT[2][3][c], vKs.grSig_pT[2][1][c], 3 );
+//        gLm84Ratio[c] = getRatio( vLm.grSig_pT[2][3][c], vLm.grSig_pT[2][1][c], 3 );
 
         gCh64Ratio[c]->SetMarkerStyle(kOpenSquare);
         gKs64Ratio[c]->SetMarkerStyle(kOpenSquare);
