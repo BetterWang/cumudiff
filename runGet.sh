@@ -316,84 +316,70 @@
 ###### Ks vetoak4Jet20eta20
 ##H HM0 pPb
 #./runGet1.sh 642
-##H HM1 pPb
-#./runGet1.sh 644
-#H HM7 pPb
-./runGet1.sh 656
+#H HM1 pPb
+#./runGet1.sh 750
+##H HM7 pPb
+#./runGet1.sh 656
 ##H HM0 pPb reverse
 #./runGet1.sh 643
-##H HM1 pPb reverse
-#./runGet1.sh 645
-#H HM7 pPb reverse
-./runGet1.sh 657
+#H HM1 pPb reverse
+#./runGet1.sh 751
+##H HM7 pPb reverse
+#./runGet1.sh 657
 #
-###### KsSBPos vetoak4Jet20eta20
+####### KsSB vetoak4Jet20eta20
 ##H HM0 pPb
-#./runGet1.sh 658
-##H HM1 pPb
-#./runGet1.sh 660
+#./runGet1.sh 738
+#H HM1 pPb
+#./runGet1.sh 739
 #H HM7 pPb
-./runGet1.sh 672
+#./runGet1.sh 740
 ##H HM0 pPb reverse
-#./runGet1.sh 659
-##H HM1 pPb reverse
-#./runGet1.sh 661
-#H HM7 pPb reverse
-./runGet1.sh 673
-#
-###### KsSBNeg vetoak4Jet20eta20
-##H HM0 pPb
-#./runGet1.sh 674
-##H HM1 pPb
-#./runGet1.sh 676
-#H HM7 pPb
-./runGet1.sh 688
-##H HM0 pPb reverse
-#./runGet1.sh 675
-##H HM1 pPb reverse
-#./runGet1.sh 677
-#H HM7 pPb reverse
-./runGet1.sh 689
-#
+#./runGet1.sh 741
+#H HM1 pPb reverse
+#./runGet1.sh 742
+##H HM7 pPb reverse
+#./runGet1.sh 743
+##
 ###### Lm vetoak4Jet20eta20
 ##H HM0 pPb
 #./runGet1.sh 690
 ##H HM1 pPb
-#./runGet1.sh 692
-#H HM7 pPb
-./runGet1.sh 704
+#./runGet1.sh 752
+##H HM7 pPb
+#./runGet1.sh 704
 ##H HM0 pPb reverse
 #./runGet1.sh 691
 ##H HM1 pPb reverse
-#./runGet1.sh 693
-#H HM7 pPb reverse
-./runGet1.sh 705
+#./runGet1.sh 753
+##H HM7 pPb reverse
+#./runGet1.sh 705
 #
-###### LmSBPos vetoak4Jet20eta20
+####### LmSB vetoak4Jet20eta20
 ##H HM0 pPb
-#./runGet1.sh 706
+#./runGet1.sh 744
 ##H HM1 pPb
-#./runGet1.sh 708
-#H HM7 pPb
-./runGet1.sh 720
+#./runGet1.sh 745
+##H HM7 pPb
+#./runGet1.sh 746
 ##H HM0 pPb reverse
-#./runGet1.sh 707
+#./runGet1.sh 747
 ##H HM1 pPb reverse
-#./runGet1.sh 709
-#H HM7 pPb reverse
-./runGet1.sh 721
-#
-###### LmSBNeg vetoak4Jet20eta20
-##H HM0 pPb
-#./runGet1.sh 722
-##H HM1 pPb
-#./runGet1.sh 724
+#./runGet1.sh 748
+##H HM7 pPb reverse
+#./runGet1.sh 749
+##
+##### vetoakPu4Jet20eta20 JER
+#H HM0 pPb
+./runGet1.sh 754
+#H HM1 pPb
+./runGet1.sh 756
 #H HM7 pPb
-./runGet1.sh 736
-##H HM0 pPb reverse
-#./runGet1.sh 723
-##H HM1 pPb reverse
-#./runGet1.sh 725
+./runGet1.sh 758
+#H HM0 pPb reverse
+./runGet1.sh 755
+#H HM1 pPb reverse
+./runGet1.sh 757
 #H HM7 pPb reverse
-./runGet1.sh 737
-#
+./runGet1.sh 759
+

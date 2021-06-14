@@ -224,3 +224,43 @@
 #ln -s combinedS_637_639_641.root pPb_H_vetoakPu4Jet21eta20_reverse.root
 #root -l -b -q 'pPb_merge.C("pPb_H_vetoakPu4Jet21eta20.root", "pPb_H_vetoakPu4Jet21eta20_reverse.root", "pPb_H_vetoakPu4Jet21eta20_merged2.root")'
 
+## pPb Ks vetoakPu4Jet20eta20
+#root -l -b -q "combinedS.C(642, 750, 656)"
+##ln -s combinedS_642_750_656.root pPb_Ks_vetoakPu4Jet20eta20.root
+## pPb Ks vetoakPu4Jet20eta20 reverse
+#root -l -b -q "combinedS.C(643, 751, 657)"
+##ln -s combinedS_643_751_657.root pPb_Ks_vetoakPu4Jet20eta20_reverse.root
+#root -l -b -q 'pPb_merge.C("pPb_Ks_vetoakPu4Jet20eta20.root", "pPb_Ks_vetoakPu4Jet20eta20_reverse.root", "pPb_Ks_vetoakPu4Jet20eta20_merged2.root")'
+#
+## pPb KsSB vetoakPu4Jet20eta20
+#root -l -b -q "combinedS.C(738, 739, 740)"
+##ln -s combinedS_738_739_740.root pPb_KsSB_vetoakPu4Jet20eta20.root
+## pPb KsSB vetoakPu4Jet20eta20 reverse
+#root -l -b -q "combinedS.C(741, 742, 743)"
+##ln -s combinedS_741_742_743.root pPb_KsSB_vetoakPu4Jet20eta20_reverse.root
+#root -l -b -q 'pPb_merge.C("pPb_KsSB_vetoakPu4Jet20eta20.root", "pPb_KsSB_vetoakPu4Jet20eta20_reverse.root", "pPb_KsSB_vetoakPu4Jet20eta20_merged2.root")'
+#
+## pPb Lm vetoakPu4Jet20eta20
+#root -l -b -q "combinedS.C(690, 752, 704)"
+##ln -s combinedS_690_752_704.root pPb_Lm_vetoakPu4Jet20eta20.root
+## pPb Lm vetoakPu4Jet20eta20 reverse
+#root -l -b -q "combinedS.C(691, 753, 705)"
+##ln -s combinedS_691_753_705.root pPb_Lm_vetoakPu4Jet20eta20_reverse.root
+#root -l -b -q 'pPb_merge.C("pPb_Lm_vetoakPu4Jet20eta20.root", "pPb_Lm_vetoakPu4Jet20eta20_reverse.root", "pPb_Lm_vetoakPu4Jet20eta20_merged2.root")'
+#
+## pPb LmSB vetoakPu4Jet20eta20
+#root -l -b -q "combinedS.C(744, 745, 746)"
+##ln -s combinedS_744_745_746.root pPb_LmSB_vetoakPu4Jet20eta20.root
+## pPb LmSB vetoakPu4Jet20eta20 reverse
+#root -l -b -q "combinedS.C(747, 748, 749)"
+##ln -s combinedS_747_748_749.root pPb_LmSB_vetoakPu4Jet20eta20_reverse.root
+#root -l -b -q 'pPb_merge.C("pPb_LmSB_vetoakPu4Jet20eta20.root", "pPb_LmSB_vetoakPu4Jet20eta20_reverse.root", "pPb_LmSB_vetoakPu4Jet20eta20_merged2.root")'
+#
+# pPb H vetoakPu4Jet20eta20 JER
+root -l -b -q "combinedS.C(754, 756, 758)"
+#ln -s combinedS_754_756_758.root pPb_H_vetoakPu4Jet20eta20_JER.root
+# pPb H vetoakPu4Jet20eta20 JER reverse
+root -l -b -q "combinedS.C(755, 757, 759)"
+#ln -s combinedS_755_757_759.root pPb_H_vetoakPu4Jet20eta20_JER_reverse.root
+root -l -b -q 'pPb_merge.C("pPb_H_vetoakPu4Jet20eta20_JER.root", "pPb_H_vetoakPu4Jet20eta20_JER_reverse.root", "pPb_H_vetoakPu4Jet20eta20_JER_merged2.root")'
+

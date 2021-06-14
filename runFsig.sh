@@ -49,4 +49,9 @@
 #root -l -b -q 'vnFsig.C("pPb_H_vetoakPu3Jet20eta20_merged2.root", "dummy.root", "pPb_H_vetoakPu3Jet20eta20_merged2_corrected.root")'
 #root -l -b -q 'vnFsig.C("pPb_H_vetoak4Jet20eta20_merged2.root", "dummy.root", "pPb_H_vetoak4Jet20eta20_merged2_corrected.root")'
 
-root -l -b -q 'vnFsig.C("pPb_H_vetoakPu4Jet21eta20_merged2.root", "dummy.root", "pPb_H_vetoakPu4Jet21eta20_merged2_corrected.root")'
+#root -l -b -q 'vnFsig.C("pPb_H_vetoakPu4Jet21eta20_merged2.root", "dummy.root", "pPb_H_vetoakPu4Jet21eta20_merged2_corrected.root")'
+
+#root -l -b -q 'vnFsig.C("pPb_Ks_vetoakPu4Jet20eta20_merged2.root", "pPb_KsSB_vetoakPu4Jet20eta20_merged2.root", "pPb_Ks_vetoakPu4Jet20eta20_merged2_corrected.root")'
+#root -l -b -q 'vnFsig.C("pPb_Lm_vetoakPu4Jet20eta20_merged2.root", "pPb_LmSB_vetoakPu4Jet20eta20_merged2.root", "pPb_Lm_vetoakPu4Jet20eta20_merged2_corrected.root")'
+
+root -l -b -q 'vnFsig.C("pPb_H_vetoakPu4Jet20eta20_JER_merged2.root", "dummy.root", "pPb_H_vetoakPu4Jet20eta20_JER_merged2_corrected.root")'
