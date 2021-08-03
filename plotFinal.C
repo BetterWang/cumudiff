@@ -1,9 +1,11 @@
 #include "../../style.h"
+#include "../../tdrstyle.C"
 #include "theory.h"
 #include "PbPb_header.h"
 
 void plotFinal(bool bPre = false, bool bAmpt = true)
 {
+    setTDRStyle();
     TFile * fH  = new TFile("PbPb2018_H_corrected.root");
     TFile * fKs = new TFile("PbPb2018_Ks_corrected.root");
     TFile * fLm = new TFile("PbPb2018_Lm_corrected.root");
@@ -25,7 +27,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
     theory();
 
-    string centBins[] = {"0-5\%", "5-10\%", "10-30\%", "30-50\%", "50-80\%"};
+    string centBins[] = {"Cent. 0-5\%", "Cent. 5-10\%", "Cent. 10-30\%", "Cent. 30-50\%", "Cent. 50-80\%"};
 
     TLatex latexS;
     latexS.SetTextFont(43);
@@ -44,7 +46,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TH2D * hframe_pt = new TH2D("hframe_pt", "hframe_pt", 1, 0.01, 8.5, 1, 0, 0.36);
     InitHist(hframe_pt, "p_{T} (GeV)", "v_{2}");
     hframe_pt->GetYaxis()->SetTitleOffset(1.0);
-    hframe_pt->GetXaxis()->SetTitleOffset(0.90);
+    hframe_pt->GetXaxis()->SetTitleOffset(1.10);
+
+    TH2D * hframe_ptsub = new TH2D("hframe_ptsub", "hframe_ptsub", 1, 0.01, 8.5, 1, -0.04, 0.36);
+    InitHist(hframe_ptsub, "p_{T} (GeV)", "v_{2}");
+    hframe_ptsub->GetYaxis()->SetTitleOffset(1.0);
+    hframe_ptsub->GetXaxis()->SetTitleOffset(1.10);
 
     // Ch v2
     for ( int c = 1; c < 5; c++ ) {
@@ -136,10 +143,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     } else {
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
-    latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charge hadron}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charged hadron}");
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
-    TLegend * legCh = new TLegend(0.60, 0.55, 0.90, 0.90);
+    TLegend * legCh = new TLegend(0.65, 0.55, 0.95, 0.90);
     legCh->SetFillColor(kWhite);
     legCh->SetTextFont(42);
     legCh->SetTextSize(0.05);
@@ -153,9 +160,9 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legCh->Draw();
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
-    TLegend * legChTh = new TLegend(0.55, 0.72, 0.90, 0.92);
+    TLegend * legChTh = new TLegend(0.55, 0.70, 0.90, 0.90);
     legChTh->SetFillColor(kWhite);
     legChTh->SetTextFont(42);
     legChTh->SetTextSize(0.05);
@@ -170,10 +177,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legChTh->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
     if ( bAmpt ) {
         cPbPbV2->SaveAs("PbPbV2_Ch.pdf");
     } else {
@@ -268,9 +275,9 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.82, "#bf{K_{S}^{0}}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
-    TLegend * legKs = new TLegend(0.60, 0.55, 0.90, 0.90);
+    TLegend * legKs = new TLegend(0.65, 0.55, 0.95, 0.90);
     legKs->SetFillColor(kWhite);
     legKs->SetTextFont(42);
     legKs->SetTextSize(0.05);
@@ -284,9 +291,9 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legKs->Draw();
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
-    TLegend * legKsTh = new TLegend(0.55, 0.72, 0.90, 0.92);
+    TLegend * legKsTh = new TLegend(0.55, 0.70, 0.90, 0.90);
     legKsTh->SetFillColor(kWhite);
     legKsTh->SetTextFont(42);
     legKsTh->SetTextSize(0.05);
@@ -303,10 +310,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legKsTh->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
     if ( bAmpt ) {
         cPbPbV2->SaveAs("PbPbV2_Ks.pdf");
@@ -403,9 +410,9 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.80, "#bf{#Lambda}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
-    TLegend * legLm = new TLegend(0.60, 0.55, 0.90, 0.90);
+    TLegend * legLm = new TLegend(0.65, 0.55, 0.95, 0.90);
     legLm->SetFillColor(kWhite);
     legLm->SetTextFont(42);
     legLm->SetTextSize(0.05);
@@ -419,10 +426,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legLm->Draw();
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
 //    TLegend * legLmTh = new TLegend(0.40, 0.15, 0.75, 0.47);
-    TLegend * legLmTh = new TLegend(0.55, 0.72, 0.90, 0.92);
+    TLegend * legLmTh = new TLegend(0.55, 0.70, 0.90, 0.90);
     legLmTh->SetFillColor(kWhite);
     legLmTh->SetTextFont(42);
     legLmTh->SetTextSize(0.05);
@@ -439,10 +446,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legLmTh->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
     if ( bAmpt ) {
         cPbPbV2->SaveAs("PbPbV2_Lm.pdf");
@@ -454,7 +461,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TH2D * hframe_fluct = new TH2D("hframe_fluct", "hframe_fluct", 1, 0.01, 8.5, 1, 0.01, 1.3);
     InitHist(hframe_fluct, "p_{T} (GeV)", "#sigma / #LT v_{2} #GT");
     hframe_fluct->GetYaxis()->SetTitleOffset(1.0);
-    hframe_fluct->GetXaxis()->SetTitleOffset(0.90);
+    hframe_fluct->GetXaxis()->SetTitleOffset(1.10);
 
     TGraphErrors * gChF[5] = {};
     TGraphErrors * gKsF[5] = {};
@@ -613,7 +620,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     } else {
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     TLegend * legFl = new TLegend(0.35, 0.65, 0.75, 0.92);
     legFl->SetFillColor(kWhite);
@@ -621,20 +628,20 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legFl->SetTextSize(0.05);
     legFl->SetBorderSize(0);
 
-    legFl->AddEntry(gChF[1], "charge hadron", "p");
+    legFl->AddEntry(gChF[1], "Charged hadron", "p");
     legFl->AddEntry(gKsF[1], "K_{S}^{0}", "p");
     legFl->AddEntry(gLmF[1], "#Lambda", "p");
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
     legFl->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
     TGraphErrors * grPACh_fluct = (TGraphErrors*) fpPb->Get("grCh_Fluct_8");
     TGraphErrors * grPAKs_fluct = (TGraphErrors*) fpPb->Get("grKs_Fluct_8");
@@ -678,21 +685,21 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     } else {
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
-    latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charge hadron}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charged hadron}");
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
-    TLegend * legFlCh = new TLegend(0.35, 0.75, 0.75, 0.92);
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
+    TLegend * legFlCh = new TLegend(0.42, 0.75, 0.93, 0.92);
     legFlCh->SetFillColor(kWhite);
     legFlCh->SetTextFont(42);
     legFlCh->SetTextSize(0.05);
     legFlCh->SetBorderSize(0);
 
-    legFlCh->AddEntry(grPACh_fluct, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
+    legFlCh->AddEntry(grPACh_fluct, "pPb 185#leqN_{trk}^{offline}<250", "p");
     legFlCh->AddEntry(gChF[1], "PbPb", "p");
 
-    TLegend * legFlCh1 = new TLegend(0.35, 0.75, 0.75, 0.92);
+    TLegend * legFlCh1 = new TLegend(0.48, 0.75, 0.90, 0.92);
     legFlCh1->SetFillColor(kWhite);
     legFlCh1->SetTextFont(42);
     legFlCh1->SetTextSize(0.05);
@@ -703,12 +710,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legFlCh1->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     //latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
     latexS.DrawLatexNDC(0.20, 0.99, "pPb 8.16 TeV PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
     legFlCh->Draw();
 
     grPACh_fluct_sys->Draw("[]2");
@@ -735,20 +742,20 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.82, "#bf{K_{S}^{0}}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
-    TLegend * legFlKs = new TLegend(0.35, 0.75, 0.75, 0.92);
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
+    TLegend * legFlKs = new TLegend(0.42, 0.75, 0.93, 0.92);
     legFlKs->SetFillColor(kWhite);
     legFlKs->SetTextFont(42);
     legFlKs->SetTextSize(0.05);
     legFlKs->SetBorderSize(0);
 
+    legFlKs->AddEntry(grPAKs_fluct, "pPb 185#leqN_{trk}^{offline}<250", "p");
     legFlKs->AddEntry(gKsF[1], "PbPb", "p");
-    legFlKs->AddEntry(grPAKs_fluct, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
 
-    TLegend * legFlKs1 = new TLegend(0.35, 0.75, 0.75, 0.92);
+    TLegend * legFlKs1 = new TLegend(0.48, 0.75, 0.90, 0.92);
     legFlKs1->SetFillColor(kWhite);
     legFlKs1->SetTextFont(42);
     legFlKs1->SetTextSize(0.05);
@@ -760,12 +767,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legFlKs1->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     //latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
     latexS.DrawLatexNDC(0.20, 0.99, "pPb 8.16 TeV PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
     legFlKs->Draw();
 
     grPAKs_fluct_sys->Draw("[]2");
@@ -792,20 +799,20 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.80, "#bf{#Lambda}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
-    TLegend * legFlLm = new TLegend(0.35, 0.75, 0.75, 0.92);
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
+    TLegend * legFlLm = new TLegend(0.42, 0.75, 0.93, 0.92);
     legFlLm->SetFillColor(kWhite);
     legFlLm->SetTextFont(42);
     legFlLm->SetTextSize(0.05);
     legFlLm->SetBorderSize(0);
 
-    legFlLm->AddEntry(grPALm_fluct, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
+    legFlLm->AddEntry(grPALm_fluct, "pPb 185#leqN_{trk}^{offline}<250", "p");
     legFlLm->AddEntry(gLmF[1], "PbPb", "p");
 
-    TLegend * legFlLm1 = new TLegend(0.35, 0.75, 0.75, 0.92);
+    TLegend * legFlLm1 = new TLegend(0.48, 0.75, 0.90, 0.92);
     legFlLm1->SetFillColor(kWhite);
     legFlLm1->SetTextFont(42);
     legFlLm1->SetTextSize(0.05);
@@ -816,12 +823,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legFlLm1->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     //latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
     latexS.DrawLatexNDC(0.20, 0.99, "pPb 8.16 TeV PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
     legFlLm->Draw();
 
     grPALm_fluct_sys->Draw("[]2");
@@ -851,7 +858,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     InitHist(hframe_ratio24, "p_{T} (GeV)", "v_{2}{4}/v_{2}{SP}");
     hframe_ratio24->GetYaxis()->SetTitleOffset(0.90);
     hframe_ratio24->GetYaxis()->CenterTitle(false);
-    hframe_ratio24->GetXaxis()->SetTitleOffset(0.90);
+    hframe_ratio24->GetXaxis()->SetTitleOffset(1.10);
 
     for ( int c = 1; c < 5; c++ ) {
         cPbPbV2->cd(c);
@@ -876,11 +883,11 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     } else {
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
-    latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charge hadron}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charged hadron}");
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
     TLegend * legCh42 = new TLegend(0.35, 0.75, 0.75, 0.92);
     legCh42->SetFillColor(kWhite);
@@ -888,16 +895,16 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legCh42->SetTextSize(0.05);
     legCh42->SetBorderSize(0);
     legCh42->AddEntry(gCh42[1], "PbPb", "p");
-    legCh42->AddEntry(grPACh42, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
+    legCh42->AddEntry(grPACh42, "pPb 185#leqN_{trk}^{offline}<250", "p");
 
     legCh42->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
 
     grPACh42_sys->Draw("[]2");
@@ -922,10 +929,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.82, "#bf{K_{S}^{0}}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
     TLegend * legKs42 = new TLegend(0.35, 0.75, 0.75, 0.92);
     legKs42->SetFillColor(kWhite);
@@ -933,16 +940,16 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legKs42->SetTextSize(0.05);
     legKs42->SetBorderSize(0);
     legKs42->AddEntry(gKs42[1], "PbPb", "p");
-    legKs42->AddEntry(grPAKs42, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
+    legKs42->AddEntry(grPAKs42, "pPb 185#leqN_{trk}^{offline}<250", "p");
 
     legKs42->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
 
     grPAKs42_sys->Draw("[]2");
@@ -967,10 +974,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.80, "#bf{#Lambda}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
     TLegend * legLm42 = new TLegend(0.35, 0.75, 0.75, 0.92);
     legLm42->SetFillColor(kWhite);
@@ -978,16 +985,16 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legLm42->SetTextSize(0.05);
     legLm42->SetBorderSize(0);
     legLm42->AddEntry(gLm42[1], "PbPb", "p");
-    legLm42->AddEntry(grPALm42, "pPb 185 #leq N_{trk}^{offline} < 250", "p");
+    legLm42->AddEntry(grPALm42, "pPb 185#leqN_{trk}^{offline}<250", "p");
 
     legLm42->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
     grPALm42_sys->Draw("[]2");
     grPALm42->Draw("psame");
@@ -1001,7 +1008,8 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     // sub-event ch
     for ( int c = 1; c < 5; c++ ) {
         cPbPbV2->cd(c);
-        hframe_pt->Draw();
+        hframe_ptsub->Draw();
+        line0.Draw();
 
         ch_v2_PbPb[c]->vn_MergedEta->SetMarkerStyle(kFullCircle);
         ch_v2_PbPb[c]->vn_MergedEta->SetMarkerColor(kBlue);
@@ -1043,10 +1051,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     } else {
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
-    latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charge hadron}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charged hadron}");
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
-    TLegend * legSubCh = new TLegend(0.55, 0.65, 0.95, 0.92);
+    TLegend * legSubCh = new TLegend(0.65, 0.67, 0.95, 0.92);
     legSubCh->SetFillColor(kWhite);
     legSubCh->SetTextFont(42);
     legSubCh->SetTextSize(0.05);
@@ -1060,15 +1068,15 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
     legSubCh->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.20, 0.99, "pPb 8.16 TeV PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
     TGraphErrors * grSysPACh_SubEvt = (TGraphErrors*) fpPb->Get("grSysCh_v24sub_8");
     TGraphErrors * grSysPAKs_SubEvt = (TGraphErrors*) fpPb->Get("grSysKs_v24sub_8");
@@ -1100,12 +1108,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     grPACh_v24   ->Draw("psame");
     grPACh_SubEvt->Draw("psame");
 
-    TLegend * legPASubCh = new TLegend(0.35, 0.65, 0.95, 0.92);
+    TLegend * legPASubCh = new TLegend(0.48, 0.67, 0.95, 0.92);
     legPASubCh->SetFillColor(kWhite);
     legPASubCh->SetTextFont(42);
     legPASubCh->SetTextSize(0.05);
     legPASubCh->SetBorderSize(0);
-    legPASubCh->SetHeader("pPb 185 #leq N_{trk}^{offline} < 250");
+    legPASubCh->SetHeader("pPb 185#leqN_{trk}^{offline}<250");
 
     legPASubCh->AddEntry(grPACh_v24,    "v_{2}{4}", "p");
     legPASubCh->AddEntry(grPACh_SubEvt, "v_{2}{4,Sub}", "p");
@@ -1117,7 +1125,8 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     // sub-event Ks
     for ( int c = 1; c < 5; c++ ) {
         cPbPbV2->cd(c);
-        hframe_pt->Draw();
+        hframe_ptsub->Draw();
+        line0.Draw();
 
         Ks_v2_PbPb_Sig[c]->vn_MergedEta->SetMarkerStyle(kFullCircle);
         Ks_v2_PbPb_Sig[c]->vn_MergedEta->SetMarkerColor(kBlue);
@@ -1160,9 +1169,9 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.82, "#bf{K_{S}^{0}}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
-    TLegend * legSubKs = new TLegend(0.55, 0.65, 0.95, 0.92);
+    TLegend * legSubKs = new TLegend(0.65, 0.67, 0.95, 0.92);
     legSubKs->SetFillColor(kWhite);
     legSubKs->SetTextFont(42);
     legSubKs->SetTextSize(0.05);
@@ -1178,15 +1187,15 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
     legSubKs->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.20, 0.99, "pPb 8.16 TeV PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
     grSysPAKs_v24   ->SetFillColor(3003);
     grSysPAKs_SubEvt->SetFillColor(3001);
@@ -1197,12 +1206,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     grPAKs_v24   ->Draw("psame");
     grPAKs_SubEvt->Draw("psame");
 
-    TLegend * legPASubKs = new TLegend(0.35, 0.65, 0.95, 0.92);
+    TLegend * legPASubKs = new TLegend(0.48, 0.67, 0.95, 0.92);
     legPASubKs->SetFillColor(kWhite);
     legPASubKs->SetTextFont(42);
     legPASubKs->SetTextSize(0.05);
     legPASubKs->SetBorderSize(0);
-    legPASubKs->SetHeader("pPb 185 #leq N_{trk}^{offline} < 250");
+    legPASubKs->SetHeader("pPb 185#leqN_{trk}^{offline}<250");
 
     legPASubKs->AddEntry(grPAKs_v24,    "v_{2}{4}", "p");
     legPASubKs->AddEntry(grPAKs_SubEvt, "v_{2}{4,Sub}", "p");
@@ -1214,7 +1223,8 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     // sub-event Lm
     for ( int c = 1; c < 5; c++ ) {
         cPbPbV2->cd(c);
-        hframe_pt->Draw();
+        hframe_ptsub->Draw();
+        line0.Draw();
 
         Lm_v2_PbPb_Sig[c]->vn_MergedEta->SetMarkerStyle(kFullCircle);
         Lm_v2_PbPb_Sig[c]->vn_MergedEta->SetMarkerColor(kBlue);
@@ -1257,9 +1267,9 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.80, "#bf{#Lambda}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
-    TLegend * legSubLm = new TLegend(0.55, 0.65, 0.95, 0.92);
+    TLegend * legSubLm = new TLegend(0.65, 0.67, 0.95, 0.92);
     legSubLm->SetFillColor(kWhite);
     legSubLm->SetTextFont(42);
     legSubLm->SetTextSize(0.05);
@@ -1268,20 +1278,20 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
 //    legSubLm->AddEntry(Lm_v2_PbPb_Sig[1]->vn_MergedEta,        "v_{2}{SP}", "p");
 //    legSubLm->AddEntry(Lm_v2_PbPb_Sig[1]->vn_MergedEta_SubEvt, "v_{2}{SP,Sub}", "p");
-    legSubLm->AddEntry(vLm.grSig_pT[2][1][1],    "PbPb v_{2}{4}", "p");
-    legSubLm->AddEntry(vLm.grSig_V2sub4merge[1], "PbPb v_{2}{4,Sub}", "p");
+    legSubLm->AddEntry(vLm.grSig_pT[2][1][1],    "v_{2}{4}", "p");
+    legSubLm->AddEntry(vLm.grSig_V2sub4merge[1], "v_{2}{4,Sub}", "p");
 
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
     legSubLm->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.20, 0.99, "pPb 8.16 TeV PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
     grSysPALm_v24   ->SetFillColor(3003);
     grSysPALm_SubEvt->SetFillColor(3001);
@@ -1292,12 +1302,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     grPALm_v24   ->Draw("psame");
     grPALm_SubEvt->Draw("psame");
 
-    TLegend * legPASubLm = new TLegend(0.35, 0.65, 0.95, 0.92);
+    TLegend * legPASubLm = new TLegend(0.48, 0.67, 0.95, 0.92);
     legPASubLm->SetFillColor(kWhite);
     legPASubLm->SetTextFont(42);
     legPASubLm->SetTextSize(0.05);
     legPASubLm->SetBorderSize(0);
-    legPASubLm->SetHeader("pPb 185 #leq N_{trk}^{offline} < 250");
+    legPASubLm->SetHeader("pPb 185#leqN_{trk}^{offline}< 250");
 
     legPASubLm->AddEntry(grPALm_v24,    "v_{2}{4}", "p");
     legPASubLm->AddEntry(grPALm_SubEvt, "v_{2}{4,Sub}", "p");
@@ -1310,7 +1320,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TH2D * hframe_ratio = new TH2D("hframe_ratio", "hframe_ratio", 1, 0.01, 8.5, 1, 0.2, 1.75);
     InitHist(hframe_ratio, "p_{T} (GeV)", "Ratio");
     hframe_ratio->GetYaxis()->SetTitleOffset(1.0);
-    hframe_ratio->GetXaxis()->SetTitleOffset(0.90);
+    hframe_ratio->GetXaxis()->SetTitleOffset(1.10);
 
     TGraphErrors* gChRatioCu[5] = {};
     TGraphErrors* gKsRatioCu[5] = {};
@@ -1439,7 +1449,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.80, "v_{2}{SP,Sub}/v_{2}{SP}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     TLegend * legSP_R = new TLegend(0.10, 0.60, 0.40, 0.85);
     legSP_R->SetFillColor(kWhite);
@@ -1447,20 +1457,20 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     legSP_R->SetTextSize(0.05);
     legSP_R->SetBorderSize(0);
 
-    legSP_R->AddEntry(gChRatioSP[1], "charge hadron", "p");
+    legSP_R->AddEntry(gChRatioSP[1], "Charged hadron", "p");
     legSP_R->AddEntry(gKsRatioSP[1], "K_{S}^{0}", "p");
     legSP_R->AddEntry(gLmRatioSP[1], "#Lambda", "p");
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
     legSP_R->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
 //    cPbPbV2  ->SaveAs("PbPbV2_SubevtSP_Ratio.pdf");
 
@@ -1472,7 +1482,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.80, "v_{2}{4,Sub}/v_{2}{4}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     gChRatioCuSys[1]->Draw("[]2");
     gKsRatioCuSys[1]->Draw("[]2");
@@ -1482,18 +1492,18 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     gKsRatioCu[1]->Draw("psame");
     gLmRatioCu[1]->Draw("psame");
 
-    TLegend * legCu_R = new TLegend(0.50, 0.68, 0.98, 0.92);
+    TLegend * legCu_R = new TLegend(0.50, 0.66, 0.98, 0.90);
     legCu_R->SetFillColor(kWhite);
     legCu_R->SetTextFont(42);
     legCu_R->SetTextSize(0.05);
     legCu_R->SetBorderSize(0);
 
-    legCu_R->AddEntry(gChRatioCu[1], "charge hadron", "p");
+    legCu_R->AddEntry(gChRatioCu[1], "Charged hadron", "p");
     legCu_R->AddEntry(gKsRatioCu[1], "K_{S}^{0}", "p");
     legCu_R->AddEntry(gLmRatioCu[1], "#Lambda", "p");
 
     cPbPbV2_1->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
     gChRatioCuSys[2]->Draw("[]2");
     gKsRatioCuSys[2]->Draw("[]2");
@@ -1504,7 +1514,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     gLmRatioCu[2]->Draw("psame");
 
     cPbPbV2_1->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     gChRatioCuSys[3]->Draw("[]2");
     gKsRatioCuSys[3]->Draw("[]2");
@@ -1516,7 +1526,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
 
     cPbPbV2_1->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
     legCu_R->Draw();
 
@@ -1534,7 +1544,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TH2D * hframe_pt_delta = new TH2D("hframe_pt_delta", "hframe_pt_delta", 1, 0.01, 8.5, 1, -0.08, 0.12);
     InitHist(hframe_pt_delta, "p_{T} (GeV)", "#Deltav_{2}");
     hframe_pt_delta->GetYaxis()->SetTitleOffset(1.0);
-    hframe_pt_delta->GetXaxis()->SetTitleOffset(0.90);
+    hframe_pt_delta->GetXaxis()->SetTitleOffset(1.10);
 
     cPbPbV2_1->cd(1);
     hframe_pt_delta->Draw();
@@ -1545,7 +1555,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.80, "v_{2}{4,Sub} - v_{2}{4}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     gChDeltaCuSys[1]->Draw("[]2");
     gKsDeltaCuSys[1]->Draw("[]2");
@@ -1555,20 +1565,20 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     gKsDeltaCu[1]->Draw("psame");
     gLmDeltaCu[1]->Draw("psame");
 
-    TLegend * legCu_D = new TLegend(0.50, 0.68, 0.98, 0.92);
+    TLegend * legCu_D = new TLegend(0.50, 0.66, 0.98, 0.90);
     legCu_D->SetFillColor(kWhite);
     legCu_D->SetTextFont(42);
     legCu_D->SetTextSize(0.05);
     legCu_D->SetBorderSize(0);
 
-    legCu_D->AddEntry(gChDeltaCu[1], "charge hadron", "p");
+    legCu_D->AddEntry(gChDeltaCu[1], "Charged hadron", "p");
     legCu_D->AddEntry(gKsDeltaCu[1], "K_{S}^{0}", "p");
     legCu_D->AddEntry(gLmDeltaCu[1], "#Lambda", "p");
 
     cPbPbV2_1->cd(2);
     hframe_pt_delta->Draw();
     line0.Draw();
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
     gChDeltaCuSys[2]->Draw("[]2");
     gKsDeltaCuSys[2]->Draw("[]2");
@@ -1581,7 +1591,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     cPbPbV2_1->cd(3);
     hframe_pt_delta->Draw();
     line0.Draw();
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     gChDeltaCuSys[3]->Draw("[]2");
     gKsDeltaCuSys[3]->Draw("[]2");
@@ -1595,7 +1605,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     hframe_pt_delta->Draw();
     line0.Draw();
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
 
     legCu_D->Draw();
 
@@ -1631,7 +1641,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TH2D * hframe_ratio1 = new TH2D("hframe_ratio1", "hframe_ratio1", 1, 0.01, 8.5, 1, 0.68, 1.42);
     InitHist(hframe_ratio1, "p_{T} (GeV)", "Ratio");
     hframe_ratio1->GetYaxis()->SetTitleOffset(1.0);
-    hframe_ratio1->GetXaxis()->SetTitleOffset(0.90);
+    hframe_ratio1->GetXaxis()->SetTitleOffset(1.10);
 
     for ( int c = 1; c < 5; c++ ) {
         cPbPbV2->cd(c);
@@ -1755,28 +1765,28 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.80, "v_{2}{6}/v_{2}{4}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     cPbPbV2->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
-    TLegend * leg64 = new TLegend(0.35, 0.66, 0.75, 0.92);
+    TLegend * leg64 = new TLegend(0.50, 0.66, 0.98, 0.90);
     leg64->SetFillColor(kWhite);
     leg64->SetTextFont(42);
     leg64->SetTextSize(0.05);
     leg64->SetBorderSize(0);
 
-    leg64->AddEntry(gCh64Ratio[1], "charged hadron", "p");
+    leg64->AddEntry(gCh64Ratio[1], "Charged hadron", "p");
     leg64->AddEntry(gKs64Ratio[1], "K_{S}^{0}", "p");
     leg64->AddEntry(gLm64Ratio[1], "#Lambda", "p");
-    leg64->Draw();
 
     cPbPbV2->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
+    leg64->Draw();
 
     auto t = (TGraphErrors*) fpPb->Get("grLm_v24_8");
     DropPoints(t, 1);
@@ -1823,28 +1833,28 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
         latexS.DrawLatexNDC(0.12, 0.99, "#bf{CMS}");
     }
     latexS.DrawLatexNDC(0.16, 0.80, "v_{2}{8}/v_{2}{4}");
-    latexS.DrawLatexNDC(0.16, 0.90, (centBins[1]).c_str());
+    latexS.DrawLatexNDC(0.16, 0.88, (centBins[1]).c_str());
 
     cPbPbV2_1->cd(2);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[2]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
-    TLegend * leg86 = new TLegend(0.35, 0.66, 0.75, 0.92);
+    TLegend * leg86 = new TLegend(0.50, 0.66, 0.98, 0.90);
     leg86->SetFillColor(kWhite);
     leg86->SetTextFont(42);
     leg86->SetTextSize(0.05);
     leg86->SetBorderSize(0);
 
-    leg86->AddEntry(gCh64Ratio[1], "charged hadron", "p");
+    leg86->AddEntry(gCh64Ratio[1], "Charged hadron", "p");
     leg86->AddEntry(gKs64Ratio[1], "K_{S}^{0}", "p");
     leg86->AddEntry(gLm64Ratio[1], "#Lambda", "p");
-    leg86->Draw();
 
     cPbPbV2_1->cd(3);
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[3]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[3]).c_str());
 
     cPbPbV2_1->cd(4);
     latexS.DrawLatexNDC(0.55, 0.99, "PbPb 5.02 TeV");
-    latexS.DrawLatexNDC(0.08, 0.90, (centBins[4]).c_str());
+    latexS.DrawLatexNDC(0.05, 0.88, (centBins[4]).c_str());
+    leg86->Draw();
 
     cPbPbV2_1->SaveAs("PbPbV2_V84_ratio.pdf");
 

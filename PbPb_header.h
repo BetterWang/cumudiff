@@ -339,7 +339,7 @@ void splitCanv4(TCanvas * c)
     TPad * p1 = new TPad("pad1", "", 0., 0., 0.26, 1.);
     p1->SetLeftMargin(0.12);
     p1->SetRightMargin(0.00);
-    p1->SetBottomMargin(0.12);
+    p1->SetBottomMargin(0.14);
     p1->SetTopMargin(0.07);
     p1->Draw();
     p1->SetNumber(1);
@@ -347,7 +347,7 @@ void splitCanv4(TCanvas * c)
     TPad * p2 = new TPad("pad2", "", 0.26, 0., 0.51, 1.);
     p2->SetLeftMargin(0.00);
     p2->SetRightMargin(0.00);
-    p2->SetBottomMargin(0.12);
+    p2->SetBottomMargin(0.14);
     p2->SetTopMargin(0.07);
     p2->Draw();
     p2->SetNumber(2);
@@ -355,7 +355,7 @@ void splitCanv4(TCanvas * c)
     TPad * p3 = new TPad("pad3", "", 0.51, 0., 0.76, 1.);
     p3->SetLeftMargin(0.00);
     p3->SetRightMargin(0.00);
-    p3->SetBottomMargin(0.12);
+    p3->SetBottomMargin(0.14);
     p3->SetTopMargin(0.07);
     p3->Draw();
     p3->SetNumber(3);
@@ -363,7 +363,7 @@ void splitCanv4(TCanvas * c)
     TPad * p4 = new TPad("pad4", "", 0.76, 0., 1.0, 1.);
     p4->SetLeftMargin(0.00);
     p4->SetRightMargin(0.00);
-    p4->SetBottomMargin(0.12);
+    p4->SetBottomMargin(0.14);
     p4->SetTopMargin(0.07);
     p4->Draw();
     p4->SetNumber(4);
