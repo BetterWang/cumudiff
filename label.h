@@ -966,6 +966,7 @@ char const * fname[] = {
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_Peak_Mid_BDT20_sysMCBias_v1/201222_043742/0000/",         // 963 HIMB1 Lm Peak sysMCBias
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBPos_Mid_BDT20_sysMCBias_v1/201222_043918/0000/",        // 964 HIMB1 Lm SBPos sysMCBias
     "../PbPb2018/HIMinimumBias1/crab_HIMB1_V0Cumu_Lm_SBNeg_Mid_BDT20_sysMCBias_v1/201222_044002/0000/",        // 965 HIMB1 Lm SBNeg sysMCBias
+    "../PbPb2018/HIMinimumBias4/crab_HIMB4_V0Cumu_H_Mid_miniAOD_v3/210818_141741/0000/",        // 966 HIMB4 H
 };
 
 char const * ftxt[] = {
@@ -1935,6 +1936,7 @@ char const * ftxt[] = {
     "txt/HIMB1_Lm_Peak_sysMCBias/",                  // 963
     "txt/HIMB1_Lm_SBPos_sysMCBias/",                 // 964
     "txt/HIMB1_Lm_SBNeg_sysMCBias/",                 // 965
+    "txt/HIMB4_H_miniAOD/",                          // 966
 };
 
 const int Pid_Non	= 0;
@@ -2920,6 +2922,7 @@ auto PID = std::vector<int>{
 	Pid_AA_Lambda,		// 963
 	Pid_AA_Lambda,		// 964
 	Pid_AA_Lambda,		// 965
+	Pid_AA_Hadron,		// 966
 };
 
 #include <TChain.h>
