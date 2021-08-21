@@ -64,7 +64,7 @@ void massPlot2(TString fname = "KS/hMassMid_2_8.root", TString fsave = "test.pdf
 
     leg->AddEntry(hist, "Data", "p");
     leg->AddEntry(func, "Fit", "l");
-    leg->AddEntry(func_bckgnd, "Combinatorial", "l");
+    leg->AddEntry(func_bckgnd, "Background", "l");
 
     leg->Draw();
 

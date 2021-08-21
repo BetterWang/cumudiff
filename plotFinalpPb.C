@@ -690,7 +690,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
 
     // fluctuation
     TH2D * hframe_fluct = new TH2D("hframe_fluct", "hframe_fluct", 1, 0.01, 8.5, 1, 0.05, 1.5);
-    InitHist(hframe_fluct, "p_{T} (GeV)", "#sigma / v_{2}");
+    InitHist(hframe_fluct, "p_{T} (GeV)", "#sigma / #LT v_{2} #GT");
     hframe_fluct->GetYaxis()->SetTitleOffset(1.0);
     hframe_fluct->GetXaxis()->SetTitleOffset(1.10);
 

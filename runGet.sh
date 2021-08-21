@@ -111,3 +111,6 @@
 ## Ks SB sysVz2
 ./runGet1.sh 743
 
+## H miniAOD
+./runGet1.sh 966
+
