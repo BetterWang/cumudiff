@@ -17,6 +17,10 @@ root -l -b -q "combinedS.C(149)"
 #rm PbPb2018_H.root
 #ln -s combinedS_149.root PbPb2018_H.root
 
+# PbPb H
+root -l -b -q "combinedS.C(966)"
+ln -s combinedS_966.root PbPb2018_H_miniAOD.root
+
 
 ### PbPb Lm sysVz1
 root -l -b -q "combinedS.C(710)"

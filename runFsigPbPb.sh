@@ -45,3 +45,5 @@ root -l -b -q 'vnFsigPbPb.C("PbPb2018_Lm_MB4_sysBDT15.root", "PbPb2018_Lm_SB_MB4
 #root -l -b -q 'vnFsigPbPb.C("PbPb2018_Ks.root", "PbPb2018_Ks_SB.root", "PbPb2018_Ks_sysPol3_corrected.root", 0., true)'
 #root -l -b -q 'vnFsigPbPb.C("PbPb2018_Lm.root", "PbPb2018_Lm_SB.root", "PbPb2018_Lm_sysPol3_corrected.root", 0., true)'
 
+### miniAOD
+root -l -b -q 'vnFsigPbPb.C("PbPb2018_H_miniAOD.root", "dummy.root", "PbPb2018_H_miniAOD_corrected.root")'
