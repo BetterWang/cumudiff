@@ -23,14 +23,16 @@ typedef struct SteveGraph
     SteveGraph() {};
 
     SteveGraph(TDirectoryFile * dir) {
-        vn_NegEta_PosEtaEP          = (TGraphErrors*) dir->Get("vn_NegEta_PosEtaEP");
-        vn_NegEta_PosEtaEP_SubEvt   = (TGraphErrors*) dir->Get("vn_NegEta_PosEtaEP_SubEvt");
-        vn_PosEta_NegEtaEP          = (TGraphErrors*) dir->Get("vn_PosEta_NegEtaEP");
-        vn_PosEta_NegEtaEP_SubEvt   = (TGraphErrors*) dir->Get("vn_PosEta_NegEtaEP_SubEvt");
-        vn_Full_PosEtaEP            = (TGraphErrors*) dir->Get("vn_Full_PosEtaEP");
-        vn_Full_PosEtaEP_SubEvt     = (TGraphErrors*) dir->Get("vn_Full_PosEtaEP_SubEvt");
-        vn_Full_NegEtaEP            = (TGraphErrors*) dir->Get("vn_Full_NegEtaEP");
-        vn_Full_NegEtaEP_SubEvt     = (TGraphErrors*) dir->Get("vn_Full_NegEtaEP_SubEvt");
+        if (dir) {
+            vn_NegEta_PosEtaEP          = (TGraphErrors*) dir->Get("vn_NegEta_PosEtaEP");
+            vn_NegEta_PosEtaEP_SubEvt   = (TGraphErrors*) dir->Get("vn_NegEta_PosEtaEP_SubEvt");
+            vn_PosEta_NegEtaEP          = (TGraphErrors*) dir->Get("vn_PosEta_NegEtaEP");
+            vn_PosEta_NegEtaEP_SubEvt   = (TGraphErrors*) dir->Get("vn_PosEta_NegEtaEP_SubEvt");
+            vn_Full_PosEtaEP            = (TGraphErrors*) dir->Get("vn_Full_PosEtaEP");
+            vn_Full_PosEtaEP_SubEvt     = (TGraphErrors*) dir->Get("vn_Full_PosEtaEP_SubEvt");
+            vn_Full_NegEtaEP            = (TGraphErrors*) dir->Get("vn_Full_NegEtaEP");
+            vn_Full_NegEtaEP_SubEvt     = (TGraphErrors*) dir->Get("vn_Full_NegEtaEP_SubEvt");
+        }
     };
 
     SteveGraph(SteveGraph* sg1, SteveGraph* sg2, bool bDirect = true) {
@@ -57,14 +59,14 @@ typedef struct SteveGraph
 
     void Write(TDirectory* dir) {
         dir->cd();
-        vn_NegEta_PosEtaEP          ->Write( "vn_NegEta_PosEtaEP" );
-        vn_NegEta_PosEtaEP_SubEvt   ->Write( "vn_NegEta_PosEtaEP_SubEvt" );
-        vn_PosEta_NegEtaEP          ->Write( "vn_PosEta_NegEtaEP" );
-        vn_PosEta_NegEtaEP_SubEvt   ->Write( "vn_PosEta_NegEtaEP_SubEvt" );
-        vn_Full_PosEtaEP            ->Write( "vn_Full_PosEtaEP" );
-        vn_Full_PosEtaEP_SubEvt     ->Write( "vn_Full_PosEtaEP_SubEvt" );
-        vn_Full_NegEtaEP            ->Write( "vn_Full_NegEtaEP" );
-        vn_Full_NegEtaEP_SubEvt     ->Write( "vn_Full_NegEtaEP_SubEvt" );
+        if ( vn_NegEta_PosEtaEP        ) vn_NegEta_PosEtaEP          ->Write( "vn_NegEta_PosEtaEP" );
+        if ( vn_NegEta_PosEtaEP_SubEvt ) vn_NegEta_PosEtaEP_SubEvt   ->Write( "vn_NegEta_PosEtaEP_SubEvt" );
+        if ( vn_PosEta_NegEtaEP        ) vn_PosEta_NegEtaEP          ->Write( "vn_PosEta_NegEtaEP" );
+        if ( vn_PosEta_NegEtaEP_SubEvt ) vn_PosEta_NegEtaEP_SubEvt   ->Write( "vn_PosEta_NegEtaEP_SubEvt" );
+        if ( vn_Full_PosEtaEP          ) vn_Full_PosEtaEP            ->Write( "vn_Full_PosEtaEP" );
+        if ( vn_Full_PosEtaEP_SubEvt   ) vn_Full_PosEtaEP_SubEvt     ->Write( "vn_Full_PosEtaEP_SubEvt" );
+        if ( vn_Full_NegEtaEP          ) vn_Full_NegEtaEP            ->Write( "vn_Full_NegEtaEP" );
+        if ( vn_Full_NegEtaEP_SubEvt   ) vn_Full_NegEtaEP_SubEvt     ->Write( "vn_Full_NegEtaEP_SubEvt" );
     };
 
     void SetSys(double sysX, double sysY) {
@@ -80,28 +82,29 @@ typedef struct SteveGraph
 
     void DropPoints(int N) {
         for ( int i = 0; i < N; i++ ) {
-            vn_NegEta_PosEtaEP       ->RemovePoint(0);
-            vn_NegEta_PosEtaEP_SubEvt->RemovePoint(0);
-            vn_PosEta_NegEtaEP       ->RemovePoint(0);
-            vn_PosEta_NegEtaEP_SubEvt->RemovePoint(0);
-            vn_Full_PosEtaEP         ->RemovePoint(0);
-            vn_Full_PosEtaEP_SubEvt  ->RemovePoint(0);
-            vn_Full_NegEtaEP         ->RemovePoint(0);
-            vn_Full_NegEtaEP_SubEvt  ->RemovePoint(0);
+            if ( vn_NegEta_PosEtaEP        ) vn_NegEta_PosEtaEP       ->RemovePoint(0);
+            if ( vn_NegEta_PosEtaEP_SubEvt ) vn_NegEta_PosEtaEP_SubEvt->RemovePoint(0);
+            if ( vn_PosEta_NegEtaEP        ) vn_PosEta_NegEtaEP       ->RemovePoint(0);
+            if ( vn_PosEta_NegEtaEP_SubEvt ) vn_PosEta_NegEtaEP_SubEvt->RemovePoint(0);
+            if ( vn_Full_PosEtaEP          ) vn_Full_PosEtaEP         ->RemovePoint(0);
+            if ( vn_Full_PosEtaEP_SubEvt   ) vn_Full_PosEtaEP_SubEvt  ->RemovePoint(0);
+            if ( vn_Full_NegEtaEP          ) vn_Full_NegEtaEP         ->RemovePoint(0);
+            if ( vn_Full_NegEtaEP_SubEvt   ) vn_Full_NegEtaEP_SubEvt  ->RemovePoint(0);
 
-            vn_sys_NegEta_PosEtaEP       ->RemovePoint(0);
-            vn_sys_NegEta_PosEtaEP_SubEvt->RemovePoint(0);
-            vn_sys_PosEta_NegEtaEP       ->RemovePoint(0);
-            vn_sys_PosEta_NegEtaEP_SubEvt->RemovePoint(0);
-            vn_sys_Full_PosEtaEP         ->RemovePoint(0);
-            vn_sys_Full_PosEtaEP_SubEvt  ->RemovePoint(0);
-            vn_sys_Full_NegEtaEP         ->RemovePoint(0);
-            vn_sys_Full_NegEtaEP_SubEvt  ->RemovePoint(0);
+            if ( vn_sys_NegEta_PosEtaEP        ) vn_sys_NegEta_PosEtaEP       ->RemovePoint(0);
+            if ( vn_sys_NegEta_PosEtaEP_SubEvt ) vn_sys_NegEta_PosEtaEP_SubEvt->RemovePoint(0);
+            if ( vn_sys_PosEta_NegEtaEP        ) vn_sys_PosEta_NegEtaEP       ->RemovePoint(0);
+            if ( vn_sys_PosEta_NegEtaEP_SubEvt ) vn_sys_PosEta_NegEtaEP_SubEvt->RemovePoint(0);
+            if ( vn_sys_Full_PosEtaEP          ) vn_sys_Full_PosEtaEP         ->RemovePoint(0);
+            if ( vn_sys_Full_PosEtaEP_SubEvt   ) vn_sys_Full_PosEtaEP_SubEvt  ->RemovePoint(0);
+            if ( vn_sys_Full_NegEtaEP          ) vn_sys_Full_NegEtaEP         ->RemovePoint(0);
+            if ( vn_sys_Full_NegEtaEP_SubEvt   ) vn_sys_Full_NegEtaEP_SubEvt  ->RemovePoint(0);
         }
     }
 
 private:
     TGraphErrors* grSys(TGraphErrors* gr, double sysX, double sysY) {
+        if (!gr) return 0;
         int N = gr->GetN();
         TGraphErrors* ret = new TGraphErrors(N);
         for ( int i = 0; i < N; i++ ) {
@@ -113,6 +116,7 @@ private:
         return ret;
     }
     TGraphErrors* merge(TGraphErrors* gr1, TGraphErrors* gr2){
+        if ( (!gr1) or (!gr2) ) return 0;
         int N = gr1->GetN();
         TGraphErrors * gr = new TGraphErrors(N);
 
@@ -243,9 +247,9 @@ SteveGraph* Lm_pPb_merge[10] = {};
 
 SteveGraph* ch_pPb_merge[10] = {};
 
-void LoadSP()
+void LoadSP(bool bVeto = false)
 {
-    TFile f("v0.root");
+    TFile f(bVeto?"v0_ch_jet_veto_v2.root":"v0.root");
 
     Ks_pPb_120_150              = new SteveGraph((TDirectoryFile*) f.Get("Ks_pPb_120_150"));
     Ks_pPb_150_185              = new SteveGraph((TDirectoryFile*) f.Get("Ks_pPb_150_185"));

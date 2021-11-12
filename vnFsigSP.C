@@ -6,7 +6,7 @@ TGraphErrors* dummy = new TGraphErrors(13);
 
 SteveGraph SteveGrCorrection( SteveGraph*, SteveGraph*,  TH1D*, double);
 
-void vnFsigSP(string strSave = "test.root", double sys = 0.0 )
+void vnFsigSP(string strSave = "test.root", double sys = 0.0, bool bVeto = false )
 {
     for ( int i = 0; i < 13; i++ ) {
         dummy->GetX()[i] = 0.;
@@ -14,7 +14,7 @@ void vnFsigSP(string strSave = "test.root", double sys = 0.0 )
         dummy->GetEY()[i] = 99.;
     }
 
-    LoadSP();
+    LoadSP(bVeto);
 
     SteveGraph Ks_pPb_corrected[10];
     SteveGraph Lm_pPb_corrected[10];
