@@ -495,7 +495,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legCh0 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legCh0->SetFillColor(kWhite);
     legCh0->SetTextFont(42);
-    legCh0->SetTextSize(0.05);
+    legCh0->SetTextSize(0.06);
     legCh0->SetBorderSize(0);
 
     legCh0->AddEntry(grSP.grSP_H[6]->vn_Full_PosEtaEP, "v_{2}{p-SP}",  "p");
@@ -504,7 +504,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legCh1 = new TLegend(0.65, 0.665, 0.95, 0.92);
     legCh1->SetFillColor(kWhite);
     legCh1->SetTextFont(42);
-    legCh1->SetTextSize(0.05);
+    legCh1->SetTextSize(0.06);
     legCh1->SetBorderSize(0);
 
     legCh1->AddEntry(grH.gr_v24[6], "v_{2}{4}",     "p");
@@ -578,7 +578,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legKs0 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legKs0->SetFillColor(kWhite);
     legKs0->SetTextFont(42);
-    legKs0->SetTextSize(0.05);
+    legKs0->SetTextSize(0.06);
     legKs0->SetBorderSize(0);
 
     legKs0->AddEntry(grSP.grSP_Ks_Sig[6]->vn_Full_PosEtaEP, "v_{2}{p-SP}",  "p");
@@ -587,7 +587,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legKs1 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legKs1->SetFillColor(kWhite);
     legKs1->SetTextFont(42);
-    legKs1->SetTextSize(0.05);
+    legKs1->SetTextSize(0.06);
     legKs1->SetBorderSize(0);
 
     legKs1->AddEntry(grH.gr_v24[6], "v_{2}{4}",     "p");
@@ -660,7 +660,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legLm0 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legLm0->SetFillColor(kWhite);
     legLm0->SetTextFont(42);
-    legLm0->SetTextSize(0.05);
+    legLm0->SetTextSize(0.06);
     legLm0->SetBorderSize(0);
 
     legLm0->AddEntry(grSP.grSP_Lm_Sig[6]->vn_Full_PosEtaEP, "v_{2}{p-SP}",  "p");
@@ -669,7 +669,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legLm1 = new TLegend(0.65, 0.75, 0.95, 0.92);
     legLm1->SetFillColor(kWhite);
     legLm1->SetTextFont(42);
-    legLm1->SetTextSize(0.05);
+    legLm1->SetTextSize(0.06);
     legLm1->SetBorderSize(0);
 
     legLm1->AddEntry(grH.gr_v24[6], "v_{2}{4}",     "p");
@@ -797,7 +797,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legFl = new TLegend(0.56, 0.18, 0.80, 0.42);
     legFl->SetFillColor(kWhite);
     legFl->SetTextFont(42);
-    legFl->SetTextSize(0.05);
+    legFl->SetTextSize(0.06);
     legFl->SetBorderSize(0);
 
     legFl->AddEntry(gChF[6], "Charged hadron", "p");
@@ -828,10 +828,10 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     latexS.DrawLatexNDC(0.16, 0.80, "#bf{Charged hadron}");
     latexS.DrawLatexNDC(0.16, 0.90, strNoff[6]);
 
-    TLegend * legFl6 = new TLegend(0.56, 0.72, 0.90, 0.92);
+    TLegend * legFl6 = new TLegend(0.50, 0.72, 0.90, 0.92);
     legFl6->SetFillColor(kWhite);
     legFl6->SetTextFont(42);
-    legFl6->SetTextSize(0.05);
+    legFl6->SetTextSize(0.06);
     legFl6->SetBorderSize(0);
 
     legFl6->AddEntry(gChF[6], "from v_{2}{4}", "p");
@@ -862,7 +862,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
         TLegend * legFl6SP = new TLegend(0.56, 0.65, 0.90, 0.72);
         legFl6SP->SetFillColor(kWhite);
         legFl6SP->SetTextFont(42);
-        legFl6SP->SetTextSize(0.05);
+        legFl6SP->SetTextSize(0.06);
         legFl6SP->SetBorderSize(0);
         legFl6SP->AddEntry(gChFveto2[6], "from veto", "p");
         cpPbV2_1->cd(4);
@@ -897,7 +897,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legFlKs6 = new TLegend(0.16, 0.68, 0.50, 0.82);
     legFlKs6->SetFillColor(kWhite);
     legFlKs6->SetTextFont(42);
-    legFlKs6->SetTextSize(0.05);
+    legFlKs6->SetTextSize(0.06);
     legFlKs6->SetBorderSize(0);
 
     legFlKs6->AddEntry(gKsF[6], "from v_{2}{4}", "p");
@@ -930,7 +930,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legFlLm6 = new TLegend(0.16, 0.68, 0.50, 0.82);
     legFlLm6->SetFillColor(kWhite);
     legFlLm6->SetTextFont(42);
-    legFlLm6->SetTextSize(0.05);
+    legFlLm6->SetTextSize(0.06);
     legFlLm6->SetBorderSize(0);
 
     legFlLm6->AddEntry(gLmF[6], "from v_{2}{4}", "p");
@@ -1001,7 +1001,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
 //    TLegend * legChSub0 = new TLegend(0.16, 0.58, 0.50, 0.82);
 //    legChSub0->SetFillColor(kWhite);
 //    legChSub0->SetTextFont(42);
-//    legChSub0->SetTextSize(0.05);
+//    legChSub0->SetTextSize(0.06);
 //    legChSub0->SetBorderSize(0);
 //
 //    legChSub0->AddEntry( grSP.grSP_H[6]->vn_Full_NegEtaEP,          "v_{2}{Pb-SP} |#eta|<1.",     "p" );
@@ -1016,7 +1016,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChSub1 = new TLegend(0.50, 0.75, 0.98, 0.92);
     legChSub1->SetFillColor(kWhite);
     legChSub1->SetTextFont(42);
-    legChSub1->SetTextSize(0.05);
+    legChSub1->SetTextSize(0.06);
     legChSub1->SetBorderSize(0);
 
     legChSub1->AddEntry( grH.gr_v24[6],       "v_{2}{4}",     "p" );
@@ -1098,10 +1098,10 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
 
-    TLegend * legChRatio1 = new TLegend(0.50, 0.68, 0.98, 0.92);
+    TLegend * legChRatio1 = new TLegend(0.45, 0.68, 0.98, 0.92);
     legChRatio1->SetFillColor(kWhite);
     legChRatio1->SetTextFont(42);
-    legChRatio1->SetTextSize(0.05);
+    legChRatio1->SetTextSize(0.06);
     legChRatio1->SetBorderSize(0);
 
     legChRatio1->AddEntry( grChRatioCu1[8], "Charged hadron", "p" );
@@ -1175,10 +1175,10 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     cpPbV2->cd(2);
     latexS.DrawLatexNDC(0.08, 0.90, strNoff[7]);
 
-    TLegend * legChDelta1 = new TLegend(0.50, 0.68, 0.98, 0.92);
+    TLegend * legChDelta1 = new TLegend(0.45, 0.68, 0.98, 0.92);
     legChDelta1->SetFillColor(kWhite);
     legChDelta1->SetTextFont(42);
-    legChDelta1->SetTextSize(0.05);
+    legChDelta1->SetTextSize(0.06);
     legChDelta1->SetBorderSize(0);
 
     legChDelta1->AddEntry( grChDeltaCu1[8], "Charged hadron", "p" );
@@ -1254,7 +1254,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legKsSub0 = new TLegend(0.16, 0.58, 0.50, 0.82);
     legKsSub0->SetFillColor(kWhite);
     legKsSub0->SetTextFont(42);
-    legKsSub0->SetTextSize(0.05);
+    legKsSub0->SetTextSize(0.06);
     legKsSub0->SetBorderSize(0);
 
     legKsSub0->AddEntry( grSP.grSP_Ks_Sig[6]->vn_Full_NegEtaEP,          "v_{2}{Pb-SP} |#eta|<1.",     "p" );
@@ -1270,7 +1270,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legKsSub1 = new TLegend(0.10, 0.58, 0.50, 0.82);
     legKsSub1->SetFillColor(kWhite);
     legKsSub1->SetTextFont(42);
-    legKsSub1->SetTextSize(0.05);
+    legKsSub1->SetTextSize(0.06);
     legKsSub1->SetBorderSize(0);
 
     legKsSub1->AddEntry( grKs.gr_v24[6],       "v_{2}{4} |#eta|<1.",     "p" );
@@ -1338,7 +1338,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legKsRatio0 = new TLegend(0.16, 0.58, 0.50, 0.82);
     legKsRatio0->SetFillColor(kWhite);
     legKsRatio0->SetTextFont(42);
-    legKsRatio0->SetTextSize(0.05);
+    legKsRatio0->SetTextSize(0.06);
     legKsRatio0->SetBorderSize(0);
 
     legKsRatio0->AddEntry( grKsRatioSP1[6], "v_{2}{Pb-SP,Sub} |#eta|<1.", "p" );
@@ -1353,7 +1353,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legKsRatio1 = new TLegend(0.10, 0.58, 0.50, 0.82);
     legKsRatio1->SetFillColor(kWhite);
     legKsRatio1->SetTextFont(42);
-    legKsRatio1->SetTextSize(0.05);
+    legKsRatio1->SetTextSize(0.06);
     legKsRatio1->SetBorderSize(0);
 
     legKsRatio1->AddEntry( grKsRatioCu1[6], "v_{2}{4,Sub}/v_{2}{4} |y|<1.", "p" );
@@ -1411,7 +1411,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legLmSub0 = new TLegend(0.16, 0.58, 0.50, 0.82);
     legLmSub0->SetFillColor(kWhite);
     legLmSub0->SetTextFont(42);
-    legLmSub0->SetTextSize(0.05);
+    legLmSub0->SetTextSize(0.06);
     legLmSub0->SetBorderSize(0);
 
     legLmSub0->AddEntry( grSP.grSP_Lm_Sig[6]->vn_Full_NegEtaEP,          "v_{2}{Pb-SP} |#eta|<1.",     "p" );
@@ -1427,7 +1427,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legLmSub1 = new TLegend(0.10, 0.58, 0.50, 0.82);
     legLmSub1->SetFillColor(kWhite);
     legLmSub1->SetTextFont(42);
-    legLmSub1->SetTextSize(0.05);
+    legLmSub1->SetTextSize(0.06);
     legLmSub1->SetBorderSize(0);
 
     legLmSub1->AddEntry( grLm.gr_v24[6],       "v_{2}{4} |#eta|<1.",     "p" );
@@ -1495,7 +1495,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legLmRatio0 = new TLegend(0.16, 0.58, 0.50, 0.82);
     legLmRatio0->SetFillColor(kWhite);
     legLmRatio0->SetTextFont(42);
-    legLmRatio0->SetTextSize(0.05);
+    legLmRatio0->SetTextSize(0.06);
     legLmRatio0->SetBorderSize(0);
 
     legLmRatio0->AddEntry( grLmRatioSP1[6], "v_{2}{Pb-SP,Sub} |#eta|<1.", "p" );
@@ -1510,7 +1510,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legLmRatio1 = new TLegend(0.10, 0.58, 0.50, 0.82);
     legLmRatio1->SetFillColor(kWhite);
     legLmRatio1->SetTextFont(42);
-    legLmRatio1->SetTextSize(0.05);
+    legLmRatio1->SetTextSize(0.06);
     legLmRatio1->SetBorderSize(0);
 
     legLmRatio1->AddEntry( grLmRatioCu1[6], "v_{2}{4,Sub}/v_{2}{4} |y|<1.", "p" );
@@ -1576,7 +1576,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChVeto = new TLegend(0.50, 0.58, 0.95, 0.92);
     legChVeto->SetFillColor(kWhite);
     legChVeto->SetTextFont(42);
-    legChVeto->SetTextSize(0.05);
+    legChVeto->SetTextSize(0.06);
     legChVeto->SetBorderSize(0);
 
 //    legChVeto->AddEntry( grH.gr_v22Gap[6], "v_{2}{2,|#Delta#eta|>2.}", "p" );
@@ -1610,7 +1610,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
         TLegend * legChVetoSP = new TLegend(0.05, 0.63, 0.45, 0.80);
         legChVetoSP->SetFillColor(kWhite);
         legChVetoSP->SetTextFont(42);
-        legChVetoSP->SetTextSize(0.05);
+        legChVetoSP->SetTextSize(0.06);
         legChVetoSP->SetBorderSize(0);
 
         legChVetoSP->AddEntry( grSP    .grSP_H[6]->vn_Full_NegEtaEP, "v_{2}{Pb-SP}", "p" );
@@ -1669,7 +1669,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legKsVeto = new TLegend(0.45, 0.58, 0.90, 0.92);
     legKsVeto->SetFillColor(kWhite);
     legKsVeto->SetTextFont(42);
-    legKsVeto->SetTextSize(0.05);
+    legKsVeto->SetTextSize(0.06);
     legKsVeto->SetBorderSize(0);
 
     legKsVeto->AddEntry( grKs.gr_v24[6], "v_{2}{4}", "p" );
@@ -1734,7 +1734,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legLmVeto = new TLegend(0.45, 0.58, 0.90, 0.92);
     legLmVeto->SetFillColor(kWhite);
     legLmVeto->SetTextFont(42);
-    legLmVeto->SetTextSize(0.05);
+    legLmVeto->SetTextSize(0.06);
     legLmVeto->SetBorderSize(0);
 
     legLmVeto->AddEntry( grLm.gr_v24[6], "v_{2}{4}", "p" );
@@ -1797,7 +1797,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChVetoRatio = new TLegend(0.45, 0.75, 0.98, 0.92);
     legChVetoRatio->SetFillColor(kWhite);
     legChVetoRatio->SetTextFont(42);
-    legChVetoRatio->SetTextSize(0.05);
+    legChVetoRatio->SetTextSize(0.06);
     legChVetoRatio->SetBorderSize(0);
 
 //    legChVetoRatio->AddEntry( grChRatioVeto2[6], "v_{2}{2,veto}/v_{2}{2}", "p" );
@@ -1825,7 +1825,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
         TLegend * legChSPVetoRatio = new TLegend(0.05, 0.49, 0.45, 0.60);
         legChSPVetoRatio->SetFillColor(kWhite);
         legChSPVetoRatio->SetTextFont(42);
-        legChSPVetoRatio->SetTextSize(0.05);
+        legChSPVetoRatio->SetTextSize(0.06);
         legChSPVetoRatio->SetBorderSize(0);
         legChSPVetoRatio->AddEntry(grChSPRatioVeto[6], "v_{2}{Pb-SP,veto}/v_{2}{Pb-SP}", "p");
         cpPbV2->cd(4);
@@ -1872,7 +1872,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChVetoDelta = new TLegend(0.05, 0.6, 0.45, 0.82);
     legChVetoDelta->SetFillColor(kWhite);
     legChVetoDelta->SetTextFont(42);
-    legChVetoDelta->SetTextSize(0.05);
+    legChVetoDelta->SetTextSize(0.06);
     legChVetoDelta->SetBorderSize(0);
 
     legChVetoDelta->AddEntry( grChRatioVeto4[6], "v_{2}{4,veto} - v_{2}{4}", "p" );
@@ -1898,7 +1898,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
         TLegend * legChSPVetoDelta = new TLegend(0.05, 0.49, 0.45, 0.60);
         legChSPVetoDelta->SetFillColor(kWhite);
         legChSPVetoDelta->SetTextFont(42);
-        legChSPVetoDelta->SetTextSize(0.05);
+        legChSPVetoDelta->SetTextSize(0.06);
         legChSPVetoDelta->SetBorderSize(0);
         legChSPVetoDelta->AddEntry(grChSPRatioVeto[6], "v_{2}{Pb-SP,veto} - v_{2}{Pb-SP}", "p");
         cpPbV2->cd(4);
@@ -1946,7 +1946,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legKsVetoRatio = new TLegend(0.05, 0.6, 0.45, 0.82);
     legKsVetoRatio->SetFillColor(kWhite);
     legKsVetoRatio->SetTextFont(42);
-    legKsVetoRatio->SetTextSize(0.05);
+    legKsVetoRatio->SetTextSize(0.06);
     legKsVetoRatio->SetBorderSize(0);
 
     legKsVetoRatio->AddEntry( grKsRatioVeto4[6], "v_{2}{4,veto}/v_{2}{4}", "p" );
@@ -2002,7 +2002,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legLmVetoRatio = new TLegend(0.05, 0.6, 0.45, 0.82);
     legLmVetoRatio->SetFillColor(kWhite);
     legLmVetoRatio->SetTextFont(42);
-    legLmVetoRatio->SetTextSize(0.05);
+    legLmVetoRatio->SetTextSize(0.06);
     legLmVetoRatio->SetBorderSize(0);
 
     legLmVetoRatio->AddEntry( grLmRatioVeto4[6], "v_{2}{4,veto}/v_{2}{4}", "p" );
@@ -2046,7 +2046,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChPosNeg = new TLegend(0.05, 0.6, 0.45, 0.82);
     legChPosNeg->SetFillColor(kWhite);
     legChPosNeg->SetTextFont(42);
-    legChPosNeg->SetTextSize(0.05);
+    legChPosNeg->SetTextSize(0.06);
     legChPosNeg->SetBorderSize(0);
 
     legChPosNeg->AddEntry( grH.gr_v24sub[6], "v_{2}{4,Sub}", "p" );
@@ -2094,7 +2094,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChPosNegRatio = new TLegend(0.05, 0.65, 0.45, 0.82);
     legChPosNegRatio->SetFillColor(kWhite);
     legChPosNegRatio->SetTextFont(42);
-    legChPosNegRatio->SetTextSize(0.05);
+    legChPosNegRatio->SetTextSize(0.06);
     legChPosNegRatio->SetBorderSize(0);
 
     legChPosNegRatio->AddEntry( grChRatioPos[6], "v_{2}{4,p-Sub}/v_{2}{4,Sub}", "p" );
@@ -2137,7 +2137,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChVetoPosNeg = new TLegend(0.05, 0.6, 0.45, 0.82);
     legChVetoPosNeg->SetFillColor(kWhite);
     legChVetoPosNeg->SetTextFont(42);
-    legChVetoPosNeg->SetTextSize(0.05);
+    legChVetoPosNeg->SetTextSize(0.06);
     legChVetoPosNeg->SetBorderSize(0);
 
     legChVetoPosNeg->AddEntry( grHveto.gr_v24sub[6], "v_{2}{4,Sub}", "p" );
@@ -2180,7 +2180,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChVetoPosNegRatio = new TLegend(0.05, 0.65, 0.45, 0.82);
     legChVetoPosNegRatio->SetFillColor(kWhite);
     legChVetoPosNegRatio->SetTextFont(42);
-    legChVetoPosNegRatio->SetTextSize(0.05);
+    legChVetoPosNegRatio->SetTextSize(0.06);
     legChVetoPosNegRatio->SetBorderSize(0);
 
     legChVetoPosNegRatio->AddEntry( grChRatioPos[6], "v_{2}{4,p-Sub}/v_{2}{4,Sub} veto", "p" );
@@ -2225,7 +2225,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChSubVeto = new TLegend(0.05, 0.55, 0.45, 0.82);
     legChSubVeto->SetFillColor(kWhite);
     legChSubVeto->SetTextFont(42);
-    legChSubVeto->SetTextSize(0.05);
+    legChSubVeto->SetTextSize(0.06);
     legChSubVeto->SetBorderSize(0);
 
     legChSubVeto->AddEntry( grH    .gr_v24   [6], "v_{2}{4}", "p" );
@@ -2274,7 +2274,7 @@ void plotFinalpPb( bool bPre = false, bool bSPVeto = false)
     TLegend * legChSubVetoRatio = new TLegend(0.05, 0.60, 0.45, 0.82);
     legChSubVetoRatio->SetFillColor(kWhite);
     legChSubVetoRatio->SetTextFont(42);
-    legChSubVetoRatio->SetTextSize(0.05);
+    legChSubVetoRatio->SetTextSize(0.06);
     legChSubVetoRatio->SetBorderSize(0);
 
     legChSubVetoRatio->AddEntry( grChRatioVeto4  [6], "v_{2}{4,veto}/v_{2}{4}", "p" );

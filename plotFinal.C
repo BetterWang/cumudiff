@@ -149,7 +149,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legCh = new TLegend(0.65, 0.55, 0.95, 0.90);
     legCh->SetFillColor(kWhite);
     legCh->SetTextFont(42);
-    legCh->SetTextSize(0.05);
+    legCh->SetTextSize(0.06);
     legCh->SetBorderSize(0);
 
     legCh->AddEntry(ch_v2_PbPb[1]->vn_MergedEta, "v_{2}{SP}", "p");
@@ -162,10 +162,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     cPbPbV2->cd(2);
     latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
-    TLegend * legChTh = new TLegend(0.55, 0.70, 0.90, 0.90);
+    TLegend * legChTh = new TLegend(0.50, 0.70, 0.90, 0.90);
     legChTh->SetFillColor(kWhite);
     legChTh->SetTextFont(42);
-    legChTh->SetTextSize(0.05);
+    legChTh->SetTextSize(0.06);
     legChTh->SetBorderSize(0);
     if ( bAmpt ) {
         legChTh->AddEntry(ampt  ->grCh_v22[2], "AMPT-IC v_{2}{2}", "f");
@@ -280,7 +280,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legKs = new TLegend(0.65, 0.55, 0.95, 0.90);
     legKs->SetFillColor(kWhite);
     legKs->SetTextFont(42);
-    legKs->SetTextSize(0.05);
+    legKs->SetTextSize(0.06);
     legKs->SetBorderSize(0);
 
     legKs->AddEntry(Ks_v2_PbPb_Sig[1]->vn_MergedEta, "v_{2}{SP}", "p");
@@ -293,10 +293,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     cPbPbV2->cd(2);
     latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
-    TLegend * legKsTh = new TLegend(0.55, 0.70, 0.90, 0.90);
+    TLegend * legKsTh = new TLegend(0.50, 0.70, 0.90, 0.90);
     legKsTh->SetFillColor(kWhite);
     legKsTh->SetTextFont(42);
-    legKsTh->SetTextSize(0.05);
+    legKsTh->SetTextSize(0.06);
     legKsTh->SetBorderSize(0);
 
     if ( bAmpt ) {
@@ -415,7 +415,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legLm = new TLegend(0.65, 0.55, 0.95, 0.90);
     legLm->SetFillColor(kWhite);
     legLm->SetTextFont(42);
-    legLm->SetTextSize(0.05);
+    legLm->SetTextSize(0.06);
     legLm->SetBorderSize(0);
 
     legLm->AddEntry(Lm_v2_PbPb_Sig[1]->vn_MergedEta, "v_{2}{SP}", "p");
@@ -428,11 +428,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     cPbPbV2->cd(2);
     latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
-//    TLegend * legLmTh = new TLegend(0.40, 0.15, 0.75, 0.47);
-    TLegend * legLmTh = new TLegend(0.55, 0.70, 0.90, 0.90);
+    TLegend * legLmTh = new TLegend(0.50, 0.70, 0.90, 0.90);
     legLmTh->SetFillColor(kWhite);
     legLmTh->SetTextFont(42);
-    legLmTh->SetTextSize(0.05);
+    legLmTh->SetTextSize(0.06);
     legLmTh->SetBorderSize(0);
 
     if ( bAmpt ) {
@@ -625,7 +624,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legFl = new TLegend(0.35, 0.65, 0.75, 0.92);
     legFl->SetFillColor(kWhite);
     legFl->SetTextFont(42);
-    legFl->SetTextSize(0.05);
+    legFl->SetTextSize(0.06);
     legFl->SetBorderSize(0);
 
     legFl->AddEntry(gChF[1], "Charged hadron", "p");
@@ -693,19 +692,19 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legFlCh = new TLegend(0.42, 0.75, 0.93, 0.92);
     legFlCh->SetFillColor(kWhite);
     legFlCh->SetTextFont(42);
-    legFlCh->SetTextSize(0.05);
+    legFlCh->SetTextSize(0.06);
     legFlCh->SetBorderSize(0);
 
-    legFlCh->AddEntry(grPACh_fluct, "pPb 185#leqN_{trk}^{offline}<250", "p");
+    legFlCh->AddEntry(grPACh_fluct, "pPb", "p");
     legFlCh->AddEntry(gChF[1], "PbPb", "p");
 
     TLegend * legFlCh1 = new TLegend(0.48, 0.75, 0.90, 0.92);
     legFlCh1->SetFillColor(kWhite);
     legFlCh1->SetTextFont(42);
-    legFlCh1->SetTextSize(0.05);
+    legFlCh1->SetTextSize(0.06);
     legFlCh1->SetBorderSize(0);
-    legFlCh1->AddEntry(gChAmptF[1], "AMPT-IC (PbPb)", "f");
-    legFlCh1->AddEntry(gChTrentoF[1], "Trento-IC (PbPb)", "f");
+    legFlCh1->AddEntry(gChAmptF[1], "AMPT-IC", "f");
+    legFlCh1->AddEntry(gChTrentoF[1], "Trento-IC", "f");
 
     legFlCh1->Draw();
 
@@ -749,20 +748,20 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legFlKs = new TLegend(0.42, 0.75, 0.93, 0.92);
     legFlKs->SetFillColor(kWhite);
     legFlKs->SetTextFont(42);
-    legFlKs->SetTextSize(0.05);
+    legFlKs->SetTextSize(0.06);
     legFlKs->SetBorderSize(0);
 
-    legFlKs->AddEntry(grPAKs_fluct, "pPb 185#leqN_{trk}^{offline}<250", "p");
+    legFlKs->AddEntry(grPAKs_fluct, "pPb", "p");
     legFlKs->AddEntry(gKsF[1], "PbPb", "p");
 
     TLegend * legFlKs1 = new TLegend(0.48, 0.75, 0.90, 0.92);
     legFlKs1->SetFillColor(kWhite);
     legFlKs1->SetTextFont(42);
-    legFlKs1->SetTextSize(0.05);
+    legFlKs1->SetTextSize(0.06);
     legFlKs1->SetBorderSize(0);
 
-    legFlKs1->AddEntry(gKsAmptF[1], "AMPT-IC (PbPb)", "f");
-    legFlKs1->AddEntry(gKsTrentoF[1], "Trento-IC (PbPb)", "f");
+    legFlKs1->AddEntry(gKsAmptF[1], "AMPT-IC", "f");
+    legFlKs1->AddEntry(gKsTrentoF[1], "Trento-IC", "f");
 
     legFlKs1->Draw();
 
@@ -806,19 +805,19 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legFlLm = new TLegend(0.42, 0.75, 0.93, 0.92);
     legFlLm->SetFillColor(kWhite);
     legFlLm->SetTextFont(42);
-    legFlLm->SetTextSize(0.05);
+    legFlLm->SetTextSize(0.06);
     legFlLm->SetBorderSize(0);
 
-    legFlLm->AddEntry(grPALm_fluct, "pPb 185#leqN_{trk}^{offline}<250", "p");
+    legFlLm->AddEntry(grPALm_fluct, "pPb", "p");
     legFlLm->AddEntry(gLmF[1], "PbPb", "p");
 
     TLegend * legFlLm1 = new TLegend(0.48, 0.75, 0.90, 0.92);
     legFlLm1->SetFillColor(kWhite);
     legFlLm1->SetTextFont(42);
-    legFlLm1->SetTextSize(0.05);
+    legFlLm1->SetTextSize(0.06);
     legFlLm1->SetBorderSize(0);
-    legFlLm1->AddEntry(gLmAmptF[1], "AMPT-IC (PbPb)", "f");
-    legFlLm1->AddEntry(gLmTrentoF[1], "Trento-IC (PbPb)", "f");
+    legFlLm1->AddEntry(gLmAmptF[1], "AMPT-IC", "f");
+    legFlLm1->AddEntry(gLmTrentoF[1], "Trento-IC", "f");
 
     legFlLm1->Draw();
 
@@ -892,7 +891,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legCh42 = new TLegend(0.35, 0.75, 0.75, 0.92);
     legCh42->SetFillColor(kWhite);
     legCh42->SetTextFont(42);
-    legCh42->SetTextSize(0.05);
+    legCh42->SetTextSize(0.06);
     legCh42->SetBorderSize(0);
     legCh42->AddEntry(gCh42[1], "PbPb", "p");
     legCh42->AddEntry(grPACh42, "pPb 185#leqN_{trk}^{offline}<250", "p");
@@ -937,7 +936,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legKs42 = new TLegend(0.35, 0.75, 0.75, 0.92);
     legKs42->SetFillColor(kWhite);
     legKs42->SetTextFont(42);
-    legKs42->SetTextSize(0.05);
+    legKs42->SetTextSize(0.06);
     legKs42->SetBorderSize(0);
     legKs42->AddEntry(gKs42[1], "PbPb", "p");
     legKs42->AddEntry(grPAKs42, "pPb 185#leqN_{trk}^{offline}<250", "p");
@@ -982,7 +981,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legLm42 = new TLegend(0.35, 0.75, 0.75, 0.92);
     legLm42->SetFillColor(kWhite);
     legLm42->SetTextFont(42);
-    legLm42->SetTextSize(0.05);
+    legLm42->SetTextSize(0.06);
     legLm42->SetBorderSize(0);
     legLm42->AddEntry(gLm42[1], "PbPb", "p");
     legLm42->AddEntry(grPALm42, "pPb 185#leqN_{trk}^{offline}<250", "p");
@@ -1057,7 +1056,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legSubCh = new TLegend(0.65, 0.67, 0.95, 0.92);
     legSubCh->SetFillColor(kWhite);
     legSubCh->SetTextFont(42);
-    legSubCh->SetTextSize(0.05);
+    legSubCh->SetTextSize(0.06);
     legSubCh->SetBorderSize(0);
     legSubCh->SetHeader("PbPb");
 
@@ -1108,10 +1107,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     grPACh_v24   ->Draw("psame");
     grPACh_SubEvt->Draw("psame");
 
-    TLegend * legPASubCh = new TLegend(0.48, 0.67, 0.95, 0.92);
+    TLegend * legPASubCh = new TLegend(0.45, 0.67, 0.95, 0.92);
     legPASubCh->SetFillColor(kWhite);
     legPASubCh->SetTextFont(42);
-    legPASubCh->SetTextSize(0.05);
+    legPASubCh->SetTextSize(0.06);
     legPASubCh->SetBorderSize(0);
     legPASubCh->SetHeader("pPb 185#leqN_{trk}^{offline}<250");
 
@@ -1174,7 +1173,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legSubKs = new TLegend(0.65, 0.67, 0.95, 0.92);
     legSubKs->SetFillColor(kWhite);
     legSubKs->SetTextFont(42);
-    legSubKs->SetTextSize(0.05);
+    legSubKs->SetTextSize(0.06);
     legSubKs->SetBorderSize(0);
     legSubKs->SetHeader("PbPb");
 
@@ -1206,10 +1205,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     grPAKs_v24   ->Draw("psame");
     grPAKs_SubEvt->Draw("psame");
 
-    TLegend * legPASubKs = new TLegend(0.48, 0.67, 0.95, 0.92);
+    TLegend * legPASubKs = new TLegend(0.45, 0.67, 0.95, 0.92);
     legPASubKs->SetFillColor(kWhite);
     legPASubKs->SetTextFont(42);
-    legPASubKs->SetTextSize(0.05);
+    legPASubKs->SetTextSize(0.06);
     legPASubKs->SetBorderSize(0);
     legPASubKs->SetHeader("pPb 185#leqN_{trk}^{offline}<250");
 
@@ -1272,7 +1271,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legSubLm = new TLegend(0.65, 0.67, 0.95, 0.92);
     legSubLm->SetFillColor(kWhite);
     legSubLm->SetTextFont(42);
-    legSubLm->SetTextSize(0.05);
+    legSubLm->SetTextSize(0.06);
     legSubLm->SetBorderSize(0);
     legSubLm->SetHeader("PbPb");
 
@@ -1302,12 +1301,12 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     grPALm_v24   ->Draw("psame");
     grPALm_SubEvt->Draw("psame");
 
-    TLegend * legPASubLm = new TLegend(0.48, 0.67, 0.95, 0.92);
+    TLegend * legPASubLm = new TLegend(0.45, 0.67, 0.95, 0.92);
     legPASubLm->SetFillColor(kWhite);
     legPASubLm->SetTextFont(42);
-    legPASubLm->SetTextSize(0.05);
+    legPASubLm->SetTextSize(0.06);
     legPASubLm->SetBorderSize(0);
-    legPASubLm->SetHeader("pPb 185#leqN_{trk}^{offline}< 250");
+    legPASubLm->SetHeader("pPb 185#leqN_{trk}^{offline}<250");
 
     legPASubLm->AddEntry(grPALm_v24,    "v_{2}{4}", "p");
     legPASubLm->AddEntry(grPALm_SubEvt, "v_{2}{4,Sub}", "p");
@@ -1454,7 +1453,7 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     TLegend * legSP_R = new TLegend(0.10, 0.60, 0.40, 0.85);
     legSP_R->SetFillColor(kWhite);
     legSP_R->SetTextFont(42);
-    legSP_R->SetTextSize(0.05);
+    legSP_R->SetTextSize(0.06);
     legSP_R->SetBorderSize(0);
 
     legSP_R->AddEntry(gChRatioSP[1], "Charged hadron", "p");
@@ -1492,10 +1491,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     gKsRatioCu[1]->Draw("psame");
     gLmRatioCu[1]->Draw("psame");
 
-    TLegend * legCu_R = new TLegend(0.50, 0.66, 0.98, 0.90);
+    TLegend * legCu_R = new TLegend(0.45, 0.66, 0.98, 0.90);
     legCu_R->SetFillColor(kWhite);
     legCu_R->SetTextFont(42);
-    legCu_R->SetTextSize(0.05);
+    legCu_R->SetTextSize(0.06);
     legCu_R->SetBorderSize(0);
 
     legCu_R->AddEntry(gChRatioCu[1], "Charged hadron", "p");
@@ -1565,10 +1564,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     gKsDeltaCu[1]->Draw("psame");
     gLmDeltaCu[1]->Draw("psame");
 
-    TLegend * legCu_D = new TLegend(0.50, 0.66, 0.98, 0.90);
+    TLegend * legCu_D = new TLegend(0.45, 0.66, 0.98, 0.90);
     legCu_D->SetFillColor(kWhite);
     legCu_D->SetTextFont(42);
-    legCu_D->SetTextSize(0.05);
+    legCu_D->SetTextSize(0.06);
     legCu_D->SetBorderSize(0);
 
     legCu_D->AddEntry(gChDeltaCu[1], "Charged hadron", "p");
@@ -1770,10 +1769,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     cPbPbV2->cd(2);
     latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
-    TLegend * leg64 = new TLegend(0.50, 0.66, 0.98, 0.90);
+    TLegend * leg64 = new TLegend(0.45, 0.66, 0.98, 0.90);
     leg64->SetFillColor(kWhite);
     leg64->SetTextFont(42);
-    leg64->SetTextSize(0.05);
+    leg64->SetTextSize(0.06);
     leg64->SetBorderSize(0);
 
     leg64->AddEntry(gCh64Ratio[1], "Charged hadron", "p");
@@ -1838,10 +1837,10 @@ void plotFinal(bool bPre = false, bool bAmpt = true)
     cPbPbV2_1->cd(2);
     latexS.DrawLatexNDC(0.05, 0.88, (centBins[2]).c_str());
 
-    TLegend * leg86 = new TLegend(0.50, 0.66, 0.98, 0.90);
+    TLegend * leg86 = new TLegend(0.45, 0.66, 0.98, 0.90);
     leg86->SetFillColor(kWhite);
     leg86->SetTextFont(42);
-    leg86->SetTextSize(0.05);
+    leg86->SetTextSize(0.06);
     leg86->SetBorderSize(0);
 
     leg86->AddEntry(gCh64Ratio[1], "Charged hadron", "p");

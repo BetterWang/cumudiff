@@ -468,7 +468,7 @@
 #root -l -b -q 'plotS.C("../cumudiff/pPb_H_merged2_corrected.root:grSig_pT2_3_9;../cumudiff/pPb_H_vetoJet20eta20_merged2_corrected.root:grSig_pT2_3_9", "v_{2}{8};v_{2}{8,veto}", "#splitline{pPb 8.16 TeV}{Ch N_{trk}^{offline} #geq 250}",       "Pt_v28_9", 0, 2.5)'
 #
 
-root -l -b -q 'plotS.C("PbPb2018_H_corrected.root:grSig_pT2_1_1;PbPb2018_H_miniAOD_corrected.root:grSig_pT2_1_1", "v_{2}{4} AOD;v_{2}{4} miniAOD", "#splitline{PbPb 5.02 TeV}{ch 5-10\%}", "H_miniAOD_v2_1", 0, 0.5)'
-root -l -b -q 'plotS.C("PbPb2018_H_corrected.root:grSig_pT2_1_2;PbPb2018_H_miniAOD_corrected.root:grSig_pT2_1_2", "v_{2}{4} AOD;v_{2}{4} miniAOD", "#splitline{PbPb 5.02 TeV}{ch 10-30\%}", "H_miniAOD_v2_2", 0, 0.5)'
-root -l -b -q 'plotS.C("PbPb2018_H_corrected.root:grSig_pT2_1_3;PbPb2018_H_miniAOD_corrected.root:grSig_pT2_1_3", "v_{2}{4} AOD;v_{2}{4} miniAOD", "#splitline{PbPb 5.02 TeV}{ch 30-50\%}", "H_miniAOD_v2_3", 0, 0.5)'
-root -l -b -q 'plotS.C("PbPb2018_H_corrected.root:grSig_pT2_1_4;PbPb2018_H_miniAOD_corrected.root:grSig_pT2_1_4", "v_{2}{4} AOD;v_{2}{4} miniAOD", "#splitline{PbPb 5.02 TeV}{ch 50-80\%}", "H_miniAOD_v2_4", 0, 0.5)'
+#root -l -b -q 'plotS.C("PbPb2018_H_corrected.root:grSig_pT2_1_1;PbPb2018_H_miniAOD_corrected.root:grSig_pT2_1_1", "v_{2}{4} AOD;v_{2}{4} miniAOD", "#splitline{PbPb 5.02 TeV}{ch 5-10\%}", "H_miniAOD_v2_1", 0, 0.5)'
+#root -l -b -q 'plotS.C("PbPb2018_H_corrected.root:grSig_pT2_1_2;PbPb2018_H_miniAOD_corrected.root:grSig_pT2_1_2", "v_{2}{4} AOD;v_{2}{4} miniAOD", "#splitline{PbPb 5.02 TeV}{ch 10-30\%}", "H_miniAOD_v2_2", 0, 0.5)'
+#root -l -b -q 'plotS.C("PbPb2018_H_corrected.root:grSig_pT2_1_3;PbPb2018_H_miniAOD_corrected.root:grSig_pT2_1_3", "v_{2}{4} AOD;v_{2}{4} miniAOD", "#splitline{PbPb 5.02 TeV}{ch 30-50\%}", "H_miniAOD_v2_3", 0, 0.5)'
+#root -l -b -q 'plotS.C("PbPb2018_H_corrected.root:grSig_pT2_1_4;PbPb2018_H_miniAOD_corrected.root:grSig_pT2_1_4", "v_{2}{4} AOD;v_{2}{4} miniAOD", "#splitline{PbPb 5.02 TeV}{ch 50-80\%}", "H_miniAOD_v2_4", 0, 0.5)'

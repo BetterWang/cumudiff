@@ -249,9 +249,13 @@ void makeEff3_cent(string s = "V0_MCFullD4_115.root", string prefix = "Lm", stri
       Eff_Acc_pT12_50_80->Add(  Eff_Acc_pT12[7]);
     Eff_Denom_pT12_50_80->Add(Eff_Denom_pT12[7]);
 
+      Fak_Num_eta_50_80->Add(  Fak_Num_eta[6]);
+    Fak_Denom_eta_50_80->Add(Fak_Denom_eta[6]);
       Fak_Num_eta_50_80->Add(  Fak_Num_eta[7]);
     Fak_Denom_eta_50_80->Add(Fak_Denom_eta[7]);
 
+      Fak_Num_pT12_50_80->Add(  Fak_Num_pT12[6]);
+    Fak_Denom_pT12_50_80->Add(Fak_Denom_pT12[6]);
       Fak_Num_pT12_50_80->Add(  Fak_Num_pT12[7]);
     Fak_Denom_pT12_50_80->Add(Fak_Denom_pT12[7]);
 
