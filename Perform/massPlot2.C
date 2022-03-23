@@ -1,10 +1,12 @@
 #include "../../../tdrstyle.C"
 
-void massPlot2(TString fname = "KS/hMassMid_2_8.root", TString fsave = "test.pdf")
+void massPlot2(TString fname = "KS/hMassMid_2_8.root", TString fsave = "test.pdf", bool bLog = false)
 {
     setTDRStyle();
-//    tdrStyle->SetPadLeftMargin(0.12);
+    tdrStyle->SetPadTopMargin(0.065);
+    tdrStyle->SetPadLeftMargin(0.12);
     tdrStyle->SetPadRightMargin(0.04);
+    tdrStyle->SetPadBottomMargin(0.14);
     bool bKS = fname.Contains("KS");
     TFile * f = new TFile(fname.Data());
     TH1D * hist = (TH1D*) f->Get("hmass");
@@ -13,6 +15,7 @@ void massPlot2(TString fname = "KS/hMassMid_2_8.root", TString fsave = "test.pdf
     TF1 * func_signal = (TF1*) f->Get("func_signal");
 
     TCanvas* c = new TCanvas("c", "c", 800, 600);
+    if ( bLog ) c->SetLogy();
     double mass1 = bKS?0.43:1.08;
     double mass2 = bKS?0,565:1.16;
     func->SetRange(mass1, mass2);
@@ -26,9 +29,15 @@ void massPlot2(TString fname = "KS/hMassMid_2_8.root", TString fsave = "test.pdf
     hist->SetYTitle("Entries / 0.5 MeV");
     hist->GetXaxis()->CenterTitle();
     hist->GetYaxis()->CenterTitle();
-    hist->GetYaxis()->SetMaxDigits(6);
-    hist->GetYaxis()->SetTitleOffset(1.5);
-    hist->SetMinimum(0);
+    hist->GetYaxis()->SetMaxDigits(3);
+    hist->GetYaxis()->SetTitleOffset(0.90);
+    hist->GetYaxis()->SetTitleSize(0.07);
+    hist->GetYaxis()->SetLabelSize(0.06);
+    hist->GetXaxis()->SetTitleOffset(0.88);
+    hist->GetXaxis()->SetTitleSize(0.07);
+    hist->GetXaxis()->SetLabelSize(0.06);
+    if ( bLog ) hist->SetMinimum(0.1);
+    else        hist->SetMinimum(0);
     cout << "Title: " << hist->GetTitle() << endl;
     char str1[16];
     int cent1, cent2;
@@ -45,16 +54,20 @@ void massPlot2(TString fname = "KS/hMassMid_2_8.root", TString fsave = "test.pdf
 
     TLatex latexS;
     latexS.SetTextFont(43);
-    latexS.SetTextSize(22);
+    latexS.SetTextSize(26);
     latexS.SetTextAlign(13);
 
-    latexS.DrawLatexNDC(0.16, 0.99, "#bf{CMS}");
-    latexS.DrawLatexNDC(0.78, 0.99, "PbPb 5.02 TeV");
+    latexS.DrawLatexNDC(0.23, 0.98, "#bf{CMS}");
+    latexS.DrawLatexNDC(0.75, 0.98, "PbPb 5.02 TeV");
 
-    latexS.DrawLatexNDC(0.24, 0.91, bKS?"K_{S}^{0}":"#Lambda/#bar{#Lambda}");
-    latexS.DrawLatexNDC(0.24, 0.85, Form("Cent. %d-%d%%", cent1/2, cent2/2));
-    latexS.DrawLatexNDC(0.24, 0.80, Form("%.1f < p_{T} < %.1f GeV", pt1, pt2));
-    latexS.DrawLatexNDC(0.24, 0.74, "|#it{y} | < 1.");
+    TLatex latexL;
+    latexL.SetTextFont(43);
+    latexL.SetTextSize(26);
+    latexL.SetTextAlign(13);
+    latexL.DrawLatexNDC(0.20, 0.90, bKS?"K_{S}^{0}":"#Lambda/#bar{#Lambda}");
+    latexL.DrawLatexNDC(0.20, 0.83, Form("Cent. %d-%d%%", cent1/2, cent2/2));
+    latexL.DrawLatexNDC(0.20, 0.76, Form("%.1f < p_{T} < %.1f GeV", pt1, pt2));
+    latexL.DrawLatexNDC(0.20, 0.69, "|#it{y} | < 1");
 
     TLegend * leg = new TLegend(0.65, 0.70, 0.95, 0.90);
     leg->SetFillColor(kWhite);
@@ -69,4 +82,19 @@ void massPlot2(TString fname = "KS/hMassMid_2_8.root", TString fsave = "test.pdf
     leg->Draw();
 
     c->SaveAs(fsave.Data());
+
+    TH1D * hpull = (TH1D*) hist->Clone("hpull");
+    hpull->Reset();
+
+    //for ( int i = hist->FindBin(bKS?0.492:1.1115); i < hist->FindBin(bKS?0.503:1.12); i++ ) {
+    for ( int i = hist->FindBin(bKS?0.46:1.105); i < hist->FindBin(bKS?0.52:1.13); i++ ) {
+    //for ( int i = 0; i < hist->GetNbinsX(); i++ ) {
+        hpull->SetBinContent(i+1, (hist->GetBinContent(i+1) - func->Eval(hist->GetBinCenter(i+1))) / hist->GetBinError(i+1) );
+    }
+    hpull->SetYTitle("Pull");
+    hpull->SetMinimum();
+    hpull->SetMaximum();
+    hpull->Draw("hist");
+
+    c->SaveAs((fsave.Remove(fsave.Sizeof() - 5, 4) + "_pull.pdf").Data());
 }

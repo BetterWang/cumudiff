@@ -29,3 +29,5 @@ Eff
 !Perform/BDT/*
 !Perform/BDTCent
 !Perform/BDTCent/*
+!Perform/BDTCent/Sig_BDT_KS/*
+!Perform/BDTCent/Sig_BDT_LM/*

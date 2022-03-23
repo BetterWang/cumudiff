@@ -14,7 +14,7 @@ TGraphErrors* getRatio(TGraphErrors* gr1, TGraphErrors* gr2, TString options = "
     gr->SetLineStyle( gr1->GetLineStyle() );
     gr->SetLineColor( gr1->GetLineColor() );
 
-//    cout << " -> getRatio N1 = " << gr1->GetN() << " N2 = " << gr2->GetN() << endl;
+    cout << " -> getRatio N1 = " << gr1->GetN() << " N2 = " << gr2->GetN() << endl;
     for ( int i = 0; i < gr1->GetN(); i++ ) {
         gr->GetX()[i] = gr1->GetX()[i];
         gr->GetY()[i] = gr1->GetY()[i] / gr2->GetY()[i];
