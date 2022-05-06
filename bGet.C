@@ -4,9 +4,41 @@
 #include <TFile.h>
 #include <TH1.h>
 using namespace std;
-void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
+
+struct FsigFix{
+    TFile * fFsig;
+    TH1D * hSig[20] = {};
+    FsigFix(bool bKs) {
+        if ( bKs ) {
+            fFsig = new TFile("FsigKSMid_cent7.root");
+        } else {
+            fFsig = new TFile("FsigLMMid_cent7.root");
+        }
+        hSig[0] = (TH1D*) fFsig->Get("hFsigMid0");
+        hSig[1] = (TH1D*) fFsig->Get("hFsigMid1");
+        hSig[2] = (TH1D*) fFsig->Get("hFsigMid2");
+        hSig[3] = (TH1D*) fFsig->Get("hFsigMid3");
+        hSig[4] = (TH1D*) fFsig->Get("hFsigMid4");
+        hSig[5] = (TH1D*) fFsig->Get("hFsigMid5");
+    };
+
+    double fix(double obs, double bkg, int c, int ipt) {
+        int cent = 0;
+        if ( c >= 160 ) cent = 5;
+        else while ( c > CentCutPbPb2018[cent+1] ) cent++;
+        double fsig = hSig[cent]->GetBinContent(ipt+1);
+        double sig = ( obs - (1-fsig) * bkg ) / fsig;
+        return sig;
+    }
+};
+
+
+void bGet(int s1 = 1, int s2 = 10, int s3 = 10, int s4 = -1)
 {
 	cout << " s1 = " << s1 << " s2 = " << s2 << " s3 = " << s3 << endl;
+    if ( s4>0 ) {
+        cout << " Fix SB " << s4 << endl;
+    }
 	TH1::SetDefaultSumw2();
 	int NCent = NCent8TeV4;
 	const int * pCent = CentNoffCutPA8TeV4;
@@ -15,7 +47,27 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
         pCent = CentCutPbPb2018;
     }
 
+    bool bKs   = (string(ftxt[s1]).find("Lm") == std::string::npos);
+    FsigFix fs(bKs);
+
 	TFile * f = new TFile(Form("%s/output_%i_%i.root", ftxt[s1], s2, s3));
+	double sbQp[7][4][24][600] = {};
+    if ( s4 > 0 ) {
+        TFile * fsb = new TFile(Form("%s/outputC_%i_%i.root", ftxt[s4], s2, s3));
+        for ( int n = 2; n < 7; n++ ) {
+            for ( int np = 0; np < 4; np++ ) {
+                for ( int i = 0; i < 24; i++ ) {
+                    TH1D *h = (TH1D*) fsb->Get(Form("hQpraw%i%i_%i", n, np, i));
+                    for ( int c = 0; c < 600; c++ ) {
+                        sbQp[n][np][i][c] = h->GetBinContent(c+1);
+                        //cout << " -> n = " << n << " np = " << np << " i = " << i << " c = " << c << " Qp = " << sbQp[n][np][i][c] << endl;
+                    }
+                    h->Delete();
+                }
+            }
+        }
+        fsb->Close();
+    }
 
 	TH1D * hNoff = (TH1D*) f->Get("hNoff");
 	TH1D * hMult = (TH1D*) f->Get("hMult");
@@ -216,6 +268,18 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 				double Q4 = dQ[n][1][c];
 				double Q6 = dQ[n][2][c];
 				double Q8 = dQ[n][3][c];
+
+                if ( s4>0 ) {
+                    double sbQ2p = sbQp[n][0][i][c];
+                    double sbQ4p = sbQp[n][1][i][c];
+                    double sbQ6p = sbQp[n][2][i][c];
+                    double sbQ8p = sbQp[n][3][i][c];
+
+                    Q2p = fs.fix(Q2p, sbQ2p, c, i);
+                    Q4p = fs.fix(Q4p, sbQ4p, c, i);
+                    Q6p = fs.fix(Q6p, sbQ6p, c, i);
+                    Q8p = fs.fix(Q8p, sbQ8p, c, i);
+                }
 
 				dCpraw[n][0][i][c] = Q2p;
 				dCpraw[n][1][i][c] = Q4p - 2*Q2*Q2p;
@@ -442,6 +506,7 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 	TH1D * hCwraw[7][4] = {};
 	TH1D * hCpraw[7][4][24] = {};
 	TH1D * hCwpraw[7][4][24] = {};
+	TH1D * hQpraw[7][4][24] = {};
 
 	TH1D * hC[7][4] = {};
 	TH1D * hCw[7][4] = {};
@@ -472,6 +537,7 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			for ( int i = 0; i < 24; i++ ) {
 				hCpraw[n][np][i] = new TH1D(Form("hCpraw%i%i_%i", n, np, i), "", 600, 0, 600);
 				hCwpraw[n][np][i] = new TH1D(Form("hCwpraw%i%i_%i", n, np, i), "", 600, 0, 600);
+				hQpraw[n][np][i] = new TH1D(Form("hQpraw%i%i_%i", n, np, i), "", 600, 0, 600);
 
 				hCp[n][np][i] = new TH1D(Form("hCp%i%i_%i", n, np, i), "", 20, 0, 20);
 				hCwp[n][np][i] = new TH1D(Form("hCwp%i%i_%i", n, np, i), "", 20, 0, 20);
@@ -508,6 +574,7 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 				for ( int c = 0; c < 600; c++ ) {
 					hCpraw[n][np][i]->SetBinContent(c+1, dCpraw[n][np][i][c]);
 					hCwpraw[n][np][i]->SetBinContent(c+1, wQp[n][np][i][c]);
+					hQpraw[n][np][i]->SetBinContent(c+1, dQp[n][np][i][c]);
 				}
 				for ( int c = 0; c < 20; c++ ) {
 					hCp[n][np][i]->SetBinContent(c+1, dCp[n][np][i][c]);
@@ -672,6 +739,7 @@ void bGet(int s1 = 1, int s2 = 10, int s3 = 10)
 			for ( int i = 0; i < 24; i++ ) {
 				hCpraw[n][np][i]->Write();
 				hCwpraw[n][np][i]->Write();
+				hQpraw[n][np][i]->Write();
 
 				hCp[n][np][i]->Write();
 				hCwp[n][np][i]->Write();

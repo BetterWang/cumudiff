@@ -489,3 +489,10 @@
 #root -l -b -q 'plotS.C("PbPb2018_H_corrected.root:grH_pTGap2_4;PbPb2018_H_corrected.root:grH_pT2_1_4;PbPb_v0_SP_corrected.root:ch_v2_PbPb_50_80/vn_MergedEta", "v_{2}{2, Gap};v_{2}{SP}", "#splitline{PbPb 5.02 TeV}{ch 50-80\%}", "ch_50_vn", 0, 0.5)'
 
 #root -l -b -q 'plotS.C("../cumudiff/V0SP.root:ch_pPb_corrected_6/vn_Full_NegEtaEP;../cumudiff/pPb_H_merged2_corrected.root:grSig_pTGap2_6;../cumudiff/pPb_H_merged2_corrected.root:grSig_pT2_0_6", "v_{2}{SP};v_{2}{2, |#Delta#eta|>2.};v_{2}{2}", "#splitline{pPb 8.16 TeV}{Ch 120 #leq N_{trk}^{offline} < 150}", "Pt_v22vetoJet_6", 0, 0.5)'
+
+
+root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_1;PbPb2018_Lm_corrected_fix.root:grSig_pT2_1_1", "v_{2}^{Sig}{4};v_{2}^{Sig}{4} fix", "#splitline{PbPb 5.02 TeV}{#Lambda 5-10\%}", "Lm_v21_fix", 0, 0.2 , 5)'
+root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_2;PbPb2018_Lm_corrected_fix.root:grSig_pT2_1_2", "v_{2}^{Sig}{4};v_{2}^{Sig}{4} fix", "#splitline{PbPb 5.02 TeV}{#Lambda 10-30\%}", "Lm_v22_fix", 0, 0.2, 5)'
+root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_3;PbPb2018_Lm_corrected_fix.root:grSig_pT2_1_3", "v_{2}^{Sig}{4};v_{2}^{Sig}{4} fix", "#splitline{PbPb 5.02 TeV}{#Lambda 30-50\%}", "Lm_v23_fix", 0, 0.2, 5)'
+root -l -b -q 'plotS.C("PbPb2018_Lm_corrected.root:grSig_pT2_1_4;PbPb2018_Lm_corrected_fix.root:grSig_pT2_1_4", "v_{2}^{Sig}{4};v_{2}^{Sig}{4} fix", "#splitline{PbPb 5.02 TeV}{#Lambda 50-80\%}", "Lm_v24_fix", 0, 0.2, 5)'
+
